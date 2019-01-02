@@ -107,3 +107,15 @@ C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SPSQLite.pdb
 C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\x86\e_sqlite3.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\x64\e_sqlite3.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\Newtonsoft.Json.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLite-net.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLiteNetExtensions.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLitePCLRaw.batteries_green.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLitePCLRaw.batteries_v2.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLitePCLRaw.core.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\Newtonsoft.Json.xml
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLite-net.xml
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\bin\Debug\SQLiteNetExtensions.pdb

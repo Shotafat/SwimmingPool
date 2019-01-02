@@ -21,7 +21,12 @@ namespace SPSQLite
         public static string Path { get; set; }
         public static void CreateTables()
         {
-
+            Conn.CreateTable<HealthNotice>();
+            Conn.CreateTable<Subscriber>();
+            Conn.CreateTable<Subscription>();
+            Conn.CreateTable<Coach>();
+            Conn.CreateTable<SubscribtionPrice>();
+            Conn.CreateTable<SubscriptionSchedule>();
         }
 
 
@@ -40,7 +45,6 @@ namespace SPSQLite
         public int AbonentId { get; set; }
         
     }
-
     //აბონენტი
     public class Subscriber
     {
@@ -54,7 +58,6 @@ namespace SPSQLite
 
 
     }
-
     //აბონიმენტი
     public class Subscription
     {
