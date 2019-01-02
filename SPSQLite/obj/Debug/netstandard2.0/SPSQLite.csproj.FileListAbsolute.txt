@@ -1,0 +1,9 @@
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.deps.json
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\User\Documents\GitHub\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb

@@ -8,7 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SPSQLite;
-
+using SQLiteNetExtensions.Attributes;
+using SQLiteNetExtensions;
 
 
 namespace SwimmingPool
