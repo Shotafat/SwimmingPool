@@ -25,6 +25,7 @@ namespace SwimmingPool
 
         private void button1_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             openAD();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -40,6 +41,10 @@ namespace SwimmingPool
         {
             mcvrtnelieqimi ME = new mcvrtnelieqimi();
             ME.ShowDialog();
+=======
+            abonementis_damateba AB = new abonementis_damateba();
+            AB.ShowDialog();
+>>>>>>> eb07f53c107f710a0876ea817db37e13a5f82f76
         }
     }
 }

@@ -8,12 +8,13 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>SwimmingPool</RootNamespace>
     <AssemblyName>SwimmingPool</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -69,11 +70,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="abonentisdamateba.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="abonentisdamateba.Designer.cs">
       <DependentUpon>abonentisdamateba.cs</DependentUpon>
+=======
+    <Compile Include="abonementis_damateba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="abonementis_damateba.Designer.cs">
+      <DependentUpon>abonementis_damateba.cs</DependentUpon>
+>>>>>>> eb07f53c107f710a0876ea817db37e13a5f82f76
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -89,6 +98,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <EmbeddedResource Include="abonentisdamateba.resx">
       <DependentUpon>abonentisdamateba.cs</DependentUpon>
     </EmbeddedResource>
@@ -98,6 +108,11 @@
     <EmbeddedResource Include="mcvrtnelieqimi.resx">
       <DependentUpon>mcvrtnelieqimi.cs</DependentUpon>
     </EmbeddedResource>
+=======
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+>>>>>>> eb07f53c107f710a0876ea817db37e13a5f82f76
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -106,6 +121,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

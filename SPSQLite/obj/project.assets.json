@@ -2966,11 +2966,19 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
       "projectPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "packagesPath": "C:\\Users\\Kakha\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
+=======
+      "projectUniqueName": "C:\\Users\\Kakha\\Desktop\\github\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectName": "SPSQLite",
+      "projectPath": "C:\\Users\\Kakha\\Desktop\\github\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "packagesPath": "C:\\Users\\Kakha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kakha\\Desktop\\github\\SwimmingPool\\SPSQLite\\obj\\",
+>>>>>>> eb07f53c107f710a0876ea817db37e13a5f82f76
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
