@@ -22,8 +22,24 @@ namespace SwimmingPool
 
             
         }
-        
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            openAD();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            openME();
+        }
+        public void openAD()
+        {
+            abonentisdamateba AD = new abonentisdamateba();
+            AD.ShowDialog();
+        }
+        public void openME()
+        {
+            mcvrtnelieqimi ME = new mcvrtnelieqimi();
+            ME.ShowDialog();
+        }
     }
 }

@@ -241,3 +241,5 @@ C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.abonentisdamateba.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.mcvrtnelieqimi.resources
