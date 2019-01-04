@@ -28,30 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.mwvrtnelis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mwvrtnelis_saxeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mwvrtnelis_gvari = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonentis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonentis_saxeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonentis_gvari = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonentis_dabtarigi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonentis_telefoni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.abonentis_misamarti = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.mwvrtnelis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mwvrtnelis_saxeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mwvrtnelis_gvari = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.eqimis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eqimis_saxeli = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eqimis_gvari = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.cnobis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cnoba_cnoba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.gadasaxadis_saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gadasaxadis_fasi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,8 +65,8 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
+            this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.SuspendLayout();
@@ -87,8 +87,8 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.abonentis_nomeri,
@@ -102,6 +102,36 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(644, 197);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // abonentis_nomeri
+            // 
+            this.abonentis_nomeri.HeaderText = "აბონემენტის ნომერი";
+            this.abonentis_nomeri.Name = "abonentis_nomeri";
+            // 
+            // abonentis_saxeli
+            // 
+            this.abonentis_saxeli.HeaderText = "სახელი";
+            this.abonentis_saxeli.Name = "abonentis_saxeli";
+            // 
+            // abonentis_gvari
+            // 
+            this.abonentis_gvari.HeaderText = "გვარი";
+            this.abonentis_gvari.Name = "abonentis_gvari";
+            // 
+            // abonentis_dabtarigi
+            // 
+            this.abonentis_dabtarigi.HeaderText = "დაბადების თარიღი";
+            this.abonentis_dabtarigi.Name = "abonentis_dabtarigi";
+            // 
+            // abonentis_telefoni
+            // 
+            this.abonentis_telefoni.HeaderText = "ტელეფონის ნომერი";
+            this.abonentis_telefoni.Name = "abonentis_telefoni";
+            // 
+            // abonentis_misamarti
+            // 
+            this.abonentis_misamarti.HeaderText = "მისამართი";
+            this.abonentis_misamarti.Name = "abonentis_misamarti";
             // 
             // groupBox2
             // 
@@ -143,36 +173,6 @@
             // 
             this.mwvrtnelis_gvari.HeaderText = "გვარი";
             this.mwvrtnelis_gvari.Name = "mwvrtnelis_gvari";
-            // 
-            // abonentis_nomeri
-            // 
-            this.abonentis_nomeri.HeaderText = "აბონემენტის ნომერი";
-            this.abonentis_nomeri.Name = "abonentis_nomeri";
-            // 
-            // abonentis_saxeli
-            // 
-            this.abonentis_saxeli.HeaderText = "სახელი";
-            this.abonentis_saxeli.Name = "abonentis_saxeli";
-            // 
-            // abonentis_gvari
-            // 
-            this.abonentis_gvari.HeaderText = "გვარი";
-            this.abonentis_gvari.Name = "abonentis_gvari";
-            // 
-            // abonentis_dabtarigi
-            // 
-            this.abonentis_dabtarigi.HeaderText = "დაბადების თარიღი";
-            this.abonentis_dabtarigi.Name = "abonentis_dabtarigi";
-            // 
-            // abonentis_telefoni
-            // 
-            this.abonentis_telefoni.HeaderText = "ტელეფონის ნომერი";
-            this.abonentis_telefoni.Name = "abonentis_telefoni";
-            // 
-            // abonentis_misamarti
-            // 
-            this.abonentis_misamarti.HeaderText = "მისამართი";
-            this.abonentis_misamarti.Name = "abonentis_misamarti";
             // 
             // groupBox3
             // 
@@ -230,19 +230,6 @@
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ცნობა";
             // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupBox5.Controls.Add(this.dataGridView5);
-            this.groupBox5.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox5.ForeColor = System.Drawing.Color.Red;
-            this.groupBox5.Location = new System.Drawing.Point(980, 442);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(255, 163);
-            this.groupBox5.TabIndex = 4;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "გადასახადი";
-            // 
             // dataGridView4
             // 
             this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -264,6 +251,19 @@
             // 
             this.cnoba_cnoba.HeaderText = "ცნობა";
             this.cnoba_cnoba.Name = "cnoba_cnoba";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox5.Controls.Add(this.dataGridView5);
+            this.groupBox5.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox5.ForeColor = System.Drawing.Color.Red;
+            this.groupBox5.Location = new System.Drawing.Point(980, 442);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(255, 163);
+            this.groupBox5.TabIndex = 4;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "გადასახადი";
             // 
             // dataGridView5
             // 
@@ -319,6 +319,7 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "gfd";
             this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // Form1
             // 
@@ -344,8 +345,8 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox4.ResumeLayout(false);
-            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
+            this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();

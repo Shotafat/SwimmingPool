@@ -22,8 +22,11 @@ namespace SwimmingPool
 
             
         }
-        
 
-        
+        private void button1_Click(object sender, EventArgs e)
+        {
+            abonementis_damateba AB = new abonementis_damateba();
+            AB.ShowDialog();
+        }
     }
 }
