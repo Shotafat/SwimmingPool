@@ -25,7 +25,7 @@ namespace SwimmingPool
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = DatabaseConnection.GetAbonentSource();
-            
+           
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -43,16 +43,11 @@ namespace SwimmingPool
             ME.ShowDialog();
         }
 
-
-
-
-      
-
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             string textboxText = textBox1.Text.ToString();
             int RowIndex = 0;
-
+            
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                
@@ -63,19 +58,17 @@ namespace SwimmingPool
                     {
                         RowIndex = row.Index;
                         break;
-
-
                     }
-                
-
-
             }
             dataGridView1.Rows[RowIndex].Selected = true;
-           
-
         }
 
-       
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var telefoni = dataGridView1.SelectedRows[0].Cells[3].Value;
+            var index = DatabaseConnection.Subscriberindex;
+            MessageBox.Show(telefoni.ToString()+" "+ index.ToString());
+        }
     }
 }
 

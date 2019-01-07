@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
-
+using System.Reflection;
 
 //using System.Windows.Forms;
 
@@ -25,7 +25,7 @@ namespace SPSQLite
         public static int Subscriberindex { get; set; }
         public static int Coachindex { get; set; }
         public static int Doctorindex { get; set; }
-
+        public static int SubscribtionPriceindex { get; set; }
 
         public static void CreateTables()
         {
@@ -45,7 +45,7 @@ namespace SPSQLite
         }
         public  static List<Subscriber> GetAbonentSource()
         {
-            return Conn.Table<Subscriber>().ToList().Sort();
+            return Conn.Table<Subscriber>().ToList();
         }
         //coach 
         public static void insertCoach(  string name, string lastname)
@@ -71,10 +71,24 @@ namespace SPSQLite
             return Conn.Table<Doctor>().ToList();
         }
 
-        public static void index()
+        //fasi da saati
+        public static void insertSubscribtionPrice(int saaTebisraodenoa, double fasi)
         {
-            Conn.Insert(new Subscription { SubscriberID = Subscriberindex, CoachId = Coachindex, DoctorID = Doctorindex });
+            Conn.Insert(new SubscribtionPrice { NumberOfHours=saaTebisraodenoa, Price=fasi  });
+            var SubscribtionPriceindex = Conn.Table<SubscribtionPrice>().ToList().FindLastIndex(u => u.NumberOfHours == saaTebisraodenoa);
         }
+        public static List<SubscribtionPrice> GetSubscribtionPrice()
+        {
+            return Conn.Table<SubscribtionPrice>().ToList();
+        }
+
+
+        //public static void index()
+        //{
+        //    Conn.Insert(new Subscription { SubscriberID = Subscriberindex,
+        //                                   CoachId = Coachindex, DoctorID = Doctorindex,
+        //                                   SubscribtionTypeID = SubscribtionPriceindex });
+        //}
     }
     
     //აბონიმენტი

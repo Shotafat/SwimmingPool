@@ -28,6 +28,7 @@ namespace SwimmingPool
 
             DatabaseConnection.insertDoctor( eqimis_saxeli.Text.ToString(), eqimis_gvari.Text.ToString());
             DatabaseConnection.insertCoach( mwvrtnelis_saxeli.Text.ToString(), mwvrtnelis_gvari.Text.ToString());
+            DatabaseConnection.insertSubscribtionPrice(Convert.ToInt16(gadaxda_saati.Text), Convert.ToDouble(gadaxda_fasi.Text));
 
             this.Close();
         }
