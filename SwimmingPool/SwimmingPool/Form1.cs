@@ -25,6 +25,7 @@ namespace SwimmingPool
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = DatabaseConnection.GetAbonentSource();
+            
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -56,9 +57,9 @@ namespace SwimmingPool
             {
                
                     // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
-                    if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Equals(textboxText) ||
-                        row.Cells[2].Value.ToString().Equals(textboxText) || row.Cells[3].Value.ToString().Equals(textboxText) ||
-                        row.Cells[4].Value.ToString().Equals(textboxText) || row.Cells[5].Value.ToString().Equals(textboxText))
+                    if (row.Cells[0].Value.ToString().Contains(textboxText) || row.Cells[1].Value.ToString().Contains(textboxText) ||
+                        row.Cells[2].Value.ToString().Contains(textboxText) || row.Cells[3].Value.ToString().Contains(textboxText) ||
+                        row.Cells[4].Value.ToString().Contains(textboxText) || row.Cells[5].Value.ToString().Contains(textboxText))
                     {
                         RowIndex = row.Index;
                         break;
@@ -70,8 +71,11 @@ namespace SwimmingPool
 
             }
             dataGridView1.Rows[RowIndex].Selected = true;
+           
 
         }
+
+       
     }
 }
 
