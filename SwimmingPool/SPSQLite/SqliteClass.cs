@@ -45,7 +45,7 @@ namespace SPSQLite
         }
         public  static List<Subscriber> GetAbonentSource()
         {
-            return Conn.Table<Subscriber>().ToList();
+            return Conn.Table<Subscriber>().ToList().Sort();
         }
         //coach 
         public static void insertCoach(  string name, string lastname)
