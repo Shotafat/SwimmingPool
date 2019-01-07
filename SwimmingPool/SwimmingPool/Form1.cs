@@ -54,8 +54,7 @@ namespace SwimmingPool
 
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
-                for (int i = 0; i <= 6; i++)
-                {
+               
                     // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
                     if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Equals(textboxText) ||
                         row.Cells[2].Value.ToString().Equals(textboxText) || row.Cells[3].Value.ToString().Equals(textboxText) ||
@@ -66,7 +65,7 @@ namespace SwimmingPool
 
 
                     }
-                }
+                
 
 
             }
