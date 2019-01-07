@@ -115,7 +115,7 @@ namespace SPSQLite
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
-        public string SubscribernNumber{ get; set; }
+      
         [ForeignKey(typeof(Subscriber))]
         public int SubscriberID { get; set; }
         [ForeignKey(typeof(Coach))]
