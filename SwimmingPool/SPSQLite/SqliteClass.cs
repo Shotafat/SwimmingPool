@@ -47,24 +47,7 @@ namespace SPSQLite
         }
 
 
-        public static void generateID()
-        {
-            List<String> GeneratedID = new List<String>();
-            string code = "A";
-            for (int i = 1; i <= 999; i++)
-            {
-                if (isCreated)
-                {
-                    GeneratedID.Add(String.Format("{0}{1:000}", code, i));
-                }
-
-            }
-            foreach (var item in GeneratedID)
-            {
-                Console.WriteLine(item);
-            }
-
-        }
+   
 
         //coach 
 

@@ -38,7 +38,7 @@ namespace SwimmingPool
         {
 
             DatabaseConnection.insertAbonent(abonentis_saxeli.Text, abonentis_gvari.Text, abonentis_telefoni.Text, abonentis_misamarti.Text, abonentis_dabadeba.Text);
-            DatabaseConnection.generateID();
+           
             DialogResult = DialogResult.OK;
             Close();
            
