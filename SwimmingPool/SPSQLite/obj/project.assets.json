@@ -2960,23 +2960,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\datax\\.nuget\\packages\\": {},
+    "C:\\Users\\Kakha\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-      "packagesPath": "C:\\Users\\datax\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
+      "projectPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "packagesPath": "C:\\Users\\Kakha\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\datax\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Kakha\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

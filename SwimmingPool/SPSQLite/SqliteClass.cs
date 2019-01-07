@@ -10,6 +10,7 @@ using SQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
 
+
 //using System.Windows.Forms;
 
 namespace SPSQLite
@@ -19,45 +20,39 @@ namespace SPSQLite
     {
         public static SQLiteConnection Conn { get; set; }
         public static string Path { get; set; }
+
+
+        public static int Subscriberindex { get; set; }
+        public static int Coachindex { get; set; }
+        public static int Doctorindex { get; set; }
+
+
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, Coach>();
-            Conn.CreateTables<SubscribtionPrice, SubscriptionSchedule, Doctor>();
+            Conn.CreateTables<SubscribtionPrice,  Doctor>();
             
-            }
+        }
 
         //Abonent 
         private static bool isCreated = false;
 
-
-
-  
         public static void insertAbonent(string name , string lastname , string phonenumber, string adress , string dateofbirth)
         {
-
-          Conn.Insert(new Subscriber { Name = name, LastName = lastname, PhoneNumber = phonenumber, Address = adress, DateOfBirth = dateofbirth });
- 
-
+            Conn.Insert(new Subscriber { Name = name, LastName = lastname, PhoneNumber = phonenumber, Address = adress, DateOfBirth = dateofbirth });
+            var Subscriberindex = Conn.Table<Subscriber>().ToList().FindLastIndex(u=>u.Name==name);
+            
         }
         public  static List<Subscriber> GetAbonentSource()
         {
-
-
             return Conn.Table<Subscriber>().ToList();
-         
         }
-
-
-   
-
         //coach 
-
-
         public static void insertCoach(  string name, string lastname)
         {
 
             Conn.Insert(new Coach {  Name = name, LastName = lastname });
-           
+            var Coachindex = Conn.Table<Subscriber>().ToList().FindLastIndex(u => u.Name == name);
         }
         public static List<Coach> GetCoachesSource()
         {
@@ -68,35 +63,38 @@ namespace SPSQLite
 
         public static void insertDoctor ( string name , string lastname )
         {
-
             Conn.Insert(new Doctor {Name = name, LastName = lastname });
+            var Doctorindex = Conn.Table<Subscriber>().ToList().FindLastIndex(u => u.Name == name);
         }
         public static List<Doctor> GetDoctorSource ( )
         {
             return Conn.Table<Doctor>().ToList();
-                
         }
 
-
-      
-
+        public static void index()
+        {
+            Conn.Insert(new Subscription { SubscriberID = Subscriberindex, CoachId = Coachindex, DoctorID = Doctorindex });
+        }
     }
-
-   
-
-
-    //ჯანმრთელობის ცნობა
-    public class HealthNotice
+    
+    //აბონიმენტი
+    public class Subscription
     {
-
         [PrimaryKey, AutoIncrement]
-        public int id { get; set; }
-        public DateTime DateCreated { get; set; }
-        public string CurrencyName { get; set; }
-        [ForeignKey(typeof(Subscriber))]   //ForeignKey_ს დამატება SqliteExtensions nuget-ით
-        public int AbonentId { get; set; }
-        
+        public int Id { get; set; }
+
+        //[ForeignKey(typeof(Subscriber))]
+        public int SubscriberID { get; set; }
+
+        //[ForeignKey(typeof(Coach))]
+        public int CoachId { get; set; }
+
+        public int DoctorID { get; set; }
+        //[ForeignKey(typeof(SubscribtionPrice))]
+        public int SubscribtionTypeID { get; set; }
+
     }
+
     //აბონენტი
     public class Subscriber
     {
@@ -110,24 +108,8 @@ namespace SPSQLite
 
 
     }
-
-   
-
-    //აბონიმენტი
-    public class Subscription
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-      
-        [ForeignKey(typeof(Subscriber))]
-        public int SubscriberID { get; set; }
-        [ForeignKey(typeof(Coach))]
-        public int CoachId { get; set; }
-        [ForeignKey(typeof(SubscribtionPrice))]
-        public int SubscribtionTypeID { get; set; }
-
-    }
-
+     
+    //მწვრთნელი
     public class Coach
     {
         [PrimaryKey, AutoIncrement]
@@ -136,6 +118,7 @@ namespace SPSQLite
         public string LastName { get; set; }
     }
 
+    //ექიმი
     public class Doctor
     {
         [PrimaryKey, AutoIncrement]
@@ -144,6 +127,20 @@ namespace SPSQLite
         public string LastName { get; set; }
     }
 
+    //ჯანმრთელობის ცნობა
+    public class HealthNotice
+    {
+
+        [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+        public DateTime DateCreated { get; set; }
+        public string CurrencyName { get; set; }
+        [ForeignKey(typeof(Subscriber))]   //ForeignKey_ს დამატება SqliteExtensions nuget-ით
+        public int AbonentId { get; set; }
+
+    }
+
+    //ფასი და საათი
     public class SubscribtionPrice
     {
         [PrimaryKey, AutoIncrement]
@@ -152,15 +149,15 @@ namespace SPSQLite
         public double Price { get; set; }
     }
 
-    public class SubscriptionSchedule
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public DateTime Schedule { get; set; }
-        [ForeignKey(typeof(Subscription))]
-        public int SubscribtionID { get; set; }
+    //public class SubscriptionSchedule
+    //{
+    //    [PrimaryKey, AutoIncrement]
+    //    public int Id { get; set; }
+    //    public DateTime Schedule { get; set; }
+    //    [ForeignKey(typeof(Subscription))]
+    //    public int SubscribtionID { get; set; }
 
 
-    }
+    //}
 
 }
