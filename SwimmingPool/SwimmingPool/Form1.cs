@@ -19,7 +19,7 @@ namespace SwimmingPool
         public Form1()
         {
             InitializeComponent();
-            
+
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -41,5 +41,39 @@ namespace SwimmingPool
             mcvrtnelieqimi ME = new mcvrtnelieqimi();
             ME.ShowDialog();
         }
+
+
+
+
+      
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            string textboxText = textBox1.Text.ToString();
+            int RowIndex = 0;
+
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+            {
+                for (int i = 0; i <= 6; i++)
+                {
+                    // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
+                    if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Equals(textboxText) ||
+                        row.Cells[2].Value.ToString().Equals(textboxText) || row.Cells[3].Value.ToString().Equals(textboxText) ||
+                        row.Cells[4].Value.ToString().Equals(textboxText) || row.Cells[5].Value.ToString().Equals(textboxText))
+                    {
+                        RowIndex = row.Index;
+                        break;
+
+
+                    }
+                }
+
+
+            }
+            dataGridView1.Rows[RowIndex].Selected = true;
+
+        }
     }
 }
+
+

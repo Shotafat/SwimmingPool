@@ -23,6 +23,7 @@ namespace SPSQLite
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, Coach>();
             Conn.CreateTables<SubscribtionPrice, SubscriptionSchedule, Doctor>();
+            
             }
 
         //Abonent 
@@ -77,8 +78,7 @@ namespace SPSQLite
         }
 
 
-
-
+      
 
     }
 
@@ -110,6 +110,9 @@ namespace SPSQLite
 
 
     }
+
+   
+
     //აბონიმენტი
     public class Subscription
     {

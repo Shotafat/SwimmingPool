@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.coachBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.cnobis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnoba_chabtarigi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cnoba_cnoba = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
             this.gadasaxadis_saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -49,36 +49,36 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.subscriberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnobis_nomeri = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnoba_chabtarigi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cnoba_cnoba = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.coachBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.subscriberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coachBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.groupBox6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coachBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,8 +96,10 @@
             // 
             // dataGridView1
             // 
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -110,15 +112,12 @@
             this.dataGridView1.DataSource = this.subscriberBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(815, 430);
             this.dataGridView1.TabIndex = 0;
-            // 
-            // subscriberBindingSource
-            // 
-            this.subscriberBindingSource.DataSource = typeof(SPSQLite.Subscriber);
             // 
             // groupBox2
             // 
@@ -147,10 +146,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(394, 153);
             this.dataGridView2.TabIndex = 0;
             // 
-            // coachBindingSource
-            // 
-            this.coachBindingSource.DataSource = typeof(SPSQLite.Coach);
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.dataGridView3);
@@ -178,10 +173,6 @@
             this.dataGridView3.Size = new System.Drawing.Size(396, 153);
             this.dataGridView3.TabIndex = 0;
             // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataSource = typeof(SPSQLite.Doctor);
-            // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.dataGridView4);
@@ -206,6 +197,23 @@
             this.dataGridView4.Name = "dataGridView4";
             this.dataGridView4.Size = new System.Drawing.Size(295, 153);
             this.dataGridView4.TabIndex = 0;
+            // 
+            // cnobis_nomeri
+            // 
+            this.cnobis_nomeri.HeaderText = "ნომერი";
+            this.cnobis_nomeri.Name = "cnobis_nomeri";
+            this.cnobis_nomeri.Width = 80;
+            // 
+            // cnoba_chabtarigi
+            // 
+            this.cnoba_chabtarigi.HeaderText = "ჩაბარების თარიღი";
+            this.cnoba_chabtarigi.Name = "cnoba_chabtarigi";
+            // 
+            // cnoba_cnoba
+            // 
+            this.cnoba_cnoba.HeaderText = "ცნობა";
+            this.cnoba_cnoba.Name = "cnoba_cnoba";
+            this.cnoba_cnoba.Width = 70;
             // 
             // groupBox5
             // 
@@ -255,10 +263,11 @@
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(45, 41);
+            this.textBox1.Location = new System.Drawing.Point(45, 43);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 27);
             this.textBox1.TabIndex = 0;
+            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -286,9 +295,28 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // subscriberBindingSource1
+            // idDataGridViewTextBoxColumn2
             // 
-            this.subscriberBindingSource1.DataSource = typeof(SPSQLite.Subscriber);
+            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn2.HeaderText = "ნომერი";
+            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
+            this.idDataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // nameDataGridViewTextBoxColumn2
+            // 
+            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn2.HeaderText = "სახელი";
+            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
+            // 
+            // lastNameDataGridViewTextBoxColumn2
+            // 
+            this.lastNameDataGridViewTextBoxColumn2.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn2.HeaderText = "გვარი";
+            this.lastNameDataGridViewTextBoxColumn2.Name = "lastNameDataGridViewTextBoxColumn2";
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataSource = typeof(SPSQLite.Doctor);
             // 
             // idDataGridViewTextBoxColumn1
             // 
@@ -309,41 +337,9 @@
             this.lastNameDataGridViewTextBoxColumn1.Name = "lastNameDataGridViewTextBoxColumn1";
             this.lastNameDataGridViewTextBoxColumn1.Width = 150;
             // 
-            // idDataGridViewTextBoxColumn2
+            // coachBindingSource
             // 
-            this.idDataGridViewTextBoxColumn2.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn2.HeaderText = "ნომერი";
-            this.idDataGridViewTextBoxColumn2.Name = "idDataGridViewTextBoxColumn2";
-            this.idDataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // nameDataGridViewTextBoxColumn2
-            // 
-            this.nameDataGridViewTextBoxColumn2.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn2.HeaderText = "სახელი";
-            this.nameDataGridViewTextBoxColumn2.Name = "nameDataGridViewTextBoxColumn2";
-            // 
-            // lastNameDataGridViewTextBoxColumn2
-            // 
-            this.lastNameDataGridViewTextBoxColumn2.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn2.HeaderText = "გვარი";
-            this.lastNameDataGridViewTextBoxColumn2.Name = "lastNameDataGridViewTextBoxColumn2";
-            // 
-            // cnobis_nomeri
-            // 
-            this.cnobis_nomeri.HeaderText = "ნომერი";
-            this.cnobis_nomeri.Name = "cnobis_nomeri";
-            this.cnobis_nomeri.Width = 80;
-            // 
-            // cnoba_chabtarigi
-            // 
-            this.cnoba_chabtarigi.HeaderText = "ჩაბარების თარიღი";
-            this.cnoba_chabtarigi.Name = "cnoba_chabtarigi";
-            // 
-            // cnoba_cnoba
-            // 
-            this.cnoba_cnoba.HeaderText = "ცნობა";
-            this.cnoba_cnoba.Name = "cnoba_cnoba";
-            this.cnoba_cnoba.Width = 70;
+            this.coachBindingSource.DataSource = typeof(SPSQLite.Coach);
             // 
             // idDataGridViewTextBoxColumn
             // 
@@ -391,6 +387,14 @@
             this.dateOfBirthDataGridViewTextBoxColumn.ReadOnly = true;
             this.dateOfBirthDataGridViewTextBoxColumn.Width = 110;
             // 
+            // subscriberBindingSource
+            // 
+            this.subscriberBindingSource.DataSource = typeof(SPSQLite.Subscriber);
+            // 
+            // subscriberBindingSource1
+            // 
+            this.subscriberBindingSource1.DataSource = typeof(SPSQLite.Subscriber);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -411,19 +415,19 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.coachBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.coachBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
