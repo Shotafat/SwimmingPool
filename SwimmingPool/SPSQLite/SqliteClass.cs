@@ -35,7 +35,7 @@ namespace SPSQLite
         {
 
           Conn.Insert(new Subscriber { Name = name, LastName = lastname, PhoneNumber = phonenumber, Address = adress, DateOfBirth = dateofbirth });
-            isCreated = true;
+ 
 
         }
         public  static List<Subscriber> GetAbonentSource()
