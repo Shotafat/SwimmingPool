@@ -35,12 +35,11 @@ namespace SPSQLite
         }
 
         //Abonent 
-        private static bool isCreated = false;
-
+       
         public static void insertAbonent(string name , string lastname , string phonenumber, string adress , string dateofbirth)
         {
             Conn.Insert(new Subscriber { Name = name, LastName = lastname, PhoneNumber = phonenumber, Address = adress, DateOfBirth = dateofbirth });
-            var Subscriberindex = Conn.Table<Subscriber>().ToList().FindLastIndex(u=>u.Name==name);
+           
             
         }
         public  static List<Subscriber> GetAbonentSource()
@@ -52,7 +51,7 @@ namespace SPSQLite
         {
 
             Conn.Insert(new Coach {  Name = name, LastName = lastname });
-            var Coachindex = Conn.Table<Subscriber>().ToList().FindLastIndex(u => u.Name == name);
+            
         }
         public static List<Coach> GetCoachesSource()
         {
@@ -64,7 +63,7 @@ namespace SPSQLite
         public static void insertDoctor ( string name , string lastname )
         {
             Conn.Insert(new Doctor {Name = name, LastName = lastname });
-            var Doctorindex = Conn.Table<Subscriber>().ToList().FindLastIndex(u => u.Name == name);
+            
         }
         public static List<Doctor> GetDoctorSource ( )
         {
@@ -75,7 +74,7 @@ namespace SPSQLite
         public static void insertSubscribtionPrice(int saaTebisraodenoa, double fasi)
         {
             Conn.Insert(new SubscribtionPrice { NumberOfHours=saaTebisraodenoa, Price=fasi  });
-            var SubscribtionPriceindex = Conn.Table<SubscribtionPrice>().ToList().FindLastIndex(u => u.NumberOfHours == saaTebisraodenoa);
+    
         }
         public static List<SubscribtionPrice> GetSubscribtionPrice()
         {
@@ -83,12 +82,57 @@ namespace SPSQLite
         }
 
 
-        //public static void index()
-        //{
-        //    Conn.Insert(new Subscription { SubscriberID = Subscriberindex,
-        //                                   CoachId = Coachindex, DoctorID = Doctorindex,
-        //                                   SubscribtionTypeID = SubscribtionPriceindex });
-        //}
+        //Health Notice 
+
+            //insert
+        public static void InsertHealthNotice(DateTime DateCreated , string CurrencyName , int AbonentID)
+        {
+            Conn.Insert(new HealthNotice { AbonentId = AbonentID, CurrencyName = CurrencyName, DateCreated = DateCreated });
+        }
+
+        //GetSource
+        public static List<HealthNotice> GetHealthNotice()
+        {
+            return Conn.Table<HealthNotice>().ToList();
+        }
+
+        //Edit
+
+        //Delete
+
+      
+
+        //SubscriptionShedule
+
+        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID) //insert
+        {
+
+            Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscribtionID = SubscriptionID });
+
+        }
+
+        public static  List<SubscriptionSchedule> GetSheduleSource() //getsource
+        {
+
+            return Conn.Table<SubscriptionSchedule>().ToList();
+        }
+
+
+        //aboniment 
+
+        public static void InsertSubscription(int SubscriberID, int CoachID, int DoctorID, int SubscriptionTypeID) //insert
+        {
+            Conn.Insert(new Subscription { CoachId = CoachID, SubscriberID = SubscriberID, DoctorID = DoctorID, SubscribtionTypeID = SubscriptionTypeID });
+        }
+
+        public static List<Subscription> GetSubscriptions()  //get source 
+        {
+
+
+            return Conn.Table<Subscription>().ToList();
+        }
+
+       
     }
     
     //აბონიმენტი
@@ -163,15 +207,15 @@ namespace SPSQLite
         public double Price { get; set; }
     }
 
-    //public class SubscriptionSchedule
-    //{
-    //    [PrimaryKey, AutoIncrement]
-    //    public int Id { get; set; }
-    //    public DateTime Schedule { get; set; }
-    //    [ForeignKey(typeof(Subscription))]
-    //    public int SubscribtionID { get; set; }
+    public class SubscriptionSchedule
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public DateTime Schedule { get; set; }
+        [ForeignKey(typeof(Subscription))]
+        public int SubscribtionID { get; set; }
 
 
-    //}
+    }
 
 }

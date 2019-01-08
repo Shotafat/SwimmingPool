@@ -7,7 +7,7 @@ namespace SPSQLite
    public interface IHealthNotice
     {
          int ID{ get; set; }
-         string DateCreated { get; set; }
+         DateTime DateCreated { get; set; }
          string CurrencyName { get; set; }
          int AbonentId { get; set; }
     }

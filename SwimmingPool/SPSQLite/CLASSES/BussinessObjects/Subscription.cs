@@ -10,5 +10,6 @@ namespace SPSQLite.CLASSES
         public int SubscriberID { get ; set; }
         public int DoctorID { get; set; }
         public int SubscribtionTypeID { get ; set ; }
+        public int CoachID { get ; set ; }
     }
 }

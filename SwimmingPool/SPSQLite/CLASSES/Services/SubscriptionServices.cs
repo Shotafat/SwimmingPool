@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace SPSQLite.CLASSES
 {
@@ -9,7 +10,7 @@ namespace SPSQLite.CLASSES
        
         public void Add(ISubscription a)
         {
-         
+            DatabaseConnection.InsertSubscription(a.SubscriberID, a.CoachID, a.DoctorID, a.SubscribtionTypeID);
         }
 
 
@@ -27,7 +28,9 @@ namespace SPSQLite.CLASSES
       
         IList<ISubscription> ISubscriptionServices.GetData()
         {
-          
+          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { CoachID = a.CoachId, DoctorID = a.DoctorID, SubscriberID = a.SubscriberID, SubscribtionTypeID = a.SubscribtionTypeID }).ToList<ISubscription>();
+
+            return list;
         }
     }
 }

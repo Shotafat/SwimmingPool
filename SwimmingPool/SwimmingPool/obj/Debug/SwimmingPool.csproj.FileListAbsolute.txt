@@ -1235,3 +1235,4 @@ C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\Swimming
 C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
+C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.eqimi.resources
