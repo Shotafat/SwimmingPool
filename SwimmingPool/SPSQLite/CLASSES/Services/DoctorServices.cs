@@ -14,12 +14,12 @@ namespace SPSQLite.CLASSES
 
         public void Delete(IDoctor a)
         {
-            throw new NotImplementedException();
+            DatabaseConnection.DeleteDoctor(a);
         }
 
         public void Edit(IDoctor a)
         {
-            throw new NotImplementedException();
+            DatabaseConnection.EditDoctor(a);
         }
 
         public IList<IDoctor> GetData()

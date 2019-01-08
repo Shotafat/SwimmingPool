@@ -14,12 +14,12 @@ namespace SPSQLite.CLASSES
 
         public void Delete(ISubscriptionPrice a)
         {
-            
+            DatabaseConnection.DeleteSubscriptionPrice(a);
         }
 
         public void Edit(ISubscriptionPrice a)
         {
-           
+            DatabaseConnection.EditSubscriptionPrice(a);
         }
 
         public IList<ISubscriptionPrice> GetData()

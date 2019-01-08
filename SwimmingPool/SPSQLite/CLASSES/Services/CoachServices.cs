@@ -19,12 +19,15 @@ namespace SPSQLite.CLASSES
 
         public void Delete(ICoach a)
         {
+            DatabaseConnection.DeleteCoach(a);
            
         }
 
        
         public void Edit(ICoach a)
         {
+            DatabaseConnection.EditCoach(a);
+
            
         }
 

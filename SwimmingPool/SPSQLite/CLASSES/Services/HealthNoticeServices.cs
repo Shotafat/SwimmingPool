@@ -14,12 +14,12 @@ namespace SPSQLite.CLASSES
 
         public void Delete(IHealthNotice a)
         {
-           
+            DatabaseConnection.DeleteHealthNotice(a);
         }
 
         public void Edit(IHealthNotice a)
         {
-           
+            DatabaseConnection.EditHealthNotice(a);
         }
 
         public IList<IHealthNotice> GetData()

@@ -10,6 +10,7 @@ using SQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
 using System.Reflection;
+using SPSQLite.INTERFACES;
 
 //using System.Windows.Forms;
 
@@ -42,17 +43,75 @@ namespace SPSQLite
            
             
         }
+
+        //Delete Abonent 
+
+        public static void DeleteAbonent (ISubscriber subscriber)
+        {
+            Conn.Delete(Conn.Table<Subscriber>().FirstOrDefault(a => a.Id == subscriber.ID));
+        }
+
+        //Edit Abonent 
+
+         public static void EditAbonent ( ISubscriber subscriber)
+        {
+            var abonent = Conn.Table<Subscriber>().Where(a => a.Id == subscriber.ID).SingleOrDefault();
+            if ( abonent!=null)
+            {
+                abonent.Name = subscriber.Name;
+                abonent.LastName = subscriber.LastName;
+                abonent.PhoneNumber = subscriber.PhoneNumber;
+                abonent.DateOfBirth = subscriber.DateOfBirth;
+                abonent.Address = subscriber.Adress;
+
+                Conn.Update(abonent);
+            }
+        }
+
+        // get Abonents source
+        
         public  static List<Subscriber> GetAbonentSource()
         {
             return Conn.Table<Subscriber>().ToList();
         }
-        //coach 
+
+        //insert coach 
+
         public static void insertCoach(  string name, string lastname)
         {
 
             Conn.Insert(new Coach {  Name = name, LastName = lastname });
             
         }
+
+        // delete Coach
+
+        public static void DeleteCoach(ICoach coach)
+        {
+            Conn.Delete(Conn.Table<Coach>().FirstOrDefault(a => a.Id == coach.ID));
+
+        }
+
+        // Edit Coach 
+
+         public static void EditCoach ( ICoach coach)
+        {
+
+            var coaches = Conn.Table<Coach>().Where(a => a.Id == coach.ID).SingleOrDefault();
+
+            if ( coaches!=null)
+            {
+
+                coaches.Name = coach.Name;
+                coaches.LastName = coach.LastName;
+
+                Conn.Update(coaches);
+            }
+
+        }
+
+        // get coach source
+
         public static List<Coach> GetCoachesSource()
         {
             return Conn.Table<Coach>().ToList();
@@ -65,67 +124,191 @@ namespace SPSQLite
             Conn.Insert(new Doctor {Name = name, LastName = lastname });
             
         }
+
+        // delete doctor 
+
+        public static void DeleteDoctor ( IDoctor doctor)
+        {
+
+            Conn.Delete(Conn.Table<Doctor>().FirstOrDefault(a => a.Id == doctor.ID));
+        }
+
+        // Edit Doctor
+
+        public static void EditDoctor ( IDoctor doctor)
+        {
+            var Doctor = Conn.Table<Doctor>().Where(a => a.Id == doctor.ID).SingleOrDefault();
+            if ( Doctor!= null )
+            {
+                Doctor.Name = doctor.Name;
+                Doctor.LastName = doctor.LastName;
+
+                Conn.Update(Doctor);
+
+            }
+            
+        }
+
+        // get doctor Source
+
         public static List<Doctor> GetDoctorSource ( )
         {
             return Conn.Table<Doctor>().ToList();
         }
 
-        //fasi da saati
+        //insert Subscription Price
+
         public static void insertSubscribtionPrice(int saaTebisraodenoa, double fasi)
         {
             Conn.Insert(new SubscribtionPrice { NumberOfHours=saaTebisraodenoa, Price=fasi  });
     
         }
+
+        // Delete subscription Price 
+
+        public static void DeleteSubscriptionPrice ( ISubscriptionPrice sub )
+        {
+            Conn.Delete(Conn.Table<SubscribtionPrice>().FirstOrDefault(a => a.Id == sub.ID));
+
+        }
+
+        // Edit Subscription Price 
+
+         public static void EditSubscriptionPrice ( ISubscriptionPrice price )
+            {
+
+            var SubPrice = Conn.Table<SubscribtionPrice>().Where(a => a.Id == price.ID).SingleOrDefault();
+
+            if ( SubPrice!=null)
+            {
+
+                SubPrice.NumberOfHours = price.NumberOfHours;
+                SubPrice.Price = price.Price;
+
+                Conn.Update(SubPrice);
+            }
+
+           }
+
+        //Get subscription Price Source
+
         public static List<SubscribtionPrice> GetSubscribtionPrice()
         {
             return Conn.Table<SubscribtionPrice>().ToList();
         }
 
+        //insert HealthNotice
 
-        //Health Notice 
-
-            //insert
         public static void InsertHealthNotice(DateTime DateCreated , string CurrencyName , int AbonentID)
         {
             Conn.Insert(new HealthNotice { AbonentId = AbonentID, CurrencyName = CurrencyName, DateCreated = DateCreated });
         }
 
-        //GetSource
+        //Delete HealthNotice
+
+        public static void DeleteHealthNotice ( IHealthNotice healthNotice)
+        {
+            Conn.Delete(Conn.Table<HealthNotice>().FirstOrDefault(a => a.id == healthNotice.ID));
+        }
+
+        //Edit Health Notice 
+
+        public static void EditHealthNotice ( IHealthNotice health)
+        {
+            var Health = Conn.Table<HealthNotice>().Where(a => a.id == health.ID).SingleOrDefault();
+            if ( Health!=null)
+            {
+                Health.AbonentId = health.AbonentId;
+                Health.CurrencyName = health.CurrencyName;
+                Health.DateCreated = health.DateCreated;
+                Conn.Update(Health);
+            }
+        }
+
+        // get Health Notice Source 
+
         public static List<HealthNotice> GetHealthNotice()
         {
             return Conn.Table<HealthNotice>().ToList();
         }
+  
 
-        //Edit
+        // Insert Subscription Shedule
 
-        //Delete
-
-      
-
-        //SubscriptionShedule
-
-        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID) //insert
+        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID) 
         {
 
             Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscribtionID = SubscriptionID });
 
         }
 
-        public static  List<SubscriptionSchedule> GetSheduleSource() //getsource
+        // Delete Subscription Shedule
+
+         public static void DeleteSubscriptionShedule(ISubscriptionSchedule sub)
+        {
+            Conn.Delete(Conn.Table<SubscriptionSchedule>().FirstOrDefault(a => a.Id == sub.ID));
+
+        }
+
+        // Edit Subscription Schedule 
+
+         public static void EditSubscriptionSchedule (ISubscriptionSchedule Schedule)
+        {
+            var Schedules = Conn.Table<SubscriptionSchedule>().Where(a => a.Id == Schedule.ID).SingleOrDefault();
+            if(Schedules !=null)
+            {
+                Schedules.Schedule = Schedule.Schedule;
+                Schedules.SubscribtionID = Schedule.SubscribtionID;
+                Conn.Update(Schedules);
+
+            }
+
+        }
+
+        // Get Subscription Shedule Source 
+        public static  List<SubscriptionSchedule> GetSheduleSource() 
         {
 
             return Conn.Table<SubscriptionSchedule>().ToList();
         }
 
 
-        //aboniment 
+        // Insert Subscription 
 
-        public static void InsertSubscription(int SubscriberID, int CoachID, int DoctorID, int SubscriptionTypeID) //insert
+        public static void InsertSubscription(int SubscriberID, int CoachID, int DoctorID, int SubscriptionTypeID) 
         {
+
             Conn.Insert(new Subscription { CoachId = CoachID, SubscriberID = SubscriberID, DoctorID = DoctorID, SubscribtionTypeID = SubscriptionTypeID });
+
         }
 
-        public static List<Subscription> GetSubscriptions()  //get source 
+        // Delete Subscription 
+
+        public static void DeleteSubscription(ISubscription sub )
+        {
+
+            Conn.Delete(Conn.Table<Subscription>().FirstOrDefault(a => a.Id == sub.ID));
+        }
+
+        // Edit Subscription 
+
+        public static void EditSubscription( ISubscription subscription)
+        {
+            var Subscription = Conn.Table<Subscription>().Where(a => a.Id == subscription.ID).SingleOrDefault();
+            if (Subscription!=null)
+            {
+                Subscription.DoctorID = subscription.DoctorID;
+                Subscription.CoachId = subscription.CoachID;
+                Subscription.SubscriberID = subscription.SubscriberID;
+                Subscription.SubscribtionTypeID = subscription.SubscribtionTypeID;
+                Conn.Update(Subscription);
+            }
+            
+        }
+
+        // Get Subscription Source
+
+        public static List<Subscription> GetSubscriptions()  
         {
 
 

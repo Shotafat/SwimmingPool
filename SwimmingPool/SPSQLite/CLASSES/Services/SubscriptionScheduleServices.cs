@@ -17,14 +17,14 @@ namespace SPSQLite.CLASSES
        
         public void Delete(ISubscriptionSchedule a)
         {
-           
+            DatabaseConnection.DeleteSubscriptionShedule(a);
         }
 
       
 
         public void Edit(ISubscriptionSchedule a)
         {
-           
+            DatabaseConnection.EditSubscriptionSchedule(a);
         }
 
       
