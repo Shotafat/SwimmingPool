@@ -65,6 +65,37 @@
             this.dateOfBirthDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subscriberBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.აბონენტისდამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.მწვრთნელისდამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.მწვრთნელიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.დამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.abonenti = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.დამატებაToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.აბონენტისრედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eqimi = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cnoba = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.mwvrtneli = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.gadasaxadi = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ექიმისდამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.დამატებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.დამატებაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.დამატებაToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -80,6 +111,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.coachBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource1)).BeginInit();
+            this.groupBox7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            this.abonenti.SuspendLayout();
+            this.eqimi.SuspendLayout();
+            this.cnoba.SuspendLayout();
+            this.mwvrtneli.SuspendLayout();
+            this.gadasaxadi.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -87,12 +126,12 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.Red;
-            this.groupBox1.Location = new System.Drawing.Point(7, 12);
+            this.groupBox1.Location = new System.Drawing.Point(3, 27);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(821, 456);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "აბონემენტი";
+            this.groupBox1.Text = "აბონენტი";
             // 
             // dataGridView1
             // 
@@ -109,6 +148,7 @@
             this.phoneNumberDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn,
             this.dateOfBirthDataGridViewTextBoxColumn});
+            this.dataGridView1.ContextMenuStrip = this.abonenti;
             this.dataGridView1.DataSource = this.subscriberBindingSource;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
@@ -123,11 +163,12 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.dataGridView2);
+            this.groupBox2.Controls.Add(this.groupBox7);
             this.groupBox2.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.Red;
-            this.groupBox2.Location = new System.Drawing.Point(7, 474);
+            this.groupBox2.Location = new System.Drawing.Point(3, 489);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(400, 179);
+            this.groupBox2.Size = new System.Drawing.Size(400, 198);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "მწვრთნელი";
@@ -140,11 +181,12 @@
             this.idDataGridViewTextBoxColumn1,
             this.nameDataGridViewTextBoxColumn1,
             this.lastNameDataGridViewTextBoxColumn1});
+            this.dataGridView2.ContextMenuStrip = this.mwvrtneli;
             this.dataGridView2.DataSource = this.coachBindingSource;
             this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView2.Location = new System.Drawing.Point(3, 23);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(394, 153);
+            this.dataGridView2.Size = new System.Drawing.Size(394, 172);
             this.dataGridView2.TabIndex = 0;
             // 
             // groupBox3
@@ -152,9 +194,9 @@
             this.groupBox3.Controls.Add(this.dataGridView3);
             this.groupBox3.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.ForeColor = System.Drawing.Color.Red;
-            this.groupBox3.Location = new System.Drawing.Point(413, 474);
+            this.groupBox3.Location = new System.Drawing.Point(409, 489);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(402, 179);
+            this.groupBox3.Size = new System.Drawing.Size(402, 198);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "ექიმი";
@@ -167,11 +209,12 @@
             this.idDataGridViewTextBoxColumn2,
             this.nameDataGridViewTextBoxColumn2,
             this.lastNameDataGridViewTextBoxColumn2});
+            this.dataGridView3.ContextMenuStrip = this.eqimi;
             this.dataGridView3.DataSource = this.doctorBindingSource;
             this.dataGridView3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView3.Location = new System.Drawing.Point(3, 23);
             this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.Size = new System.Drawing.Size(396, 153);
+            this.dataGridView3.Size = new System.Drawing.Size(396, 172);
             this.dataGridView3.TabIndex = 0;
             // 
             // groupBox4
@@ -179,9 +222,9 @@
             this.groupBox4.Controls.Add(this.dataGridView4);
             this.groupBox4.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox4.ForeColor = System.Drawing.Color.Red;
-            this.groupBox4.Location = new System.Drawing.Point(821, 474);
+            this.groupBox4.Location = new System.Drawing.Point(817, 489);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(301, 179);
+            this.groupBox4.Size = new System.Drawing.Size(301, 198);
             this.groupBox4.TabIndex = 6;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "ცნობა";
@@ -193,10 +236,11 @@
             this.cnobis_nomeri,
             this.cnoba_chabtarigi,
             this.cnoba_cnoba});
+            this.dataGridView4.ContextMenuStrip = this.cnoba;
             this.dataGridView4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView4.Location = new System.Drawing.Point(3, 23);
             this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.Size = new System.Drawing.Size(295, 153);
+            this.dataGridView4.Size = new System.Drawing.Size(295, 172);
             this.dataGridView4.TabIndex = 0;
             // 
             // cnobis_nomeri
@@ -221,7 +265,7 @@
             this.groupBox5.Controls.Add(this.dataGridView5);
             this.groupBox5.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox5.ForeColor = System.Drawing.Color.Red;
-            this.groupBox5.Location = new System.Drawing.Point(834, 289);
+            this.groupBox5.Location = new System.Drawing.Point(830, 301);
             this.groupBox5.Name = "groupBox5";
             this.groupBox5.Size = new System.Drawing.Size(255, 179);
             this.groupBox5.TabIndex = 7;
@@ -234,6 +278,7 @@
             this.dataGridView5.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.gadasaxadis_saati,
             this.gadasaxadis_fasi});
+            this.dataGridView5.ContextMenuStrip = this.gadasaxadi;
             this.dataGridView5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView5.Location = new System.Drawing.Point(3, 23);
             this.dataGridView5.Name = "dataGridView5";
@@ -255,7 +300,7 @@
             this.groupBox6.Controls.Add(this.textBox1);
             this.groupBox6.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox6.ForeColor = System.Drawing.Color.Red;
-            this.groupBox6.Location = new System.Drawing.Point(834, 12);
+            this.groupBox6.Location = new System.Drawing.Point(827, 69);
             this.groupBox6.Name = "groupBox6";
             this.groupBox6.Size = new System.Drawing.Size(204, 108);
             this.groupBox6.TabIndex = 3;
@@ -275,26 +320,24 @@
             this.button1.BackColor = System.Drawing.Color.SlateGray;
             this.button1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
-            this.button1.Location = new System.Drawing.Point(834, 126);
+            this.button1.Location = new System.Drawing.Point(827, 183);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(158, 76);
             this.button1.TabIndex = 0;
             this.button1.Text = "აბონენტის დამატება";
             this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.SlateGray;
             this.button2.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.Snow;
-            this.button2.Location = new System.Drawing.Point(834, 207);
+            this.button2.Location = new System.Drawing.Point(1003, 183);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(158, 76);
             this.button2.TabIndex = 1;
             this.button2.Text = "ექიმის და მწვრთნელის დამატება";
             this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // idDataGridViewTextBoxColumn2
             // 
@@ -396,11 +439,235 @@
             // 
             this.subscriberBindingSource1.DataSource = typeof(SPSQLite.Subscriber);
             // 
+            // groupBox7
+            // 
+            this.groupBox7.Controls.Add(this.dataGridView6);
+            this.groupBox7.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox7.ForeColor = System.Drawing.Color.Red;
+            this.groupBox7.Location = new System.Drawing.Point(406, 0);
+            this.groupBox7.Name = "groupBox7";
+            this.groupBox7.Size = new System.Drawing.Size(402, 249);
+            this.groupBox7.TabIndex = 5;
+            this.groupBox7.TabStop = false;
+            this.groupBox7.Text = "ექიმი";
+            // 
+            // dataGridView6
+            // 
+            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView6.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView6.Name = "dataGridView6";
+            this.dataGridView6.Size = new System.Drawing.Size(396, 119);
+            this.dataGridView6.TabIndex = 0;
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.აბონენტისდამატებაToolStripMenuItem,
+            this.მწვრთნელიToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1161, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // აბონენტისდამატებაToolStripMenuItem
+            // 
+            this.აბონენტისდამატებაToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.მწვრთნელისდამატებაToolStripMenuItem,
+            this.წაშლაToolStripMenuItem,
+            this.რედაქტირებაToolStripMenuItem});
+            this.აბონენტისდამატებაToolStripMenuItem.Name = "აბონენტისდამატებაToolStripMenuItem";
+            this.აბონენტისდამატებაToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.აბონენტისდამატებაToolStripMenuItem.Text = "აბონენტი";
+            // 
+            // მწვრთნელისდამატებაToolStripMenuItem
+            // 
+            this.მწვრთნელისდამატებაToolStripMenuItem.Name = "მწვრთნელისდამატებაToolStripMenuItem";
+            this.მწვრთნელისდამატებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.მწვრთნელისდამატებაToolStripMenuItem.Text = "დამატება";
+            // 
+            // წაშლაToolStripMenuItem
+            // 
+            this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
+            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.წაშლაToolStripMenuItem.Text = "წაშლა";
+            // 
+            // რედაქტირებაToolStripMenuItem
+            // 
+            this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
+            // 
+            // მწვრთნელიToolStripMenuItem
+            // 
+            this.მწვრთნელიToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem,
+            this.წაშლაToolStripMenuItem1,
+            this.რედაქტირებაToolStripMenuItem1});
+            this.მწვრთნელიToolStripMenuItem.Name = "მწვრთნელიToolStripMenuItem";
+            this.მწვრთნელიToolStripMenuItem.Size = new System.Drawing.Size(93, 20);
+            this.მწვრთნელიToolStripMenuItem.Text = "მწვრთნელი";
+            // 
+            // დამატებაToolStripMenuItem
+            // 
+            this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.დამატებაToolStripMenuItem.Text = "დამატება";
+            // 
+            // წაშლაToolStripMenuItem1
+            // 
+            this.წაშლაToolStripMenuItem1.Name = "წაშლაToolStripMenuItem1";
+            this.წაშლაToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.წაშლაToolStripMenuItem1.Text = "წაშლა";
+            // 
+            // რედაქტირებაToolStripMenuItem1
+            // 
+            this.რედაქტირებაToolStripMenuItem1.Name = "რედაქტირებაToolStripMenuItem1";
+            this.რედაქტირებაToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.რედაქტირებაToolStripMenuItem1.Text = "რედაქტირება";
+            // 
+            // abonenti
+            // 
+            this.abonenti.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem1,
+            this.წაშლაToolStripMenuItem2,
+            this.აბონენტისრედაქტირებაToolStripMenuItem});
+            this.abonenti.Name = "abonenti";
+            this.abonenti.Size = new System.Drawing.Size(157, 70);
+            this.abonenti.Text = "abonenti";
+            // 
+            // დამატებაToolStripMenuItem1
+            // 
+            this.დამატებაToolStripMenuItem1.Name = "დამატებაToolStripMenuItem1";
+            this.დამატებაToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem1.Text = "დამატება";
+            this.დამატებაToolStripMenuItem1.Click += new System.EventHandler(this.დამატებაToolStripMenuItem1_Click);
+            // 
+            // წაშლაToolStripMenuItem2
+            // 
+            this.წაშლაToolStripMenuItem2.Name = "წაშლაToolStripMenuItem2";
+            this.წაშლაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem2.Text = "რედაქტირება";
+            // 
+            // აბონენტისრედაქტირებაToolStripMenuItem
+            // 
+            this.აბონენტისრედაქტირებაToolStripMenuItem.Name = "აბონენტისრედაქტირებაToolStripMenuItem";
+            this.აბონენტისრედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.აბონენტისრედაქტირებაToolStripMenuItem.Text = "წაშლა";
+            // 
+            // eqimi
+            // 
+            this.eqimi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ექიმისდამატებაToolStripMenuItem,
+            this.წაშლაToolStripMenuItem3,
+            this.რედაქტირებაToolStripMenuItem2});
+            this.eqimi.Name = "eqimi";
+            this.eqimi.Size = new System.Drawing.Size(181, 92);
+            // 
+            // cnoba
+            // 
+            this.cnoba.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem3,
+            this.რედაქტირებაToolStripMenuItem4,
+            this.წაშლაToolStripMenuItem5});
+            this.cnoba.Name = "cnoba";
+            this.cnoba.Size = new System.Drawing.Size(157, 70);
+            // 
+            // mwvrtneli
+            // 
+            this.mwvrtneli.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem2,
+            this.რედაქტირებაToolStripMenuItem3,
+            this.წაშლაToolStripMenuItem4});
+            this.mwvrtneli.Name = "mwvrtneli";
+            this.mwvrtneli.Size = new System.Drawing.Size(157, 70);
+            // 
+            // gadasaxadi
+            // 
+            this.gadasaxadi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem4,
+            this.რედაქტირებაToolStripMenuItem5,
+            this.წაშლაToolStripMenuItem6});
+            this.gadasaxadi.Name = "gadasaxadi";
+            this.gadasaxadi.Size = new System.Drawing.Size(157, 70);
+            // 
+            // ექიმისდამატებაToolStripMenuItem
+            // 
+            this.ექიმისდამატებაToolStripMenuItem.Name = "ექიმისდამატებაToolStripMenuItem";
+            this.ექიმისდამატებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ექიმისდამატებაToolStripMenuItem.Text = "დამატება";
+            // 
+            // წაშლაToolStripMenuItem3
+            // 
+            this.წაშლაToolStripMenuItem3.Name = "წაშლაToolStripMenuItem3";
+            this.წაშლაToolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.წაშლაToolStripMenuItem3.Text = "რედაქტირება";
+            // 
+            // რედაქტირებაToolStripMenuItem2
+            // 
+            this.რედაქტირებაToolStripMenuItem2.Name = "რედაქტირებაToolStripMenuItem2";
+            this.რედაქტირებაToolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.რედაქტირებაToolStripMenuItem2.Text = "წაშლა";
+            // 
+            // დამატებაToolStripMenuItem2
+            // 
+            this.დამატებაToolStripMenuItem2.Name = "დამატებაToolStripMenuItem2";
+            this.დამატებაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem2.Text = "დამატება";
+            // 
+            // რედაქტირებაToolStripMenuItem3
+            // 
+            this.რედაქტირებაToolStripMenuItem3.Name = "რედაქტირებაToolStripMenuItem3";
+            this.რედაქტირებაToolStripMenuItem3.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem3.Text = "რედაქტირება";
+            // 
+            // წაშლაToolStripMenuItem4
+            // 
+            this.წაშლაToolStripMenuItem4.Name = "წაშლაToolStripMenuItem4";
+            this.წაშლაToolStripMenuItem4.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem4.Text = "წაშლა";
+            // 
+            // დამატებაToolStripMenuItem3
+            // 
+            this.დამატებაToolStripMenuItem3.Name = "დამატებაToolStripMenuItem3";
+            this.დამატებაToolStripMenuItem3.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem3.Text = "დამატება";
+            // 
+            // რედაქტირებაToolStripMenuItem4
+            // 
+            this.რედაქტირებაToolStripMenuItem4.Name = "რედაქტირებაToolStripMenuItem4";
+            this.რედაქტირებაToolStripMenuItem4.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem4.Text = "რედაქტირება";
+            // 
+            // წაშლაToolStripMenuItem5
+            // 
+            this.წაშლაToolStripMenuItem5.Name = "წაშლაToolStripMenuItem5";
+            this.წაშლაToolStripMenuItem5.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem5.Text = "წაშლა";
+            // 
+            // დამატებაToolStripMenuItem4
+            // 
+            this.დამატებაToolStripMenuItem4.Name = "დამატებაToolStripMenuItem4";
+            this.დამატებაToolStripMenuItem4.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem4.Text = "დამატება";
+            // 
+            // რედაქტირებაToolStripMenuItem5
+            // 
+            this.რედაქტირებაToolStripMenuItem5.Name = "რედაქტირებაToolStripMenuItem5";
+            this.რედაქტირებაToolStripMenuItem5.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem5.Text = "რედაქტირება";
+            // 
+            // წაშლაToolStripMenuItem6
+            // 
+            this.წაშლაToolStripMenuItem6.Name = "წაშლაToolStripMenuItem6";
+            this.წაშლაToolStripMenuItem6.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem6.Text = "წაშლა";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.ClientSize = new System.Drawing.Size(1161, 665);
+            this.ClientSize = new System.Drawing.Size(1161, 729);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.groupBox4);
@@ -409,8 +676,10 @@
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.menuStrip1);
             this.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
+            this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -430,7 +699,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.coachBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource1)).EndInit();
+            this.groupBox7.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.abonenti.ResumeLayout(false);
+            this.eqimi.ResumeLayout(false);
+            this.cnoba.ResumeLayout(false);
+            this.mwvrtneli.ResumeLayout(false);
+            this.gadasaxadi.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -471,6 +750,37 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dateOfBirthDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBox7;
+        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem აბონენტისდამატებაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem მწვრთნელისდამატებაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem მწვრთნელიToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem1;
+        private System.Windows.Forms.ContextMenuStrip abonenti;
+        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem აბონენტისრედაქტირებაToolStripMenuItem;
+        private System.Windows.Forms.ContextMenuStrip eqimi;
+        private System.Windows.Forms.ContextMenuStrip cnoba;
+        private System.Windows.Forms.ContextMenuStrip mwvrtneli;
+        private System.Windows.Forms.ContextMenuStrip gadasaxadi;
+        private System.Windows.Forms.ToolStripMenuItem ექიმისდამატებაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem4;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem5;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem6;
     }
 }
 

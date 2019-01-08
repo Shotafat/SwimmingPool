@@ -16,6 +16,7 @@ namespace SwimmingPool
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
@@ -26,21 +27,6 @@ namespace SwimmingPool
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = DatabaseConnection.GetAbonentSource();
            
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            abonentisdamateba AD = new abonentisdamateba();
-            AD.ShowDialog();
-            if (AD.DialogResult == DialogResult.OK)
-            {
-                Form1_Load(sender, e);
-                MessageBox.Show("აბონენტი წარმატებით დაემატა");
-            }
-        }
-        private void button2_Click(object sender, EventArgs e)
-        {
-            mcvrtnelieqimi ME = new mcvrtnelieqimi();
-            ME.ShowDialog();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -68,6 +54,12 @@ namespace SwimmingPool
             var telefoni = dataGridView1.SelectedRows[0].Cells[3].Value;
             var index = DatabaseConnection.Subscriberindex;
             MessageBox.Show(telefoni.ToString()+" "+ index.ToString());
+        }
+
+        private void დამატებაToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            abonentisdamateba AB = new abonentisdamateba();
+            AB.Show();
         }
     }
 }
