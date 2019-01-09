@@ -6,6 +6,20 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriberServices : ISubscriberServices
     {
+
+
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
+
+        
         public void Add(ISubscriber a)
         {
             DatabaseConnection.insertAbonent(a.Name,a.LastName,a.PhoneNumber,a.DateOfBirth,a.Adress);

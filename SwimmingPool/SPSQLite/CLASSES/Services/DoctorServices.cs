@@ -7,6 +7,17 @@ namespace SPSQLite.CLASSES
 {
     public class DoctorServices : IDoctorServices
     {
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
+
         public void Add(IDoctor a)
         {
             DatabaseConnection.insertDoctor(a.Name,a.LastName);

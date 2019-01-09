@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SPSQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
+using SPSQLite.CLASSES;
 
 
 namespace SwimmingPool
@@ -25,7 +26,7 @@ namespace SwimmingPool
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = DatabaseConnection.GetAbonentSource();
+            dataGridView1.DataSource = SubscriberServices.Object.GetData();
            
         }
 

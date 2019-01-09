@@ -7,6 +7,18 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriptionPriceServices : ISubscriptionPriceServices
     {
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
+
+
         public void Add(ISubscriptionPrice a)
         {
             DatabaseConnection.insertSubscribtionPrice(a.NumberOfHours, a.Price);

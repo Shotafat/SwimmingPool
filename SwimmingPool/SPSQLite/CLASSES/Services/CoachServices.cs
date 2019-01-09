@@ -8,7 +8,17 @@ namespace SPSQLite.CLASSES
 {
     public class CoachServices : ICoachServices
     {
-       
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
+
         public void Add(ICoach a)
         {
             DatabaseConnection.insertCoach(a.Name, a.LastName);

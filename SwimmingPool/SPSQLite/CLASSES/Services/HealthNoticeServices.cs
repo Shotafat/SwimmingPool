@@ -7,6 +7,20 @@ namespace SPSQLite.CLASSES
 {
     public class HealthNoticeServices : IHealthNoticeServices
     {
+
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
+
+
+
         public void Add(IHealthNotice a)
         {
             DatabaseConnection.InsertHealthNotice(a.DateCreated, a.CurrencyName, a.AbonentId);

@@ -7,7 +7,19 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriptionServices : ISubscriptionServices
     {
-       
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
+
+
+
         public void Add(ISubscription a)
         {
             DatabaseConnection.InsertSubscription(a.SubscriberID, a.CoachID, a.DoctorID, a.SubscribtionTypeID);

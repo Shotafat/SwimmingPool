@@ -7,7 +7,16 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriptionScheduleServices : ISubscriptionScheduleServices
     {
-       
+        private static SubscriberServices Instance = null;
+        public static SubscriberServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new SubscriberServices();
+                return Instance;
+            }
+        }
 
         public void Add(ISubscriptionSchedule a)
         {
