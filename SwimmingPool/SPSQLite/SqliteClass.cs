@@ -22,11 +22,8 @@ namespace SPSQLite
         public static SQLiteConnection Conn { get; set; }
         public static string Path { get; set; }
 
+        public static int i { get; set; } = 1;
 
-        public static int Subscriberindex { get; set; }
-        public static int Coachindex { get; set; }
-        public static int Doctorindex { get; set; }
-        public static int SubscribtionPriceindex { get; set; }
 
         public static void CreateTables()
         {
@@ -118,10 +115,11 @@ namespace SPSQLite
         }
 
         //doctor
-
+        
         public static void insertDoctor ( string name , string lastname )
         {
-            Conn.Insert(new Doctor {Name = name, LastName = lastname });
+            
+            Conn.Insert(new Doctor {  Name = name, LastName = lastname });
             
         }
 
@@ -138,7 +136,7 @@ namespace SPSQLite
         public static void EditDoctor ( IDoctor doctor)
         {
             var Doctor = Conn.Table<Doctor>().Where(a => a.Id == doctor.ID).SingleOrDefault();
-            if ( Doctor!= null )
+            if (Doctor != null)
             {
                 Doctor.Name = doctor.Name;
                 Doctor.LastName = doctor.LastName;
@@ -146,7 +144,7 @@ namespace SPSQLite
                 Conn.Update(Doctor);
 
             }
-            
+
         }
 
         // get doctor Source

@@ -11,29 +11,27 @@ using System.Windows.Forms;
 
 namespace SwimmingPool
 {
-    public partial class eqimi : Form
+    public partial class mwvrtneli : Form
     {
-        public eqimi()
+        public mwvrtneli()
         {
             InitializeComponent();
         }
 
-        private void shenaxva_Click(object sender, EventArgs e)
+        private void gamosvla_Click(object sender, EventArgs e)
         {
-            DoctorServices ds = new DoctorServices();
-            ds.Add(new Doctor
-            {
-                Name = eqimi_saxeli.Text,
-                LastName = eqimi_gvari.Text
-            });
-
-           
-
             Close();
         }
 
-        private void gamosvla_Click(object sender, EventArgs e)
+        private void shenaxva_Click(object sender, EventArgs e)
         {
+            CoachServices CS = new CoachServices();
+            CS.Add(new Coach
+            {
+                Name = mwvrtneli_saxeli.Text,
+                LastName = mwvrtneli_gvari.Text
+            });
+
             Close();
         }
     }

@@ -1104,7 +1104,6 @@ C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe.config
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.abonentisdamateba.resources
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form1.resources
-C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.mcvrtnelieqimi.resources
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Properties.Resources.resources
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.GenerateResource.cache
 C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CoreCompileInputs.cache
@@ -1236,3 +1235,7 @@ C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\Swimming
 C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Admin\Desktop\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.eqimi.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.cnoba.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.eqimi.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.gadasaxadi.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.mwvrtneli.resources

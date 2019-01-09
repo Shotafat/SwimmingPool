@@ -4,7 +4,7 @@ using System.Text;
 
 namespace SPSQLite
 {
-  public  interface ISubscriptionPrice
+  public interface ISubscriptionPrice
     {
         int ID { get; set; }
         int NumberOfHours { get; set; }

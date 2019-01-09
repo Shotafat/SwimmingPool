@@ -75,6 +75,12 @@
     <Compile Include="abonentisdamateba.Designer.cs">
       <DependentUpon>abonentisdamateba.cs</DependentUpon>
     </Compile>
+    <Compile Include="cnoba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cnoba.Designer.cs">
+      <DependentUpon>cnoba.cs</DependentUpon>
+    </Compile>
     <Compile Include="eqimi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,16 +93,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="mcvrtnelieqimi.cs">
+    <Compile Include="gadasaxadi.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="mcvrtnelieqimi.Designer.cs">
-      <DependentUpon>mcvrtnelieqimi.cs</DependentUpon>
+    <Compile Include="gadasaxadi.Designer.cs">
+      <DependentUpon>gadasaxadi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="mwvrtneli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="mwvrtneli.Designer.cs">
+      <DependentUpon>mwvrtneli.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="abonentisdamateba.resx">
       <DependentUpon>abonentisdamateba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="cnoba.resx">
+      <DependentUpon>cnoba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="eqimi.resx">
       <DependentUpon>eqimi.cs</DependentUpon>
@@ -104,8 +119,11 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="mcvrtnelieqimi.resx">
-      <DependentUpon>mcvrtnelieqimi.cs</DependentUpon>
+    <EmbeddedResource Include="gadasaxadi.resx">
+      <DependentUpon>gadasaxadi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="mwvrtneli.resx">
+      <DependentUpon>mwvrtneli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -117,6 +135,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\SPSQLite.CLASSES.Doctor.datasource" />
+    <None Include="Properties\DataSources\SPSQLite.CLASSES.SubcsriptionPrice.datasource" />
+    <None Include="Properties\DataSources\SPSQLite.CLASSES.Subscriber.datasource" />
+    <None Include="Properties\DataSources\SPSQLite.CLASSES.Subscription.datasource" />
+    <None Include="Properties\DataSources\SPSQLite.CLASSES.SubscriptionPriceServices.datasource" />
     <None Include="Properties\DataSources\SPSQLite.Coach.datasource" />
     <None Include="Properties\DataSources\SPSQLite.Doctor.datasource" />
     <None Include="Properties\DataSources\SPSQLite.Subscriber.datasource" />

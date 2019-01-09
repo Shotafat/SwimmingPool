@@ -36,7 +36,7 @@ namespace SPSQLite.CLASSES
 
         public IList<ISubscriptionPrice> GetData()
         {
-            IList<ISubscriptionPrice> list =  DatabaseConnection.GetSubscribtionPrice().Select(a => new SubscriptionPrice { NumberOfHours = a.NumberOfHours, Price = a.Price }).ToList<ISubscriptionPrice>();
+            IList<ISubscriptionPrice> list =  DatabaseConnection.GetSubscribtionPrice().Select(a => new SubcsriptionPrice { ID=a.Id, NumberOfHours = a.NumberOfHours, Price = a.Price }).ToList<ISubscriptionPrice>();
             return list;
         }
     }

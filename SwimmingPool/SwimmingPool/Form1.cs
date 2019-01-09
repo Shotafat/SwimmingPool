@@ -17,7 +17,9 @@ namespace SwimmingPool
 {
     public partial class Form1 : Form
     {
-        
+        DoctorServices DS = new DoctorServices();
+        CoachServices CS = new CoachServices();
+        SubscriptionPriceServices SP = new SubscriptionPriceServices();
         public Form1()
         {
             InitializeComponent();
@@ -25,9 +27,11 @@ namespace SwimmingPool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = SubscriberServices.Object.GetData();
-           
+            dataGrid_eqimi.DataSource = null;
+            dataGrid_eqimi.DataSource = DS.GetData();
+            dataGridView5.DataSource = null;
+            dataGridView5.DataSource = SP.GetData();
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -53,14 +57,39 @@ namespace SwimmingPool
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var telefoni = dataGridView1.SelectedRows[0].Cells[3].Value;
-            var index = DatabaseConnection.Subscriberindex;
-            MessageBox.Show(telefoni.ToString()+" "+ index.ToString());
+           
+            MessageBox.Show(telefoni.ToString());
         }
 
-        private void დამატებაToolStripMenuItem1_Click(object sender, EventArgs e)
+        public void abonentisdamateba(object sender, EventArgs e)
         {
             abonentisdamateba AB = new abonentisdamateba();
             AB.Show();
+        }
+
+        public void eqimi_(object sender, EventArgs e)
+        {
+            eqimi eqimi = new eqimi();
+            eqimi.ShowDialog();
+            
+        }
+
+        public void mwvrtneli_(object sender, EventArgs e)
+        {
+            mwvrtneli mwv = new mwvrtneli();
+            mwv.ShowDialog();
+        }
+
+        public void gadasaxadi_(object sender, EventArgs e)
+        {
+            gadasaxadi gadasaxadi = new gadasaxadi();
+            gadasaxadi.ShowDialog();
+        }
+
+        private void dataGrid_eqimi_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var iind = dataGrid_eqimi.SelectedRows[0].Cells[0].Value;
+            MessageBox.Show(iind.ToString());
         }
     }
 }

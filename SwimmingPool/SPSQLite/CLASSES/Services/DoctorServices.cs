@@ -7,16 +7,16 @@ namespace SPSQLite.CLASSES
 {
     public class DoctorServices : IDoctorServices
     {
-        private static SubscriberServices Instance = null;
-        public static SubscriberServices Object
-        {
-            get
-            {
-                if (Instance == null)
-                    Instance = new SubscriberServices();
-                return Instance;
-            }
-        }
+        //private static SubscriberServices Instance = null;
+        //public static SubscriberServices Object
+        //{
+        //    get
+        //    {
+        //        if (Instance == null)
+        //            Instance = new SubscriberServices();
+        //        return Instance;
+        //    }
+        //}
 
         public void Add(IDoctor a)
         {
@@ -35,7 +35,7 @@ namespace SPSQLite.CLASSES
 
         public IList<IDoctor> GetData()
         {
-           IList<IDoctor> list = DatabaseConnection.GetDoctorSource().Select(a => new Doctor { Name = a.Name, LastName = a.LastName }).ToList<IDoctor>();
+           IList<IDoctor> list = DatabaseConnection.GetDoctorSource().Select(a => new Doctor {ID =a.Id, Name = a.Name, LastName = a.LastName }).ToList<IDoctor>();
             return list;
         }
     }
