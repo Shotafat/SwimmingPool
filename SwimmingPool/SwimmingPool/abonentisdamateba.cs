@@ -20,14 +20,7 @@ namespace SwimmingPool
         public abonentisdamateba()
         {
             InitializeComponent();
-            foreach (var item in DatabaseConnection.GetCoachesSource())
-            {
-                mwvrtneli.Items.Add(item.Name + " " + item.LastName);
-            }
-            foreach (var item in DatabaseConnection.GetDoctorSource())
-            {
-                eqimi.Items.Add(item.Name + " " + item.LastName);
-            }
+           
         }
 
         private void button2_Click(object sender, EventArgs e)

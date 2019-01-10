@@ -35,21 +35,10 @@
             this.აბონენტისრედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.mwvrtneli = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.დამატებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.რედაქტირებაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.წაშლაToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGrid_eqimi = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.eqimi = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.ექიმისდამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.წაშლაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
-            this.რედაქტირებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
             this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
@@ -88,15 +77,21 @@
             this.წაშლაToolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.დამატებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
+            this.mwvrtneli = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.ექიმისდამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.წაშლაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.eqimi = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.abonenti.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.mwvrtneli.SuspendLayout();
             this.groupBox7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_eqimi)).BeginInit();
-            this.eqimi.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
@@ -109,6 +104,8 @@
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.mwvrtneli.SuspendLayout();
+            this.eqimi.SuspendLayout();
             this.SuspendLayout();
             // 
             // abonenti
@@ -164,35 +161,6 @@
             this.dataGridView2.Size = new System.Drawing.Size(394, 172);
             this.dataGridView2.TabIndex = 0;
             // 
-            // mwvrtneli
-            // 
-            this.mwvrtneli.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.დამატებაToolStripMenuItem2,
-            this.რედაქტირებაToolStripMenuItem3,
-            this.წაშლაToolStripMenuItem4});
-            this.mwvrtneli.Name = "mwvrtneli";
-            this.mwvrtneli.Size = new System.Drawing.Size(157, 70);
-            // 
-            // დამატებაToolStripMenuItem2
-            // 
-            this.დამატებაToolStripMenuItem2.Name = "დამატებაToolStripMenuItem2";
-            this.დამატებაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
-            this.დამატებაToolStripMenuItem2.Text = "დამატება";
-            this.დამატებაToolStripMenuItem2.Click += new System.EventHandler(this.mwvrtneli_);
-            // 
-            // რედაქტირებაToolStripMenuItem3
-            // 
-            this.რედაქტირებაToolStripMenuItem3.Name = "რედაქტირებაToolStripMenuItem3";
-            this.რედაქტირებაToolStripMenuItem3.Size = new System.Drawing.Size(156, 22);
-            this.რედაქტირებაToolStripMenuItem3.Text = "რედაქტირება";
-            this.რედაქტირებაToolStripMenuItem3.Click += new System.EventHandler(this.mwvrtneli_);
-            // 
-            // წაშლაToolStripMenuItem4
-            // 
-            this.წაშლაToolStripMenuItem4.Name = "წაშლაToolStripMenuItem4";
-            this.წაშლაToolStripMenuItem4.Size = new System.Drawing.Size(156, 22);
-            this.წაშლაToolStripMenuItem4.Text = "წაშლა";
-            // 
             // groupBox7
             // 
             this.groupBox7.Controls.Add(this.dataGridView6);
@@ -229,10 +197,6 @@
             // 
             this.dataGrid_eqimi.AutoGenerateColumns = false;
             this.dataGrid_eqimi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGrid_eqimi.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn});
             this.dataGrid_eqimi.ContextMenuStrip = this.eqimi;
             this.dataGrid_eqimi.DataSource = this.doctorBindingSource;
             this.dataGrid_eqimi.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -241,57 +205,6 @@
             this.dataGrid_eqimi.Size = new System.Drawing.Size(396, 172);
             this.dataGrid_eqimi.TabIndex = 0;
             this.dataGrid_eqimi.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_eqimi_CellMouseClick);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ნომერი";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "სახელი";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "გვარი";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // eqimi
-            // 
-            this.eqimi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ექიმისდამატებაToolStripMenuItem,
-            this.წაშლაToolStripMenuItem3,
-            this.რედაქტირებაToolStripMenuItem2});
-            this.eqimi.Name = "eqimi";
-            this.eqimi.Size = new System.Drawing.Size(157, 70);
-            // 
-            // ექიმისდამატებაToolStripMenuItem
-            // 
-            this.ექიმისდამატებაToolStripMenuItem.Name = "ექიმისდამატებაToolStripMenuItem";
-            this.ექიმისდამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.ექიმისდამატებაToolStripMenuItem.Text = "დამატება";
-            this.ექიმისდამატებაToolStripMenuItem.Click += new System.EventHandler(this.eqimi_);
-            // 
-            // წაშლაToolStripMenuItem3
-            // 
-            this.წაშლაToolStripMenuItem3.Name = "წაშლაToolStripMenuItem3";
-            this.წაშლაToolStripMenuItem3.Size = new System.Drawing.Size(156, 22);
-            this.წაშლაToolStripMenuItem3.Text = "რედაქტირება";
-            this.წაშლაToolStripMenuItem3.Click += new System.EventHandler(this.eqimi_);
-            // 
-            // რედაქტირებაToolStripMenuItem2
-            // 
-            this.რედაქტირებაToolStripMenuItem2.Name = "რედაქტირებაToolStripMenuItem2";
-            this.რედაქტირებაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
-            this.რედაქტირებაToolStripMenuItem2.Text = "წაშლა";
-            // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataSource = typeof(SPSQLite.CLASSES.Doctor);
             // 
             // groupBox4
             // 
@@ -369,7 +282,6 @@
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(322, 153);
             this.dataGridView5.TabIndex = 0;
-            
             // 
             // iDDataGridViewTextBoxColumn1
             // 
@@ -503,7 +415,6 @@
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
             this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
-            this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.mwvrtneli_);
             // 
             // წაშლაToolStripMenuItem1
             // 
@@ -516,7 +427,6 @@
             this.რედაქტირებაToolStripMenuItem1.Name = "რედაქტირებაToolStripMenuItem1";
             this.რედაქტირებაToolStripMenuItem1.Size = new System.Drawing.Size(156, 22);
             this.რედაქტირებაToolStripMenuItem1.Text = "რედაქტირება";
-            this.რედაქტირებაToolStripMenuItem1.Click += new System.EventHandler(this.mwvrtneli_);
             // 
             // ექიმიToolStripMenuItem
             // 
@@ -531,21 +441,19 @@
             // დამატებაToolStripMenuItem5
             // 
             this.დამატებაToolStripMenuItem5.Name = "დამატებაToolStripMenuItem5";
-            this.დამატებაToolStripMenuItem5.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem5.Size = new System.Drawing.Size(180, 22);
             this.დამატებაToolStripMenuItem5.Text = "დამატება";
-            this.დამატებაToolStripMenuItem5.Click += new System.EventHandler(this.eqimi_);
             // 
             // რედაქტირებაToolStripMenuItem6
             // 
             this.რედაქტირებაToolStripMenuItem6.Name = "რედაქტირებაToolStripMenuItem6";
-            this.რედაქტირებაToolStripMenuItem6.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem6.Size = new System.Drawing.Size(180, 22);
             this.რედაქტირებაToolStripMenuItem6.Text = "რედაქტირება";
-            this.რედაქტირებაToolStripMenuItem6.Click += new System.EventHandler(this.eqimi_);
             // 
             // წაშლაToolStripMenuItem7
             // 
             this.წაშლაToolStripMenuItem7.Name = "წაშლაToolStripMenuItem7";
-            this.წაშლაToolStripMenuItem7.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem7.Size = new System.Drawing.Size(180, 22);
             this.წაშლაToolStripMenuItem7.Text = "წაშლა";
             // 
             // გადასახადიToolStripMenuItem
@@ -590,16 +498,73 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(796, 430);
             this.dataGridView1.TabIndex = 0;
             // 
+            // დამატებაToolStripMenuItem2
+            // 
+            this.დამატებაToolStripMenuItem2.Name = "დამატებაToolStripMenuItem2";
+            this.დამატებაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem2.Text = "დამატება";
+            // 
+            // რედაქტირებაToolStripMenuItem3
+            // 
+            this.რედაქტირებაToolStripMenuItem3.Name = "რედაქტირებაToolStripMenuItem3";
+            this.რედაქტირებაToolStripMenuItem3.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem3.Text = "რედაქტირება";
+            // 
+            // წაშლაToolStripMenuItem4
+            // 
+            this.წაშლაToolStripMenuItem4.Name = "წაშლაToolStripMenuItem4";
+            this.წაშლაToolStripMenuItem4.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem4.Text = "წაშლა";
+            // 
+            // mwvrtneli
+            // 
+            this.mwvrtneli.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem2,
+            this.რედაქტირებაToolStripMenuItem3,
+            this.წაშლაToolStripMenuItem4});
+            this.mwvrtneli.Name = "mwvrtneli";
+            this.mwvrtneli.Size = new System.Drawing.Size(157, 70);
+            // 
+            // ექიმისდამატებაToolStripMenuItem
+            // 
+            this.ექიმისდამატებაToolStripMenuItem.Name = "ექიმისდამატებაToolStripMenuItem";
+            this.ექიმისდამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.ექიმისდამატებაToolStripMenuItem.Text = "დამატება";
+            // 
+            // წაშლაToolStripMenuItem3
+            // 
+            this.წაშლაToolStripMenuItem3.Name = "წაშლაToolStripMenuItem3";
+            this.წაშლაToolStripMenuItem3.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem3.Text = "რედაქტირება";
+            // 
+            // რედაქტირებაToolStripMenuItem2
+            // 
+            this.რედაქტირებაToolStripMenuItem2.Name = "რედაქტირებაToolStripMenuItem2";
+            this.რედაქტირებაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem2.Text = "წაშლა";
+            // 
+            // eqimi
+            // 
+            this.eqimi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ექიმისდამატებაToolStripMenuItem,
+            this.წაშლაToolStripMenuItem3,
+            this.რედაქტირებაToolStripMenuItem2});
+            this.eqimi.Name = "eqimi";
+            this.eqimi.Size = new System.Drawing.Size(157, 70);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.ScrollBar;
             this.ClientSize = new System.Drawing.Size(1161, 729);
             this.Controls.Add(this.groupBox1);
@@ -618,12 +583,10 @@
             this.abonenti.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.mwvrtneli.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_eqimi)).EndInit();
-            this.eqimi.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
@@ -638,6 +601,8 @@
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.mwvrtneli.ResumeLayout(false);
+            this.eqimi.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -669,16 +634,8 @@
         private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem აბონენტისრედაქტირებაToolStripMenuItem;
-        private System.Windows.Forms.ContextMenuStrip eqimi;
         private System.Windows.Forms.ContextMenuStrip cnoba;
-        private System.Windows.Forms.ContextMenuStrip mwvrtneli;
         private System.Windows.Forms.ContextMenuStrip gadasaxadi;
-        private System.Windows.Forms.ToolStripMenuItem ექიმისდამატებაToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem3;
-        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem3;
         private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem4;
         private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem5;
@@ -703,6 +660,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ContextMenuStrip mwvrtneli;
+        private System.Windows.Forms.ToolStripMenuItem დამატებაToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem4;
+        private System.Windows.Forms.ContextMenuStrip eqimi;
+        private System.Windows.Forms.ToolStripMenuItem ექიმისდამატებაToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem წაშლაToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem2;
     }
 }
 

@@ -10,7 +10,7 @@ using SQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
 using System.Reflection;
-using SPSQLite.INTERFACES;
+
 
 //using System.Windows.Forms;
 
@@ -81,78 +81,9 @@ namespace SPSQLite
             
         }
 
-        // delete Coach
-
-        public static void DeleteCoach(ICoach coach)
-        {
-            Conn.Delete(Conn.Table<Coach>().FirstOrDefault(a => a.Id == coach.ID));
-
-        }
-
-        // Edit Coach 
-
-         public static void EditCoach ( ICoach coach)
-        {
-
-            var coaches = Conn.Table<Coach>().Where(a => a.Id == coach.ID).SingleOrDefault();
-
-            if ( coaches!=null)
-            {
-
-                coaches.Name = coach.Name;
-                coaches.LastName = coach.LastName;
-
-                Conn.Update(coaches);
-            }
-
-        }
-
-        // get coach source
-
-        public static List<Coach> GetCoachesSource()
-        {
-            return Conn.Table<Coach>().ToList();
-        }
-
-        //doctor
         
-        public static void insertDoctor ( string name , string lastname )
-        {
-            
-            Conn.Insert(new Doctor {  Name = name, LastName = lastname });
-            
-        }
 
-        // delete doctor 
-
-        public static void DeleteDoctor ( IDoctor doctor)
-        {
-
-            Conn.Delete(Conn.Table<Doctor>().FirstOrDefault(a => a.Id == doctor.ID));
-        }
-
-        // Edit Doctor
-
-        public static void EditDoctor ( IDoctor doctor)
-        {
-            var Doctor = Conn.Table<Doctor>().Where(a => a.Id == doctor.ID).SingleOrDefault();
-            if (Doctor != null)
-            {
-                Doctor.Name = doctor.Name;
-                Doctor.LastName = doctor.LastName;
-
-                Conn.Update(Doctor);
-
-            }
-
-        }
-
-        // get doctor Source
-
-        public static List<Doctor> GetDoctorSource ( )
-        {
-            return Conn.Table<Doctor>().ToList();
-        }
+       
 
         //insert Subscription Price
 

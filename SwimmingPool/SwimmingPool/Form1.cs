@@ -10,25 +10,29 @@ using System.Windows.Forms;
 using SPSQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
-using SPSQLite.CLASSES;
+using SPSQLite.CLASSES.Services;
+
 
 
 namespace SwimmingPool
 {
     public partial class Form1 : Form
     {
-       
+
+      
+
         public Form1()
         {
-            InitializeComponent();
+         
+        InitializeComponent();
 
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGrid_eqimi.DataSource = null;
-            dataGrid_eqimi.DataSource = DoctorServices.Object.GetData();
-            dataGridView5.DataSource = null;
-            dataGridView5.DataSource = SubscriptionPriceServices.Object.GetData();
+            //dataGrid_eqimi.DataSource = null;
+            //dataGrid_eqimi.DataSource = ServiceInstances.Service().GetDoctorServices().GetData();
+            //dataGridView5.DataSource = null;
+            //dataGridView5.DataSource = ServiceInstances.Service().GetSubscriptionServices().GetData();
 
         }
 
@@ -65,18 +69,7 @@ namespace SwimmingPool
             AB.Show();
         }
 
-        public void eqimi_(object sender, EventArgs e)
-        {
-            eqimi eqimi = new eqimi();
-            eqimi.ShowDialog();
-            
-        }
-
-        public void mwvrtneli_(object sender, EventArgs e)
-        {
-            mwvrtneli mwv = new mwvrtneli();
-            mwv.ShowDialog();
-        }
+      
 
         public void gadasaxadi_(object sender, EventArgs e)
         {

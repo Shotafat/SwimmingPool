@@ -8,16 +8,7 @@ namespace SPSQLite.CLASSES
     {
 
 
-        private static SubscriberServices Instance = null;
-        public static SubscriberServices Object
-        {
-            get
-            {
-                if (Instance == null)
-                    Instance = new SubscriberServices();
-                return Instance;
-            }
-        }
+       
 
         
         public void Add(ISubscriber a)
