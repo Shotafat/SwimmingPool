@@ -22,14 +22,12 @@ namespace SPSQLite
         public static SQLiteConnection Conn { get; set; }
         public static string Path { get; set; }
 
-        public static int i { get; set; } = 1;
-
+        
 
         public static void CreateTables()
         {
-            Conn.CreateTables<HealthNotice, Subscriber, Subscription, Coach>();
-            Conn.CreateTables<SubscribtionPrice,  Doctor>();
-            
+            Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
+                        
         }
 
         //Abonent 
@@ -72,16 +70,9 @@ namespace SPSQLite
             return Conn.Table<Subscriber>().ToList();
         }
 
-        //insert coach 
+      
 
-        public static void insertCoach(  string name, string lastname)
-        {
-
-            Conn.Insert(new Coach {  Name = name, LastName = lastname });
-            
-        }
-
-        
+      
 
        
 
@@ -204,10 +195,10 @@ namespace SPSQLite
 
         // Insert Subscription 
 
-        public static void InsertSubscription(int SubscriberID, int CoachID, int DoctorID, int SubscriptionTypeID) 
+        public static void InsertSubscription(int SubscriberID,  int SubscriptionTypeID) 
         {
 
-            Conn.Insert(new Subscription { CoachId = CoachID, SubscriberID = SubscriberID, DoctorID = DoctorID, SubscribtionTypeID = SubscriptionTypeID });
+            Conn.Insert(new Subscription {  SubscriberID = SubscriberID, SubscribtionTypeID = SubscriptionTypeID });
 
         }
 
@@ -226,8 +217,7 @@ namespace SPSQLite
             var Subscription = Conn.Table<Subscription>().Where(a => a.Id == subscription.ID).SingleOrDefault();
             if (Subscription!=null)
             {
-                Subscription.DoctorID = subscription.DoctorID;
-                Subscription.CoachId = subscription.CoachID;
+                
                 Subscription.SubscriberID = subscription.SubscriberID;
                 Subscription.SubscribtionTypeID = subscription.SubscribtionTypeID;
                 Conn.Update(Subscription);
@@ -253,14 +243,11 @@ namespace SPSQLite
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        //[ForeignKey(typeof(Subscriber))]
+        [ForeignKey(typeof(Subscriber))]
         public int SubscriberID { get; set; }
 
-        //[ForeignKey(typeof(Coach))]
-        public int CoachId { get; set; }
-
-        public int DoctorID { get; set; }
-        //[ForeignKey(typeof(SubscribtionPrice))]
+      
+        [ForeignKey(typeof(SubscribtionPrice))]
         public int SubscribtionTypeID { get; set; }
 
     }
@@ -279,24 +266,7 @@ namespace SPSQLite
 
     }
      
-    //მწვრთნელი
-    public class Coach
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-    }
-
-    //ექიმი
-    public class Doctor
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-    }
-
+ 
     //ჯანმრთელობის ცნობა
     public class HealthNotice
     {

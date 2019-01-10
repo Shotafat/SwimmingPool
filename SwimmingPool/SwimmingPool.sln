@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SwimmingPool", "SwimmingPool\SwimmingPool.csproj", "{00192657-C9F0-4BA4-91E1-47A2DC2BC01A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SPSQLite", "SPSQLite\SPSQLite.csproj", "{921FAF4B-27C9-4DA5-9FEA-836F2F05F32A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SPSQLite", "SPSQLite\SPSQLite.csproj", "{921FAF4B-27C9-4DA5-9FEA-836F2F05F32A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

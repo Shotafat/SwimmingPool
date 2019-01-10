@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using SPSQLite.Check;
 namespace SPSQLite
 {
     public interface ISubscriber
@@ -12,5 +12,6 @@ namespace SPSQLite
         string PhoneNumber { get; set; }
         string Adress { get; set; }
         string DateOfBirth { get; set; }
+        List<CheckAttendance> CheckAttendance { get; set; }
     }
 }

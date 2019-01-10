@@ -8,8 +8,9 @@ namespace SPSQLite
     {
         int ID { get; set; }
         int SubscriberID { get; set; }
-        int DoctorID { get; set; }
-        int CoachID { get; set; }
+       
         int SubscribtionTypeID { get; set; }
+        ISubscriptionPrice Price { get; set; }
+
     }
 }

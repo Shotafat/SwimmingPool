@@ -75,6 +75,12 @@
     <Compile Include="abonentisdamateba.Designer.cs">
       <DependentUpon>abonentisdamateba.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddAbonent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddAbonent.Designer.cs">
+      <DependentUpon>AddAbonent.cs</DependentUpon>
+    </Compile>
     <Compile Include="cnoba.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -97,6 +103,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="abonentisdamateba.resx">
       <DependentUpon>abonentisdamateba.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddAbonent.resx">
+      <DependentUpon>AddAbonent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="cnoba.resx">
       <DependentUpon>cnoba.cs</DependentUpon>

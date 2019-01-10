@@ -22,7 +22,7 @@ namespace SPSQLite.CLASSES
 
         public void Add(ISubscription a)
         {
-            DatabaseConnection.InsertSubscription(a.SubscriberID, a.CoachID, a.DoctorID, a.SubscribtionTypeID);
+            DatabaseConnection.InsertSubscription(a.SubscriberID,  a.SubscribtionTypeID);
         }
 
 
@@ -42,7 +42,7 @@ namespace SPSQLite.CLASSES
       
         public  IList<ISubscription> GetData()
         {
-          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { CoachID = a.CoachId, DoctorID = a.DoctorID, SubscriberID = a.SubscriberID, SubscribtionTypeID = a.SubscribtionTypeID }).ToList<ISubscription>();
+          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { SubscriberID = a.SubscriberID, SubscribtionTypeID = a.SubscribtionTypeID }).ToList<ISubscription>();
 
             return list;
         }
