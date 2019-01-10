@@ -8,13 +8,13 @@ namespace SPSQLite.CLASSES
     public class HealthNoticeServices : IHealthNoticeServices
     {
 
-        private static SubscriberServices Instance = null;
-        public static SubscriberServices Object
+        private static HealthNoticeServices Instance = null;
+        public static HealthNoticeServices Object
         {
             get
             {
                 if (Instance == null)
-                    Instance = new SubscriberServices();
+                    Instance = new HealthNoticeServices();
                 return Instance;
             }
         }

@@ -17,9 +17,7 @@ namespace SwimmingPool
 {
     public partial class Form1 : Form
     {
-        DoctorServices DS = new DoctorServices();
-        CoachServices CS = new CoachServices();
-        SubscriptionPriceServices SP = new SubscriptionPriceServices();
+       
         public Form1()
         {
             InitializeComponent();
@@ -28,9 +26,9 @@ namespace SwimmingPool
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGrid_eqimi.DataSource = null;
-            dataGrid_eqimi.DataSource = DS.GetData();
+            dataGrid_eqimi.DataSource = DoctorServices.Object.GetData();
             dataGridView5.DataSource = null;
-            dataGridView5.DataSource = SP.GetData();
+            dataGridView5.DataSource = SubscriptionPriceServices.Object.GetData();
 
         }
 
@@ -91,6 +89,8 @@ namespace SwimmingPool
             var iind = dataGrid_eqimi.SelectedRows[0].Cells[0].Value;
             MessageBox.Show(iind.ToString());
         }
+
+      
     }
 }
 

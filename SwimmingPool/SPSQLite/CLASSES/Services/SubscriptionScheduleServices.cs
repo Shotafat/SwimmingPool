@@ -7,13 +7,13 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriptionScheduleServices : ISubscriptionScheduleServices
     {
-        private static SubscriberServices Instance = null;
-        public static SubscriberServices Object
+        private static SubscriptionScheduleServices Instance = null;
+        public static SubscriptionScheduleServices Object
         {
             get
             {
                 if (Instance == null)
-                    Instance = new SubscriberServices();
+                    Instance = new SubscriptionScheduleServices();
                 return Instance;
             }
         }
@@ -37,9 +37,9 @@ namespace SPSQLite.CLASSES
         }
 
       
-        IList<ISubscriptionSchedule> ISubscriptionScheduleServices.GetData()
+         public IList<ISubscriptionSchedule> GetData()
         {
-         IList<ISubscriptionSchedule> list =   DatabaseConnection.GetSheduleSource().Select(a => new SubscriptionSchedule { Schedule = a.Schedule, SubscribtionID = a.SubscribtionID }).ToList<ISubscriptionSchedule>();
+           IList<ISubscriptionSchedule> list =   DatabaseConnection.GetSheduleSource().Select(a => new SubscriptionSchedule { Schedule = a.Schedule, SubscribtionID = a.SubscribtionID }).ToList<ISubscriptionSchedule>();
 
             return list;
         }

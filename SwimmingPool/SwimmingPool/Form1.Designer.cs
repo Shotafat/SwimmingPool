@@ -43,10 +43,14 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGrid_eqimi = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eqimi = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.ექიმისდამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.წაშლაToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.რედაქტირებაToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.cnoba = new System.Windows.Forms.ContextMenuStrip(this.components);
@@ -55,10 +59,14 @@
             this.წაშლაToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numberOfHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gadasaxadi = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.დამატებაToolStripMenuItem4 = new System.Windows.Forms.ToolStripMenuItem();
             this.რედაქტირებაToolStripMenuItem5 = new System.Windows.Forms.ToolStripMenuItem();
             this.წაშლაToolStripMenuItem6 = new System.Windows.Forms.ToolStripMenuItem();
+            this.subcsriptionPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -80,14 +88,6 @@
             this.წაშლაToolStripMenuItem8 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numberOfHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subcsriptionPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.doctorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.abonenti.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -97,18 +97,18 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_eqimi)).BeginInit();
             this.eqimi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.groupBox4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.cnoba.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
             this.gadasaxadi.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.subcsriptionPriceBindingSource)).BeginInit();
             this.groupBox6.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subcsriptionPriceBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // abonenti
@@ -242,6 +242,24 @@
             this.dataGrid_eqimi.TabIndex = 0;
             this.dataGrid_eqimi.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGrid_eqimi_CellMouseClick);
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ნომერი";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "სახელი";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "გვარი";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            // 
             // eqimi
             // 
             this.eqimi.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -270,6 +288,10 @@
             this.რედაქტირებაToolStripMenuItem2.Name = "რედაქტირებაToolStripMenuItem2";
             this.რედაქტირებაToolStripMenuItem2.Size = new System.Drawing.Size(156, 22);
             this.რედაქტირებაToolStripMenuItem2.Text = "წაშლა";
+            // 
+            // doctorBindingSource
+            // 
+            this.doctorBindingSource.DataSource = typeof(SPSQLite.CLASSES.Doctor);
             // 
             // groupBox4
             // 
@@ -347,6 +369,28 @@
             this.dataGridView5.Name = "dataGridView5";
             this.dataGridView5.Size = new System.Drawing.Size(322, 153);
             this.dataGridView5.TabIndex = 0;
+            
+            // 
+            // iDDataGridViewTextBoxColumn1
+            // 
+            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn1.HeaderText = "ნომერი";
+            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
+            this.iDDataGridViewTextBoxColumn1.Width = 80;
+            // 
+            // numberOfHoursDataGridViewTextBoxColumn
+            // 
+            this.numberOfHoursDataGridViewTextBoxColumn.DataPropertyName = "NumberOfHours";
+            this.numberOfHoursDataGridViewTextBoxColumn.HeaderText = "საათები";
+            this.numberOfHoursDataGridViewTextBoxColumn.Name = "numberOfHoursDataGridViewTextBoxColumn";
+            this.numberOfHoursDataGridViewTextBoxColumn.Width = 80;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "ფასი";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.Width = 70;
             // 
             // gadasaxadi
             // 
@@ -376,6 +420,10 @@
             this.წაშლაToolStripMenuItem6.Name = "წაშლაToolStripMenuItem6";
             this.წაშლაToolStripMenuItem6.Size = new System.Drawing.Size(156, 22);
             this.წაშლაToolStripMenuItem6.Text = "წაშლა";
+            // 
+            // subcsriptionPriceBindingSource
+            // 
+            this.subcsriptionPriceBindingSource.DataSource = typeof(SPSQLite.CLASSES.SubcsriptionPrice);
             // 
             // groupBox6
             // 
@@ -549,53 +597,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(796, 430);
             this.dataGridView1.TabIndex = 0;
             // 
-            // iDDataGridViewTextBoxColumn1
-            // 
-            this.iDDataGridViewTextBoxColumn1.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn1.HeaderText = "ნომერი";
-            this.iDDataGridViewTextBoxColumn1.Name = "iDDataGridViewTextBoxColumn1";
-            this.iDDataGridViewTextBoxColumn1.Width = 80;
-            // 
-            // numberOfHoursDataGridViewTextBoxColumn
-            // 
-            this.numberOfHoursDataGridViewTextBoxColumn.DataPropertyName = "NumberOfHours";
-            this.numberOfHoursDataGridViewTextBoxColumn.HeaderText = "საათები";
-            this.numberOfHoursDataGridViewTextBoxColumn.Name = "numberOfHoursDataGridViewTextBoxColumn";
-            this.numberOfHoursDataGridViewTextBoxColumn.Width = 80;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "ფასი";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.Width = 70;
-            // 
-            // subcsriptionPriceBindingSource
-            // 
-            this.subcsriptionPriceBindingSource.DataSource = typeof(SPSQLite.CLASSES.SubcsriptionPrice);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ნომერი";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "სახელი";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "გვარი";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            // 
-            // doctorBindingSource
-            // 
-            this.doctorBindingSource.DataSource = typeof(SPSQLite.CLASSES.Doctor);
-            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -623,20 +624,20 @@
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGrid_eqimi)).EndInit();
             this.eqimi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.groupBox4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.cnoba.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
             this.gadasaxadi.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.subcsriptionPriceBindingSource)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subcsriptionPriceBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.doctorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

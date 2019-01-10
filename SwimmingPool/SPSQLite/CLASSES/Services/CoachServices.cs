@@ -4,20 +4,21 @@ using System.Text;
 using SPSQLite.INTERFACES;
 using System.Linq;
 
+
 namespace SPSQLite.CLASSES
 {
     public class CoachServices :ICoachServices
     {
-        //private static SubscriberServices Instance = null;
-        //public static SubscriberServices Object
-        //{
-        //    get
-        //    {
-        //        if (Instance == null)
-        //            Instance = new SubscriberServices();
-        //        return Instance;
-        //    }
-        //}
+        private static CoachServices Instance = null;
+        public static CoachServices Object
+        {
+            get
+            {
+                if (Instance == null)
+                    Instance = new CoachServices();
+                return Instance;
+            }
+        }
 
         public void Add(ICoach a)
         {
@@ -42,7 +43,7 @@ namespace SPSQLite.CLASSES
         }
 
        
-       IList<ICoach> ICoachServices.GetData()
+       public IList<ICoach> GetData()
         {
            IList<ICoach> list = DatabaseConnection.GetCoachesSource().Select(a => new Coach { ID=a.Id, Name=a.Name,LastName=a.LastName }).ToList<ICoach>();
 
