@@ -29,6 +29,7 @@ namespace SwimmingPool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
+            
             //dataGrid_eqimi.DataSource = null;
             //dataGrid_eqimi.DataSource = ServiceInstances.Service().GetDoctorServices().GetData();
             //dataGridView5.DataSource = null;
@@ -36,54 +37,11 @@ namespace SwimmingPool
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public void ADDABONENT(object sender, EventArgs e)
         {
-            string textboxText = textBox1.Text.ToString();
-            int RowIndex = 0;
-            
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-            {
-               
-                    // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
-                    if (row.Cells[0].Value.ToString().Contains(textboxText) || row.Cells[1].Value.ToString().Contains(textboxText) ||
-                        row.Cells[2].Value.ToString().Contains(textboxText) || row.Cells[3].Value.ToString().Contains(textboxText) ||
-                        row.Cells[4].Value.ToString().Contains(textboxText) || row.Cells[5].Value.ToString().Contains(textboxText))
-                    {
-                        RowIndex = row.Index;
-                        break;
-                    }
-            }
-            dataGridView1.Rows[RowIndex].Selected = true;
+            AddAbonent addAbonent = new AddAbonent();
+            addAbonent.ShowDialog();
         }
-
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var telefoni = dataGridView1.SelectedRows[0].Cells[3].Value;
-           
-            MessageBox.Show(telefoni.ToString());
-        }
-
-        public void abonentisdamateba(object sender, EventArgs e)
-        {
-            abonentisdamateba AB = new abonentisdamateba();
-            AB.Show();
-        }
-
-      
-
-        public void gadasaxadi_(object sender, EventArgs e)
-        {
-            gadasaxadi gadasaxadi = new gadasaxadi();
-            gadasaxadi.ShowDialog();
-        }
-
-        private void dataGrid_eqimi_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var iind = dataGrid_eqimi.SelectedRows[0].Cells[0].Value;
-            MessageBox.Show(iind.ToString());
-        }
-
-      
     }
 }
 

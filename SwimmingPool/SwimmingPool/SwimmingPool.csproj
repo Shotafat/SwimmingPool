@@ -69,23 +69,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="abonentisdamateba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="abonentisdamateba.Designer.cs">
-      <DependentUpon>abonentisdamateba.cs</DependentUpon>
-    </Compile>
     <Compile Include="AddAbonent.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="AddAbonent.Designer.cs">
       <DependentUpon>AddAbonent.cs</DependentUpon>
-    </Compile>
-    <Compile Include="cnoba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="cnoba.Designer.cs">
-      <DependentUpon>cnoba.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
@@ -93,28 +81,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="gadasaxadi.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="gadasaxadi.Designer.cs">
-      <DependentUpon>gadasaxadi.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="abonentisdamateba.resx">
-      <DependentUpon>abonentisdamateba.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="AddAbonent.resx">
       <DependentUpon>AddAbonent.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="cnoba.resx">
-      <DependentUpon>cnoba.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="gadasaxadi.resx">
-      <DependentUpon>gadasaxadi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
