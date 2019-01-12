@@ -30,11 +30,13 @@
         {
             this.lblAnonimentNumber = new System.Windows.Forms.Label();
             this.grpAbonent = new System.Windows.Forms.GroupBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.misamarti = new System.Windows.Forms.TextBox();
+            this.telefoni = new System.Windows.Forms.TextBox();
+            this.asaki = new System.Windows.Forms.TextBox();
+            this.gvari = new System.Windows.Forms.TextBox();
+            this.saxeli = new System.Windows.Forms.TextBox();
+            this.nomeri = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -44,18 +46,20 @@
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.samshabati = new System.Windows.Forms.ComboBox();
+            this.orshabati = new System.Windows.Forms.ComboBox();
             this.lblTue = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblMon = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.diax = new System.Windows.Forms.CheckBox();
+            this.ara = new System.Windows.Forms.CheckBox();
             this.grpAbonent.SuspendLayout();
             this.grpDays.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAnonimentNumber
@@ -71,12 +75,12 @@
             // 
             // grpAbonent
             // 
-            this.grpAbonent.Controls.Add(this.textBox6);
-            this.grpAbonent.Controls.Add(this.textBox5);
-            this.grpAbonent.Controls.Add(this.textBox4);
-            this.grpAbonent.Controls.Add(this.textBox3);
-            this.grpAbonent.Controls.Add(this.textBox2);
-            this.grpAbonent.Controls.Add(this.textBox1);
+            this.grpAbonent.Controls.Add(this.misamarti);
+            this.grpAbonent.Controls.Add(this.telefoni);
+            this.grpAbonent.Controls.Add(this.asaki);
+            this.grpAbonent.Controls.Add(this.gvari);
+            this.grpAbonent.Controls.Add(this.saxeli);
+            this.grpAbonent.Controls.Add(this.nomeri);
             this.grpAbonent.Controls.Add(this.label1);
             this.grpAbonent.Controls.Add(this.lblAge);
             this.grpAbonent.Controls.Add(this.lblPhoneNumber);
@@ -92,40 +96,58 @@
             this.grpAbonent.TabStop = false;
             this.grpAbonent.Text = "აბონენტი";
             // 
-            // textBox5
+            // misamarti
             // 
-            this.textBox5.Location = new System.Drawing.Point(143, 167);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(193, 27);
-            this.textBox5.TabIndex = 5;
+            this.misamarti.Location = new System.Drawing.Point(143, 200);
+            this.misamarti.Name = "misamarti";
+            this.misamarti.Size = new System.Drawing.Size(193, 27);
+            this.misamarti.TabIndex = 5;
             // 
-            // textBox4
+            // telefoni
             // 
-            this.textBox4.Location = new System.Drawing.Point(143, 136);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(193, 27);
-            this.textBox4.TabIndex = 5;
+            this.telefoni.Location = new System.Drawing.Point(143, 167);
+            this.telefoni.Name = "telefoni";
+            this.telefoni.Size = new System.Drawing.Size(193, 27);
+            this.telefoni.TabIndex = 5;
             // 
-            // textBox3
+            // asaki
             // 
-            this.textBox3.Location = new System.Drawing.Point(143, 104);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(193, 27);
-            this.textBox3.TabIndex = 5;
+            this.asaki.Location = new System.Drawing.Point(143, 136);
+            this.asaki.Name = "asaki";
+            this.asaki.Size = new System.Drawing.Size(193, 27);
+            this.asaki.TabIndex = 5;
             // 
-            // textBox2
+            // gvari
             // 
-            this.textBox2.Location = new System.Drawing.Point(143, 71);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(193, 27);
-            this.textBox2.TabIndex = 5;
+            this.gvari.Location = new System.Drawing.Point(143, 104);
+            this.gvari.Name = "gvari";
+            this.gvari.Size = new System.Drawing.Size(193, 27);
+            this.gvari.TabIndex = 5;
             // 
-            // textBox1
+            // saxeli
             // 
-            this.textBox1.Location = new System.Drawing.Point(143, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(193, 27);
-            this.textBox1.TabIndex = 5;
+            this.saxeli.Location = new System.Drawing.Point(143, 71);
+            this.saxeli.Name = "saxeli";
+            this.saxeli.Size = new System.Drawing.Size(193, 27);
+            this.saxeli.TabIndex = 5;
+            // 
+            // nomeri
+            // 
+            this.nomeri.Location = new System.Drawing.Point(143, 38);
+            this.nomeri.Name = "nomeri";
+            this.nomeri.Size = new System.Drawing.Size(193, 27);
+            this.nomeri.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(35, 204);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(85, 19);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "მისამართი";
             // 
             // lblAge
             // 
@@ -177,8 +199,8 @@
             this.grpDays.Controls.Add(this.comboBox5);
             this.grpDays.Controls.Add(this.comboBox4);
             this.grpDays.Controls.Add(this.comboBox3);
-            this.grpDays.Controls.Add(this.comboBox2);
-            this.grpDays.Controls.Add(this.comboBox1);
+            this.grpDays.Controls.Add(this.samshabati);
+            this.grpDays.Controls.Add(this.orshabati);
             this.grpDays.Controls.Add(this.lblTue);
             this.grpDays.Controls.Add(this.label5);
             this.grpDays.Controls.Add(this.label2);
@@ -278,10 +300,10 @@
             this.comboBox3.Size = new System.Drawing.Size(63, 27);
             this.comboBox3.TabIndex = 7;
             // 
-            // comboBox2
+            // samshabati
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.samshabati.FormattingEnabled = true;
+            this.samshabati.Items.AddRange(new object[] {
             "09:00",
             "10:00",
             "11:00",
@@ -294,31 +316,25 @@
             "18:00",
             "19:00",
             "20:00"});
-            this.comboBox2.Location = new System.Drawing.Point(77, 49);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(63, 27);
-            this.comboBox2.TabIndex = 7;
+            this.samshabati.Location = new System.Drawing.Point(77, 49);
+            this.samshabati.Name = "samshabati";
+            this.samshabati.Size = new System.Drawing.Size(63, 27);
+            this.samshabati.TabIndex = 7;
             // 
-            // comboBox1
+            // orshabati
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.comboBox1.Location = new System.Drawing.Point(8, 49);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(63, 27);
-            this.comboBox1.TabIndex = 7;
+            this.orshabati.FormattingEnabled = true;
+            this.orshabati.Items.AddRange(new object[] {
+            "ორშაბათი",
+            "სამშაბათი",
+            "ოთხშაბათი",
+            "ხუთშაბათი",
+            "პარასკევი",
+            "შაბათი"});
+            this.orshabati.Location = new System.Drawing.Point(8, 49);
+            this.orshabati.Name = "orshabati";
+            this.orshabati.Size = new System.Drawing.Size(63, 27);
+            this.orshabati.TabIndex = 7;
             // 
             // lblTue
             // 
@@ -326,15 +342,15 @@
             this.lblTue.ForeColor = System.Drawing.Color.Black;
             this.lblTue.Location = new System.Drawing.Point(80, 25);
             this.lblTue.Name = "lblTue";
-            this.lblTue.Size = new System.Drawing.Size(35, 19);
+            this.lblTue.Size = new System.Drawing.Size(50, 19);
             this.lblTue.TabIndex = 6;
-            this.lblTue.Text = "სამ.";
+            this.lblTue.Text = "საათი";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(150, 25);
+            this.label5.Location = new System.Drawing.Point(165, 25);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(45, 19);
             this.label5.TabIndex = 5;
@@ -356,9 +372,9 @@
             this.lblMon.ForeColor = System.Drawing.Color.Black;
             this.lblMon.Location = new System.Drawing.Point(11, 25);
             this.lblMon.Name = "lblMon";
-            this.lblMon.Size = new System.Drawing.Size(43, 19);
+            this.lblMon.Size = new System.Drawing.Size(40, 19);
             this.lblMon.TabIndex = 0;
-            this.lblMon.Text = "ორშ.";
+            this.lblMon.Text = "დღე";
             // 
             // label3
             // 
@@ -380,29 +396,45 @@
             this.label4.TabIndex = 4;
             this.label4.Text = "ხუთ.";
             // 
-            // label1
+            // groupBox1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 204);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "მისამართი";
+            this.groupBox1.Controls.Add(this.ara);
+            this.groupBox1.Controls.Add(this.diax);
+            this.groupBox1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox1.Location = new System.Drawing.Point(388, 135);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(195, 100);
+            this.groupBox1.TabIndex = 3;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "ცნობა";
             // 
-            // textBox6
+            // diax
             // 
-            this.textBox6.Location = new System.Drawing.Point(143, 200);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(193, 27);
-            this.textBox6.TabIndex = 5;
+            this.diax.AutoSize = true;
+            this.diax.Location = new System.Drawing.Point(8, 48);
+            this.diax.Name = "diax";
+            this.diax.Size = new System.Drawing.Size(67, 23);
+            this.diax.TabIndex = 0;
+            this.diax.Text = "დიახ";
+            this.diax.UseVisualStyleBackColor = true;
+            // 
+            // ara
+            // 
+            this.ara.AutoSize = true;
+            this.ara.Location = new System.Drawing.Point(110, 48);
+            this.ara.Name = "ara";
+            this.ara.Size = new System.Drawing.Size(54, 23);
+            this.ara.TabIndex = 0;
+            this.ara.Text = "არა";
+            this.ara.UseVisualStyleBackColor = true;
             // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(910, 374);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpDays);
             this.Controls.Add(this.grpAbonent);
             this.Name = "AddAbonent";
@@ -411,6 +443,8 @@
             this.grpAbonent.PerformLayout();
             this.grpDays.ResumeLayout(false);
             this.grpDays.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -423,13 +457,13 @@
         private System.Windows.Forms.Label lblPhoneNumber;
         private System.Windows.Forms.Label lblFirstName;
         private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox telefoni;
+        private System.Windows.Forms.TextBox asaki;
+        private System.Windows.Forms.TextBox gvari;
+        private System.Windows.Forms.TextBox saxeli;
+        private System.Windows.Forms.TextBox nomeri;
         private System.Windows.Forms.GroupBox grpDays;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox orshabati;
         private System.Windows.Forms.Label lblTue;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
@@ -440,8 +474,11 @@
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.ComboBox samshabati;
+        private System.Windows.Forms.TextBox misamarti;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.CheckBox ara;
+        private System.Windows.Forms.CheckBox diax;
     }
 }
