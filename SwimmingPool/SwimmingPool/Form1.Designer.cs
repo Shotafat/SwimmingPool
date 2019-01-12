@@ -77,7 +77,7 @@
             this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dawyeba,
             this.damTavreba});
-            this.dataGridView3.Location = new System.Drawing.Point(721, 107);
+            this.dataGridView3.Location = new System.Drawing.Point(719, 105);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(245, 67);
             this.dataGridView3.TabIndex = 2;
@@ -104,7 +104,7 @@
             this.Column13,
             this.Column14,
             this.Column15});
-            this.dataGridView2.Location = new System.Drawing.Point(70, 107);
+            this.dataGridView2.Location = new System.Drawing.Point(68, 105);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(645, 67);
             this.dataGridView2.TabIndex = 1;
@@ -146,7 +146,7 @@
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.AliceBlue;
-            this.groupBox1.Location = new System.Drawing.Point(40, 27);
+            this.groupBox1.Location = new System.Drawing.Point(38, 25);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(1049, 292);
             this.groupBox1.TabIndex = 0;
@@ -225,7 +225,7 @@
             this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(259, 23);
+            this.panel1.Location = new System.Drawing.Point(257, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(551, 68);
             this.panel1.TabIndex = 0;
@@ -282,6 +282,7 @@
             // 
             // splitContainer1
             // 
+            this.splitContainer1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainer1.Location = new System.Drawing.Point(0, 24);
             this.splitContainer1.Name = "splitContainer1";

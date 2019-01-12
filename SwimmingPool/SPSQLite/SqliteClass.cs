@@ -289,6 +289,7 @@ namespace SPSQLite
         public double Price { get; set; }
     }
 
+    //სააბონენტო განრიგი
     public class SubscriptionSchedule
     {
         [PrimaryKey, AutoIncrement]
