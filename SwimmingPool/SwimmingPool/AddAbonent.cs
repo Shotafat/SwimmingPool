@@ -16,18 +16,32 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
+            grafiki();
+            
+        }
+
+        public void grafiki()
+        {
             dataGridView1.DataSource = null;
-            //dataGridView1.Rows[0].Cells[0].Value = Convert.ToString("09:00");
             for (int i = clock; i < 20; i++)
             {
                 dataGridView1.Rows.Add();
-                dataGridView1.Rows[i-9].Cells[0].Value = Convert.ToString(i+":00");
+                dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i + ":00");
+             }
+            foreach (DataGridViewColumn column in dataGridView1.SelectedColumns)
+            {
+                string selectedColumn = column.HeaderText.ToString();
+                MessageBox.Show(selectedColumn);
             }
-           //dataGridView1.Rows[0].Cells[0].Value="09:00";
-           // string row = "10:00";
-           // dataGridView1.Rows.Add(row);
-           // dataGridView1.Rows[1].Cells[0].Value = "10:00";
-           
+            
+            //var k = dataGridView1.SelectedRows[0].HeaderCell.Value;
+            //MessageBox.Show(k.ToString());
+        }
+
+        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var k = dataGridView1.SelectedRows[0].HeaderCell.Value;
+            MessageBox.Show(k.ToString());
         }
     }
 }

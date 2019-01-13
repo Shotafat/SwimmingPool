@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle25 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle26 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle27 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle28 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.lblAnonimentNumber = new System.Windows.Forms.Label();
             this.grpAbonent = new System.Windows.Forms.GroupBox();
             this.misamarti = new System.Windows.Forms.TextBox();
@@ -49,29 +49,17 @@
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
             this.grpDays = new System.Windows.Forms.GroupBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.samshabati = new System.Windows.Forms.ComboBox();
-            this.orshabati = new System.Windows.Forms.ComboBox();
-            this.lblTue = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.lblMon = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ara = new System.Windows.Forms.CheckBox();
             this.diax = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orshabati = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.samshabati = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.otxshabati = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.xushabati = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.paraskevi = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.shabati = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.grpAbonent.SuspendLayout();
             this.grpDays.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -211,206 +199,15 @@
             // 
             // grpDays
             // 
-            this.grpDays.Controls.Add(this.comboBox6);
-            this.grpDays.Controls.Add(this.comboBox5);
-            this.grpDays.Controls.Add(this.comboBox4);
-            this.grpDays.Controls.Add(this.comboBox3);
-            this.grpDays.Controls.Add(this.samshabati);
-            this.grpDays.Controls.Add(this.orshabati);
-            this.grpDays.Controls.Add(this.lblTue);
-            this.grpDays.Controls.Add(this.label5);
-            this.grpDays.Controls.Add(this.label2);
-            this.grpDays.Controls.Add(this.lblMon);
-            this.grpDays.Controls.Add(this.label3);
-            this.grpDays.Controls.Add(this.label4);
+            this.grpDays.Controls.Add(this.dataGridView1);
             this.grpDays.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDays.ForeColor = System.Drawing.Color.DodgerBlue;
             this.grpDays.Location = new System.Drawing.Point(388, 31);
             this.grpDays.Name = "grpDays";
-            this.grpDays.Size = new System.Drawing.Size(432, 87);
+            this.grpDays.Size = new System.Drawing.Size(712, 393);
             this.grpDays.TabIndex = 2;
             this.grpDays.TabStop = false;
             this.grpDays.Text = "გრაფიკის არჩევა";
-            // 
-            // comboBox6
-            // 
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.comboBox6.Location = new System.Drawing.Point(356, 49);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(63, 27);
-            this.comboBox6.TabIndex = 7;
-            // 
-            // comboBox5
-            // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.comboBox5.Location = new System.Drawing.Point(287, 49);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(63, 27);
-            this.comboBox5.TabIndex = 7;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.comboBox4.Location = new System.Drawing.Point(218, 49);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(63, 27);
-            this.comboBox4.TabIndex = 7;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.comboBox3.Location = new System.Drawing.Point(147, 49);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(63, 27);
-            this.comboBox3.TabIndex = 7;
-            // 
-            // samshabati
-            // 
-            this.samshabati.FormattingEnabled = true;
-            this.samshabati.Items.AddRange(new object[] {
-            "09:00",
-            "10:00",
-            "11:00",
-            "12:00",
-            "13:00",
-            "14:00",
-            "15:00",
-            "16:00",
-            "17:00",
-            "18:00",
-            "19:00",
-            "20:00"});
-            this.samshabati.Location = new System.Drawing.Point(77, 49);
-            this.samshabati.Name = "samshabati";
-            this.samshabati.Size = new System.Drawing.Size(63, 27);
-            this.samshabati.TabIndex = 7;
-            // 
-            // orshabati
-            // 
-            this.orshabati.FormattingEnabled = true;
-            this.orshabati.Items.AddRange(new object[] {
-            "ორშაბათი",
-            "სამშაბათი",
-            "ოთხშაბათი",
-            "ხუთშაბათი",
-            "პარასკევი",
-            "შაბათი"});
-            this.orshabati.Location = new System.Drawing.Point(8, 49);
-            this.orshabati.Name = "orshabati";
-            this.orshabati.Size = new System.Drawing.Size(63, 27);
-            this.orshabati.TabIndex = 7;
-            // 
-            // lblTue
-            // 
-            this.lblTue.AutoSize = true;
-            this.lblTue.ForeColor = System.Drawing.Color.Black;
-            this.lblTue.Location = new System.Drawing.Point(80, 25);
-            this.lblTue.Name = "lblTue";
-            this.lblTue.Size = new System.Drawing.Size(50, 19);
-            this.lblTue.TabIndex = 6;
-            this.lblTue.Text = "საათი";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(165, 25);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 19);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "ოთხ.";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(359, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 19);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "შაბ.";
-            // 
-            // lblMon
-            // 
-            this.lblMon.AutoSize = true;
-            this.lblMon.ForeColor = System.Drawing.Color.Black;
-            this.lblMon.Location = new System.Drawing.Point(11, 25);
-            this.lblMon.Name = "lblMon";
-            this.lblMon.Size = new System.Drawing.Size(40, 19);
-            this.lblMon.TabIndex = 0;
-            this.lblMon.Text = "დღე";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(289, 25);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(37, 19);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "პარ.";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(220, 25);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 19);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "ხუთ.";
             // 
             // groupBox1
             // 
@@ -418,7 +215,7 @@
             this.groupBox1.Controls.Add(this.diax);
             this.groupBox1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox1.Location = new System.Drawing.Point(388, 135);
+            this.groupBox1.Location = new System.Drawing.Point(12, 311);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(195, 100);
             this.groupBox1.TabIndex = 3;
@@ -449,99 +246,95 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column2,
-            this.Column3});
-            this.dataGridView1.Location = new System.Drawing.Point(22, 300);
+            this.saati,
+            this.orshabati,
+            this.samshabati,
+            this.otxshabati,
+            this.xushabati,
+            this.paraskevi,
+            this.shabati});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(744, 335);
+            this.dataGridView1.Size = new System.Drawing.Size(706, 367);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView1_CellMouseClick);
             // 
-            // Column1
+            // saati
             // 
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle22;
-            this.Column1.HeaderText = "საათი";
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.saati.DefaultCellStyle = dataGridViewCellStyle8;
+            this.saati.HeaderText = "საათი";
+            this.saati.Name = "saati";
+            this.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // Column4
+            // orshabati
             // 
-            dataGridViewCellStyle23.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle23.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle23.NullValue = false;
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle23;
-            this.Column4.HeaderText = "ორშაბათი";
-            this.Column4.Name = "Column4";
-            this.Column4.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.NullValue = false;
+            this.orshabati.DefaultCellStyle = dataGridViewCellStyle9;
+            this.orshabati.HeaderText = "ორშაბათი";
+            this.orshabati.Name = "orshabati";
+            this.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column5
+            // samshabati
             // 
-            dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle24.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle24.NullValue = false;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle24;
-            this.Column5.HeaderText = "სამშაბათი";
-            this.Column5.Name = "Column5";
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.NullValue = false;
+            this.samshabati.DefaultCellStyle = dataGridViewCellStyle10;
+            this.samshabati.HeaderText = "სამშაბათი";
+            this.samshabati.Name = "samshabati";
+            this.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column6
+            // otxshabati
             // 
-            dataGridViewCellStyle25.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle25.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle25.NullValue = false;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle25;
-            this.Column6.HeaderText = "ოთხშაბათი";
-            this.Column6.Name = "Column6";
-            this.Column6.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.NullValue = false;
+            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle11;
+            this.otxshabati.HeaderText = "ოთხშაბათი";
+            this.otxshabati.Name = "otxshabati";
+            this.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column7
+            // xushabati
             // 
-            dataGridViewCellStyle26.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle26.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle26.NullValue = false;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle26;
-            this.Column7.HeaderText = "ხუთშაბათი";
-            this.Column7.Name = "Column7";
-            this.Column7.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.NullValue = false;
+            this.xushabati.DefaultCellStyle = dataGridViewCellStyle12;
+            this.xushabati.HeaderText = "ხუთშაბათი";
+            this.xushabati.Name = "xushabati";
+            this.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column2
+            // paraskevi
             // 
-            dataGridViewCellStyle27.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle27.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle27.NullValue = false;
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle27;
-            this.Column2.HeaderText = "პარასკევი";
-            this.Column2.Name = "Column2";
-            this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column2.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.NullValue = false;
+            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle13;
+            this.paraskevi.HeaderText = "პარასკევი";
+            this.paraskevi.Name = "paraskevi";
+            this.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
-            // Column3
+            // shabati
             // 
-            dataGridViewCellStyle28.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle28.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle28.NullValue = false;
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle28;
-            this.Column3.HeaderText = "შაბათი";
-            this.Column3.Name = "Column3";
-            this.Column3.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.NullValue = false;
+            this.shabati.DefaultCellStyle = dataGridViewCellStyle14;
+            this.shabati.HeaderText = "შაბათი";
+            this.shabati.Name = "shabati";
+            this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(910, 647);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1238, 647);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.grpDays);
             this.Controls.Add(this.grpAbonent);
@@ -550,7 +343,6 @@
             this.grpAbonent.ResumeLayout(false);
             this.grpAbonent.PerformLayout();
             this.grpDays.ResumeLayout(false);
-            this.grpDays.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -572,30 +364,18 @@
         private System.Windows.Forms.TextBox saxeli;
         private System.Windows.Forms.TextBox nomeri;
         private System.Windows.Forms.GroupBox grpDays;
-        private System.Windows.Forms.ComboBox orshabati;
-        private System.Windows.Forms.Label lblTue;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label lblMon;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox samshabati;
         private System.Windows.Forms.TextBox misamarti;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox ara;
         private System.Windows.Forms.CheckBox diax;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saati;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn orshabati;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn samshabati;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn otxshabati;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn xushabati;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn paraskevi;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn shabati;
     }
 }
