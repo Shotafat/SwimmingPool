@@ -10,9 +10,12 @@ using System.Windows.Forms;
 
 namespace SwimmingPool
 {
+   
     public partial class AddAbonent : Form
     {
+        public List<string> ganrigidge = new List<string>();
         int clock = 9;
+        bool shecvla = true;
         public AddAbonent()
         {
             InitializeComponent();
@@ -34,14 +37,51 @@ namespace SwimmingPool
                 MessageBox.Show(selectedColumn);
             }
             
-            //var k = dataGridView1.SelectedRows[0].HeaderCell.Value;
-            //MessageBox.Show(k.ToString());
+           
         }
-
+        int indexcell;
+        int indexrow;
+        string valuecell;
+        string valuerow;
+        string value;
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-            var k = dataGridView1.SelectedRows[0].HeaderCell.Value;
-            MessageBox.Show(k.ToString());
+            var findindex = 0;
+             indexcell = dataGridView1.SelectedCells[0].ColumnIndex;
+             indexrow = dataGridView1.CurrentCell.RowIndex;
+
+             valuecell = dataGridView1.Columns[indexcell].HeaderText;
+             valuerow = dataGridView1.Rows[indexrow].Cells[0].Value.ToString();
+
+             value = valuecell + "-" + valuerow;
+
+            if (shecvla==true)
+            {
+                
+                ganrigidge.Add(value);
+                archeuligrafiki.Items.Add(value);
+            }
+            else
+            {
+
+                findindex = archeuligrafiki.FindString(value);
+                archeuligrafiki.Items.Remove(findindex);
+            }
+            
+        }
+
+        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var name = archeuligrafiki.FindString(value);
+            MessageBox.Show(name.ToString());
+            if (archeuligrafiki.Items[name].ToString() == value)
+            {
+                if (shecvla == true)
+                    shecvla = false;
+                else
+                    shecvla = true;
+            }
+
         }
     }
 }
