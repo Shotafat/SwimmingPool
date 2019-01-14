@@ -39,49 +39,31 @@ namespace SwimmingPool
             
            
         }
-        int indexcell;
-        int indexrow;
-        string valuecell;
-        string valuerow;
-        string value;
-        private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            var findindex = 0;
-             indexcell = dataGridView1.SelectedCells[0].ColumnIndex;
-             indexrow = dataGridView1.CurrentCell.RowIndex;
+           
+            string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
+            string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-             valuecell = dataGridView1.Columns[indexcell].HeaderText;
-             valuerow = dataGridView1.Rows[indexrow].Cells[0].Value.ToString();
+            bool cellValue = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
 
-             value = valuecell + "-" + valuerow;
+            var value = columnName + " - " + rowName;
 
-            if (shecvla==true)
-            {
-                
+            if (cellValue)
                 ganrigidge.Add(value);
-                archeuligrafiki.Items.Add(value);
-            }
             else
-            {
+                ganrigidge.Remove(value);
 
-                findindex = archeuligrafiki.FindString(value);
-                archeuligrafiki.Items.Remove(findindex);
-            }
-            
+            ganrigidge.Sort();
+            archeuligrafiki.DataSource = null;
+            archeuligrafiki.DataSource = ganrigidge;
         }
 
-        private void dataGridView1_CellMouseMove(object sender, DataGridViewCellMouseEventArgs e)
+        private void telefoni_KeyPress(object sender, KeyPressEventArgs e)
         {
-            var name = archeuligrafiki.FindString(value);
-            MessageBox.Show(name.ToString());
-            if (archeuligrafiki.Items[name].ToString() == value)
-            {
-                if (shecvla == true)
-                    shecvla = false;
-                else
-                    shecvla = true;
-            }
-
+            if (!char.IsDigit(e.KeyChar) && !char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }
