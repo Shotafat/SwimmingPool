@@ -46,6 +46,7 @@ namespace SwimmingPool
             string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
             string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
+
             bool cellValue = (bool)dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].EditedFormattedValue;
 
             var value = columnName + " - " + rowName;
