@@ -32,7 +32,7 @@ namespace SPSQLite
 
         //Abonent 
        
-        public static void insertAbonent(string name , string lastname , string phonenumber, string adress , string dateofbirth)
+        public static void insertAbonent(string name , string lastname , string phonenumber, DateTime dateofbirth, string adress  )
         {
             Conn.Insert(new Subscriber { Name = name, LastName = lastname, PhoneNumber = phonenumber, Address = adress, DateOfBirth = dateofbirth });
            
@@ -119,9 +119,9 @@ namespace SPSQLite
 
         //insert HealthNotice
 
-        public static void InsertHealthNotice(DateTime DateCreated , string CurrencyName , int AbonentID)
+        public static void InsertHealthNotice(DateTime DateCreated ,  int AbonentID)
         {
-            Conn.Insert(new HealthNotice { AbonentId = AbonentID, CurrencyName = CurrencyName, DateCreated = DateCreated });
+            Conn.Insert(new HealthNotice { AbonentId = AbonentID,  DateCreated = DateCreated });
         }
 
         //Delete HealthNotice
@@ -139,7 +139,7 @@ namespace SPSQLite
             if ( Health!=null)
             {
                 Health.AbonentId = health.AbonentId;
-                Health.CurrencyName = health.CurrencyName;
+              
                 Health.DateCreated = health.DateCreated;
                 Conn.Update(Health);
             }
@@ -158,7 +158,7 @@ namespace SPSQLite
         public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID) 
         {
 
-            Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscribtionID = SubscriptionID });
+            Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscriptionID = SubscriptionID });
 
         }
 
@@ -178,7 +178,7 @@ namespace SPSQLite
             if(Schedules !=null)
             {
                 Schedules.Schedule = Schedule.Schedule;
-                Schedules.SubscribtionID = Schedule.SubscribtionID;
+                Schedules.SubscriptionID = Schedule.SubscribtionID;
                 Conn.Update(Schedules);
 
             }
@@ -198,7 +198,7 @@ namespace SPSQLite
         public static void InsertSubscription(int SubscriberID,  int SubscriptionTypeID) 
         {
 
-            Conn.Insert(new Subscription {  SubscriberID = SubscriberID, SubscribtionTypeID = SubscriptionTypeID });
+            Conn.Insert(new Subscription {  SubscriberID = SubscriberID, SubscriptionTypeID = SubscriptionTypeID });
 
         }
 
@@ -219,7 +219,7 @@ namespace SPSQLite
             {
                 
                 Subscription.SubscriberID = subscription.SubscriberID;
-                Subscription.SubscribtionTypeID = subscription.SubscribtionTypeID;
+                Subscription.SubscriptionTypeID = subscription.SubscribtionTypeID;
                 Conn.Update(Subscription);
             }
             
@@ -248,7 +248,7 @@ namespace SPSQLite
 
       
         [ForeignKey(typeof(SubscribtionPrice))]
-        public int SubscribtionTypeID { get; set; }
+        public int SubscriptionTypeID { get; set; }
 
     }
 
@@ -261,7 +261,7 @@ namespace SPSQLite
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
-        public string DateOfBirth { get; set; }
+        public DateTime DateOfBirth { get; set; }
 
 
     }
@@ -274,7 +274,7 @@ namespace SPSQLite
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public DateTime DateCreated { get; set; }
-        public string CurrencyName { get; set; }
+      
         [ForeignKey(typeof(Subscriber))]   //ForeignKey_ს დამატება SqliteExtensions nuget-ით
         public int AbonentId { get; set; }
 
@@ -296,9 +296,10 @@ namespace SPSQLite
         public int Id { get; set; }
         public DateTime Schedule { get; set; }
         [ForeignKey(typeof(Subscription))]
-        public int SubscribtionID { get; set; }
+        public int SubscriptionID { get; set; }
 
 
     }
+    // daswrebebi 
 
 }

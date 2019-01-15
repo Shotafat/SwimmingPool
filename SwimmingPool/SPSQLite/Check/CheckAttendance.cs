@@ -9,5 +9,11 @@ namespace SPSQLite.Check
         public int ID { get; set; }
 
         public DateTime Hour { get; set; }
+        // molodinis rejimi 
+        // daswreba  
+         // gaacdina 
+         // dassvenebis dge 
+
+       
     }
 }

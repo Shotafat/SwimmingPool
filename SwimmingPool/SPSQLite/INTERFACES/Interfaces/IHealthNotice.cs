@@ -8,7 +8,7 @@ namespace SPSQLite
     {
          int ID{ get; set; }
          DateTime DateCreated { get; set; }
-         string CurrencyName { get; set; }
-         int AbonentId { get; set; }
+        
+        int AbonentId { get; set; }
     }
 }

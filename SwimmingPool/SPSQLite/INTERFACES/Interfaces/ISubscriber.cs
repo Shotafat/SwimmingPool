@@ -11,7 +11,7 @@ namespace SPSQLite
         string LastName { get; set; }
         string PhoneNumber { get; set; }
         string Adress { get; set; }
-        string DateOfBirth { get; set; }
-        List<CheckAttendance> CheckAttendance { get; set; }
+        DateTime DateOfBirth { get; set; }
+       
     }
 }

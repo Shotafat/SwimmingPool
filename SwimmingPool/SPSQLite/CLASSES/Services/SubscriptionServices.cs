@@ -7,17 +7,7 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriptionServices : ISubscriptionServices
     {
-        private static SubscriptionServices Instance = null;
-        public static SubscriptionServices Object
-        {
-            get
-            {
-                if (Instance == null)
-                    Instance = new SubscriptionServices();
-                return Instance;
-            }
-        }
-
+        
 
 
         public void Add(ISubscription a)
@@ -42,7 +32,7 @@ namespace SPSQLite.CLASSES
       
         public  IList<ISubscription> GetData()
         {
-          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { SubscriberID = a.SubscriberID, SubscribtionTypeID = a.SubscribtionTypeID }).ToList<ISubscription>();
+          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { SubscriberID = a.SubscriberID, SubscribtionTypeID = a.SubscriptionTypeID }).ToList<ISubscription>();
 
             return list;
         }

@@ -97,3 +97,12 @@ C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\net
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfo.cs
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.deps.json
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfo.cs
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb

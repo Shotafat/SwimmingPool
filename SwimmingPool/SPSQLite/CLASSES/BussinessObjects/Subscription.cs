@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SPSQLite.Check;
 
 namespace SPSQLite.CLASSES
 {
@@ -10,7 +11,6 @@ namespace SPSQLite.CLASSES
         public int SubscriberID { get ; set; }
     
         public int SubscribtionTypeID { get ; set ; }
- 
-        public ISubscriptionPrice Price { get; set; }
+
     }
 }

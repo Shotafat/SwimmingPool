@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SPSQLite.CLASSES.Services;
+using SPSQLite.Enums;
 
 namespace SwimmingPool
 {
@@ -18,10 +20,12 @@ namespace SwimmingPool
         bool shecvla = true;
         public AddAbonent()
         {
+          var data =(int)   AttendanceTypes.Attended;
             InitializeComponent();
             grafiki();
-            
+            dataGridView1.DataSource = ServiceInstances.Service().GetSubscriptionServices().GetData();
         }
+        
 
         public void grafiki()
         {

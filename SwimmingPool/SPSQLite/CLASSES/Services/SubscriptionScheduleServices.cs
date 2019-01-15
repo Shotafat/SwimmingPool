@@ -7,17 +7,7 @@ namespace SPSQLite.CLASSES
 {
     public class SubscriptionScheduleServices : ISubscriptionScheduleServices
     {
-        private static SubscriptionScheduleServices Instance = null;
-        public static SubscriptionScheduleServices Object
-        {
-            get
-            {
-                if (Instance == null)
-                    Instance = new SubscriptionScheduleServices();
-                return Instance;
-            }
-        }
-
+        
         public void Add(ISubscriptionSchedule a)
         {
             DatabaseConnection.InsertSubscriptionShedule(a.Schedule, a.SubscribtionID);
@@ -39,7 +29,7 @@ namespace SPSQLite.CLASSES
       
          public IList<ISubscriptionSchedule> GetData()
         {
-           IList<ISubscriptionSchedule> list =   DatabaseConnection.GetSheduleSource().Select(a => new SubscriptionSchedule { Schedule = a.Schedule, SubscribtionID = a.SubscribtionID }).ToList<ISubscriptionSchedule>();
+           IList<ISubscriptionSchedule> list =   DatabaseConnection.GetSheduleSource().Select(a => new SubscriptionSchedule { Schedule = a.Schedule, SubscribtionID = a.SubscriptionID }).ToList<ISubscriptionSchedule>();
 
             return list;
         }

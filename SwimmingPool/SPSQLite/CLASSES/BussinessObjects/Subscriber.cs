@@ -12,7 +12,7 @@ namespace SPSQLite.CLASSES
         public string LastName { get; set; }
         public string PhoneNumber { get ; set; }
         public string Adress { get; set ; }
-        public string DateOfBirth { get; set; }
-        public List<CheckAttendance> CheckAttendance { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public DateTime DateOfBirth { get; set; }
+
     }
 }
