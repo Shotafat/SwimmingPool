@@ -8,7 +8,6 @@ namespace SPSQLite.CLASSES
     {
         public int ID { get; set ; }
         public DateTime DateCreated { get ; set ; }
-       
         public int AbonentId { get ; set ; }
     }
 }

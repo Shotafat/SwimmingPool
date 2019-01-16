@@ -7,9 +7,6 @@ namespace SPSQLite.CLASSES
     public class SubscriberServices : ISubscriberServices
     {
 
-
-       
-
         
         public void Add(ISubscriber a)
         {

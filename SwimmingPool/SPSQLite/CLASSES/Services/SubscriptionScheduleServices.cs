@@ -33,5 +33,11 @@ namespace SPSQLite.CLASSES
 
             return list;
         }
+
+        //დასაწერია
+        public void UpdateSchedule(ISubscriptionSchedule schedule)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

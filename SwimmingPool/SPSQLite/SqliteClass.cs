@@ -154,11 +154,11 @@ namespace SPSQLite
   
 
         // Insert Subscription Shedule
-
-        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID) 
+        //DefaulAttendance ჩავსვი (შოთა)
+        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID, int DefaultAttendance=0) 
         {
 
-            Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscriptionID = SubscriptionID });
+            Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscriptionID = SubscriptionID, Attandance=DefaultAttendance });
 
         }
 
@@ -166,19 +166,26 @@ namespace SPSQLite
 
          public static void DeleteSubscriptionShedule(ISubscriptionSchedule sub)
         {
+                                                                         //აქ SubscribtionID ხომ არ უნდა IDს ნაცვლად?
             Conn.Delete(Conn.Table<SubscriptionSchedule>().FirstOrDefault(a => a.Id == sub.ID));
 
         }
+
+      
 
         // Edit Subscription Schedule 
 
          public static void EditSubscriptionSchedule (ISubscriptionSchedule Schedule)
         {
+                                                                        //ID დაემთხვევა? SubscribtionID ხომ არ ჯობს?
             var Schedules = Conn.Table<SubscriptionSchedule>().Where(a => a.Id == Schedule.ID).SingleOrDefault();
             if(Schedules !=null)
             {
                 Schedules.Schedule = Schedule.Schedule;
                 Schedules.SubscriptionID = Schedule.SubscribtionID;
+                //დასწრება ჩავამატე, Enum გადადის ინტში და გადაეცემა ინტი
+                Schedules.Attandance = (int)Schedule.Attendance;
+
                 Conn.Update(Schedules);
 
             }
@@ -297,9 +304,10 @@ namespace SPSQLite
         public DateTime Schedule { get; set; }
         [ForeignKey(typeof(Subscription))]
         public int SubscriptionID { get; set; }
+        public int Attandance { get; set; }
 
 
     }
-    // daswrebebi 
+  
 
 }

@@ -20,7 +20,7 @@ namespace SwimmingPool
         bool shecvla = true;
         public AddAbonent()
         {
-          var data =(int)   AttendanceTypes.Attended;
+          //var data =(int)   AttendanceTypes.Attended;
             InitializeComponent();
             grafiki();
             dataGridView1.DataSource = ServiceInstances.Service().GetSubscriptionServices().GetData();

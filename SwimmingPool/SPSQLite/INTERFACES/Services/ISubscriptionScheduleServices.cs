@@ -10,6 +10,6 @@ namespace SPSQLite
         void Delete(ISubscriptionSchedule a);
         void Edit(ISubscriptionSchedule a);
         IList<ISubscriptionSchedule> GetData();
-
+        void UpdateSchedule(ISubscriptionSchedule schedule);
     }
 }
