@@ -11,5 +11,6 @@ namespace SPSQLite
         void Edit(ISubscriptionSchedule a);
         IList<ISubscriptionSchedule> GetData();
         void UpdateSchedule(ISubscriptionSchedule schedule);
+        void Distribute();
     }
 }
