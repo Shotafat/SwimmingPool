@@ -32,9 +32,9 @@ namespace SPSQLite
 
         //Abonent 
        
-        public static void insertAbonent(string name , string lastname , string phonenumber, DateTime dateofbirth, string adress  )
+        public static void insertAbonent(ISubscriber sub)
         {
-            Conn.Insert(new Subscriber { Name = name, LastName = lastname, PhoneNumber = phonenumber, Address = adress, DateOfBirth = dateofbirth });
+            Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
            
             
         }
