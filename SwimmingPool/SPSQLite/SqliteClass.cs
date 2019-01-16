@@ -27,7 +27,7 @@ namespace SPSQLite
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
-                        
+            Conn.CreateTable<Capacity>();
         }
 
         //Abonent 
@@ -259,6 +259,15 @@ namespace SPSQLite
 
     }
 
+
+    //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
+    public class Capacity
+    {
+        public int MaximumCapacity { get; set; }
+
+    }
+
+    
     //აბონენტი
     public class Subscriber
     {

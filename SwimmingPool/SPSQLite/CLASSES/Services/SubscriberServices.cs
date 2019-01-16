@@ -10,7 +10,7 @@ namespace SPSQLite.CLASSES
         
         public void Add(ISubscriber a)
         {
-            DatabaseConnection.insertAbonent(a.Name,a.LastName,a.PhoneNumber,a.DateOfBirth,a.Adress);
+            DatabaseConnection.insertAbonent(a);
          
         }
 

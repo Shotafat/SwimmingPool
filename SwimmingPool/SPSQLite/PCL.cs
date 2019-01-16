@@ -27,4 +27,14 @@ namespace SPSQLite
 
   
 
+   public static class BusinesLogic
+    {
+
+
+
+
+    }
+
+
+
 }
