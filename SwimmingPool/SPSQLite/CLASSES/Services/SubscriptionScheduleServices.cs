@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SPSQLite.CLASSES
 {
@@ -52,12 +53,15 @@ namespace SPSQLite.CLASSES
 
         public void Distribute()
         {
-            IList<ISubscriptionSchedule> ISchedule = GetData();
+            List<ISubscriptionSchedule> ISchedule = GetData().ToList();
             var Counter = (from x in ISchedule
                            group x by x.Schedule into g
-                           let count = g.Count()
-                           orderby count descending
-                           select new { Date = g.Key, Datelist = g.Count(c => c.Schedule == g.Key) }).ToString().ToList();
+                          
+                           select new { Date = g.Key, Datelist = g.Count(c => c.Schedule == g.Key) }).ToList();
+
+
+            Counter= Counter.OrderByDescending(o => o.Date).ToList();
+            Form A = new Form();
 
 
 
@@ -65,30 +69,22 @@ namespace SPSQLite.CLASSES
 
 
 
-            var DateTimeList = (ISchedule.GroupBy(x => x.Schedule).Select(x => x.FirstOrDefault())); // მარტო დეითთაიმები
+
+
+            foreach (var item in Counter)
+                    A.Controls.Add(new TextBox { Text = item.Date.ToString() + "DAEMATA  " + item.Datelist.ToString() });
+
+            A.Controls.Add(new Label { Text = "ROGOR XAR"});
+
+
+            A.Show();
 
 
 
-            var ConvertToList = (DateTimeList.GroupBy(x => x)
-                                .Where(e => e.Count() > 1)
-                                .Select(y => new { Date = y.Key, Count = y.Count() })).ToList();
-
-            /* ... ეს ლისტი შეიცავს ობიექტებს რომლებსაც აქვთ ფროფერთები {date} და {count}  რომლებიც ამავდროულად შეიცავენ
-                   ISubscriptionSchedule  ცხრილში ჩაწერილი {Schedule}  -- შესაბამისად {date }  და count  არის int რომელშიც 
-                   ჩაწერილია შესაბამისი {date} -ის განმეორებადობის მაჩვენებელი 
+         
 
 
-
-                    */
-
-
-
-
-
-
-            //var Counter2 = (from x in ISchedule group x by x.Schedule into g select new { a=g }).ToList();
-
-            //var Count = ISchedule.Distinct();
+            
         }
     }
 }

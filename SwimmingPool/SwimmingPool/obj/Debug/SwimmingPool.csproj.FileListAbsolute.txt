@@ -1346,10 +1346,7 @@ C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\bin\Debug
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\bin\Debug\SQLiteNetExtensions.pdb
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csprojAssemblyReference.cache
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe.config
-C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.abonentisdamateba.resources
-C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.cnoba.resources
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form1.resources
-C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.gadasaxadi.resources
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Properties.Resources.resources
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CoreCompileInputs.cache

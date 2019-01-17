@@ -27,7 +27,7 @@ namespace SPSQLite
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
-            Conn.CreateTable<Capacity>();
+            Conn.CreateTables<Capacity , SubscriptionSchedule>();
         }
 
         //Abonent 
