@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SPSQLite.UIMethods;
 
 namespace SPSQLite
 {
@@ -11,6 +12,6 @@ namespace SPSQLite
         void Edit(ISubscriptionSchedule a);
         IList<ISubscriptionSchedule> GetData();
         void UpdateSchedule(ISubscriptionSchedule schedule);
-        void Distribute();
+        List<DataInput> Distribute();
     }
 }

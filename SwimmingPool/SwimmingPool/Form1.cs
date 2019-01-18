@@ -61,7 +61,9 @@ namespace SwimmingPool
             //{
             //    MessageBox.Show(item.SubscribtionID.ToString());
             //}
-           
+          
+            
+
             //  ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
            ServiceInstances.Service().GetSubscriptionScheduleServices().Distribute();
         }

@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using SPSQLite.INTERFACES.Services;
 
 
 namespace SPSQLite.CLASSES.Services
 {
-   public  class ServiceInstances
+    public class ServiceInstances
     {
 
         private static ServiceInstances ServiceObject = null;
 
 
-        public static  ServiceInstances Service ()
+        public static ServiceInstances Service()
         {
             if (ServiceObject == null)
                 ServiceObject = new ServiceInstances();
@@ -19,7 +20,7 @@ namespace SPSQLite.CLASSES.Services
 
         }
 
-        
+
 
 
         public ISubscriberServices GetSubscriberService() {
@@ -48,6 +49,13 @@ namespace SPSQLite.CLASSES.Services
         public ISubscriptionServices GetSubscriptionServices()
         {
             return new SubscriptionServices();
+        }
+
+        public ICapicityServices GetCapicityServices()
+        {
+
+
+            return new CapicityServices();
         }
 
 
