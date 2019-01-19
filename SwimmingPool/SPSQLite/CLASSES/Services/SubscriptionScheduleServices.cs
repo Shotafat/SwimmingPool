@@ -76,6 +76,9 @@ namespace SPSQLite.CLASSES
 
         }
 
-        
+        public void UpdateSchedule(ISubscriptionSchedule schedule)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
