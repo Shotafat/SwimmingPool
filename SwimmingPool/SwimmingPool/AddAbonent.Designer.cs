@@ -63,11 +63,17 @@
             this.diax = new System.Windows.Forms.CheckBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.archeuligrafiki = new System.Windows.Forms.ListBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.grpAbonent.SuspendLayout();
             this.grpDays.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblAnonimentNumber
@@ -210,9 +216,9 @@
             this.grpDays.Controls.Add(this.dataGridView1);
             this.grpDays.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpDays.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.grpDays.Location = new System.Drawing.Point(388, 31);
+            this.grpDays.Location = new System.Drawing.Point(376, 129);
             this.grpDays.Name = "grpDays";
-            this.grpDays.Size = new System.Drawing.Size(712, 380);
+            this.grpDays.Size = new System.Drawing.Size(709, 298);
             this.grpDays.TabIndex = 2;
             this.grpDays.TabStop = false;
             this.grpDays.Text = "გრაფიკის არჩევა";
@@ -244,7 +250,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(706, 354);
+            this.dataGridView1.Size = new System.Drawing.Size(703, 272);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -327,9 +333,9 @@
             this.groupBox1.Controls.Add(this.diax);
             this.groupBox1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox1.Location = new System.Drawing.Point(12, 311);
+            this.groupBox1.Location = new System.Drawing.Point(828, 31);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(195, 100);
+            this.groupBox1.Size = new System.Drawing.Size(254, 92);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "ცნობა";
@@ -337,31 +343,33 @@
             // ara
             // 
             this.ara.AutoSize = true;
-            this.ara.Location = new System.Drawing.Point(110, 48);
+            this.ara.Location = new System.Drawing.Point(158, 41);
             this.ara.Name = "ara";
             this.ara.Size = new System.Drawing.Size(54, 23);
             this.ara.TabIndex = 0;
             this.ara.Text = "არა";
             this.ara.UseVisualStyleBackColor = true;
+            this.ara.CheckedChanged += new System.EventHandler(this.cheked);
             // 
             // diax
             // 
             this.diax.AutoSize = true;
-            this.diax.Location = new System.Drawing.Point(8, 48);
+            this.diax.Location = new System.Drawing.Point(61, 43);
             this.diax.Name = "diax";
             this.diax.Size = new System.Drawing.Size(67, 23);
             this.diax.TabIndex = 0;
             this.diax.Text = "დიახ";
             this.diax.UseVisualStyleBackColor = true;
+            this.diax.CheckedChanged += new System.EventHandler(this.cheked);
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.archeuligrafiki);
             this.groupBox2.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(12, 427);
+            this.groupBox2.Location = new System.Drawing.Point(12, 300);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(218, 186);
+            this.groupBox2.Size = new System.Drawing.Size(206, 186);
             this.groupBox2.TabIndex = 4;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "განრიგი";
@@ -375,14 +383,56 @@
             this.archeuligrafiki.Size = new System.Drawing.Size(187, 156);
             this.archeuligrafiki.TabIndex = 5;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dateTimePicker2);
+            this.groupBox3.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox3.Location = new System.Drawing.Point(376, 31);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(222, 92);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "დაწყების თარიღი";
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dateTimePicker1);
+            this.groupBox4.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
+            this.groupBox4.Location = new System.Drawing.Point(604, 31);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(218, 92);
+            this.groupBox4.TabIndex = 6;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "დამთავრების თარიღი";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(24, 35);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(137, 27);
+            this.dateTimePicker1.TabIndex = 7;
+            // 
+            // dateTimePicker2
+            // 
+            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker2.Location = new System.Drawing.Point(24, 38);
+            this.dateTimePicker2.Name = "dateTimePicker2";
+            this.dateTimePicker2.Size = new System.Drawing.Size(137, 27);
+            this.dateTimePicker2.TabIndex = 7;
+            // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1238, 647);
+            this.ClientSize = new System.Drawing.Size(1213, 714);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.grpDays);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.grpDays);
             this.Controls.Add(this.grpAbonent);
             this.Name = "AddAbonent";
             this.Text = "აბონენტის რეგისტრაცია";
@@ -393,6 +443,8 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox4.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -426,5 +478,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn xushabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
     }
 }

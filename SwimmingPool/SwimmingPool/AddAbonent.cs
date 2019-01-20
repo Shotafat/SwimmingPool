@@ -51,6 +51,18 @@ namespace SwimmingPool
             }
         }
 
+        public void cheked(object sender, EventArgs e)
+        {
+            if (ara.Checked)
+                diax.Enabled = false;
+            else
+                diax.Enabled = true;
+            if (diax.Checked)
+                ara.Enabled = false;
+            else
+                ara.Enabled = true;
+        }
+        int i = 0;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex <= 0)
@@ -61,25 +73,34 @@ namespace SwimmingPool
 
             bool cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
 
-            Color feri = default(Color);
+            Color feri = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.BackColor;
+
+            
 
             if (cellValue && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor == Color.Green)
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = feri;
             else
-            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+            {
+                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                
+            }
 
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != feri)
             {
                 ganrigidge.Add(value);
-                MessageBox.Show("ბაზაში დაემატა შემდეგი მონაცემები" + " " + value);
+               // MessageBox.Show("ბაზაში დაემატა შემდეგი მონაცემები" + " " + value);
             }
             else
             {
                 ganrigidge.Remove(value);
-                MessageBox.Show("ბაზიდან წაიშალა შემდეგი მონაცემები" + " " + value);
+                //MessageBox.Show("ბაზიდან წაიშალა შემდეგი მონაცემები" + " " + value);
             }
             archeuligrafiki.DataSource = null;
             archeuligrafiki.DataSource = ganrigidge;
+
+           
         }
+
+       
     }
 }
