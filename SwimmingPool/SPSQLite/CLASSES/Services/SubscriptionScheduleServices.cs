@@ -60,13 +60,7 @@ namespace SPSQLite.CLASSES
                            select new { Date = g.Key, Datelist = g.Count(c => c.Schedule == g.Key) }).ToString().ToList();
 
 
-
-
-
-
-
             var DateTimeList = (ISchedule.GroupBy(x => x.Schedule).Select(x => x.FirstOrDefault())); // მარტო დეითთაიმები
-
 
 
             var ConvertToList = (DateTimeList.GroupBy(x => x)

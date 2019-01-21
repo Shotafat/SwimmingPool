@@ -126,20 +126,19 @@ namespace SPSQLite
 
         //Delete HealthNotice
 
-        public static void DeleteHealthNotice ( IHealthNotice healthNotice)
+        public static void DeleteHealthNotice (IHealthNotice healthNotice)
         {
             Conn.Delete(Conn.Table<HealthNotice>().FirstOrDefault(a => a.id == healthNotice.ID));
         }
 
         //Edit Health Notice 
 
-        public static void EditHealthNotice ( IHealthNotice health)
+        public static void EditHealthNotice (IHealthNotice health)
         {
             var Health = Conn.Table<HealthNotice>().Where(a => a.id == health.ID).SingleOrDefault();
             if ( Health!=null)
             {
-                Health.AbonentId = health.AbonentId;
-              
+                Health.AbonentId = health.AbonentId;              
                 Health.DateCreated = health.DateCreated;
                 Conn.Update(Health);
             }
@@ -286,7 +285,6 @@ namespace SPSQLite
     //ჯანმრთელობის ცნობა
     public class HealthNotice
     {
-
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public DateTime DateCreated { get; set; }
