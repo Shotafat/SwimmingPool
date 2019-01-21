@@ -263,22 +263,23 @@
             // დამატებაToolStripMenuItem
             // 
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
             this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.ADDABONENT);
             // 
             // რედაქტირებაToolStripMenuItem
             // 
             this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
             this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.ADDABONENT);
             // 
             // წაშლაToolStripMenuItem
             // 
             this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
-            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.წაშლაToolStripMenuItem.Text = "წაშლა";
+            this.წაშლაToolStripMenuItem.Click += new System.EventHandler(this.წაშლაToolStripMenuItem_Click);
             // 
             // splitContainer1
             // 

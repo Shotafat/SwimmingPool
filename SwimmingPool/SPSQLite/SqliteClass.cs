@@ -10,6 +10,7 @@ using SQLite;
 using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
 using System.Reflection;
+using SPSQLite.INTERFACES.Interfaces;
 
 
 //using System.Windows.Forms;
@@ -27,7 +28,7 @@ namespace SPSQLite
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
-            Conn.CreateTable<Capacity>();
+            Conn.CreateTables<Capacity , SubscriptionSchedule>();
         }
 
         //Abonent 
@@ -240,6 +241,29 @@ namespace SPSQLite
             return Conn.Table<Subscription>().ToList();
         }
 
+      
+       
+
+        // Edit capicity
+        public static void EditCapicity(ICapicity capicity)
+        {
+            var cap =  Conn.Table<Capacity>().Where(a => a.MaximumCapacity == capicity.CapicityValue).FirstOrDefault();
+            if (cap != null)
+            {
+                cap.MaximumCapacity = capicity.CapicityValue;
+                Conn.Update(capicity);
+            }      
+
+
+        }
+
+        // Get capicity
+        public static List<Capacity> GetCapicity()
+        {
+            return Conn.Table<Capacity>().ToList();
+        }
+
+
        
     }
     
@@ -262,7 +286,8 @@ namespace SPSQLite
     //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
     public class Capacity
     {
-        public int MaximumCapacity { get; set; }
+        [PrimaryKey, AutoIncrement]
+        public int MaximumCapacity { get; set; } = 28;
 
     }
 

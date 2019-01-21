@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Windows.Forms;
+using SPSQLite.CLASSES.Services;
+using SPSQLite.UIMethods;
 
 namespace SPSQLite.CLASSES
 {
@@ -35,54 +38,47 @@ namespace SPSQLite.CLASSES
 
 
 
-        /*
-          var q = from x in list
-        group x by x.Name into g
-        let count = g.Count()
-        orderby count descending
-        select new {Name = g.Key, Count = count, ID = g.First().ID};*/
+        
+
+     
+
+        public List<DataInput> Distribute()
+        {
+            List<ISubscriptionSchedule> ISchedule = GetData().ToList();
+            var Counter = (from x in ISchedule
+                           group x by x.Schedule into g
+                          
+                           select new DataInput { Date = g.Key, Datelist = g.Count(c => c.Schedule == g.Key) }).ToList();
+
+
+            Counter= Counter.OrderByDescending(o => o.Date).ToList();
+
+       
 
 
 
-        //დასაწერია
+            //Form A = new Form();
+
+                                                  
+
+
+            //foreach (var item in Counter)
+            //    MessageBox.Show(item.Date.ToString() + "DAEMATA  " + item.Datelist.ToString()+"limit "+ ServiceInstances.Service().GetCapicityServices().GetData().ToString());
+                
+            //    //   A.Controls.Add(new TextBox { Text = item.Date.ToString() + "DAEMATA  " + item.Datelist.ToString() });
+
+            //A.Controls.Add(new Label { Text = "ROGOR XAR" });
+
+
+            //A.Show();
+
+            return Counter;
+
+        }
+
         public void UpdateSchedule(ISubscriptionSchedule schedule)
         {
             throw new NotImplementedException();
-        }
-
-        public void Distribute()
-        {
-            IList<ISubscriptionSchedule> ISchedule = GetData();
-            var Counter = (from x in ISchedule
-                           group x by x.Schedule into g
-                           let count = g.Count()
-                           orderby count descending
-                           select new { Date = g.Key, Datelist = g.Count(c => c.Schedule == g.Key) }).ToString().ToList();
-
-
-            var DateTimeList = (ISchedule.GroupBy(x => x.Schedule).Select(x => x.FirstOrDefault())); // მარტო დეითთაიმები
-
-
-            var ConvertToList = (DateTimeList.GroupBy(x => x)
-                                .Where(e => e.Count() > 1)
-                                .Select(y => new { Date = y.Key, Count = y.Count() })).ToList();
-
-            /* ... ეს ლისტი შეიცავს ობიექტებს რომლებსაც აქვთ ფროფერთები {date} და {count}  რომლებიც ამავდროულად შეიცავენ
-                   ISubscriptionSchedule  ცხრილში ჩაწერილი {Schedule}  -- შესაბამისად {date }  და count  არის int რომელშიც 
-                   ჩაწერილია შესაბამისი {date} -ის განმეორებადობის მაჩვენებელი 
-
-
-
-                    */
-
-
-
-
-
-
-            //var Counter2 = (from x in ISchedule group x by x.Schedule into g select new { a=g }).ToList();
-
-            //var Count = ISchedule.Distinct();
         }
     }
 }
