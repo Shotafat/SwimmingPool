@@ -1602,4 +1602,3 @@ C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\
 C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
-C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Test.resources
