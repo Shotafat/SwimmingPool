@@ -67,6 +67,12 @@ namespace SwimmingPool
             //  ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
            ServiceInstances.Service().GetSubscriptionScheduleServices().Distribute();
         }
+
+        private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form2 form = new Form2();
+            form.ShowDialog();
+        }
     }
 }
 

@@ -57,6 +57,7 @@
             this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.წაშლაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.საათებიდაფასებიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -243,7 +244,8 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.აბონენტიToolStripMenuItem});
+            this.აბონენტიToolStripMenuItem,
+            this.საათებიდაფასებიToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1145, 24);
@@ -303,6 +305,13 @@
             this.splitContainer1.Size = new System.Drawing.Size(1145, 683);
             this.splitContainer1.SplitterDistance = 352;
             this.splitContainer1.TabIndex = 3;
+            // 
+            // საათებიდაფასებიToolStripMenuItem
+            // 
+            this.საათებიდაფასებიToolStripMenuItem.Name = "საათებიდაფასებიToolStripMenuItem";
+            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.საათებიდაფასებიToolStripMenuItem.Text = "საათები და ფასები";
+            this.საათებიდაფასებიToolStripMenuItem.Click += new System.EventHandler(this.საათებიდაფასებიToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -365,6 +374,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column15;
         private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.ToolStripMenuItem საათებიდაფასებიToolStripMenuItem;
     }
 }
 

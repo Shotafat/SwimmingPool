@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using SPSQLite;
+using SPSQLite.CLASSES;
 
 namespace SPSQLite.CLASSES
 {
     public class SubscriptionPriceServices : ISubscriptionPriceServices
     {
-
+       
 
         public void Add(ISubscriptionPrice a)
         {
