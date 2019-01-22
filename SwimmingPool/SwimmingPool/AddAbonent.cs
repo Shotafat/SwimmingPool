@@ -9,7 +9,7 @@ namespace SwimmingPool
     public partial class AddAbonent : Form
     {
         public List<string> ganrigidge = new List<string>();
-        
+
         public AddAbonent()
         {
             InitializeComponent();
@@ -54,19 +54,32 @@ namespace SwimmingPool
         public void cheked(object sender, EventArgs e)
         {
             if (ara.Checked)
+            {
                 diax.Enabled = false;
+            }
             else
+            {
                 diax.Enabled = true;
+            }
+
             if (diax.Checked)
+            {
                 ara.Enabled = false;
+            }
             else
+            {
                 ara.Enabled = true;
+            }
         }
-        int i = 0;
+
+        private int i = 0;
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex <= 0)
+            {
                 return;
+            }
+
             string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
             string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             var value = columnName + " - " + rowName;
@@ -75,20 +88,22 @@ namespace SwimmingPool
 
             Color feri = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.BackColor;
 
-            
+
 
             if (cellValue && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor == Color.Green)
+            {
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = feri;
+            }
             else
             {
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
-                
+
             }
 
             if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != feri)
             {
                 ganrigidge.Add(value);
-               // MessageBox.Show("ბაზაში დაემატა შემდეგი მონაცემები" + " " + value);
+                // MessageBox.Show("ბაზაში დაემატა შემდეგი მონაცემები" + " " + value);
             }
             else
             {
@@ -98,9 +113,9 @@ namespace SwimmingPool
             archeuligrafiki.DataSource = null;
             archeuligrafiki.DataSource = ganrigidge;
 
-           
+
         }
 
-       
+
     }
 }

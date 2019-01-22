@@ -36,8 +36,14 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblAnonimentNumber = new System.Windows.Forms.Label();
-            this.grpAbonent = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ara = new System.Windows.Forms.CheckBox();
+            this.diax = new System.Windows.Forms.CheckBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
             this.misamarti = new System.Windows.Forms.TextBox();
             this.telefoni = new System.Windows.Forms.TextBox();
             this.asaki = new System.Windows.Forms.TextBox();
@@ -49,7 +55,11 @@
             this.lblPhoneNumber = new System.Windows.Forms.Label();
             this.lblFirstName = new System.Windows.Forms.Label();
             this.lblLastName = new System.Windows.Forms.Label();
-            this.grpDays = new System.Windows.Forms.GroupBox();
+            this.lblAnonimentNumber = new System.Windows.Forms.Label();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.archeuligrafiki = new System.Windows.Forms.ListBox();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,176 +68,275 @@
             this.xushabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.ara = new System.Windows.Forms.CheckBox();
-            this.diax = new System.Windows.Forms.CheckBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.archeuligrafiki = new System.Windows.Forms.ListBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.grpAbonent.SuspendLayout();
-            this.grpDays.SuspendLayout();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.აბონენტი = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
-            this.groupBox3.SuspendLayout();
-            this.groupBox4.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // lblAnonimentNumber
+            // panel1
             // 
-            this.lblAnonimentNumber.AutoSize = true;
-            this.lblAnonimentNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnonimentNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblAnonimentNumber.Location = new System.Drawing.Point(6, 41);
-            this.lblAnonimentNumber.Name = "lblAnonimentNumber";
-            this.lblAnonimentNumber.Size = new System.Drawing.Size(115, 19);
-            this.lblAnonimentNumber.TabIndex = 0;
-            this.lblAnonimentNumber.Text = "აბონიმენტის N";
+            this.panel1.BackColor = System.Drawing.Color.Teal;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.Location = new System.Drawing.Point(3, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1211, 101);
+            this.panel1.TabIndex = 0;
             // 
-            // grpAbonent
+            // panel2
             // 
-            this.grpAbonent.Controls.Add(this.misamarti);
-            this.grpAbonent.Controls.Add(this.telefoni);
-            this.grpAbonent.Controls.Add(this.asaki);
-            this.grpAbonent.Controls.Add(this.gvari);
-            this.grpAbonent.Controls.Add(this.saxeli);
-            this.grpAbonent.Controls.Add(this.nomeri);
-            this.grpAbonent.Controls.Add(this.label1);
-            this.grpAbonent.Controls.Add(this.lblAge);
-            this.grpAbonent.Controls.Add(this.lblPhoneNumber);
-            this.grpAbonent.Controls.Add(this.lblFirstName);
-            this.grpAbonent.Controls.Add(this.lblLastName);
-            this.grpAbonent.Controls.Add(this.lblAnonimentNumber);
-            this.grpAbonent.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpAbonent.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.grpAbonent.Location = new System.Drawing.Point(12, 31);
-            this.grpAbonent.Name = "grpAbonent";
-            this.grpAbonent.Size = new System.Drawing.Size(358, 263);
-            this.grpAbonent.TabIndex = 1;
-            this.grpAbonent.TabStop = false;
-            this.grpAbonent.Text = "აბონენტი";
+            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Controls.Add(this.panel9);
+            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Controls.Add(this.panel7);
+            this.panel2.Controls.Add(this.archeuligrafiki);
+            this.panel2.Controls.Add(this.panel6);
+            this.panel2.Controls.Add(this.misamarti);
+            this.panel2.Controls.Add(this.telefoni);
+            this.panel2.Controls.Add(this.asaki);
+            this.panel2.Controls.Add(this.gvari);
+            this.panel2.Controls.Add(this.saxeli);
+            this.panel2.Controls.Add(this.nomeri);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.lblAge);
+            this.panel2.Controls.Add(this.lblPhoneNumber);
+            this.panel2.Controls.Add(this.lblFirstName);
+            this.panel2.Controls.Add(this.lblLastName);
+            this.panel2.Controls.Add(this.lblAnonimentNumber);
+            this.panel2.Controls.Add(this.ara);
+            this.panel2.Controls.Add(this.dateTimePicker3);
+            this.panel2.Controls.Add(this.diax);
+            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Controls.Add(this.panel3);
+            this.panel2.Location = new System.Drawing.Point(3, 108);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1211, 605);
+            this.panel2.TabIndex = 1;
+            // 
+            // ara
+            // 
+            this.ara.AutoSize = true;
+            this.ara.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ara.Location = new System.Drawing.Point(1108, 58);
+            this.ara.Name = "ara";
+            this.ara.Size = new System.Drawing.Size(54, 22);
+            this.ara.TabIndex = 0;
+            this.ara.Text = "არა";
+            this.ara.UseVisualStyleBackColor = true;
+            // 
+            // diax
+            // 
+            this.diax.AutoSize = true;
+            this.diax.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.diax.Location = new System.Drawing.Point(1011, 60);
+            this.diax.Name = "diax";
+            this.diax.Size = new System.Drawing.Size(66, 22);
+            this.diax.TabIndex = 0;
+            this.diax.Text = "დიახ";
+            this.diax.UseVisualStyleBackColor = true;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Teal;
+            this.panel4.Controls.Add(this.label3);
+            this.panel4.Location = new System.Drawing.Point(733, 14);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(169, 36);
+            this.panel4.TabIndex = 19;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.Teal;
+            this.panel5.Controls.Add(this.label7);
+            this.panel5.Location = new System.Drawing.Point(1001, 14);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(169, 36);
+            this.panel5.TabIndex = 20;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker1.Location = new System.Drawing.Point(419, 59);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(169, 20);
+            this.dateTimePicker1.TabIndex = 21;
+            // 
+            // dateTimePicker3
+            // 
+            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTimePicker3.Location = new System.Drawing.Point(733, 59);
+            this.dateTimePicker3.Name = "dateTimePicker3";
+            this.dateTimePicker3.Size = new System.Drawing.Size(169, 20);
+            this.dateTimePicker3.TabIndex = 22;
             // 
             // misamarti
             // 
-            this.misamarti.Location = new System.Drawing.Point(143, 200);
+            this.misamarti.Location = new System.Drawing.Point(152, 244);
             this.misamarti.Name = "misamarti";
-            this.misamarti.Size = new System.Drawing.Size(193, 27);
-            this.misamarti.TabIndex = 5;
+            this.misamarti.Size = new System.Drawing.Size(193, 20);
+            this.misamarti.TabIndex = 29;
             // 
             // telefoni
             // 
-            this.telefoni.Location = new System.Drawing.Point(143, 167);
+            this.telefoni.Location = new System.Drawing.Point(152, 211);
             this.telefoni.Name = "telefoni";
-            this.telefoni.Size = new System.Drawing.Size(193, 27);
-            this.telefoni.TabIndex = 5;
-            this.telefoni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
+            this.telefoni.Size = new System.Drawing.Size(193, 20);
+            this.telefoni.TabIndex = 30;
             // 
             // asaki
             // 
-            this.asaki.Location = new System.Drawing.Point(143, 136);
+            this.asaki.Location = new System.Drawing.Point(152, 180);
             this.asaki.Name = "asaki";
-            this.asaki.Size = new System.Drawing.Size(193, 27);
-            this.asaki.TabIndex = 5;
-            this.asaki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
+            this.asaki.Size = new System.Drawing.Size(193, 20);
+            this.asaki.TabIndex = 31;
             // 
             // gvari
             // 
-            this.gvari.Location = new System.Drawing.Point(143, 104);
+            this.gvari.Location = new System.Drawing.Point(152, 148);
             this.gvari.Name = "gvari";
-            this.gvari.Size = new System.Drawing.Size(193, 27);
-            this.gvari.TabIndex = 5;
-            this.gvari.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
+            this.gvari.Size = new System.Drawing.Size(193, 20);
+            this.gvari.TabIndex = 32;
             // 
             // saxeli
             // 
-            this.saxeli.Location = new System.Drawing.Point(143, 71);
+            this.saxeli.Location = new System.Drawing.Point(152, 115);
             this.saxeli.Name = "saxeli";
-            this.saxeli.Size = new System.Drawing.Size(193, 27);
-            this.saxeli.TabIndex = 5;
-            this.saxeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
+            this.saxeli.Size = new System.Drawing.Size(193, 20);
+            this.saxeli.TabIndex = 33;
             // 
             // nomeri
             // 
-            this.nomeri.Location = new System.Drawing.Point(143, 38);
+            this.nomeri.Location = new System.Drawing.Point(152, 82);
             this.nomeri.Name = "nomeri";
-            this.nomeri.Size = new System.Drawing.Size(193, 27);
-            this.nomeri.TabIndex = 5;
+            this.nomeri.Size = new System.Drawing.Size(193, 20);
+            this.nomeri.TabIndex = 34;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(35, 204);
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(44, 248);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 2;
+            this.label1.TabIndex = 25;
             this.label1.Text = "მისამართი";
             // 
             // lblAge
             // 
             this.lblAge.AutoSize = true;
             this.lblAge.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.Black;
-            this.lblAge.Location = new System.Drawing.Point(78, 137);
+            this.lblAge.ForeColor = System.Drawing.Color.White;
+            this.lblAge.Location = new System.Drawing.Point(87, 181);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(43, 19);
-            this.lblAge.TabIndex = 4;
+            this.lblAge.TabIndex = 28;
             this.lblAge.Text = "ასაკი";
             // 
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.ForeColor = System.Drawing.Color.Black;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(35, 171);
+            this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
+            this.lblPhoneNumber.Location = new System.Drawing.Point(44, 215);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(86, 19);
-            this.lblPhoneNumber.TabIndex = 2;
+            this.lblPhoneNumber.TabIndex = 26;
             this.lblPhoneNumber.Text = "ტელეფონი";
             // 
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
             this.lblFirstName.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.Black;
-            this.lblFirstName.Location = new System.Drawing.Point(61, 73);
+            this.lblFirstName.ForeColor = System.Drawing.Color.White;
+            this.lblFirstName.Location = new System.Drawing.Point(70, 117);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 19);
-            this.lblFirstName.TabIndex = 1;
+            this.lblFirstName.TabIndex = 24;
             this.lblFirstName.Text = "სახელი";
             // 
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
             this.lblLastName.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.Black;
-            this.lblLastName.Location = new System.Drawing.Point(72, 106);
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
+            this.lblLastName.Location = new System.Drawing.Point(81, 150);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(49, 19);
-            this.lblLastName.TabIndex = 3;
+            this.lblLastName.TabIndex = 27;
             this.lblLastName.Text = "გვარი";
             // 
-            // grpDays
+            // lblAnonimentNumber
             // 
-            this.grpDays.Controls.Add(this.dataGridView1);
-            this.grpDays.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpDays.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.grpDays.Location = new System.Drawing.Point(376, 129);
-            this.grpDays.Name = "grpDays";
-            this.grpDays.Size = new System.Drawing.Size(709, 298);
-            this.grpDays.TabIndex = 2;
-            this.grpDays.TabStop = false;
-            this.grpDays.Text = "გრაფიკის არჩევა";
+            this.lblAnonimentNumber.AutoSize = true;
+            this.lblAnonimentNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAnonimentNumber.ForeColor = System.Drawing.Color.Transparent;
+            this.lblAnonimentNumber.Location = new System.Drawing.Point(15, 85);
+            this.lblAnonimentNumber.Name = "lblAnonimentNumber";
+            this.lblAnonimentNumber.Size = new System.Drawing.Size(115, 19);
+            this.lblAnonimentNumber.TabIndex = 23;
+            this.lblAnonimentNumber.Text = "აბონიმენტის N";
+            // 
+            // panel6
+            // 
+            this.panel6.BackColor = System.Drawing.Color.Teal;
+            this.panel6.Controls.Add(this.აბონენტი);
+            this.panel6.Location = new System.Drawing.Point(19, 25);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(326, 36);
+            this.panel6.TabIndex = 35;
+            // 
+            // archeuligrafiki
+            // 
+            this.archeuligrafiki.FormattingEnabled = true;
+            this.archeuligrafiki.Location = new System.Drawing.Point(19, 361);
+            this.archeuligrafiki.Name = "archeuligrafiki";
+            this.archeuligrafiki.Size = new System.Drawing.Size(319, 147);
+            this.archeuligrafiki.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.Teal;
+            this.panel7.Controls.Add(this.label4);
+            this.panel7.Location = new System.Drawing.Point(19, 295);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(319, 43);
+            this.panel7.TabIndex = 36;
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.dataGridView1);
+            this.panel8.Location = new System.Drawing.Point(419, 191);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(779, 327);
+            this.panel8.TabIndex = 37;
             // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -246,13 +355,12 @@
             this.paraskevi,
             this.shabati});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 23);
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.Size = new System.Drawing.Size(703, 272);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.Size = new System.Drawing.Size(779, 327);
+            this.dataGridView1.TabIndex = 5;
             // 
             // saati
             // 
@@ -327,150 +435,139 @@
             this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // groupBox1
+            // panel9
             // 
-            this.groupBox1.Controls.Add(this.ara);
-            this.groupBox1.Controls.Add(this.diax);
-            this.groupBox1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox1.Location = new System.Drawing.Point(828, 31);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(254, 92);
-            this.groupBox1.TabIndex = 3;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "ცნობა";
+            this.panel9.BackColor = System.Drawing.Color.Teal;
+            this.panel9.Controls.Add(this.label5);
+            this.panel9.Location = new System.Drawing.Point(419, 140);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(779, 44);
+            this.panel9.TabIndex = 38;
             // 
-            // ara
+            // აბონენტი
             // 
-            this.ara.AutoSize = true;
-            this.ara.Location = new System.Drawing.Point(158, 41);
-            this.ara.Name = "ara";
-            this.ara.Size = new System.Drawing.Size(54, 23);
-            this.ara.TabIndex = 0;
-            this.ara.Text = "არა";
-            this.ara.UseVisualStyleBackColor = true;
-            this.ara.CheckedChanged += new System.EventHandler(this.cheked);
+            this.აბონენტი.AutoSize = true;
+            this.აბონენტი.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.აბონენტი.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.აბონენტი.Location = new System.Drawing.Point(119, 5);
+            this.აბონენტი.Name = "აბონენტი";
+            this.აბონენტი.Size = new System.Drawing.Size(85, 20);
+            this.აბონენტი.TabIndex = 0;
+            this.აბონენტი.Text = "აბონენტი";
             // 
-            // diax
+            // panel3
             // 
-            this.diax.AutoSize = true;
-            this.diax.Location = new System.Drawing.Point(61, 43);
-            this.diax.Name = "diax";
-            this.diax.Size = new System.Drawing.Size(67, 23);
-            this.diax.TabIndex = 0;
-            this.diax.Text = "დიახ";
-            this.diax.UseVisualStyleBackColor = true;
-            this.diax.CheckedChanged += new System.EventHandler(this.cheked);
+            this.panel3.BackColor = System.Drawing.Color.Teal;
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Location = new System.Drawing.Point(419, 14);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(169, 36);
+            this.panel3.TabIndex = 18;
             // 
-            // groupBox2
+            // label2
             // 
-            this.groupBox2.Controls.Add(this.archeuligrafiki);
-            this.groupBox2.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox2.Location = new System.Drawing.Point(12, 300);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(206, 186);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "განრიგი";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label2.Location = new System.Drawing.Point(59, 8);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(67, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "საიდან";
             // 
-            // archeuligrafiki
+            // label3
             // 
-            this.archeuligrafiki.FormattingEnabled = true;
-            this.archeuligrafiki.ItemHeight = 19;
-            this.archeuligrafiki.Location = new System.Drawing.Point(8, 19);
-            this.archeuligrafiki.Name = "archeuligrafiki";
-            this.archeuligrafiki.Size = new System.Drawing.Size(187, 156);
-            this.archeuligrafiki.TabIndex = 5;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(59, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(81, 20);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "სადამდე";
             // 
-            // groupBox3
+            // label4
             // 
-            this.groupBox3.Controls.Add(this.dateTimePicker2);
-            this.groupBox3.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox3.Location = new System.Drawing.Point(376, 31);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(222, 92);
-            this.groupBox3.TabIndex = 5;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "დაწყების თარიღი";
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label4.Location = new System.Drawing.Point(82, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(154, 20);
+            this.label4.TabIndex = 1;
+            this.label4.Text = "არჩეული გრაფიკი";
             // 
-            // groupBox4
+            // label5
             // 
-            this.groupBox4.Controls.Add(this.dateTimePicker1);
-            this.groupBox4.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox4.ForeColor = System.Drawing.Color.DodgerBlue;
-            this.groupBox4.Location = new System.Drawing.Point(604, 31);
-            this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(218, 92);
-            this.groupBox4.TabIndex = 6;
-            this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "დამთავრების თარიღი";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(346, 10);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(76, 20);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "გრაფიკი";
             // 
-            // dateTimePicker1
+            // label6
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(24, 35);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(137, 27);
-            this.dateTimePicker1.TabIndex = 7;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(458, 27);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(345, 39);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "რ ე გ ი ს ტ რ ა ც ი ა ";
             // 
-            // dateTimePicker2
+            // label7
             // 
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker2.Location = new System.Drawing.Point(24, 38);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(137, 27);
-            this.dateTimePicker2.TabIndex = 7;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(56, 8);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(56, 20);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "ცნობა";
             // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1213, 714);
-            this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.grpDays);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.grpAbonent);
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Name = "AddAbonent";
             this.Text = "აბონენტის რეგისტრაცია";
-            this.grpAbonent.ResumeLayout(false);
-            this.grpAbonent.PerformLayout();
-            this.grpDays.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel5.PerformLayout();
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox4.ResumeLayout(false);
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblAnonimentNumber;
-        private System.Windows.Forms.GroupBox grpAbonent;
-        private System.Windows.Forms.Label lblAge;
-        private System.Windows.Forms.Label lblPhoneNumber;
-        private System.Windows.Forms.Label lblFirstName;
-        private System.Windows.Forms.Label lblLastName;
-        private System.Windows.Forms.TextBox telefoni;
-        private System.Windows.Forms.TextBox asaki;
-        private System.Windows.Forms.TextBox gvari;
-        private System.Windows.Forms.TextBox saxeli;
-        private System.Windows.Forms.TextBox nomeri;
-        private System.Windows.Forms.GroupBox grpDays;
-        private System.Windows.Forms.TextBox misamarti;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox ara;
-        private System.Windows.Forms.CheckBox diax;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.ListBox archeuligrafiki;
         private System.Windows.Forms.DataGridViewTextBoxColumn saati;
         private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
@@ -478,9 +575,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn xushabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.ListBox archeuligrafiki;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.TextBox misamarti;
+        private System.Windows.Forms.TextBox telefoni;
+        private System.Windows.Forms.TextBox asaki;
+        private System.Windows.Forms.TextBox gvari;
+        private System.Windows.Forms.TextBox saxeli;
+        private System.Windows.Forms.TextBox nomeri;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAge;
+        private System.Windows.Forms.Label lblPhoneNumber;
+        private System.Windows.Forms.Label lblFirstName;
+        private System.Windows.Forms.Label lblLastName;
+        private System.Windows.Forms.Label lblAnonimentNumber;
+        private System.Windows.Forms.CheckBox ara;
+        private System.Windows.Forms.DateTimePicker dateTimePicker3;
+        private System.Windows.Forms.CheckBox diax;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Panel panel5;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label აბონენტი;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label7;
     }
 }
