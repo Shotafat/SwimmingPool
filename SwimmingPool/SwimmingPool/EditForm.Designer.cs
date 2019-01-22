@@ -48,9 +48,9 @@
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.textBox3);
             this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Location = new System.Drawing.Point(-17, 64);
+            this.panel2.Location = new System.Drawing.Point(2, 87);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(422, 383);
+            this.panel2.Size = new System.Drawing.Size(374, 351);
             this.panel2.TabIndex = 3;
             // 
             // button1
@@ -64,7 +64,6 @@
             this.button1.TabIndex = 6;
             this.button1.Text = "შენახვა";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label4
             // 
@@ -90,7 +89,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(160, 212);
+            this.textBox3.Location = new System.Drawing.Point(160, 210);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(100, 20);
             this.textBox3.TabIndex = 2;
@@ -108,9 +107,9 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panel1.Location = new System.Drawing.Point(-17, 3);
+            this.panel1.Location = new System.Drawing.Point(2, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(422, 66);
+            this.panel1.Size = new System.Drawing.Size(374, 66);
             this.panel1.TabIndex = 2;
             // 
             // label1
@@ -127,12 +126,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(379, 450);
+            this.ClientSize = new System.Drawing.Size(386, 450);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "EditForm";
             this.Text = "EditForm";
-
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);

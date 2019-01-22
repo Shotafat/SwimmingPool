@@ -40,8 +40,7 @@ namespace SwimmingPool
 
         public void ADDABONENT(object sender, EventArgs e)
         {
-            AddAbonent addAbonent = new AddAbonent();
-            addAbonent.ShowDialog();
+           
         }
 
         private void წაშლაToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,10 +67,27 @@ namespace SwimmingPool
            ServiceInstances.Service().GetSubscriptionScheduleServices().Distribute();
         }
 
+       
+           
+
+    
+
+       
+
+        private void დამატებაToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+                AddAbonent addAbonent = new AddAbonent();
+                addAbonent.ShowDialog();
+            
+        }
+
         private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
             Form2 form = new Form2();
             form.ShowDialog();
+
         }
     }
 }
