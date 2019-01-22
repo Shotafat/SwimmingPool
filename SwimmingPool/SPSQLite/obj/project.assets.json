@@ -616,12 +616,11 @@
   },
   "libraries": {
     "Microsoft.CSharp/4.0.1": {
-      "sha512": "wOdakWLyi6TEVyyPrE/UyMl9bTUFo3aDZGul9+X2rA2mnVIA0mRgVN6Q6OCPiToQ5RRZG2m4JzZAhCss+Qvd7A==",
+      "sha512": "17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
       "type": "package",
       "path": "microsoft.csharp/4.0.1",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -858,7 +857,7 @@
       ]
     },
     "sqlite-net-pcl/1.5.231": {
-      "sha512": "Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "sha512": "B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
       "type": "package",
       "path": "sqlite-net-pcl/1.5.231",
       "files": [
@@ -1166,12 +1165,11 @@
       ]
     },
     "System.Dynamic.Runtime/4.0.11": {
-      "sha512": "CyGJpvUO/6tEqLH4g/Kh+bmzLESBIxkOiUaod8KP9GojWqkK8ImNHM1tovMVWqLPJuV/f2HufjxQ394hkNeBqw==",
+      "sha512": "db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
       "type": "package",
       "path": "system.dynamic.runtime/4.0.11",
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/MonoAndroid10/_._",
@@ -2962,39 +2960,23 @@
     ]
   },
   "packageFolders": {
-<<<<<<< HEAD
-    "C:\\Users\\Kakha\\.nuget\\packages\\": {},
-=======
-    "C:\\Users\\User\\.nuget\\packages\\": {},
->>>>>>> 058a269a0963bd0835e2782c201d84dfd2ff1560
+    "C:\\Users\\datax\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-<<<<<<< HEAD
-      "projectUniqueName": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-      "packagesPath": "C:\\Users\\Kakha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
-=======
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-      "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-      "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
->>>>>>> 058a269a0963bd0835e2782c201d84dfd2ff1560
+      "projectPath": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "packagesPath": "C:\\Users\\datax\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-<<<<<<< HEAD
-        "C:\\Users\\Kakha\\AppData\\Roaming\\NuGet\\NuGet.Config",
-=======
-        "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
->>>>>>> 058a269a0963bd0835e2782c201d84dfd2ff1560
+        "C:\\Users\\datax\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

@@ -1,13 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SPSQLite.CLASSES.Services;
+using System;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SPSQLite.CLASSES.Services;
 
 namespace SwimmingPool
 {
@@ -18,10 +13,10 @@ namespace SwimmingPool
         public Form2()
         {
             InitializeComponent();
-           
 
-            
-            
+
+
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -29,19 +24,19 @@ namespace SwimmingPool
 
             EditForm edit = new EditForm();
             edit.ShowDialog();
-            if(edit.DialogResult == DialogResult.OK)
+            if (edit.DialogResult == DialogResult.OK)
             {
                 Form2_Load(sender, e);
 
             }
-         
 
-             
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-             AddPriceForm addform = new AddPriceForm();
+            AddPriceForm addform = new AddPriceForm();
             addform.ShowDialog();
             if (addform.DialogResult == DialogResult.OK)
             {
@@ -49,7 +44,7 @@ namespace SwimmingPool
 
 
             }
-      
+
 
 
         }
@@ -64,9 +59,9 @@ namespace SwimmingPool
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             NumberofHour = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            SelectedRowPrice=  dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-    
-     
+            SelectedRowPrice = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -76,7 +71,33 @@ namespace SwimmingPool
 
         private void button3_Click(object sender, EventArgs e)
         {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
 
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                string a = Convert.ToString(selectedRow.Cells[0].Value);
+
+                var gela = ServiceInstances.Service().GetSubscriptionPriceServices().GetData()
+                    .Where(x => x.ID == int.Parse(a)).FirstOrDefault();
+
+
+
+
+                ServiceInstances.Service().GetSubscriptionPriceServices().Delete(gela);
+
+                foreach (var item in ServiceInstances.Service().GetSubscriptionPriceServices().GetData())
+                {
+                    Console.WriteLine(item.ID);
+                }
+
+                var gelas = ServiceInstances.Service().GetSubscriptionPriceServices().GetData();
+                Form2_Load(sender, e);
+
+
+
+            }
         }
     }
 }
