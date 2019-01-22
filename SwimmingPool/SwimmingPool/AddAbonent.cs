@@ -9,6 +9,8 @@ namespace SwimmingPool
     public partial class AddAbonent : Form
     {
         public List<string> ganrigidge = new List<string>();
+        public List<int> columni = new List<int>();
+        public List<int> rovsi = new List<int>();
 
         public AddAbonent()
         {
@@ -29,10 +31,10 @@ namespace SwimmingPool
             {
                 for (int ii = 0; ii < 7; ii++)
                 {
-                    dataGridView1.Rows[i].Cells[ii].Style.BackColor = Color.Snow;
+                    dataGridView1.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
                 }
             }
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
+            //dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
 
         public void ricxvebi(object sender, KeyPressEventArgs e)
@@ -72,50 +74,58 @@ namespace SwimmingPool
             }
         }
 
-        private int i = 0;
+       
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex <= 0)
-            {
+            // MessageBox.Show(e.ColumnIndex.ToString());
+            bool sell = columni.Contains(e.ColumnIndex);
+            //bool rov = rovsi.Contains(e.RowIndex);
+            if (sell && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != Color.Green)
                 return;
-            }
-
-            string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
-            string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            var value = columnName + " - " + rowName;
-
-            bool cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
-
-            Color feri = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.BackColor;
-
-
-
-            if (cellValue && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor == Color.Green)
-            {
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = feri;
-            }
             else
             {
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                columni.Add(e.ColumnIndex);
+                rovsi.Add(e.RowIndex);
+                if (e.ColumnIndex <= 0)
+                {
+                    return;
+                }
 
+                string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
+                string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                var value = columnName + " - " + rowName;
+
+                bool cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
+
+                Color feri = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.BackColor;
+
+                //MessageBox.Show(feri.ToString());
+
+                if (cellValue && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor == Color.Green)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = feri;
+                }
+                else
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+
+                }
+
+                if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != feri)
+                {
+                    ganrigidge.Add(value);
+                    //MessageBox.Show("ბაზაში დაემატა შემდეგი მონაცემები" + " " + value);
+                }
+                else
+                {
+                    ganrigidge.Remove(value);
+                    columni.Remove(e.ColumnIndex);
+                    //MessageBox.Show("ბაზიდან წაიშალა შემდეგი მონაცემები" + " " + value);
+                }
+                archeuligrafiki.DataSource = null;
+                archeuligrafiki.DataSource = ganrigidge;
             }
-
-            if (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != feri)
-            {
-                ganrigidge.Add(value);
-                // MessageBox.Show("ბაზაში დაემატა შემდეგი მონაცემები" + " " + value);
-            }
-            else
-            {
-                ganrigidge.Remove(value);
-                //MessageBox.Show("ბაზიდან წაიშალა შემდეგი მონაცემები" + " " + value);
-            }
-            archeuligrafiki.DataSource = null;
-            archeuligrafiki.DataSource = ganrigidge;
-
-
+            
         }
-
-
-    }
+     }
 }

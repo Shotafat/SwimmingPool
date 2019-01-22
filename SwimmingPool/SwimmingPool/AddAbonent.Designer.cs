@@ -184,6 +184,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(779, 327);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // saati
             // 
@@ -319,6 +320,7 @@
             this.telefoni.Name = "telefoni";
             this.telefoni.Size = new System.Drawing.Size(193, 20);
             this.telefoni.TabIndex = 30;
+            this.telefoni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
             // asaki
             // 
@@ -326,6 +328,7 @@
             this.asaki.Name = "asaki";
             this.asaki.Size = new System.Drawing.Size(193, 20);
             this.asaki.TabIndex = 31;
+            this.asaki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
             // gvari
             // 
@@ -333,6 +336,7 @@
             this.gvari.Name = "gvari";
             this.gvari.Size = new System.Drawing.Size(193, 20);
             this.gvari.TabIndex = 32;
+            this.gvari.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
             // 
             // saxeli
             // 
@@ -340,6 +344,7 @@
             this.saxeli.Name = "saxeli";
             this.saxeli.Size = new System.Drawing.Size(193, 20);
             this.saxeli.TabIndex = 33;
+            this.saxeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
             // 
             // nomeri
             // 
@@ -425,6 +430,7 @@
             this.ara.TabIndex = 0;
             this.ara.Text = "არა";
             this.ara.UseVisualStyleBackColor = true;
+            this.ara.Click += new System.EventHandler(this.cheked);
             // 
             // dateTimePicker3
             // 
@@ -445,6 +451,7 @@
             this.diax.TabIndex = 0;
             this.diax.Text = "დიახ";
             this.diax.UseVisualStyleBackColor = true;
+            this.diax.Click += new System.EventHandler(this.cheked);
             // 
             // dateTimePicker1
             // 

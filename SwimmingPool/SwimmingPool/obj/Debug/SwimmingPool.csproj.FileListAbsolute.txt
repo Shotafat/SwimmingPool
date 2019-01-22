@@ -1609,3 +1609,7 @@ C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.EditForm.resources
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form2.resources
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form3.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.AddPriceForm.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.EditForm.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form2.resources
+C:\Users\Kakha\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form3.resources
