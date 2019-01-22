@@ -16,11 +16,9 @@ namespace SPSQLite.UIMethods
     //AXALI OBIEQTI ROMELIC SHEICAVS: int ROW |int COLUMN |DATETIME DATE|INT SAVSEADGILEBI
 public class FormatedData
     {
-        public int Row { get; set; }
-        public int Column { get; set; }
-        public DateTime Date { get; set; }
-        public int TQuantity{ get; set; }
-
+        public int Hours { get; set; }
+        public List<DataInput> DatainputList { get; set; }
+        
     }
 
     public static class InputMethods
@@ -28,7 +26,7 @@ public class FormatedData
         public static List<DataInput> ScheduleList { get; set; }
         public static int ColumnIndex{ get; set; }
         public static int RowIndex { get; set; }
-        
+        public static List<FormatedData> DATAforInput { get; set; }
         public static List<FormatedData> Filldata(DateTime StartDate, DateTime EndDate, List<DataInput> Schedlist)
         {
             //dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = value;
@@ -41,7 +39,7 @@ public class FormatedData
             var groupedbyhour = (from p in Filter
                                 group p by p.Date.Hour into g
                                 orderby g.Key ascending
-                                select new { Hour = g.Key, DateInputs=g.Where(x=>x.Date.Hour>=9 &&x.Date.Hour<=21).ToList()}).ToList();
+                                select new FormatedData { Hours = g.Key, DatainputList = g.Where(x=>x.Date.Hour>=9 &&x.Date.Hour<=21).ToList()}).ToList();
 
             //კვირის რა დღეც არის, იმავე ნომრის სვეტს აბრუნებს
             ColumnReturner(StartDate);
@@ -49,24 +47,11 @@ public class FormatedData
             //რომელ საათსაც გადავცემთ იმის შესაბამის რიგს აბრუნებს
             RowReturner(StartDate.Hour);
 
-
-            //AXALI OBIEQTI ROMELIC SHEICAVS: int ROW |int COLUMN |DATETIME DATE|INT SAVSEADGILEBI
-            //ეს შევქმენი რომ კახამ პირდაპირ მიიღოს ობიექტი რომელიც შეიცავს სვეტის და რიგის კოორდინატებს 
-            //და თითოეული კოორდინატის შესაბამის თარიღს და შევსებულ ადგილებს
-            List<FormatedData> UIdatalist = new List<FormatedData>();
-             //თითოეული რიგისთვის გადავუვლი ყველა სვეტს, შემდეგ გადავდივარ შემდეგ რიგზე                       
-            for (int i = RowIndex; i < 21-9; i++)
-            {
-                for (int b = ColumnIndex; b < 7; b++)
-                {
-                    UIdatalist.Add(new FormatedData {Column=b, Row=i, Date=groupedbyhour[i+9].DateInputs[b].Date, TQuantity = groupedbyhour[i + 9].DateInputs[b].Datelist });
-                }
+            DATAforInput = new List<FormatedData>();
+            DATAforInput = groupedbyhour;
 
 
-            }
-
-            //მოცემულ ლისტს კახა გამოიყენებს გრიდზე გასატოლებლად.
-            return UIdatalist;
+            return groupedbyhour;
         }
 
         public static int ColumnReturner(DateTime startDate)
