@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using SPSQLite.CLASSES;
+using SPSQLite.CLASSES.BussinessObjects;
+using SPSQLite.CLASSES.Services;
+using SPSQLite.UIMethods;
 
 namespace SwimmingPool
 {
@@ -16,7 +20,57 @@ namespace SwimmingPool
         {
             InitializeComponent();
             grafiki();
+            DateTime start = dateTimePicker1.Value;
+            DateTime End = dateTimePicker1.Value.AddDays(3);
+            gridFillter(dataGridView1, start, End);
         }
+
+
+
+       public void  gridFillter (DataGridView SubscriberSchedul, DateTime Start, DateTime End )
+        {
+            //        FormatedData
+            //{
+            //    public int Hours { get; set; }
+            //    public List<DataInput> DatainputList { get; set; }
+
+            //}
+            //dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = value;
+
+           // MessageBox.Show("GAESHVA!");
+
+
+            SubscriberSchedul.DataSource = null;
+            InputMethods.Filldata(Start, End);
+
+            foreach (var item in InputMethods.DATAforInput)
+            {
+
+             //   MessageBox.Show("SIGRDZE " + item.DatainputList.Count);
+
+                //if (item.Date.Hour < 9)
+                //    item.Date.Hour = item.Date.Hour + 12;
+               
+
+                for (int i = 0; i < InputMethods.DATAforInput.Count; i++)
+                {
+                    
+                    //int a = item.Hours - 9;
+                    //int b = (int)item.DatainputList[i].Date.DayOfWeek + 1;
+                    // MessageBox.Show("INDEXROW " + a + " INDEXCOLUMN" + b);
+
+                    SubscriberSchedul.Rows[item.Date.Hour - 9].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString(); ;  //item.DatainputList[i].Datelist.ToString(); // item.DatainputList[i].Date.ToString()+" "+ 
+
+                }
+
+
+            }
+
+
+
+        }
+
+
 
         public void grafiki()
         {

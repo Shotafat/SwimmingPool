@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
+using SPSQLite.CLASSES.Services;
 
 namespace SPSQLite.UIMethods
 {
@@ -10,48 +11,57 @@ namespace SPSQLite.UIMethods
         
             public DateTime Date { get; set; }
             public int Datelist { get; set; }
-        
 
+        public List<DateTime> Dates { get; set; }
     }
     //AXALI OBIEQTI ROMELIC SHEICAVS: int ROW |int COLUMN |DATETIME DATE|INT SAVSEADGILEBI
 public class FormatedData
     {
         public int Hours { get; set; }
         public List<DataInput> DatainputList { get; set; }
+
+        public int Count { get; set; }
         
     }
 
     public static class InputMethods
     {
         public static List<DataInput> ScheduleList { get; set; }
+
         public static int ColumnIndex{ get; set; }
         public static int RowIndex { get; set; }
-        public static List<FormatedData> DATAforInput { get; set; }
-        public static List<FormatedData> Filldata(DateTime StartDate, DateTime EndDate, List<DataInput> Schedlist)
+        public static List<DataInput> DATAforInput { get; set; }
+        public static List<DataInput> Filldata(DateTime StartDate, DateTime EndDate)
         {
+            ScheduleList = new List<DataInput>();
+
+            ScheduleList=ServiceInstances.Service().GetSubscriptionScheduleServices().Distribute();
             //dataGridView1.Rows[rowIndex].Cells[columnIndex].Value = value;
             //rowIndex - გვაქვს 11 რიგი - პირველია დილის 9 სთ, ბოლო 20 სთ.
             //ColumnIndex - გვაქვს 7 სვეტი, პირველი სვეტი დაკავებული აქვს საათს, დანარჩენი კვირის დღეებია
             //Value - უნდა შეიცავდეს თარიღს ფორმატით DD/MM/YYYY და შევსებულ ადგილებს/დარჩენილ ადგილებს, მაგ. 35/5
-            var Filter = Schedlist.Where(x => x.Date.Date == StartDate.Date && x.Date.Date <= EndDate.Date).OrderBy(a=>a.Date.Hour).ToList();
+            var Filter = ScheduleList.Where(x => x.Date.Date >= StartDate.Date && x.Date.Date <= EndDate.Date).OrderBy(a=>a.Date.Hour).ToList();
 
+           // var tst =Filter.Select(o => new FormatedData { Count=o.Datelist,Hours=o.Date.Hour,DatainputList}).ToList();
+
+           
             //იგივეა რაც ზედა, მაგრამ დაჯგუფებულია საათებად
-            var groupedbyhour = (from p in Filter
-                                group p by p.Date.Hour into g
-                                orderby g.Key ascending
-                                select new FormatedData { Hours = g.Key, DatainputList = g.Where(x=>x.Date.Hour>=9 &&x.Date.Hour<=21).ToList()}).ToList();
+            //var groupedbyhour = (from p in Filter
+            //                    group p by p.Date.Hour into g
+            //                    orderby g.Key ascending
+            //                    select new FormatedData { Hours = g.Key, DatainputList = g.ToList(),Count=g.Count()}).ToList();
 
             //კვირის რა დღეც არის, იმავე ნომრის სვეტს აბრუნებს
-            ColumnReturner(StartDate);
+            //ColumnReturner(StartDate);
 
-            //რომელ საათსაც გადავცემთ იმის შესაბამის რიგს აბრუნებს
-            RowReturner(StartDate.Hour);
+            ////რომელ საათსაც გადავცემთ იმის შესაბამის რიგს აბრუნებს
+            //RowReturner(StartDate.Hour);
 
-            DATAforInput = new List<FormatedData>();
-            DATAforInput = groupedbyhour;
+            DATAforInput = new List<DataInput>();
+            DATAforInput = Filter;
 
 
-            return groupedbyhour;
+            return Filter;
         }
 
         public static int ColumnReturner(DateTime startDate)
