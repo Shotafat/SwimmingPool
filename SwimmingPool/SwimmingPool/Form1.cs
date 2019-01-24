@@ -15,6 +15,7 @@ using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
 using System.Globalization;
 using SPSQLite.CLASSES;
+using SPSQLite;
 
 namespace SwimmingPool
 {
@@ -31,7 +32,8 @@ namespace SwimmingPool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = ServiceInstances.Service().GetSubscriberService().GetData();
             //dataGrid_eqimi.DataSource = null;
             //dataGrid_eqimi.DataSource = ServiceInstances.Service().GetDoctorServices().GetData();
             //dataGridView5.DataSource = null;
@@ -39,10 +41,6 @@ namespace SwimmingPool
 
         }
 
-        public void ADDABONENT(object sender, EventArgs e)
-        {
-           
-        }
 
         private void წაშლაToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -77,79 +75,65 @@ namespace SwimmingPool
 
         private void დამატებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+            AddAbonent addAbonent = new AddAbonent();
 
-                AddAbonent addAbonent = new AddAbonent();
-                addAbonent.ShowDialog();
-            
+
+            addAbonent.ShowDialog();
+            if (addAbonent.DialogResult == DialogResult.OK)
+            {
+
+                Form1_Load(sender, e);
+            }
         }
 
         private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            AddAbonent addAbonent = new AddAbonent();
 
-            Form2 form = new Form2();
-            form.ShowDialog();
+
+            addAbonent.ShowDialog();
+            if (addAbonent.DialogResult == DialogResult.OK)
+            {
+
+                Form1_Load(sender, e);
+            }
 
         }
 
         private void წაშლაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            CultureInfo provider = new CultureInfo("fr-FR");
-            List<SubscriptionSchedule> list = new List<SubscriptionSchedule>
+        }
+
+        private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows[0].Selected)
             {
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=15 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2009 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=43},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=47},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24/01/2009 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=20},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24/01/2009 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=21},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24/01/2019 12:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=30 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2009 13:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=45},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2009 15:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=3 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=15 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2009 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2009 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=20},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2019 12:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=30 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24/01/2009 13:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=45},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25/01/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23 / 01 / 2019 16:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23 / 01 / 2009 17:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23 / 01 / 2019 18:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23 / 01 / 2009 19:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23 / 01 / 2019 20:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24 / 01 / 2009 20:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24 / 01 / 2019 14:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24 / 01 / 2009 15:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("24 / 01 / 2019 16:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("25 / 01 / 2009 17:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("26 / 01 / 2019 18:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("27 / 01 / 2009 19:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("27 / 01 / 2019 20:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  },
-//new SubscriptionSchedule() {Schedule=DateTime.ParseExact("26 / 01 / 2009 20:00", "g", provider), SubscriptionID=5, Attandance=(int)AttendanceTypes.Attended  },
+                var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
+                AddAbonent add = new AddAbonent(subscriptionPrice);
 
-        };
-            //SubscriptionSchedule a = new SubscriptionSchedule() {Schedule=DateTime.ParseExact("15 / 08 / 2000 09:00", "g", provider), SubscriptionID=4, Attandance=(int)AttendanceTypes.Attended  };
+                add.ShowDialog();
+                if (add.DialogResult == DialogResult.OK)
+                {
+                    Form1_Load(sender, e);
 
-
-
-
-
-            foreach (var item in list)
-            {
-                //SubscriptionSchedule : ISubscriptionSchedule
-                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(item);
-
+                }
             }
+            else
+                MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
+        }
 
-//            ServiceInstances.Service().GetSubscriptionScheduleServices().Add();
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
 
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
 
-
+                string a = Convert.ToString(selectedRow.Cells[1].Value);
+                string b = Convert.ToString(selectedRow.Cells[2].Value);
+                label1.Text = a + " " + b;
+            }
         }
     }
 }

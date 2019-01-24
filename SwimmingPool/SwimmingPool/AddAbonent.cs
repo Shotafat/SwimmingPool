@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
+using SPSQLite;
 using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.BussinessObjects;
 using SPSQLite.CLASSES.Services;
@@ -25,9 +26,23 @@ namespace SwimmingPool
             gridFillter(dataGridView1, start, End);
         }
 
+        public AddAbonent(ISubscriber subscriber) : this()
+        {
+            if (subscriber != null)
+            {
+                label6.Text = "რ" + " " + "ე" + " " + "დ" + " " + "ა" + " " + "ქ" + " " + "ტ" + " " + "ი" + " " + "რ" + " " + "ე" + " " + "ბ" + " " + "ა";
 
+                saxeli.Text = subscriber.Name;
+                gvari.Text = subscriber.LastName;
+                asaki.Text = subscriber.DateOfBirth.ToString();
+                telefoni.Text = subscriber.PhoneNumber;
+                misamarti.Text = subscriber.Adress;
+                shenaxva.Text = "რედაქტირება";
+            }
 
-       public void  gridFillter (DataGridView SubscriberSchedul, DateTime Start, DateTime End )
+        }
+
+        public void  gridFillter (DataGridView SubscriberSchedul, DateTime Start, DateTime End )
         {
             //        FormatedData
             //{
@@ -75,10 +90,12 @@ namespace SwimmingPool
         public void grafiki()
         {
             dataGridView1.DataSource = null;
-            for (int i = 9; i < 20; i++)
+            dataGridView1.Rows.Add();
+            dataGridView1.Rows[0].Cells[0].Value = "";
+            for (int i = 10; i < 21; i++)
             {
                 dataGridView1.Rows.Add();
-                dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i + ":00");
+                dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i-1 + ":00");
             }
 
             for (int i = 0; i < 11; i++)
@@ -88,6 +105,11 @@ namespace SwimmingPool
                     dataGridView1.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
                 }
             }
+            for (int ii = 0; ii < 7; ii++)
+            {
+                dataGridView1.Rows[0].Cells[ii].Value = DateTime.Now ;
+            }
+
             //dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
 
@@ -181,5 +203,15 @@ namespace SwimmingPool
             }
             
         }
-     }
+
+        private void shenaxva_Click(object sender, EventArgs e)
+        {
+            var gela = ServiceInstances.Service().CreateObjectForSub(Convert.ToInt16(nomeri.Text), saxeli.Text, gvari.Text, DateTime.Parse(asaki.Text), telefoni.Text, misamarti.Text);
+
+            ServiceInstances.Service().GetSubscriberService().Add(gela);
+
+            DialogResult = DialogResult.OK;
+            Close();
+        }
+    }
 }

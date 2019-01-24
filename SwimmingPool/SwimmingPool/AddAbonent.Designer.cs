@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -79,6 +79,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.shenaxva = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -96,6 +97,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Controls.Add(this.shenaxva);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
             this.panel2.Controls.Add(this.panel7);
@@ -159,14 +161,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.saati,
@@ -183,16 +185,16 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(779, 327);
-            this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // saati
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DodgerBlue;
-            this.saati.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.DodgerBlue;
+            this.saati.DefaultCellStyle = dataGridViewCellStyle18;
             this.saati.HeaderText = "საათი";
             this.saati.Name = "saati";
             this.saati.ReadOnly = true;
@@ -201,8 +203,8 @@
             // 
             // orshabati
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orshabati.DefaultCellStyle = dataGridViewCellStyle19;
             this.orshabati.HeaderText = "ორშაბათი";
             this.orshabati.Name = "orshabati";
             this.orshabati.ReadOnly = true;
@@ -211,8 +213,8 @@
             // 
             // samshabati
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.samshabati.DefaultCellStyle = dataGridViewCellStyle20;
             this.samshabati.HeaderText = "სამშაბათი";
             this.samshabati.Name = "samshabati";
             this.samshabati.ReadOnly = true;
@@ -221,8 +223,8 @@
             // 
             // otxshabati
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle21;
             this.otxshabati.HeaderText = "ოთხშაბათი";
             this.otxshabati.Name = "otxshabati";
             this.otxshabati.ReadOnly = true;
@@ -231,8 +233,8 @@
             // 
             // xushabati
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xushabati.DefaultCellStyle = dataGridViewCellStyle22;
             this.xushabati.HeaderText = "ხუთშაბათი";
             this.xushabati.Name = "xushabati";
             this.xushabati.ReadOnly = true;
@@ -241,8 +243,8 @@
             // 
             // paraskevi
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle23.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle23;
             this.paraskevi.HeaderText = "პარასკევი";
             this.paraskevi.Name = "paraskevi";
             this.paraskevi.ReadOnly = true;
@@ -251,8 +253,8 @@
             // 
             // shabati
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle24.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shabati.DefaultCellStyle = dataGridViewCellStyle24;
             this.shabati.HeaderText = "შაბათი";
             this.shabati.Name = "shabati";
             this.shabati.ReadOnly = true;
@@ -285,7 +287,7 @@
             this.archeuligrafiki.Location = new System.Drawing.Point(19, 353);
             this.archeuligrafiki.Name = "archeuligrafiki";
             this.archeuligrafiki.Size = new System.Drawing.Size(319, 147);
-            this.archeuligrafiki.TabIndex = 5;
+            this.archeuligrafiki.TabIndex = 11;
             // 
             // panel6
             // 
@@ -312,14 +314,14 @@
             this.misamarti.Location = new System.Drawing.Point(152, 244);
             this.misamarti.Name = "misamarti";
             this.misamarti.Size = new System.Drawing.Size(193, 20);
-            this.misamarti.TabIndex = 29;
+            this.misamarti.TabIndex = 5;
             // 
             // telefoni
             // 
             this.telefoni.Location = new System.Drawing.Point(152, 211);
             this.telefoni.Name = "telefoni";
             this.telefoni.Size = new System.Drawing.Size(193, 20);
-            this.telefoni.TabIndex = 30;
+            this.telefoni.TabIndex = 4;
             this.telefoni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
             // asaki
@@ -327,7 +329,7 @@
             this.asaki.Location = new System.Drawing.Point(152, 180);
             this.asaki.Name = "asaki";
             this.asaki.Size = new System.Drawing.Size(193, 20);
-            this.asaki.TabIndex = 31;
+            this.asaki.TabIndex = 3;
             this.asaki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
             // gvari
@@ -335,7 +337,7 @@
             this.gvari.Location = new System.Drawing.Point(152, 148);
             this.gvari.Name = "gvari";
             this.gvari.Size = new System.Drawing.Size(193, 20);
-            this.gvari.TabIndex = 32;
+            this.gvari.TabIndex = 2;
             this.gvari.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
             // 
             // saxeli
@@ -343,7 +345,7 @@
             this.saxeli.Location = new System.Drawing.Point(152, 115);
             this.saxeli.Name = "saxeli";
             this.saxeli.Size = new System.Drawing.Size(193, 20);
-            this.saxeli.TabIndex = 33;
+            this.saxeli.TabIndex = 1;
             this.saxeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
             // 
             // nomeri
@@ -351,7 +353,7 @@
             this.nomeri.Location = new System.Drawing.Point(152, 82);
             this.nomeri.Name = "nomeri";
             this.nomeri.Size = new System.Drawing.Size(193, 20);
-            this.nomeri.TabIndex = 34;
+            this.nomeri.TabIndex = 0;
             // 
             // label1
             // 
@@ -427,7 +429,7 @@
             this.ara.Location = new System.Drawing.Point(1108, 58);
             this.ara.Name = "ara";
             this.ara.Size = new System.Drawing.Size(54, 22);
-            this.ara.TabIndex = 0;
+            this.ara.TabIndex = 9;
             this.ara.Text = "არა";
             this.ara.UseVisualStyleBackColor = true;
             this.ara.Click += new System.EventHandler(this.cheked);
@@ -438,7 +440,7 @@
             this.dateTimePicker3.Location = new System.Drawing.Point(733, 59);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(169, 20);
-            this.dateTimePicker3.TabIndex = 22;
+            this.dateTimePicker3.TabIndex = 7;
             // 
             // diax
             // 
@@ -448,7 +450,7 @@
             this.diax.Location = new System.Drawing.Point(1011, 60);
             this.diax.Name = "diax";
             this.diax.Size = new System.Drawing.Size(66, 22);
-            this.diax.TabIndex = 0;
+            this.diax.TabIndex = 8;
             this.diax.Text = "დიახ";
             this.diax.UseVisualStyleBackColor = true;
             this.diax.Click += new System.EventHandler(this.cheked);
@@ -459,7 +461,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(419, 59);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(169, 20);
-            this.dateTimePicker1.TabIndex = 21;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // panel5
             // 
@@ -562,6 +564,19 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // shenaxva
+            // 
+            this.shenaxva.BackColor = System.Drawing.Color.Teal;
+            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shenaxva.ForeColor = System.Drawing.Color.Snow;
+            this.shenaxva.Location = new System.Drawing.Point(19, 553);
+            this.shenaxva.Name = "shenaxva";
+            this.shenaxva.Size = new System.Drawing.Size(151, 41);
+            this.shenaxva.TabIndex = 12;
+            this.shenaxva.Text = "შენახვა";
+            this.shenaxva.UseVisualStyleBackColor = false;
+            this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click);
+            // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -639,5 +654,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button shenaxva;
     }
 }

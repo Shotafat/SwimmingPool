@@ -70,6 +70,20 @@ namespace SPSQLite.CLASSES.Services
 
         }
 
+        public ISubscriber CreateObjectForSub(int id, string Name, string LastName, DateTime age, string Number, string adress)
+        {
 
+
+            Subscriber gela = new Subscriber();
+
+            gela.ID = id;
+            gela.Name = Name;
+            gela.LastName = LastName;
+            gela.DateOfBirth = age;
+            gela.PhoneNumber = Number;
+            gela.Adress = adress;
+            return gela;
+
+        }
     }
 }
