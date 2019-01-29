@@ -37,6 +37,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle23 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle24 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.abonenti = new System.Windows.Forms.Label();
+            this.asaki = new System.Windows.Forms.MaskedTextBox();
+            this.shenaxva = new System.Windows.Forms.Button();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -55,10 +58,8 @@
             this.აბონენტი = new System.Windows.Forms.Label();
             this.misamarti = new System.Windows.Forms.TextBox();
             this.telefoni = new System.Windows.Forms.TextBox();
-            this.asaki = new System.Windows.Forms.TextBox();
             this.gvari = new System.Windows.Forms.TextBox();
             this.saxeli = new System.Windows.Forms.TextBox();
-            this.nomeri = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblAge = new System.Windows.Forms.Label();
             this.lblPhoneNumber = new System.Windows.Forms.Label();
@@ -79,7 +80,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+<<<<<<< HEAD
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.cmbxHour = new System.Windows.Forms.ComboBox();
+            this.lblBack = new System.Windows.Forms.Label();
+            this.lblNext = new System.Windows.Forms.Label();
+=======
             this.shenaxva = new System.Windows.Forms.Button();
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -92,11 +101,20 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+<<<<<<< HEAD
+            this.panel2.Controls.Add(this.lblNext);
+            this.panel2.Controls.Add(this.lblBack);
+            this.panel2.Controls.Add(this.cmbxHour);
+            this.panel2.Controls.Add(this.abonenti);
+            this.panel2.Controls.Add(this.asaki);
+=======
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             this.panel2.Controls.Add(this.shenaxva);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
@@ -105,10 +123,8 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.misamarti);
             this.panel2.Controls.Add(this.telefoni);
-            this.panel2.Controls.Add(this.asaki);
             this.panel2.Controls.Add(this.gvari);
             this.panel2.Controls.Add(this.saxeli);
-            this.panel2.Controls.Add(this.nomeri);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.lblAge);
             this.panel2.Controls.Add(this.lblPhoneNumber);
@@ -120,12 +136,47 @@
             this.panel2.Controls.Add(this.diax);
             this.panel2.Controls.Add(this.dateTimePicker1);
             this.panel2.Controls.Add(this.panel5);
+            this.panel2.Controls.Add(this.panel10);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Location = new System.Drawing.Point(3, 108);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1211, 605);
             this.panel2.TabIndex = 1;
+            // 
+            // abonenti
+            // 
+            this.abonenti.AutoSize = true;
+            this.abonenti.BackColor = System.Drawing.SystemColors.Window;
+            this.abonenti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.abonenti.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.abonenti.Location = new System.Drawing.Point(152, 89);
+            this.abonenti.MinimumSize = new System.Drawing.Size(193, 17);
+            this.abonenti.Name = "abonenti";
+            this.abonenti.Size = new System.Drawing.Size(193, 17);
+            this.abonenti.TabIndex = 0;
+            // 
+            // asaki
+            // 
+            this.asaki.Location = new System.Drawing.Point(152, 182);
+            this.asaki.Mask = "00/00/0000";
+            this.asaki.Name = "asaki";
+            this.asaki.Size = new System.Drawing.Size(100, 20);
+            this.asaki.TabIndex = 3;
+            this.asaki.ValidatingType = typeof(System.DateTime);
+            // 
+            // shenaxva
+            // 
+            this.shenaxva.BackColor = System.Drawing.Color.Teal;
+            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shenaxva.ForeColor = System.Drawing.Color.Snow;
+            this.shenaxva.Location = new System.Drawing.Point(1047, 541);
+            this.shenaxva.Name = "shenaxva";
+            this.shenaxva.Size = new System.Drawing.Size(151, 41);
+            this.shenaxva.TabIndex = 12;
+            this.shenaxva.Text = "შენახვა";
+            this.shenaxva.UseVisualStyleBackColor = false;
+            this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click);
             // 
             // panel9
             // 
@@ -324,6 +375,8 @@
             this.telefoni.TabIndex = 4;
             this.telefoni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
+<<<<<<< HEAD
+=======
             // asaki
             // 
             this.asaki.Location = new System.Drawing.Point(152, 180);
@@ -332,6 +385,7 @@
             this.asaki.TabIndex = 3;
             this.asaki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             // gvari
             // 
             this.gvari.Location = new System.Drawing.Point(152, 148);
@@ -348,6 +402,8 @@
             this.saxeli.TabIndex = 1;
             this.saxeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
             // 
+<<<<<<< HEAD
+=======
             // nomeri
             // 
             this.nomeri.Location = new System.Drawing.Point(152, 82);
@@ -355,6 +411,7 @@
             this.nomeri.Size = new System.Drawing.Size(193, 20);
             this.nomeri.TabIndex = 0;
             // 
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             // label1
             // 
             this.label1.AutoSize = true;
@@ -437,7 +494,7 @@
             // dateTimePicker3
             // 
             this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker3.Location = new System.Drawing.Point(733, 59);
+            this.dateTimePicker3.Location = new System.Drawing.Point(610, 59);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(169, 20);
             this.dateTimePicker3.TabIndex = 7;
@@ -487,7 +544,7 @@
             // 
             this.panel4.BackColor = System.Drawing.Color.Teal;
             this.panel4.Controls.Add(this.label3);
-            this.panel4.Location = new System.Drawing.Point(733, 14);
+            this.panel4.Location = new System.Drawing.Point(610, 14);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(169, 36);
             this.panel4.TabIndex = 19;
@@ -564,6 +621,62 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+<<<<<<< HEAD
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.Teal;
+            this.panel10.Controls.Add(this.label8);
+            this.panel10.Location = new System.Drawing.Point(799, 14);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(169, 36);
+            this.panel10.TabIndex = 19;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(59, 8);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(57, 20);
+            this.label8.TabIndex = 1;
+            this.label8.Text = "საათი";
+            // 
+            // cmbxHour
+            // 
+            this.cmbxHour.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbxHour.FormattingEnabled = true;
+            this.cmbxHour.Location = new System.Drawing.Point(799, 59);
+            this.cmbxHour.Name = "cmbxHour";
+            this.cmbxHour.Size = new System.Drawing.Size(169, 21);
+            this.cmbxHour.TabIndex = 39;
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblBack.Location = new System.Drawing.Point(741, 530);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(36, 20);
+            this.lblBack.TabIndex = 40;
+            this.lblBack.Text = "<<<";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+            // 
+            // lblNext
+            // 
+            this.lblNext.AutoSize = true;
+            this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNext.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblNext.Location = new System.Drawing.Point(850, 530);
+            this.lblNext.Name = "lblNext";
+            this.lblNext.Size = new System.Drawing.Size(36, 20);
+            this.lblNext.TabIndex = 40;
+            this.lblNext.Text = ">>>";
+            this.lblNext.Click += new System.EventHandler(this.lblNext_Click);
+=======
             // shenaxva
             // 
             this.shenaxva.BackColor = System.Drawing.Color.Teal;
@@ -576,6 +689,7 @@
             this.shenaxva.Text = "შენახვა";
             this.shenaxva.UseVisualStyleBackColor = false;
             this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click);
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             // 
             // AddAbonent
             // 
@@ -606,6 +720,8 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -627,10 +743,8 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.TextBox misamarti;
         private System.Windows.Forms.TextBox telefoni;
-        private System.Windows.Forms.TextBox asaki;
         private System.Windows.Forms.TextBox gvari;
         private System.Windows.Forms.TextBox saxeli;
-        private System.Windows.Forms.TextBox nomeri;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblAge;
         private System.Windows.Forms.Label lblPhoneNumber;
@@ -655,5 +769,15 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button shenaxva;
+<<<<<<< HEAD
+        private System.Windows.Forms.MaskedTextBox asaki;
+        private System.Windows.Forms.Label abonenti;
+        private System.Windows.Forms.ComboBox cmbxHour;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblNext;
+        private System.Windows.Forms.Label lblBack;
+=======
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
     }
 }

@@ -31,6 +31,9 @@ public class FormatedData
         public static int ColumnIndex{ get; set; }
         public static int RowIndex { get; set; }
         public static List<DataInput> DATAforInput { get; set; }
+        public static List<DataInput> DATAforInputPast { get; set; }
+
+
         public static List<DataInput> Filldata(DateTime StartDate, DateTime EndDate)
         {
             ScheduleList = new List<DataInput>();
@@ -42,23 +45,15 @@ public class FormatedData
             //Value - უნდა შეიცავდეს თარიღს ფორმატით DD/MM/YYYY და შევსებულ ადგილებს/დარჩენილ ადგილებს, მაგ. 35/5
             var Filter = ScheduleList.Where(x => x.Date.Date >= StartDate.Date && x.Date.Date <= EndDate.Date).OrderBy(a=>a.Date.Hour).ToList();
 
-           // var tst =Filter.Select(o => new FormatedData { Count=o.Datelist,Hours=o.Date.Hour,DatainputList}).ToList();
+            var FilterPast= ScheduleList.Where(x => x.Date.Date >= StartDate.Date.AddDays(-((int)StartDate.DayOfWeek-1)) && x.Date.Date < StartDate.Date).OrderBy(a => a.Date.Hour).ToList();
+            
 
-           
-            //იგივეა რაც ზედა, მაგრამ დაჯგუფებულია საათებად
-            //var groupedbyhour = (from p in Filter
-            //                    group p by p.Date.Hour into g
-            //                    orderby g.Key ascending
-            //                    select new FormatedData { Hours = g.Key, DatainputList = g.ToList(),Count=g.Count()}).ToList();
-
-            //კვირის რა დღეც არის, იმავე ნომრის სვეტს აბრუნებს
-            //ColumnReturner(StartDate);
-
-            ////რომელ საათსაც გადავცემთ იმის შესაბამის რიგს აბრუნებს
-            //RowReturner(StartDate.Hour);
 
             DATAforInput = new List<DataInput>();
             DATAforInput = Filter;
+
+            DATAforInputPast = new List<DataInput>();
+            DATAforInputPast = FilterPast;
 
 
             return Filter;

@@ -674,7 +674,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
@@ -834,6 +834,7 @@
       "sha512": "U82mHQSKaIk+lpSVCbWYKNavmNH1i5xrExDEquU1i6I5pV6UMOqRnJRSlKO3cMPfcpp0RgDY+8jUXHdQ4IfXvw==",
       "type": "package",
       "path": "newtonsoft.json/9.0.1",
+      "hasTools": true,
       "files": [
         ".nupkg.metadata",
         "lib/net20/Newtonsoft.Json.dll",
@@ -2959,23 +2960,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Kakha\\.nuget\\packages\\": {},
+    "C:\\Users\\datax\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\datax\\Downloads\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-      "packagesPath": "C:\\Users\\Kakha\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Kakha\\Documents\\GitHub\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
+      "projectPath": "C:\\Users\\datax\\Downloads\\SwimmingPool\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "packagesPath": "C:\\Users\\datax\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\datax\\Downloads\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\Kakha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\datax\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -3021,5 +3022,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\datax\\Downloads\\SwimmingPool\\SwimmingPool\\SPSQLite\\obj\\SPSQLite.csproj.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    }
+  ]
 }

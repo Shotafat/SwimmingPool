@@ -70,11 +70,30 @@ namespace SPSQLite.CLASSES.Services
 
         }
 
+<<<<<<< HEAD
+        public ISubscriber CreateObjectForSub( string Name, string LastName, DateTime age, string Number, string adress)
+=======
         public ISubscriber CreateObjectForSub(int id, string Name, string LastName, DateTime age, string Number, string adress)
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
         {
 
 
             Subscriber gela = new Subscriber();
+<<<<<<< HEAD
+
+            gela.Name = Name;
+            gela.LastName = LastName;
+            gela.DateOfBirth = age;
+            gela.PhoneNumber = Number;
+            gela.Adress = adress;
+            return gela;
+
+        }
+
+        public object CreateObjectForSub(string text1, string text2, string asaki1, string text3, string text4)
+        {
+            throw new NotImplementedException();
+=======
 
             gela.ID = id;
             gela.Name = Name;
@@ -84,6 +103,7 @@ namespace SPSQLite.CLASSES.Services
             gela.Adress = adress;
             return gela;
 
+>>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
         }
     }
 }

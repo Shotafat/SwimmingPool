@@ -28,7 +28,7 @@ namespace SPSQLite
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
-            Conn.CreateTables<Capacity , SubscriptionSchedule>();
+            Conn.CreateTables<Capacity , SubscriptionScheduleDB>();
         }
 
         //Abonent 
@@ -158,7 +158,7 @@ namespace SPSQLite
         public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID, int DefaultAttendance=0) 
         {
 
-            Conn.Insert(new SubscriptionSchedule { Schedule = shedule, SubscriptionID = SubscriptionID, Attandance=DefaultAttendance });
+            Conn.Insert(new SubscriptionScheduleDB { Schedule = shedule, SubscriptionID = SubscriptionID, Attandance=DefaultAttendance });
 
         }
 
@@ -167,7 +167,7 @@ namespace SPSQLite
          public static void DeleteSubscriptionShedule(ISubscriptionSchedule sub)
         {
                                                                          //აქ SubscribtionID ხომ არ უნდა IDს ნაცვლად?
-            Conn.Delete(Conn.Table<SubscriptionSchedule>().FirstOrDefault(a => a.Id == sub.ID));
+            Conn.Delete(Conn.Table<SubscriptionScheduleDB>().FirstOrDefault(a => a.Id == sub.ID));
 
         }
 
@@ -178,7 +178,7 @@ namespace SPSQLite
          public static void EditSubscriptionSchedule (ISubscriptionSchedule Schedule)
         {
                                                                         //ID დაემთხვევა? SubscribtionID ხომ არ ჯობს?
-            var Schedules = Conn.Table<SubscriptionSchedule>().Where(a => a.Id == Schedule.ID).SingleOrDefault();
+            var Schedules = Conn.Table<SubscriptionScheduleDB>().Where(a => a.Id == Schedule.ID).SingleOrDefault();
             if(Schedules !=null)
             {
                 Schedules.Schedule = Schedule.Schedule;
@@ -193,10 +193,10 @@ namespace SPSQLite
         }
 
         // Get Subscription Shedule Source 
-        public static  List<SubscriptionSchedule> GetSheduleSource() 
+        public static  List<SubscriptionScheduleDB> GetSheduleSource() 
         {
 
-            return Conn.Table<SubscriptionSchedule>().ToList();
+            return Conn.Table<SubscriptionScheduleDB>().ToList();
         }
 
 
@@ -329,7 +329,7 @@ namespace SPSQLite
     }
 
     //სააბონენტო განრიგი
-    public class SubscriptionSchedule
+    public class SubscriptionScheduleDB
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
