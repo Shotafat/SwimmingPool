@@ -43,14 +43,15 @@ namespace SPSQLite
 
         public static void insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
         {
-            //შოთას კოდი
+            //OneTomany-ს ამბები
             var subscriberkey = Conn.Find<Subscriber>(s => s.Id == subscriber_.ID);
             var subscribtionPricekey = Conn.Find<SubscribtionPrice>(s => s.Id == subscriberprice.ID);
             List<Subscription> NewSubscription = new List<Subscription>();
 
-            NewSubscription.Add (new Subscription()
+            NewSubscription.Add(new Subscription()
             {
-                              
+                //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
+                IDnumber = subscription_.ID           
             });
             subscriberkey.Subscribtions = NewSubscription;
             Conn.InsertWithChildren(NewSubscription, true);
@@ -299,6 +300,9 @@ namespace SPSQLite
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
+        public int IDnumber { get; set; }
+
 
         [ForeignKey(typeof(Subscriber))]
         public int SubscriberID { get; set; }
