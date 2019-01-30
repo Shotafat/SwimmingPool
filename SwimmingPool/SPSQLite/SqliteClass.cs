@@ -282,8 +282,7 @@ namespace SPSQLite
 
     }
 
-
-    //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
+        //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
     public class Capacity
     {
         [PrimaryKey, AutoIncrement]
@@ -302,8 +301,6 @@ namespace SPSQLite
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
-
-
     }
      
  

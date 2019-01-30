@@ -354,11 +354,40 @@ namespace SwimmingPool
         }
         #endregion
 
+        public void Saver()
+        {
+            subscriberSaver();
+
+
+
+
+
+        }
+
+        public void subscriberSaver()
+        {
+            string Date = asaki.Text;
+            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
+
+            ServiceInstances.Service().GetSubscriberService().Add(Subscriber);
+        }
+
+        public void SubscribtionSaver()
+        {
+
+
+
+        }
+
+
+
 
         private void shenaxva_Click(object sender, EventArgs e)
         {
             string gela = asaki.Text;
             DateTime gela1 = DateTime.ParseExact(gela, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
             var gelag = ServiceInstances.Service().CreateObjectForSub( saxeli.Text, gvari.Text, gela1, telefoni.Text, misamarti.Text);
 
             ServiceInstances.Service().GetSubscriberService().Add(gelag);
