@@ -80,15 +80,11 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-<<<<<<< HEAD
             this.panel10 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
             this.cmbxHour = new System.Windows.Forms.ComboBox();
             this.lblBack = new System.Windows.Forms.Label();
             this.lblNext = new System.Windows.Forms.Label();
-=======
-            this.shenaxva = new System.Windows.Forms.Button();
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             this.panel2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel8.SuspendLayout();
@@ -107,14 +103,11 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-<<<<<<< HEAD
             this.panel2.Controls.Add(this.lblNext);
             this.panel2.Controls.Add(this.lblBack);
             this.panel2.Controls.Add(this.cmbxHour);
             this.panel2.Controls.Add(this.abonenti);
             this.panel2.Controls.Add(this.asaki);
-=======
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             this.panel2.Controls.Add(this.shenaxva);
             this.panel2.Controls.Add(this.panel9);
             this.panel2.Controls.Add(this.panel8);
@@ -375,17 +368,6 @@
             this.telefoni.TabIndex = 4;
             this.telefoni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
             // 
-<<<<<<< HEAD
-=======
-            // asaki
-            // 
-            this.asaki.Location = new System.Drawing.Point(152, 180);
-            this.asaki.Name = "asaki";
-            this.asaki.Size = new System.Drawing.Size(193, 20);
-            this.asaki.TabIndex = 3;
-            this.asaki.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.ricxvebi);
-            // 
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             // gvari
             // 
             this.gvari.Location = new System.Drawing.Point(152, 148);
@@ -402,16 +384,6 @@
             this.saxeli.TabIndex = 1;
             this.saxeli.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.simboloebi);
             // 
-<<<<<<< HEAD
-=======
-            // nomeri
-            // 
-            this.nomeri.Location = new System.Drawing.Point(152, 82);
-            this.nomeri.Name = "nomeri";
-            this.nomeri.Size = new System.Drawing.Size(193, 20);
-            this.nomeri.TabIndex = 0;
-            // 
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             // label1
             // 
             this.label1.AutoSize = true;
@@ -621,7 +593,6 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
-<<<<<<< HEAD
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.Teal;
@@ -676,20 +647,6 @@
             this.lblNext.TabIndex = 40;
             this.lblNext.Text = ">>>";
             this.lblNext.Click += new System.EventHandler(this.lblNext_Click);
-=======
-            // shenaxva
-            // 
-            this.shenaxva.BackColor = System.Drawing.Color.Teal;
-            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shenaxva.ForeColor = System.Drawing.Color.Snow;
-            this.shenaxva.Location = new System.Drawing.Point(19, 553);
-            this.shenaxva.Name = "shenaxva";
-            this.shenaxva.Size = new System.Drawing.Size(151, 41);
-            this.shenaxva.TabIndex = 12;
-            this.shenaxva.Text = "შენახვა";
-            this.shenaxva.UseVisualStyleBackColor = false;
-            this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click);
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             // 
             // AddAbonent
             // 
@@ -769,7 +726,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button shenaxva;
-<<<<<<< HEAD
         private System.Windows.Forms.MaskedTextBox asaki;
         private System.Windows.Forms.Label abonenti;
         private System.Windows.Forms.ComboBox cmbxHour;
@@ -777,7 +733,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Label lblBack;
-=======
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
     }
 }

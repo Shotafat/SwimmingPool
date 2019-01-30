@@ -35,7 +35,6 @@ namespace SwimmingPool
         {
             InitializeComponent();
             grafiki();
-
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             #region Nika 1.1
@@ -56,87 +55,6 @@ namespace SwimmingPool
             #endregion
 
             gridFillter(dataGridView1, ThisMonday);
-
-            CultureInfo provider = new CultureInfo("fr-FR");
-            DateTime start = DateTime.ParseExact("21/01/2019 09:00", "g", provider);     //dateTimePicker1.Value;
-            //6-(int)dateTimePicker1.Value.DayOfWeek
-          //  DateTime End = dateTimePicker1.Value.AddDays(6 - (int)dateTimePicker1.Value.DayOfWeek);
-            gridFillter(dataGridView1, DateTime.Now);
-        }
-
-        public AddAbonent(ISubscriber subscriber) : this()
-        {
-            if (subscriber != null)
-            {
-                label6.Text = "რ" + " " + "ე" + " " + "დ" + " " + "ა" + " " + "ქ" + " " + "ტ" + " " + "ი" + " " + "რ" + " " + "ე" + " " + "ბ" + " " + "ა";
-
-                saxeli.Text = subscriber.Name;
-                gvari.Text = subscriber.LastName;
-                asaki.Text = subscriber.DateOfBirth.ToString();
-                telefoni.Text = subscriber.PhoneNumber;
-                misamarti.Text = subscriber.Adress;
-                shenaxva.Text = "რედაქტირება";
-            }
-
-        }
-
-        public void  gridFillter (DataGridView SubscriberSchedul, DateTime Start)
-        {
-
-            DateTime End=Start.AddDays(6 - (int)Start.DayOfWeek);
-            SubscriberSchedul.DataSource = null;
-
-
-            //FUTURE
-            InputMethods.Filldata(Start, End);
-          foreach (var item in InputMethods.DATAforInput)
-             for (int i = 0; i < InputMethods.DATAforInput.Count; i++)
-                    SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();   //item.DatainputList[i].Datelist.ToString(); // item.DatainputList[i].Date.ToString()+" "+ 
-                                                                                                                                        //PAST
-
-            foreach (var item in InputMethods.DATAforInputPast)
-                for (int i = 0; i < InputMethods.DATAforInputPast.Count; i++)
-                    SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
-
-
-          EmptyCellfiller(SubscriberSchedul);
-
-        }
-
-
-
-
-
-        public void EmptyCellfiller(DataGridView EmptyCell)
-        {
-            foreach (DataGridViewRow dgRow in EmptyCell.Rows)
-            {
-                for (int i = 0; i < dgRow.Cells.Count; i++)
-                {
-                    var cell = dgRow.Cells[i];
-                    if (cell.Value == null)   //Check for null reference
-                    {
-                        //cell.Style.BackColor = string.IsNullOrEmpty(cell.Value.ToString()) ?
-                        //    Color.LightCyan :
-                        //    Color.Orange;
-
-                        cell.Style.ForeColor = Color.Gray;
-                        cell.ReadOnly = true;
-                        cell.Value = "0";
-                        
-                    }
-
-
-
-                }
-               
-
-
-            }
-
-
-
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
         }
 
         public AddAbonent(ISubscriber subscriber) : this()
@@ -239,13 +157,8 @@ namespace SwimmingPool
         {           
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Add();
-<<<<<<< HEAD
             
             for (int i = 10; i < 22; i++)
-=======
-            dataGridView1.Rows[0].Cells[0].Value = "";
-            for (int i = 10; i < 21; i++)
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             {
                 dataGridView1.Rows.Add();
                 dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i-1 + ":00");
@@ -272,29 +185,12 @@ namespace SwimmingPool
                 dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek+i].Value = getFormattedDate(DateTime.Now.AddDays(i));
             }
 
-<<<<<<< HEAD
-=======
-            //pirveli ujris shevseba DATE-biT
-
-            int CurrentDay= (int)DateTime.Now.DayOfWeek;
-            int ForwardDays = 6 - CurrentDay;
-            int StartDay = CurrentDay - (CurrentDay - 1);
-
-            dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek].Value = getFormattedDate(DateTime.Now);
-
-            for (int i = 1; i <= ForwardDays; i++)
-            {
-                dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek+i].Value = getFormattedDate(DateTime.Now.AddDays(i));
-            }
-
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
             for (int i = 1; i < CurrentDay; i++)
             {
                 dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek - i].Value = getFormattedDate(DateTime.Now.AddDays(-i));
                // dataGridView1.Columns
             }
 
-<<<<<<< HEAD
             //CultureInfo provider = new CultureInfo("fr-FR");
             //DateTime start = DateTime.ParseExact("21/01/2019 09:00", "g", provider);     //dateTimePicker1.Value;
                                                                                          //6-(int)dateTimePicker1.Value.DayOfWeek
@@ -302,16 +198,6 @@ namespace SwimmingPool
          //   gridFillter(dataGridView1, DateTime.Now);
             dataGridView1.Rows[0].Cells[0].Value = " ";
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
-        }
-
-        string getFormattedDate(DateTime dateTime) {
-
-            return dateTime.ToString("dd/MM/yyyy");
-=======
-
-
-            //dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
         }
 
         string getFormattedDate(DateTime dateTime) {
@@ -412,7 +298,6 @@ namespace SwimmingPool
             }
         }
 
-<<<<<<< HEAD
         #region Nika
         public void PushDays(DateTime day)
         {
@@ -477,13 +362,6 @@ namespace SwimmingPool
             var gelag = ServiceInstances.Service().CreateObjectForSub( saxeli.Text, gvari.Text, gela1, telefoni.Text, misamarti.Text);
 
             ServiceInstances.Service().GetSubscriberService().Add(gelag);
-=======
-        private void shenaxva_Click(object sender, EventArgs e)
-        {
-            var gela = ServiceInstances.Service().CreateObjectForSub(Convert.ToInt16(nomeri.Text), saxeli.Text, gvari.Text, DateTime.Parse(asaki.Text), telefoni.Text, misamarti.Text);
-
-            ServiceInstances.Service().GetSubscriberService().Add(gela);
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
 
             DialogResult = DialogResult.OK;
             Close();

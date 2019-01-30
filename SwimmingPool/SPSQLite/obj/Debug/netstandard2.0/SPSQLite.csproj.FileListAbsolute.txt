@@ -224,7 +224,6 @@ C:\Users\User\Documents\SwimmingPool-LastCommit\SwimmingPool-ac9f219a15c3d7cc5eb
 C:\Users\User\Documents\SwimmingPool-LastCommit\SwimmingPool-ac9f219a15c3d7cc5ebc27f574c2003f00543161\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
 C:\Users\User\Documents\SwimmingPool-LastCommit\SwimmingPool-ac9f219a15c3d7cc5ebc27f574c2003f00543161\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
 C:\Users\User\Documents\SwimmingPool-LastCommit\SwimmingPool-ac9f219a15c3d7cc5ebc27f574c2003f00543161\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
-<<<<<<< HEAD
 E:\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
 E:\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
 E:\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
@@ -278,11 +277,3 @@ C:\Users\Admin\Desktop\SwimmingPool 1.0\SPSQLite\obj\Debug\netstandard2.0\SPSQLi
 C:\Users\Admin\Desktop\SwimmingPool 1.0\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
 C:\Users\Admin\Desktop\SwimmingPool 1.0\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
 C:\Users\Admin\Desktop\SwimmingPool 1.0\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
-=======
->>>>>>> bbca17c4022a083c7ed9a3f0b1c3b3660874b5b5
-C:\Users\datax\Downloads\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
-C:\Users\datax\Downloads\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
-C:\Users\datax\Downloads\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
-C:\Users\datax\Downloads\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfo.cs
-C:\Users\datax\Downloads\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
-C:\Users\datax\Downloads\SwimmingPool\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
