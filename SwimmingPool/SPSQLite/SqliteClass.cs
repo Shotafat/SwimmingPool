@@ -11,6 +11,7 @@ using SQLiteNetExtensions.Attributes;
 using SQLiteNetExtensions;
 using System.Reflection;
 using SPSQLite.INTERFACES.Interfaces;
+using SQLiteNetExtensions.Extensions;
 
 
 //using System.Windows.Forms;
@@ -39,6 +40,32 @@ namespace SPSQLite
            
             
         }
+
+        public static void insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+        {
+            //შოთას კოდი
+            var subscriberkey = Conn.Find<Subscriber>(s => s.Id == subscriber_.ID);
+            var subscribtionPricekey = Conn.Find<SubscribtionPrice>(s => s.Id == subscriberprice.ID);
+            List<Subscription> NewSubscription = new List<Subscription>();
+
+            NewSubscription.Add (new Subscription()
+            {
+                              
+            });
+            subscriberkey.Subscribtions = NewSubscription;
+            Conn.InsertWithChildren(NewSubscription, true);
+            subscribtionPricekey.Subscribtions = NewSubscription;
+            Conn.UpdateWithChildren(NewSubscription);
+
+
+
+            //Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
+
+
+        }
+
+
+
 
         //Delete Abonent 
 
