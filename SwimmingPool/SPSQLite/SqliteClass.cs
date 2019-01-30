@@ -280,6 +280,13 @@ namespace SPSQLite
         [ForeignKey(typeof(SubscribtionPrice))]
         public int SubscriptionTypeID { get; set; }
 
+        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        public Subscriber Subscriber_ { get; set; }
+
+        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        public SubscribtionPrice SubscriberPrice_ { get; set; }
+
+
     }
 
         //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
@@ -301,6 +308,10 @@ namespace SPSQLite
         public string PhoneNumber { get; set; }
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Subscription> Subscribtions { get; set; }
+
     }
      
  
@@ -323,6 +334,9 @@ namespace SPSQLite
         public int Id { get; set; }
         public int NumberOfHours { get; set; }
         public double Price { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Subscription> Subscribtions { get; set; }
     }
 
     //სააბონენტო განრიგი
