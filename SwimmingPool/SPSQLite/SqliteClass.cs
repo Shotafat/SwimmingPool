@@ -41,9 +41,10 @@ namespace SPSQLite
             
         }
 
+        //SQLITE EXTENSIONS - ONE TO MANY RELATIONSHIP
         public static void insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
         {
-            //OneTomany-ს ამბები
+           
             var subscriberkey = Conn.Find<Subscriber>(s => s.Id == subscriber_.ID);
             var subscribtionPricekey = Conn.Find<SubscribtionPrice>(s => s.Id == subscriberprice.ID);
             List<Subscription> NewSubscription = new List<Subscription>();
