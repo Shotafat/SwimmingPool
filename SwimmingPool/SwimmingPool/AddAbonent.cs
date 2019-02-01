@@ -4,8 +4,8 @@ using System.Drawing;
 using System.Globalization;
 using System.Windows.Forms;
 using SPSQLite;
-using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.BussinessObjects;
+using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.UIMethods;
 using System.Linq;
@@ -356,21 +356,38 @@ namespace SwimmingPool
 
         public void Saver()
         {
-            subscriberSaver();
-
-
-
+            ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
+            subscriber = subscriberSaver();
+            MessageBox.Show(subscriber.Name + " " + subscriber.LastName);
 
 
         }
 
-        public void subscriberSaver()
+        //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+
+        //Methodebis mimdevroba
+        // 1 Subscriber
+        //2 SubscribtionPrice
+        //3 HealthNotice  <<dasakavshirebelia Subscriber-Tan
+        // 4 Subscription <<dasakavshirebelia Subscriber da SubscribtionPrice-tan
+        //5 SubscriptionScheduleDB << dasakavshirebelia Subscriber-tan
+
+
+        public ISubscriber subscriberSaver()
         {
+            //Subscriber subscriber_ = new Subscriber();
+           
+
+
             string Date = asaki.Text;
-            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
+            SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name= saxeli.Text, LastName= gvari.Text, DateOfBirth= DateOfBirth, PhoneNumber= telefoni.Text, Adress= misamarti.Text };
 
             ServiceInstances.Service().GetSubscriberService().Add(Subscriber);
+
+            return subscriber;
+
         }
 
         public void SubscribtionSaver()
@@ -385,12 +402,14 @@ namespace SwimmingPool
 
         private void shenaxva_Click(object sender, EventArgs e)
         {
-            string gela = asaki.Text;
-            DateTime gela1 = DateTime.ParseExact(gela, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+            //string gela = asaki.Text;
+            //DateTime gela1 = DateTime.ParseExact(gela, "dd-MM-yyyy", CultureInfo.InvariantCulture);
 
-            var gelag = ServiceInstances.Service().CreateObjectForSub( saxeli.Text, gvari.Text, gela1, telefoni.Text, misamarti.Text);
+            //var gelag = ServiceInstances.Service().CreateObjectForSub( saxeli.Text, gvari.Text, gela1, telefoni.Text, misamarti.Text);
 
-            ServiceInstances.Service().GetSubscriberService().Add(gelag);
+            //ServiceInstances.Service().GetSubscriberService().Add(gelag);
+            Saver();
+
 
             DialogResult = DialogResult.OK;
             Close();

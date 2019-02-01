@@ -45,21 +45,19 @@ namespace SPSQLite
         public static void insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
         {
            
-            var subscriberkey = Conn.Find<Subscriber>(s => s.Id == subscriber_.ID);
-            var subscribtionPricekey = Conn.Find<SubscribtionPrice>(s => s.Id == subscriberprice.ID);
+            var subscriberkey = Conn.Find<Subscriber>(s => s.PhoneNumber== subscriber_.PhoneNumber);
+            var subscribtionPricekey = Conn.Find<SubscribtionPrice>(s => s.NumberOfHours == subscriberprice.NumberOfHours);
             List<Subscription> NewSubscription = new List<Subscription>();
 
             NewSubscription.Add(new Subscription()
             {
                 //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
-                IDnumber = subscription_.ID           
-            });
+                IDnumber = subscription_.IDnumber
+                });
             subscriberkey.Subscribtions = NewSubscription;
             Conn.InsertWithChildren(NewSubscription, true);
             subscribtionPricekey.Subscribtions = NewSubscription;
             Conn.UpdateWithChildren(NewSubscription);
-
-
 
             //Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
 
@@ -80,7 +78,7 @@ namespace SPSQLite
 
          public static void EditAbonent ( ISubscriber subscriber)
         {
-            var abonent = Conn.Table<Subscriber>().Where(a => a.Id == subscriber.ID).SingleOrDefault();
+            var abonent = Conn.Table<Subscriber>().Where(a => a.LastName == subscriber.LastName).SingleOrDefault();
             if ( abonent!=null)
             {
                 abonent.Name = subscriber.Name;
@@ -302,7 +300,7 @@ namespace SPSQLite
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
-        public int IDnumber { get; set; }
+        public string IDnumber { get; set; }
 
 
         [ForeignKey(typeof(Subscriber))]

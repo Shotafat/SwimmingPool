@@ -8,6 +8,7 @@ namespace SPSQLite
    public interface ISubscription
     {
         int ID { get; set; }
+        string IDnumber{ get; set; }
         int SubscriberID { get; set; }
        
         int SubscribtionTypeID { get; set; }
