@@ -361,10 +361,24 @@ namespace SwimmingPool
 
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
             SubPrice = SubPriceReturner();
-            MessageBox.Show("SAXELI" +subscriber.Name + " " + subscriber.LastName+"PRICE "+SubPrice.NumberOfHours);
+
+            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
+            subscription = GenerateSubscribtionID();
+            MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
 
 
         }
+
+        //ES METHODI DASAWERIA, AXLA SATESTOA
+        public ISubscription GenerateSubscribtionID()
+        {
+            //Subscription : ISubscription
+            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
+            string SubscribtionNumber = string.Format("A" + "{0:000}", 5);
+            subscription.IDnumber = SubscribtionNumber;
+            return subscription;
+        }
+
 
         //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
