@@ -108,7 +108,14 @@ namespace SPSQLite
         
         public  static List<Subscriber> GetAbonentSource()
         {
+            //return Conn.Table<Subscriber>().ToList();
+            //Subscriber A = new Subscriber { Id = 5 };
+            //Conn.GetWithChildren<Subscriber>(A.Id);
+
+
             return Conn.Table<Subscriber>().ToList();
+         
+
         }
 
       

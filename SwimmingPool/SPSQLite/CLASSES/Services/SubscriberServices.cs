@@ -26,7 +26,9 @@ namespace SPSQLite.CLASSES
            List<ISubscriber> list = DatabaseConnection.GetAbonentSource().Select(o=>new Subscriber {Adress=o.Address,DateOfBirth=o.DateOfBirth,
             ID=o.Id,
             LastName=o.LastName,Name=o.Name,PhoneNumber=o.PhoneNumber}).ToList<ISubscriber>();
-                
+
+            //GetWithChildren
+
             return list;
         }
     }
