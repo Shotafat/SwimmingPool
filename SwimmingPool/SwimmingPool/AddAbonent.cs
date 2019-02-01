@@ -358,7 +358,10 @@ namespace SwimmingPool
         {
             ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
             subscriber = subscriberSaver();
-            MessageBox.Show(subscriber.Name + " " + subscriber.LastName);
+
+            ISubscriptionPrice SubPrice = new SubcsriptionPrice();
+            SubPrice = SubPriceReturner();
+            MessageBox.Show("SAXELI" +subscriber.Name + " " + subscriber.LastName+"PRICE "+SubPrice.NumberOfHours);
 
 
         }
@@ -389,6 +392,16 @@ namespace SwimmingPool
             return subscriber;
 
         }
+
+        //SubcsriptionPrice : ISubscriptionPrice
+        public ISubscriptionPrice SubPriceReturner()
+        {
+            int Hour = (int)cmbxHour.SelectedValue;
+            SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
+
+            return NewSubPR;
+        }
+
 
         public void SubscribtionSaver()
         {
