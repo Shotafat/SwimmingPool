@@ -364,6 +364,11 @@ namespace SwimmingPool
 
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
             subscription = GenerateSubscribtionID();
+
+            //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+            DatabaseConnection.insertSubscribtion(subscription, subscriber, SubPrice);
+
+
             MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
 
 
@@ -417,13 +422,7 @@ namespace SwimmingPool
         }
 
 
-        public void SubscribtionSaver()
-        {
-
-
-
-        }
-
+        
 
 
 

@@ -54,10 +54,23 @@ namespace SPSQLite
                 //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
                 IDnumber = subscription_.IDnumber
                 });
-            subscriberkey.Subscribtions = NewSubscription;
-            Conn.InsertWithChildren(NewSubscription, true);
+            subscriberkey.Subscriptions = NewSubscription;
             subscribtionPricekey.Subscribtions = NewSubscription;
-            Conn.UpdateWithChildren(NewSubscription);
+            Conn.InsertAllWithChildren(NewSubscription, true);
+            //subscribtionPricekey.Subscribtions = new List<Subscription>();
+            foreach (var item in NewSubscription)
+            {
+                Conn.UpdateWithChildren(item);
+            }
+            
+            /*
+             public static void InsertAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
+        public static void InsertOrReplaceAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
+        public static void InsertOrReplaceWithChildren(this SQLiteConnection conn, object element, bool recursive = false);
+        public static void InsertWithChildren(this SQLiteConnection conn, object element, bool recursive = false);
+             * */
+
+
 
             //Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
 
@@ -340,7 +353,7 @@ namespace SPSQLite
         public DateTime DateOfBirth { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<Subscription> Subscribtions { get; set; }
+        public List<Subscription> Subscriptions { get; set; }
 
     }
      
@@ -367,6 +380,8 @@ namespace SPSQLite
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Subscription> Subscribtions { get; set; }
+
+      
     }
 
     //სააბონენტო განრიგი
