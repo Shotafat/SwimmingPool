@@ -2,6 +2,7 @@
 using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -69,8 +70,24 @@ namespace SwimmingPool
                         }).ToList();
 
 
+            var vano = (from c in ServiceInstances.Service().GetSubscriberService().GetData() select new
+                        {
+                            სახელი = c.Name,
+                            გვარი = c.LastName,
+                            მობილური = c.PhoneNumber,
+                            მისამართი = c.Adress,
+                            ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
+                         
+
+
+
+                        }).ToList();
+            
+
+         var ushangi=   DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
+
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = gela;
+            dataGridView1.DataSource = ushangi;
         }
 
         private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
