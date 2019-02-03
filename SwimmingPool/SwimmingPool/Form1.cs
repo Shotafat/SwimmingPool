@@ -1,32 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SPSQLite;
-using SQLiteNetExtensions.Attributes;
-using SQLiteNetExtensions;
-using SPSQLite.CLASSES.BussinessObjects;
+﻿using SPSQLite;
+using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
+using System;
+using System.Collections.Generic;
 using System.Globalization;
-using SPSQLite.CLASSES;
+using System.Linq;
+using System.Windows.Forms;
 
 namespace SwimmingPool
 {
     public partial class Form1 : Form
     {
 
-      
+
 
         public Form1()
         {
-         
-        InitializeComponent();
+
+            InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -55,33 +47,35 @@ namespace SwimmingPool
         }
         public void JoinClasses()
         {
-           var gela = (from g in ServiceInstances.Service().GetSubscriptionServices().GetData()
-                                        join c in ServiceInstances.Service().GetSubscriberService().GetData() on g.SubscriberID equals c.ID
-                                        join s in ServiceInstances.Service().GetSubscriptionPriceServices().GetData() on g.SubscribtionTypeID equals s.ID
-                                        select new
-                                        {
-                                            SubNumber = g.IDnumber,
-                                            Name = c.Name,
-                                            LastName = c.LastName,
-                                            PhoneNumber = c.PhoneNumber,
-                                            Adress = c.Adress,
-                                            Age = c.DateOfBirth,
-                                            NumberHour = s.NumberOfHours,
-                                            Price = s.Price
+
+            //ქართული ცვლადები პროსტა სატესტოდ დავწერე რანთაიმში ენიჭება ქოლუმნებს სახელები ანონიმური ობიექტის პონტში :) :D 
+            var gela = (from g in ServiceInstances.Service().GetSubscriptionServices().GetData()
+                        join c in ServiceInstances.Service().GetSubscriberService().GetData() on g.SubscriberID equals c.ID
+                        join s in ServiceInstances.Service().GetSubscriptionPriceServices().GetData() on g.SubscribtionTypeID equals s.ID
+                        select new
+                        {
+                            ნომერი = g.IDnumber,
+                            სახელი = c.Name,
+                            გვარი = c.LastName,
+                            მობილური = c.PhoneNumber,
+                            მისამართი = c.Adress,
+                            ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
+                            საათი = s.NumberOfHours,
+                            ფასი = s.Price
 
 
 
 
-                                        }).ToList();
+                        }).ToList();
 
 
 
             dataGridView1.DataSource = gela;
         }
 
-            private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
+        private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           
+
             Form2 form2 = new Form2();
 
 
@@ -95,7 +89,7 @@ namespace SwimmingPool
 
         private void წაშლაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-           
+
             DatabaseConnection.insertSubscribtionPrice(2, 2.5);
             DatabaseConnection.insertSubscribtionPrice(3, 40.5);
             DatabaseConnection.insertSubscribtionPrice(4, 30.5);
@@ -152,7 +146,7 @@ new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 13:00", "g"
 new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  }
 
         };
-          foreach (var item in list)
+            foreach (var item in list)
             {
                 //SubscriptionSchedule : ISubscriptionSchedule
                 ServiceInstances.Service().GetSubscriptionScheduleServices().Add(item);
@@ -178,7 +172,9 @@ new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g"
                 }
             }
             else
+            {
                 MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
+            }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -195,7 +191,7 @@ new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g"
             }
         }
 
-        
+
     }
 }
 
