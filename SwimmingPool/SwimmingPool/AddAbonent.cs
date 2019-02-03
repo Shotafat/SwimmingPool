@@ -1,14 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Drawing;
-using System.Globalization;
-using System.Windows.Forms;
-using SPSQLite;
-using SPSQLite.CLASSES.BussinessObjects;
+﻿using SPSQLite;
 using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.UIMethods;
+using System;
+using System.Collections.Generic;
+using System.Drawing;
+using System.Globalization;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace SwimmingPool
 {
@@ -34,7 +33,7 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
-  
+
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
@@ -46,7 +45,11 @@ namespace SwimmingPool
             lblBack.Enabled = false;
 
             ThisMonday = DateTime.Now;
-            while (ThisMonday.DayOfWeek != DayOfWeek.Monday) ThisMonday = ThisMonday.AddDays(-1);
+            while (ThisMonday.DayOfWeek != DayOfWeek.Monday)
+            {
+                ThisMonday = ThisMonday.AddDays(-1);
+            }
+
             CurrentMonday = ThisMonday;
 
             AssignCurrentWeek(CurrentMonday);
@@ -108,27 +111,33 @@ namespace SwimmingPool
         }
         #endregion
 
-        public void  gridFillter (DataGridView SubscriberSchedul, DateTime Start)
+        public void gridFillter(DataGridView SubscriberSchedul, DateTime Start)
         {
 
             DateTime End = Start.AddDays(6 - (int)Start.DayOfWeek);
             SubscriberSchedul.DataSource = null;
             //MessageBox.Show(((int)Start.DayOfWeek).ToString());
             //FUTURE
-            if ((int)Start.DayOfWeek == 0)
+            if (Start.DayOfWeek == 0)
+            {
                 Start.AddDays(-3);
-          var test =  InputMethods.Filldata(Start, End);
-          foreach (var item in InputMethods.DATAforInput)
-             //for (int i = 0; i < InputMethods.DATAforInput.Count; i++)
-                    SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();   //item.DatainputList[i].Datelist.ToString(); // item.DatainputList[i].Date.ToString()+" "+ 
-                                                                                                                                        //PAST
+            }
+
+            var test = InputMethods.Filldata(Start, End);
+            foreach (var item in InputMethods.DATAforInput)
+            {
+                //for (int i = 0; i < InputMethods.DATAforInput.Count; i++)
+                SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();   //item.DatainputList[i].Datelist.ToString(); // item.DatainputList[i].Date.ToString()+" "+ 
+            }
+            //PAST
 
             foreach (var item in InputMethods.DATAforInputPast)
-             //   for (int i = 0; i < InputMethods.DATAforInputPast.Count; i++)
-                    SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
+            {
+                //   for (int i = 0; i < InputMethods.DATAforInputPast.Count; i++)
+                SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
+            }
 
-
-          EmptyCellfiller(SubscriberSchedul);
+            EmptyCellfiller(SubscriberSchedul);
 
         }
 
@@ -148,21 +157,21 @@ namespace SwimmingPool
                         cell.Style.ForeColor = Color.Gray;
                         cell.ReadOnly = true;
                         cell.Value = "0";
-                        
+
                     }
                 }
             }
         }
 
         public void grafiki()
-        {           
+        {
             dataGridView1.DataSource = null;
             dataGridView1.Rows.Add();
-            
+
             for (int i = 10; i < 22; i++)
             {
                 dataGridView1.Rows.Add();
-                dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i-1 + ":00");
+                dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i - 1 + ":00");
             }
 
             for (int i = 0; i < 11; i++)
@@ -170,7 +179,7 @@ namespace SwimmingPool
                 for (int ii = 0; ii < 7; ii++)
                 {
                     dataGridView1.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
-                }               
+                }
             }
 
             //pirveli ujris shevseba DATE-biT
@@ -183,25 +192,26 @@ namespace SwimmingPool
 
             for (int i = 1; i <= ForwardDays; i++)
             {
-                dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek+i].Value = getFormattedDate(DateTime.Now.AddDays(i));
+                dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek + i].Value = getFormattedDate(DateTime.Now.AddDays(i));
             }
 
             for (int i = 1; i < CurrentDay; i++)
             {
                 dataGridView1.Rows[0].Cells[(int)DateTime.Now.DayOfWeek - i].Value = getFormattedDate(DateTime.Now.AddDays(-i));
-               // dataGridView1.Columns
+                // dataGridView1.Columns
             }
 
             //CultureInfo provider = new CultureInfo("fr-FR");
             //DateTime start = DateTime.ParseExact("21/01/2019 09:00", "g", provider);     //dateTimePicker1.Value;
-                                                                                         //6-(int)dateTimePicker1.Value.DayOfWeek
-                                                                                         //  DateTime End = dateTimePicker1.Value.AddDays(6 - (int)dateTimePicker1.Value.DayOfWeek);
-         //   gridFillter(dataGridView1, DateTime.Now);
+            //6-(int)dateTimePicker1.Value.DayOfWeek
+            //  DateTime End = dateTimePicker1.Value.AddDays(6 - (int)dateTimePicker1.Value.DayOfWeek);
+            //   gridFillter(dataGridView1, DateTime.Now);
             dataGridView1.Rows[0].Cells[0].Value = " ";
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
 
-        string getFormattedDate(DateTime dateTime) {
+        private string getFormattedDate(DateTime dateTime)
+        {
 
             return dateTime.ToString("dd/MM/yyyy");
         }
@@ -242,15 +252,17 @@ namespace SwimmingPool
                 ara.Enabled = true;
             }
         }
-       
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-          
+
             bool sell = columni.Contains(e.ColumnIndex);
             bool rov = rovsi.Contains(e.RowIndex);
 
             if (sell && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != Color.Green)
+            {
                 return;
+            }
             else
             {
 
@@ -267,7 +279,7 @@ namespace SwimmingPool
                 bool cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
 
                 Color feri = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.BackColor;
- 
+
                 if (cellValue && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor == Color.Green)
                 {
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = feri;
@@ -316,7 +328,9 @@ namespace SwimmingPool
             }
 
             else
+            {
                 return true;
+            }
         }
 
         private void cmbxHour_SelectedIndexChanged(object sender, EventArgs e)
@@ -356,44 +370,56 @@ namespace SwimmingPool
         #endregion
 
 
-        public ISubscription GenerateSubscribtionID()
+        public ISubscription GenerateSubscribtionID(ISubscription gela)
         {
             //Subscription : ISubscription
 
 
-            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
-            string SubscribtionNumber = string.Format("A" + "{0:000}", 5);
-            subscription.IDnumber = SubscribtionNumber;
-            return subscription;
+            var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
+
+            string SubscribtionNumber = string.Format("A" + "{0:000}", gel.ID);
+            gela.IDnumber = SubscribtionNumber;
+            return gela;
         }
+
+
+
+
 
 
         public void Saver()
         {
-            ISubscriber subscriber = new  SPSQLite.CLASSES.Subscriber();
+            ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
 
 
             subscriber = subscriberSaver();
 
-          
+
             SubPrice = SubPriceReturner();
 
-           
-            subscription = GenerateSubscribtionID();
+
+            subscription = GenerateSubscribtionID(subscription);
 
             //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
-            DatabaseConnection.insertSubscribtion( subscriber, SubPrice, subscription);
+
+            // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
+            ServiceInstances.Service().GetSubscriberService().Add(subscriber);
+            ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
+            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
 
 
-            MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
+
+
+
+            //  MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
 
 
         }
 
         //ES METHODI DASAWERIA, AXLA SATESTOA
-      
+
 
         //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
@@ -408,13 +434,13 @@ namespace SwimmingPool
         public ISubscriber subscriberSaver()
         {
             //Subscriber subscriber_ = new Subscriber();
-           
+
 
 
             string Date = asaki.Text;
             DateTime DateOfBirth = DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
             //var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
-            SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name= saxeli.Text, LastName= gvari.Text, DateOfBirth= DateOfBirth, PhoneNumber= telefoni.Text, Adress= misamarti.Text };
+            SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name = saxeli.Text, LastName = gvari.Text, DateOfBirth = DateOfBirth, PhoneNumber = telefoni.Text, Adress = misamarti.Text };
 
             //ServiceInstances.Service().GetSubscriberService().Add(Subscriber);
 
@@ -432,7 +458,7 @@ namespace SwimmingPool
         }
 
 
-        
+
 
 
 
@@ -445,10 +471,10 @@ namespace SwimmingPool
 
             //ServiceInstances.Service().GetSubscriberService().Add(gelag);
             Saver();
-
-
             DialogResult = DialogResult.OK;
             Close();
+
+
         }
     }
 }

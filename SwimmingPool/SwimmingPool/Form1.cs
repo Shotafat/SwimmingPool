@@ -32,7 +32,8 @@ namespace SwimmingPool
         private void Form1_Load(object sender, EventArgs e)
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = ServiceInstances.Service().GetSubscriberService().GetData();
+            dataGridView1.AutoGenerateColumns = true;
+            JoinClasses();
             //dataGrid_eqimi.DataSource = null;
             //dataGrid_eqimi.DataSource = ServiceInstances.Service().GetDoctorServices().GetData();
             //dataGridView5.DataSource = null;
@@ -52,8 +53,33 @@ namespace SwimmingPool
                 Form1_Load(sender, e);
             }
         }
+        public void JoinClasses()
+        {
+           var gela = (from g in ServiceInstances.Service().GetSubscriptionServices().GetData()
+                                        join c in ServiceInstances.Service().GetSubscriberService().GetData() on g.SubscriberID equals c.ID
+                                        join s in ServiceInstances.Service().GetSubscriptionPriceServices().GetData() on g.SubscribtionTypeID equals s.ID
+                                        select new
+                                        {
+                                            SubNumber = g.IDnumber,
+                                            Name = c.Name,
+                                            LastName = c.LastName,
+                                            PhoneNumber = c.PhoneNumber,
+                                            Adress = c.Adress,
+                                            Age = c.DateOfBirth,
+                                            NumberHour = s.NumberOfHours,
+                                            Price = s.Price
 
-        private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
+
+
+
+                                        }).ToList();
+
+
+
+            dataGridView1.DataSource = gela;
+        }
+
+            private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
         {
            
             Form2 form2 = new Form2();
@@ -80,7 +106,7 @@ namespace SwimmingPool
             DatabaseConnection.insertSubscribtionPrice(9, 7.5);
             DatabaseConnection.insertSubscribtionPrice(10, 3.5);
 
-        
+
             DatabaseConnection.InsertSubscription(1, 1);
             DatabaseConnection.InsertSubscription(2, 2);
             DatabaseConnection.InsertSubscription(3, 3);
