@@ -347,7 +347,7 @@ namespace SPSQLite
     //აბონიმენტი
     public class Subscription
     {
-        [ PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
 
         public string IDnumber { get; set; }

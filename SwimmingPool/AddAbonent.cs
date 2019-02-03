@@ -38,8 +38,10 @@ namespace SwimmingPool
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             #region Nika 1.1
-            AbonentHours = new List<int> { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-            cmbxHour.DataSource = AbonentHours;
+            //AbonentHours = new List<int> { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+            //cmbxHour.DataSource = AbonentHours;
+
+            SubscribtionPriceToDropdown();
             SelectedCellCount = 0;
             lblBack.Cursor = Cursors.No;
             lblBack.Enabled = false;
@@ -384,6 +386,21 @@ namespace SwimmingPool
 
 
 
+
+        public void SubscribtionPriceToDropdown()
+        {
+            var SubscribtionPriceObject = ServiceInstances.Service().GetSubscriptionPriceServices().GetData().ToList();
+            var Hour = (from o in SubscribtionPriceObject select new  { Hours = o.NumberOfHours }).ToList();
+
+            List<int> HourList = new List<int>();
+            foreach (var item in Hour)
+            {
+                HourList.Add(item.Hours);
+            }
+
+            cmbxHour.DataSource = HourList;
+
+        }
 
 
 
