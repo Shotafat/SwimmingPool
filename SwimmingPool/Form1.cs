@@ -23,7 +23,7 @@ namespace SwimmingPool
         }
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = null;
+            
             dataGridView1.AutoGenerateColumns = true;
             JoinClasses();
             //dataGrid_eqimi.DataSource = null;
@@ -69,7 +69,7 @@ namespace SwimmingPool
                         }).ToList();
 
 
-
+            dataGridView1.DataSource = null;
             dataGridView1.DataSource = gela;
         }
 

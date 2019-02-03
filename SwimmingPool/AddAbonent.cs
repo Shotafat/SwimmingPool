@@ -1,5 +1,6 @@
 ﻿using SPSQLite;
 using SPSQLite.CLASSES;
+using SPSQLite.CLASSES.BussinessObjects;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.UIMethods;
 using System;
@@ -377,9 +378,10 @@ namespace SwimmingPool
             //Subscription : ISubscription
 
 
-            var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
+            //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
 
-            string SubscribtionNumber = string.Format("A" + "{0:000}", gel.ID);
+            string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
+            QuantityCounter.QuantityIncrementer();
             gela.IDnumber = SubscribtionNumber;
             return gela;
         }
@@ -423,7 +425,7 @@ namespace SwimmingPool
 
             // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
             ServiceInstances.Service().GetSubscriberService().Add(subscriber);
-            ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
+          //  ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
 
 
