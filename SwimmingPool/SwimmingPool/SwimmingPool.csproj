@@ -144,6 +144,7 @@
     <None Include="Properties\DataSources\SPSQLite.CLASSES.SubscriptionPriceServices.datasource" />
     <None Include="Properties\DataSources\SPSQLite.Coach.datasource" />
     <None Include="Properties\DataSources\SPSQLite.Doctor.datasource" />
+    <None Include="Properties\DataSources\SPSQLite.ISubscriber.datasource" />
     <None Include="Properties\DataSources\SPSQLite.Subscriber.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -34,6 +34,7 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
+  
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
@@ -354,19 +355,36 @@ namespace SwimmingPool
         }
         #endregion
 
-        public void Saver()
-        {
-            ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
-            subscriber = subscriberSaver();
 
-            ISubscriptionPrice SubPrice = new SubcsriptionPrice();
-            SubPrice = SubPriceReturner();
+        public ISubscription GenerateSubscribtionID()
+        {
+            //Subscription : ISubscription
+
 
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
+            string SubscribtionNumber = string.Format("A" + "{0:000}", 5);
+            subscription.IDnumber = SubscribtionNumber;
+            return subscription;
+        }
+
+
+        public void Saver()
+        {
+            ISubscriber subscriber = new  SPSQLite.CLASSES.Subscriber();
+            ISubscriptionPrice SubPrice = new SubcsriptionPrice();
+            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
+
+
+            subscriber = subscriberSaver();
+
+          
+            SubPrice = SubPriceReturner();
+
+           
             subscription = GenerateSubscribtionID();
 
             //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
-            DatabaseConnection.insertSubscribtion(subscription, subscriber, SubPrice);
+            DatabaseConnection.insertSubscribtion( subscriber, SubPrice, subscription);
 
 
             MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
@@ -375,15 +393,7 @@ namespace SwimmingPool
         }
 
         //ES METHODI DASAWERIA, AXLA SATESTOA
-        public ISubscription GenerateSubscribtionID()
-        {
-            //Subscription : ISubscription
-            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
-            string SubscribtionNumber = string.Format("A" + "{0:000}", 5);
-            subscription.IDnumber = SubscribtionNumber;
-            return subscription;
-        }
-
+      
 
         //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
@@ -403,10 +413,10 @@ namespace SwimmingPool
 
             string Date = asaki.Text;
             DateTime DateOfBirth = DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
-            var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
+            //var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
             SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name= saxeli.Text, LastName= gvari.Text, DateOfBirth= DateOfBirth, PhoneNumber= telefoni.Text, Adress= misamarti.Text };
 
-            ServiceInstances.Service().GetSubscriberService().Add(Subscriber);
+            //ServiceInstances.Service().GetSubscriberService().Add(Subscriber);
 
             return subscriber;
 

@@ -69,7 +69,7 @@ namespace SwimmingPool
 
         private void წაშლაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+           
             DatabaseConnection.insertSubscribtionPrice(2, 2.5);
             DatabaseConnection.insertSubscribtionPrice(3, 40.5);
             DatabaseConnection.insertSubscribtionPrice(4, 30.5);
@@ -79,6 +79,23 @@ namespace SwimmingPool
             DatabaseConnection.insertSubscribtionPrice(8, 8.5);
             DatabaseConnection.insertSubscribtionPrice(9, 7.5);
             DatabaseConnection.insertSubscribtionPrice(10, 3.5);
+
+        
+            DatabaseConnection.InsertSubscription(1, 1);
+            DatabaseConnection.InsertSubscription(2, 2);
+            DatabaseConnection.InsertSubscription(3, 3);
+            DatabaseConnection.InsertSubscription(4, 4);
+            DatabaseConnection.InsertSubscription(5, 5);
+            DatabaseConnection.InsertSubscription(6, 6);
+            DatabaseConnection.InsertSubscription(7, 7);
+
+
+            //DatabaseConnection.InsertSubscription(1, 2);
+            //DatabaseConnection.InsertSubscription(2, 2);
+            //DatabaseConnection.InsertSubscription(3, 2);
+            //DatabaseConnection.InsertSubscription(4, 2);
+            //DatabaseConnection.InsertSubscription(5, 2);
+            //DatabaseConnection.InsertSubscription(6, 2);
 
 
 

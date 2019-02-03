@@ -18,51 +18,80 @@ using SQLiteNetExtensions.Extensions;
 
 namespace SPSQLite
 {
-    
+
     public static class DatabaseConnection
     {
         public static SQLiteConnection Conn { get; set; }
         public static string Path { get; set; }
 
-        
+
 
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
-            Conn.CreateTables<Capacity , SubscriptionScheduleDB>();
+            Conn.CreateTables<Capacity, SubscriptionScheduleDB>();
         }
 
         //Abonent 
-       
+
         public static void insertAbonent(ISubscriber sub)
         {
             Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
-           
-            
+
+
         }
 
         //SQLITE EXTENSIONS - ONE TO MANY RELATIONSHIP
-        public static void insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+
+
+
+        public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_)
         {
-           
-            var subscriberkey = Conn.Find<Subscriber>(s => s.PhoneNumber== subscriber_.PhoneNumber);
-            var subscribtionPricekey = Conn.Find<SubscribtionPrice>(s => s.NumberOfHours == subscriberprice.NumberOfHours);
+            var subscriberkey = Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
+
+            var subscribtionPricekey = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
+            var subscription = Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
             List<Subscription> NewSubscription = new List<Subscription>();
 
-            NewSubscription.Add(new Subscription()
+            foreach (var item in NewSubscription)
             {
-                //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
-                IDnumber = subscription_.IDnumber
+                NewSubscription.Add(new Subscription()
+                {
+                    //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
+                    IDnumber = subscription.IDnumber,
+
+                    Subscriber_ = subscriberkey,
+                    SubscriberID = subscriberkey.Id,
+
+                    SubscriberPrice_ = subscribtionPricekey,
+
+                    SubscriptionTypeID = subscribtionPricekey.Id
+
+
                 });
-            subscriberkey.Subscriptions = NewSubscription;
-            subscribtionPricekey.Subscribtions = NewSubscription;
-            Conn.InsertAllWithChildren(NewSubscription, true);
-            //subscribtionPricekey.Subscribtions = new List<Subscription>();
+
+                subscriberkey.Subscriptions = NewSubscription;
+                subscribtionPricekey.Subscribtions = NewSubscription;
+                Conn.InsertAllWithChildren(NewSubscription, true);
+            }
+
+
             foreach (var item in NewSubscription)
             {
                 Conn.UpdateWithChildren(item);
             }
-            
+
+
+
+            //    subscriberkey.Subscriptions = NewSubscription;
+            //subscribtionPricekey.Subscribtions = NewSubscription;
+            //Conn.InsertAllWithChildren(NewSubscription, true)
+
+
+
+            //subscribtionPricekey.Subscribtions = new List<Subscription>();
+
+
             /*
              public static void InsertAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
         public static void InsertOrReplaceAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
@@ -288,11 +317,12 @@ namespace SPSQLite
             return Conn.Table<Subscription>().ToList();
         }
 
+      // 
       
-       
+  
 
-        // Edit capicity
-        public static void EditCapicity(ICapicity capicity)
+    // Edit capicity
+    public static void EditCapicity(ICapicity capicity)
         {
             var cap =  Conn.Table<Capacity>().Where(a => a.MaximumCapacity == capicity.CapicityValue).FirstOrDefault();
             if (cap != null)
