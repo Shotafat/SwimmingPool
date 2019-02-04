@@ -50,29 +50,51 @@ namespace SPSQLite
 
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_)
         {
+
             SubscribtionPrice SubPrice = new SubscribtionPrice();
-            SubPrice= Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
+            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
 
-            Subscriber subscriber = new Subscriber();
-            Subscription subscription = new Subscription();
-          
-            subscription.IDnumber = subscription_.IDnumber;
-            subscription.SubscriberPrice_ = SubPrice;
-            subscription.SubscriptionTypeID = SubPrice.Id;
-            //SubPrice.Subscribtions = new List<Subscription>();
-            //SubPrice.Subscribtions.Add(subscription);
-            subscriber.Subscriptions = new List<Subscription> { subscription };
-            //Conn.UpdateWithChildren(subscriber);
-            //Conn.UpdateWithChildren(SubPrice);
+            Subscriber subscriber = new Subscriber
+            {
+                Name = subscriber_.Name,
+                LastName = subscriber_.LastName,
+                PhoneNumber = subscriber_.PhoneNumber,
+                Address = subscriber_.Adress,
+                DateOfBirth = subscriber_.DateOfBirth,
+            };
+            Conn.Insert(subscriber);
+            Subscriber subscriberInserted = Conn.Table<Subscriber>().FirstOrDefault(s => s.PhoneNumber == subscriber_.PhoneNumber);
+            Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, /* SubscriberPrice_ = SubPrice, */ SubscriberID = subscriberInserted.Id, Subscriber_ = subscriberInserted };
+            Conn.Insert(subscription);
+            Subscription subscriptionInserted= Conn.Table<Subscription>().FirstOrDefault(s => s.IDnumber == subscription_.IDnumber);
+            //SubPrice.Subscribtions = subscriptionInserted;
+            SubPrice.SubscriptionID = subscriptionInserted.Id;
+            Conn.Update(SubPrice);
 
-            //Conn.UpdateWithChildren(SubPrice);
-            Conn.InsertWithChildren(subscriber);
-            
-          
-            //Conn.UpdateWithChildren(subscription);
+            // Subscriber subscriber = new Subscriber();
+            // Subscription subscription = new Subscription();
+            //// QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
+            // //subscriber=insertAbonent(subscriber_);
+            // //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
+            // // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
+
+            // //var a = Conn.Table<Subscription>();
+
+            // //subscription = InsertSubscription(subscription_);
+            // subscription.IDnumber = subscription_.IDnumber;
+            // subscription.SubscriberPrice_ = SubPrice;
+            // //subscription.SubscriptionTypeID = SubPrice.Id;
+            // //SubPrice.Subscribtions = new List<Subscription> ();
+            // //SubPrice.Subscribtions.Add(subscription);
+            // subscriber.Subscriptions = new List<Subscription> { subscription };
+            // //Conn.UpdateWithChildren(subscriber);
+            // //Conn.UpdateWithChildren(SubPrice);
+
+            // //Conn.UpdateWithChildren(SubPrice);
+            // Conn.InsertWithChildren(subscriber);
 
 
-
+            // //Conn.UpdateWithChildren(subscription);
 
         }
 
@@ -273,7 +295,7 @@ namespace SPSQLite
             {
                 
                 Subscription.SubscriberID = subscription.SubscriberID;
-                Subscription.SubscriptionTypeID = subscription.SubscribtionTypeID;
+                Subscription.IDnumber = subscription.IDnumber;
                 Conn.Update(Subscription);
             }
             
@@ -328,8 +350,7 @@ namespace SPSQLite
         public int SubscriberID { get; set; }
 
       
-        [ForeignKey(typeof(SubscribtionPrice))]
-        public int SubscriptionTypeID { get; set; }
+      
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
@@ -363,9 +384,6 @@ namespace SPSQLite
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Subscription> Subscriptions { get; set; }
 
-        //[OneToOne(CascadeOperations = CascadeOperation.All)]
-        //public HealthNotice healthnotice { get; set; }
-
     }
      
  
@@ -379,9 +397,6 @@ namespace SPSQLite
         [ForeignKey(typeof(Subscriber))]   //ForeignKey_ს დამატება SqliteExtensions nuget-ით
         public int AbonentId { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public HealthNotice healthnotice { get; set; }
-
     }
 
     //ფასი და საათი
@@ -392,11 +407,13 @@ namespace SPSQLite
         public int NumberOfHours { get; set; }
         public double Price { get; set; }
 
+        //[OneToOne(CascadeOperations = CascadeOperation.All)]
+        //public Subscription Subscribtions { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public Subscriber Subscribtions { get; set; }
+        [ForeignKey(typeof(SubscribtionPrice))]
+        public int SubscriptionID { get; set; }
 
-      
+
     }
 
     //სააბონენტო განრიგი
