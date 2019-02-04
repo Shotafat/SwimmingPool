@@ -55,19 +55,12 @@ namespace SPSQLite
 
             Subscriber subscriber = new Subscriber();
             Subscription subscription = new Subscription();
-           // QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
-            //subscriber=insertAbonent(subscriber_);
-            //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
-            // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
-
-            //var a = Conn.Table<Subscription>();
-
-            //subscription = InsertSubscription(subscription_);
+          
             subscription.IDnumber = subscription_.IDnumber;
             subscription.SubscriberPrice_ = SubPrice;
             subscription.SubscriptionTypeID = SubPrice.Id;
-            SubPrice.Subscribtions = new List<Subscription> ();
-            SubPrice.Subscribtions.Add(subscription);
+            //SubPrice.Subscribtions = new List<Subscription>();
+            //SubPrice.Subscribtions.Add(subscription);
             subscriber.Subscriptions = new List<Subscription> { subscription };
             //Conn.UpdateWithChildren(subscriber);
             //Conn.UpdateWithChildren(SubPrice);
@@ -77,6 +70,9 @@ namespace SPSQLite
             
           
             //Conn.UpdateWithChildren(subscription);
+
+
+
 
         }
 
@@ -338,7 +334,7 @@ namespace SPSQLite
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
-        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
 
 
@@ -367,6 +363,9 @@ namespace SPSQLite
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Subscription> Subscriptions { get; set; }
 
+        //[OneToOne(CascadeOperations = CascadeOperation.All)]
+        //public HealthNotice healthnotice { get; set; }
+
     }
      
  
@@ -380,6 +379,9 @@ namespace SPSQLite
         [ForeignKey(typeof(Subscriber))]   //ForeignKey_ს დამატება SqliteExtensions nuget-ით
         public int AbonentId { get; set; }
 
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        public HealthNotice healthnotice { get; set; }
+
     }
 
     //ფასი და საათი
@@ -390,8 +392,9 @@ namespace SPSQLite
         public int NumberOfHours { get; set; }
         public double Price { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<Subscription> Subscribtions { get; set; }
+
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        public Subscriber Subscribtions { get; set; }
 
       
     }

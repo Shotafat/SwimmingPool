@@ -428,6 +428,15 @@ namespace SwimmingPool
                                       
         }
 
+        public IHealthNotice HealthNoticeSaver()
+        {
+            SPSQLite.CLASSES.HealthNotice Health = new SPSQLite.CLASSES.HealthNotice();
+
+
+
+
+            return Health;
+        }
 
 
         public ISubscriber subscriberSaver()
