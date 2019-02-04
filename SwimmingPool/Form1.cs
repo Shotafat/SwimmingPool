@@ -36,15 +36,7 @@ namespace SwimmingPool
 
         private void დამატებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            AddAbonent addAbonent = new AddAbonent();
-
-
-            addAbonent.ShowDialog();
-            if (addAbonent.DialogResult == DialogResult.OK)
-            {
-
-                Form1_Load(sender, e);
-            }
+           
         }
         public void JoinClasses()
         {
@@ -81,7 +73,8 @@ namespace SwimmingPool
 
 
 
-            //            }).ToList();
+
+
             
 
          var JoinedTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
@@ -93,7 +86,60 @@ namespace SwimmingPool
             dataGridView1.DataSource = fillgrid;
         }
 
-        private void საათებიდაფასებიToolStripMenuItem_Click(object sender, EventArgs e)
+   
+
+     
+
+      
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                string a = Convert.ToString(selectedRow.Cells[1].Value);
+                string b = Convert.ToString(selectedRow.Cells[2].Value);
+                //label1.Text = a + " " + b;
+            }
+        }
+
+        private void დამატებაToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddAbonent addAbonent = new AddAbonent();
+
+
+            addAbonent.ShowDialog();
+            if (addAbonent.DialogResult == DialogResult.OK)
+            {
+
+                Form1_Load(sender, e);
+            }
+        }
+
+        private void რედაქტირებაToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows[0].Selected)
+            {
+                var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
+                AddAbonent add = new AddAbonent(subscriptionPrice);
+
+                add.ShowDialog();
+                if (add.DialogResult == DialogResult.OK)
+                {
+                    Form1_Load(sender, e);
+
+                }
+            }
+            else
+            {
+                MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
+            }
+        }
+
+        private void საათებიდაფასებიToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
             Form2 form2 = new Form2();
@@ -107,9 +153,8 @@ namespace SwimmingPool
             }
         }
 
-        private void წაშლაToolStripMenuItem_Click_1(object sender, EventArgs e)
+        private void წაშლაToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             DatabaseConnection.insertSubscribtionPrice(2, 2.5);
             DatabaseConnection.insertSubscribtionPrice(3, 40.5);
             DatabaseConnection.insertSubscribtionPrice(4, 30.5);
@@ -121,7 +166,7 @@ namespace SwimmingPool
             DatabaseConnection.insertSubscribtionPrice(10, 3.5);
 
 
-            
+
 
 
             CultureInfo provider = new CultureInfo("fr-FR");
@@ -157,45 +202,7 @@ new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g"
 
             }
 
-
-
         }
-
-        private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dataGridView1.SelectedRows[0].Selected)
-            {
-                var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
-                AddAbonent add = new AddAbonent(subscriptionPrice);
-
-                add.ShowDialog();
-                if (add.DialogResult == DialogResult.OK)
-                {
-                    Form1_Load(sender, e);
-
-                }
-            }
-            else
-            {
-                MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
-            }
-        }
-
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridView1.SelectedCells.Count > 0)
-            {
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-
-                string a = Convert.ToString(selectedRow.Cells[1].Value);
-                string b = Convert.ToString(selectedRow.Cells[2].Value);
-                label1.Text = a + " " + b;
-            }
-        }
-
-
     }
 }
 
