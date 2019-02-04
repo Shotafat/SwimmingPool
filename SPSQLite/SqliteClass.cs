@@ -50,88 +50,51 @@ namespace SPSQLite
 
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_)
         {
+
             SubscribtionPrice SubPrice = new SubscribtionPrice();
-            SubPrice= Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
+            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
 
-            Subscriber subscriber = new Subscriber();
-            Subscription subscription = new Subscription();
-            QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
-            //subscriber=insertAbonent(subscriber_);
-            //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
-            // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
+            Subscriber subscriber = new Subscriber
+            {
+                Name = subscriber_.Name,
+                LastName = subscriber_.LastName,
+                PhoneNumber = subscriber_.PhoneNumber,
+                Address = subscriber_.Adress,
+                DateOfBirth = subscriber_.DateOfBirth,
+            };
+            Conn.Insert(subscriber);
+            Subscriber subscriberInserted = Conn.Table<Subscriber>().FirstOrDefault(s => s.PhoneNumber == subscriber_.PhoneNumber);
+            Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, /* SubscriberPrice_ = SubPrice, */ SubscriberID = subscriberInserted.Id, Subscriber_ = subscriberInserted };
+            Conn.Insert(subscription);
+            Subscription subscriptionInserted= Conn.Table<Subscription>().FirstOrDefault(s => s.IDnumber == subscription_.IDnumber);
+            //SubPrice.Subscribtions = subscriptionInserted;
+            SubPrice.SubscriptionID = subscriptionInserted.Id;
+            Conn.Update(SubPrice);
 
-            //var a = Conn.Table<Subscription>();
+            // Subscriber subscriber = new Subscriber();
+            // Subscription subscription = new Subscription();
+            //// QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
+            // //subscriber=insertAbonent(subscriber_);
+            // //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
+            // // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
 
-            //subscription = InsertSubscription(subscription_);
-            subscription.IDnumber = subscription_.IDnumber;
+            // //var a = Conn.Table<Subscription>();
 
-            SubPrice.Subscribtions = new List<Subscription> { subscription };
-            subscriber.Subscriptions = new List<Subscription> { subscription };
-            //Conn.UpdateWithChildren(subscriber);
-            //Conn.UpdateWithChildren(SubPrice);
-            Conn.InsertWithChildren(subscriber);
-            Conn.UpdateWithChildren(SubPrice);
+            // //subscription = InsertSubscription(subscription_);
+            // subscription.IDnumber = subscription_.IDnumber;
+            // subscription.SubscriberPrice_ = SubPrice;
+            // //subscription.SubscriptionTypeID = SubPrice.Id;
+            // //SubPrice.Subscribtions = new List<Subscription> ();
+            // //SubPrice.Subscribtions.Add(subscription);
+            // subscriber.Subscriptions = new List<Subscription> { subscription };
+            // //Conn.UpdateWithChildren(subscriber);
+            // //Conn.UpdateWithChildren(SubPrice);
 
-//            insertSubscribtion(subscription_);
-            //Subscriber subscriberkey = Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
-
-            //SubscribtionPrice subscribtionPricekey = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
-            //Subscription subscription = Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
-
-
-
-            //List<Subscription> NewSubscription = new List<Subscription>();
-
-            //foreach (var item in NewSubscription)
-            //{
-            //    NewSubscription.Add(new Subscription()
-            //    {
-            //        //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
-            //        IDnumber = subscription.IDnumber,
-
-            //        Subscriber_ = subscriberkey,
-            //        SubscriberID = subscriberkey.Id,
-
-            //        SubscriberPrice_ = subscribtionPricekey,
-
-            //        SubscriptionTypeID = subscribtionPricekey.Id
+            // //Conn.UpdateWithChildren(SubPrice);
+            // Conn.InsertWithChildren(subscriber);
 
 
-            //    });
-
-            //    subscriberkey.Subscriptions = NewSubscription;
-            //    subscribtionPricekey.Subscribtions = NewSubscription;
-            //    Conn.InsertAllWithChildren(NewSubscription, true);
-            //}
-
-
-            //foreach (var item in NewSubscription)
-            //{
-            //    Conn.UpdateWithChildren(item);
-            //}
-
-
-
-            //    subscriberkey.Subscriptions = NewSubscription;
-            //subscribtionPricekey.Subscribtions = NewSubscription;
-            //Conn.InsertAllWithChildren(NewSubscription, true)
-
-
-
-            //subscribtionPricekey.Subscribtions = new List<Subscription>();
-
-
-            /*
-             public static void InsertAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
-        public static void InsertOrReplaceAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
-        public static void InsertOrReplaceWithChildren(this SQLiteConnection conn, object element, bool recursive = false);
-        public static void InsertWithChildren(this SQLiteConnection conn, object element, bool recursive = false);
-             * */
-
-
-
-            //Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
-
+            // //Conn.UpdateWithChildren(subscription);
 
         }
 
@@ -332,7 +295,7 @@ namespace SPSQLite
             {
                 
                 Subscription.SubscriberID = subscription.SubscriberID;
-                Subscription.SubscriptionTypeID = subscription.SubscribtionTypeID;
+                Subscription.IDnumber = subscription.IDnumber;
                 Conn.Update(Subscription);
             }
             
@@ -387,13 +350,12 @@ namespace SPSQLite
         public int SubscriberID { get; set; }
 
       
-        [ForeignKey(typeof(SubscribtionPrice))]
-        public int SubscriptionTypeID { get; set; }
+      
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
-        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
 
 
@@ -445,10 +407,13 @@ namespace SPSQLite
         public int NumberOfHours { get; set; }
         public double Price { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<Subscription> Subscribtions { get; set; }
+        //[OneToOne(CascadeOperations = CascadeOperation.All)]
+        //public Subscription Subscribtions { get; set; }
 
-      
+        [ForeignKey(typeof(SubscribtionPrice))]
+        public int SubscriptionID { get; set; }
+
+
     }
 
     //სააბონენტო განრიგი
