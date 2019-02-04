@@ -8,16 +8,23 @@ namespace SPSQLite.CLASSES.BussinessObjects
     public static class QuantityCounter
     {
         public static int Quantity { get; set; }
-        public static void QuantityIncrementer()
+        public static int QuantityIncrementer()
         {
+            int i;
             //mogvaqvs subscribtion-ebis baza
             var Quantit= ServiceInstances.Service().GetSubscriptionServices().GetData();
             int count = Quantit.Count;
             if (count==0)
-                Quantity = 1;
+            { 
+                i = 1;
+                return i;
+            }
             else
-            Quantity = Quantit[count - 1].ID+1;
-
+            { 
+                i= Quantit[count - 1].ID+1;
+                return i;
+            }
+            
         }
 
     }

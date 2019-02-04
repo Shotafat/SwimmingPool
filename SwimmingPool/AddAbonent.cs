@@ -379,10 +379,10 @@ namespace SwimmingPool
 
 
             //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
-            QuantityCounter.QuantityIncrementer();
-            string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
-            
+            QuantityCounter.Quantity=QuantityCounter.QuantityIncrementer();
+                       string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
             subscribtion.IDnumber = SubscribtionNumber;
+            
             return subscribtion;
         }
 
