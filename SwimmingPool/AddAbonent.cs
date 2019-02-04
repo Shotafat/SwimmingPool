@@ -379,10 +379,10 @@ namespace SwimmingPool
 
 
             //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
-            QuantityCounter.Quantity=QuantityCounter.QuantityIncrementer();
-                       string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
+            QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
+            string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
             subscribtion.IDnumber = SubscribtionNumber;
-            
+
             return subscribtion;
         }
 
@@ -392,7 +392,7 @@ namespace SwimmingPool
         public void SubscribtionPriceToDropdown()
         {
             var SubscribtionPriceObject = ServiceInstances.Service().GetSubscriptionPriceServices().GetData().ToList();
-            var Hour = (from o in SubscribtionPriceObject select new  { Hours = o.NumberOfHours }).ToList();
+            var Hour = (from o in SubscribtionPriceObject select new { Hours = o.NumberOfHours }).ToList();
 
             List<int> HourList = new List<int>();
             foreach (var item in Hour)
@@ -423,14 +423,14 @@ namespace SwimmingPool
 
             //MessageBox.Show(subscription.IDnumber);
 
-            
-           // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+
+            // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
             // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
-       
-             ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
+
+            ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
-                                          
+
             //  MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
 
 
@@ -439,7 +439,7 @@ namespace SwimmingPool
         //ES METHODI DASAWERIA, AXLA SATESTOA
 
 
-       // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+        // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
         //Methodebis mimdevroba
         // 1 Subscriber
@@ -479,8 +479,7 @@ namespace SwimmingPool
 
 
 
-
-        private void shenaxva_Click(object sender, EventArgs e)
+        private void shenaxva_Click_1(object sender, EventArgs e)
         {
             //string gela = asaki.Text;
             //DateTime gela1 = DateTime.ParseExact(gela, "dd-MM-yyyy", CultureInfo.InvariantCulture);
@@ -492,6 +491,10 @@ namespace SwimmingPool
             DialogResult = DialogResult.OK;
             Close();
 
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

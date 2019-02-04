@@ -57,7 +57,7 @@
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(1, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(903, 79);
+            this.panel1.Size = new System.Drawing.Size(728, 79);
             this.panel1.TabIndex = 0;
             // 
             // pictureBox1
@@ -89,7 +89,7 @@
             this.panel2.Controls.Add(this.dataGridView1);
             this.panel2.Location = new System.Drawing.Point(1, 83);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(903, 424);
+            this.panel2.Size = new System.Drawing.Size(728, 424);
             this.panel2.TabIndex = 1;
             // 
             // button3
@@ -185,6 +185,7 @@
             this.ClientSize = new System.Drawing.Size(730, 509);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

@@ -199,6 +199,12 @@ new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g"
             }
 
         }
+
+        private void ვადაგასულიToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4();
+            form.Show();
+        }
     }
 }
 
