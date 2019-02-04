@@ -60,10 +60,10 @@ namespace SPSQLite
             //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
             // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
 
-            var a = Conn.Table<Subscription>();
-            
+            //var a = Conn.Table<Subscription>();
+
             //subscription = InsertSubscription(subscription_);
-            subscription.IDnumber = "A"+ (a.Count() + 1).ToString();
+            subscription.IDnumber = subscription_.IDnumber;
 
             SubPrice.Subscribtions = new List<Subscription> { subscription };
             subscriber.Subscriptions = new List<Subscription> { subscription };

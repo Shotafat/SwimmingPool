@@ -421,6 +421,9 @@ namespace SwimmingPool
 
             subscription = GenerateSubscribtionID(subscription);
 
+            MessageBox.Show(subscription.IDnumber);
+
+
            // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
             // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის

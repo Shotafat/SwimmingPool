@@ -14,17 +14,10 @@ namespace SPSQLite.CLASSES.BussinessObjects
             //mogvaqvs subscribtion-ebis baza
             var Quantit= ServiceInstances.Service().GetSubscriptionServices().GetData();
             int count = Quantit.Count;
-            if (count==0)
-            { 
-                i = 1;
-                return i;
-            }
-            else
-            { 
-                i= Quantit[count - 1].ID+1;
-                return i;
-            }
-            
+         
+                i= count + 1;
+
+            return i;
         }
 
     }
