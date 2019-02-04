@@ -42,44 +42,48 @@ namespace SwimmingPool
         {
 
             //ქართული ცვლადები პროსტა სატესტოდ დავწერე რანთაიმში ენიჭება ქოლუმნებს სახელები ანონიმური ობიექტის პონტში :) :D 
-            var gela = (from g in ServiceInstances.Service().GetSubscriptionServices().GetData()
-                        join c in ServiceInstances.Service().GetSubscriberService().GetData() on g.SubscriberID equals c.ID
-                        join s in ServiceInstances.Service().GetSubscriptionPriceServices().GetData() on g.SubscribtionTypeID equals s.ID
-                        select new
-                        {
-                            ნომერი = g.IDnumber,
-                            სახელი = c.Name,
-                            გვარი = c.LastName,
-                            მობილური = c.PhoneNumber,
-                            მისამართი = c.Adress,
-                            ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
-                            საათი = s.NumberOfHours,
-                            ფასი = s.Price
+            //var gela = (from g in ServiceInstances.Service().GetSubscriptionServices().GetData()
+            //            join c in ServiceInstances.Service().GetSubscriberService().GetData() on g.SubscriberID equals c.ID
+            //            join s in ServiceInstances.Service().GetSubscriptionPriceServices().GetData() on g.SubscribtionTypeID equals s.ID
+            //            select new
+            //            {
+            //                ნომერი = g.IDnumber,
+            //                სახელი = c.Name,
+            //                გვარი = c.LastName,
+            //                მობილური = c.PhoneNumber,
+            //                მისამართი = c.Adress,
+            //                ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
+            //                საათი = s.NumberOfHours,
+            //                ფასი = s.Price
 
 
 
 
-                        }).ToList();
+            //            }).ToList();
 
 
-            var vano = (from c in ServiceInstances.Service().GetSubscriberService().GetData() select new
-                        {
-                            სახელი = c.Name,
-                            გვარი = c.LastName,
-                            მობილური = c.PhoneNumber,
-                            მისამართი = c.Adress,
-                            ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
+            //var vano = (from c in ServiceInstances.Service().GetSubscriberService().GetData() select new
+            //            {
+            //                სახელი = c.Name,
+            //                გვარი = c.LastName,
+            //                მობილური = c.PhoneNumber,
+            //                მისამართი = c.Adress,
+            //                ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
                          
 
 
 
-                       }).ToList();
+
+
             
 
-         var ushangi=   DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
+         var JoinedTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
+
+            var fillgrid = (from o in JoinedTable select new { SubscribID = o.Id, SubsIDNUM = o.IDnumber, SubscriberID = o.SubscriberID ,
+                                  PRICE=o.SubscriberPrice_.Price}).ToList();
 
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = ushangi;
+            dataGridView1.DataSource = fillgrid;
         }
 
    
