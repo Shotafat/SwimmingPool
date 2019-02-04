@@ -421,14 +421,14 @@ namespace SwimmingPool
 
             subscription = GenerateSubscribtionID(subscription);
 
-            MessageBox.Show(subscription.IDnumber);
+            //MessageBox.Show(subscription.IDnumber);
 
-
+            
            // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
             // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
        
-          //  ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
+             ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
                                           
             //  MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
@@ -439,7 +439,7 @@ namespace SwimmingPool
         //ES METHODI DASAWERIA, AXLA SATESTOA
 
 
-        //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+       // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
         //Methodebis mimdevroba
         // 1 Subscriber
