@@ -12,7 +12,7 @@ namespace SPSQLite.CLASSES
 
         public void Add(ISubscription a)
         {
-            DatabaseConnection.InsertSubscription(a.SubscriberID,  a.SubscribtionTypeID);
+            DatabaseConnection.InsertSubscription(a);
         }
 
 

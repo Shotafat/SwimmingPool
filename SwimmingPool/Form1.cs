@@ -118,23 +118,7 @@ namespace SwimmingPool
             DatabaseConnection.insertSubscribtionPrice(10, 3.5);
 
 
-            DatabaseConnection.InsertSubscription(1, 1);
-            DatabaseConnection.InsertSubscription(2, 2);
-            DatabaseConnection.InsertSubscription(3, 3);
-            DatabaseConnection.InsertSubscription(4, 4);
-            DatabaseConnection.InsertSubscription(5, 5);
-            DatabaseConnection.InsertSubscription(6, 6);
-            DatabaseConnection.InsertSubscription(7, 7);
-
-
-            //DatabaseConnection.InsertSubscription(1, 2);
-            //DatabaseConnection.InsertSubscription(2, 2);
-            //DatabaseConnection.InsertSubscription(3, 2);
-            //DatabaseConnection.InsertSubscription(4, 2);
-            //DatabaseConnection.InsertSubscription(5, 2);
-            //DatabaseConnection.InsertSubscription(6, 2);
-
-
+            
 
 
             CultureInfo provider = new CultureInfo("fr-FR");

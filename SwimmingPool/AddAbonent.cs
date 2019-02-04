@@ -373,17 +373,17 @@ namespace SwimmingPool
         #endregion
 
 
-        public ISubscription GenerateSubscribtionID(ISubscription gela)
+        public ISubscription GenerateSubscribtionID(ISubscription subscribtion)
         {
             //Subscription : ISubscription
 
 
             //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
-
-            string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
             QuantityCounter.QuantityIncrementer();
-            gela.IDnumber = SubscribtionNumber;
-            return gela;
+            string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
+            
+            subscribtion.IDnumber = SubscribtionNumber;
+            return subscribtion;
         }
 
 
@@ -421,10 +421,10 @@ namespace SwimmingPool
 
             subscription = GenerateSubscribtionID(subscription);
 
-            //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+           // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
             // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
-            ServiceInstances.Service().GetSubscriberService().Add(subscriber);
+       
           //  ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
 

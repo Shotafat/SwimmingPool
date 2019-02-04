@@ -12,6 +12,7 @@ using SQLiteNetExtensions;
 using System.Reflection;
 using SPSQLite.INTERFACES.Interfaces;
 using SQLiteNetExtensions.Extensions;
+using SPSQLite.CLASSES.Services;
 
 
 //using System.Windows.Forms;
@@ -34,11 +35,12 @@ namespace SPSQLite
 
         //Abonent 
 
-        public static void insertAbonent(ISubscriber sub)
+        public static Subscriber insertAbonent(ISubscriber sub)
         {
             Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
 
-
+            Subscriber subsc = new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth };
+            return subsc;
         }
 
         //SQLITE EXTENSIONS - ONE TO MANY RELATIONSHIP
@@ -47,39 +49,61 @@ namespace SPSQLite
 
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_)
         {
-            var subscriberkey = Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
+            SubscribtionPrice SubPrice = new SubscribtionPrice();
+            SubPrice= Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
 
-            var subscribtionPricekey = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
-            var subscription = Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
-            List<Subscription> NewSubscription = new List<Subscription>();
+            Subscriber subscriber = new Subscriber();
+            Subscription subscription = new Subscription();
+            //subscriber=insertAbonent(subscriber_);
+            //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
+           // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
 
-            foreach (var item in NewSubscription)
-            {
-                NewSubscription.Add(new Subscription()
-                {
-                    //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
-                    IDnumber = subscription.IDnumber,
+            //subscription = InsertSubscription(subscription_);
 
-                    Subscriber_ = subscriberkey,
-                    SubscriberID = subscriberkey.Id,
+            SubPrice.Subscribtions = new List<Subscription> { subscription };
+            subscriber.Subscriptions = new List<Subscription> { subscription };
+            //Conn.UpdateWithChildren(subscriber);
+            //Conn.UpdateWithChildren(SubPrice);
+            Conn.InsertWithChildren(subscriber);
+            Conn.UpdateWithChildren(SubPrice);
 
-                    SubscriberPrice_ = subscribtionPricekey,
+//            insertSubscribtion(subscription_);
+            //Subscriber subscriberkey = Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
 
-                    SubscriptionTypeID = subscribtionPricekey.Id
-
-
-                });
-
-                subscriberkey.Subscriptions = NewSubscription;
-                subscribtionPricekey.Subscribtions = NewSubscription;
-                Conn.InsertAllWithChildren(NewSubscription, true);
-            }
+            //SubscribtionPrice subscribtionPricekey = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
+            //Subscription subscription = Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
 
 
-            foreach (var item in NewSubscription)
-            {
-                Conn.UpdateWithChildren(item);
-            }
+
+            //List<Subscription> NewSubscription = new List<Subscription>();
+
+            //foreach (var item in NewSubscription)
+            //{
+            //    NewSubscription.Add(new Subscription()
+            //    {
+            //        //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
+            //        IDnumber = subscription.IDnumber,
+
+            //        Subscriber_ = subscriberkey,
+            //        SubscriberID = subscriberkey.Id,
+
+            //        SubscriberPrice_ = subscribtionPricekey,
+
+            //        SubscriptionTypeID = subscribtionPricekey.Id
+
+
+            //    });
+
+            //    subscriberkey.Subscriptions = NewSubscription;
+            //    subscribtionPricekey.Subscribtions = NewSubscription;
+            //    Conn.InsertAllWithChildren(NewSubscription, true);
+            //}
+
+
+            //foreach (var item in NewSubscription)
+            //{
+            //    Conn.UpdateWithChildren(item);
+            //}
 
 
 
@@ -278,11 +302,12 @@ namespace SPSQLite
 
         // Insert Subscription 
 
-        public static void InsertSubscription(int SubscriberID,  int SubscriptionTypeID) 
+        public static Subscription InsertSubscription(ISubscription subscription) 
         {
 
-            Conn.Insert(new Subscription {  SubscriberID = SubscriberID, SubscriptionTypeID = SubscriptionTypeID });
-
+            Conn.Insert(new Subscription {IDnumber=subscription.IDnumber });
+            Subscription sub = new Subscription { IDnumber = subscription.IDnumber };
+            return sub;
         }
 
         // Delete Subscription 
