@@ -55,7 +55,7 @@ namespace SPSQLite
 
             Subscriber subscriber = new Subscriber();
             Subscription subscription = new Subscription();
-            QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
+           // QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
             //subscriber=insertAbonent(subscriber_);
             //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
             // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
@@ -64,74 +64,19 @@ namespace SPSQLite
 
             //subscription = InsertSubscription(subscription_);
             subscription.IDnumber = subscription_.IDnumber;
-
-            SubPrice.Subscribtions = new List<Subscription> { subscription };
+            subscription.SubscriberPrice_ = SubPrice;
+            subscription.SubscriptionTypeID = SubPrice.Id;
+            SubPrice.Subscribtions = new List<Subscription> ();
+            SubPrice.Subscribtions.Add(subscription);
             subscriber.Subscriptions = new List<Subscription> { subscription };
             //Conn.UpdateWithChildren(subscriber);
             //Conn.UpdateWithChildren(SubPrice);
+
+            //Conn.UpdateWithChildren(SubPrice);
             Conn.InsertWithChildren(subscriber);
-            Conn.UpdateWithChildren(SubPrice);
-
-//            insertSubscribtion(subscription_);
-            //Subscriber subscriberkey = Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
-
-            //SubscribtionPrice subscribtionPricekey = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
-            //Subscription subscription = Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
-
-
-
-            //List<Subscription> NewSubscription = new List<Subscription>();
-
-            //foreach (var item in NewSubscription)
-            //{
-            //    NewSubscription.Add(new Subscription()
-            //    {
-            //        //ბიზნეს ლოგიკა აგენერირებს  subscription_.ID-ს ფორმატში A001 და IDNUMBER=A001-ს, SQL ID-ს ინკრემენტს იუზერი ვერ ხედავს
-            //        IDnumber = subscription.IDnumber,
-
-            //        Subscriber_ = subscriberkey,
-            //        SubscriberID = subscriberkey.Id,
-
-            //        SubscriberPrice_ = subscribtionPricekey,
-
-            //        SubscriptionTypeID = subscribtionPricekey.Id
-
-
-            //    });
-
-            //    subscriberkey.Subscriptions = NewSubscription;
-            //    subscribtionPricekey.Subscribtions = NewSubscription;
-            //    Conn.InsertAllWithChildren(NewSubscription, true);
-            //}
-
-
-            //foreach (var item in NewSubscription)
-            //{
-            //    Conn.UpdateWithChildren(item);
-            //}
-
-
-
-            //    subscriberkey.Subscriptions = NewSubscription;
-            //subscribtionPricekey.Subscribtions = NewSubscription;
-            //Conn.InsertAllWithChildren(NewSubscription, true)
-
-
-
-            //subscribtionPricekey.Subscribtions = new List<Subscription>();
-
-
-            /*
-             public static void InsertAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
-        public static void InsertOrReplaceAllWithChildren(this SQLiteConnection conn, IEnumerable elements, bool recursive = false);
-        public static void InsertOrReplaceWithChildren(this SQLiteConnection conn, object element, bool recursive = false);
-        public static void InsertWithChildren(this SQLiteConnection conn, object element, bool recursive = false);
-             * */
-
-
-
-            //Conn.Insert(new Subscriber { Name = sub.Name, LastName = sub.LastName, PhoneNumber = sub.PhoneNumber, Address = sub.Adress, DateOfBirth = sub.DateOfBirth });
-
+            
+          
+            //Conn.UpdateWithChildren(subscription);
 
         }
 

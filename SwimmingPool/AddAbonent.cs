@@ -411,43 +411,14 @@ namespace SwimmingPool
             ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
-
-
             subscriber = subscriberSaver();
-
-
             SubPrice = SubPriceReturner();
-
-
             subscription = GenerateSubscribtionID(subscription);
-
-            MessageBox.Show(subscription.IDnumber);
-
-
-           // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
-
-            // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
-       
-          //  ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
-                                          
-            //  MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
-
-
+                                      
         }
 
-        //ES METHODI DASAWERIA, AXLA SATESTOA
-
-
-        //insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
-
-        //Methodebis mimdevroba
-        // 1 Subscriber
-        //2 SubscribtionPrice
-        //3 HealthNotice  <<dasakavshirebelia Subscriber-Tan
-        // 4 Subscription <<dasakavshirebelia Subscriber da SubscribtionPrice-tan
-        //5 SubscriptionScheduleDB << dasakavshirebelia Subscriber-tan
-
+    
 
         public ISubscriber subscriberSaver()
         {
