@@ -13,6 +13,7 @@ using System.Reflection;
 using SPSQLite.INTERFACES.Interfaces;
 using SQLiteNetExtensions.Extensions;
 using SPSQLite.CLASSES.Services;
+using SPSQLite.CLASSES.BussinessObjects;
 
 
 //using System.Windows.Forms;
@@ -54,11 +55,15 @@ namespace SPSQLite
 
             Subscriber subscriber = new Subscriber();
             Subscription subscription = new Subscription();
+            QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
             //subscriber=insertAbonent(subscriber_);
             //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
-           // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
+            // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
 
+            var a = Conn.Table<Subscription>();
+            
             //subscription = InsertSubscription(subscription_);
+            subscription.IDnumber = "A"+ (a.Count() + 1).ToString();
 
             SubPrice.Subscribtions = new List<Subscription> { subscription };
             subscriber.Subscriptions = new List<Subscription> { subscription };
