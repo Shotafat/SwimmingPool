@@ -79,8 +79,8 @@ namespace SwimmingPool
 
          var JoinedTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
 
-            var fillgrid = (from o in JoinedTable select new { SubscribID = o.Id, SubsIDNUM = o.IDnumber, SubscriberID = o.SubscriberID ,
-                                  PRICE=o.SubscriberPrice_.Price}).ToList();
+            var fillgrid = (from o in JoinedTable select new { SubscribID = o.Id, SubsIDNUM = o.IDnumber, subcriberID = o.SubscriberID,
+                               Name=o.Subscriber_.Name, LastName=o.Subscriber_.LastName, PRICE=o.SubscriberPrice_.NumberOfHours}).ToList();
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = fillgrid;

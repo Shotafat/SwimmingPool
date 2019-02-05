@@ -50,51 +50,23 @@ namespace SPSQLite
 
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_)
         {
-
             SubscribtionPrice SubPrice = new SubscribtionPrice();
             SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
-
             Subscriber subscriber = new Subscriber
             {
                 Name = subscriber_.Name,
                 LastName = subscriber_.LastName,
                 PhoneNumber = subscriber_.PhoneNumber,
                 Address = subscriber_.Adress,
-                DateOfBirth = subscriber_.DateOfBirth,
+                DateOfBirth = subscriber_.DateOfBirth
             };
-            Conn.Insert(subscriber);
-            Subscriber subscriberInserted = Conn.Table<Subscriber>().FirstOrDefault(s => s.PhoneNumber == subscriber_.PhoneNumber);
-            Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, /* SubscriberPrice_ = SubPrice, */ SubscriberID = subscriberInserted.Id, Subscriber_ = subscriberInserted };
-            Conn.Insert(subscription);
-            Subscription subscriptionInserted= Conn.Table<Subscription>().FirstOrDefault(s => s.IDnumber == subscription_.IDnumber);
-            //SubPrice.Subscribtions = subscriptionInserted;
-            SubPrice.SubscriptionID = subscriptionInserted.Id;
-            Conn.Update(SubPrice);
+            Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
+            subscriber.Subscriptions = new List<Subscription> { subscription };
+            SubPrice.Subscriptions = new List<Subscription> { subscription };
+            Conn.InsertWithChildren(subscriber);
 
-            // Subscriber subscriber = new Subscriber();
-            // Subscription subscription = new Subscription();
-            //// QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
-            // //subscriber=insertAbonent(subscriber_);
-            // //subscriber=Conn.Table<Subscriber>().Where(s => s.PhoneNumber == subscriber_.PhoneNumber).FirstOrDefault();
-            // // subscription= Conn.Table<Subscription>().Where(s => s.IDnumber == subscription_.IDnumber).FirstOrDefault();
-
-            // //var a = Conn.Table<Subscription>();
-
-            // //subscription = InsertSubscription(subscription_);
-            // subscription.IDnumber = subscription_.IDnumber;
-            // subscription.SubscriberPrice_ = SubPrice;
-            // //subscription.SubscriptionTypeID = SubPrice.Id;
-            // //SubPrice.Subscribtions = new List<Subscription> ();
-            // //SubPrice.Subscribtions.Add(subscription);
-            // subscriber.Subscriptions = new List<Subscription> { subscription };
-            // //Conn.UpdateWithChildren(subscriber);
-            // //Conn.UpdateWithChildren(SubPrice);
-
-            // //Conn.UpdateWithChildren(SubPrice);
-            // Conn.InsertWithChildren(subscriber);
-
-
-            // //Conn.UpdateWithChildren(subscription);
+           // Conn.UpdateWithChildren(SubPrice);
+            
 
         }
 
@@ -138,8 +110,6 @@ namespace SPSQLite
          
 
         }
-
-      
 
       
 
@@ -345,23 +315,38 @@ namespace SPSQLite
 
         public string IDnumber { get; set; }
 
-
+        [ForeignKey(typeof(SubscribtionPrice))]
+        public int SubscribtionPriceID { get; set; }
+        
         [ForeignKey(typeof(Subscriber))]
         public int SubscriberID { get; set; }
-
-      
-      
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
+        
+    }
+
+
+    //ფასი და საათი
+    public class SubscribtionPrice
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public int NumberOfHours { get; set; }
+        public double Price { get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<Subscription> Subscriptions { get; set; }
 
 
     }
 
-        //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
+
+
+
+    //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
     public class Capacity
     {
         [PrimaryKey, AutoIncrement]
@@ -399,22 +384,7 @@ namespace SPSQLite
 
     }
 
-    //ფასი და საათი
-    public class SubscribtionPrice
-    {
-        [PrimaryKey, AutoIncrement]
-        public int Id { get; set; }
-        public int NumberOfHours { get; set; }
-        public double Price { get; set; }
-
-        //[OneToOne(CascadeOperations = CascadeOperation.All)]
-        //public Subscription Subscribtions { get; set; }
-
-        [ForeignKey(typeof(SubscribtionPrice))]
-        public int SubscriptionID { get; set; }
-
-
-    }
+    
 
     //სააბონენტო განრიგი
     public class SubscriptionScheduleDB

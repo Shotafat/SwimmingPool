@@ -421,22 +421,6 @@ namespace SwimmingPool
             subscriber = subscriberSaver();
             SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
-
-            //MessageBox.Show(subscription.IDnumber);
-
-
-            // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
-
-            // ბაზაში ჩაწერა ფასის აბონენტის და აბონიმენტის
-
-
-            ServiceInstances.Service().GetSubscriptionPriceServices().Add(SubPrice);
-            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
-
-            //  MessageBox.Show("SAXELI " +subscriber.Name + " " + subscriber.LastName+" PRICE "+SubPrice.NumberOfHours +" ABID "+ subscription.IDnumber);
-
-
-
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
                                       
         }

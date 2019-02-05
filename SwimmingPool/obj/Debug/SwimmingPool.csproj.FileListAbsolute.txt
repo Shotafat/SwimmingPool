@@ -1141,9 +1141,7 @@ C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
-
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form4.resources
-
 C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\bin\Debug\x86\e_sqlite3.dll
 C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\bin\Debug\x64\e_sqlite3.dll
 C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\bin\Debug\SwimmingPool.exe.config
@@ -1271,3 +1269,4 @@ C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.
 C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Admin\Desktop\project\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
+C:\Users\User\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Form4.resources
