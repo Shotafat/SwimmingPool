@@ -487,5 +487,36 @@ namespace SwimmingPool
         {
 
         }
+
+        private void lblNext_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(7);
+            AssignCurrentWeek(CurrentMonday);
+            lblBack.Enabled = true;
+            lblBack.ForeColor = Color.LightSkyBlue;
+            lblBack.Cursor = Cursors.Hand;
+
+            gridFillter(dataGridView1, CurrentMonday);
+
+        }
+
+        private void lblBack_Click_1(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(-7);
+            AssignCurrentWeek(CurrentMonday);
+
+            if (CurrentMonday == ThisMonday)
+            {
+                lblBack.Enabled = false;
+                lblBack.ForeColor = Color.Gray;
+                lblBack.Cursor = Cursors.No;
+            }
+
+            gridFillter(dataGridView1, CurrentMonday);
+        }
     }
 }
