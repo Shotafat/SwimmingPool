@@ -421,15 +421,23 @@ namespace SwimmingPool
             subscriber = subscriberSaver();
             SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
-            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription);
+            IHealthNotice healthNotice = HealthNoticeSaver();
+//            ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
+         //  InsertHealthNotice(healthNotice_);
+            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice);
                                       
         }
 
         public IHealthNotice HealthNoticeSaver()
         {
+
             SPSQLite.CLASSES.HealthNotice Health = new SPSQLite.CLASSES.HealthNotice();
-
-
+            if (diax.Checked == true)
+                Health.YESNO = Availability.ხელმისაწვდომი;
+            else
+                Health.YESNO = Availability.არახელმისაწვდომი;
+            
+            Health.DateCreated = DateTime.Now;
         // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
 

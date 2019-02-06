@@ -9,7 +9,7 @@ namespace SPSQLite.CLASSES
     {     
         public void Add(IHealthNotice a)
         {
-            DatabaseConnection.InsertHealthNotice(a.DateCreated,  a.AbonentId);
+            DatabaseConnection.InsertHealthNotice(a);
         }
 
         public void Delete(IHealthNotice a)
@@ -24,7 +24,7 @@ namespace SPSQLite.CLASSES
 
         public IList<IHealthNotice> GetData()
         {
-          IList<IHealthNotice> list =  DatabaseConnection.GetHealthNotice().Select(a => new HealthNotice {ID = a.id, AbonentId = a.AbonentId, DateCreated = a.DateCreated }).ToList<IHealthNotice>();
+          IList<IHealthNotice> list =  DatabaseConnection.GetHealthNotice().Select(a => new HealthNotice {ID = a.id, DateCreated = a.DateCreated }).ToList<IHealthNotice>();
 
             return list;
         }

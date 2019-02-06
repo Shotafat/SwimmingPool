@@ -6,8 +6,9 @@ namespace SPSQLite.CLASSES
 {
     public class HealthNotice : IHealthNotice
     {
-        public int ID { get; set ; }
-        public DateTime DateCreated { get ; set ; }
-        public int AbonentId { get ; set ; }
+        public int ID { get; set; }
+        public DateTime DateCreated { get; set; }
+        public int AbonentId { get; set; }
+        public Availability YESNO { get; set; }
     }
 }

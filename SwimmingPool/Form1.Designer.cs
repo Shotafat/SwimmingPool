@@ -57,14 +57,6 @@
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // iSubscriberBindingSource
-            // 
-            this.iSubscriberBindingSource.DataSource = typeof(SPSQLite.ISubscriber);
-            // 
-            // subscriberBindingSource
-            // 
-            this.subscriberBindingSource.DataSource = typeof(SPSQLite.CLASSES.Subscriber);
-            // 
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -79,8 +71,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1060, 786);
-            this.splitContainer1.SplitterDistance = 403;
+            this.splitContainer1.Size = new System.Drawing.Size(1060, 750);
+            this.splitContainer1.SplitterDistance = 384;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel1
@@ -92,7 +84,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 368);
+            this.panel1.Size = new System.Drawing.Size(1024, 349);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -109,7 +101,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(20, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 340);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 321);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel2
@@ -121,7 +113,7 @@
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Location = new System.Drawing.Point(12, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1024, 364);
+            this.panel2.Size = new System.Drawing.Size(1024, 347);
             this.panel2.TabIndex = 1;
             // 
             // dataGridView2
@@ -133,7 +125,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(20, 22);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(985, 324);
+            this.dataGridView2.Size = new System.Drawing.Size(985, 307);
             this.dataGridView2.TabIndex = 1;
             // 
             // menuStrip1
@@ -156,41 +148,41 @@
             this.რედაქტირებაToolStripMenuItem,
             this.წაშლაToolStripMenuItem});
             this.აბონენტიToolStripMenuItem.Name = "აბონენტიToolStripMenuItem";
-            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(64, 20);
             this.აბონენტიToolStripMenuItem.Text = "აბონენტი";
             // 
             // დამატებაToolStripMenuItem
             // 
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
             this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
             // 
             // რედაქტირებაToolStripMenuItem
             // 
             this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
             this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
             // 
             // წაშლაToolStripMenuItem
             // 
             this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
-            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.წაშლაToolStripMenuItem.Text = "წაშლა";
             this.წაშლაToolStripMenuItem.Click += new System.EventHandler(this.წაშლაToolStripMenuItem_Click);
             // 
             // საათებიდაფასებიToolStripMenuItem
             // 
             this.საათებიდაფასებიToolStripMenuItem.Name = "საათებიდაფასებიToolStripMenuItem";
-            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(106, 20);
             this.საათებიდაფასებიToolStripMenuItem.Text = "საათები და ფასები";
             this.საათებიდაფასებიToolStripMenuItem.Click += new System.EventHandler(this.საათებიდაფასებიToolStripMenuItem_Click_1);
             // 
             // ვადაგასულიToolStripMenuItem
             // 
             this.ვადაგასულიToolStripMenuItem.Name = "ვადაგასულიToolStripMenuItem";
-            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
             this.ვადაგასულიToolStripMenuItem.Text = "ვადაგასული";
             this.ვადაგასულიToolStripMenuItem.Click += new System.EventHandler(this.ვადაგასულიToolStripMenuItem_Click);
             // 
@@ -199,7 +191,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1060, 786);
+            this.ClientSize = new System.Drawing.Size(1060, 750);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

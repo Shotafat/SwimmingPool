@@ -8,7 +8,14 @@ namespace SPSQLite
     {
          int ID{ get; set; }
          DateTime DateCreated { get; set; }
-        
-        int AbonentId { get; set; }
+         Availability YESNO { get; set; }
+         int AbonentId { get; set; }
     }
+}
+
+public enum Availability
+{
+    ხელმისაწვდომი,
+    არახელმისაწვდომი
+    
 }

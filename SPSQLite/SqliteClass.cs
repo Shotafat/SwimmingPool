@@ -14,6 +14,7 @@ using SPSQLite.INTERFACES.Interfaces;
 using SQLiteNetExtensions.Extensions;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.CLASSES.BussinessObjects;
+using System.Windows.Forms;
 
 
 //using System.Windows.Forms;
@@ -48,9 +49,13 @@ namespace SPSQLite
 
 
 
-        public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_)
+        public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_, IHealthNotice healthNotice_)
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
+
+           
+          //  HealthNotice healthnot = Conn.Table<HealthNotice>().Where(s => s.DateCreated == s.DateCreated).FirstOrDefault();
+            //MessageBox.Show(healthnot.YesNO.ToString());
             SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
             {
@@ -58,15 +63,26 @@ namespace SPSQLite
                 LastName = subscriber_.LastName,
                 PhoneNumber = subscriber_.PhoneNumber,
                 Address = subscriber_.Adress,
-                DateOfBirth = subscriber_.DateOfBirth
+                DateOfBirth = subscriber_.DateOfBirth,
+                
             };
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
+            HealthNotice healthnot = new HealthNotice {DateCreated= healthNotice_.DateCreated,  YesNO=healthNotice_.YESNO, subscriber=subscriber};
+       //     HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
             subscriber.Subscriptions = new List<Subscription> { subscription };
+            subscriber.Healthnotice =  healthnot;
+                   healthnot.subscriber = subscriber;
+            //          healthnot.AbonentId= subscriber.Id;
+            //          subscriber.Healthnotice = new HealthNotice();
+                MessageBox.Show("SUB "+subscriber.Healthnotice.YesNO.ToString()+"datvla ");
+            //healthnot.subscriber = new Subscriber { }; 
+              //  healthnot.subscriber=subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
-            Conn.InsertWithChildren(subscriber);
+             Conn.InsertWithChildren(subscriber);
+                Conn.UpdateWithChildren(healthnot);
 
-           // Conn.UpdateWithChildren(SubPrice);
-            
+            // Conn.UpdateWithChildren(SubPrice);
+
 
         }
 
@@ -158,9 +174,9 @@ namespace SPSQLite
 
         //insert HealthNotice
 
-        public static void InsertHealthNotice(DateTime DateCreated ,  int AbonentID)
+        public static void InsertHealthNotice(IHealthNotice healthNotice)
         {
-            Conn.Insert(new HealthNotice { AbonentId = AbonentID,  DateCreated = DateCreated });
+            Conn.Insert(new HealthNotice { DateCreated = healthNotice.DateCreated, YesNO=healthNotice.YESNO});
         }
 
         //Delete HealthNotice
@@ -177,8 +193,9 @@ namespace SPSQLite
             var Health = Conn.Table<HealthNotice>().Where(a => a.id == health.ID).SingleOrDefault();
             if ( Health!=null)
             {
-                Health.AbonentId = health.AbonentId;              
+                //Health.AbonentId = health.AbonentId;              
                 Health.DateCreated = health.DateCreated;
+                Health.YesNO = health.YESNO;
                 Conn.Update(Health);
             }
         }
@@ -369,9 +386,17 @@ namespace SPSQLite
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Subscription> Subscriptions { get; set; }
 
+
+        [ForeignKey(typeof(HealthNotice))]
+        public int HealthNOtID{ get; set; }
+
+        [OneToOne]
+        public HealthNotice Healthnotice{ get; set; }
+
+
     }
-     
- 
+
+
     //ჯანმრთელობის ცნობა
     public class HealthNotice
     {
@@ -379,12 +404,16 @@ namespace SPSQLite
         public int id { get; set; }
         public DateTime DateCreated { get; set; }
       
-        [ForeignKey(typeof(Subscriber))]   //ForeignKey_ს დამატება SqliteExtensions nuget-ით
-        public int AbonentId { get; set; }
+        public Availability YesNO { get; set; }
+
+
+        [OneToOne]
+        public Subscriber subscriber{ get; set; }
+
 
     }
 
-    
+
 
     //სააბონენტო განრიგი
     public class SubscriptionScheduleDB
