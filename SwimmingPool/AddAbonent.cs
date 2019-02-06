@@ -422,8 +422,8 @@ namespace SwimmingPool
             SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
             IHealthNotice healthNotice = HealthNoticeSaver();
-//            ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
-         //  InsertHealthNotice(healthNotice_);
+           ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
+           //InsertHealthNotice(healthNotice_);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice);
                                       
         }
