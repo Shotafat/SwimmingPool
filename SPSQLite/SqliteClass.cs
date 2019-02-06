@@ -53,8 +53,9 @@ namespace SPSQLite
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
 
-           
-            HealthNotice healthnot = Conn.Table<HealthNotice>().Where(s => s.DateCreated == s.DateCreated).LastOrDefault();
+
+            // HealthNotice healthnot = Conn.Table<HealthNotice>().Where(s => s.DateCreated == s.DateCreated).LastOrDefault();
+            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
             MessageBox.Show(healthnot.id.ToString()+ " "+ healthnot.YesNO.ToString());
             SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
@@ -67,17 +68,18 @@ namespace SPSQLite
                 
             };
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
-         //   HealthNotice healthnot = new HealthNotice {DateCreated= healthNotice_.DateCreated,  YesNO=healthNotice_.YESNO};
+          
        //     HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
             subscriber.Subscriptions = new List<Subscription> { subscription };
             subscriber.Healthnotice =  healthnot;
             subscriber.HealthNOtID = healthnot.id;
-
+            healthnot.subscriber = subscriber;
+            
             healthnot.subscriber = subscriber;
                 //   healthnot.subscriber = subscriber;
-            //          healthnot.AbonentId= subscriber.Id;
-            //          subscriber.Healthnotice = new HealthNotice();
-                MessageBox.Show("SUB "+subscriber.Healthnotice.YesNO.ToString()+"datvla ");
+               //    healthnot.AbonentId= subscriber.Id;
+              //     subscriber.Healthnotice = new HealthNotice();
+             //      MessageBox.Show("SUB "+subscriber.Healthnotice.id+ subscriber.Healthnotice.YesNO.ToString()+"datvla ");
          
             SubPrice.Subscriptions = new List<Subscription> { subscription };
              Conn.InsertWithChildren(subscriber);
