@@ -18,7 +18,7 @@ namespace SwimmingPool
         public List<string> ganrigidge = new List<string>();
         public List<int> columni = new List<int>();
         public List<int> rovsi = new List<int>();
-        public Dictionary<int, int> table = new Dictionary<int, int>();
+        int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
 
         #region Nika 1.0
         public List<int> AbonentHours { get; set; }
@@ -92,7 +92,7 @@ namespace SwimmingPool
             {
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
                 dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM");
-                dataGridView1.Rows[0].Cells[i].DataGridView.ForeColor = Color.BlueViolet;
+                dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
                 // dataGridView1.Rows[1].ReadOnly = true;
             }
         }
@@ -176,7 +176,15 @@ namespace SwimmingPool
                 dataGridView1.Rows.Add();
                 dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i - 1 + ":00");
             }
+            for (int i = 1; i < 13; i++)
+            {
+                for (int ii = 1; ii < daynumber; ii++)
+                {
+                    dataGridView1.Rows[i].Cells[ii].Style.BackColor = Color.LightGray;
+                    dataGridView1.Rows[i].Cells[ii].Style.ForeColor = Color.Gray;
 
+                }
+            }
             for (int i = 0; i < 11; i++)
             {
                 for (int ii = 0; ii < 7; ii++)
@@ -237,81 +245,80 @@ namespace SwimmingPool
 
         public void cheked(object sender, EventArgs e)
         {
-            if (ara.Checked)
+            var check = (CheckBox)sender;
+
+            if (check.Name == "ara")
             {
-                diax.Enabled = false;
-            }
-            else
-            {
-                diax.Enabled = true;
+                diax.Checked = false;
             }
 
-            if (diax.Checked)
+            else if (check.Name == "diax")
             {
-                ara.Enabled = false;
-            }
-            else
-            {
-                ara.Enabled = true;
+                ara.Checked = false;
             }
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            bool sell = columni.Contains(e.ColumnIndex);
-            bool rov = rovsi.Contains(e.RowIndex);
-
-            if (sell && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor != Color.Green)
-            {
-                return;
-            }
-            else
+            if (e.RowIndex != -1)
             {
 
-                //rovsi.Add(e.RowIndex);
-                if (e.ColumnIndex <= 0)
+                Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
+
+                if (green == Color.LightGray || green == Color.Snow)
                 {
+                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.LightGray;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Gray;
+                    return;
+                }
+                if (e.ColumnIndex == 0 || e.RowIndex == 0)
+                {
+                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Snow;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.DodgerBlue;
                     return;
                 }
 
+                bool sell = columni.Contains(e.ColumnIndex);
+                bool rov = rovsi.Contains(e.RowIndex);
+
+                //Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
+
                 string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
                 string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                var value = columnName + " - " + rowName;
+                string value = columnName + " - " + rowName;
 
-                bool cellValue = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
+                bool isselect = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
 
-                Color feri = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.BackColor;
-
-                if (cellValue && dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor == Color.Green)
+                if (sell && isselect && green != Color.Green)
                 {
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = feri;
-                    dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Snow;
-                    dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Gray;
+                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Snow;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Gray;
+                }
+                else if (sell && green == Color.Green)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Snow;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
                     columni.Remove(e.ColumnIndex);
                     ganrigidge.Remove(value);
                 }
                 else
                 {
+                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Green;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Gray;
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
-                    //dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Teal;
-                    //dataGridView1.DefaultCellStyle.SelectionForeColor = Color.Gray;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
                     columni.Add(e.ColumnIndex);
                     ganrigidge.Add(value);
                 }
-
-                /*from Nika*/
-                SelectedCellCount++;
-                //MessageBox.Show(SelectedCellCount.ToString());
-
-                NotEqual(SelectedCellCount, SelectedHour);
-
-                SelectedCellIndex = dataGridView1.CurrentCell.ColumnIndex - 1;
-                //PushDays(CurrentWeekDays[SelectedCellIndex]);
-
                 archeuligrafiki.DataSource = null;
+                ganrigidge.Sort();
                 archeuligrafiki.DataSource = ganrigidge;
             }
+            else
+            {
+                return;
+            }
+
         }
 
         #region Nika
