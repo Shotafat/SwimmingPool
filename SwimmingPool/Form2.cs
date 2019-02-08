@@ -13,10 +13,6 @@ namespace SwimmingPool
         public Form2()
         {
             InitializeComponent();
-
-
-
-
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -27,11 +23,7 @@ namespace SwimmingPool
             if (edit.DialogResult == DialogResult.OK)
             {
                 Form2_Load(sender, e);
-
             }
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -41,18 +33,12 @@ namespace SwimmingPool
             if (addform.DialogResult == DialogResult.OK)
             {
                 Form2_Load(sender, e);
-
-
             }
-
-
-
         }
 
         public void setDatagrid()
         {
             dataGridView1.DataSource = null;
-
             dataGridView1.DataSource = ServiceInstances.Service().GetSubscriptionPriceServices().GetData();
         }
 
@@ -60,8 +46,6 @@ namespace SwimmingPool
         {
             NumberofHour = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
             SelectedRowPrice = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -82,9 +66,6 @@ namespace SwimmingPool
                 var gela = ServiceInstances.Service().GetSubscriptionPriceServices().GetData()
                     .Where(x => x.ID == int.Parse(a)).FirstOrDefault();
 
-
-
-
                 ServiceInstances.Service().GetSubscriptionPriceServices().Delete(gela);
 
                 foreach (var item in ServiceInstances.Service().GetSubscriptionPriceServices().GetData())
@@ -94,9 +75,6 @@ namespace SwimmingPool
 
                 var gelas = ServiceInstances.Service().GetSubscriptionPriceServices().GetData();
                 Form2_Load(sender, e);
-
-
-
             }
         }
     }

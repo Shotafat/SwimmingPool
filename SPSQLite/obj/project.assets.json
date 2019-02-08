@@ -2956,13 +2956,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-
-      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectPath": "C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
-
+      "outputPath": "C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3014,5 +3012,13 @@
         "warn": true
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\obj\\SPSQLite.csproj.nuget.cache : Value cannot be null.\r\nParameter name: value"
+    }
+  ]
 }
