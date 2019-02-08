@@ -483,12 +483,15 @@ namespace SwimmingPool
             {
 
                 int ColumnIndex = e.ColumnIndex;
-                string Hour = (e.RowIndex + 8).ToString();
+               int Hour =(e.RowIndex + 8)
+                    ;
               
                 //var g = TimeSpan.Parse(Hour);
                 var Date = CurrentWeekDays[0 + ColumnIndex-1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
-                gela.Schedule = Date;
+
+               
+                
 
 
 
@@ -496,9 +499,9 @@ namespace SwimmingPool
 
                 //(g.ID == gela.ID)
 
+                DateTime gelasDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
 
-
-
+                  gela.Schedule = gelasDate;
                 ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
 
             
