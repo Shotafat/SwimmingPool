@@ -27,15 +27,14 @@ namespace SwimmingPool
         public int SelectedCellCount;
         public int SelectedHour;
         public int SelectedCellIndex;
-        public DateTime CurrentMonday;
-        public DateTime ThisMonday;
+        public DateTime ThisMonday { get; set; }
+        public DateTime CurrentMonday { get; set; }
+
         #endregion
 
         public AddAbonent()
         {
             InitializeComponent();
-
-
           
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
@@ -49,21 +48,29 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.No;
             lblBack.Enabled = false;
 
-            ThisMonday = DateTime.Now;
-            while (ThisMonday.DayOfWeek != DayOfWeek.Monday)
-            {
-                ThisMonday = ThisMonday.AddDays(-1);
-            }
+            /*function for calc current monday*/
 
-            CurrentMonday = ThisMonday;
+            ThisMonday = GetCurrentMonday(DateTime.Now.Date);
 
-            AssignCurrentWeek(CurrentMonday);
+            AssignCurrentWeek(ThisMonday);
             dataGridView1.Rows[0].ReadOnly = true;
             dataGridView1.Rows[0].Frozen = true;
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             #endregion
 
             gridFillter(dataGridView1, ThisMonday);
+        }
+
+
+        public DateTime GetCurrentMonday(DateTime day)
+        {
+            CurrentMonday = day;
+            while (CurrentMonday.DayOfWeek != DayOfWeek.Monday)
+            {
+                CurrentMonday = day.AddDays(-1);
+                day = CurrentMonday;
+            }
+            return CurrentMonday;
         }
 
         public AddAbonent(ISubscriber subscriber) : this()
@@ -97,7 +104,31 @@ namespace SwimmingPool
                 dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
                 // dataGridView1.Rows[1].ReadOnly = true;
             }
+
+            CellGrayColor(CurrentMonday);
         }
+
+
+        public void CellGrayColor(DateTime day)
+        {
+            if (CurrentWeekDays.Contains(day) && day.Date < DateTime.Now.Date)
+            {
+                for (int i = 0; i < daynumber; i++)
+                {
+                    for (int j = 1; j < 13; j++)
+                    {
+                        dataGridView1.Rows[j].Cells[i].Style.BackColor = Color.LightGray;
+                        dataGridView1.Rows[j].Cells[i].Style.ForeColor = Color.Gray;
+                    }
+                }
+            }
+
+            else
+            {
+                return;
+            }
+        }
+
 
         /*from Nika*/
         public void CalculateLastDate(int _selected, int _hours)
@@ -186,8 +217,8 @@ namespace SwimmingPool
             {
                 for (int ii = 1; ii < daynumber; ii++)
                 {
-                    dataGridView1.Rows[i].Cells[ii].Style.BackColor = Color.LightGray;
-                    dataGridView1.Rows[i].Cells[ii].Style.ForeColor = Color.Gray;
+                    //dataGridView1.Rows[i].Cells[ii].Style.BackColor = Color.LightGray;
+                    //dataGridView1.Rows[i].Cells[ii].Style.ForeColor = Color.Gray;
 
                 }
             }
@@ -196,8 +227,6 @@ namespace SwimmingPool
                 for (int ii = 0; ii < 7; ii++)
                 {
                     dataGridView1.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
-
-
                 }
             }
 
@@ -340,9 +369,6 @@ namespace SwimmingPool
             return subscribtion;
         }
 
-
-
-
         public void SubscribtionPriceToDropdown()
         {
             var SubscribtionPriceObject = ServiceInstances.Service().GetSubscriptionPriceServices().GetData().ToList();
@@ -387,9 +413,6 @@ namespace SwimmingPool
             Health.DateCreated = DateTime.Now;
         // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
-
-
-
             return Health;
         }
 
@@ -397,8 +420,6 @@ namespace SwimmingPool
         public ISubscriber subscriberSaver()
         {
             //Subscriber subscriber_ = new Subscriber();
-
-
 
             string Date = asaki.Text;
             DateTime DateOfBirth = DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
@@ -421,9 +442,6 @@ namespace SwimmingPool
         }
 
 
-
-
-
         private void shenaxva_Click_1(object sender, EventArgs e)
         {
 
@@ -437,13 +455,13 @@ namespace SwimmingPool
             var nino = ServiceInstances.Service().GetSubscriptionScheduleServices().GetData();
             DialogResult = DialogResult.OK;
             Close();
-
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-
         {
 
+            AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
+            //CellGrayColor();
         }
 
         private void lblNext_Click_1(object sender, EventArgs e)
@@ -457,7 +475,6 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
-
         }
 
         private void lblBack_Click_1(object sender, EventArgs e)
@@ -493,19 +510,12 @@ namespace SwimmingPool
                
                 
 
-
-
                 var guliko =ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x=>x.ID==gela.ID);
 
                 //(g.ID == gela.ID)
 
-                DateTime gelasDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
 
-                  gela.Schedule = gelasDate;
-                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
-
-            
-              
+                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);          
 
                 Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 //
@@ -516,20 +526,6 @@ namespace SwimmingPool
 
 
                 //     DateTime guliko = DateTime.Parse(FinalDate);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
                 //
 
 
