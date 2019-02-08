@@ -41,49 +41,17 @@ namespace SwimmingPool
         public void JoinClasses()
         {
 
-            //ქართული ცვლადები პროსტა სატესტოდ დავწერე რანთაიმში ენიჭება ქოლუმნებს სახელები ანონიმური ობიექტის პონტში :) :D 
-            //var gela = (from g in ServiceInstances.Service().GetSubscriptionServices().GetData()
-            //            join c in ServiceInstances.Service().GetSubscriberService().GetData() on g.SubscriberID equals c.ID
-            //            join s in ServiceInstances.Service().GetSubscriptionPriceServices().GetData() on g.SubscribtionTypeID equals s.ID
-            //            select new
-            //            {
-            //                ნომერი = g.IDnumber,
-            //                სახელი = c.Name,
-            //                გვარი = c.LastName,
-            //                მობილური = c.PhoneNumber,
-            //                მისამართი = c.Adress,
-            //                ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
-            //                საათი = s.NumberOfHours,
-            //                ფასი = s.Price
-
-
-
-
-            //            }).ToList();
-
-
-            //var vano = (from c in ServiceInstances.Service().GetSubscriberService().GetData() select new
-            //            {
-            //                სახელი = c.Name,
-            //                გვარი = c.LastName,
-            //                მობილური = c.PhoneNumber,
-            //                მისამართი = c.Adress,
-            //                ასაკი = DateTime.Now.Year - c.DateOfBirth.Year,
-                         
-
-
-
-
+           
 
             
 
-         var JoinedTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
-            var JoinedTable1 = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
-            var jjj = from o in JoinedTable1 select new { sdsa = o.id, dsada = o.subscriber.Id };
-            var fillgrid = (from o in JoinedTable select new { SubscribID = o.Id, SubsIDNUM = o.IDnumber, subcriberID = o.SubscriberID,
-                               Name=o.Subscriber_.Name, LastName=o.Subscriber_.LastName, HEALTHINFO=o.Subscriber_.HealthNOtID, PRICE=o.SubscriberPrice_.NumberOfHours}).ToList();
-
-          //  var joi2 = from o in joinedt2 select new { dsadsa = o.YesNO, sdas = o.subscriber.Name };
+         var SubscribtionTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
+            var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
+           
+           var fillgrid = (from o in SubscribtionTable
+                           join a in HealthTable on o.SubscriberID equals a.SubscriberID 
+                           select new { აბონიმენტი= o.IDnumber, სახელი=o.Subscriber_.Name,
+                               გვარი =o.Subscriber_.LastName, ასაკი=Math.Round((DateTime.Now-o.Subscriber_.DateOfBirth).TotalDays/365,0), ჯანმრთელობისცნობა=a.YesNO, ფასი=o.SubscriberPrice_.Price}).ToList();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = fillgrid;
         }

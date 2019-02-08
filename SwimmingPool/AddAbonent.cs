@@ -500,18 +500,23 @@ namespace SwimmingPool
             {
 
                 int ColumnIndex = e.ColumnIndex;
-                string Hour = (e.RowIndex + 8).ToString();
+               int Hour =(e.RowIndex + 8)
+                    ;
               
                 //var g = TimeSpan.Parse(Hour);
                 var Date = CurrentWeekDays[0 + ColumnIndex-1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
-                gela.Schedule = Date;
+
+               
+                
 
                 var guliko =ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x=>x.ID==gela.ID);
 
                 //(g.ID == gela.ID)
 
+
                 ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);          
+
                 Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 //
              //   DateTime InsertDate = DateTime.ParseExact(, "hh/mm/yyyy", CultureInfo.InvariantCulture);

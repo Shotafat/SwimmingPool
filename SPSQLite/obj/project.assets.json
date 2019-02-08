@@ -673,10 +673,11 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
-      "sha512": "kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.1.0",
       "files": [
+        ".signature.p7s",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/netstandard1.0/_._",
@@ -2956,11 +2957,13 @@
   "project": {
     "version": "1.0.0",
     "restore": {
+
       "projectUniqueName": "C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
       "projectPath": "C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\obj\\",
+
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3018,7 +3021,10 @@
       "code": "Undefined",
       "level": "Warning",
       "warningLevel": 1,
+
       "message": "Problem reading the cache file C:\\Users\\Admin\\Desktop\\githabi\\SwimmingPool\\SPSQLite\\obj\\SPSQLite.csproj.nuget.cache : Value cannot be null.\r\nParameter name: value"
+
+
     }
   ]
 }

@@ -54,9 +54,9 @@ namespace SPSQLite
             SubscribtionPrice SubPrice = new SubscribtionPrice();
 
 
-            // HealthNotice healthnot = Conn.Table<HealthNotice>().Where(s => s.DateCreated == s.DateCreated).LastOrDefault();
-            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
-            MessageBox.Show(healthnot.id.ToString()+ " "+ healthnot.YesNO.ToString());
+           // HealthNotice healthnot = Conn.Table<HealthNotice>().Where(s => s.DateCreated == s.DateCreated).LastOrDefault();
+           HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
+         //   MessageBox.Show(healthnot.id.ToString()+ " "+ healthnot.YesNO.ToString());
             SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
             {
@@ -71,8 +71,8 @@ namespace SPSQLite
           
        //     HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
             subscriber.Subscriptions = new List<Subscription> { subscription };
-            subscriber.Healthnotice =  healthnot;
-            subscriber.HealthNOtID = healthnot.id;
+            subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
+           // subscriber.HealthNOtID = healthnot.id;
             healthnot.subscriber = subscriber;
             
             healthnot.subscriber = subscriber;
@@ -388,11 +388,10 @@ namespace SPSQLite
         public List<Subscription> Subscriptions { get; set; }
 
 
-        [ForeignKey(typeof(HealthNotice))]
-        public int HealthNOtID{ get; set; }
+       
 
-        [OneToOne(CascadeOperations = CascadeOperation.All)]
-        public HealthNotice Healthnotice{ get; set; }
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<HealthNotice> Healthnotice{ get; set; }
 
 
     }
@@ -408,10 +407,11 @@ namespace SPSQLite
         public Availability YesNO { get; set; }
 
 
-        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber subscriber{ get; set; }
 
-
+        [ForeignKey(typeof(Subscriber))]
+        public int SubscriberID { get; set; }
     }
 
 
