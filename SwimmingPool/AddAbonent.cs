@@ -18,7 +18,7 @@ namespace SwimmingPool
         public List<string> ganrigidge = new List<string>();
         public List<int> columni = new List<int>();
         public List<int> rovsi = new List<int>();
-        int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
+        private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
 
         #region Nika 1.0
         public List<int> AbonentHours { get; set; }
@@ -35,7 +35,7 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
-          
+
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
@@ -295,7 +295,7 @@ namespace SwimmingPool
             }
         }
 
-        
+
 
         #region Nika
         public void PushDays(DateTime day)
@@ -395,10 +395,10 @@ namespace SwimmingPool
             SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
             IHealthNotice healthNotice = HealthNoticeSaver();
-           //ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
-           //InsertHealthNotice(healthNotice_);
+            //ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
+            //InsertHealthNotice(healthNotice_);
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice);
-                                      
+
         }
 
         public IHealthNotice HealthNoticeSaver()
@@ -406,12 +406,16 @@ namespace SwimmingPool
 
             SPSQLite.CLASSES.HealthNotice Health = new SPSQLite.CLASSES.HealthNotice();
             if (diax.Checked == true)
+            {
                 Health.YESNO = Availability.ხელმისაწვდომი;
+            }
             else
+            {
                 Health.YESNO = Availability.არახელმისაწვდომი;
-            
+            }
+
             Health.DateCreated = DateTime.Now;
-        // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
+            // insertSubscribtion(ISubscription subscription_, ISubscriber  subscriber_, ISubscriptionPrice subscriberprice)
 
             return Health;
         }
@@ -452,6 +456,12 @@ namespace SwimmingPool
 
             //ServiceInstances.Service().GetSubscriberService().Add(gelag);
             Saver();
+
+
+
+
+
+
             var nino = ServiceInstances.Service().GetSubscriptionScheduleServices().GetData();
             DialogResult = DialogResult.OK;
             Close();
@@ -500,26 +510,26 @@ namespace SwimmingPool
             {
 
                 int ColumnIndex = e.ColumnIndex;
-               int Hour =(e.RowIndex + 8)
-                    ;
-              
+                int Hour = (e.RowIndex + 8)
+                     ;
+
                 //var g = TimeSpan.Parse(Hour);
-                var Date = CurrentWeekDays[0 + ColumnIndex-1];
+                var Date = CurrentWeekDays[0 + ColumnIndex - 1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
 
-               
-                
 
-                var guliko =ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x=>x.ID==gela.ID);
+
+
+                var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
 
                 //(g.ID == gela.ID)
 
 
-                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);          
+                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
 
                 Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 //
-             //   DateTime InsertDate = DateTime.ParseExact(, "hh/mm/yyyy", CultureInfo.InvariantCulture);
+                //   DateTime InsertDate = DateTime.ParseExact(, "hh/mm/yyyy", CultureInfo.InvariantCulture);
 
 
 
@@ -585,6 +595,92 @@ namespace SwimmingPool
 
         }
 
-     
+        #region რანდომი სატესტოდ
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string[] names = new string[]
+               {
+                    "გელა",
+                    "ნელი",
+                    "გულიკო",
+                    "მზევინარ",
+                    "პაჭურტი"
+               };
+            string[] LastNames = new string[]
+            {
+                    "გეჯაძე",
+                    "მინდია",
+                    "ბუჩუკური",
+                    "ლელაძე"
+            };
+
+            string[] Numbers = new string[]
+            {
+                    "555 56 78 23",
+                    "577 23 87 23",
+                    "587 89 23 76"
+            };
+
+            string[] Adress = new string[]
+            {
+                    "ვარკეთილი",
+                    "ფონიჭალა",
+                    "რუსთაველი",
+                    "ვაშლიჯვარი"
+            };
+
+            string[] Date = new string[]
+            {
+                "01042001",
+                "01281996",
+                "03042000",
+                "10031990",
+                "03041890"
+
+
+
+            };
+
+            // saxeli 
+            Random rand = new Random();
+            int index = rand.Next(names.Count());
+            var name = names[index];
+
+            saxeli.Text = name;
+            //gvari
+            int gvarindex = rand.Next(LastNames.Count());
+            var LastName = LastNames[gvarindex];
+
+            gvari.Text = LastName;
+
+            // nomrebi 
+
+            int NumberIndex = rand.Next(Numbers.Count());
+            var Number = Numbers[NumberIndex];
+
+            telefoni.Text = Number;
+
+            // misamarti 
+
+            int AdressIndex = rand.Next(Adress.Count());
+            var adress = Adress[AdressIndex];
+
+            misamarti.Text = adress;
+
+
+            // asaki 
+
+            int DateIndex = rand.Next(Date.Count());
+            var birthDate = Date[DateIndex];
+
+            asaki.Text = birthDate;
+
+
+
+
+        }
+        #endregion
+
     }
 }

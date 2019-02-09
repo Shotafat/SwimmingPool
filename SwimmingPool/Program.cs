@@ -1,24 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using SPSQLite;
+using System;
 using System.Windows.Forms;
-using SQLitePCL;
-using SPSQLite;
 namespace SwimmingPool
 {
-    static class Program
+    internal static class Program
     {
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
-        static void Main()
+        private static void Main()
         {
             ConnectToDatabase.ConnectAndCreateTables();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AddAbonent());
+            Application.Run(new Form1());
         }
     }
 }
