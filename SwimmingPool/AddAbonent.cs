@@ -38,6 +38,7 @@ namespace SwimmingPool
   
 
             grafiki();
+            
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             #region Nika 1.1
@@ -427,7 +428,7 @@ namespace SwimmingPool
             //Subscriber subscriber_ = new Subscriber();
 
             string Date = asaki.Text;
-            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             //var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
             SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name = saxeli.Text, LastName = gvari.Text, DateOfBirth = DateOfBirth, PhoneNumber = telefoni.Text, Adress = misamarti.Text };
 
@@ -505,28 +506,46 @@ namespace SwimmingPool
             gridFillter(dataGridView1, CurrentMonday);
         }
 
+
+        public static List<DateTime> Dates = new List<DateTime>();
+
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
 
+
                 int ColumnIndex = e.ColumnIndex;
-                int Hour = (e.RowIndex + 8)
-                     ;
+                int Hour = (e.RowIndex + 8);
+
 
                 //var g = TimeSpan.Parse(Hour);
                 var Date = CurrentWeekDays[0 + ColumnIndex - 1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
 
+                DateTime FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+
+                if (Dates !=null)
+                {
+                    if (Dates.Contains(FinalDate))
+                    {
+                        int a = Dates.IndexOf(FinalDate);
+                        Dates.RemoveAt(a);
+                    }
+                    else
+                    {
+                        Dates.Add(FinalDate);
+                    }
+                }
+                
 
 
-
-                var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
+                //var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
 
                 //(g.ID == gela.ID)
 
 
-                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
+
 
                 Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 //

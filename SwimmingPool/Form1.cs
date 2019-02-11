@@ -19,6 +19,8 @@ namespace SwimmingPool
 
         public Form1()
         {
+         
+     
 
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
@@ -31,6 +33,7 @@ namespace SwimmingPool
         
             
             dataGridView1.AutoGenerateColumns = true;
+            grafiki();
             JoinClasses();
             //dataGrid_eqimi.DataSource = null;
             //dataGrid_eqimi.DataSource = ServiceInstances.Service().GetDoctorServices().GetData();
@@ -114,9 +117,14 @@ namespace SwimmingPool
             }
         }
 
+
+
+      
+
+
         private void საათებიდაფასებიToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+          
             Form2 form2 = new Form2();
 
 
@@ -183,6 +191,84 @@ new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g"
         {
             Form4 form = new Form4();
             form.Show();
+        }
+
+
+
+
+
+        private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
+        public void grafiki()
+        {
+
+
+            List<DateTime> gela = AddAbonent.Dates;
+            var zvio = gela.FirstOrDefault(x => x.Date != null);
+            
+
+
+            dataGridView2.DataSource = null;
+            dataGridView2.Rows.Add();
+
+            for (int i = 10; i < 22; i++)
+            {
+                dataGridView2.Rows.Add();
+                dataGridView2.Rows[i - 9].Cells[0].Value = Convert.ToString(i - 1 + ":00");
+            }
+            for (int i = 1; i < 13; i++)
+            {
+                for (int ii = 1; ii < daynumber; ii++)
+                {
+                    //dataGridView1.Rows[i].Cells[ii].Style.BackColor = Color.LightGray;
+                    //dataGridView1.Rows[i].Cells[ii].Style.ForeColor = Color.Gray;
+
+                }
+            }
+            for (int i = 0; i < 11; i++)
+            {
+                for (int ii = 0; ii < 7; ii++)
+                {
+                    dataGridView2.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
+                }
+            }
+
+            //pirveli ujris shevseba DATE-biT
+
+            int CurrentDay = (int)DateTime.Now.DayOfWeek;
+            int ForwardDays = 6 - CurrentDay;
+            int StartDay = CurrentDay - (CurrentDay - 1);
+
+            dataGridView2.Rows[0].Cells[(int)DateTime.Now.DayOfWeek].Value = getFormattedDate(DateTime.Now);
+
+            for (int i = 1; i <= ForwardDays; i++)
+            {
+                dataGridView2.Rows[0].Cells[(int)DateTime.Now.DayOfWeek + i].Value = getFormattedDate(DateTime.Now.AddDays(i));
+            }
+
+            for (int i = 1; i < CurrentDay; i++)
+            {
+                dataGridView2.Rows[0].Cells[(int)DateTime.Now.DayOfWeek - i].Value = getFormattedDate(DateTime.Now.AddDays(-i));
+                // dataGridView1.Columns
+            }
+
+            //CultureInfo provider = new CultureInfo("fr-FR");
+            //DateTime start = DateTime.ParseExact("21/01/2019 09:00", "g", provider);     //dateTimePicker1.Value;
+            //6-(int)dateTimePicker1.Value.DayOfWeek
+            //  DateTime End = dateTimePicker1.Value.AddDays(6 - (int)dateTimePicker1.Value.DayOfWeek);
+            //   gridFillter(dataGridView1, DateTime.Now);
+            dataGridView2.Rows[0].Cells[0].Value = " ";
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.Green;
+        }
+
+        private string getFormattedDate(DateTime dateTime)
+        {
+
+            return dateTime.ToString("dd/MM/yyyy");
+        }
+
+        private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+
         }
     }
 }
