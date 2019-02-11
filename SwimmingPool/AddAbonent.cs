@@ -20,7 +20,6 @@ namespace SwimmingPool
         public List<int> rovsi = new List<int>();
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
 
-        #region Nika 1.0
         public List<int> AbonentHours { get; set; }
         public List<DateTime> CurrentWeekDays { get; set; } = new List<DateTime>();
         public List<DateTime> SelectedDays { get; set; } = new List<DateTime>();
@@ -30,7 +29,6 @@ namespace SwimmingPool
         public DateTime ThisMonday { get; set; }
         public DateTime CurrentMonday { get; set; }
 
-        #endregion
 
         public AddAbonent()
         {
@@ -40,10 +38,6 @@ namespace SwimmingPool
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
-            #region Nika 1.1
-            //AbonentHours = new List<int> { 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
-            //cmbxHour.DataSource = AbonentHours;
-
             SubscribtionPriceToDropdown();
             SelectedCellCount = 0;
             lblBack.Cursor = Cursors.No;
@@ -52,14 +46,21 @@ namespace SwimmingPool
             /*function for calc current monday*/
 
             ThisMonday = GetCurrentMonday(DateTime.Now.Date);
-
             AssignCurrentWeek(ThisMonday);
+            CellGrayColor(DateTime.Now.Date);
+
             dataGridView1.Rows[0].ReadOnly = true;
             dataGridView1.Rows[0].Frozen = true;
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
-            #endregion
+            GetCellColorToday();
 
             gridFillter(dataGridView1, ThisMonday);
+        }
+
+        public void GetCellColorToday()
+        {
+            dataGridView1.Rows[0].Cells[daynumber].Style.BackColor = Color.Teal;
+            dataGridView1.Rows[0].Cells[daynumber].Style.ForeColor = Color.White;
         }
 
 
@@ -92,8 +93,7 @@ namespace SwimmingPool
 
         }
 
-        #region Nika 1.3
-        /*from Nika*/
+
         public void AssignCurrentWeek(DateTime CurrentMonday)
         {
             CurrentWeekDays.Clear();
@@ -103,18 +103,17 @@ namespace SwimmingPool
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
                 dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM");
                 dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
-                // dataGridView1.Rows[1].ReadOnly = true;
             }
-
-            CellGrayColor(CurrentMonday);
         }
 
 
         public void CellGrayColor(DateTime day)
         {
-            if (CurrentWeekDays.Contains(day) && day.Date < DateTime.Now.Date)
+            daynumber = Convert.ToInt32(day.DayOfWeek);
+
+            if (CurrentWeekDays.Contains(day))
             {
-                for (int i = 0; i < daynumber; i++)
+                for (int i = 1; i < daynumber; i++)
                 {
                     for (int j = 1; j < 13; j++)
                     {
@@ -130,8 +129,6 @@ namespace SwimmingPool
             }
         }
 
-
-        /*from Nika*/
         public void CalculateLastDate(int _selected, int _hours)
         {
             int WeekStep, DayStep;
@@ -146,7 +143,7 @@ namespace SwimmingPool
                 }
             }
         }
-        #endregion
+
 
         public void gridFillter(DataGridView SubscriberSchedul, DateTime Start)
         {
@@ -296,9 +293,6 @@ namespace SwimmingPool
             }
         }
 
-
-
-        #region Nika
         public void PushDays(DateTime day)
         {
             SelectedDays.Add(day);
@@ -351,11 +345,8 @@ namespace SwimmingPool
                 lblBack.ForeColor = Color.Gray;
                 lblBack.Cursor = Cursors.No;
             }
-
             gridFillter(dataGridView1, CurrentMonday);
         }
-        #endregion
-
 
         public ISubscription GenerateSubscribtionID(ISubscription subscribtion)
         {
@@ -380,9 +371,7 @@ namespace SwimmingPool
             {
                 HourList.Add(item.Hours);
             }
-
             cmbxHour.DataSource = HourList;
-
         }
 
 
@@ -470,9 +459,26 @@ namespace SwimmingPool
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
+            if (dateTimePicker1.Value < DateTime.Today)
+            {
+                dateTimePicker1.Value = DateTime.Today;
+                return;
+            }
 
+            dataGridView1.Rows.Clear();
+            grafiki();
             AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
-            //CellGrayColor();
+            CellGrayColor(dateTimePicker1.Value);
+
+            //DateTime _today = DateTime.ParseExact(DateTime.Now.ToString(), CultureInfo.InvariantCulture);
+
+            foreach (var day in CurrentWeekDays)
+            {
+                if (day.Date == DateTime.Today.Date)
+                    GetCellColorToday();
+            }
+
+            gridFillter(dataGridView1, CurrentMonday);
         }
 
         private void lblNext_Click_1(object sender, EventArgs e)
@@ -495,11 +501,14 @@ namespace SwimmingPool
             CurrentMonday = CurrentMonday.AddDays(-7);
             AssignCurrentWeek(CurrentMonday);
 
+
             if (CurrentMonday == ThisMonday)
             {
                 lblBack.Enabled = false;
                 lblBack.ForeColor = Color.Gray;
                 lblBack.Cursor = Cursors.No;
+                CellGrayColor(DateTime.Now.Date);
+                GetCellColorToday();
             }
 
             gridFillter(dataGridView1, CurrentMonday);
