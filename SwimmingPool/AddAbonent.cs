@@ -399,7 +399,8 @@ namespace SwimmingPool
             IHealthNotice healthNotice = HealthNoticeSaver();
             //ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
             //InsertHealthNotice(healthNotice_);
-            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice);
+            List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
+           DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
 
         }
 
