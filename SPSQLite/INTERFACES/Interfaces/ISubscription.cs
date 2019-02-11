@@ -10,7 +10,7 @@ namespace SPSQLite
         int ID { get; set; }
         string IDnumber{ get; set; }
         int SubscriberID { get; set; }
-       
+         List<ISubscriptionSchedule> ScheduleList { get; set; }
         int SubscribtionTypeID { get; set; }
  
 

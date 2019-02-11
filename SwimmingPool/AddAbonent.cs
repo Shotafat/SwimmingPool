@@ -35,6 +35,7 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
+  
 
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
@@ -682,5 +683,6 @@ namespace SwimmingPool
         }
         #endregion
 
+        
     }
 }

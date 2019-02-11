@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SwimmingPool
 {
@@ -22,8 +23,12 @@ namespace SwimmingPool
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
         }
+
+       
+      
         private void Form1_Load(object sender, EventArgs e)
         {
+        
             
             dataGridView1.AutoGenerateColumns = true;
             JoinClasses();
