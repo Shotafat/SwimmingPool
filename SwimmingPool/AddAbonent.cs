@@ -397,9 +397,9 @@ namespace SwimmingPool
             SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
             IHealthNotice healthNotice = HealthNoticeSaver();
-            //ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
-            //InsertHealthNotice(healthNotice_);
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
+            Schedule = Schedulereturner();
+            
            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
 
         }
@@ -509,6 +509,22 @@ namespace SwimmingPool
 
 
         public static List<DateTime> Dates = new List<DateTime>();
+
+        public List<ISubscriptionSchedule> Schedulereturner()
+        {
+            List<ISubscriptionSchedule> Schedule_ = new List<ISubscriptionSchedule>();
+
+            foreach (var item in Dates)
+            {
+                ISubscriptionSchedule SingleDay= new SubscriptionSchedule {Schedule=item, Attendance=SPSQLite.Enums.AttendanceTypes.Waiting };
+                Schedule_.Add(SingleDay);
+            }
+
+
+            return Schedule_;
+        }
+
+
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
