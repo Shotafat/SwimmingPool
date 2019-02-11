@@ -49,15 +49,11 @@ namespace SPSQLite
 
 
 
-        public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_, IHealthNotice healthNotice_)
+        public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_, IHealthNotice healthNotice_, List<ISubscriptionSchedule> Schedule_)
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
-
-
-           // HealthNotice healthnot = Conn.Table<HealthNotice>().Where(s => s.DateCreated == s.DateCreated).LastOrDefault();
-           HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
-         //   MessageBox.Show(healthnot.id.ToString()+ " "+ healthnot.YesNO.ToString());
-            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
+            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
+           SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
             {
                 Name = subscriber_.Name,
@@ -68,21 +64,12 @@ namespace SPSQLite
                 
             };
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
-          
-       //     HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
             subscriber.Subscriptions = new List<Subscription> { subscription };
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
-           // subscriber.HealthNOtID = healthnot.id;
             healthnot.subscriber = subscriber;
-            
             healthnot.subscriber = subscriber;
-                //   healthnot.subscriber = subscriber;
-               //    healthnot.AbonentId= subscriber.Id;
-              //     subscriber.Healthnotice = new HealthNotice();
-             //      MessageBox.Show("SUB "+subscriber.Healthnotice.id+ subscriber.Healthnotice.YesNO.ToString()+"datvla ");
-         
             SubPrice.Subscriptions = new List<Subscription> { subscription };
-             Conn.InsertWithChildren(subscriber);
+            Conn.InsertWithChildren(subscriber);
         
 
         }
@@ -339,6 +326,9 @@ namespace SPSQLite
         [ForeignKey(typeof(Subscriber))]
         public int SubscriberID { get; set; }
 
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<SubscriptionScheduleDB> SubscribtionSchedule_ { get; set; }
+
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
@@ -424,8 +414,9 @@ namespace SPSQLite
         public DateTime Schedule { get; set; }
         [ForeignKey(typeof(Subscription))]
         public int SubscriptionID { get; set; }
+        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        public Subscription Subscription { get; set; }
         public int Attandance { get; set; }
-
 
     }
   
