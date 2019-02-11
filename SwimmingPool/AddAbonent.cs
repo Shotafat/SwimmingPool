@@ -36,6 +36,7 @@ namespace SwimmingPool
   
 
             grafiki();
+            
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             SubscribtionPriceToDropdown();
@@ -385,9 +386,10 @@ namespace SwimmingPool
             SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
             IHealthNotice healthNotice = HealthNoticeSaver();
-            //ServiceInstances.Service().GetHealthNoticeServices().Add(healthNotice);
-            //InsertHealthNotice(healthNotice_);
-            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice);
+            List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
+            Schedule = Schedulereturner();
+            
+           DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
 
         }
 
@@ -416,7 +418,7 @@ namespace SwimmingPool
             //Subscriber subscriber_ = new Subscriber();
 
             string Date = asaki.Text;
-            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd/MM/yyyy", CultureInfo.InvariantCulture);
+            DateTime DateOfBirth = DateTime.ParseExact(Date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
             //var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
             SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name = saxeli.Text, LastName = gvari.Text, DateOfBirth = DateOfBirth, PhoneNumber = telefoni.Text, Adress = misamarti.Text };
 
@@ -514,28 +516,62 @@ namespace SwimmingPool
             gridFillter(dataGridView1, CurrentMonday);
         }
 
+
+        public static List<DateTime> Dates = new List<DateTime>();
+
+        public List<ISubscriptionSchedule> Schedulereturner()
+        {
+            List<ISubscriptionSchedule> Schedule_ = new List<ISubscriptionSchedule>();
+
+            foreach (var item in Dates)
+            {
+                ISubscriptionSchedule SingleDay= new SubscriptionSchedule {Schedule=item, Attendance=SPSQLite.Enums.AttendanceTypes.Waiting };
+                Schedule_.Add(SingleDay);
+            }
+
+
+            return Schedule_;
+        }
+
+
+
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex != -1)
             {
 
+
                 int ColumnIndex = e.ColumnIndex;
-                int Hour = (e.RowIndex + 8)
-                     ;
+                int Hour = (e.RowIndex + 8);
+
 
                 //var g = TimeSpan.Parse(Hour);
                 var Date = CurrentWeekDays[0 + ColumnIndex - 1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
 
+                DateTime FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+
+                if (Dates !=null)
+                {
+                    if (Dates.Contains(FinalDate))
+                    {
+                        int a = Dates.IndexOf(FinalDate);
+                        Dates.RemoveAt(a);
+                    }
+                    else
+                    {
+                        Dates.Add(FinalDate);
+                    }
+                }
+                
 
 
-
-                var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
+                //var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
 
                 //(g.ID == gela.ID)
 
 
-                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(gela);
+
 
                 Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 //
