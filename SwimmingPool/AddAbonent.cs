@@ -550,6 +550,7 @@ namespace SwimmingPool
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
 
                 DateTime FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+              
 
                 if (Dates !=null)
                 {
