@@ -48,20 +48,26 @@ namespace SwimmingPool
         }
         public void JoinClasses()
         {
+            var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
 
-           
+            var scheduledb = from o in DBDB select new { sdsada = o.Id };
 
-            
+
 
          var SubscribtionTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
-            var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
+
            
+            var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
+
+            MessageBox.Show("BAZIS METHODIS BOLOS" +scheduledb.Count().ToString());
+
+
            var fillgrid = (from o in SubscribtionTable
                            join a in HealthTable on o.SubscriberID equals a.SubscriberID 
                            select new { აბონიმენტი= o.IDnumber, სახელი=o.Subscriber_.Name,
-                               გვარი =o.Subscriber_.LastName, ასაკი=Math.Round((DateTime.Now-o.Subscriber_.DateOfBirth).TotalDays/365,0), ჯანმრთელობისცნობა=a.YesNO, ფასი=o.SubscriberPrice_.Price}).ToList();
+                               გვარი =o.Subscriber_.LastName,  განრიგი=o.SubscribtionSchedule_, ასაკი=Math.Round((DateTime.Now-o.Subscriber_.DateOfBirth).TotalDays/365,0), ჯანმრთელობისცნობა=a.YesNO, ფასი=o.SubscriberPrice_.Price}).ToList();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = fillgrid;
+            dataGridView1.DataSource = DBDB;
         }
 
    

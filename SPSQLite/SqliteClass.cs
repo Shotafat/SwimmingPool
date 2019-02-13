@@ -56,12 +56,9 @@ namespace SPSQLite
 
             foreach (var item in Schedule_)
             {
-                ScheduleDB_ = new List<SubscriptionScheduleDB>
-                {
 
-                    new SubscriptionScheduleDB{Schedule=item.Schedule, Attandance=(int)item.Attendance   }
-                };
-
+                SubscriptionScheduleDB SubDB = new SubscriptionScheduleDB { Schedule = item.Schedule, Attandance = (int)item.Attendance };
+                ScheduleDB_.Add(SubDB);
             }
 
 
@@ -81,6 +78,15 @@ namespace SPSQLite
             subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
             subscription.SubscribtionSchedule_ = ScheduleDB_;
 
+            MessageBox.Show("METODIS SHIGNIT " + subscription.SubscribtionSchedule_.Count.ToString());
+
+            foreach (var item in ScheduleDB_)
+            {
+                item.Subscription = subscription;
+                item.Subscription.Id = subscription.Id;
+                Conn.Insert(item);
+            }
+
             subscriber.Subscriptions = new List<Subscription> { subscription };
 
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
@@ -88,7 +94,7 @@ namespace SPSQLite
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
             Conn.InsertWithChildren(subscriber);
-        
+         Conn.UpdateWithChildren(ScheduleDB_);
 
         }
 
