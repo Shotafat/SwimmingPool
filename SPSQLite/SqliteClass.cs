@@ -52,6 +52,19 @@ namespace SPSQLite
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_, IHealthNotice healthNotice_, List<ISubscriptionSchedule> Schedule_)
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
+            List<SubscriptionScheduleDB> ScheduleDB_ = new List<SubscriptionScheduleDB>();
+
+            foreach (var item in Schedule_)
+            {
+                ScheduleDB_ = new List<SubscriptionScheduleDB>
+                {
+
+                    new SubscriptionScheduleDB{Schedule=item.Schedule, Attandance=(int)item.Attendance   }
+                };
+
+            }
+
+
             HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
@@ -64,7 +77,12 @@ namespace SPSQLite
                 
             };
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
+
+            subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
+            subscription.SubscribtionSchedule_ = ScheduleDB_;
+
             subscriber.Subscriptions = new List<Subscription> { subscription };
+
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
