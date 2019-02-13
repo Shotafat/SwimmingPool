@@ -80,21 +80,26 @@ namespace SPSQLite
 
             MessageBox.Show("METODIS SHIGNIT " + subscription.SubscribtionSchedule_.Count.ToString());
 
-            foreach (var item in ScheduleDB_)
-            {
-                item.Subscription = subscription;
-                item.Subscription.Id = subscription.Id;
-                Conn.Insert(item);
-            }
-
+           
             subscriber.Subscriptions = new List<Subscription> { subscription };
+
 
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
             Conn.InsertWithChildren(subscriber);
-         Conn.UpdateWithChildren(ScheduleDB_);
+
+            foreach (var item in ScheduleDB_)
+            {
+                 item.Subscription = subscription;
+                item.Subscription.Id = subscription.Id;
+                Conn.InsertWithChildren(item);
+            }
+
+
+
+            // Conn.UpdateWithChildren(ScheduleDB_);
 
         }
 
@@ -435,6 +440,7 @@ namespace SPSQLite
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
         public DateTime Schedule { get; set; }
         [ForeignKey(typeof(Subscription))]
         public int SubscriptionID { get; set; }
