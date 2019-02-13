@@ -1528,3 +1528,4 @@ C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.HoursChek.resources
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.HoursChek.resources
