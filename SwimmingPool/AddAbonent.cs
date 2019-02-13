@@ -388,7 +388,7 @@ namespace SwimmingPool
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
             Schedule = Schedulereturner();
-            
+            MessageBox.Show("METODSHI SHESVLAMDE" +Schedule.Count.ToString());
            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
 
         }

@@ -52,6 +52,16 @@ namespace SPSQLite
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_, IHealthNotice healthNotice_, List<ISubscriptionSchedule> Schedule_)
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
+            List<SubscriptionScheduleDB> ScheduleDB_ = new List<SubscriptionScheduleDB>();
+
+            foreach (var item in Schedule_)
+            {
+
+                SubscriptionScheduleDB SubDB = new SubscriptionScheduleDB { Schedule = item.Schedule, Attandance = (int)item.Attendance };
+                ScheduleDB_.Add(SubDB);
+            }
+
+
             HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
@@ -64,13 +74,27 @@ namespace SPSQLite
                 
             };
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
+
+            subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
+            subscription.SubscribtionSchedule_ = ScheduleDB_;
+
+            MessageBox.Show("METODIS SHIGNIT " + subscription.SubscribtionSchedule_.Count.ToString());
+
+            foreach (var item in ScheduleDB_)
+            {
+                item.Subscription = subscription;
+                item.Subscription.Id = subscription.Id;
+                Conn.Insert(item);
+            }
+
             subscriber.Subscriptions = new List<Subscription> { subscription };
+
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
             Conn.InsertWithChildren(subscriber);
-        
+         Conn.UpdateWithChildren(ScheduleDB_);
 
         }
 
