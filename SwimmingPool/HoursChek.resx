@@ -117,59 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="Column1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
+  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
   </metadata>
-  <metadata name="Column2.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column3.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column4.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column5.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Column6.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="menuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>508, 17</value>
-  </metadata>
-  <metadata name="iSubscriberBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>318, 17</value>
-  </metadata>
-  <metadata name="subscriberBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>132, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>46</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAFkAAABZAAAAAAAAAAAA
-        AADOkziX05c6wNOXOsDRljnE0JU4x9OXOsDTlzrAz5Q5xs+UOcbTlzrA05c6wNCVOMfRljnE05c6wNOX
-        OsDOkziXwIYshcGGLunHjDLxv4UtyL6ELabCiC/rxIkw7r+ELbe/hC23xIkw7sKIL+u+hC2mv4UtyMeM
-        MvHBhi7pwIYshf///wC2gCQOuoQnNP///wD///8AuIUpGbyAKCb///8A////ALyAKCa4hSkZ////AP//
-        /wC6hCc0toAkDv///wCqqlUD359ACP///wD///8A////AMWLOhb///8A////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A1Zw5EtOWO97UmDuqxosxnL+FLe/AhS7g////AP///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wDSlzyJ05c7/8GGLv+7gSr+xooyZv///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////ANOXPMXFijH/wocutf///wD///8A////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wDTlzu6zZE3/76EK/i4gCsS////AP//
-        /wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A1Jc7sNOXO/+8giv/wIcv1P//
-        /wCqgCsGxYkxVMSILyuLXS4L////AP///wD///8A////AP///wD///8A////ANOWO5fTlzv/x4wz/7qA
-        Kf/Chy/QyI0zQbqAKf+7gSn+kGIqyINXJSn///8A////AP///wD///8A////AP///wDTlTpG05c7/9OX
-        O//EiTD/uoAp/76ELPS8gir+uoAp/7Z+LOmrdi6n0pc6YNKXOmDTlzxA////AP///wD///8Av4BABNOX
-        O+LTlzv/05c7/86SN//HjDP/xosx/8iNM//QlDn/05c7/9OXO//Tlzv/05c7/NaUOh////8A////AP//
-        /wDVmTw805c7+9OXO//Tlzv/05c7/9OXO//Tlzv/05c7/9mkVP/TmD3/05c88NSWPI3//wAB////AP//
-        /wD///8A1ZVADNSWO9nTlzv/05c7/9OXO//Tlzv/05c7/9OXO//Tlzv/05c7/9KXO2f///8A////AP//
-        /wD///8A/4AAAtSXOrzTlzv/05c7/9OXO/vTlzv/05c7/9OXO//Tlzv/05c7/9OXPNLbkkkH////AP//
-        /wD///8A////AP///wDVmDpU05c7qdSXO4fVlUAY1Zk8PNOXOm7SmDuU05g8ntSYPGrMmTMK////AP//
-        /wD///8AAAAAAAAAAACZmQAAO/8AAAP/AACD/wAAx/8AAMP/AADCHwAAwA8AAMABAADAAAAA4AAAAOAD
-        AADAAwAA4AcAAA==
-</value>
-  </data>
 </root>

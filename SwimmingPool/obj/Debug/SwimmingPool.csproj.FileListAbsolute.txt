@@ -1527,3 +1527,4 @@ C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.HoursChek.resources
