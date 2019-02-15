@@ -61,8 +61,8 @@ namespace SPSQLite
                 ScheduleDB_.Add(SubDB);
             }
 
-
-            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
+            MessageBox.Show("SHCHEDULIS SIGRDZE" +ScheduleDB_.Count.ToString());
+           HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
             {
@@ -76,30 +76,38 @@ namespace SPSQLite
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
 
             subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
-            subscription.SubscribtionSchedule_ = ScheduleDB_;
-
+           
+            //qveda ori 15 feb
+            // subscription.Subscriber_ = subscriber;
+            // 15 Teb            subscription.SubscriberID = subscriber.Id;
+            subscriber.Subscriptions = subscription;
+            subscriber.SubscribtionID = subscription.Id;
+            subscriber.Subscriptions = subscription;
+            subscriber.Subscriptions.SubscribtionSchedule_ = ScheduleDB_;
+           // subscriber.Subscriptions.SubscribtionSchedule_ = Schedule_;
+           // subscription.Subscriber_.Healthnotice.Add (healthnot);
             MessageBox.Show("METODIS SHIGNIT " + subscription.SubscribtionSchedule_.Count.ToString());
 
            
-            subscriber.Subscriptions = new List<Subscription> { subscription };
-
+           // subscriber.Subscriptions = new List<Subscription> { subscription };
+          
 
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
-            Conn.InsertWithChildren(subscriber);
-
+           
             foreach (var item in ScheduleDB_)
             {
                  item.Subscription = subscription;
                 item.Subscription.Id = subscription.Id;
-                Conn.InsertWithChildren(item);
+              //  Conn.InsertWithChildren(item);
             }
 
+         //  Conn.InsertWithChildren(subscriber);
+      
 
-
-            // Conn.UpdateWithChildren(ScheduleDB_);
+                Conn.InsertWithChildren(subscriber);
 
         }
 
@@ -298,7 +306,7 @@ namespace SPSQLite
             if (Subscription!=null)
             {
                 
-                Subscription.SubscriberID = subscription.SubscriberID;
+             //   Subscription.SubscriberID = subscription.SubscriberID;
                 Subscription.IDnumber = subscription.IDnumber;
                 Conn.Update(Subscription);
             }
@@ -351,20 +359,48 @@ namespace SPSQLite
 
         [ForeignKey(typeof(SubscribtionPrice))]
         public int SubscribtionPriceID { get; set; }
-        
-        [ForeignKey(typeof(Subscriber))]
-        public int SubscriberID { get; set; }
+     
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<SubscriptionScheduleDB> SubscribtionSchedule_ { get; set; }
 
-        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
         
     }
+
+
+
+    //აბონენტი
+    public class Subscriber
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+        public DateTime DateOfBirth { get; set; }
+
+
+        [ForeignKey(typeof(Subscription))]
+        public int SubscribtionID { get; set; }
+
+
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        public Subscription Subscriptions { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<HealthNotice> Healthnotice { get; set; }
+
+
+    }
+
+
+
 
 
     //ფასი და საათი
@@ -392,28 +428,7 @@ namespace SPSQLite
     }
 
     
-    //აბონენტი
-    public class Subscriber
-    {
-        [PrimaryKey, AutoIncrement]
-        public  int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<Subscription> Subscriptions { get; set; }
-
-
-       
-
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<HealthNotice> Healthnotice{ get; set; }
-
-
-    }
 
 
     //ჯანმრთელობის ცნობა
