@@ -419,7 +419,7 @@ namespace SwimmingPool
 
             string Date = asaki.Text;
 
-            DateTime DateOfBirth = DateTime.ParseExact(Date, "MM-dd-yyyy", CultureInfo.InvariantCulture);
+            DateTime DateOfBirth = DateTime.ParseExact(Date, "MM/dd/yyyy", CultureInfo.InvariantCulture);
 
             //var Subscriber = ServiceInstances.Service().CreateObjectForSub(saxeli.Text, gvari.Text, DateOfBirth, telefoni.Text, misamarti.Text);
             SPSQLite.CLASSES.Subscriber subscriber = new SPSQLite.CLASSES.Subscriber { Name = saxeli.Text, LastName = gvari.Text, DateOfBirth = DateOfBirth, PhoneNumber = telefoni.Text, Adress = misamarti.Text };
