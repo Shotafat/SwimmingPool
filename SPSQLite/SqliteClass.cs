@@ -98,7 +98,6 @@ namespace SPSQLite
             {
                 item.Subscription = SubscribtionInserted;
                 item.SubscriptionID = SubscribtionInserted.Id;
-               // Conn.Update(item);
                 Conn.Insert(item);
 
             }
@@ -106,11 +105,7 @@ namespace SPSQLite
 
 
            
-            //foreach (var item in ScheduleDB_)
-            //{
-            //    item.Subscription = SubscribtionInserted;
-                
-            //}
+
 
 
         }
