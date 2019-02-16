@@ -390,7 +390,7 @@ namespace SwimmingPool
             Schedule = Schedulereturner();
             MessageBox.Show("METODSHI SHESVLAMDE" +Schedule.Count.ToString());
            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
-
+            Dates.Clear();
         }
 
         public IHealthNotice HealthNoticeSaver()
@@ -526,6 +526,8 @@ namespace SwimmingPool
 
         public List<ISubscriptionSchedule> Schedulereturner()
         {
+
+           // Dates = null;
             List<ISubscriptionSchedule> Schedule_ = new List<ISubscriptionSchedule>();
 
             foreach (var item in Dates)

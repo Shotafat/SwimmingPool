@@ -53,7 +53,7 @@ namespace SPSQLite
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
             List<SubscriptionScheduleDB> ScheduleDB_ = new List<SubscriptionScheduleDB>();
-
+            
             foreach (var item in Schedule_)
             {
 
@@ -61,7 +61,7 @@ namespace SPSQLite
                 ScheduleDB_.Add(SubDB);
             }
 
-            MessageBox.Show("SHCHEDULIS SIGRDZE" +ScheduleDB_.Count.ToString());
+          //  MessageBox.Show("SHCHEDULIS SIGRDZE" +ScheduleDB_.Count.ToString());
            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
@@ -77,39 +77,30 @@ namespace SPSQLite
 
             subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
            
-            //qveda ori 15 feb
-            // subscription.Subscriber_ = subscriber;
-            // 15 Teb            subscription.SubscriberID = subscriber.Id;
+         
             subscriber.Subscriptions = subscription;
             subscriber.SubscribtionID = subscription.Id;
             subscriber.Subscriptions = subscription;
             subscriber.Subscriptions.SubscribtionSchedule_ = ScheduleDB_;
-           // subscriber.Subscriptions.SubscribtionSchedule_ = Schedule_;
-           // subscription.Subscriber_.Healthnotice.Add (healthnot);
-            MessageBox.Show("METODIS SHIGNIT " + subscription.SubscribtionSchedule_.Count.ToString());
-
-           
-           // subscriber.Subscriptions = new List<Subscription> { subscription };
-          
+        
 
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
-           
+
+            Conn.InsertWithChildren(subscriber);
+
+            var SubscribtionInserted = Conn.Table<Subscription>().Where(o => o.IDnumber == subscription.IDnumber).FirstOrDefault();
             foreach (var item in ScheduleDB_)
             {
-                 item.Subscription = subscription;
+                item.Subscription = SubscribtionInserted;
+                item.SubscriptionID = SubscribtionInserted.Id;
                 Conn.Insert(item);
-            //    item.Subscription.Id = subscription.Id;
-              //  Conn.InsertWithChildren(item);
+
             }
 
-         //  Conn.InsertWithChildren(subscriber);
-      
 
-                Conn.InsertWithChildren(subscriber);
-            Conn.UpdateWithChildren(subscription);
         }
 
 

@@ -83,7 +83,7 @@ namespace SwimmingPool
                                 ფასი = o.SubscriberPrice_.Price
                             }).ToList();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = fillgrid;
+            dataGridView1.DataSource = DBDB;
         }
 
 
