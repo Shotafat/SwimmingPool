@@ -56,7 +56,7 @@ namespace SwimmingPool
             var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>();
 
-            var scheduledb = (from o in DBDB select new { ID =o.Id, Sub=o.Subscription.IDnumber, subcrib=o.Subscription.Subscriber_}).ToList();
+         var scheduledb = (from o in DBDB select new { ID =o.Id, Sub=o.Subscription.IDnumber}).ToList();
 
 
 
@@ -70,7 +70,7 @@ namespace SwimmingPool
 
             var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
 
-            MessageBox.Show("BAZIS METHODIS BOLOS" +scheduledb.Count().ToString());
+         MessageBox.Show("BAZIS METHODIS BOLOS" +scheduledb.Count().ToString());
 
 
             var fillgrid = (from o in SubscribtionTable
@@ -85,7 +85,7 @@ namespace SwimmingPool
                                 ფასი = o.SubscriberPrice_.Price
                             }).ToList();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = DBDB;
+            dataGridView1.DataSource = scheduledb;
         }
 
    

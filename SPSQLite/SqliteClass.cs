@@ -100,7 +100,8 @@ namespace SPSQLite
             foreach (var item in ScheduleDB_)
             {
                  item.Subscription = subscription;
-                item.Subscription.Id = subscription.Id;
+                Conn.Insert(item);
+            //    item.Subscription.Id = subscription.Id;
               //  Conn.InsertWithChildren(item);
             }
 
@@ -108,7 +109,7 @@ namespace SPSQLite
       
 
                 Conn.InsertWithChildren(subscriber);
-
+            Conn.UpdateWithChildren(subscription);
         }
 
 
