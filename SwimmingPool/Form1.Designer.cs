@@ -35,13 +35,6 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -64,7 +57,6 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
@@ -88,8 +80,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.panel2);
-            this.splitContainer1.Size = new System.Drawing.Size(1060, 750);
-            this.splitContainer1.SplitterDistance = 384;
+            this.splitContainer1.Size = new System.Drawing.Size(1060, 779);
+            this.splitContainer1.SplitterDistance = 398;
             this.splitContainer1.TabIndex = 0;
             // 
             // panel1
@@ -101,7 +93,7 @@
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1024, 349);
+            this.panel1.Size = new System.Drawing.Size(1024, 363);
             this.panel1.TabIndex = 0;
             // 
             // dataGridView1
@@ -118,7 +110,7 @@
             this.dataGridView1.Location = new System.Drawing.Point(20, 13);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 50;
-            this.dataGridView1.Size = new System.Drawing.Size(985, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(985, 335);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -129,21 +121,22 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel2.Controls.Add(this.flowLayoutPanel1);
-            this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.splitContainer2);
             this.panel2.Location = new System.Drawing.Point(12, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1024, 347);
+            this.panel2.Size = new System.Drawing.Size(1024, 362);
             this.panel2.TabIndex = 1;
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.flowLayoutPanel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.flowLayoutPanel1.BackColor = System.Drawing.Color.White;
-            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 224);
+
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(20, 200);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(985, 103);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(985, 159);
             this.flowLayoutPanel1.TabIndex = 6;
             // 
             // dataGridView2
@@ -164,10 +157,10 @@
             this.Column5,
             this.Column6});
             this.dataGridView2.GridColor = System.Drawing.SystemColors.Control;
-            this.dataGridView2.Location = new System.Drawing.Point(20, 127);
+            this.dataGridView2.Location = new System.Drawing.Point(20, 112);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowHeadersWidth = 50;
-            this.dataGridView2.Size = new System.Drawing.Size(985, 67);
+            this.dataGridView2.Size = new System.Drawing.Size(985, 82);
             this.dataGridView2.TabIndex = 5;
             // 
             // Column1
@@ -200,6 +193,7 @@
             this.Column6.HeaderText = "შაბათი";
             this.Column6.Name = "Column6";
             // 
+
             // splitContainer2
             // 
             this.splitContainer2.Location = new System.Drawing.Point(3, 14);
@@ -335,7 +329,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1060, 750);
+            this.ClientSize = new System.Drawing.Size(1060, 779);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -352,7 +346,6 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -385,13 +378,6 @@
         private System.Windows.Forms.SplitContainer splitContainer2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;

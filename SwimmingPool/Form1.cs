@@ -15,7 +15,7 @@ namespace SwimmingPool
     public partial class Form1 : Form
     {
 
-
+        public List<SubscriptionScheduleDB> DBDB { get; set; }
 
         public Form1()
         {
@@ -34,9 +34,7 @@ namespace SwimmingPool
             
             dataGridView1.AutoGenerateColumns = true;
 
-            HoursChek hour = new HoursChek();
-            if (flowLayoutPanel1 != null)
-                flowLayoutPanel1.Controls.Add(hour);
+      
 
 
             JoinClasses();
@@ -53,7 +51,8 @@ namespace SwimmingPool
         }
         public void JoinClasses()
         {
-            var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
+
+             DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>();
 
          var scheduledb = (from o in DBDB select new { ID =o.Id, Sub=o.Subscription.IDnumber}).ToList();
@@ -82,38 +81,86 @@ namespace SwimmingPool
                                 გვარი = o.Subscriber_.LastName,
                                 ასაკი = Math.Round((DateTime.Now - o.Subscriber_.DateOfBirth).TotalDays / 365, 0),
                                 ჯანმრთელობისცნობა = a.YesNO,
-                                ფასი = o.SubscriberPrice_.Price
+                                ფასი = o.SubscriberPrice_.Price,
+                                საათი=o.SubscriberPrice_.NumberOfHours
+
                             }).ToList();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = DBDB;
+            dataGridView1.DataSource = fillgrid;
         }
 
-   
 
-     
 
-      
+
+
+        string monthName;
+        string WeekDay;
+        int DayNumber;
+        public void GeoCulture()
+        {
+          
+
+
+        }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
            
+
+
+            flowLayoutPanel1.Controls.Clear();
+            this.Refresh();
             var selectedrowindex = dataGridView1.SelectedCells[0].Value;
-            
-           // MessageBox.Show("CELL CLICK"+ selectedrowindex.ToString());
+            label3.Text = null;
+            label3.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()+ " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+
+
+           
 
             var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
 
+          
             //HoursChek Hours = new HoursChek();
             foreach (var item in SelectedSubscribtion)
             {
+
+                var gela = item.Ganrigi.Month;
+
+                var geoCulture = new CultureInfo("ka-GE");
+
+                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
+
+                var weekDay = item.Ganrigi.DayOfWeek;
+
+
+                monthName = dateTimeInfo.GetAbbreviatedMonthName(gela);
+                WeekDay = dateTimeInfo.GetAbbreviatedDayName(weekDay);
+                DayNumber = item.Ganrigi.Day;
+
+                int aa = Convert.ToInt32(item.Daswreba);
+                AttendanceTypes Attend = new AttendanceTypes();
+                Attend=(AttendanceTypes)aa;
+
+
+                //DateTime gela = DateTime.Parse(item.Ganrigi, new CultureInfo("ka-Ge"));
+
+                ////DateTime DateOfBirth = DateTime.ParseExact(item.Ganrigi, "MM-dd-yyyy", new CultureInfo("ka-GE"));
+
+
+
                 HoursChek Hours = new HoursChek ();
-                Hours.GetHoursLabel = item.Ganrigi.ToString();
-                Hours.GetAttendanceLabel = item.Daswreba.ToString();
+                Hours.GetHoursLabel = DayNumber  + " "+ monthName;
+                Hours.GetAttendanceLabel = WeekDay + " " + item.Ganrigi.Hour + ":00 სთ";
+                Hours.GetAttendanceGela = Attend.ToString();
                 flowLayoutPanel1.Controls.Add(Hours);
 
+            
             }
+
+          
+
 
 
 
@@ -121,12 +168,12 @@ namespace SwimmingPool
             //{
             //    int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
 
-                                     //    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+            //    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
 
-                                     //    string a = Convert.ToString(selectedRow.Cells[1].Value);
-                                     //    string b = Convert.ToString(selectedRow.Cells[2].Value);
-                                     //    //label1.Text = a + " " + b;
-                                     //}
+            //    string a = Convert.ToString(selectedRow.Cells[1].Value);
+            //    string b = Convert.ToString(selectedRow.Cells[2].Value);
+            //    //label1.Text = a + " " + b;
+            //}
         }
 
         private void დამატებაToolStripMenuItem_Click(object sender, EventArgs e)
@@ -198,37 +245,8 @@ namespace SwimmingPool
 
 
             CultureInfo provider = new CultureInfo("fr-FR");
-            List<SubscriptionSchedule> list = new List<SubscriptionSchedule>
-            {
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("02/02/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=15 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("03/02/2009 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("05/02/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("06/02/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("29/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=43},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=47},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("27/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("29/01/2019 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=20},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("30/01/2019 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=21},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("30/01/2019 12:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=30 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 13:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=45},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("12/02/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("11/02/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("12/02/2019 15:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=3 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("11/02/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=15 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("29/01/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13  },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("30/01/2019 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=20},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("03/02/2019 12:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=30 },
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 13:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=45},
-new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  }
-
-        };
-            foreach (var item in list)
-            {
-                //SubscriptionSchedule : ISubscriptionSchedule
-                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(item);
-
-            }
+       
+          
 
         }
 
