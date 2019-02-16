@@ -53,7 +53,7 @@ namespace SPSQLite
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
             List<SubscriptionScheduleDB> ScheduleDB_ = new List<SubscriptionScheduleDB>();
-
+            
             foreach (var item in Schedule_)
             {
 
@@ -88,8 +88,6 @@ namespace SPSQLite
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
-
-           
 
             Conn.InsertWithChildren(subscriber);
 
