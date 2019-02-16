@@ -85,7 +85,7 @@ namespace SwimmingPool
                                 ფასი = o.SubscriberPrice_.Price
                             }).ToList();
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = scheduledb;
+            dataGridView1.DataSource = fillgrid;
         }
 
    
@@ -96,16 +96,37 @@ namespace SwimmingPool
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridView1.SelectedCells.Count > 0)
+
+           
+            var selectedrowindex = dataGridView1.SelectedCells[0].Value;
+            
+           // MessageBox.Show("CELL CLICK"+ selectedrowindex.ToString());
+
+            var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
+            var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
+
+            //HoursChek Hours = new HoursChek();
+            foreach (var item in SelectedSubscribtion)
             {
-                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+                HoursChek Hours = new HoursChek ();
+                Hours.GetHoursLabel = item.Ganrigi.ToString();
+                Hours.GetAttendanceLabel = item.Daswreba.ToString();
+                flowLayoutPanel1.Controls.Add(Hours);
 
-                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-
-                string a = Convert.ToString(selectedRow.Cells[1].Value);
-                string b = Convert.ToString(selectedRow.Cells[2].Value);
-                //label1.Text = a + " " + b;
             }
+
+
+
+            //if (dataGridView1.SelectedCells.Count > 0)
+            //{
+            //    int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+
+                                     //    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                                     //    string a = Convert.ToString(selectedRow.Cells[1].Value);
+                                     //    string b = Convert.ToString(selectedRow.Cells[2].Value);
+                                     //    //label1.Text = a + " " + b;
+                                     //}
         }
 
         private void დამატებაToolStripMenuItem_Click(object sender, EventArgs e)

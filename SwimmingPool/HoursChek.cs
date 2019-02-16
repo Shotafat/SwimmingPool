@@ -12,6 +12,10 @@ namespace SwimmingPool
 {
     public partial class HoursChek : UserControl
     {
+
+        public string GetHoursLabel { get { return HoursLabel.Text.ToString(); } set { HoursLabel.Text = value; } }
+        public string GetAttendanceLabel { get { return AttendLabel.Text.ToString(); } set { AttendLabel.Text = value; } }
+
         public HoursChek()
         {            
      InitializeComponent();
@@ -29,6 +33,11 @@ namespace SwimmingPool
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
           
+        }
+
+        private void HoursLabel_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

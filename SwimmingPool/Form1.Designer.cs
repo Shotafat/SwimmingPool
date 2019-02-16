@@ -34,6 +34,20 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.აბონენტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.დამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -43,20 +57,6 @@
             this.ვადაგასულიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iSubscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.label3 = new System.Windows.Forms.Label();
-            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -64,14 +64,14 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -120,6 +120,7 @@
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.Size = new System.Drawing.Size(985, 321);
             this.dataGridView1.TabIndex = 0;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel2
             // 
@@ -134,94 +135,6 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1024, 347);
             this.panel2.TabIndex = 1;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.აბონენტიToolStripMenuItem,
-            this.საათებიდაფასებიToolStripMenuItem,
-            this.ვადაგასულიToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1060, 24);
-            this.menuStrip1.TabIndex = 8;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // აბონენტიToolStripMenuItem
-            // 
-            this.აბონენტიToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.დამატებაToolStripMenuItem,
-            this.რედაქტირებაToolStripMenuItem,
-            this.წაშლაToolStripMenuItem});
-            this.აბონენტიToolStripMenuItem.Name = "აბონენტიToolStripMenuItem";
-            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
-            this.აბონენტიToolStripMenuItem.Text = "აბონენტი";
-            // 
-            // დამატებაToolStripMenuItem
-            // 
-            this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.დამატებაToolStripMenuItem.Text = "დამატება";
-            this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
-            // 
-            // რედაქტირებაToolStripMenuItem
-            // 
-            this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
-            this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
-            // 
-            // წაშლაToolStripMenuItem
-            // 
-            this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
-            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
-            this.წაშლაToolStripMenuItem.Text = "წაშლა";
-            this.წაშლაToolStripMenuItem.Click += new System.EventHandler(this.წაშლაToolStripMenuItem_Click);
-            // 
-            // საათებიდაფასებიToolStripMenuItem
-            // 
-            this.საათებიდაფასებიToolStripMenuItem.Name = "საათებიდაფასებიToolStripMenuItem";
-            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
-            this.საათებიდაფასებიToolStripMenuItem.Text = "საათები და ფასები";
-            this.საათებიდაფასებიToolStripMenuItem.Click += new System.EventHandler(this.საათებიდაფასებიToolStripMenuItem_Click_1);
-            // 
-            // ვადაგასულიToolStripMenuItem
-            // 
-            this.ვადაგასულიToolStripMenuItem.Name = "ვადაგასულიToolStripMenuItem";
-            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
-            this.ვადაგასულიToolStripMenuItem.Text = "ვადაგასული";
-            this.ვადაგასულიToolStripMenuItem.Click += new System.EventHandler(this.ვადაგასულიToolStripMenuItem_Click);
-            // 
-            // splitContainer2
-            // 
-            this.splitContainer2.Location = new System.Drawing.Point(3, 14);
-            this.splitContainer2.Name = "splitContainer2";
-            // 
-            // splitContainer2.Panel1
-            // 
-            this.splitContainer2.Panel1.Controls.Add(this.textBox2);
-            this.splitContainer2.Panel1.Controls.Add(this.textBox1);
-            this.splitContainer2.Panel1.Controls.Add(this.label2);
-            this.splitContainer2.Panel1.Controls.Add(this.label1);
-            // 
-            // splitContainer2.Panel2
-            // 
-            this.splitContainer2.Panel2.Controls.Add(this.label3);
-            this.splitContainer2.Size = new System.Drawing.Size(1018, 92);
-            this.splitContainer2.SplitterDistance = 513;
-            this.splitContainer2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Sylfaen", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label3.Location = new System.Drawing.Point(137, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(226, 31);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "A001 გელა ლელაძე";
             // 
             // flowLayoutPanel1
             // 
@@ -287,6 +200,25 @@
             this.Column6.HeaderText = "შაბათი";
             this.Column6.Name = "Column6";
             // 
+            // splitContainer2
+            // 
+            this.splitContainer2.Location = new System.Drawing.Point(3, 14);
+            this.splitContainer2.Name = "splitContainer2";
+            // 
+            // splitContainer2.Panel1
+            // 
+            this.splitContainer2.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer2.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer2.Panel1.Controls.Add(this.label2);
+            this.splitContainer2.Panel1.Controls.Add(this.label1);
+            // 
+            // splitContainer2.Panel2
+            // 
+            this.splitContainer2.Panel2.Controls.Add(this.label3);
+            this.splitContainer2.Size = new System.Drawing.Size(1018, 92);
+            this.splitContainer2.SplitterDistance = 513;
+            this.splitContainer2.TabIndex = 3;
+            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(374, 37);
@@ -329,6 +261,75 @@
             this.label1.TabIndex = 18;
             this.label1.Text = "საიდან";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Sylfaen", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label3.Location = new System.Drawing.Point(137, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(226, 31);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "A001 გელა ლელაძე";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.აბონენტიToolStripMenuItem,
+            this.საათებიდაფასებიToolStripMenuItem,
+            this.ვადაგასულიToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1060, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // აბონენტიToolStripMenuItem
+            // 
+            this.აბონენტიToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.დამატებაToolStripMenuItem,
+            this.რედაქტირებაToolStripMenuItem,
+            this.წაშლაToolStripMenuItem});
+            this.აბონენტიToolStripMenuItem.Name = "აბონენტიToolStripMenuItem";
+            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.აბონენტიToolStripMenuItem.Text = "აბონენტი";
+            // 
+            // დამატებაToolStripMenuItem
+            // 
+            this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem.Text = "დამატება";
+            this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
+            // 
+            // რედაქტირებაToolStripMenuItem
+            // 
+            this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
+            this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
+            // 
+            // წაშლაToolStripMenuItem
+            // 
+            this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
+            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.წაშლაToolStripMenuItem.Text = "წაშლა";
+            this.წაშლაToolStripMenuItem.Click += new System.EventHandler(this.წაშლაToolStripMenuItem_Click);
+            // 
+            // საათებიდაფასებიToolStripMenuItem
+            // 
+            this.საათებიდაფასებიToolStripMenuItem.Name = "საათებიდაფასებიToolStripMenuItem";
+            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(136, 20);
+            this.საათებიდაფასებიToolStripMenuItem.Text = "საათები და ფასები";
+            this.საათებიდაფასებიToolStripMenuItem.Click += new System.EventHandler(this.საათებიდაფასებიToolStripMenuItem_Click_1);
+            // 
+            // ვადაგასულიToolStripMenuItem
+            // 
+            this.ვადაგასულიToolStripMenuItem.Name = "ვადაგასულიToolStripMenuItem";
+            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(98, 20);
+            this.ვადაგასულიToolStripMenuItem.Text = "ვადაგასული";
+            this.ვადაგასულიToolStripMenuItem.Click += new System.EventHandler(this.ვადაგასულიToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -351,17 +352,17 @@
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel1.PerformLayout();
             this.splitContainer2.Panel2.ResumeLayout(false);
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
