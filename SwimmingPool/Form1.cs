@@ -1,14 +1,12 @@
 ﻿using SPSQLite;
-using SPSQLite.CLASSES;
-using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using System.Drawing;
 
 namespace SwimmingPool
 {
@@ -19,22 +17,22 @@ namespace SwimmingPool
 
         public Form1()
         {
-           
-     
+
+
 
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
         }
 
-       
-      
+
+
         private void Form1_Load(object sender, EventArgs e)
         {
-        
-            
+
+
             dataGridView1.AutoGenerateColumns = true;
 
-      
+
 
 
             JoinClasses();
@@ -47,29 +45,29 @@ namespace SwimmingPool
 
         private void დამატებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-           
+
         }
         public void JoinClasses()
         {
 
-             DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
+            DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>();
 
-         var scheduledb = (from o in DBDB select new { ID =o.Id, Sub=o.Subscription.IDnumber}).ToList();
+            var scheduledb = (from o in DBDB select new { ID = o.Id, Sub = o.Subscription.IDnumber }).ToList();
 
 
 
-         var SubscribtionTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
+            var SubscribtionTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
 
-            var subfromsubscribtion = (from o in SubscribtionTable select new { ID = o.Id, subscriberName = o.Subscriber_.Id, PriceTyme=o.SubscriberPrice_.Id }).ToList();
-            var subTa =(from o in SubscribtionTable select new { IDDD = o.IDnumber, Name=o.Subscriber_.LastName, nn=o.Subscriber_.Healthnotice }).ToList();
+            var subfromsubscribtion = (from o in SubscribtionTable select new { ID = o.Id, subscriberName = o.Subscriber_.Id, PriceTyme = o.SubscriberPrice_.Id }).ToList();
+            var subTa = (from o in SubscribtionTable select new { IDDD = o.IDnumber, Name = o.Subscriber_.LastName, nn = o.Subscriber_.Healthnotice }).ToList();
 
 
 
 
             var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
 
-         MessageBox.Show("BAZIS METHODIS BOLOS" +scheduledb.Count().ToString());
+            MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
 
 
             var fillgrid = (from o in SubscribtionTable
@@ -82,23 +80,19 @@ namespace SwimmingPool
                                 ასაკი = Math.Round((DateTime.Now - o.Subscriber_.DateOfBirth).TotalDays / 365, 0),
                                 ჯანმრთელობისცნობა = a.YesNO,
                                 ფასი = o.SubscriberPrice_.Price,
-                                საათი=o.SubscriberPrice_.NumberOfHours
+                                საათი = o.SubscriberPrice_.NumberOfHours
 
                             }).ToList();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = fillgrid;
         }
 
-
-
-
-
-        string monthName;
-        string WeekDay;
-        int DayNumber;
+        private string monthName;
+        private string WeekDay;
+        private int DayNumber;
         public void GeoCulture()
         {
-          
+
 
 
         }
@@ -106,22 +100,22 @@ namespace SwimmingPool
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
-           
+
 
 
             flowLayoutPanel1.Controls.Clear();
-            this.Refresh();
+            Refresh();
             var selectedrowindex = dataGridView1.SelectedCells[0].Value;
             label3.Text = null;
-            label3.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString()+ " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            label3.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
 
-           
+
 
             var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
 
-          
+
             //HoursChek Hours = new HoursChek();
             foreach (var item in SelectedSubscribtion)
             {
@@ -141,7 +135,7 @@ namespace SwimmingPool
 
                 int aa = Convert.ToInt32(item.Daswreba);
                 AttendanceTypes Attend = new AttendanceTypes();
-                Attend=(AttendanceTypes)aa;
+                Attend = (AttendanceTypes)aa;
 
 
                 //DateTime gela = DateTime.Parse(item.Ganrigi, new CultureInfo("ka-Ge"));
@@ -150,16 +144,27 @@ namespace SwimmingPool
 
 
 
-                HoursChek Hours = new HoursChek ();
-                Hours.GetHoursLabel = DayNumber  + " "+ monthName;
+                HoursChek Hours = new HoursChek();
+                if (DayNumber == DateTime.Now.Day)
+                {
+                    Hours.BackColor = Color.Green;
+                }
+                if (DayNumber < DateTime.Now.Day)
+                {
+                    Hours.BackColor = Color.Gray;
+                }
+
+
+
+                Hours.GetHoursLabel = DayNumber + " " + monthName;
                 Hours.GetAttendanceLabel = WeekDay + " " + item.Ganrigi.Hour + ":00 სთ";
                 Hours.GetAttendanceGela = Attend.ToString();
                 flowLayoutPanel1.Controls.Add(Hours);
 
-            
+
             }
 
-          
+
 
 
 
@@ -211,12 +216,12 @@ namespace SwimmingPool
 
 
 
-      
+
 
 
         private void საათებიდაფასებიToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-          
+
             Form2 form2 = new Form2();
 
 
@@ -245,8 +250,8 @@ namespace SwimmingPool
 
 
             CultureInfo provider = new CultureInfo("fr-FR");
-       
-          
+
+
 
         }
 
@@ -261,7 +266,7 @@ namespace SwimmingPool
 
 
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
-       
+
 
         private string getFormattedDate(DateTime dateTime)
         {
