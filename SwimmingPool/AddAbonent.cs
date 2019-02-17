@@ -33,10 +33,10 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
-  
+
 
             grafiki();
-            
+
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             SubscribtionPriceToDropdown();
@@ -97,13 +97,27 @@ namespace SwimmingPool
 
         public void AssignCurrentWeek(DateTime CurrentMonday)
         {
+
+
+
+
+
+
+
             CurrentWeekDays.Clear();
             //dataGridView1.Rows.Add();
             for (int i = 1; i < 7; i++)
             {
+                var geoCulture = new CultureInfo("ka-GE");
+
+                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
+
+
+
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
-                dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM");
-                dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
+
+                dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
+                dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.Teal;
             }
         }
 
@@ -320,34 +334,7 @@ namespace SwimmingPool
             SelectedHour = AbonentHours[cmbxHour.SelectedIndex];
         }
 
-        private void lblNext_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            grafiki();
-            CurrentMonday = CurrentMonday.AddDays(7);
-            AssignCurrentWeek(CurrentMonday);
-            lblBack.Enabled = true;
-            lblBack.ForeColor = Color.LightSkyBlue;
-            lblBack.Cursor = Cursors.Hand;
 
-            gridFillter(dataGridView1, CurrentMonday);
-        }
-
-        private void lblBack_Click(object sender, EventArgs e)
-        {
-            dataGridView1.Rows.Clear();
-            grafiki();
-            CurrentMonday = CurrentMonday.AddDays(-7);
-            AssignCurrentWeek(CurrentMonday);
-
-            if (CurrentMonday == ThisMonday)
-            {
-                lblBack.Enabled = false;
-                lblBack.ForeColor = Color.Gray;
-                lblBack.Cursor = Cursors.No;
-            }
-            gridFillter(dataGridView1, CurrentMonday);
-        }
 
         public ISubscription GenerateSubscribtionID(ISubscription subscribtion)
         {
@@ -388,8 +375,8 @@ namespace SwimmingPool
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
             Schedule = Schedulereturner();
-            MessageBox.Show("METODSHI SHESVLAMDE" +Schedule.Count.ToString());
-           DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
+            MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
+            DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
             Dates.Clear();
         }
 
@@ -479,7 +466,9 @@ namespace SwimmingPool
             foreach (var day in CurrentWeekDays)
             {
                 if (day.Date == DateTime.Today.Date)
+                {
                     GetCellColorToday();
+                }
             }
 
             gridFillter(dataGridView1, CurrentMonday);
@@ -487,35 +476,11 @@ namespace SwimmingPool
 
         private void lblNext_Click_1(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            grafiki();
-            CurrentMonday = CurrentMonday.AddDays(7);
-            AssignCurrentWeek(CurrentMonday);
-            lblBack.Enabled = true;
-            lblBack.ForeColor = Color.LightSkyBlue;
-            lblBack.Cursor = Cursors.Hand;
 
-            gridFillter(dataGridView1, CurrentMonday);
         }
 
         private void lblBack_Click_1(object sender, EventArgs e)
         {
-            dataGridView1.Rows.Clear();
-            grafiki();
-            CurrentMonday = CurrentMonday.AddDays(-7);
-            AssignCurrentWeek(CurrentMonday);
-
-
-            if (CurrentMonday == ThisMonday)
-            {
-                lblBack.Enabled = false;
-                lblBack.ForeColor = Color.Gray;
-                lblBack.Cursor = Cursors.No;
-                CellGrayColor(DateTime.Now.Date);
-                GetCellColorToday();
-            }
-
-            gridFillter(dataGridView1, CurrentMonday);
         }
 
 
@@ -524,12 +489,12 @@ namespace SwimmingPool
         public List<ISubscriptionSchedule> Schedulereturner()
         {
 
-           // Dates = null;
+            // Dates = null;
             List<ISubscriptionSchedule> Schedule_ = new List<ISubscriptionSchedule>();
 
             foreach (var item in Dates)
             {
-                ISubscriptionSchedule SingleDay= new SubscriptionSchedule {Schedule=item, Attendance=SPSQLite.Enums.AttendanceTypes.მოლოდინი };
+                ISubscriptionSchedule SingleDay = new SubscriptionSchedule { Schedule = item, Attendance = SPSQLite.Enums.AttendanceTypes.მოლოდინი };
                 Schedule_.Add(SingleDay);
             }
 
@@ -554,9 +519,9 @@ namespace SwimmingPool
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
 
                 DateTime FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
-              
 
-                if (Dates !=null)
+
+                if (Dates != null)
                 {
                     if (Dates.Contains(FinalDate))
                     {
@@ -568,7 +533,7 @@ namespace SwimmingPool
                         Dates.Add(FinalDate);
                     }
                 }
-                
+
 
 
                 //var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
@@ -599,7 +564,7 @@ namespace SwimmingPool
                 if (e.ColumnIndex == 0 || e.RowIndex == 0)
                 {
                     dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Snow;
-                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.DodgerBlue;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Teal;
                     return;
                 }
 
@@ -731,8 +696,41 @@ namespace SwimmingPool
 
 
         }
+
         #endregion
 
-        
+        private void lblNext_Click_2(object sender, EventArgs e)
+        {
+            dataGridView1.Rows.Clear();
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(7);
+            AssignCurrentWeek(CurrentMonday);
+            lblBack.Enabled = true;
+            lblBack.ForeColor = Color.LightSkyBlue;
+            lblBack.Cursor = Cursors.Hand;
+
+            gridFillter(dataGridView1, CurrentMonday);
+        }
+
+        private void lblBack_Click_2(object sender, EventArgs e)
+        {
+
+            dataGridView1.Rows.Clear();
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(-7);
+            AssignCurrentWeek(CurrentMonday);
+
+
+            if (CurrentMonday == ThisMonday)
+            {
+                lblBack.Enabled = false;
+                lblBack.ForeColor = Color.Gray;
+                lblBack.Cursor = Cursors.No;
+                CellGrayColor(DateTime.Now.Date);
+                GetCellColorToday();
+            }
+
+            gridFillter(dataGridView1, CurrentMonday);
+        }
     }
 }

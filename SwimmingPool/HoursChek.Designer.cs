@@ -47,13 +47,14 @@
             this.დასწრებაToolStripMenuItem,
             this.სხვაToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
             // 
             // გაცდენაToolStripMenuItem
             // 
             this.გაცდენაToolStripMenuItem.Name = "გაცდენაToolStripMenuItem";
             this.გაცდენაToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
             this.გაცდენაToolStripMenuItem.Text = "გაცდენა";
+            this.გაცდენაToolStripMenuItem.Click += new System.EventHandler(this.გაცდენაToolStripMenuItem_Click);
             // 
             // დასწრებაToolStripMenuItem
             // 
@@ -66,14 +67,15 @@
             this.სხვაToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.დასვენებაToolStripMenuItem});
             this.სხვაToolStripMenuItem.Name = "სხვაToolStripMenuItem";
-            this.სხვაToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.სხვაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.სხვაToolStripMenuItem.Text = "სხვა";
             // 
             // დასვენებაToolStripMenuItem
             // 
             this.დასვენებაToolStripMenuItem.Name = "დასვენებაToolStripMenuItem";
-            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.დასვენებაToolStripMenuItem.Text = "დასვენება";
+            this.დასვენებაToolStripMenuItem.Click += new System.EventHandler(this.დასვენებაToolStripMenuItem_Click);
             // 
             // AttendLabel
             // 
@@ -121,6 +123,7 @@
             this.Controls.Add(this.HoursLabel);
             this.Name = "HoursChek";
             this.Size = new System.Drawing.Size(132, 66);
+            this.DoubleClick += new System.EventHandler(this.HoursChek_DoubleClick);
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();

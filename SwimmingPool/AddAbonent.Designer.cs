@@ -33,6 +33,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAbonent));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -171,12 +172,13 @@
             this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNext.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblNext.Location = new System.Drawing.Point(850, 530);
+            this.lblNext.Image = ((System.Drawing.Image)(resources.GetObject("lblNext.Image")));
+            this.lblNext.Location = new System.Drawing.Point(826, 530);
             this.lblNext.Name = "lblNext";
-            this.lblNext.Size = new System.Drawing.Size(36, 20);
+            this.lblNext.Size = new System.Drawing.Size(49, 20);
             this.lblNext.TabIndex = 40;
-            this.lblNext.Text = ">>>";
-            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_1);
+            this.lblNext.Text = "          ";
+            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_2);
             // 
             // lblBack
             // 
@@ -184,12 +186,13 @@
             this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblBack.Image = ((System.Drawing.Image)(resources.GetObject("lblBack.Image")));
             this.lblBack.Location = new System.Drawing.Point(741, 530);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(36, 20);
+            this.lblBack.Size = new System.Drawing.Size(49, 20);
             this.lblBack.TabIndex = 40;
-            this.lblBack.Text = "<<<";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_1);
+            this.lblBack.Text = "          ";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_2);
             // 
             // cmbxHour
             // 
@@ -202,16 +205,18 @@
             // 
             // asaki
             // 
-            this.asaki.Location = new System.Drawing.Point(152, 182);
+            this.asaki.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asaki.Location = new System.Drawing.Point(152, 177);
             this.asaki.Mask = "00/00/0000";
             this.asaki.Name = "asaki";
-            this.asaki.Size = new System.Drawing.Size(100, 20);
+            this.asaki.Size = new System.Drawing.Size(193, 20);
             this.asaki.TabIndex = 3;
             this.asaki.ValidatingType = typeof(System.DateTime);
             // 
             // shenaxva
             // 
             this.shenaxva.BackColor = System.Drawing.Color.Teal;
+            this.shenaxva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shenaxva.ForeColor = System.Drawing.Color.Snow;
             this.shenaxva.Location = new System.Drawing.Point(1047, 541);
@@ -335,6 +340,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
             this.button1.Location = new System.Drawing.Point(890, 541);
@@ -385,7 +391,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(779, 327);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
-
             // 
             // paraskevi
             // 
@@ -418,10 +423,11 @@
             // 
             // archeuligrafiki
             // 
+            this.archeuligrafiki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.archeuligrafiki.FormattingEnabled = true;
             this.archeuligrafiki.Location = new System.Drawing.Point(19, 353);
             this.archeuligrafiki.Name = "archeuligrafiki";
-            this.archeuligrafiki.Size = new System.Drawing.Size(319, 147);
+            this.archeuligrafiki.Size = new System.Drawing.Size(319, 145);
             this.archeuligrafiki.TabIndex = 11;
             // 
             // panel6

@@ -58,7 +58,7 @@
             this.panel1.Controls.Add(this.splitContainer1);
             this.panel1.Location = new System.Drawing.Point(5, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1414, 715);
+            this.panel1.Size = new System.Drawing.Size(1360, 715);
             this.panel1.TabIndex = 0;
             // 
             // splitContainer1
@@ -77,7 +77,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.old);
-            this.splitContainer1.Size = new System.Drawing.Size(1414, 715);
+            this.splitContainer1.Size = new System.Drawing.Size(1360, 715);
             this.splitContainer1.SplitterDistance = 127;
             this.splitContainer1.TabIndex = 0;
             // 
@@ -90,7 +90,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Location = new System.Drawing.Point(399, 21);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(662, 83);
+            this.panel3.Size = new System.Drawing.Size(608, 83);
             this.panel3.TabIndex = 4;
             // 
             // label1
@@ -99,7 +99,7 @@
             this.label1.BackColor = System.Drawing.Color.White;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Teal;
-            this.label1.Location = new System.Drawing.Point(184, 21);
+            this.label1.Location = new System.Drawing.Point(157, 21);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(435, 44);
             this.label1.TabIndex = 0;
@@ -141,14 +141,14 @@
             this.old.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.old.Location = new System.Drawing.Point(19, 22);
             this.old.Name = "old";
-            this.old.Size = new System.Drawing.Size(1378, 540);
+            this.old.Size = new System.Drawing.Size(1324, 540);
             this.old.TabIndex = 3;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1424, 739);
+            this.ClientSize = new System.Drawing.Size(1370, 739);
             this.Controls.Add(this.panel1);
             this.Name = "Form4";
             this.Text = "Form4";

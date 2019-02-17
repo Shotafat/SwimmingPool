@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
+﻿using SPSQLite.Enums;
+using System;
 using System.Drawing;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SwimmingPool
@@ -18,22 +13,22 @@ namespace SwimmingPool
         public string GetAttendanceGela { get { return label1.Text.ToString(); } set { label1.Text = value; } }
 
         public HoursChek()
-        {            
-     InitializeComponent();
+        {
+            InitializeComponent();
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
-    
+
         }
 
-      
 
- 
+
+
 
         private void button1_MouseClick(object sender, MouseEventArgs e)
         {
-          
+
         }
 
         private void HoursLabel_Click(object sender, EventArgs e)
@@ -49,6 +44,24 @@ namespace SwimmingPool
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void გაცდენაToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Red;
+            
+
+        }
+
+        private void HoursChek_DoubleClick(object sender, EventArgs e)
+        {
+            if(BackColor!=Color.Gray)
+            BackColor = Color.DarkSlateGray;
+        }
+
+        private void დასვენებაToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackColor = Color.Teal;
         }
     }
 }

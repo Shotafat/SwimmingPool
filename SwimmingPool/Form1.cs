@@ -20,6 +20,7 @@ namespace SwimmingPool
 
 
 
+
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
         }
@@ -106,6 +107,10 @@ namespace SwimmingPool
             flowLayoutPanel1.Controls.Clear();
             Refresh();
             var selectedrowindex = dataGridView1.SelectedCells[0].Value;
+
+            // lkajsd
+
+
             label3.Text = null;
             label3.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
 
@@ -114,11 +119,16 @@ namespace SwimmingPool
 
             var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
+            var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = G.Schedule }).ToList();
 
 
             //HoursChek Hours = new HoursChek();
             foreach (var item in SelectedSubscribtion)
             {
+
+
+
+
 
                 var gela = item.Ganrigi.Month;
 
@@ -127,6 +137,8 @@ namespace SwimmingPool
                 var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
 
                 var weekDay = item.Ganrigi.DayOfWeek;
+                //var monthname = item.Ganrigi.Month;
+                //var month = dateTimeInfo.GetMonthName(monthname);
 
 
                 monthName = dateTimeInfo.GetAbbreviatedMonthName(gela);
@@ -277,6 +289,54 @@ namespace SwimmingPool
         private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        #region Search 
+        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
+        {
+            string textboxText = toolStripTextBox1.Text.ToString();
+
+
+
+            int RowIndex = 0;
+            foreach (DataGridViewRow row in dataGridView1.Rows)
+              {
+
+                for (int i = 0; i <= 6; i++)
+
+                 {
+                    // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
+
+                    if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Contains(textboxText) ||
+                        row.Cells[2].Value.ToString().Equals(textboxText) || row.Cells[3].Value.ToString().Contains(textboxText) ||
+                        row.Cells[4].Value.ToString().Equals(textboxText) || row.Cells[5].Value.ToString().Contains(textboxText))
+
+                    {
+                        RowIndex = row.Index;
+
+
+
+                        break;
+                   }
+                }
+
+            }
+
+            dataGridView1.Rows[RowIndex].Selected = true;
+
+        }
+
+        #endregion
+
+        private void toolStripTextBox1_Click(object sender, EventArgs e)
+        {
+            toolStripTextBox1.Text = string.Empty;
+            
         }
     }
 }
