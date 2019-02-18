@@ -456,10 +456,15 @@ namespace SwimmingPool
                 return;
             }
 
+            if (dateTimePicker1.Value >= dateTimePicker3.Value)
+            {
+                return;
+            }
+
             dataGridView1.Rows.Clear();
             grafiki();
             AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
-            CellGrayColor(dateTimePicker1.Value);
+            //CellGrayColor(dateTimePicker1.Value,dateTimePicker3.Value);
 
             //DateTime _today = DateTime.ParseExact(DateTime.Now.ToString(), CultureInfo.InvariantCulture);
 
@@ -504,30 +509,80 @@ namespace SwimmingPool
 
 
 
+        public int SelectedRowIndex;
+        public bool CoordinatesIsEqual(int X, int Y)
+        {
+            if (SelectedCellIndex != X || SelectedRowIndex != Y)
+            {
+                SelectedCellIndex = X;
+                SelectedRowIndex = Y;
+                return false;
+            }
+
+            //else
+            //{
+            //    SelectedCellIndex = X;
+            //    SelectedRowIndex = Y;
+            //    return false;
+            //}
+
+            return true;
+        }
+        public void SetDefaultCellColor(int ColumnRank)
+        {
+            for (int i = 1; i < 13; i++)
+            {
+                dataGridView1.Rows[i].Cells[ColumnRank].Style.BackColor = Color.White;
+                dataGridView1.Rows[i].Cells[ColumnRank].Style.ForeColor = Color.Gray;
+                dataGridView1.Rows[i].Cells[ColumnRank].Style.SelectionBackColor = Color.White;
+                dataGridView1.Rows[i].Cells[ColumnRank].Style.SelectionForeColor = Color.Gray;
+            }
+        }
+
+        public bool FirstClick { get; set; } = false;
+        public List<int> CoordinateList { get; set; } = new List<int>();
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+
+
             if (e.RowIndex != -1)
             {
+                CoordinateList.Add(e.ColumnIndex);
+                CoordinateList.Add(e.RowIndex);
 
-
-                int ColumnIndex = e.ColumnIndex;
+                bool _coordinatesIsEqual = CoordinatesIsEqual(e.ColumnIndex, e.RowIndex);
                 int Hour = (e.RowIndex + 8);
 
-
-                //var g = TimeSpan.Parse(Hour);
-                var Date = CurrentWeekDays[0 + ColumnIndex - 1];
+                var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
 
-                DateTime FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+                DateTime FinalDate;// new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
 
+                try
+                {
+                    string _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                }
+                catch (Exception)
+                {
+                    FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+                }
+
+                if (!FirstClick)
+                {
+                    dateTimePicker1.Value = FinalDate;
+                    FirstClick = !FirstClick;
+                }
 
                 if (Dates != null)
                 {
-                    if (Dates.Contains(FinalDate))
+                    if (Dates.Contains(FinalDate.Date))
                     {
                         int a = Dates.IndexOf(FinalDate);
                         Dates.RemoveAt(a);
                     }
+
                     else
                     {
                         Dates.Add(FinalDate);
@@ -535,71 +590,55 @@ namespace SwimmingPool
                 }
 
 
-
-                //var guliko = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.ID == gela.ID);
-
-                //(g.ID == gela.ID)
-
-
-
-
-                Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
-                //
-                //   DateTime InsertDate = DateTime.ParseExact(, "hh/mm/yyyy", CultureInfo.InvariantCulture);
-
-
-
-
-
-                //     DateTime guliko = DateTime.Parse(FinalDate);
-                //
-
-
-                if (green == Color.LightGray || green == Color.Snow)
+                Color BgColor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
+                if (BgColor.Name == "0")
                 {
-                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.LightGray;
-                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Gray;
-                    return;
+                    BgColor = Color.White;
                 }
+
+                SetDefaultCellColor(e.ColumnIndex); /*Set Cell Default Color*/
+
+                if (!_coordinatesIsEqual && BgColor == Color.White)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
+                }
+
+                else
+                {
+                    if (BgColor == Color.Green)
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.White;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.Gray;
+                    }
+
+                    else
+                    {
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
+                    }
+                }
+
                 if (e.ColumnIndex == 0 || e.RowIndex == 0)
                 {
                     dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Snow;
-                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Teal;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.DodgerBlue;
                     return;
                 }
 
                 bool sell = columni.Contains(e.ColumnIndex);
                 bool rov = rovsi.Contains(e.RowIndex);
 
-                //Color green = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
-
                 string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
                 string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
                 string value = columnName + " - " + rowName;
 
-                bool isselect = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].FormattedValueType.IsSealed;
-
-                if (sell && isselect && green != Color.Green)
-                {
-                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Snow;
-                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Gray;
-                }
-                else if (sell && green == Color.Green)
-                {
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Snow;
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
-                    columni.Remove(e.ColumnIndex);
-                    ganrigidge.Remove(value);
-                }
-                else
-                {
-                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Green;
-                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.Gray;
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
-                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
-                    columni.Add(e.ColumnIndex);
-                    ganrigidge.Add(value);
-                }
                 archeuligrafiki.DataSource = null;
                 ganrigidge.Sort();
                 archeuligrafiki.DataSource = ganrigidge;
@@ -610,6 +649,7 @@ namespace SwimmingPool
             }
 
         }
+
 
         #region რანდომი სატესტოდ
         private void button1_Click(object sender, EventArgs e)
@@ -729,6 +769,74 @@ namespace SwimmingPool
                 CellGrayColor(DateTime.Now.Date);
                 GetCellColorToday();
             }
+
+            gridFillter(dataGridView1, CurrentMonday);
+        }
+
+
+        public void CellGrayColor(DateTime FstDate, DateTime SndDate)
+        {
+            int FstDateRank = Convert.ToInt32(FstDate.DayOfWeek);
+            int SndDateRank = Convert.ToInt32(SndDate.DayOfWeek);
+            int i = 0;
+            do
+            {
+                foreach (var day in CurrentWeekDays)
+                {
+                    i++;
+                    if (day.Date >= FstDate.Date && day.Date <= SndDate.Date)
+                    {
+                        continue;
+                    }
+
+                    else
+                    {
+                        for (int j = 1; j < 13; j++)
+                        {
+                            dataGridView1.Rows[j].Cells[i].Style.BackColor = Color.LightGray;
+                            dataGridView1.Rows[j].Cells[i].Style.ForeColor = Color.Gray;
+                            dataGridView1.Rows[j].Cells[i].Selected = false;
+                        }
+                    }
+                }
+
+            } while (i < 6);
+
+
+            //if (CurrentWeekDays.Contains(FstDate) && CurrentWeekDays.Contains(SndDate))
+            //{
+            //    for (int i = 0; i < 7; i++)
+            //    {
+            //        if (CurrentWeekDays[i] >= FstDate && CurrentWeekDays[i] <= SndDate)
+            //            continue;
+            //        else
+            //        {
+            //            for (int j = 1; j < 13; j++)
+            //            {
+            //                dataGridView1.Rows[j].Cells[i].Style.BackColor = Color.LightGray;
+            //                dataGridView1.Rows[j].Cells[i].Style.ForeColor = Color.Gray;
+            //            }
+            //        }
+            //    }
+            //}
+        }
+
+
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            if (dateTimePicker3.Value <= dateTimePicker1.Value)
+            {
+                return;
+            }
+
+            dataGridView1.Rows.Clear();
+            grafiki();
+            AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
+
+            //AssignCurrentWeek(GetCurrentMonday(dateTimePicker3.Value));
+            CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+            //CellGrayColorRight(dateTimePicker3.Value);
 
             gridFillter(dataGridView1, CurrentMonday);
         }
