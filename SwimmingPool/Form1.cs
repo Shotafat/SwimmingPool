@@ -15,7 +15,7 @@ namespace SwimmingPool
     public partial class Form1 : Form
     {
 
-
+        public List<SubscriptionScheduleDB> DBDB { get; set; }
 
         public Form1()
         {
@@ -53,7 +53,8 @@ namespace SwimmingPool
         }
         public void JoinClasses()
         {
-            var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
+
+             DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
             var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>();
 
          var scheduledb = (from o in DBDB select new { ID =o.Id, Sub=o.Subscription.IDnumber}).ToList();
@@ -82,7 +83,9 @@ namespace SwimmingPool
                                 გვარი = o.Subscriber_.LastName,
                                 ასაკი = Math.Round((DateTime.Now - o.Subscriber_.DateOfBirth).TotalDays / 365, 0),
                                 ჯანმრთელობისცნობა = a.YesNO,
-                                ფასი = o.SubscriberPrice_.Price
+                                ფასი = o.SubscriberPrice_.Price,
+                                საათი=o.SubscriberPrice_.NumberOfHours
+
                             }).ToList();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = fillgrid;
