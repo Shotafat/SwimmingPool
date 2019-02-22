@@ -18,6 +18,8 @@ namespace SPSQLite
             DatabaseConnection.Path = System.IO.Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "SwimmingPool.db");
             DatabaseConnection.Conn = new SQLiteConnection(DatabaseConnection.Path);
             DatabaseConnection.CreateTables();
+
+
         }
 
     }
@@ -29,6 +31,10 @@ namespace SPSQLite
     {
 
 
+
+
     }
+
+
 
 }

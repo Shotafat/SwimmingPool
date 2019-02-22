@@ -33,11 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddAbonent));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.xushabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.samshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.orshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
+            this.otxshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblNext = new System.Windows.Forms.Label();
             this.lblBack = new System.Windows.Forms.Label();
             this.cmbxHour = new System.Windows.Forms.ComboBox();
@@ -54,6 +59,8 @@
             this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel7 = new System.Windows.Forms.Panel();
             this.archeuligrafiki = new System.Windows.Forms.ListBox();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -80,14 +87,6 @@
             this.panel3 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.samshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otxshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xushabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kvira = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel9.SuspendLayout();
@@ -103,6 +102,49 @@
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
+            // xushabati
+            // 
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xushabati.DefaultCellStyle = dataGridViewCellStyle1;
+            this.xushabati.HeaderText = "ხუთშაბათი";
+            this.xushabati.Name = "xushabati";
+            this.xushabati.ReadOnly = true;
+            this.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.xushabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // samshabati
+            // 
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.samshabati.DefaultCellStyle = dataGridViewCellStyle2;
+            this.samshabati.HeaderText = "სამშაბათი";
+            this.samshabati.Name = "samshabati";
+            this.samshabati.ReadOnly = true;
+            this.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.samshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // orshabati
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
+            this.orshabati.HeaderText = "ორშაბათი";
+            this.orshabati.Name = "orshabati";
+            this.orshabati.ReadOnly = true;
+            this.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.orshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // saati
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.DodgerBlue;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.DodgerBlue;
+            this.saati.DefaultCellStyle = dataGridViewCellStyle4;
+            this.saati.HeaderText = "საათი";
+            this.saati.Name = "saati";
+            this.saati.ReadOnly = true;
+            this.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -114,18 +156,29 @@
             this.label5.TabIndex = 1;
             this.label5.Text = "გრაფიკი";
             // 
+            // otxshabati
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
+            this.otxshabati.HeaderText = "ოთხშაბათი";
+            this.otxshabati.Name = "otxshabati";
+            this.otxshabati.ReadOnly = true;
+            this.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.otxshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // lblNext
             // 
             this.lblNext.AutoSize = true;
             this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNext.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblNext.Location = new System.Drawing.Point(850, 530);
+            this.lblNext.Image = ((System.Drawing.Image)(resources.GetObject("lblNext.Image")));
+            this.lblNext.Location = new System.Drawing.Point(826, 530);
             this.lblNext.Name = "lblNext";
-            this.lblNext.Size = new System.Drawing.Size(36, 20);
+            this.lblNext.Size = new System.Drawing.Size(49, 20);
             this.lblNext.TabIndex = 40;
-            this.lblNext.Text = ">>>";
-            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_1);
+            this.lblNext.Text = "          ";
+            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_2);
             // 
             // lblBack
             // 
@@ -133,12 +186,13 @@
             this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBack.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.lblBack.Image = ((System.Drawing.Image)(resources.GetObject("lblBack.Image")));
             this.lblBack.Location = new System.Drawing.Point(741, 530);
             this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(36, 20);
+            this.lblBack.Size = new System.Drawing.Size(49, 20);
             this.lblBack.TabIndex = 40;
-            this.lblBack.Text = "<<<";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_1);
+            this.lblBack.Text = "          ";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_2);
             // 
             // cmbxHour
             // 
@@ -151,16 +205,18 @@
             // 
             // asaki
             // 
-            this.asaki.Location = new System.Drawing.Point(152, 182);
+            this.asaki.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asaki.Location = new System.Drawing.Point(152, 177);
             this.asaki.Mask = "00/00/0000";
             this.asaki.Name = "asaki";
-            this.asaki.Size = new System.Drawing.Size(100, 20);
+            this.asaki.Size = new System.Drawing.Size(193, 20);
             this.asaki.TabIndex = 3;
             this.asaki.ValidatingType = typeof(System.DateTime);
             // 
             // shenaxva
             // 
             this.shenaxva.BackColor = System.Drawing.Color.Teal;
+            this.shenaxva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.shenaxva.ForeColor = System.Drawing.Color.Snow;
             this.shenaxva.Location = new System.Drawing.Point(1047, 541);
@@ -284,6 +340,7 @@
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Teal;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.Snow;
             this.button1.Location = new System.Drawing.Point(890, 541);
@@ -308,14 +365,14 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Blue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.Blue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.saati,
@@ -324,8 +381,7 @@
             this.otxshabati,
             this.xushabati,
             this.paraskevi,
-            this.shabati,
-            this.kvira});
+            this.shabati});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
@@ -335,7 +391,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(779, 327);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // paraskevi
+            // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
+            this.paraskevi.HeaderText = "პარასკევი";
+            this.paraskevi.Name = "paraskevi";
+            this.paraskevi.ReadOnly = true;
+            this.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.paraskevi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // shabati
+            // 
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
+            this.shabati.HeaderText = "შაბათი";
+            this.shabati.Name = "shabati";
+            this.shabati.ReadOnly = true;
+            this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel7
             // 
@@ -348,10 +423,11 @@
             // 
             // archeuligrafiki
             // 
+            this.archeuligrafiki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.archeuligrafiki.FormattingEnabled = true;
             this.archeuligrafiki.Location = new System.Drawing.Point(19, 353);
             this.archeuligrafiki.Name = "archeuligrafiki";
-            this.archeuligrafiki.Size = new System.Drawing.Size(319, 147);
+            this.archeuligrafiki.Size = new System.Drawing.Size(319, 145);
             this.archeuligrafiki.TabIndex = 11;
             // 
             // panel6
@@ -591,111 +667,6 @@
             this.panel1.Size = new System.Drawing.Size(1226, 122);
             this.panel1.TabIndex = 4;
             // 
-            // saati
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DodgerBlue;
-            this.saati.DefaultCellStyle = dataGridViewCellStyle2;
-            this.saati.HeaderText = "საათი";
-            this.saati.Name = "saati";
-            this.saati.ReadOnly = true;
-            this.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // orshabati
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Silver;
-            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
-            this.orshabati.HeaderText = "ორშაბათი";
-            this.orshabati.Name = "orshabati";
-            this.orshabati.ReadOnly = true;
-            this.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.orshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // samshabati
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Silver;
-            this.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
-            this.samshabati.HeaderText = "სამშაბათი";
-            this.samshabati.Name = "samshabati";
-            this.samshabati.ReadOnly = true;
-            this.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.samshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // otxshabati
-            // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Silver;
-            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
-            this.otxshabati.HeaderText = "ოთხშაბათი";
-            this.otxshabati.Name = "otxshabati";
-            this.otxshabati.ReadOnly = true;
-            this.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.otxshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // xushabati
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Silver;
-            this.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
-            this.xushabati.HeaderText = "ხუთშაბათი";
-            this.xushabati.Name = "xushabati";
-            this.xushabati.ReadOnly = true;
-            this.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.xushabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paraskevi
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Silver;
-            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
-            this.paraskevi.HeaderText = "პარასკევი";
-            this.paraskevi.Name = "paraskevi";
-            this.paraskevi.ReadOnly = true;
-            this.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.paraskevi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // shabati
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Silver;
-            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
-            this.shabati.HeaderText = "შაბათი";
-            this.shabati.Name = "shabati";
-            this.shabati.ReadOnly = true;
-            this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // kvira
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
-            this.kvira.DefaultCellStyle = dataGridViewCellStyle9;
-            this.kvira.HeaderText = "კვირა";
-            this.kvira.Name = "kvira";
-            this.kvira.ReadOnly = true;
-            this.kvira.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.kvira.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,7 +704,13 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.DataGridViewTextBoxColumn xushabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saati;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn otxshabati;
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Label lblBack;
         private System.Windows.Forms.ComboBox cmbxHour;
@@ -749,6 +726,8 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel8;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.ListBox archeuligrafiki;
         private System.Windows.Forms.Panel panel6;
@@ -776,13 +755,5 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn otxshabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xushabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kvira;
     }
 }

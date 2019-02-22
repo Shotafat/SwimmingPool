@@ -14,6 +14,7 @@ using SPSQLite.INTERFACES.Interfaces;
 using SQLiteNetExtensions.Extensions;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.CLASSES.BussinessObjects;
+using System.Windows.Forms;
 
 
 //using System.Windows.Forms;
@@ -51,7 +52,17 @@ namespace SPSQLite
         public static void insertSubscribtion(ISubscriber subscriber_, ISubscriptionPrice subscriberprice, ISubscription subscription_, IHealthNotice healthNotice_, List<ISubscriptionSchedule> Schedule_)
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
-            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
+            List<SubscriptionScheduleDB> ScheduleDB_ = new List<SubscriptionScheduleDB>();
+            
+            foreach (var item in Schedule_)
+            {
+
+                SubscriptionScheduleDB SubDB = new SubscriptionScheduleDB { Schedule = item.Schedule, Attandance = (int)item.Attendance };
+                ScheduleDB_.Add(SubDB);
+            }
+
+          //  MessageBox.Show("SHCHEDULIS SIGRDZE" +ScheduleDB_.Count.ToString());
+           HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
             {
@@ -63,13 +74,32 @@ namespace SPSQLite
                 
             };
             Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
-            subscriber.Subscriptions = new List<Subscription> { subscription };
+
+            subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
+           
+         
+            subscriber.Subscriptions = subscription;
+            subscriber.SubscribtionID = subscription.Id;
+            subscriber.Subscriptions = subscription;
+            subscriber.Subscriptions.SubscribtionSchedule_ = ScheduleDB_;
+        
+
             subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
+
             Conn.InsertWithChildren(subscriber);
-        
+
+            var SubscribtionInserted = Conn.Table<Subscription>().Where(o => o.IDnumber == subscription.IDnumber).FirstOrDefault();
+            foreach (var item in ScheduleDB_)
+            {
+                item.Subscription = SubscribtionInserted;
+                item.SubscriptionID = SubscribtionInserted.Id;
+                Conn.Insert(item);
+
+            }
+
 
         }
 
@@ -268,7 +298,7 @@ namespace SPSQLite
             if (Subscription!=null)
             {
                 
-                Subscription.SubscriberID = subscription.SubscriberID;
+             //   Subscription.SubscriberID = subscription.SubscriberID;
                 Subscription.IDnumber = subscription.IDnumber;
                 Conn.Update(Subscription);
             }
@@ -321,20 +351,48 @@ namespace SPSQLite
 
         [ForeignKey(typeof(SubscribtionPrice))]
         public int SubscribtionPriceID { get; set; }
-        
-        [ForeignKey(typeof(Subscriber))]
-        public int SubscriberID { get; set; }
+     
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<SubscriptionScheduleDB> SubscribtionSchedule_ { get; set; }
 
-        [ManyToOne(CascadeOperations = CascadeOperation.All)]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
         
     }
+
+
+
+    //აბონენტი
+    public class Subscriber
+    {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string LastName { get; set; }
+        public string PhoneNumber { get; set; }
+        public string Address { get; set; }
+        public DateTime DateOfBirth { get; set; }
+
+
+        [ForeignKey(typeof(Subscription))]
+        public int SubscribtionID { get; set; }
+
+
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        public Subscription Subscriptions { get; set; }
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        public List<HealthNotice> Healthnotice { get; set; }
+
+
+    }
+
+
+
 
 
     //ფასი და საათი
@@ -362,28 +420,7 @@ namespace SPSQLite
     }
 
     
-    //აბონენტი
-    public class Subscriber
-    {
-        [PrimaryKey, AutoIncrement]
-        public  int Id { get; set; }
-        public string Name { get; set; }
-        public string LastName { get; set; }
-        public string PhoneNumber { get; set; }
-        public string Address { get; set; }
-        public DateTime DateOfBirth { get; set; }
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<Subscription> Subscriptions { get; set; }
-
-
-       
-
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
-        public List<HealthNotice> Healthnotice{ get; set; }
-
-
-    }
 
 
     //ჯანმრთელობის ცნობა
@@ -410,6 +447,7 @@ namespace SPSQLite
     {
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
+
         public DateTime Schedule { get; set; }
         [ForeignKey(typeof(Subscription))]
         public int SubscriptionID { get; set; }
