@@ -1,41 +1,39 @@
 ﻿using SPSQLite;
+using SPSQLite.CLASSES;
+using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using System.Drawing;
 
 namespace SwimmingPool
 {
     public partial class Form1 : Form
     {
 
-        public List<SubscriptionScheduleDB> DBDB { get; set; }
+
 
         public Form1()
         {
-
-
-
+         
+     
 
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
         }
 
-
-
+       
+      
         private void Form1_Load(object sender, EventArgs e)
         {
-
-
+        
+            
             dataGridView1.AutoGenerateColumns = true;
-
-
-
-
+            grafiki();
             JoinClasses();
             //dataGrid_eqimi.DataSource = null;
             //dataGrid_eqimi.DataSource = ServiceInstances.Service().GetDoctorServices().GetData();
@@ -46,151 +44,44 @@ namespace SwimmingPool
 
         private void დამატებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+           
         }
         public void JoinClasses()
         {
 
-            DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
-            var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>();
+           
 
-            var scheduledb = (from o in DBDB select new { ID = o.Id, Sub = o.Subscription.IDnumber }).ToList();
+            
 
-
-
-            var SubscribtionTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
-
-            var subfromsubscribtion = (from o in SubscribtionTable select new { ID = o.Id, subscriberName = o.Subscriber_.Id, PriceTyme = o.SubscriberPrice_.Id }).ToList();
-            var subTa = (from o in SubscribtionTable select new { IDDD = o.IDnumber, Name = o.Subscriber_.LastName, nn = o.Subscriber_.Healthnotice }).ToList();
-
-
-
-
+         var SubscribtionTable=DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
             var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
-
-            MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
-
-
-            var fillgrid = (from o in SubscribtionTable
-                            join a in HealthTable on o.Subscriber_.Id equals a.SubscriberID
-                            select new
-                            {
-                                აბონიმენტი = o.IDnumber,
-                                სახელი = o.Subscriber_.Name,
-                                გვარი = o.Subscriber_.LastName,
-                                ასაკი = Math.Round((DateTime.Now - o.Subscriber_.DateOfBirth).TotalDays / 365, 0),
-                                ჯანმრთელობისცნობა = a.YesNO,
-                                ფასი = o.SubscriberPrice_.Price,
-                                საათი = o.SubscriberPrice_.NumberOfHours
-
-                            }).ToList();
+           
+           var fillgrid = (from o in SubscribtionTable
+                           join a in HealthTable on o.SubscriberID equals a.SubscriberID 
+                           select new { აბონიმენტი= o.IDnumber, სახელი=o.Subscriber_.Name,
+                               გვარი =o.Subscriber_.LastName, ასაკი=Math.Round((DateTime.Now-o.Subscriber_.DateOfBirth).TotalDays/365,0), ჯანმრთელობისცნობა=a.YesNO, ფასი=o.SubscriberPrice_.Price}).ToList();
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = fillgrid;
         }
 
-        private string monthName;
-        private string WeekDay;
-        private int DayNumber;
-        public void GeoCulture()
-        {
+   
 
+     
 
-
-        }
+      
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-
-
-
-            flowLayoutPanel1.Controls.Clear();
-            Refresh();
-            var selectedrowindex = dataGridView1.SelectedCells[0].Value;
-
-            // lkajsd
-
-
-            label3.Text = null;
-            label3.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
-
-
-
-            var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
-            var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
-            var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = G.Schedule }).ToList();
-
-
-            //HoursChek Hours = new HoursChek();
-            foreach (var item in SelectedSubscribtion)
+            if (dataGridView1.SelectedCells.Count > 0)
             {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
 
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
 
-
-
-
-                var gela = item.Ganrigi.Month;
-
-                var geoCulture = new CultureInfo("ka-GE");
-
-                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
-
-                var weekDay = item.Ganrigi.DayOfWeek;
-                //var monthname = item.Ganrigi.Month;
-                //var month = dateTimeInfo.GetMonthName(monthname);
-
-
-                monthName = dateTimeInfo.GetAbbreviatedMonthName(gela);
-                WeekDay = dateTimeInfo.GetAbbreviatedDayName(weekDay);
-                DayNumber = item.Ganrigi.Day;
-
-                int aa = Convert.ToInt32(item.Daswreba);
-                AttendanceTypes Attend = new AttendanceTypes();
-                Attend = (AttendanceTypes)aa;
-
-
-                //DateTime gela = DateTime.Parse(item.Ganrigi, new CultureInfo("ka-Ge"));
-
-                ////DateTime DateOfBirth = DateTime.ParseExact(item.Ganrigi, "MM-dd-yyyy", new CultureInfo("ka-GE"));
-
-
-
-                HoursChek Hours = new HoursChek();
-                if (DayNumber == DateTime.Now.Day)
-                {
-                    Hours.BackColor = Color.Green;
-                }
-                if (DayNumber < DateTime.Now.Day)
-                {
-                    Hours.BackColor = Color.Gray;
-                }
-
-
-
-                Hours.GetHoursLabel = DayNumber + " " + monthName;
-                Hours.GetAttendanceLabel = WeekDay + " " + item.Ganrigi.Hour + ":00 სთ";
-                Hours.GetAttendanceGela = Attend.ToString();
-                flowLayoutPanel1.Controls.Add(Hours);
-
-
+                string a = Convert.ToString(selectedRow.Cells[1].Value);
+                string b = Convert.ToString(selectedRow.Cells[2].Value);
+                //label1.Text = a + " " + b;
             }
-
-
-
-
-
-
-            //if (dataGridView1.SelectedCells.Count > 0)
-            //{
-            //    int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-
-            //    DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-
-            //    string a = Convert.ToString(selectedRow.Cells[1].Value);
-            //    string b = Convert.ToString(selectedRow.Cells[2].Value);
-            //    //label1.Text = a + " " + b;
-            //}
         }
 
         private void დამატებაToolStripMenuItem_Click(object sender, EventArgs e)
@@ -228,12 +119,12 @@ namespace SwimmingPool
 
 
 
-
+      
 
 
         private void საათებიდაფასებიToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-
+          
             Form2 form2 = new Form2();
 
 
@@ -262,8 +153,37 @@ namespace SwimmingPool
 
 
             CultureInfo provider = new CultureInfo("fr-FR");
+            List<SubscriptionSchedule> list = new List<SubscriptionSchedule>
+            {
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("02/02/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=15 },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("03/02/2009 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13  },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("05/02/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("06/02/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("29/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=43},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=47},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("27/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("29/01/2019 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=20},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("30/01/2019 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=21},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("30/01/2019 12:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=30 },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("23/01/2019 13:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=45},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("12/02/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("11/02/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("12/02/2019 15:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=3 },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("11/02/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=15 },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("29/01/2019 09:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=13  },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 10:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=12},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("30/01/2019 11:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=20},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("03/02/2019 12:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=30 },
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 13:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=45},
+new SubscriptionSchedule() {Schedule=DateTime.ParseExact("28/01/2019 14:00", "g", provider), Attendance=AttendanceTypes.Attended, SubscribtionID=17  }
 
+        };
+            foreach (var item in list)
+            {
+                //SubscriptionSchedule : ISubscriptionSchedule
+                ServiceInstances.Service().GetSubscriptionScheduleServices().Add(item);
 
+            }
 
         }
 
@@ -278,7 +198,67 @@ namespace SwimmingPool
 
 
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
+        public void grafiki()
+        {
 
+
+            List<DateTime> gela = AddAbonent.Dates;
+            var zvio = gela.FirstOrDefault(x => x.Date != null);
+            
+
+
+            dataGridView2.DataSource = null;
+            dataGridView2.Rows.Add();
+
+            for (int i = 10; i < 22; i++)
+            {
+                dataGridView2.Rows.Add();
+                dataGridView2.Rows[i - 9].Cells[0].Value = Convert.ToString(i - 1 + ":00");
+            }
+            for (int i = 1; i < 13; i++)
+            {
+                for (int ii = 1; ii < daynumber; ii++)
+                {
+                    //dataGridView1.Rows[i].Cells[ii].Style.BackColor = Color.LightGray;
+                    //dataGridView1.Rows[i].Cells[ii].Style.ForeColor = Color.Gray;
+
+                }
+            }
+            for (int i = 0; i < 11; i++)
+            {
+                for (int ii = 0; ii < 7; ii++)
+                {
+                    dataGridView2.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
+                }
+            }
+
+            //pirveli ujris shevseba DATE-biT
+
+            int CurrentDay = (int)DateTime.Now.DayOfWeek;
+            int ForwardDays = 6 - CurrentDay;
+            int StartDay = CurrentDay - (CurrentDay - 1);
+
+            dataGridView2.Rows[0].Cells[(int)DateTime.Now.DayOfWeek].Value = getFormattedDate(DateTime.Now);
+
+            for (int i = 1; i <= ForwardDays; i++)
+            {
+                dataGridView2.Rows[0].Cells[(int)DateTime.Now.DayOfWeek + i].Value = getFormattedDate(DateTime.Now.AddDays(i));
+            }
+
+            for (int i = 1; i < CurrentDay; i++)
+            {
+                dataGridView2.Rows[0].Cells[(int)DateTime.Now.DayOfWeek - i].Value = getFormattedDate(DateTime.Now.AddDays(-i));
+                // dataGridView1.Columns
+            }
+
+            //CultureInfo provider = new CultureInfo("fr-FR");
+            //DateTime start = DateTime.ParseExact("21/01/2019 09:00", "g", provider);     //dateTimePicker1.Value;
+            //6-(int)dateTimePicker1.Value.DayOfWeek
+            //  DateTime End = dateTimePicker1.Value.AddDays(6 - (int)dateTimePicker1.Value.DayOfWeek);
+            //   gridFillter(dataGridView1, DateTime.Now);
+            dataGridView2.Rows[0].Cells[0].Value = " ";
+            dataGridView2.DefaultCellStyle.SelectionBackColor = Color.Green;
+        }
 
         private string getFormattedDate(DateTime dateTime)
         {
@@ -289,54 +269,6 @@ namespace SwimmingPool
         private void dataGridView2_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
 
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        #region Search 
-        private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
-        {
-            string textboxText = toolStripTextBox1.Text.ToString();
-
-
-
-            int RowIndex = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
-              {
-
-                for (int i = 0; i <= 6; i++)
-
-                 {
-                    // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
-
-                    if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Contains(textboxText) ||
-                        row.Cells[2].Value.ToString().Equals(textboxText) || row.Cells[3].Value.ToString().Contains(textboxText) ||
-                        row.Cells[4].Value.ToString().Equals(textboxText) || row.Cells[5].Value.ToString().Contains(textboxText))
-
-                    {
-                        RowIndex = row.Index;
-
-
-
-                        break;
-                   }
-                }
-
-            }
-
-            dataGridView1.Rows[RowIndex].Selected = true;
-
-        }
-
-        #endregion
-
-        private void toolStripTextBox1_Click(object sender, EventArgs e)
-        {
-            toolStripTextBox1.Text = string.Empty;
-            
         }
     }
 }

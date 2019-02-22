@@ -6,10 +6,10 @@ namespace SPSQLite.Enums
 {
    public enum AttendanceTypes
     {
-        მოლოდინი ,
-        დაესწრო ,
-        გააცდინა ,
-        დასვენება
+        Waiting,
+        Attended,
+        Missed,
+        Holiday
 
 
     }

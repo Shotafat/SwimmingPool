@@ -32,7 +32,7 @@ namespace SPSQLite.CLASSES
       
         public  IList<ISubscription> GetData()
         {
-          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { /* SubscriberID = a.SubscriberID,  */ IDnumber=a.IDnumber}).ToList<ISubscription>();
+          IList<ISubscription> list =    DatabaseConnection.GetSubscriptions().Select(a => new Subscription { SubscriberID = a.SubscriberID,  IDnumber=a.IDnumber}).ToList<ISubscription>();
 
             return list;
         }
