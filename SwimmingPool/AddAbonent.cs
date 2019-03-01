@@ -12,7 +12,6 @@ using System.Windows.Forms;
 
 namespace SwimmingPool
 {
-
     public partial class AddAbonent : Form
     {
         public List<string> ganrigidge = new List<string>();
@@ -28,12 +27,17 @@ namespace SwimmingPool
         public int SelectedCellIndex;
         public DateTime ThisMonday { get; set; }
         public DateTime CurrentMonday { get; set; }
+        public int SelectedRowIndex;
+        public Color BgColor;
+       // public Dictionary<DateTime, List<CurrentGrid>> GridDataList { get; set; } = new Dictionary<DateTime, List<CurrentGrid>>();
 
+        public bool FirstClick { get; set; } = false;
+
+        public List<int> CoordinateList { get; set; } = new List<int>();
 
         public AddAbonent()
         {
             InitializeComponent();
-
 
             grafiki();
 
@@ -41,22 +45,41 @@ namespace SwimmingPool
 
             SubscribtionPriceToDropdown();
             SelectedCellCount = 0;
-            lblBack.Cursor = Cursors.No;
-            lblBack.Enabled = false;
+            lblBack.Enabled = true;
+            dateTimePicker3.Value = dateTimePicker1.Value.AddMonths(1);
 
             /*function for calc current monday*/
 
             ThisMonday = GetCurrentMonday(DateTime.Now.Date);
             AssignCurrentWeek(ThisMonday);
-            CellGrayColor(DateTime.Now.Date);
+            // CellGrayColor(DateTime.Now.Date, dateTimePicker3.Value);
 
             dataGridView1.Rows[0].ReadOnly = true;
             dataGridView1.Rows[0].Frozen = true;
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
-
             gridFillter(dataGridView1, ThisMonday);
+            //AssignGridData();
         }
+
+        //private void AssignGridData()
+        //{
+        //    for (int i = 1; i < 7; i++)
+        //    {
+        //        List<CurrentGrid> list = new List<CurrentGrid>();
+        //        for (int j = 1; j < 13; j++)
+        //        {
+        //            list.Add(new CurrentGrid()
+        //            {
+        //                X = i,
+        //                Y = j,
+        //                CurrentColor = dataGridView1.Rows[j].Cells[i].Style.BackColor,
+        //                SeatNumber = Convert.ToInt32(dataGridView1.Rows[j].Cells[i].Value.ToString())
+        //            });
+        //        }
+        //        //GridDataList.Add(CurrentWeekDays[i - 1], list);
+        //    }
+        //}
 
         public void GetCellColorToday()
         {
@@ -91,33 +114,27 @@ namespace SwimmingPool
                 //lblAnonimentNumber.Visible = abonenti.Visible = false;
 
             }
-
         }
-
 
         public void AssignCurrentWeek(DateTime CurrentMonday)
         {
-
-
-
-
-
-
-
             CurrentWeekDays.Clear();
             //dataGridView1.Rows.Add();
-            for (int i = 1; i < 7; i++)
+            for (int i = 1; i <= 7; i++)
             {
                 var geoCulture = new CultureInfo("ka-GE");
-
                 var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
-
-
-
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
-
                 dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
                 dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.Teal;
+
+
+                //dataGridView1.Rows[0].Cells[i].Selected = false;
+                //dataGridView1.Columns[i].HeaderCell.Selected = false;
+                if (i == 7)
+                    dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.Red;
+                else
+                    dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
             }
         }
 
@@ -144,6 +161,35 @@ namespace SwimmingPool
             }
         }
 
+        public void CellGrayColor(DateTime FstDate, DateTime SndDate)
+        {
+            int FstDateRank = Convert.ToInt32(FstDate.DayOfWeek);
+            int SndDateRank = Convert.ToInt32(SndDate.DayOfWeek);
+            int i = 0;
+            do
+            {
+                foreach (var day in CurrentWeekDays)
+                {
+                    i++;
+                    if (day.Date >= FstDate.Date && day.Date <= SndDate.Date)
+                    {
+                        continue;
+                    }
+
+                    else
+                    {
+                        for (int j = 1; j < 13; j++)
+                        {
+                            dataGridView1.Rows[j].Cells[i].Style.BackColor = Color.LightGray;
+                            dataGridView1.Rows[j].Cells[i].Style.ForeColor = Color.Gray;
+                            dataGridView1.Rows[j].Cells[i].Selected = false;
+                        }
+                    }
+                }
+
+            } while (i < 6);
+        }
+
         public void CalculateLastDate(int _selected, int _hours)
         {
             int WeekStep, DayStep;
@@ -162,7 +208,6 @@ namespace SwimmingPool
 
         public void gridFillter(DataGridView SubscriberSchedul, DateTime Start)
         {
-
             DateTime End = Start.AddDays(6 - (int)Start.DayOfWeek);
             SubscriberSchedul.DataSource = null;
             //MessageBox.Show(((int)Start.DayOfWeek).ToString());
@@ -175,18 +220,12 @@ namespace SwimmingPool
             var test = InputMethods.Filldata(Start, End);
             foreach (var item in InputMethods.DATAforInput)
             {
-                //for (int i = 0; i < InputMethods.DATAforInput.Count; i++)
-
-                SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();   //item.DatainputList[i].Datelist.ToString(); // item.DatainputList[i].Date.ToString()+" "+ 
-
-
-
+                SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();                
             }
             //PAST
 
             foreach (var item in InputMethods.DATAforInputPast)
             {
-                //   for (int i = 0; i < InputMethods.DATAforInputPast.Count; i++)
                 SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
             }
 
@@ -198,7 +237,7 @@ namespace SwimmingPool
         {
             foreach (DataGridViewRow dgRow in EmptyCell.Rows)
             {
-                for (int i = 0; i < dgRow.Cells.Count; i++)
+                for (int i = 0; i < 7; i++)
                 {
                     var cell = dgRow.Cells[i];
                     if (cell.Value == null)   //Check for null reference
@@ -206,11 +245,9 @@ namespace SwimmingPool
                         //cell.Style.BackColor = string.IsNullOrEmpty(cell.Value.ToString()) ?
                         //    Color.LightCyan :
                         //    Color.Orange;
-
                         cell.Style.ForeColor = Color.Gray;
                         cell.ReadOnly = true;
                         cell.Value = "0";
-
                     }
                 }
             }
@@ -262,18 +299,12 @@ namespace SwimmingPool
                 // dataGridView1.Columns
             }
 
-            //CultureInfo provider = new CultureInfo("fr-FR");
-            //DateTime start = DateTime.ParseExact("21/01/2019 09:00", "g", provider);     //dateTimePicker1.Value;
-            //6-(int)dateTimePicker1.Value.DayOfWeek
-            //  DateTime End = dateTimePicker1.Value.AddDays(6 - (int)dateTimePicker1.Value.DayOfWeek);
-            //   gridFillter(dataGridView1, DateTime.Now);
             dataGridView1.Rows[0].Cells[0].Value = " ";
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
 
         private string getFormattedDate(DateTime dateTime)
         {
-
             return dateTime.ToString("dd/MM/yyyy");
         }
 
@@ -437,12 +468,6 @@ namespace SwimmingPool
 
             //ServiceInstances.Service().GetSubscriberService().Add(gelag);
             Saver();
-
-
-
-
-
-
             var nino = ServiceInstances.Service().GetSubscriptionScheduleServices().GetData();
             DialogResult = DialogResult.OK;
             Close();
@@ -502,31 +527,25 @@ namespace SwimmingPool
                 ISubscriptionSchedule SingleDay = new SubscriptionSchedule { Schedule = item, Attendance = SPSQLite.Enums.AttendanceTypes.მოლოდინი };
                 Schedule_.Add(SingleDay);
             }
-
-
             return Schedule_;
-        }
+        }        
 
 
-
-        public int SelectedRowIndex;
         public bool CoordinatesIsEqual(int X, int Y)
         {
             if (SelectedCellIndex != X || SelectedRowIndex != Y)
             {
                 SelectedCellIndex = X;
                 SelectedRowIndex = Y;
+                //CalcIncreaseDicrease(X, Y);
                 return false;
             }
 
-            //else
-            //{
-            //    SelectedCellIndex = X;
-            //    SelectedRowIndex = Y;
-            //    return false;
-            //}
-
-            return true;
+            else
+            {
+                //CalcIncreaseDicrease(SelectedCellIndex, SelectedRowIndex);
+                return true;
+            } 
         }
         public void SetDefaultCellColor(int ColumnRank)
         {
@@ -539,12 +558,18 @@ namespace SwimmingPool
             }
         }
 
-        public bool FirstClick { get; set; } = false;
-        public List<int> CoordinateList { get; set; } = new List<int>();
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
-
+            if (e.ColumnIndex == 0 || e.ColumnIndex == 7 || e.RowIndex == 0)
+            {
+                dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
+                if (e.ColumnIndex == 7)
+                {
+                    dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
+                    MessageBox.Show("კვირა დასვენების დღეა!");
+                }
+                return;
+            }
 
             if (e.RowIndex != -1)
             {
@@ -553,6 +578,8 @@ namespace SwimmingPool
 
                 bool _coordinatesIsEqual = CoordinatesIsEqual(e.ColumnIndex, e.RowIndex);
                 int Hour = (e.RowIndex + 8);
+                
+                //grid.CalcIncreaseDicrease(e.ColumnIndex, e.RowIndex, CurrentWeekDays[e.ColumnIndex - 1]);
 
                 var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
                 ISubscriptionSchedule gela = new SubscriptionSchedule();
@@ -590,7 +617,7 @@ namespace SwimmingPool
                 }
 
 
-                Color BgColor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
+                BgColor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 if (BgColor.Name == "0")
                 {
                     BgColor = Color.White;
@@ -608,7 +635,7 @@ namespace SwimmingPool
 
                 else
                 {
-                    if (BgColor == Color.Green)
+                    if(BgColor == Color.Green)
                     {
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
@@ -623,14 +650,8 @@ namespace SwimmingPool
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
                     }
-                }
 
-                if (e.ColumnIndex == 0 || e.RowIndex == 0)
-                {
-                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = Color.Snow;
-                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.DodgerBlue;
-                    return;
-                }
+               }
 
                 bool sell = columni.Contains(e.ColumnIndex);
                 bool rov = rovsi.Contains(e.RowIndex);
@@ -647,7 +668,6 @@ namespace SwimmingPool
             {
                 return;
             }
-
         }
 
 
@@ -750,6 +770,7 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
+            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
         }
 
         private void lblBack_Click_2(object sender, EventArgs e)
@@ -763,64 +784,17 @@ namespace SwimmingPool
 
             if (CurrentMonday == ThisMonday)
             {
-                lblBack.Enabled = false;
-                lblBack.ForeColor = Color.Gray;
-                lblBack.Cursor = Cursors.No;
-                CellGrayColor(DateTime.Now.Date);
+                lblBack.Enabled = true;
+                //lblBack.ForeColor = Color.Gray;
+                //lblBack.Cursor = Cursors.No;
+                //CellGrayColor(DateTime.Now.Date);
                 GetCellColorToday();
             }
 
+            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+
             gridFillter(dataGridView1, CurrentMonday);
         }
-
-
-        public void CellGrayColor(DateTime FstDate, DateTime SndDate)
-        {
-            int FstDateRank = Convert.ToInt32(FstDate.DayOfWeek);
-            int SndDateRank = Convert.ToInt32(SndDate.DayOfWeek);
-            int i = 0;
-            do
-            {
-                foreach (var day in CurrentWeekDays)
-                {
-                    i++;
-                    if (day.Date >= FstDate.Date && day.Date <= SndDate.Date)
-                    {
-                        continue;
-                    }
-
-                    else
-                    {
-                        for (int j = 1; j < 13; j++)
-                        {
-                            dataGridView1.Rows[j].Cells[i].Style.BackColor = Color.LightGray;
-                            dataGridView1.Rows[j].Cells[i].Style.ForeColor = Color.Gray;
-                            dataGridView1.Rows[j].Cells[i].Selected = false;
-                        }
-                    }
-                }
-
-            } while (i < 6);
-
-
-            //if (CurrentWeekDays.Contains(FstDate) && CurrentWeekDays.Contains(SndDate))
-            //{
-            //    for (int i = 0; i < 7; i++)
-            //    {
-            //        if (CurrentWeekDays[i] >= FstDate && CurrentWeekDays[i] <= SndDate)
-            //            continue;
-            //        else
-            //        {
-            //            for (int j = 1; j < 13; j++)
-            //            {
-            //                dataGridView1.Rows[j].Cells[i].Style.BackColor = Color.LightGray;
-            //                dataGridView1.Rows[j].Cells[i].Style.ForeColor = Color.Gray;
-            //            }
-            //        }
-            //    }
-            //}
-        }
-
 
 
         private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
@@ -835,10 +809,39 @@ namespace SwimmingPool
             AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
 
             //AssignCurrentWeek(GetCurrentMonday(dateTimePicker3.Value));
-            CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
             //CellGrayColorRight(dateTimePicker3.Value);
 
             gridFillter(dataGridView1, CurrentMonday);
         }
     }
+
+    //public class CurrentGrid : AddAbonent
+    //{
+    //    public int X { get; set; }
+    //    public int Y { get; set; }
+    //    public Color CurrentColor { get; set; }
+    //    public int SeatNumber { get; set; }
+
+    //    public void CalcIncreaseDicrease(int x, int y, DateTime day)
+    //    {
+    //        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
+
+    //        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
+    //        //{
+    //        //    ++_value;
+    //        //}
+
+    //        //else
+    //        //{
+    //        //    --_value;
+    //        //}
+
+
+    //        //dataGridView1[x, y].Value = _value.ToString();
+    //        //dataGridView1.Refresh();
+    //        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
+
+    //    }
+    //}
 }
