@@ -560,6 +560,58 @@ namespace SwimmingPool
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            NickCode(e);
+            DataAndShotaCode(e);
+                
+                
+        }
+
+        public void DataAndShotaCode(DataGridViewCellEventArgs e)
+        {
+            int Hour = (e.RowIndex + 8);
+
+
+            var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
+            ISubscriptionSchedule gela = new SubscriptionSchedule();
+
+            DateTime FinalDate;// new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+
+            try
+            {
+                string _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+            }
+            catch (Exception)
+            {
+                FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
+            }
+
+            if (!FirstClick)
+            {
+                dateTimePicker1.Value = FinalDate;
+                FirstClick = !FirstClick;
+            }
+
+            if (Dates != null)
+            {
+                if (Dates.Contains(FinalDate.Date))
+                {
+                    int a = Dates.IndexOf(FinalDate);
+                    Dates.RemoveAt(a);
+                }
+
+                else
+                {
+                    Dates.Add(FinalDate);
+                }
+            }
+
+
+        }
+
+
+        public void NickCode(DataGridViewCellEventArgs e)
+        {
             if (e.ColumnIndex == 0 || e.ColumnIndex == 7 || e.RowIndex == 0)
             {
                 dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
@@ -571,6 +623,7 @@ namespace SwimmingPool
                 return;
             }
 
+
             if (e.RowIndex != -1)
             {
                 CoordinateList.Add(e.ColumnIndex);
@@ -578,44 +631,10 @@ namespace SwimmingPool
 
                 bool _coordinatesIsEqual = CoordinatesIsEqual(e.ColumnIndex, e.RowIndex);
                 int Hour = (e.RowIndex + 8);
-                
+
                 //grid.CalcIncreaseDicrease(e.ColumnIndex, e.RowIndex, CurrentWeekDays[e.ColumnIndex - 1]);
 
                 var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
-                ISubscriptionSchedule gela = new SubscriptionSchedule();
-
-                DateTime FinalDate;// new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
-
-                try
-                {
-                    string _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-                }
-                catch (Exception)
-                {
-                    FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
-                }
-
-                if (!FirstClick)
-                {
-                    dateTimePicker1.Value = FinalDate;
-                    FirstClick = !FirstClick;
-                }
-
-                if (Dates != null)
-                {
-                    if (Dates.Contains(FinalDate.Date))
-                    {
-                        int a = Dates.IndexOf(FinalDate);
-                        Dates.RemoveAt(a);
-                    }
-
-                    else
-                    {
-                        Dates.Add(FinalDate);
-                    }
-                }
-
 
                 BgColor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
                 if (BgColor.Name == "0")
@@ -635,7 +654,7 @@ namespace SwimmingPool
 
                 else
                 {
-                    if(BgColor == Color.Green)
+                    if (BgColor == Color.Green)
                     {
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
@@ -651,7 +670,7 @@ namespace SwimmingPool
                         dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
                     }
 
-               }
+                }
 
                 bool sell = columni.Contains(e.ColumnIndex);
                 bool rov = rovsi.Contains(e.RowIndex);
@@ -668,7 +687,15 @@ namespace SwimmingPool
             {
                 return;
             }
+
+
+
+
+
+
         }
+
+
 
 
         #region რანდომი სატესტოდ
