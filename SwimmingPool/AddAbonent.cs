@@ -19,6 +19,8 @@ namespace SwimmingPool
         public List<int> rovsi = new List<int>();
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
 
+        
+            
         public List<int> AbonentHours { get; set; }
         public List<DateTime> CurrentWeekDays { get; set; } = new List<DateTime>();
         public List<DateTime> SelectedDays { get; set; } = new List<DateTime>();
@@ -38,6 +40,9 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
+
+            
+
 
             grafiki();
 
@@ -397,6 +402,7 @@ namespace SwimmingPool
 
         public void Saver()
         {
+            Datefiller();
             ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
@@ -560,51 +566,59 @@ namespace SwimmingPool
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            NickCode(e);
-            DataAndShotaCode(e);
-                
-                
+            //  NickCode(e);
+
+            
+            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
         }
 
-        public void DataAndShotaCode(DataGridViewCellEventArgs e)
+        public void Datefiller()
         {
-            int Hour = (e.RowIndex + 8);
+           // int Hour = (e.RowIndex + 8);
+           // var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
+           //// ISubscriptionSchedule gela = new SubscriptionSchedule();
 
+           // DateTime FinalDate;// new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
 
-            var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
-            ISubscriptionSchedule gela = new SubscriptionSchedule();
+           //     string _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+           //     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
 
-            DateTime FinalDate;// new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
-
-            try
+            foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
             {
-                string _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-            }
-            catch (Exception)
-            {
-                FinalDate = new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
-            }
-
-            if (!FirstClick)
-            {
-                dateTimePicker1.Value = FinalDate;
-                FirstClick = !FirstClick;
-            }
-
-            if (Dates != null)
-            {
-                if (Dates.Contains(FinalDate.Date))
-                {
-                    int a = Dates.IndexOf(FinalDate);
-                    Dates.RemoveAt(a);
-                }
-
+                int Hour = (cell.RowIndex + 8);
+                var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+                DateTime FinalDate=new DateTime();
+                string _FinalDate = "";
+                if (Hour<10)
+                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
                 else
-                {
-                    Dates.Add(FinalDate);
-                }
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex +" "+ _FinalDate+ " SIGRDZE "+ dataGridView1.SelectedCells.Count);
+
+                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                Dates.Add(FinalDate);
             }
+
+
+            //if (!FirstClick)
+            //{
+            //    dateTimePicker1.Value = FinalDate;
+            //    FirstClick = !FirstClick;
+            //}
+
+            //if (Dates != null)
+            //{
+            //    if (Dates.Contains(FinalDate.Date))
+            //    {
+            //        int a = Dates.IndexOf(FinalDate);
+            //        Dates.RemoveAt(a);
+            //    }
+
+            //    else
+            //    {
+            //        Dates.Add(FinalDate);
+            //    }
+            //}
 
 
         }
@@ -788,6 +802,7 @@ namespace SwimmingPool
 
         private void lblNext_Click_2(object sender, EventArgs e)
         {
+            Datefiller();
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(7);
@@ -797,6 +812,8 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
+
+            
             //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
         }
 
@@ -840,6 +857,11 @@ namespace SwimmingPool
             //CellGrayColorRight(dateTimePicker3.Value);
 
             gridFillter(dataGridView1, CurrentMonday);
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 
