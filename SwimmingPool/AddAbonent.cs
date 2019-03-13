@@ -374,7 +374,7 @@ namespace SwimmingPool
 
         public ISubscription GenerateSubscribtionID(ISubscription subscribtion)
         {
-            //Subscription : ISubscription
+          //  Subscription : ISubscription
 
 
             //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
@@ -395,7 +395,7 @@ namespace SwimmingPool
             {
                 HourList.Add(item.Hours);
             }
-            //cmbxHour.DataSource = HourList;
+            cmbxHour.DataSource = HourList;
         }
 
 
@@ -407,7 +407,7 @@ namespace SwimmingPool
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
             subscriber = subscriberSaver();
-            //SubPrice = SubPriceReturner();
+            SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
@@ -454,14 +454,14 @@ namespace SwimmingPool
 
         }
 
-        //SubcsriptionPrice : ISubscriptionPrice
-        //public ISubscriptionPrice SubPriceReturner()
-        //{
-        //    //int Hour = (int)cmbxHour.SelectedValue;
-        //    //SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
+      //  SubcsriptionPrice : ISubscriptionPrice
+        public ISubscriptionPrice SubPriceReturner()
+        {
+            int Hour = (int)cmbxHour.SelectedValue;
+            SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
 
-        //    return NewSubPR;
-        //}
+            return NewSubPR;
+        }
 
 
         private void shenaxva_Click_1(object sender, EventArgs e)
