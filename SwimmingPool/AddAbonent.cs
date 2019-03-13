@@ -19,8 +19,9 @@ namespace SwimmingPool
         public List<int> rovsi = new List<int>();
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
 
-        
-            
+        //შოთა - გამოიყენება დეითების შესავსებად
+        public Dictionary<int, List<DateTime>> DateDic = new Dictionary<int, List<DateTime>>();
+        int Pagenumber = 0;
         public List<int> AbonentHours { get; set; }
         public List<DateTime> CurrentWeekDays { get; set; } = new List<DateTime>();
         public List<DateTime> SelectedDays { get; set; } = new List<DateTime>();
@@ -572,31 +573,40 @@ namespace SwimmingPool
             dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
         }
 
+        //AQ GAVCHERDI
+        public void DatestoSelectedCells()
+        {
+            //foreach (var item in collection)
+            //{
+
+            //}
+
+        }
+
+
         public void Datefiller()
         {
-           // int Hour = (e.RowIndex + 8);
-           // var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
-           //// ISubscriptionSchedule gela = new SubscriptionSchedule();
-
-           // DateTime FinalDate;// new DateTime(Date.Year, Date.Month, Date.Day, Hour, Date.Minute, Date.Second);
-
-           //     string _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-           //     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-
+                    
             foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
             {
-                int Hour = (cell.RowIndex + 8);
-                var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
-                DateTime FinalDate=new DateTime();
-                string _FinalDate = "";
-                if (Hour<10)
-                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-                else
-                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-                MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex +" "+ _FinalDate+ " SIGRDZE "+ dataGridView1.SelectedCells.Count);
+                
+                if (cell.ColumnIndex == 0)
+                    break;
+                else { 
 
-                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-                Dates.Add(FinalDate);
+                    int Hour = (cell.RowIndex + 8);
+                    var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+                    DateTime FinalDate = new DateTime();
+                    string _FinalDate = "";
+                    if (Hour < 10)
+                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                    else
+                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                    Dates.Add(FinalDate);
+                }
             }
 
 
