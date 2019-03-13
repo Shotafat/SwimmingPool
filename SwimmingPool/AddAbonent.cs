@@ -51,7 +51,7 @@ namespace SwimmingPool
             SubscribtionPriceToDropdown();
             SelectedCellCount = 0;
             lblBack.Enabled = true;
-            dateTimePicker3.Value = dateTimePicker1.Value.AddMonths(1);
+            //dateTimePicker3.Value = dateTimePicker1.Value.AddMonths(1);
 
             /*function for calc current monday*/
 
@@ -365,10 +365,10 @@ namespace SwimmingPool
             }
         }
 
-        private void cmbxHour_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SelectedHour = AbonentHours[cmbxHour.SelectedIndex];
-        }
+        //private void cmbxHour_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    SelectedHour = AbonentHours[cmbxHour.SelectedIndex];
+        //}
 
 
 
@@ -395,7 +395,7 @@ namespace SwimmingPool
             {
                 HourList.Add(item.Hours);
             }
-            cmbxHour.DataSource = HourList;
+            //cmbxHour.DataSource = HourList;
         }
 
 
@@ -407,7 +407,7 @@ namespace SwimmingPool
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
             subscriber = subscriberSaver();
-            SubPrice = SubPriceReturner();
+            //SubPrice = SubPriceReturner();
             subscription = GenerateSubscribtionID(subscription);
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
@@ -455,13 +455,13 @@ namespace SwimmingPool
         }
 
         //SubcsriptionPrice : ISubscriptionPrice
-        public ISubscriptionPrice SubPriceReturner()
-        {
-            int Hour = (int)cmbxHour.SelectedValue;
-            SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
+        //public ISubscriptionPrice SubPriceReturner()
+        //{
+        //    //int Hour = (int)cmbxHour.SelectedValue;
+        //    //SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
 
-            return NewSubPR;
-        }
+        //    return NewSubPR;
+        //}
 
 
         private void shenaxva_Click_1(object sender, EventArgs e)
@@ -479,36 +479,36 @@ namespace SwimmingPool
             Close();
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-            if (dateTimePicker1.Value < DateTime.Today)
-            {
-                dateTimePicker1.Value = DateTime.Today;
-                return;
-            }
+        //private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (dateTimePicker1.Value < DateTime.Today)
+        //    {
+        //        dateTimePicker1.Value = DateTime.Today;
+        //        return;
+        //    }
 
-            if (dateTimePicker1.Value >= dateTimePicker3.Value)
-            {
-                return;
-            }
+        //    if (dateTimePicker1.Value >= dateTimePicker3.Value)
+        //    {
+        //        return;
+        //    }
 
-            dataGridView1.Rows.Clear();
-            grafiki();
-            AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
-            //CellGrayColor(dateTimePicker1.Value,dateTimePicker3.Value);
+        //    dataGridView1.Rows.Clear();
+        //    grafiki();
+        //    AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
+        //    //CellGrayColor(dateTimePicker1.Value,dateTimePicker3.Value);
 
-            //DateTime _today = DateTime.ParseExact(DateTime.Now.ToString(), CultureInfo.InvariantCulture);
+        //    //DateTime _today = DateTime.ParseExact(DateTime.Now.ToString(), CultureInfo.InvariantCulture);
 
-            foreach (var day in CurrentWeekDays)
-            {
-                if (day.Date == DateTime.Today.Date)
-                {
-                    GetCellColorToday();
-                }
-            }
+        //    foreach (var day in CurrentWeekDays)
+        //    {
+        //        if (day.Date == DateTime.Today.Date)
+        //        {
+        //            GetCellColorToday();
+        //        }
+        //    }
 
-            gridFillter(dataGridView1, CurrentMonday);
-        }
+        //    gridFillter(dataGridView1, CurrentMonday);
+        //}
 
         private void lblNext_Click_1(object sender, EventArgs e)
         {
@@ -841,23 +841,23 @@ namespace SwimmingPool
         }
 
 
-        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-        {
-            if (dateTimePicker3.Value <= dateTimePicker1.Value)
-            {
-                return;
-            }
+        //private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (dateTimePicker3.Value <= dateTimePicker1.Value)
+        //    {
+        //        return;
+        //    }
 
-            dataGridView1.Rows.Clear();
-            grafiki();
-            AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
+        //    dataGridView1.Rows.Clear();
+        //    grafiki();
+        //    AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
 
-            //AssignCurrentWeek(GetCurrentMonday(dateTimePicker3.Value));
-            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
-            //CellGrayColorRight(dateTimePicker3.Value);
+        //    //AssignCurrentWeek(GetCurrentMonday(dateTimePicker3.Value));
+        //    //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+        //    //CellGrayColorRight(dateTimePicker3.Value);
 
-            gridFillter(dataGridView1, CurrentMonday);
-        }
+        //    gridFillter(dataGridView1, CurrentMonday);
+        //}
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
