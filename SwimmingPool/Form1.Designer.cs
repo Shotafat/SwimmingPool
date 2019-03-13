@@ -54,6 +54,7 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.iSubscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ლიმიტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -270,7 +271,8 @@
             this.აბონენტიToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.დამატებაToolStripMenuItem,
             this.რედაქტირებაToolStripMenuItem,
-            this.წაშლაToolStripMenuItem});
+            this.წაშლაToolStripMenuItem,
+            this.ლიმიტიToolStripMenuItem});
             this.აბონენტიToolStripMenuItem.Name = "აბონენტიToolStripMenuItem";
             this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.აბონენტიToolStripMenuItem.Text = "აბონენტი";
@@ -322,6 +324,13 @@
             this.toolStripTextBox1.Text = "                   ძებნა";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
+            // 
+            // ლიმიტიToolStripMenuItem
+            // 
+            this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
+            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
+            this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -386,6 +395,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
+        private System.Windows.Forms.ToolStripMenuItem ლიმიტიToolStripMenuItem;
     }
 }
 

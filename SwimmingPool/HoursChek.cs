@@ -48,6 +48,8 @@ namespace SwimmingPool
 
         private void გაცდენაToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            var miss = (int)AttendanceTypes.გააცდინა;
+
             BackColor = Color.Red;
             
 

@@ -117,6 +117,12 @@
     <Compile Include="HoursChek.Designer.cs">
       <DependentUpon>HoursChek.cs</DependentUpon>
     </Compile>
+    <Compile Include="Limit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Limit.Designer.cs">
+      <DependentUpon>Limit.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AddAbonent.resx">
@@ -142,6 +148,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="HoursChek.resx">
       <DependentUpon>HoursChek.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Limit.resx">
+      <DependentUpon>Limit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

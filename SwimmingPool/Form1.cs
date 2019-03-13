@@ -338,6 +338,14 @@ namespace SwimmingPool
             toolStripTextBox1.Text = string.Empty;
             
         }
+
+        private void ლიმიტიToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Limit form = new Limit();
+
+            form.Show();
+               
+        }
     }
 }
 

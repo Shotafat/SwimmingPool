@@ -11,7 +11,6 @@ namespace SPSQLite.CLASSES.Services
     public class CapicityServices : ICapicityServices
     {
       
-
         public void Edit(ICapicity a)
         {
             DatabaseConnection.EditCapicity(a);
@@ -22,6 +21,11 @@ namespace SPSQLite.CLASSES.Services
             IList < ICapicity > list = DatabaseConnection.GetCapicity().Select(a =>new Capicity {CapicityValue = a.MaximumCapacity }).ToList<ICapicity>();
 
             return list;
+        }
+
+        public void Add(ICapicity a)
+        {
+            DatabaseConnection.MaximumCapicity(a);
         }
     }
 }

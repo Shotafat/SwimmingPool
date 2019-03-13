@@ -32,7 +32,7 @@ namespace SPSQLite
         public static void CreateTables()
         {
             Conn.CreateTables<HealthNotice, Subscriber, Subscription, SubscribtionPrice>();
-            Conn.CreateTables<Capacity, SubscriptionScheduleDB>();
+            Conn.CreateTables<CapacityDB, SubscriptionScheduleDB>();
         }
 
         //Abonent 
@@ -282,6 +282,7 @@ namespace SPSQLite
             return sub;
         }
 
+        
         // Delete Subscription 
 
         public static void DeleteSubscription(ISubscription sub )
@@ -321,7 +322,7 @@ namespace SPSQLite
     // Edit capicity
     public static void EditCapicity(ICapicity capicity)
         {
-            var cap =  Conn.Table<Capacity>().Where(a => a.MaximumCapacity == capicity.CapicityValue).FirstOrDefault();
+            var cap =  Conn.Table<CapacityDB>().Where(a => a.MaximumCapacity == capicity.CapicityValue).FirstOrDefault();
             if (cap != null)
             {
                 cap.MaximumCapacity = capicity.CapicityValue;
@@ -332,13 +333,20 @@ namespace SPSQLite
         }
 
         // Get capicity
-        public static List<Capacity> GetCapicity()
+        public static List<CapacityDB> GetCapicity()
         {
-            return Conn.Table<Capacity>().ToList();
+            return Conn.Table<CapacityDB>().ToList();
         }
 
+        // insert capicity
 
-       
+        public static void MaximumCapicity(ICapicity capicity)
+        {
+            Conn.Insert(new CapacityDB { MaximumCapacity= capicity.CapicityValue });
+
+
+        }
+
     }
     
     //აბონიმენტი
@@ -363,7 +371,7 @@ namespace SPSQLite
         public SubscribtionPrice SubscriberPrice_ { get; set; }
         
     }
-
+  
 
 
     //აბონენტი
@@ -411,11 +419,13 @@ namespace SPSQLite
 
 
 
+
     //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
-    public class Capacity
+    public class CapacityDB
     {
-        [PrimaryKey, AutoIncrement]
-        public int MaximumCapacity { get; set; } = 28;
+       [PrimaryKey, AutoIncrement]
+        public int id { get; set; }
+        public int MaximumCapacity { get; set; }
 
     }
 

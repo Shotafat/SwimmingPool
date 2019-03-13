@@ -567,6 +567,12 @@ namespace SwimmingPool
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             //  NickCode(e);
+           // MessageBox.Show("Click");
+
+            Capicity capicity = new Capicity();
+            int a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)+1;
+            if (a > 2)
+                MessageBox.Show("მეტს ვერ დაამატებ ქალო");
 
             
             dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
@@ -710,7 +716,7 @@ namespace SwimmingPool
         }
 
 
-
+       
 
         #region რანდომი სატესტოდ
         private void button1_Click(object sender, EventArgs e)
@@ -860,6 +866,11 @@ namespace SwimmingPool
         //}
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void lblBack_Click(object sender, EventArgs e)
         {
 
         }

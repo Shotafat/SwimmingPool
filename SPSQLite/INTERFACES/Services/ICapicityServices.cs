@@ -8,6 +8,7 @@ namespace SPSQLite.INTERFACES.Services
 {
   public  interface ICapicityServices
     {
+        void Add(ICapicity a);
         void Edit(ICapicity a);
         IList<ICapicity> GetData();
 
