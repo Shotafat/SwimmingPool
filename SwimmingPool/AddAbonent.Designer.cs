@@ -295,6 +295,7 @@
             this.lblNext.Size = new System.Drawing.Size(73, 29);
             this.lblNext.TabIndex = 48;
             this.lblNext.Text = "          ";
+            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_2);
             // 
             // lblBack
             // 
@@ -308,7 +309,9 @@
             this.lblBack.Size = new System.Drawing.Size(73, 29);
             this.lblBack.TabIndex = 49;
             this.lblBack.Text = "          ";
+
             this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
+
             // 
             // ara
             // 
