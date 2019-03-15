@@ -1,4 +1,5 @@
 ﻿using SPSQLite;
+using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
 using SQLiteNetExtensions.Extensions;
 using System;
@@ -98,6 +99,7 @@ namespace SwimmingPool
 
         }
 
+        public static string selectedAbonentNumber { get; set; }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -106,7 +108,11 @@ namespace SwimmingPool
 
             flowLayoutPanel1.Controls.Clear();
             Refresh();
-            var selectedrowindex = dataGridView1.SelectedCells[0].Value;
+             selectedAbonentNumber= dataGridView1.SelectedCells[0].Value.ToString();
+
+
+         
+            //var authentification = subscription.Where(x=>x.SubscribtionSchedule_.Contains(subscriptionByID.))
 
             // lkajsd
 
@@ -118,8 +124,8 @@ namespace SwimmingPool
 
 
             var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
-            var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
-            var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedrowindex.ToString() select new { Ganrigi = G.Schedule }).ToList();
+            var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
+            var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = G.Schedule }).ToList();
 
 
             //HoursChek Hours = new HoursChek();

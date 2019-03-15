@@ -48,18 +48,19 @@
             this.სხვაToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+          
             // 
             // გაცდენაToolStripMenuItem
             // 
             this.გაცდენაToolStripMenuItem.Name = "გაცდენაToolStripMenuItem";
-            this.გაცდენაToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.გაცდენაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.გაცდენაToolStripMenuItem.Text = "გაცდენა";
             this.გაცდენაToolStripMenuItem.Click += new System.EventHandler(this.გაცდენაToolStripMenuItem_Click);
             // 
             // დასწრებაToolStripMenuItem
             // 
             this.დასწრებაToolStripMenuItem.Name = "დასწრებაToolStripMenuItem";
-            this.დასწრებაToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.დასწრებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.დასწრებაToolStripMenuItem.Text = "დასწრება";
             // 
             // სხვაToolStripMenuItem
@@ -73,7 +74,7 @@
             // დასვენებაToolStripMenuItem
             // 
             this.დასვენებაToolStripMenuItem.Name = "დასვენებაToolStripMenuItem";
-            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
             this.დასვენებაToolStripMenuItem.Text = "დასვენება";
             this.დასვენებაToolStripMenuItem.Click += new System.EventHandler(this.დასვენებაToolStripMenuItem_Click);
             // 
