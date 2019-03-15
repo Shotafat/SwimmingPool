@@ -1,6 +1,5 @@
 ﻿using SPSQLite;
 using SPSQLite.CLASSES.Services;
-using SPSQLite.Enums;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Drawing;
@@ -62,24 +61,33 @@ namespace SwimmingPool
 
             var Schedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>();
 
-            
-            var subscriptionByID = DatabaseConnection.Conn.Table<Subscription>().Where(x=>x.IDnumber==Form1.selectedAbonentNumber).FirstOrDefault().Id;
+
+            var subscriptionByID = DatabaseConnection.Conn.Table<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault().Id;
 
             // es shesadareblad 
             // სამ 15:00 სთ    4   6 
-            var array = GetAttendanceLabel.ToArray();
 
-            var gela = GetAttendanceLabel.Substring(4, 2);
-            var DateNumber = GetHoursLabel.Substring(0, 2);
+
+            var gela = Convert.ToInt32(GetAttendanceLabel.Substring(4, 2));
+            var DateNumber = Convert.ToInt32(GetHoursLabel.Substring(0, 2));
             var ScheduleByAbonent = Schedule.Where(x => x.SubscriptionID == subscriptionByID).FirstOrDefault().Schedule;
             var realHour = Convert.ToInt32(ScheduleByAbonent.Hour);
-           
-            if (realHour.ToString().Equals(gela.ToString()) && ScheduleByAbonent.Day.ToString().Equals(DateNumber))
-            {
-                var gia = ServiceInstances.Service().GetSubscriptionScheduleServices().GetData().FirstOrDefault(x => x.SubscribtionID == subscriptionByID);
+            var DayNumber = Convert.ToInt32(ScheduleByAbonent.Day);
 
-                gia.Attendance = AttendanceTypes.გააცდინა;
-                ServiceInstances.Service().GetSubscriptionScheduleServices().UpdateSchedule(gia);
+
+
+
+
+
+
+            if (realHour == gela && DayNumber == DateNumber)
+            {
+                var gia = DatabaseConnection.Conn.Table<SubscriptionScheduleDB>().FirstOrDefault(x => x.SubscriptionID == subscriptionByID);
+
+                gia.Attandance = 2; //gaacdina
+                //ServiceInstances.Service().GetSubscriptionScheduleServices().UpdateSchedule(gia);
+                DatabaseConnection.Conn.Update(gia);
+                var nami = gia;
 
             }
             else
@@ -102,8 +110,10 @@ namespace SwimmingPool
 
         private void HoursChek_DoubleClick(object sender, EventArgs e)
         {
-            if(BackColor!=Color.Gray)
-            BackColor = Color.DarkSlateGray;
+            if (BackColor != Color.Gray)
+            {
+                BackColor = Color.DarkSlateGray;
+            }
         }
 
         private void დასვენებაToolStripMenuItem_Click(object sender, EventArgs e)
@@ -111,6 +121,6 @@ namespace SwimmingPool
             BackColor = Color.Teal;
         }
 
-        
+
     }
 }

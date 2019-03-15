@@ -1,7 +1,6 @@
-﻿using System;
+﻿using SPSQLite.UIMethods;
 using System.Collections.Generic;
 using System.Linq;
-using SPSQLite.UIMethods;
 
 namespace SPSQLite.CLASSES
 {
@@ -36,29 +35,29 @@ namespace SPSQLite.CLASSES
 
 
 
-        
 
-     
+
+
 
         public List<DataInput> Distribute()
         {
             List<ISubscriptionSchedule> ISchedule = GetData().ToList();
             var Counter = (from x in ISchedule
                            group x by x.Schedule into g
-                          
+
                            select new DataInput { Date = g.Key, Datelist = g.Count(c => c.Schedule == g.Key) }).ToList();
 
-            Counter= Counter.OrderByDescending(o => o.Date).ToList();
+            Counter = Counter.OrderByDescending(o => o.Date).ToList();
 
             return Counter;
 
         }
 
-      
+
 
         public void UpdateSchedule(ISubscriptionSchedule schedule)
         {
-            throw new NotImplementedException();
+            DatabaseConnection.EditSubscriptionSchedule(schedule);
         }
     }
 }

@@ -1,5 +1,4 @@
 ﻿using SPSQLite;
-using SPSQLite.CLASSES.Services;
 using SPSQLite.Enums;
 using SQLiteNetExtensions.Extensions;
 using System;
@@ -108,10 +107,10 @@ namespace SwimmingPool
 
             flowLayoutPanel1.Controls.Clear();
             Refresh();
-             selectedAbonentNumber= dataGridView1.SelectedCells[0].Value.ToString();
+            selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
 
 
-         
+
             //var authentification = subscription.Where(x=>x.SubscribtionSchedule_.Contains(subscriptionByID.))
 
             // lkajsd
@@ -124,7 +123,7 @@ namespace SwimmingPool
 
 
             var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
-            var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance.ToString() }).ToList();
+            var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance }).ToList();
             var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = G.Schedule }).ToList();
 
 
@@ -151,10 +150,9 @@ namespace SwimmingPool
                 WeekDay = dateTimeInfo.GetAbbreviatedDayName(weekDay);
                 DayNumber = item.Ganrigi.Day;
 
-                int aa = Convert.ToInt32(item.Daswreba);
-                AttendanceTypes Attend = new AttendanceTypes();
-                Attend = (AttendanceTypes)aa;
-
+                //int aa = Convert.ToInt32(item.Daswreba);
+                //AttendanceTypes Attend = new AttendanceTypes();
+                var Attend = (AttendanceTypes)item.Daswreba;
 
                 //DateTime gela = DateTime.Parse(item.Ganrigi, new CultureInfo("ka-Ge"));
 
@@ -311,11 +309,11 @@ namespace SwimmingPool
 
             int RowIndex = 0;
             foreach (DataGridViewRow row in dataGridView1.Rows)
-              {
+            {
 
                 for (int i = 0; i <= 6; i++)
 
-                 {
+                {
                     // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
 
                     if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Contains(textboxText) ||
@@ -328,7 +326,7 @@ namespace SwimmingPool
 
 
                         break;
-                   }
+                    }
                 }
 
             }
@@ -342,7 +340,7 @@ namespace SwimmingPool
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Text = string.Empty;
-            
+
         }
 
         private void ლიმიტიToolStripMenuItem_Click(object sender, EventArgs e)
@@ -350,7 +348,7 @@ namespace SwimmingPool
             Limit form = new Limit();
 
             form.Show();
-               
+
         }
     }
 }
