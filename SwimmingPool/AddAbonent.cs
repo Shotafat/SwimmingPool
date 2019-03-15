@@ -668,20 +668,20 @@ namespace SwimmingPool
         //UKAN
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate, double Back)
         {
-            MessageBox.Show(Pagenumber.ToString());
+          //  MessageBox.Show(Pagenumber.ToString());
             int Backindex = Pagenumber-1;
-            MessageBox.Show("UKAN DABRUNEBULI INDEXI"+Backindex.ToString());
+            //MessageBox.Show("UKAN DABRUNEBULI INDEXI"+Backindex.ToString());
          //   int columnindex;
            // int rowindex;
           //  Dictionary<int, int> ColRow = new Dictionary<int, int>();
             List<DateTime> DictionaryValues = DictDate[Backindex];
             foreach (var item in DictionaryValues)
             {
-               int rowindex = item.Hour - 8;
+               int rowindex = item.Hour-8;
                int  columnindex = CurrentWeekDays.FindIndex(x => x == item)+1;
-
+                MessageBox.Show(rowindex + "COLUMN " + columnindex);
                 dataGridView1.Rows[rowindex].Cells[columnindex].Selected=true;
-
+                dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
                 // ColRow.Add(rowindex, columnindex);
             }
 
