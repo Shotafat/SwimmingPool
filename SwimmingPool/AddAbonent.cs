@@ -573,7 +573,7 @@ namespace SwimmingPool
 
             Capicity capicity = new Capicity();
             int a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)+1;
-            if (a > 2)
+            if (a > ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue)
                 MessageBox.Show("მეტს ვერ დაამატებ ქალო");
 
             
