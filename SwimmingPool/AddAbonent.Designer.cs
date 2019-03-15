@@ -309,9 +309,7 @@
             this.lblBack.Size = new System.Drawing.Size(73, 29);
             this.lblBack.TabIndex = 49;
             this.lblBack.Text = "          ";
-
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click);
-
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_2);
             // 
             // ara
             // 
