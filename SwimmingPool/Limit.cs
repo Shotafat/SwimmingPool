@@ -17,11 +17,23 @@ namespace SwimmingPool
         public Limit()
         {
             InitializeComponent();
+            textbo();
         }
 
-        protected override void OnLoad(EventArgs e)
+       
+        public void textbo()
         {
-            textBox1.Text = ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue.ToString();
+           try
+            {
+                textBox1.Text = ServiceInstances.Service().GetCapicityServices().GetData().LastOrDefault().CapicityValue.ToString();
+            }
+              
+            catch
+            {
+                MessageBox.Show("alskjdalksd");
+            }
+           
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

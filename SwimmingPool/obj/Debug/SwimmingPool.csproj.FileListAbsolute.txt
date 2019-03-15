@@ -1031,3 +1031,4 @@ C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.pdb
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Limit.resources
+C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Limit.resources
