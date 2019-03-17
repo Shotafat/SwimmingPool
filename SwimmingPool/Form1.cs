@@ -136,7 +136,7 @@ namespace SwimmingPool
             FullDatetime = onlyDates;
 
             //HoursChek Hours = new HoursChek();
-            foreach (var item in SelectedSubscribtion)
+            foreach (var item in SelectedSubscribtion.OrderBy(x => x.Ganrigi.Date))
             {
 
 

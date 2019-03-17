@@ -112,7 +112,8 @@ namespace SwimmingPool
 
 
             var r = (from g in subscriptions
-                     where g.SubscribtionSchedule_.First().Schedule.Date.ToString("yyyy-MM-dd") == DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd")
+                     where g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd") == DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")
+
                      select new
                      {
                          აბონიმენტი = g.IDnumber,
