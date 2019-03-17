@@ -49,12 +49,12 @@
             this.დამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.წაშლაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ლიმიტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.საათებიდაფასებიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ვადაგასულიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.iSubscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.ლიმიტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -280,23 +280,30 @@
             // დამატებაToolStripMenuItem
             // 
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
             this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
             // 
             // რედაქტირებაToolStripMenuItem
             // 
             this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
             this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
             // 
             // წაშლაToolStripMenuItem
             // 
             this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
-            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.წაშლაToolStripMenuItem.Text = "წაშლა";
             this.წაშლაToolStripMenuItem.Click += new System.EventHandler(this.წაშლაToolStripMenuItem_Click);
+            // 
+            // ლიმიტიToolStripMenuItem
+            // 
+            this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
+            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
+            this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // საათებიდაფასებიToolStripMenuItem
             // 
@@ -324,13 +331,6 @@
             this.toolStripTextBox1.Text = "                   ძებნა";
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
-            // 
-            // ლიმიტიToolStripMenuItem
-            // 
-            this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
-            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
-            this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // Form1
             // 

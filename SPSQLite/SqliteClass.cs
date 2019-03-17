@@ -464,6 +464,7 @@ namespace SPSQLite
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscription Subscription { get; set; }
         public int Attandance { get; set; }
+       
 
     }
   

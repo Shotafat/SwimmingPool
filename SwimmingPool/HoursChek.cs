@@ -49,7 +49,7 @@ namespace SwimmingPool
 
         }
 
-        
+
 
 
         public SubscriptionScheduleDB Attendance(int attendanceNumber)
@@ -102,10 +102,11 @@ namespace SwimmingPool
 
             Attendance(2);
 
+            GetAttendanceGela = "გააცდინა";
+            BackColor = Color.Red;
 
 
 
-        
 
 
             //}
@@ -125,19 +126,19 @@ namespace SwimmingPool
         private void HoursChek_DoubleClick(object sender, EventArgs e)
         {
             Attendance(0);
+            GetAttendanceGela = "მოლოდინი";
+            BackColor = Color.Gray;
 
 
-            if (BackColor != Color.Gray)
-            {
-                BackColor = Color.DarkSlateGray;
-            }
-        
+
+
         }
 
         private void დასვენებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-
+            GetAttendanceGela = "დასვენება";
+            BackColor = Color.Teal;
 
             Attendance(3);
 
@@ -147,16 +148,18 @@ namespace SwimmingPool
 
 
 
-            if (Attendance(3).Attandance == 3)
-            {
-                BackColor = Color.Teal;
-            }
+
+
+
         }
 
 
 
         private void დასწრებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            GetAttendanceGela = "დაესწრო";
+            BackColor = Color.DarkSlateGray;
+
 
             Attendance(1);
         }
