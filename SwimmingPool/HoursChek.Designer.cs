@@ -48,7 +48,7 @@
             this.სხვაToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
-          
+
             // 
             // გაცდენაToolStripMenuItem
             // 
@@ -62,6 +62,7 @@
             this.დასწრებაToolStripMenuItem.Name = "დასწრებაToolStripMenuItem";
             this.დასწრებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.დასწრებაToolStripMenuItem.Text = "დასწრება";
+            this.დასწრებაToolStripMenuItem.Click += new System.EventHandler(this.დასწრებაToolStripMenuItem_Click);
             // 
             // სხვაToolStripMenuItem
             // 

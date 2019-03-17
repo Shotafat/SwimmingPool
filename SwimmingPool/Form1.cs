@@ -99,6 +99,8 @@ namespace SwimmingPool
         }
 
         public static string selectedAbonentNumber { get; set; }
+        public static List<DateTime> FullDatetime { get; set; }
+       
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
 
@@ -126,6 +128,12 @@ namespace SwimmingPool
             var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance }).ToList();
             var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = G.Schedule }).ToList();
 
+            
+
+            var onlyDates =( from x in DBDB
+                            where x.Subscription.IDnumber == selectedAbonentNumber.ToString()
+                            select  x.Schedule ).ToList();
+            FullDatetime = onlyDates;
 
             //HoursChek Hours = new HoursChek();
             foreach (var item in SelectedSubscribtion)
@@ -137,7 +145,10 @@ namespace SwimmingPool
 
                 var gela = item.Ganrigi.Month;
 
+
                 var geoCulture = new CultureInfo("ka-GE");
+
+               
 
                 var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
 
@@ -147,6 +158,7 @@ namespace SwimmingPool
 
 
                 monthName = dateTimeInfo.GetAbbreviatedMonthName(gela);
+     
                 WeekDay = dateTimeInfo.GetAbbreviatedDayName(weekDay);
                 DayNumber = item.Ganrigi.Day;
 
@@ -175,6 +187,8 @@ namespace SwimmingPool
                 Hours.GetHoursLabel = DayNumber + " " + monthName;
                 Hours.GetAttendanceLabel = WeekDay + " " + item.Ganrigi.Hour + ":00 სთ";
                 Hours.GetAttendanceGela = Attend.ToString();
+                
+                
                 flowLayoutPanel1.Controls.Add(Hours);
 
 
