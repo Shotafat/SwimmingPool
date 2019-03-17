@@ -32,7 +32,7 @@ namespace SwimmingPool
         public DateTime CurrentMonday { get; set; }
         public int SelectedRowIndex;
         public Color BgColor;
-       // public Dictionary<DateTime, List<CurrentGrid>> GridDataList { get; set; } = new Dictionary<DateTime, List<CurrentGrid>>();
+        // public Dictionary<DateTime, List<CurrentGrid>> GridDataList { get; set; } = new Dictionary<DateTime, List<CurrentGrid>>();
 
         public bool FirstClick { get; set; } = false;
 
@@ -42,7 +42,7 @@ namespace SwimmingPool
         {
             InitializeComponent();
 
-            
+
 
 
             grafiki();
@@ -138,9 +138,13 @@ namespace SwimmingPool
                 //dataGridView1.Rows[0].Cells[i].Selected = false;
                 //dataGridView1.Columns[i].HeaderCell.Selected = false;
                 if (i == 7)
+                {
                     dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.Red;
+                }
                 else
+                {
                     dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
+                }
             }
         }
 
@@ -226,7 +230,7 @@ namespace SwimmingPool
             var test = InputMethods.Filldata(Start, End);
             foreach (var item in InputMethods.DATAforInput)
             {
-                SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();                
+                SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
             }
             //PAST
 
@@ -375,7 +379,7 @@ namespace SwimmingPool
 
         public ISubscription GenerateSubscribtionID(ISubscription subscribtion)
         {
-          //  Subscription : ISubscription
+            //  Subscription : ISubscription
 
 
             //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
@@ -403,7 +407,7 @@ namespace SwimmingPool
 
         public void Saver()
         {
-          //  Datefiller();
+            //  Datefiller();
             Datefiller(Pagenumber, DateDic, true);
             ISubscriber subscriber = new SPSQLite.CLASSES.Subscriber();
             ISubscriptionPrice SubPrice = new SubcsriptionPrice();
@@ -456,7 +460,7 @@ namespace SwimmingPool
 
         }
 
-      //  SubcsriptionPrice : ISubscriptionPrice
+        //  SubcsriptionPrice : ISubscriptionPrice
         public ISubscriptionPrice SubPriceReturner()
         {
             int Hour = (int)cmbxHour.SelectedValue;
@@ -536,7 +540,7 @@ namespace SwimmingPool
                 Schedule_.Add(SingleDay);
             }
             return Schedule_;
-        }        
+        }
 
 
         public bool CoordinatesIsEqual(int X, int Y)
@@ -553,7 +557,7 @@ namespace SwimmingPool
             {
                 //CalcIncreaseDicrease(SelectedCellIndex, SelectedRowIndex);
                 return true;
-            } 
+            }
         }
         public void SetDefaultCellColor(int ColumnRank)
         {
@@ -569,14 +573,15 @@ namespace SwimmingPool
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             //  NickCode(e);
-           // MessageBox.Show("Click");
+            // MessageBox.Show("Click");
 
             Capicity capicity = new Capicity();
-            int a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value)+1;
+            int a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) + 1;
             if (a > ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue)
+            {
                 MessageBox.Show("მეტს ვერ დაამატებ ქალო");
+            }
 
-            
             dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
         }
 
@@ -596,28 +601,36 @@ namespace SwimmingPool
             List<DateTime> DictionaryValues = new List<DateTime>();
             foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
             {
-                
+
                 if (cell.ColumnIndex == 0)
+                {
                     break;
-                else { 
+                }
+                else
+                {
 
                     int Hour = (cell.RowIndex + 8);
                     var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
                     DateTime FinalDate = new DateTime();
                     string _FinalDate = "";
                     if (Hour < 10)
+                    {
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                    }
                     else
+                    {
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    }
+
                     MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
-                  //  Dates.Add(FinalDate);
+                    //  Dates.Add(FinalDate);
                 }
             }
             DictDate.Add(Pagenumber, DictionaryValues);
-            Pagenumber=Pagenumber+1;
+            Pagenumber = Pagenumber + 1;
             MessageBox.Show(Pagenumber.ToString());
         }
 
@@ -630,7 +643,9 @@ namespace SwimmingPool
             {
 
                 if (cell.ColumnIndex == 0)
+                {
                     break;
+                }
                 else
                 {
 
@@ -639,9 +654,14 @@ namespace SwimmingPool
                     DateTime FinalDate = new DateTime();
                     string _FinalDate = "";
                     if (Hour < 10)
+                    {
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                    }
                     else
+                    {
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    }
+
                     MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
@@ -658,7 +678,7 @@ namespace SwimmingPool
                     Dates.Add(internaldata);
                 }
 
-                }
+            }
             DictionaryIndex++;
 
         }
@@ -668,25 +688,25 @@ namespace SwimmingPool
         //UKAN
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate, double Back)
         {
-          //  MessageBox.Show(Pagenumber.ToString());
-            int Backindex = Pagenumber-1;
+            //  MessageBox.Show(Pagenumber.ToString());
+            int Backindex = Pagenumber - 1;
             //MessageBox.Show("UKAN DABRUNEBULI INDEXI"+Backindex.ToString());
-         //   int columnindex;
-           // int rowindex;
-          //  Dictionary<int, int> ColRow = new Dictionary<int, int>();
+            //   int columnindex;
+            // int rowindex;
+            //  Dictionary<int, int> ColRow = new Dictionary<int, int>();
             List<DateTime> DictionaryValues = DictDate[Backindex];
             foreach (var item in DictionaryValues)
             {
-               int rowindex = item.Hour-8;
-               int  columnindex = CurrentWeekDays.FindIndex(x => x == item)+1;
+                int rowindex = item.Hour - 8;
+                int columnindex = CurrentWeekDays.FindIndex(x => x == item) + 1;
                 MessageBox.Show(rowindex + "COLUMN " + columnindex);
-                dataGridView1.Rows[rowindex].Cells[columnindex].Selected=true;
+                dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
                 dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
                 // ColRow.Add(rowindex, columnindex);
             }
 
-        
-          
+
+
 
         }
 
@@ -701,7 +721,9 @@ namespace SwimmingPool
             {
 
                 if (cell.ColumnIndex == 0)
+                {
                     break;
+                }
                 else
                 {
 
@@ -710,9 +732,14 @@ namespace SwimmingPool
                     DateTime FinalDate = new DateTime();
                     string _FinalDate = "";
                     if (Hour < 10)
+                    {
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                    }
                     else
+                    {
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    }
+
                     MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
@@ -720,155 +747,155 @@ namespace SwimmingPool
                 }
             }
         }
-                //if (!FirstClick)
-                //{
-                //    dateTimePicker1.Value = FinalDate;
-                //    FirstClick = !FirstClick;
-                //}
+        //if (!FirstClick)
+        //{
+        //    dateTimePicker1.Value = FinalDate;
+        //    FirstClick = !FirstClick;
+        //}
 
-                //if (Dates != null)
-                //{
-                //    if (Dates.Contains(FinalDate.Date))
-                //    {
-                //        int a = Dates.IndexOf(FinalDate);
-                //        Dates.RemoveAt(a);
-                //    }
+        //if (Dates != null)
+        //{
+        //    if (Dates.Contains(FinalDate.Date))
+        //    {
+        //        int a = Dates.IndexOf(FinalDate);
+        //        Dates.RemoveAt(a);
+        //    }
 
-                //    else
-                //    {
-                //        Dates.Add(FinalDate);
-                //    }
-                //}
-
-
+        //    else
+        //    {
+        //        Dates.Add(FinalDate);
+        //    }
+        //}
 
 
 
-                public void NickCode(DataGridViewCellEventArgs e)
+
+
+        public void NickCode(DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 0 || e.ColumnIndex == 7 || e.RowIndex == 0)
+            {
+                dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
+                if (e.ColumnIndex == 7)
                 {
-                    if (e.ColumnIndex == 0 || e.ColumnIndex == 7 || e.RowIndex == 0)
+                    dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
+                    MessageBox.Show("კვირა დასვენების დღეა!");
+                }
+                return;
+            }
+
+
+            if (e.RowIndex != -1)
+            {
+                CoordinateList.Add(e.ColumnIndex);
+                CoordinateList.Add(e.RowIndex);
+
+                bool _coordinatesIsEqual = CoordinatesIsEqual(e.ColumnIndex, e.RowIndex);
+                int Hour = (e.RowIndex + 8);
+
+                //grid.CalcIncreaseDicrease(e.ColumnIndex, e.RowIndex, CurrentWeekDays[e.ColumnIndex - 1]);
+
+                var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
+
+                BgColor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
+                if (BgColor.Name == "0")
+                {
+                    BgColor = Color.White;
+                }
+
+                SetDefaultCellColor(e.ColumnIndex); /*Set Cell Default Color*/
+
+                if (!_coordinatesIsEqual && BgColor == Color.White)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
+                }
+
+                else
+                {
+                    if (BgColor == Color.Green)
                     {
-                        dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
-                        if (e.ColumnIndex == 7)
-                        {
-                            dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
-                            MessageBox.Show("კვირა დასვენების დღეა!");
-                        }
-                        return;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.White;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.Gray;
                     }
 
-
-                    if (e.RowIndex != -1)
-                    {
-                        CoordinateList.Add(e.ColumnIndex);
-                        CoordinateList.Add(e.RowIndex);
-
-                        bool _coordinatesIsEqual = CoordinatesIsEqual(e.ColumnIndex, e.RowIndex);
-                        int Hour = (e.RowIndex + 8);
-
-                        //grid.CalcIncreaseDicrease(e.ColumnIndex, e.RowIndex, CurrentWeekDays[e.ColumnIndex - 1]);
-
-                        var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
-
-                        BgColor = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor;
-                        if (BgColor.Name == "0")
-                        {
-                            BgColor = Color.White;
-                        }
-
-                        SetDefaultCellColor(e.ColumnIndex); /*Set Cell Default Color*/
-
-                        if (!_coordinatesIsEqual && BgColor == Color.White)
-                        {
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
-                            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
-                        }
-
-                        else
-                        {
-                            if (BgColor == Color.Green)
-                            {
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.White;
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.White;
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.Gray;
-                            }
-
-                            else
-                            {
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
-                                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
-                            }
-
-                        }
-
-                        bool sell = columni.Contains(e.ColumnIndex);
-                        bool rov = rovsi.Contains(e.RowIndex);
-
-                        string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
-                        string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                        string value = columnName + " - " + rowName;
-
-                        archeuligrafiki.DataSource = null;
-                        ganrigidge.Sort();
-                        archeuligrafiki.DataSource = ganrigidge;
-                    }
                     else
                     {
-                        return;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.BackColor = Color.Green;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.White;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionBackColor = Color.Green;
+                        dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.SelectionForeColor = Color.White;
                     }
-
-
-
-
-
 
                 }
 
+                bool sell = columni.Contains(e.ColumnIndex);
+                bool rov = rovsi.Contains(e.RowIndex);
+
+                string columnName = dataGridView1.Columns[e.ColumnIndex].HeaderText;
+                string rowName = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                string value = columnName + " - " + rowName;
+
+                archeuligrafiki.DataSource = null;
+                ganrigidge.Sort();
+                archeuligrafiki.DataSource = ganrigidge;
+            }
+            else
+            {
+                return;
+            }
 
 
 
-                #region რანდომი სატესტოდ
-                private void button1_Click(object sender, EventArgs e)
-                {
 
-                    string[] names = new string[]
-                       {
+
+
+        }
+
+
+
+
+        #region რანდომი სატესტოდ
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            string[] names = new string[]
+               {
                     "გელა",
                     "ნელი",
                     "გულიკო",
                     "მზევინარ",
                     "პაჭურტი"
-                       };
-                    string[] LastNames = new string[]
-                    {
+               };
+            string[] LastNames = new string[]
+            {
                     "გეჯაძე",
                     "მინდია",
                     "ბუჩუკური",
                     "ლელაძე"
-                    };
+            };
 
-                    string[] Numbers = new string[]
-                    {
+            string[] Numbers = new string[]
+            {
                     "555 56 78 23",
                     "577 23 87 23",
                     "587 89 23 76"
-                    };
+            };
 
-                    string[] Adress = new string[]
-                    {
+            string[] Adress = new string[]
+            {
                     "ვარკეთილი",
                     "ფონიჭალა",
                     "რუსთაველი",
                     "ვაშლიჯვარი"
-                    };
+            };
 
-                    string[] Date = new string[]
-                    {
+            string[] Date = new string[]
+            {
                 "01042001",
                 "01281996",
                 "03042000",
@@ -877,145 +904,145 @@ namespace SwimmingPool
 
 
 
-                    };
+            };
 
-                    // saxeli 
-                    Random rand = new Random();
-                    int index = rand.Next(names.Count());
-                    var name = names[index];
+            // saxeli 
+            Random rand = new Random();
+            int index = rand.Next(names.Count());
+            var name = names[index];
 
-                    saxeli.Text = name;
-                    //gvari
-                    int gvarindex = rand.Next(LastNames.Count());
-                    var LastName = LastNames[gvarindex];
+            saxeli.Text = name;
+            //gvari
+            int gvarindex = rand.Next(LastNames.Count());
+            var LastName = LastNames[gvarindex];
 
-                    gvari.Text = LastName;
+            gvari.Text = LastName;
 
-                    // nomrebi 
+            // nomrebi 
 
-                    int NumberIndex = rand.Next(Numbers.Count());
-                    var Number = Numbers[NumberIndex];
+            int NumberIndex = rand.Next(Numbers.Count());
+            var Number = Numbers[NumberIndex];
 
-                    telefoni.Text = Number;
+            telefoni.Text = Number;
 
-                    // misamarti 
+            // misamarti 
 
-                    int AdressIndex = rand.Next(Adress.Count());
-                    var adress = Adress[AdressIndex];
+            int AdressIndex = rand.Next(Adress.Count());
+            var adress = Adress[AdressIndex];
 
-                    misamarti.Text = adress;
-
-
-                    // asaki 
-
-                    int DateIndex = rand.Next(Date.Count());
-                    var birthDate = Date[DateIndex];
-
-                    asaki.Text = birthDate;
+            misamarti.Text = adress;
 
 
+            // asaki 
+
+            int DateIndex = rand.Next(Date.Count());
+            var birthDate = Date[DateIndex];
+
+            asaki.Text = birthDate;
 
 
-                }
 
-                #endregion
 
-                private void lblNext_Click_2(object sender, EventArgs e)
-                {
-
-            Datefiller(DateDic);
-                      
-                    dataGridView1.Rows.Clear();
-                    grafiki();
-                    CurrentMonday = CurrentMonday.AddDays(7);
-                    AssignCurrentWeek(CurrentMonday);
-                    lblBack.Enabled = true;
-                    lblBack.ForeColor = Color.LightSkyBlue;
-                    lblBack.Cursor = Cursors.Hand;
-
-                    gridFillter(dataGridView1, CurrentMonday);
-           
-
-                    //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
         }
 
-                private void lblBack_Click_2(object sender, EventArgs e)
-                {
+        #endregion
+
+        private void lblNext_Click_2(object sender, EventArgs e)
+        {
+
+            Datefiller(DateDic);
+
+            dataGridView1.Rows.Clear();
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(7);
+            AssignCurrentWeek(CurrentMonday);
+            lblBack.Enabled = true;
+            lblBack.ForeColor = Color.LightSkyBlue;
+            lblBack.Cursor = Cursors.Hand;
+
+            gridFillter(dataGridView1, CurrentMonday);
+
+
+            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+        }
+
+        private void lblBack_Click_2(object sender, EventArgs e)
+        {
 
             MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
             dataGridView1.Rows.Clear();
-                    grafiki();
-                    CurrentMonday = CurrentMonday.AddDays(-7);
-                    AssignCurrentWeek(CurrentMonday);
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(-7);
+            AssignCurrentWeek(CurrentMonday);
 
 
-                    if (CurrentMonday == ThisMonday)
-                    {
-                        lblBack.Enabled = true;
-                        //lblBack.ForeColor = Color.Gray;
-                        //lblBack.Cursor = Cursors.No;
-                        //CellGrayColor(DateTime.Now.Date);
-                        GetCellColorToday();
-                    }
+            if (CurrentMonday == ThisMonday)
+            {
+                lblBack.Enabled = true;
+                //lblBack.ForeColor = Color.Gray;
+                //lblBack.Cursor = Cursors.No;
+                //CellGrayColor(DateTime.Now.Date);
+                GetCellColorToday();
+            }
 
-                    //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
 
-                    gridFillter(dataGridView1, CurrentMonday);
-            MessageBox.Show("SHEMOSVLA 2 "+Pagenumber.ToString());
+            gridFillter(dataGridView1, CurrentMonday);
+            MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
             Datefiller(DateDic, 1.5);
         }
 
 
-                //private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
-                //{
-                //    if (dateTimePicker3.Value <= dateTimePicker1.Value)
-                //    {
-                //        return;
-                //    }
+        //private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        //{
+        //    if (dateTimePicker3.Value <= dateTimePicker1.Value)
+        //    {
+        //        return;
+        //    }
 
-                //    dataGridView1.Rows.Clear();
-                //    grafiki();
-                //    AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
+        //    dataGridView1.Rows.Clear();
+        //    grafiki();
+        //    AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
 
-                //    //AssignCurrentWeek(GetCurrentMonday(dateTimePicker3.Value));
-                //    //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
-                //    //CellGrayColorRight(dateTimePicker3.Value);
+        //    //AssignCurrentWeek(GetCurrentMonday(dateTimePicker3.Value));
+        //    //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+        //    //CellGrayColorRight(dateTimePicker3.Value);
 
-                //    gridFillter(dataGridView1, CurrentMonday);
-                //}
+        //    gridFillter(dataGridView1, CurrentMonday);
+        //}
 
-                private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-                {
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-                }
-            }
         }
-    //public class CurrentGrid : AddAbonent
-    //{
-    //    public int X { get; set; }
-    //    public int Y { get; set; }
-    //    public Color CurrentColor { get; set; }
-    //    public int SeatNumber { get; set; }
+    }
+}
+//public class CurrentGrid : AddAbonent
+//{
+//    public int X { get; set; }
+//    public int Y { get; set; }
+//    public Color CurrentColor { get; set; }
+//    public int SeatNumber { get; set; }
 
-    //    public void CalcIncreaseDicrease(int x, int y, DateTime day)
-    //    {
-    //        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
+//    public void CalcIncreaseDicrease(int x, int y, DateTime day)
+//    {
+//        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
 
-    //        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
-    //        //{
-    //        //    ++_value;
-    //        //}
+//        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
+//        //{
+//        //    ++_value;
+//        //}
 
-    //        //else
-    //        //{
-    //        //    --_value;
-    //        //}
+//        //else
+//        //{
+//        //    --_value;
+//        //}
 
 
-    //        //dataGridView1[x, y].Value = _value.ToString();
-    //        //dataGridView1.Refresh();
-    //        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
+//        //dataGridView1[x, y].Value = _value.ToString();
+//        //dataGridView1.Refresh();
+//        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
 
-    //    }
-    //}
+//    }
+//}
 

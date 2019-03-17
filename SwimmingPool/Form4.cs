@@ -1,14 +1,10 @@
 ﻿using SPSQLite;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SQLiteNetExtensions.Extensions;
 
 namespace SwimmingPool
 {
@@ -20,10 +16,11 @@ namespace SwimmingPool
         {
             InitializeComponent();
             DBDB_old = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
-           ancient();
+            //ancient();
+            last();
         }
 
-        
+
 
         public void ancient()
         {
@@ -62,7 +59,85 @@ namespace SwimmingPool
 
                             }).ToList();
             old.DataSource = fillgrid;
-  
+
+        }
+
+        public void last()
+        {
+            var schedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>();
+
+
+
+            //var onlyDate = (from g in schedule
+            //                select g.Schedule).ToList();
+
+            var lastDate = schedule.Last().Schedule.Date.ToString("yyyy-MM-dd");
+            var Today = DateTime.Now.AddDays(-6).ToString("yyyy-MM-dd");
+
+            //var lastDate = onlyDate.Last().Date;
+            //var today = DateTime.Now.AddDays(-6);
+            //if (lastDate == today)
+            //{
+            var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<Subscription>();
+
+            var onlyDates = subscriptions;
+
+
+
+            var Name = subscriptions.Select(x => x.Subscriber_.Subscriptions.SubscribtionSchedule_);
+
+
+
+
+
+
+            //var r = schedule.Where(
+            //    .Select(g => new
+            //    {
+
+            //        აბონიმენტი = g.Subscription.IDnumber,
+            //        სახელი = g.Subscription.Subscriber_.Name,
+            //        გვარი = g.Subscription.Subscriber_.LastName,
+            //        ასაკი = Math.Round((DateTime.Now - g.Subscription.Subscriber_.DateOfBirth).TotalDays / 365, 0),
+
+            //        ფასი = g.Subscription.SubscriberPrice_.Price,
+            //        საათი = g.Subscription.SubscriberPrice_.NumberOfHours
+
+
+
+            //    }).ToList();
+
+
+
+
+
+            var r = (from g in subscriptions
+                     where g.SubscribtionSchedule_.First().Schedule.Date.ToString("yyyy-MM-dd") == DateTime.Now.AddDays(-1).ToString("yyyy-MM-dd")
+                     select new
+                     {
+                         აბონიმენტი = g.IDnumber,
+                         სახელი = g.Subscriber_.Name,
+                         გვარი = g.Subscriber_.LastName,
+                         ასაკი = Math.Round((DateTime.Now - g.Subscriber_.DateOfBirth).TotalDays / 365, 0),
+
+                         ფასი = g.SubscriberPrice_.Price,
+                         საათი = g.SubscriberPrice_.NumberOfHours
+                     }).ToList();
+
+            old.DataSource = r;
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
