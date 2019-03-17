@@ -1,4 +1,5 @@
 ﻿using SPSQLite;
+using SPSQLite.CLASSES.Services;
 using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
@@ -112,7 +113,7 @@ namespace SwimmingPool
 
 
             var r = (from g in subscriptions
-                     where g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd") == DateTime.Now.AddDays(1).ToString("yyyy-MM-dd")
+                     where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
 
                      select new
                      {
@@ -138,6 +139,17 @@ namespace SwimmingPool
 
 
 
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var stringNumber = old.SelectedCells[0].Value.ToString();
+
+
+            var obj = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.IDnumber == stringNumber);
+
+            ServiceInstances.Service().GetSubscriptionServices().Delete(obj);
 
         }
     }

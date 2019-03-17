@@ -204,6 +204,7 @@ namespace SwimmingPool
                 #endregion
 
                 flowLayoutPanel1.Controls.Add(Hours);
+                flowLayoutPanel1.AutoScroll = true;
 
 
             }
@@ -376,6 +377,11 @@ namespace SwimmingPool
             Limit form = new Limit();
 
             form.Show();
+
+        }
+
+        private void vScrollBar1_Scroll(object sender, ScrollEventArgs e)
+        {
 
         }
     }

@@ -218,7 +218,7 @@ namespace SwimmingPool
 
         public void gridFillter(DataGridView SubscriberSchedul, DateTime Start)
         {
-            DateTime End = Start.AddDays(6 - (int)Start.DayOfWeek);
+            DateTime End = Start.AddDays(7 - (int)Start.DayOfWeek);
             SubscriberSchedul.DataSource = null;
             //MessageBox.Show(((int)Start.DayOfWeek).ToString());
             //FUTURE
