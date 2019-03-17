@@ -361,10 +361,10 @@ namespace SPSQLite
         public int SubscribtionPriceID { get; set; }
      
 
-        [OneToMany(CascadeOperations = CascadeOperation.All)]
+        [OneToMany(CascadeOperations = CascadeOperation.All )]
         public List<SubscriptionScheduleDB> SubscribtionSchedule_ { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.All)]
+        [OneToOne(CascadeOperations = CascadeOperation.All )]
         public Subscriber Subscriber_ { get; set; }
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]

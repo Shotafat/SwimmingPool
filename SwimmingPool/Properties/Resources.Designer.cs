@@ -73,6 +73,26 @@ namespace SwimmingPool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dddddd {
+            get {
+                object obj = ResourceManager.GetObject("dddddd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ddddddddooooool {
+            get {
+                object obj = ResourceManager.GetObject("ddddddddooooool", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dolphin {
             get {
                 object obj = ResourceManager.GetObject("dolphin", resourceCulture);
@@ -85,7 +105,17 @@ namespace SwimmingPool.Properties {
         /// </summary>
         internal static System.Drawing.Bitmap dolphin__1_ {
             get {
-                object obj = ResourceManager.GetObject("dolphin__1_", resourceCulture);
+                object obj = ResourceManager.GetObject("dolphin (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dolphin__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("dolphin (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -123,6 +153,26 @@ namespace SwimmingPool.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dolphin1 {
+            get {
+                object obj = ResourceManager.GetObject("dolphin1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap left_arrow {
+            get {
+                object obj = ResourceManager.GetObject("left-arrow", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap membership {
             get {
                 object obj = ResourceManager.GetObject("membership", resourceCulture);
@@ -136,6 +186,36 @@ namespace SwimmingPool.Properties {
         internal static System.Drawing.Bitmap Mysql_dolphin_square_svg {
             get {
                 object obj = ResourceManager.GetObject("Mysql_dolphin_square_svg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow__1_ {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow__2_ {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap right_arrow__3_ {
+            get {
+                object obj = ResourceManager.GetObject("right-arrow (3)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

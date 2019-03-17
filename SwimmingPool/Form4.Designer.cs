@@ -54,7 +54,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.button2.Location = new System.Drawing.Point(840, 69);
@@ -66,6 +66,7 @@
             // 
             // button1
             // 
+            this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.button1.Location = new System.Drawing.Point(840, 208);
@@ -73,7 +74,7 @@
             this.button1.Size = new System.Drawing.Size(138, 52);
             this.button1.TabIndex = 5;
             this.button1.Text = "წაშლა";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // old
@@ -82,7 +83,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.old.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.old.BackgroundColor = System.Drawing.SystemColors.ControlLight;
+            this.old.BackgroundColor = System.Drawing.Color.White;
             this.old.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.old.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.old.GridColor = System.Drawing.SystemColors.ControlLight;
@@ -102,7 +103,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel3.BackColor = System.Drawing.Color.White;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(43, 21);
             this.panel3.Name = "panel3";

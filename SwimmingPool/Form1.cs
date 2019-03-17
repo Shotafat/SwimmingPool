@@ -280,21 +280,7 @@ namespace SwimmingPool
 
         private void წაშლაToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DatabaseConnection.insertSubscribtionPrice(2, 2.5);
-            DatabaseConnection.insertSubscribtionPrice(3, 40.5);
-            DatabaseConnection.insertSubscribtionPrice(4, 30.5);
-            DatabaseConnection.insertSubscribtionPrice(5, 20.5);
-            DatabaseConnection.insertSubscribtionPrice(6, 12.5);
-            DatabaseConnection.insertSubscribtionPrice(7, 9.5);
-            DatabaseConnection.insertSubscribtionPrice(8, 8.5);
-            DatabaseConnection.insertSubscribtionPrice(9, 7.5);
-            DatabaseConnection.insertSubscribtionPrice(10, 3.5);
 
-
-
-
-
-            CultureInfo provider = new CultureInfo("fr-FR");
 
 
 
