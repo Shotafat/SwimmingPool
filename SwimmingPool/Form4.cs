@@ -113,7 +113,7 @@ namespace SwimmingPool
 
 
             var r = (from g in subscriptions
-                     where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
+                     where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(5).ToString("yyyy-MM-dd"))
 
                      select new
                      {

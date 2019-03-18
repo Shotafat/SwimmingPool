@@ -241,22 +241,22 @@ namespace SwimmingPool
 
         private void რედაქტირებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows[0].Selected)
-            {
-                var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
-                AddAbonent add = new AddAbonent(subscriptionPrice);
+            //if (dataGridView1.SelectedRows[0].Selected)
+            //{
+            //    var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
+            //    AddAbonent add = new AddAbonent(subscriptionPrice);
 
-                add.ShowDialog();
-                if (add.DialogResult == DialogResult.OK)
-                {
-                    Form1_Load(sender, e);
+            //    add.ShowDialog();
+            //    if (add.DialogResult == DialogResult.OK)
+            //    {
+            //        Form1_Load(sender, e);
 
-                }
-            }
-            else
-            {
-                MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
-            }
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
+            //}
         }
 
 

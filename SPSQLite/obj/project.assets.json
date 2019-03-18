@@ -852,11 +852,10 @@
       ]
     },
     "sqlite-net-pcl/1.5.231": {
-      "sha512": "B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
+      "sha512": "Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
       "type": "package",
       "path": "sqlite-net-pcl/1.5.231",
       "files": [
-        ".nupkg.metadata",
         ".signature.p7s",
         "lib/netstandard1.1/SQLite-net.deps.json",
         "lib/netstandard1.1/SQLite-net.dll",
@@ -2922,23 +2921,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\datax\\.nuget\\packages\\": {},
+    "C:\\Users\\Admin\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-      "packagesPath": "C:\\Users\\datax\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\datax\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
+      "projectPath": "C:\\Users\\Admin\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\datax\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

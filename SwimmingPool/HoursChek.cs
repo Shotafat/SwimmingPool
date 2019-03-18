@@ -144,13 +144,6 @@ namespace SwimmingPool
 
 
 
-
-
-
-
-
-
-
         }
 
 
@@ -162,6 +155,29 @@ namespace SwimmingPool
 
 
             Attendance(1);
+        }
+
+        private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
+
+           
+               var IDnumber = subscriptionByID.IDnumber.ToString();
+               var LastName = subscriptionByID.Subscriber_.LastName;
+               var Name = subscriptionByID.Subscriber_.Name;
+              
+               var Adress = subscriptionByID.Subscriber_.Address;
+               var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
+               var Age = subscriptionByID.Subscriber_.DateOfBirth;
+
+
+
+                AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
+                
+                abonent.Show();
+            
+
         }
     }
 }

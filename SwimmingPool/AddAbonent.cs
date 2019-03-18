@@ -9,6 +9,8 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using SPSQLite;
+using SQLiteNetExtensions.Extensions;
 
 namespace SwimmingPool
 {
@@ -35,15 +37,16 @@ namespace SwimmingPool
         // public Dictionary<DateTime, List<CurrentGrid>> GridDataList { get; set; } = new Dictionary<DateTime, List<CurrentGrid>>();
 
         public bool FirstClick { get; set; } = false;
-
+        public Label label;
         public List<int> CoordinateList { get; set; } = new List<int>();
-
-        public AddAbonent()
+       
+       
+        public AddAbonent():base()
         {
             InitializeComponent();
 
-
-
+       
+           
 
             grafiki();
 
@@ -65,46 +68,36 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
             gridFillter(dataGridView1, ThisMonday);
+
+            button2.Hide();
             //AssignGridData();
         }
+       
 
-
-        public AddAbonent(ISubscriber subscriber)
+        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion) :this()
         {
-            if (subscriber != null)
-            {
-                label6.Text = "რ" + " " + "ე" + " " + "დ" + " " + "ა" + " " + "ქ" + " " + "ტ" + " " + "ი" + " " + "რ" + " " + "ე" + " " + "ბ" + " " + "ა";
+            
+                label6.Text = "რ ე დ ა ქ ტ ი რ ე ბ ა";
+           
+                saxeli.Text = Name;
+                gvari.Text = LastName;
+                asaki.Text = Age.ToString();
+                telefoni.Text = phoneNumber.ToString();
+                misamarti.Text = Adress;
 
-                saxeli.Text = subscriber.Name;
-                gvari.Text = subscriber.LastName;
-                asaki.Text = subscriber.DateOfBirth.ToString();
-                telefoni.Text = subscriber.PhoneNumber;
-                misamarti.Text = subscriber.Adress;
-                shenaxva.Text = "რედაქტირება";
+
+
+            shenaxva.Hide();
+            button2.Show();
+                
                 //lblAnonimentNumber.Visible = abonenti.Visible = false;
 
-            }
+            
 
         }
 
-        //private void AssignGridData()
-        //{
-        //    for (int i = 1; i < 7; i++)
-        //    {
-        //        List<CurrentGrid> list = new List<CurrentGrid>();
-        //        for (int j = 1; j < 13; j++)
-        //        {
-        //            list.Add(new CurrentGrid()
-        //            {
-        //                X = i,
-        //                Y = j,
-        //                CurrentColor = dataGridView1.Rows[j].Cells[i].Style.BackColor,
-        //                SeatNumber = Convert.ToInt32(dataGridView1.Rows[j].Cells[i].Value.ToString())
-        //            });
-        //        }
-        //        //GridDataList.Add(CurrentWeekDays[i - 1], list);
-        //    }
-        //}
+    
+
 
         public void GetCellColorToday()
         {
@@ -341,17 +334,7 @@ namespace SwimmingPool
 
         public void cheked(object sender, EventArgs e)
         {
-            var check = (CheckBox)sender;
 
-            if (check.Name == "ara")
-            {
-                diax.Checked = false;
-            }
-
-            else if (check.Name == "diax")
-            {
-                ara.Checked = false;
-            }
         }
 
         public void PushDays(DateTime day)
@@ -1042,6 +1025,37 @@ namespace SwimmingPool
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
+                var newobj = subscriptionByID;
+
+
+
+                newobj.Subscriber_.Name = saxeli.Text;
+                newobj.Subscriber_.LastName = gvari.Text;
+                newobj.Subscriber_.DateOfBirth = Convert.ToDateTime(asaki.Text);
+                newobj.Subscriber_.PhoneNumber = telefoni.Text;
+                newobj.Subscriber_.Address =
+                misamarti.Text;
+
+                DatabaseConnection.Conn.Update(newobj);
+
+            }
+            catch
+            {
+                MessageBox.Show("დაამატეთ საათების რაოდენობა");
+
+               
+            }
+
+
+            
+            
         }
     }
 }
