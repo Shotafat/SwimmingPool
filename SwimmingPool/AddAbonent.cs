@@ -423,7 +423,7 @@ namespace SwimmingPool
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
             Schedule = Schedulereturner();
-            MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
+           // MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
             Dates.Clear();
         }
@@ -654,14 +654,48 @@ namespace SwimmingPool
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
+
+
+                   
+                   
+
+
+
+
+
                     //  Dates.Add(FinalDate);
                 }
             }
+            if(!DictDate.ContainsKey(Pagenumber))
             DictDate.Add(Pagenumber, DictionaryValues);
             Pagenumber = Pagenumber + 1;
             MessageBox.Show(Pagenumber.ToString());
         }
 
+
+
+
+        public void DatefillFront(Dictionary<int, List<DateTime>> DictDate)
+        {
+            Pagenumber = Pagenumber + 1;
+            MessageBox.Show("PAGENUMBER " + Pagenumber.ToString());
+            List<DateTime> DictionaryValuesАFront = new List<DateTime>();
+            if (DictDate.ContainsKey(Pagenumber))
+            {
+                DictionaryValuesАFront = DictDate[Pagenumber];
+                foreach (var item in DictionaryValuesАFront)
+                {
+                    int rowindex = item.Hour - 8;
+                    int columnindex = (int)item.DayOfWeek;
+                    MessageBox.Show("BACK" + rowindex + "COLUMN " + columnindex);
+                    dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
+
+                }
+            }
+
+
+
+        }
 
         //SAVEZE
         public void Datefiller(int DictionaryIndex, Dictionary<int, List<DateTime>> DictDate, bool Saveclick)
@@ -716,22 +750,17 @@ namespace SwimmingPool
         //UKAN
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate, double Back)
         {
-            //  MessageBox.Show(Pagenumber.ToString());
-            int Backindex = Pagenumber - 1;
-            //MessageBox.Show("UKAN DABRUNEBULI INDEXI"+Backindex.ToString());
-            //   int columnindex;
-            // int rowindex;
-            //  Dictionary<int, int> ColRow = new Dictionary<int, int>();
-            List<DateTime> DictionaryValues = DictDate[Backindex];
+           
+            Pagenumber = Pagenumber - 2;
+          
+            List<DateTime> DictionaryValues = DictDate[Pagenumber];
             foreach (var item in DictionaryValues)
             {
                 int rowindex = item.Hour - 8;
                 int columnindex = (int)item.DayOfWeek;
-               
-                MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
+               MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
                 dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
-              //  dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
-                // ColRow.Add(rowindex, columnindex);
+         
             }
 
 
@@ -990,7 +1019,7 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
-
+            DatefillFront(DateDic);
 
             //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
         }
@@ -998,7 +1027,7 @@ namespace SwimmingPool
         private void lblBack_Click_2(object sender, EventArgs e)
         {
 
-            MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
+           // MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(-7);
@@ -1017,7 +1046,7 @@ namespace SwimmingPool
             //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
 
             gridFillter(dataGridView1, CurrentMonday);
-            MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
+           // MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
             Datefiller(DateDic, 1.5);
         }
 
