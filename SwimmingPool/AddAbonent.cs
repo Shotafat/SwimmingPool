@@ -623,7 +623,7 @@ namespace SwimmingPool
 
         }
 
-        //WIN
+        //წინ წასვლა
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate)
         {
             List<DateTime> DictionaryValues = new List<DateTime>();
@@ -650,7 +650,7 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                    MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
@@ -690,7 +690,7 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                    MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
@@ -726,10 +726,11 @@ namespace SwimmingPool
             foreach (var item in DictionaryValues)
             {
                 int rowindex = item.Hour - 8;
-                int columnindex = CurrentWeekDays.FindIndex(x => x == item) + 1;
-                MessageBox.Show(rowindex + "COLUMN " + columnindex);
+                int columnindex = (int)item.DayOfWeek;
+               
+                MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
                 dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
-                dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
+              //  dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
                 // ColRow.Add(rowindex, columnindex);
             }
 
