@@ -386,6 +386,7 @@ namespace SwimmingPool
         {
             Graphics gr = new Graphics();
             gr.Show();
+        }
         private void button1_Click(object sender, EventArgs e)
         {
             Form4 form = new Form4();
