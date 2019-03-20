@@ -578,14 +578,14 @@ namespace SwimmingPool
             {
                 if (a > ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue)
                 {
-                    MessageBox.Show("მეტს ვერ დაამატებ ქალო");
+                    MessageBox.Show("თავისუფალი ადგილები არ არის, გსურთ გაგრძელება?");
                 }
             }
 
             catch
             {
 
-                MessageBox.Show("განსაზღვრეთ წინაწსარ ლიმიტი");
+                MessageBox.Show("განსაზღვრეთ წინასწარ ლიმიტი");
 
                 Limit limit = new Limit();
                 limit.ShowDialog();
@@ -633,44 +633,84 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+             //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
-
-
-                   
-                   
-
-
-
-
-
-                    //  Dates.Add(FinalDate);
+//  Dates.Add(FinalDate);
                 }
             }
             if(!DictDate.ContainsKey(Pagenumber))
             DictDate.Add(Pagenumber, DictionaryValues);
             Pagenumber = Pagenumber + 1;
-            MessageBox.Show(Pagenumber.ToString());
+           // MessageBox.Show(Pagenumber.ToString());
         }
+
+
+        public void BackClickSaveDictionary(Dictionary<int, List<DateTime>> DictDate)
+        {
+            //MessageBox.Show("BackClickSaveDictionary" + Pagenumber.ToString());
+            List<DateTime> DictionaryValues = new List<DateTime>();
+            foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+            {
+
+                if (cell.ColumnIndex == 0)
+                {
+                    break;
+                }
+                else
+                {
+
+                    int Hour = (cell.RowIndex + 8);
+                    var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+                    DateTime FinalDate = new DateTime();
+                    string _FinalDate = "";
+                    if (Hour < 10)
+                    {
+                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                    }
+                    else
+                    {
+                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    }
+
+                    //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                    DictionaryValues.Add(FinalDate);
+                    //  Dates.Add(FinalDate);
+                }
+            }
+            if (!DictDate.ContainsKey(Pagenumber))
+                DictDate.Add(Pagenumber, DictionaryValues);
+            else
+                DictDate[Pagenumber] = DictionaryValues;
+            //Pagenumber = Pagenumber + 1;
+ //           MessageBox.Show(Pagenumber.ToString());
+
+
+
+
+
+        }
+
 
 
 
 
         public void DatefillFront(Dictionary<int, List<DateTime>> DictDate)
         {
-            Pagenumber = Pagenumber + 1;
-            MessageBox.Show("PAGENUMBER " + Pagenumber.ToString());
+            int PageIndex = Pagenumber;
+           // MessageBox.Show("PageIndex " + PageIndex.ToString());
             List<DateTime> DictionaryValuesАFront = new List<DateTime>();
-            if (DictDate.ContainsKey(Pagenumber))
+            if (DictDate.ContainsKey(PageIndex))
             {
-                DictionaryValuesАFront = DictDate[Pagenumber];
+                DictionaryValuesАFront = DictDate[PageIndex];
                 foreach (var item in DictionaryValuesАFront)
                 {
                     int rowindex = item.Hour - 8;
                     int columnindex = (int)item.DayOfWeek;
-                    MessageBox.Show("BACK" + rowindex + "COLUMN " + columnindex);
+                  //  MessageBox.Show("BACK" + rowindex + "COLUMN " + columnindex);
                     dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
 
                 }
@@ -707,14 +747,21 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                   // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                   
                     DictionaryValues.Add(FinalDate);
                     //  Dates.Add(FinalDate);
                 }
             }
-            DictDate.Add(DictionaryIndex, DictionaryValues);
+           // DictDate.Add(DictionaryIndex, DictionaryValues);
+
+            if (!DictDate.ContainsKey(Pagenumber))
+                DictDate.Add(Pagenumber, DictionaryValues);
+            else
+                DictDate[Pagenumber] = DictionaryValues;
+
 
             foreach (var item in DictDate)
             {
@@ -724,8 +771,8 @@ namespace SwimmingPool
                 }
 
             }
-            DictionaryIndex++;
-
+            DictionaryIndex=0;
+//            Pagenumber = 0;
         }
 
 
@@ -734,18 +781,23 @@ namespace SwimmingPool
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate, double Back)
         {
            
-            Pagenumber = Pagenumber - 2;
-          
+            Pagenumber = Pagenumber - 1;
+
+           // MessageBox.Show("PAGE NUMBER FOR DICT" + Pagenumber.ToString());
+            if (Pagenumber < 0)
+                return;
+            else
+            { 
             List<DateTime> DictionaryValues = DictDate[Pagenumber];
             foreach (var item in DictionaryValues)
             {
                 int rowindex = item.Hour - 8;
                 int columnindex = (int)item.DayOfWeek;
-               MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
+               // MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
                 dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
          
             }
-
+            }
 
 
 
@@ -781,7 +833,7 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                //    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     Dates.Add(FinalDate);
@@ -991,6 +1043,7 @@ namespace SwimmingPool
         private void lblNext_Click_2(object sender, EventArgs e)
         {
 
+            //DICTIONARIS SHESAVSEBAD
             Datefiller(DateDic);
 
             dataGridView1.Rows.Clear();
@@ -1002,6 +1055,7 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
+            //DICTIONARIS WASAKITXTAD
             DatefillFront(DateDic);
 
             //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
@@ -1010,7 +1064,8 @@ namespace SwimmingPool
         private void lblBack_Click_2(object sender, EventArgs e)
         {
 
-           // MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
+            // MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
+            BackClickSaveDictionary(DateDic);
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(-7);

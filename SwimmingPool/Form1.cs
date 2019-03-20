@@ -68,7 +68,7 @@ namespace SwimmingPool
 
             var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
 
-            MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
+            //MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
 
 
             var fillgrid = (from o in SubscribtionTable
