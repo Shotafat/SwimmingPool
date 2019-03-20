@@ -1033,3 +1033,4 @@ C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Limit.resources
 C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Limit.resources
 C:\Users\datax\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Limit.resources
+C:\Users\Admin\Documents\GitHub\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Graphics.resources

@@ -111,6 +111,12 @@
     <Compile Include="Form4.Designer.cs">
       <DependentUpon>Form4.cs</DependentUpon>
     </Compile>
+    <Compile Include="Graphics.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Graphics.Designer.cs">
+      <DependentUpon>Graphics.cs</DependentUpon>
+    </Compile>
     <Compile Include="HoursChek.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form4.resx">
       <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Graphics.resx">
+      <DependentUpon>Graphics.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="HoursChek.resx">
       <DependentUpon>HoursChek.cs</DependentUpon>

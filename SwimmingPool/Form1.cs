@@ -370,6 +370,12 @@ namespace SwimmingPool
         {
 
         }
+
+        private void გრაფიკიToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Graphics gr = new Graphics();
+            gr.Show();
+        }
     }
 }
 

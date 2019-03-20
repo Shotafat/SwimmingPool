@@ -37,16 +37,12 @@ namespace SwimmingPool
         public bool FirstClick { get; set; } = false;
 
         public List<int> CoordinateList { get; set; } = new List<int>();
+        public DateTime CurrentDateValue { get; private set; } = DateTime.Now.Date;
 
         public AddAbonent()
         {
             InitializeComponent();
-
-
-
-
             grafiki();
-
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             SubscribtionPriceToDropdown();
@@ -56,7 +52,15 @@ namespace SwimmingPool
 
             /*function for calc current monday*/
 
-            ThisMonday = GetCurrentMonday(DateTime.Now.Date);
+          
+            //AssignGridData();
+        }
+
+        protected override void OnLoad(EventArgs e)
+        {
+            base.OnLoad(e);
+
+            ThisMonday = GetCurrentMonday(CurrentDateValue);
             AssignCurrentWeek(ThisMonday);
             // CellGrayColor(DateTime.Now.Date, dateTimePicker3.Value);
 
@@ -65,7 +69,11 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
             gridFillter(dataGridView1, ThisMonday);
-            //AssignGridData();
+        }
+
+        public AddAbonent(DateTime date):this()
+        {
+            CurrentDateValue = date;
         }
 
 
@@ -134,9 +142,13 @@ namespace SwimmingPool
             for (int i = 1; i <= 7; i++)
             {
                 var geoCulture = new CultureInfo("ka-GE");
+                var euCulture = new CultureInfo("en-US");
                 var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
+
+                
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
                 dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
+                var nino = CurrentWeekDays[i - 1].ToString("dd MMMM", euCulture);
                 dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
 
 
@@ -150,6 +162,28 @@ namespace SwimmingPool
                 {
                     dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
                 }
+            }
+        }
+
+        public void AssignCurrentWeek(DateTime CurrentMonday, DataGridView view)
+        {
+            CurrentWeekDays.Clear();
+            //dataGridView1.Rows.Add();
+            for (int i = 1; i <= 7; i++)
+            {
+                var geoCulture = new CultureInfo("ka-GE");
+                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
+                CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
+                view.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
+                view.Rows[0].Cells[i].Style.ForeColor = Color.Teal;
+
+
+                //dataGridView1.Rows[0].Cells[i].Selected = false;
+                //dataGridView1.Columns[i].HeaderCell.Selected = false;
+                if (i == 7)
+                    view.Rows[0].Cells[i].Style.ForeColor = Color.Red;
+                else
+                    view.Rows[0].Cells[i].Style.ForeColor = Color.DodgerBlue;
             }
         }
 
@@ -316,6 +350,47 @@ namespace SwimmingPool
 
             dataGridView1.Rows[0].Cells[0].Value = " ";
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+        }
+
+        public void grafiki(DataGridView gridview)
+        {
+            gridview.DataSource = null;
+            gridview.Rows.Add();
+
+            for (int i = 10; i < 22; i++)
+            {
+                gridview.Rows.Add();
+                gridview.Rows[i - 9].Cells[0].Value = Convert.ToString(i - 1 + ":00");
+            }
+
+            for (int i = 0; i < 11; i++)
+            {
+                for (int ii = 0; ii < 7; ii++)
+                {
+                    gridview.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
+                }
+            }
+
+            //pirveli ujris shevseba DATE-biT
+
+            int CurrentDay = (int)DateTime.Now.DayOfWeek;
+            int ForwardDays = 6 - CurrentDay;
+            int StartDay = CurrentDay - (CurrentDay - 1);
+
+            gridview.Rows[0].Cells[(int)DateTime.Now.DayOfWeek].Value = getFormattedDate(DateTime.Now);
+
+            for (int i = 1; i <= ForwardDays; i++)
+            {
+                gridview.Rows[0].Cells[(int)DateTime.Now.DayOfWeek + i].Value = getFormattedDate(DateTime.Now.AddDays(i));
+            }
+
+            for (int i = 1; i < CurrentDay; i++)
+            {
+                gridview.Rows[0].Cells[(int)DateTime.Now.DayOfWeek - i].Value = getFormattedDate(DateTime.Now.AddDays(-i));
+            }
+
+            gridview.Rows[0].Cells[0].Value = " ";
+            gridview.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
 
         private string getFormattedDate(DateTime dateTime)
