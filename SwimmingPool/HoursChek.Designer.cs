@@ -37,6 +37,7 @@
             this.AttendLabel = new System.Windows.Forms.Label();
             this.HoursLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,7 +49,6 @@
             this.სხვაToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
             this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
-
             // 
             // გაცდენაToolStripMenuItem
             // 
@@ -67,7 +67,8 @@
             // სხვაToolStripMenuItem
             // 
             this.სხვაToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.დასვენებაToolStripMenuItem});
+            this.დასვენებაToolStripMenuItem,
+            this.რედაქტირებაToolStripMenuItem});
             this.სხვაToolStripMenuItem.Name = "სხვაToolStripMenuItem";
             this.სხვაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.სხვაToolStripMenuItem.Text = "სხვა";
@@ -75,7 +76,7 @@
             // დასვენებაToolStripMenuItem
             // 
             this.დასვენებაToolStripMenuItem.Name = "დასვენებაToolStripMenuItem";
-            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.დასვენებაToolStripMenuItem.Text = "დასვენება";
             this.დასვენებაToolStripMenuItem.Click += new System.EventHandler(this.დასვენებაToolStripMenuItem_Click);
             // 
@@ -114,6 +115,13 @@
             this.label1.Text = "asdd";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // რედაქტირებაToolStripMenuItem
+            // 
+            this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
+            this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click);
+            // 
             // HoursChek
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -141,5 +149,6 @@
         private System.Windows.Forms.Label AttendLabel;
         private System.Windows.Forms.Label HoursLabel;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolStripMenuItem რედაქტირებაToolStripMenuItem;
     }
 }

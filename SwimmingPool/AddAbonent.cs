@@ -9,6 +9,8 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
+using SPSQLite;
+using SQLiteNetExtensions.Extensions;
 
 namespace SwimmingPool
 {
@@ -35,13 +37,15 @@ namespace SwimmingPool
         // public Dictionary<DateTime, List<CurrentGrid>> GridDataList { get; set; } = new Dictionary<DateTime, List<CurrentGrid>>();
 
         public bool FirstClick { get; set; } = false;
-
+        public Label label;
         public List<int> CoordinateList { get; set; } = new List<int>();
+
         public DateTime CurrentDateValue { get; private set; } = DateTime.Now.Date;
 
         public AddAbonent()
         {
             InitializeComponent();
+
             grafiki();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
@@ -69,50 +73,44 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
             gridFillter(dataGridView1, ThisMonday);
+
         }
 
         public AddAbonent(DateTime date):this()
         {
             CurrentDateValue = date;
+
+
+            button2.Hide();
+            //AssignGridData();
+
         }
+       
 
-
-        public AddAbonent(ISubscriber subscriber)
+        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion) :this()
         {
-            if (subscriber != null)
-            {
-                label6.Text = "რ" + " " + "ე" + " " + "დ" + " " + "ა" + " " + "ქ" + " " + "ტ" + " " + "ი" + " " + "რ" + " " + "ე" + " " + "ბ" + " " + "ა";
+            
+                label6.Text = "რ ე დ ა ქ ტ ი რ ე ბ ა";
+           
+                saxeli.Text = Name;
+                gvari.Text = LastName;
+                asaki.Text = Age.ToString();
+                telefoni.Text = phoneNumber.ToString();
+                misamarti.Text = Adress;
 
-                saxeli.Text = subscriber.Name;
-                gvari.Text = subscriber.LastName;
-                asaki.Text = subscriber.DateOfBirth.ToString();
-                telefoni.Text = subscriber.PhoneNumber;
-                misamarti.Text = subscriber.Adress;
-                shenaxva.Text = "რედაქტირება";
+
+
+            shenaxva.Hide();
+            button2.Show();
+                
                 //lblAnonimentNumber.Visible = abonenti.Visible = false;
 
-            }
+            
 
         }
 
-        //private void AssignGridData()
-        //{
-        //    for (int i = 1; i < 7; i++)
-        //    {
-        //        List<CurrentGrid> list = new List<CurrentGrid>();
-        //        for (int j = 1; j < 13; j++)
-        //        {
-        //            list.Add(new CurrentGrid()
-        //            {
-        //                X = i,
-        //                Y = j,
-        //                CurrentColor = dataGridView1.Rows[j].Cells[i].Style.BackColor,
-        //                SeatNumber = Convert.ToInt32(dataGridView1.Rows[j].Cells[i].Value.ToString())
-        //            });
-        //        }
-        //        //GridDataList.Add(CurrentWeekDays[i - 1], list);
-        //    }
-        //}
+    
+
 
         public void GetCellColorToday()
         {
@@ -416,17 +414,7 @@ namespace SwimmingPool
 
         public void cheked(object sender, EventArgs e)
         {
-            var check = (CheckBox)sender;
 
-            if (check.Name == "ara")
-            {
-                diax.Checked = false;
-            }
-
-            else if (check.Name == "diax")
-            {
-                ara.Checked = false;
-            }
         }
 
         public void PushDays(DateTime day)
@@ -498,7 +486,7 @@ namespace SwimmingPool
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
             Schedule = Schedulereturner();
-            MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
+           // MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
             Dates.Clear();
         }
@@ -670,14 +658,14 @@ namespace SwimmingPool
             {
                 if (a > ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue)
                 {
-                    MessageBox.Show("მეტს ვერ დაამატებ ქალო");
+                    MessageBox.Show("თავისუფალი ადგილები არ არის, გსურთ გაგრძელება?");
                 }
             }
 
             catch
             {
 
-                MessageBox.Show("განსაზღვრეთ წინაწსარ ლიმიტი");
+                MessageBox.Show("განსაზღვრეთ წინასწარ ლიმიტი");
 
                 Limit limit = new Limit();
                 limit.ShowDialog();
@@ -698,7 +686,7 @@ namespace SwimmingPool
 
         }
 
-        //WIN
+        //წინ წასვლა
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate)
         {
             List<DateTime> DictionaryValues = new List<DateTime>();
@@ -725,18 +713,92 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+             //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                    DictionaryValues.Add(FinalDate);
+//  Dates.Add(FinalDate);
+                }
+            }
+            if(!DictDate.ContainsKey(Pagenumber))
+            DictDate.Add(Pagenumber, DictionaryValues);
+            Pagenumber = Pagenumber + 1;
+           // MessageBox.Show(Pagenumber.ToString());
+        }
+
+
+        public void BackClickSaveDictionary(Dictionary<int, List<DateTime>> DictDate)
+        {
+            //MessageBox.Show("BackClickSaveDictionary" + Pagenumber.ToString());
+            List<DateTime> DictionaryValues = new List<DateTime>();
+            foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+            {
+
+                if (cell.ColumnIndex == 0)
+                {
+                    break;
+                }
+                else
+                {
+
+                    int Hour = (cell.RowIndex + 8);
+                    var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+                    DateTime FinalDate = new DateTime();
+                    string _FinalDate = "";
+                    if (Hour < 10)
+                    {
+                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                    }
+                    else
+                    {
+                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    }
+
+                    //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
                     //  Dates.Add(FinalDate);
                 }
             }
-            DictDate.Add(Pagenumber, DictionaryValues);
-            Pagenumber = Pagenumber + 1;
-            MessageBox.Show(Pagenumber.ToString());
+            if (!DictDate.ContainsKey(Pagenumber))
+                DictDate.Add(Pagenumber, DictionaryValues);
+            else
+                DictDate[Pagenumber] = DictionaryValues;
+            //Pagenumber = Pagenumber + 1;
+ //           MessageBox.Show(Pagenumber.ToString());
+
+
+
+
+
         }
 
+
+
+
+
+        public void DatefillFront(Dictionary<int, List<DateTime>> DictDate)
+        {
+            int PageIndex = Pagenumber;
+           // MessageBox.Show("PageIndex " + PageIndex.ToString());
+            List<DateTime> DictionaryValuesАFront = new List<DateTime>();
+            if (DictDate.ContainsKey(PageIndex))
+            {
+                DictionaryValuesАFront = DictDate[PageIndex];
+                foreach (var item in DictionaryValuesАFront)
+                {
+                    int rowindex = item.Hour - 8;
+                    int columnindex = (int)item.DayOfWeek;
+                  //  MessageBox.Show("BACK" + rowindex + "COLUMN " + columnindex);
+                    dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
+
+                }
+            }
+
+
+
+        }
 
         //SAVEZE
         public void Datefiller(int DictionaryIndex, Dictionary<int, List<DateTime>> DictDate, bool Saveclick)
@@ -765,14 +827,21 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                   // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                   
                     DictionaryValues.Add(FinalDate);
                     //  Dates.Add(FinalDate);
                 }
             }
-            DictDate.Add(DictionaryIndex, DictionaryValues);
+           // DictDate.Add(DictionaryIndex, DictionaryValues);
+
+            if (!DictDate.ContainsKey(Pagenumber))
+                DictDate.Add(Pagenumber, DictionaryValues);
+            else
+                DictDate[Pagenumber] = DictionaryValues;
+
 
             foreach (var item in DictDate)
             {
@@ -782,8 +851,8 @@ namespace SwimmingPool
                 }
 
             }
-            DictionaryIndex++;
-
+            DictionaryIndex=0;
+//            Pagenumber = 0;
         }
 
 
@@ -791,23 +860,24 @@ namespace SwimmingPool
         //UKAN
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate, double Back)
         {
-            //  MessageBox.Show(Pagenumber.ToString());
-            int Backindex = Pagenumber - 1;
-            //MessageBox.Show("UKAN DABRUNEBULI INDEXI"+Backindex.ToString());
-            //   int columnindex;
-            // int rowindex;
-            //  Dictionary<int, int> ColRow = new Dictionary<int, int>();
-            List<DateTime> DictionaryValues = DictDate[Backindex];
+           
+            Pagenumber = Pagenumber - 1;
+
+           // MessageBox.Show("PAGE NUMBER FOR DICT" + Pagenumber.ToString());
+            if (Pagenumber < 0)
+                return;
+            else
+            { 
+            List<DateTime> DictionaryValues = DictDate[Pagenumber];
             foreach (var item in DictionaryValues)
             {
                 int rowindex = item.Hour - 8;
-                int columnindex = CurrentWeekDays.FindIndex(x => x == item) + 1;
-                MessageBox.Show(rowindex + "COLUMN " + columnindex);
+                int columnindex = (int)item.DayOfWeek;
+               // MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
                 dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
-                dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
-                // ColRow.Add(rowindex, columnindex);
+         
             }
-
+            }
 
 
 
@@ -843,7 +913,7 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                //    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     Dates.Add(FinalDate);
@@ -1053,6 +1123,7 @@ namespace SwimmingPool
         private void lblNext_Click_2(object sender, EventArgs e)
         {
 
+            //DICTIONARIS SHESAVSEBAD
             Datefiller(DateDic);
 
             dataGridView1.Rows.Clear();
@@ -1064,7 +1135,8 @@ namespace SwimmingPool
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
-
+            //DICTIONARIS WASAKITXTAD
+            DatefillFront(DateDic);
 
             //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
         }
@@ -1072,7 +1144,8 @@ namespace SwimmingPool
         private void lblBack_Click_2(object sender, EventArgs e)
         {
 
-            MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
+            // MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
+            BackClickSaveDictionary(DateDic);
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(-7);
@@ -1091,7 +1164,7 @@ namespace SwimmingPool
             //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
 
             gridFillter(dataGridView1, CurrentMonday);
-            MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
+           // MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
             Datefiller(DateDic, 1.5);
         }
 
@@ -1116,6 +1189,42 @@ namespace SwimmingPool
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+        }
+
+       
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
+                var newobj = subscriptionByID;
+
+
+
+                newobj.Subscriber_.Name = saxeli.Text;
+                newobj.Subscriber_.LastName = gvari.Text;
+                newobj.Subscriber_.DateOfBirth = Convert.ToDateTime(asaki.Text);
+                newobj.Subscriber_.PhoneNumber = telefoni.Text;
+                newobj.Subscriber_.Address = misamarti.Text;
+                //newobj.Subscriber_.Healthnotice[0].YesNO = Availability.ხელმისაწვდომი; 
+                DatabaseConnection.Conn.UpdateWithChildren(newobj);
+
+                var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
+
+            }
+
+            catch
+            {
+                MessageBox.Show("დაამატეთ საათების რაოდენობა");
+
+
+            }
+          
+            Close();
+
+
 
         }
     }

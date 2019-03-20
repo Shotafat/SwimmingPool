@@ -32,7 +32,7 @@ namespace SwimmingPool
 
 
             dataGridView1.AutoGenerateColumns = true;
-
+           
 
 
 
@@ -48,7 +48,7 @@ namespace SwimmingPool
         {
 
         }
-        public void JoinClasses()
+        public List<object> JoinClasses()
         {
 
             DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
@@ -68,7 +68,7 @@ namespace SwimmingPool
 
             var HealthTable = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.HealthNotice>();
 
-            MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
+            //MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
 
 
             var fillgrid = (from o in SubscribtionTable
@@ -83,9 +83,20 @@ namespace SwimmingPool
                                 ფასი = o.SubscriberPrice_.Price,
                                 საათი = o.SubscriberPrice_.NumberOfHours
 
-                            }).ToList();
+                            }).ToList<object>();
+
+
+
+            
+
+
+
+
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = fillgrid;
+
+            return fillgrid;
+
         }
 
         private string monthName;
@@ -241,22 +252,22 @@ namespace SwimmingPool
 
         private void რედაქტირებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows[0].Selected)
-            {
-                var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
-                AddAbonent add = new AddAbonent(subscriptionPrice);
+            //if (dataGridView1.SelectedRows[0].Selected)
+            //{
+            //    var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
+            //    AddAbonent add = new AddAbonent(subscriptionPrice);
 
-                add.ShowDialog();
-                if (add.DialogResult == DialogResult.OK)
-                {
-                    Form1_Load(sender, e);
+            //    add.ShowDialog();
+            //    if (add.DialogResult == DialogResult.OK)
+            //    {
+            //        Form1_Load(sender, e);
 
-                }
-            }
-            else
-            {
-                MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
-            }
+            //    }
+            //}
+            //else
+            //{
+            //    MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
+            //}
         }
 
 
@@ -375,6 +386,18 @@ namespace SwimmingPool
         {
             Graphics gr = new Graphics();
             gr.Show();
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Form4 form = new Form4();
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = form.last();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = JoinClasses();
+            //dataGridView1.DataSource = 
         }
     }
 }
