@@ -1057,7 +1057,9 @@ namespace SwimmingPool
 
         }
 
-        private void button2_Click(object sender, EventArgs e)
+       
+
+        private void button2_Click_1(object sender, EventArgs e)
         {
             try
             {
@@ -1070,22 +1072,25 @@ namespace SwimmingPool
                 newobj.Subscriber_.LastName = gvari.Text;
                 newobj.Subscriber_.DateOfBirth = Convert.ToDateTime(asaki.Text);
                 newobj.Subscriber_.PhoneNumber = telefoni.Text;
-                newobj.Subscriber_.Address =
-                misamarti.Text;
+                newobj.Subscriber_.Address = misamarti.Text;
+                //newobj.Subscriber_.Healthnotice[0].YesNO = Availability.ხელმისაწვდომი; 
+                DatabaseConnection.Conn.UpdateWithChildren(newobj);
 
-                DatabaseConnection.Conn.Update(newobj);
+                var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
 
             }
+
             catch
             {
                 MessageBox.Show("დაამატეთ საათების რაოდენობა");
 
-               
+
             }
+          
+            Close();
 
 
-            
-            
+
         }
     }
 }

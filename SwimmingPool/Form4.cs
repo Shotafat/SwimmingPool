@@ -63,7 +63,7 @@ namespace SwimmingPool
 
         }
 
-        public void last()
+        public List<object>    last()
         {
             var schedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>();
 
@@ -73,7 +73,7 @@ namespace SwimmingPool
             //                select g.Schedule).ToList();
 
             var lastDate = schedule.Last().Schedule.Date.ToString("yyyy-MM-dd");
-            var Today = DateTime.Now.AddDays(-6).ToString("yyyy-MM-dd");
+            var Today = DateTime.Now.ToString("yyyy-MM-dd");
 
             //var lastDate = onlyDate.Last().Date;
             //var today = DateTime.Now.AddDays(-6);
@@ -113,7 +113,7 @@ namespace SwimmingPool
 
 
             var r = (from g in subscriptions
-                     where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(5).ToString("yyyy-MM-dd"))
+                     where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
 
                      select new
                      {
@@ -124,12 +124,13 @@ namespace SwimmingPool
 
                          ფასი = g.SubscriberPrice_.Price,
                          საათი = g.SubscriberPrice_.NumberOfHours
-                     }).ToList();
+                     }).ToList<object>();
 
             old.DataSource = r;
 
+            
 
-
+            return r;
 
 
 
