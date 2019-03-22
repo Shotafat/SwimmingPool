@@ -151,7 +151,6 @@
             this.dataGridView1.GridColor = System.Drawing.SystemColors.Control;
             this.dataGridView1.ImeMode = System.Windows.Forms.ImeMode.Katakana;
             this.dataGridView1.Location = new System.Drawing.Point(20, 13);
-            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.dataGridView1.RowHeadersWidth = 50;
