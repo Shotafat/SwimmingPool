@@ -19,8 +19,9 @@ namespace SwimmingPool
         public List<string> ganrigidge = new List<string>();
         public List<int> columni = new List<int>();
         public List<int> rovsi = new List<int>();
+       
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
-
+        #region shott
         //შოთა - გამოიყენება დეითების შესავსებად
         public Dictionary<int, List<DateTime>> DateDic = new Dictionary<int, List<DateTime>>();
         public static int Pagenumber = 0;
@@ -41,6 +42,8 @@ namespace SwimmingPool
         public List<int> CoordinateList { get; set; } = new List<int>();
 
         public DateTime CurrentDateValue { get; private set; } = DateTime.Now.Date;
+        #endregion
+
 
         public AddAbonent()
         {
@@ -56,7 +59,7 @@ namespace SwimmingPool
 
             /*function for calc current monday*/
 
-          
+            button2.Hide();
             //AssignGridData();
         }
 
@@ -1201,17 +1204,29 @@ namespace SwimmingPool
                 var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
                 var newobj = subscriptionByID;
 
+                var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
+
+                var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+                   .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
+                   .SubscribtionSchedule_.OrderBy(x=>x.Schedule.Date).ToList();
+                                   
+              
+
+                subscriber.Name = saxeli.Text;
+                subscriber.LastName = gvari.Text;
+                subscriber.PhoneNumber = telefoni.Text;
+                subscriber.Address = misamarti.Text;
+
+                //newobj.Subscriber_.DateOfBirth = Convert.ToDateTime(asaki.Text);
 
 
-                newobj.Subscriber_.Name = saxeli.Text;
-                newobj.Subscriber_.LastName = gvari.Text;
-                newobj.Subscriber_.DateOfBirth = Convert.ToDateTime(asaki.Text);
-                newobj.Subscriber_.PhoneNumber = telefoni.Text;
-                newobj.Subscriber_.Address = misamarti.Text;
                 //newobj.Subscriber_.Healthnotice[0].YesNO = Availability.ხელმისაწვდომი; 
+                DatabaseConnection.Conn.Update(subscriber);
                 DatabaseConnection.Conn.UpdateWithChildren(newobj);
 
                 var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
+                var gggg = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().FirstOrDefault(x => x.SubscribtionID == 1);
+
 
             }
 
@@ -1221,8 +1236,9 @@ namespace SwimmingPool
 
 
             }
-          
+            Form1 form = new Form1();
             Close();
+            form.Refresh();
 
 
 

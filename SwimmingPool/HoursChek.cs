@@ -162,8 +162,19 @@ namespace SwimmingPool
 
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
 
-           
-               var IDnumber = subscriptionByID.IDnumber.ToString();
+
+            var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+               .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
+               .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x=>x.Schedule).ToList();
+
+            Form1 A = new Form1();
+
+          
+
+
+
+
+            var IDnumber = subscriptionByID.IDnumber.ToString();
                var LastName = subscriptionByID.Subscriber_.LastName;
                var Name = subscriptionByID.Subscriber_.Name;
               
@@ -174,8 +185,9 @@ namespace SwimmingPool
 
 
                 AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
-                
-                abonent.Show();
+            //abonent.Controls.Add(DataGridView datagridview1);
+            A.EditFillGrid(abonent.dataGridView1, ScheduleList);
+            abonent.Show();
             
 
         }

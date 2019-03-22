@@ -32,7 +32,7 @@ namespace SwimmingPool
 
 
             dataGridView1.AutoGenerateColumns = true;
-           
+
 
 
 
@@ -87,7 +87,7 @@ namespace SwimmingPool
 
 
 
-            
+
 
 
 
@@ -111,6 +111,25 @@ namespace SwimmingPool
 
         public static string selectedAbonentNumber { get; set; }
         public static List<DateTime> FullDatetime { get; set; }
+
+        public void EditFillGrid (DataGridView DataGrid, List<DateTime> DateList)
+            {
+
+            foreach (var item in DateList)
+            {
+                int rowindex = item.Hour - 8;
+                int columnindex = (int)item.DayOfWeek;
+                DataGrid.Rows[rowindex].Cells[columnindex].Selected = true;
+                MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
+                DataGrid.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
+            }
+
+
+
+
+        }
+
+
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -291,7 +310,7 @@ namespace SwimmingPool
 
         private void წაშლაToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            
 
 
 
