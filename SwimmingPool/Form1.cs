@@ -126,13 +126,23 @@ namespace SwimmingPool
         public void EditFillGrid (DataGridView DataGrid, List<DateTime> DateList)
             {
 
+           
+
             foreach (var item in DateList)
             {
                 int rowindex = item.Hour - 8;
+
                 int columnindex = (int)item.DayOfWeek;
+                DataGrid.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+
                 DataGrid.Rows[rowindex].Cells[columnindex].Selected = true;
+
                 MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
-                DataGrid.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.Red;
+
+                DataGrid.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
+
+
+
             }
 
 

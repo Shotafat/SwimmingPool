@@ -649,9 +649,36 @@ namespace SwimmingPool
                 dataGridView1.Rows[i].Cells[ColumnRank].Style.SelectionForeColor = Color.Gray;
             }
         }
-
+        Dictionary<int, int> gela = new Dictionary<int, int>();
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+
+           
+          
+           // gela.Add(e.ColumnIndex, e.RowIndex);
+
+            var nino = gela.Any(x => x.Key == e.ColumnIndex);
+            if(nino)
+            {
+              var zz =  gela.FirstOrDefault(x => x.Key == e.ColumnIndex);
+
+                gela.Remove(zz.Key);
+                dataGridView1.Rows[zz.Value].Cells[zz.Key].Selected = false;
+
+                gela.Add(zz.Key,e.RowIndex );
+
+              
+            }
+            else
+            {
+                gela.Add(e.ColumnIndex, e.RowIndex);
+
+            }
+
+            foreach (var item in gela)
+            {
+             
+            }
             //  NickCode(e);
             // MessageBox.Show("Click");
 
@@ -676,7 +703,10 @@ namespace SwimmingPool
 
             }
 
-            dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = true;
+          //  dataGridView1.Rows[].Cells[item.Key].Selected = true;
+
+
+
         }
 
         //AQ GAVCHERDI
@@ -806,19 +836,20 @@ namespace SwimmingPool
         //SAVEZE
         public void Datefiller(int DictionaryIndex, Dictionary<int, List<DateTime>> DictDate, bool Saveclick)
         {
+            
             List<DateTime> DictionaryValues = new List<DateTime>();
-            foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+            foreach (var cell in gela)
             {
 
-                if (cell.ColumnIndex == 0)
+                if (cell.Key == 0)
                 {
                     break;
                 }
                 else
                 {
 
-                    int Hour = (cell.RowIndex + 8);
-                    var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+                    int Hour = (cell.Value + 8);
+                    var Date = CurrentWeekDays[0 + cell.Key - 1];
                     DateTime FinalDate = new DateTime();
                     string _FinalDate = "";
                     if (Hour < 10)
@@ -830,16 +861,50 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                   // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                    // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-                   
+
                     DictionaryValues.Add(FinalDate);
                     //  Dates.Add(FinalDate);
                 }
             }
-           // DictDate.Add(DictionaryIndex, DictionaryValues);
 
+
+            #region shota
+            //foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+            //{
+
+            //    if (cell.ColumnIndex == 0)
+            //    {
+            //        break;
+            //    }
+            //    else
+            //    {
+
+            //        int Hour = (cell.RowIndex + 8);
+            //        var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+            //        DateTime FinalDate = new DateTime();
+            //        string _FinalDate = "";
+            //        if (Hour < 10)
+            //        {
+            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+            //        }
+            //        else
+            //        {
+            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+            //        }
+
+            //       // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+            //        FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+
+            //        DictionaryValues.Add(FinalDate);
+            //        //  Dates.Add(FinalDate);
+            //    }
+            //}
+            // DictDate.Add(DictionaryIndex, DictionaryValues);
+            #endregion
             if (!DictDate.ContainsKey(Pagenumber))
                 DictDate.Add(Pagenumber, DictionaryValues);
             else
@@ -1028,8 +1093,6 @@ namespace SwimmingPool
 
 
 
-
-
         }
 
 
@@ -1192,7 +1255,7 @@ namespace SwimmingPool
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+           
         }
 
        
