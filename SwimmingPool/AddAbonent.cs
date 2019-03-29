@@ -500,11 +500,11 @@ namespace SwimmingPool
             SPSQLite.CLASSES.HealthNotice Health = new SPSQLite.CLASSES.HealthNotice();
             if (diax.Checked == true)
             {
-                Health.YESNO = Availability.ხელმისაწვდომი;
+                Health.YESNO = Availability.Yes;
             }
             else
             {
-                Health.YESNO = Availability.არახელმისაწვდომი;
+                Health.YESNO = Availability.No;
             }
 
             Health.DateCreated = DateTime.Now;

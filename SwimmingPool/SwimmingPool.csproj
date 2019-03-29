@@ -167,6 +167,7 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Form1.FillGrid.datasource" />
     <None Include="Properties\DataSources\SPSQLite.CLASSES.Doctor.datasource" />
     <None Include="Properties\DataSources\SPSQLite.CLASSES.HealthNotice.datasource" />
     <None Include="Properties\DataSources\SPSQLite.CLASSES.SubcsriptionPrice.datasource" />

@@ -15,7 +15,6 @@ namespace SPSQLite
 
 public enum Availability
 {
-    ხელმისაწვდომი,
-    არახელმისაწვდომი
-    
+    Yes,
+    No    
 }
