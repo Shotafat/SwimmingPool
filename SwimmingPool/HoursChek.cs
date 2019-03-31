@@ -4,6 +4,7 @@ using System;
 using System.Drawing;
 using System.Linq;
 using System.Windows.Forms;
+using System.Collections.Generic;
 
 namespace SwimmingPool
 {
@@ -156,16 +157,21 @@ namespace SwimmingPool
 
             Attendance(1);
         }
+        
+        public  List<DateTime> ScheduleList()
+        {
+
+            var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+               .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
+               .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
+            return ScheduleList;
+        }
 
         private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
 
-
-            var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
-               .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
-               .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x=>x.Schedule).ToList();
 
             Form1 A = new Form1();
 
@@ -186,7 +192,7 @@ namespace SwimmingPool
 
                 AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
             //abonent.Controls.Add(DataGridView datagridview1);
-            A.EditFillGrid(abonent.dataGridView1, ScheduleList);
+            A.EditFillGrid(abonent.dataGridView1, ScheduleList());
             abonent.Show();
             
 

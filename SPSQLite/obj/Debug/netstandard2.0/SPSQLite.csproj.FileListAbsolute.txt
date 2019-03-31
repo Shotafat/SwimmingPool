@@ -217,3 +217,25 @@ C:\Users\Admin\Desktop\SwimmingPool - 29.03\SPSQLite\obj\Debug\netstandard2.0\SP
 C:\Users\Admin\Desktop\SwimmingPool - 29.03\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
 C:\Users\Admin\Desktop\SwimmingPool - 29.03\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
 C:\Users\Admin\Desktop\SwimmingPool - 29.03\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.deps.json
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Windows.Forms.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\Accessibility.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Deployment.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Windows.Forms.xml
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Security.xml
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\Accessibility.xml
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Deployment.xml
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfo.cs
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\Data\Downloads\SwimmingPool-master\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb

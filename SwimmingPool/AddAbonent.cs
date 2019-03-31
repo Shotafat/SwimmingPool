@@ -649,13 +649,28 @@ namespace SwimmingPool
                 dataGridView1.Rows[i].Cells[ColumnRank].Style.SelectionForeColor = Color.Gray;
             }
         }
+        HoursChek hours = new HoursChek();
+
         Dictionary<int, int> gela = new Dictionary<int, int>();
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            foreach (var item in hours.ScheduleList())
+            {
+                if (dataGridView1.Rows[0].Cells[e.ColumnIndex].Value.ToString().Contains(item.Day.ToString()))
+                {
+                    Console.WriteLine(item);
+                    var tt = item.Hour;
 
-           
-          
-           // gela.Add(e.ColumnIndex, e.RowIndex);
+                    hours.ScheduleList().Remove(item);
+
+                    dataGridView1.Rows[tt - 8].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+
+
+                }
+            }
+
+
+            // gela.Add(e.ColumnIndex, e.RowIndex);
 
             var nino = gela.Any(x => x.Key == e.ColumnIndex);
             if(nino)

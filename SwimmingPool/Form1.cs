@@ -7,7 +7,7 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using Excel=Microsoft.Office.Interop.Excel;
+//using Excel=Microsoft.Office.Interop.Excel;
 using System.IO;
 namespace SwimmingPool
 {
@@ -323,7 +323,7 @@ namespace SwimmingPool
             //dataGridView1.DataSource = JoinClasses();
             //dataGridView1.DataSource = 
         }
-
+/*
         private void ექსპორტიToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SaveFileDialog sfd = new SaveFileDialog();
@@ -377,7 +377,7 @@ namespace SwimmingPool
             }
 
         }
-
+        */
         private void copyAlltoClipboard()
         {
             dataGridView1.SelectAll();
