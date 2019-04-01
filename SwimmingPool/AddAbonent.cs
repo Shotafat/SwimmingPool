@@ -698,7 +698,11 @@ namespace SwimmingPool
             // MessageBox.Show("Click");
 
             Capicity capicity = new Capicity();
-            int a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) + 1;
+            int a = 0;
+            if (e.RowIndex <= 0 || e.ColumnIndex <= 0)
+                return;
+            else
+                a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) + 1;
             try
             {
                 if (a > ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue)

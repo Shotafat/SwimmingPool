@@ -36,6 +36,18 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.abonentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hasInquryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fillGridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -54,25 +66,14 @@
             this.ექსპორტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iSubscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.fillGridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.abonentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasInquryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -82,7 +83,6 @@
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -184,6 +184,89 @@
             this.dataGridView1.Size = new System.Drawing.Size(985, 431);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // abonentIdDataGridViewTextBoxColumn
+            // 
+            this.abonentIdDataGridViewTextBoxColumn.DataPropertyName = "AbonentId";
+            this.abonentIdDataGridViewTextBoxColumn.HeaderText = "აბონენტის N";
+            this.abonentIdDataGridViewTextBoxColumn.Name = "abonentIdDataGridViewTextBoxColumn";
+            this.abonentIdDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "სახელი";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "გვარი";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.HeaderText = "ასაკი";
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.HeaderText = "მისამართი";
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "ტელეფონის ნომერი";
+            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
+            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateFromDataGridViewTextBoxColumn
+            // 
+            this.dateFromDataGridViewTextBoxColumn.DataPropertyName = "DateFrom";
+            this.dateFromDataGridViewTextBoxColumn.HeaderText = "საიდან";
+            this.dateFromDataGridViewTextBoxColumn.Name = "dateFromDataGridViewTextBoxColumn";
+            this.dateFromDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dateToDataGridViewTextBoxColumn
+            // 
+            this.dateToDataGridViewTextBoxColumn.DataPropertyName = "DateTo";
+            this.dateToDataGridViewTextBoxColumn.HeaderText = "სადამდე";
+            this.dateToDataGridViewTextBoxColumn.Name = "dateToDataGridViewTextBoxColumn";
+            this.dateToDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hasInquryDataGridViewTextBoxColumn
+            // 
+            this.hasInquryDataGridViewTextBoxColumn.DataPropertyName = "HasInqury";
+            this.hasInquryDataGridViewTextBoxColumn.HeaderText = "ცნობა";
+            this.hasInquryDataGridViewTextBoxColumn.Name = "hasInquryDataGridViewTextBoxColumn";
+            this.hasInquryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // priceDataGridViewTextBoxColumn
+            // 
+            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
+            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
+            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
+            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
+            this.priceDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // hoursDataGridViewTextBoxColumn
+            // 
+            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "Hours";
+            this.hoursDataGridViewTextBoxColumn.HeaderText = "Hours";
+            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
+            this.hoursDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hoursDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // fillGridBindingSource
+            // 
+            this.fillGridBindingSource.DataSource = typeof(SwimmingPool.Form1.FillGrid);
             // 
             // panel2
             // 
@@ -341,11 +424,7 @@
             this.ექსპორტიToolStripMenuItem.Name = "ექსპორტიToolStripMenuItem";
             this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ექსპორტიToolStripMenuItem.Text = "ექსპორტი";
-
-            // 
-            // fillGridBindingSource
-            // 
-            this.fillGridBindingSource.DataSource = typeof(SwimmingPool.Form1.FillGrid);
+            this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -353,85 +432,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "HasInqury";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 85;
-            // 
-            // abonentIdDataGridViewTextBoxColumn
-            // 
-            this.abonentIdDataGridViewTextBoxColumn.DataPropertyName = "AbonentId";
-            this.abonentIdDataGridViewTextBoxColumn.HeaderText = "აბონენტის N";
-            this.abonentIdDataGridViewTextBoxColumn.Name = "abonentIdDataGridViewTextBoxColumn";
-            this.abonentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "სახელი";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "გვარი";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "ასაკი";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "მისამართი";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "ტელეფონის ნომერი";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateFromDataGridViewTextBoxColumn
-            // 
-            this.dateFromDataGridViewTextBoxColumn.DataPropertyName = "DateFrom";
-            this.dateFromDataGridViewTextBoxColumn.HeaderText = "საიდან";
-            this.dateFromDataGridViewTextBoxColumn.Name = "dateFromDataGridViewTextBoxColumn";
-            this.dateFromDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateToDataGridViewTextBoxColumn
-            // 
-            this.dateToDataGridViewTextBoxColumn.DataPropertyName = "DateTo";
-            this.dateToDataGridViewTextBoxColumn.HeaderText = "სადამდე";
-            this.dateToDataGridViewTextBoxColumn.Name = "dateToDataGridViewTextBoxColumn";
-            this.dateToDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hasInquryDataGridViewTextBoxColumn
-            // 
-            this.hasInquryDataGridViewTextBoxColumn.DataPropertyName = "HasInqury";
-            this.hasInquryDataGridViewTextBoxColumn.HeaderText = "ცნობა";
-            this.hasInquryDataGridViewTextBoxColumn.Name = "hasInquryDataGridViewTextBoxColumn";
-            this.hasInquryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.priceDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "Hours";
-            this.hoursDataGridViewTextBoxColumn.HeaderText = "Hours";
-            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            this.hoursDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hoursDataGridViewTextBoxColumn.Visible = false;
             // 
             // Form1
             // 
@@ -455,6 +455,7 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -466,7 +467,6 @@
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
