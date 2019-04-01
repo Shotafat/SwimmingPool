@@ -59,9 +59,9 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(86, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(269, 29);
+            this.label1.Size = new System.Drawing.Size(255, 29);
             this.label1.TabIndex = 0;
-            this.label1.Text = "აბონენემნტის ტიპები";
+            this.label1.Text = "აბონემენტის ტიპები";
             // 
             // subcsriptionPriceBindingSource
             // 
