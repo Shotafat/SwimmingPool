@@ -654,23 +654,14 @@ namespace SwimmingPool
         Dictionary<int, int> gela = new Dictionary<int, int>();
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            foreach (var item in hours.ScheduleList())
+
+
+            if (hours.ScheduleList() == null)
+
             {
-                if (dataGridView1.Rows[0].Cells[e.ColumnIndex].Value.ToString().Contains(item.Day.ToString()))
-                {
-                    Console.WriteLine(item);
-                    var tt = item.Hour;
-
-                    hours.ScheduleList().Remove(item);
-
-                    dataGridView1.Rows[tt - 8].Cells[e.ColumnIndex].Style.BackColor = Color.White;
-
-
-                }
+                return;               
             }
-
-
-            // gela.Add(e.ColumnIndex, e.RowIndex);
+            
 
             var nino = gela.Any(x => x.Key == e.ColumnIndex);
             if(nino)
@@ -686,14 +677,40 @@ namespace SwimmingPool
             }
             else
             {
+                
                 gela.Add(e.ColumnIndex, e.RowIndex);
 
             }
 
-            foreach (var item in gela)
+
+            foreach (var item in hours.ScheduleList())
             {
-             
+                try
+                {
+                    if (dataGridView1.Rows[0].Cells[e.ColumnIndex].Value.ToString().Contains(item.Day.ToString()))
+                    {
+                        Console.WriteLine(item);
+                        var tt = item.Hour;
+
+                        hours.ScheduleList().Remove(item);
+
+                        dataGridView1.Rows[tt - 8].Cells[e.ColumnIndex].Style.BackColor = Color.White;
+
+
+                    }
+                }
+               
+                catch
+                {
+                    continue;
+                }
+                
             }
+
+
+
+
+     
             //  NickCode(e);
             // MessageBox.Show("Click");
 
@@ -923,7 +940,7 @@ namespace SwimmingPool
             if (!DictDate.ContainsKey(Pagenumber))
                 DictDate.Add(Pagenumber, DictionaryValues);
             else
-                DictDate[Pagenumber] = DictionaryValues;
+                DictDate[Pagenumber] = DictionaryValues;                           
 
 
             foreach (var item in DictDate)

@@ -106,6 +106,7 @@ namespace SwimmingPool
         {
             flowLayoutPanel1.Controls.Clear();
             Refresh();
+
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
 
             label3.Text = "";
