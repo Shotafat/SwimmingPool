@@ -106,11 +106,10 @@ namespace SwimmingPool
         {
             flowLayoutPanel1.Controls.Clear();
             Refresh();
+
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
 
             label3.Text = "";
-            label3.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString() + " " + dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
-
             var firstName = MyFillGrid.Where(i => i.AbonentId == selectedAbonentNumber).FirstOrDefault().FirstName;
             var lastName = MyFillGrid.Where(i => i.AbonentId == selectedAbonentNumber).FirstOrDefault().LastName;
 
@@ -132,8 +131,6 @@ namespace SwimmingPool
                 var geoCulture = new CultureInfo("ka-GE");
                 var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
                 var weekDay = item.Ganrigi.DayOfWeek;
-                //var monthname = item.Ganrigi.Month;
-                //var month = dateTimeInfo.GetMonthName(monthname);
 
                 monthName = dateTimeInfo.GetAbbreviatedMonthName(gela);
                 WeekDay = dateTimeInfo.GetAbbreviatedDayName(weekDay);
@@ -334,13 +331,13 @@ namespace SwimmingPool
               //  Copy DataGridView results to clipboard
                         copyAlltoClipboard();
 
-                object misValue = System.Reflection.Missing.Value;
-                Excel.Application xlexcel = new Excel.Application();
+                        object misValue = System.Reflection.Missing.Value;
+                        Excel.Application xlexcel = new Excel.Application();
 
-                xlexcel.DisplayAlerts = false; // Without this you will get two confirm overwrite prompts
-                Excel.Workbook xlWorkBook = xlexcel.Workbooks.Add(misValue);
+                        xlexcel.DisplayAlerts = false; // Without this you will get two confirm overwrite prompts
+                        Excel.Workbook xlWorkBook = xlexcel.Workbooks.Add(misValue);
 
-                Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
+                        Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
 
                 //Format column D as text before pasting results, this was required for my data
 
@@ -365,9 +362,9 @@ namespace SwimmingPool
                 xlWorkBook.Close(true, misValue, misValue);
                 xlexcel.Quit();
 
-                releaseObject(xlWorkSheet);
-                releaseObject(xlWorkBook);
-                releaseObject(xlexcel);
+                        releaseObject(xlWorkSheet);
+                        releaseObject(xlWorkBook);
+                        releaseObject(xlexcel);
 
                // Clear Clipboard and DataGridView selection
                         Clipboard.Clear();
