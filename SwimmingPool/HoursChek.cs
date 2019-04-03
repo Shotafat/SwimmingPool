@@ -157,14 +157,21 @@ namespace SwimmingPool
 
             Attendance(1);
         }
-        
+
+        List<DateTime> ScheduleList1;
         public  List<DateTime> ScheduleList()
         {
+            
+            var rr = Form1.selectedAbonentNumber;
 
-            var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
-               .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
-               .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
-            return ScheduleList;
+            if (rr != null)
+            {
+                ScheduleList1 = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+                   .Where(x => x.IDnumber == rr).FirstOrDefault()
+                   .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
+            };
+            
+            return ScheduleList1;
         }
 
         private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
