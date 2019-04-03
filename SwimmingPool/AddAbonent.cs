@@ -19,6 +19,7 @@ namespace SwimmingPool
         public List<string> ganrigidge = new List<string>();
         public List<int> columni = new List<int>();
         public List<int> rovsi = new List<int>();
+        public List<GridFormat> CheckedDayList = new List<GridFormat>();
        
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
         #region shott
@@ -117,7 +118,7 @@ namespace SwimmingPool
 
         public void GetCellColorToday()
         {
-            dataGridView1.Rows[0].Cells[daynumber].Style.BackColor = Color.DarkSlateGray;
+            dataGridView1.Rows[0].Cells[daynumber].Style.BackColor = Color.Red;
             dataGridView1.Rows[0].Cells[daynumber].Style.ForeColor = Color.White;
         }
 
@@ -280,7 +281,6 @@ namespace SwimmingPool
             }
 
             EmptyCellfiller(SubscriberSchedul);
-
         }
 
         public void EmptyCellfiller(DataGridView EmptyCell)
@@ -350,7 +350,7 @@ namespace SwimmingPool
             }
 
             dataGridView1.Rows[0].Cells[0].Value = " ";
-            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+            //dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
         }
 
         public void grafiki(DataGridView gridview)
@@ -652,77 +652,130 @@ namespace SwimmingPool
         HoursChek hours = new HoursChek();
 
         Dictionary<int, int> gela = new Dictionary<int, int>();
-        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+
+        public void DateFormat()
         {
-            foreach (var item in hours.ScheduleList())
+
+
+            
+
+       }
+
+
+        private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+            int Hour = (e.RowIndex + 8);
+            var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
+            DateTime FinalDate = new DateTime();
+            string _FinalDate = "";
+            if (Hour < 10)
             {
-                if (dataGridView1.Rows[0].Cells[e.ColumnIndex].Value.ToString().Contains(item.Day.ToString()))
-                {
-                    Console.WriteLine(item);
-                    var tt = item.Hour;
-
-                    hours.ScheduleList().Remove(item);
-
-                    dataGridView1.Rows[tt - 8].Cells[e.ColumnIndex].Style.BackColor = Color.White;
-
-
-                }
-            }
-
-
-            // gela.Add(e.ColumnIndex, e.RowIndex);
-
-            var nino = gela.Any(x => x.Key == e.ColumnIndex);
-            if(nino)
-            {
-              var zz =  gela.FirstOrDefault(x => x.Key == e.ColumnIndex);
-
-                gela.Remove(zz.Key);
-                dataGridView1.Rows[zz.Value].Cells[zz.Key].Selected = false;
-
-                gela.Add(zz.Key,e.RowIndex );
-
-              
+                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
             }
             else
             {
-                gela.Add(e.ColumnIndex, e.RowIndex);
-
+                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
             }
 
-            foreach (var item in gela)
+            //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+            FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+         //   Dates.Add(FinalDate);
+
+
+
+
+            //________________________
+            var id = CheckedDayList.Count;
+            GridFormat f = new GridFormat(id);
+            f.X = e.RowIndex;
+            f.Y = e.ColumnIndex;
+            f.Day = FinalDate;
+            f.IsChecked = true;
+
+            if (CheckedDayList.Count == 0)
             {
-             
+                CheckedDayList.Add(f);
+                dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.Red;
             }
-            //  NickCode(e);
-            // MessageBox.Show("Click");
 
-            Capicity capicity = new Capicity();
-            int a = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value) + 1;
-            try
+            else
             {
-                if (a > ServiceInstances.Service().GetCapicityServices().GetData().Last().CapicityValue)
-                {
-                    MessageBox.Show("თავისუფალი ადგილები არ არის, გსურთ გაგრძელება?");
-                }
+                Checking(f);
+                DrawGrid(CurrentWeekDays);
             }
 
-            catch
-            {
 
-                MessageBox.Show("განსაზღვრეთ წინასწარ ლიმიტი");
-
-                Limit limit = new Limit();
-                limit.ShowDialog();
-
-
-            }
-
-          //  dataGridView1.Rows[].Cells[item.Key].Selected = true;
-
-
+            var lbl = CheckedDayList.Count();
+            label2.Text = lbl.ToString();
 
         }
+
+
+
+
+
+
+
+
+
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        public void Checking(GridFormat obj)
+        {
+            bool value = CheckedDayList.Any(o => o.Day == obj.Day && o.X == obj.X && o.Y == obj.Y);
+            bool value2 = CheckedDayList.Any(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X);
+
+            if (value2)
+            {
+                var OriginObj = CheckedDayList.Where(x => x.Y == obj.Y).FirstOrDefault();
+                var _id = OriginObj.Id;
+                CheckedDayList[_id] = obj;
+                obj.Id = _id;
+
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.SelectionBackColor = Color.White;
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.BackColor = Color.White;
+                return;
+            }
+
+
+            if (value)
+            {
+                var result = CheckedDayList.Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault().Id;
+                CheckedDayList.RemoveAt(result);
+                dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
+                dataGridView1.Rows[obj.X].Cells[obj.Y].Style.BackColor = Color.White;
+            }
+
+            else
+            {
+                CheckedDayList.Add(obj);
+            }
+
+            var testlit2 = CheckedDayList;
+
+        }
+
+        public void DrawGrid(List<DateTime> week)
+        {
+            if (CheckedDayList.Count > 0)
+            {
+                var currentGrid = CheckedDayList.Where(d => d.Day >= week[0] && d.Day <= week[week.Count - 1]).ToList();
+
+                foreach (var item in currentGrid)
+                {
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.Red;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.Red;
+                }
+            }
+            else
+                return;                
+        }
+
 
         //AQ GAVCHERDI
         public void DatestoSelectedCells()
@@ -815,16 +868,7 @@ namespace SwimmingPool
                 DictDate[Pagenumber] = DictionaryValues;
             //Pagenumber = Pagenumber + 1;
  //           MessageBox.Show(Pagenumber.ToString());
-
-
-
-
-
         }
-
-
-
-
 
         public void DatefillFront(Dictionary<int, List<DateTime>> DictDate)
         {
@@ -851,91 +895,95 @@ namespace SwimmingPool
         //SAVEZE
         public void Datefiller(int DictionaryIndex, Dictionary<int, List<DateTime>> DictDate, bool Saveclick)
         {
-            
-            List<DateTime> DictionaryValues = new List<DateTime>();
-            foreach (var cell in gela)
-            {
-
-                if (cell.Key == 0)
-                {
-                    break;
-                }
-                else
-                {
-
-                    int Hour = (cell.Value + 8);
-                    var Date = CurrentWeekDays[0 + cell.Key - 1];
-                    DateTime FinalDate = new DateTime();
-                    string _FinalDate = "";
-                    if (Hour < 10)
-                    {
-                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-                    }
-                    else
-                    {
-                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-                    }
-
-                    // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
-
-                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-
-                    DictionaryValues.Add(FinalDate);
-                    //  Dates.Add(FinalDate);
-                }
-            }
 
 
-            #region shota
-            //foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
-            //{
+            var DatestringFromGridclass = CheckedDayList.Select(x=>x.Day).ToList();
+            Dates = DatestringFromGridclass;
+                //Dates = CheckedDayList.
+                //            List<DateTime> DictionaryValues = new List<DateTime>();
+                //            foreach (var cell in gela)
+                //            {
 
-            //    if (cell.ColumnIndex == 0)
-            //    {
-            //        break;
-            //    }
-            //    else
-            //    {
+            //                if (cell.Key == 0)
+            //                {
+            //                    break;
+            //                }
+            //                else
+            //                {
 
-            //        int Hour = (cell.RowIndex + 8);
-            //        var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
-            //        DateTime FinalDate = new DateTime();
-            //        string _FinalDate = "";
-            //        if (Hour < 10)
-            //        {
-            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-            //        }
-            //        else
-            //        {
-            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-            //        }
+            //                    int Hour = (cell.Value + 8);
+            //                    var Date = CurrentWeekDays[0 + cell.Key - 1];
+            //                    DateTime FinalDate = new DateTime();
+            //                    string _FinalDate = "";
+            //                    if (Hour < 10)
+            //                    {
+            //                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+            //                    }
+            //                    else
+            //                    {
+            //                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+            //                    }
 
-            //       // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+            //                    // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
-            //        FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+            //                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
 
-            //        DictionaryValues.Add(FinalDate);
-            //        //  Dates.Add(FinalDate);
-            //    }
-            //}
-            // DictDate.Add(DictionaryIndex, DictionaryValues);
-            #endregion
-            if (!DictDate.ContainsKey(Pagenumber))
-                DictDate.Add(Pagenumber, DictionaryValues);
-            else
-                DictDate[Pagenumber] = DictionaryValues;
+            //                    DictionaryValues.Add(FinalDate);
+            //                    //  Dates.Add(FinalDate);
+            //                }
+            //            }
 
 
-            foreach (var item in DictDate)
-            {
-                foreach (var internaldata in item.Value)
-                {
-                    Dates.Add(internaldata);
-                }
+            //            #region shota
+            //            //foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
+            //            //{
 
-            }
-            DictionaryIndex=0;
-//            Pagenumber = 0;
+            //            //    if (cell.ColumnIndex == 0)
+            //            //    {
+            //            //        break;
+            //            //    }
+            //            //    else
+            //            //    {
+
+            //            //        int Hour = (cell.RowIndex + 8);
+            //            //        var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
+            //            //        DateTime FinalDate = new DateTime();
+            //            //        string _FinalDate = "";
+            //            //        if (Hour < 10)
+            //            //        {
+            //            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+            //            //        }
+            //            //        else
+            //            //        {
+            //            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+            //            //        }
+
+            //            //       // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+            //            //        FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+
+            //            //        DictionaryValues.Add(FinalDate);
+            //            //        //  Dates.Add(FinalDate);
+            //            //    }
+            //            //}
+            //            // DictDate.Add(DictionaryIndex, DictionaryValues);
+            //            #endregion
+            //            if (!DictDate.ContainsKey(Pagenumber))
+            //                DictDate.Add(Pagenumber, DictionaryValues);
+            //            else
+            //                DictDate[Pagenumber] = DictionaryValues;
+
+
+            //            foreach (var item in DictDate)
+            //            {
+            //                foreach (var internaldata in item.Value)
+            //                {
+            //                    Dates.Add(internaldata);
+            //                }
+
+            //            }
+            //            DictionaryIndex=0;
+            ////            Pagenumber = 0;
         }
 
 
@@ -961,28 +1009,18 @@ namespace SwimmingPool
          
             }
             }
-
-
-
         }
-
-
-
-
 
         public void Datefiller()
         {
-
             foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
             {
-
                 if (cell.ColumnIndex == 0)
                 {
                     break;
                 }
                 else
                 {
-
                     int Hour = (cell.RowIndex + 8);
                     var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
                     DateTime FinalDate = new DateTime();
@@ -1204,49 +1242,78 @@ namespace SwimmingPool
         private void lblNext_Click_2(object sender, EventArgs e)
         {
 
+            #region OldCode
             //DICTIONARIS SHESAVSEBAD
-            Datefiller(DateDic);
+            //Datefiller(DateDic);
+
+            //dataGridView1.Rows.Clear();
+            //grafiki();
+            //CurrentMonday = CurrentMonday.AddDays(7);
+            //AssignCurrentWeek(CurrentMonday);
+            //lblBack.Enabled = true;
+            //lblBack.ForeColor = Color.DarkSlateGray;
+            //lblBack.Cursor = Cursors.Hand;
+
+            //gridFillter(dataGridView1, CurrentMonday);
+            ////DICTIONARIS WASAKITXTAD
+            //DatefillFront(DateDic);
+
+            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value); 
+            #endregion
 
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(7);
             AssignCurrentWeek(CurrentMonday);
+
             lblBack.Enabled = true;
             lblBack.ForeColor = Color.DarkSlateGray;
             lblBack.Cursor = Cursors.Hand;
 
             gridFillter(dataGridView1, CurrentMonday);
-            //DICTIONARIS WASAKITXTAD
-            DatefillFront(DateDic);
 
-            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+            DrawGrid(CurrentWeekDays);
         }
 
         private void lblBack_Click_2(object sender, EventArgs e)
         {
-
-            // MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
-            BackClickSaveDictionary(DateDic);
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(-7);
             AssignCurrentWeek(CurrentMonday);
 
-
             if (CurrentMonday == ThisMonday)
             {
                 lblBack.Enabled = true;
-                //lblBack.ForeColor = Color.Gray;
-                //lblBack.Cursor = Cursors.No;
-                //CellGrayColor(DateTime.Now.Date);
                 GetCellColorToday();
             }
-
-            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
-
             gridFillter(dataGridView1, CurrentMonday);
-           // MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
-            Datefiller(DateDic, 1.5);
+            DrawGrid(CurrentWeekDays);
+
+            #region OldCode
+            //// MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
+            //BackClickSaveDictionary(DateDic);
+            //dataGridView1.Rows.Clear();
+            //grafiki();
+            //CurrentMonday = CurrentMonday.AddDays(-7);
+            //AssignCurrentWeek(CurrentMonday);
+
+
+            //if (CurrentMonday == ThisMonday)
+            //{
+            //    lblBack.Enabled = true;
+            //    //lblBack.ForeColor = Color.Gray;
+            //    //lblBack.Cursor = Cursors.No;
+            //    //CellGrayColor(DateTime.Now.Date);
+            //    GetCellColorToday();
+            //}
+
+            ////CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value);
+
+            //gridFillter(dataGridView1, CurrentMonday);
+            //// MessageBox.Show("SHEMOSVLA 2 " + Pagenumber.ToString());
+            //Datefiller(DateDic, 1.5);
+            #endregion
         }
 
 

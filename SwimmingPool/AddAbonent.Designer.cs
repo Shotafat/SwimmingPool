@@ -43,6 +43,7 @@
             this.label6 = new System.Windows.Forms.Label();
             this.panel9 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.panel11 = new System.Windows.Forms.Panel();
             this.lblBack = new System.Windows.Forms.Label();
@@ -142,7 +143,7 @@
             // 
             // panel9
             // 
-            this.panel9.BackColor = System.Drawing.Color.White;
+            this.panel9.BackColor = System.Drawing.Color.Transparent;
             this.panel9.Controls.Add(this.label5);
             this.panel9.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.panel9.Location = new System.Drawing.Point(419, 19);
@@ -153,6 +154,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.button2);
             this.panel2.Controls.Add(this.panel11);
             this.panel2.Controls.Add(this.panel3);
@@ -172,6 +174,16 @@
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1226, 621);
             this.panel2.TabIndex = 5;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Honeydew;
+            this.label2.Location = new System.Drawing.Point(443, 475);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(35, 13);
+            this.label2.TabIndex = 57;
+            this.label2.Text = "label2";
             // 
             // button2
             // 
@@ -261,9 +273,9 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.BackColor = System.Drawing.Color.White;
+            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
             this.lblFirstName.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblFirstName.ForeColor = System.Drawing.Color.White;
             this.lblFirstName.Location = new System.Drawing.Point(54, 34);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 19);
@@ -273,9 +285,9 @@
             // lblAnonimentNumber
             // 
             this.lblAnonimentNumber.AutoSize = true;
-            this.lblAnonimentNumber.BackColor = System.Drawing.Color.White;
+            this.lblAnonimentNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblAnonimentNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnonimentNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblAnonimentNumber.ForeColor = System.Drawing.Color.White;
             this.lblAnonimentNumber.Location = new System.Drawing.Point(5, 8);
             this.lblAnonimentNumber.Name = "lblAnonimentNumber";
             this.lblAnonimentNumber.Size = new System.Drawing.Size(115, 19);
@@ -285,9 +297,9 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(34, 163);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(85, 19);
@@ -297,9 +309,9 @@
             // lblAge
             // 
             this.lblAge.AutoSize = true;
-            this.lblAge.BackColor = System.Drawing.Color.White;
+            this.lblAge.BackColor = System.Drawing.Color.Transparent;
             this.lblAge.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblAge.ForeColor = System.Drawing.Color.White;
             this.lblAge.Location = new System.Drawing.Point(77, 96);
             this.lblAge.Name = "lblAge";
             this.lblAge.Size = new System.Drawing.Size(43, 19);
@@ -309,9 +321,9 @@
             // lblPhoneNumber
             // 
             this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.BackColor = System.Drawing.Color.White;
+            this.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
             this.lblPhoneNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
             this.lblPhoneNumber.Location = new System.Drawing.Point(34, 130);
             this.lblPhoneNumber.Name = "lblPhoneNumber";
             this.lblPhoneNumber.Size = new System.Drawing.Size(86, 19);
@@ -321,9 +333,9 @@
             // lblLastName
             // 
             this.lblLastName.AutoSize = true;
-            this.lblLastName.BackColor = System.Drawing.Color.White;
+            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
             this.lblLastName.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblLastName.ForeColor = System.Drawing.Color.White;
             this.lblLastName.Location = new System.Drawing.Point(71, 65);
             this.lblLastName.Name = "lblLastName";
             this.lblLastName.Size = new System.Drawing.Size(49, 19);
@@ -354,7 +366,7 @@
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.White;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
             this.panel6.Controls.Add(this.აბონენტი);
             this.panel6.Location = new System.Drawing.Point(15, 10);
             this.panel6.Name = "panel6";
@@ -364,9 +376,9 @@
             // აბონენტი
             // 
             this.აბონენტი.AutoSize = true;
-            this.აბონენტი.BackColor = System.Drawing.Color.MintCream;
+            this.აბონენტი.BackColor = System.Drawing.Color.Transparent;
             this.აბონენტი.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.აბონენტი.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.აბონენტი.ForeColor = System.Drawing.Color.White;
             this.აბონენტი.Location = new System.Drawing.Point(100, 3);
             this.აბონენტი.Name = "აბონენტი";
             this.აბონენტი.Size = new System.Drawing.Size(145, 31);
@@ -412,9 +424,10 @@
             // 
             // panel10
             // 
-            this.panel10.BackColor = System.Drawing.Color.White;
+            this.panel10.BackColor = System.Drawing.Color.Transparent;
             this.panel10.Controls.Add(this.label8);
             this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel10.ForeColor = System.Drawing.Color.White;
             this.panel10.Location = new System.Drawing.Point(226, 323);
             this.panel10.Name = "panel10";
             this.panel10.Size = new System.Drawing.Size(119, 36);
@@ -424,7 +437,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(22, 4);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(76, 25);
@@ -438,7 +451,7 @@
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.panel7.Location = new System.Drawing.Point(19, 417);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(326, 43);
+            this.panel7.Size = new System.Drawing.Size(341, 43);
             this.panel7.TabIndex = 51;
             // 
             // label4
@@ -458,7 +471,7 @@
             this.archeuligrafiki.FormattingEnabled = true;
             this.archeuligrafiki.Location = new System.Drawing.Point(19, 475);
             this.archeuligrafiki.Name = "archeuligrafiki";
-            this.archeuligrafiki.Size = new System.Drawing.Size(326, 119);
+            this.archeuligrafiki.Size = new System.Drawing.Size(341, 119);
             this.archeuligrafiki.TabIndex = 50;
             // 
             // ara
@@ -487,8 +500,9 @@
             // 
             // panel5
             // 
-            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BackColor = System.Drawing.Color.Transparent;
             this.panel5.Controls.Add(this.label7);
+            this.panel5.ForeColor = System.Drawing.Color.White;
             this.panel5.Location = new System.Drawing.Point(19, 323);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(139, 36);
@@ -498,7 +512,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(34, 4);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(75, 25);
@@ -534,7 +548,7 @@
             this.dataGridView1.AllowUserToResizeRows = false;
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -557,19 +571,20 @@
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(779, 375);
             this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick_1);
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShotaCopydataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // saati
@@ -649,7 +664,6 @@
             // 
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
             this.kvira.DefaultCellStyle = dataGridViewCellStyle9;
             this.kvira.HeaderText = "კვირა";
@@ -736,14 +750,6 @@
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn saati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn otxshabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xushabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kvira;
         private System.Windows.Forms.Label lblNext;
         private System.Windows.Forms.Label lblBack;
         private System.Windows.Forms.CheckBox ara;
@@ -776,5 +782,14 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn saati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn otxshabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xushabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
+        private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kvira;
+        private System.Windows.Forms.Label label2;
     }
 }

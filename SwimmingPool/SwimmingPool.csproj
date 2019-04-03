@@ -117,6 +117,7 @@
     <Compile Include="Graphics.Designer.cs">
       <DependentUpon>Graphics.cs</DependentUpon>
     </Compile>
+    <Compile Include="GridFormat.cs" />
     <Compile Include="HoursChek.cs">
       <SubType>UserControl</SubType>
     </Compile>
