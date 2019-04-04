@@ -112,7 +112,7 @@
             this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label5.Location = new System.Drawing.Point(312, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(127, 31);
+            this.label5.Size = new System.Drawing.Size(92, 31);
             this.label5.TabIndex = 1;
             this.label5.Text = "გრაფიკი";
             // 
@@ -137,7 +137,7 @@
             this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label6.Location = new System.Drawing.Point(179, 15);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(345, 39);
+            this.label6.Size = new System.Drawing.Size(280, 39);
             this.label6.TabIndex = 2;
             this.label6.Text = "რ ე გ ი ს ტ რ ა ც ი ა ";
             // 
@@ -381,7 +381,7 @@
             this.აბონენტი.ForeColor = System.Drawing.Color.White;
             this.აბონენტი.Location = new System.Drawing.Point(100, 3);
             this.აბონენტი.Name = "აბონენტი";
-            this.აბონენტი.Size = new System.Drawing.Size(145, 31);
+            this.აბონენტი.Size = new System.Drawing.Size(102, 31);
             this.აბონენტი.TabIndex = 0;
             this.აბონენტი.Text = "აბონენტი";
             // 
@@ -440,7 +440,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(22, 4);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(76, 25);
+            this.label8.Size = new System.Drawing.Size(62, 25);
             this.label8.TabIndex = 1;
             this.label8.Text = "საათი";
             // 
@@ -461,7 +461,7 @@
             this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label4.Location = new System.Drawing.Point(55, 9);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(205, 25);
+            this.label4.Size = new System.Drawing.Size(167, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "არჩეული გრაფიკი";
             // 
@@ -481,7 +481,7 @@
             this.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.ara.Location = new System.Drawing.Point(104, 371);
             this.ara.Name = "ara";
-            this.ara.Size = new System.Drawing.Size(54, 22);
+            this.ara.Size = new System.Drawing.Size(48, 22);
             this.ara.TabIndex = 44;
             this.ara.Text = "არა";
             this.ara.UseVisualStyleBackColor = true;
@@ -493,7 +493,7 @@
             this.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.diax.Location = new System.Drawing.Point(19, 371);
             this.diax.Name = "diax";
-            this.diax.Size = new System.Drawing.Size(66, 22);
+            this.diax.Size = new System.Drawing.Size(58, 22);
             this.diax.TabIndex = 43;
             this.diax.Text = "დიახ";
             this.diax.UseVisualStyleBackColor = true;
@@ -515,7 +515,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(34, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(75, 25);
+            this.label7.Size = new System.Drawing.Size(62, 25);
             this.label7.TabIndex = 2;
             this.label7.Text = "ცნობა";
             // 
@@ -751,7 +751,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label lblNext;
-        private System.Windows.Forms.Label lblBack;
+        public System.Windows.Forms.Label lblBack;
         private System.Windows.Forms.CheckBox ara;
         private System.Windows.Forms.CheckBox diax;
         private System.Windows.Forms.Panel panel5;

@@ -551,15 +551,10 @@ namespace SwimmingPool
             //var gelag = ServiceInstances.Service().CreateObjectForSub( saxeli.Text, gvari.Text, gela1, telefoni.Text, misamarti.Text);
 
             //ServiceInstances.Service().GetSubscriberService().Add(gelag);
-            try
-            {
-                Saver();
-            }
-            catch
-            {
-                MessageBox.Show("დაამატეთ საათების რაოდენობა");
 
-            }
+
+            Saver();
+            
 
 
             DialogResult = DialogResult.OK;
@@ -830,8 +825,9 @@ namespace SwimmingPool
             var list1 = CheckedDayList;
             foreach (var item in CheckedDayList)
             {
-                int Hour = (item.Y + 8);
-                var Date = CurrentWeekDays[item.X - 1];
+                int Hour = (item.X + 8);
+                MessageBox.Show("X "+item.X.ToString()+" Y "+item.Y.ToString());
+                var Date = CurrentWeekDays[item.Y- 1];
                 if (Hour < 10)
                 {
                     _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
@@ -841,7 +837,7 @@ namespace SwimmingPool
                     _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                 }
                 FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-                //Dates.Add(FinalDate);
+                Dates.Add(FinalDate);
                 item.Day = FinalDate;
             }
 
@@ -1220,6 +1216,36 @@ namespace SwimmingPool
 
             DrawGrid();
         }
+
+
+
+
+        public void DaxatvaHoursChekdan()
+        {
+            dataGridView1.Rows.Clear();
+            grafiki();
+            // CurrentMonday = CurrentMonday.AddDays(-7);
+            DateTime Monday = GetCurrentMonday(CurrentDateValue);
+            AssignCurrentWeek(Monday);
+
+            if (Monday == ThisMonday)
+            {
+             //   lblBack.Enabled = true;
+                GetCellColorToday();
+            }
+            gridFillter(dataGridView1, CurrentMonday);
+            DrawGrid();
+
+
+
+
+        }
+
+
+
+
+
+
 
         private void lblBack_Click_2(object sender, EventArgs e)
         {

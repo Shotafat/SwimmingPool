@@ -97,10 +97,10 @@ namespace SwimmingPool
             {
                 int rowindex = item.Hour - 8;
                 int columnindex = (int)item.DayOfWeek;
-                DataGrid.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
+                DataGrid.DefaultCellStyle.SelectionBackColor = Color.Red;
                 DataGrid.Rows[rowindex].Cells[columnindex].Selected = true;
-                MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
-                DataGrid.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
+            //    MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
+           //     DataGrid.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
             }
         }
 
