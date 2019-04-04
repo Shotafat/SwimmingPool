@@ -183,7 +183,7 @@ namespace SwimmingPool
                 Gridnik.Day = item;
                 Gridnik.IsChecked = true;
            
-                                MessageBox.Show(Gridnik.X.ToString() + " " + Gridnik.Y.ToString());
+                     //           MessageBox.Show(Gridnik.X.ToString() + " " + Gridnik.Y.ToString());
           //      A.dataGridView1.Rows[Gridnik.X].Cells[Gridnik.Y].Selected = true;
 
                 A.CheckedDayList.Add(Gridnik);

@@ -1294,7 +1294,7 @@ namespace SwimmingPool
             ThisMonday = GetCurrentMonday(ddd[0]);
             AssignCurrentWeek(ThisMonday);
             
-            MessageBox.Show(ThisMonday.ToString());
+            //MessageBox.Show(ThisMonday.ToString());
             gridFillter(dataGridView1, ThisMonday);
             DrawGrid();
 
