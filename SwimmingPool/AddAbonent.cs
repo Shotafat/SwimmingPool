@@ -20,7 +20,8 @@ namespace SwimmingPool
         public List<int> columni = new List<int>();
         public List<int> rovsi = new List<int>();
         public List<GridFormat> CheckedDayList = new List<GridFormat>();
-       
+        DateTime FinalDate = new DateTime();
+
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
         #region shott
         //შოთა - გამოიყენება დეითების შესავსებად
@@ -51,7 +52,7 @@ namespace SwimmingPool
             InitializeComponent();
 
             grafiki();
-            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
+            //InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
             SubscribtionPriceToDropdown();
             SelectedCellCount = 0;
@@ -143,13 +144,13 @@ namespace SwimmingPool
             //dataGridView1.Rows.Add();
             for (int i = 1; i <= 7; i++)
             {
-                var geoCulture = new CultureInfo("ka-GE");
+                //var geoCulture = new CultureInfo("ka-GE");
                 var euCulture = new CultureInfo("en-US");
-                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
+                var dateTimeInfo = DateTimeFormatInfo.GetInstance(euCulture);
 
                 
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
-                dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
+                dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", euCulture);
                 var nino = CurrentWeekDays[i - 1].ToString("dd MMMM", euCulture);
                 dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
 
@@ -173,10 +174,10 @@ namespace SwimmingPool
             //dataGridView1.Rows.Add();
             for (int i = 1; i <= 7; i++)
             {
-                var geoCulture = new CultureInfo("ka-GE");
-                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
+                //var geoCulture = new CultureInfo("en-ENG");
+                var euCulture = new CultureInfo("en-US");
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
-                view.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
+                view.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", euCulture);
                 view.Rows[0].Cells[i].Style.ForeColor = Color.Teal;
 
 
@@ -565,36 +566,6 @@ namespace SwimmingPool
             Close();
         }
 
-        //private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        //{
-        //    if (dateTimePicker1.Value < DateTime.Today)
-        //    {
-        //        dateTimePicker1.Value = DateTime.Today;
-        //        return;
-        //    }
-
-        //    if (dateTimePicker1.Value >= dateTimePicker3.Value)
-        //    {
-        //        return;
-        //    }
-
-        //    dataGridView1.Rows.Clear();
-        //    grafiki();
-        //    AssignCurrentWeek(GetCurrentMonday(dateTimePicker1.Value));
-        //    //CellGrayColor(dateTimePicker1.Value,dateTimePicker3.Value);
-
-        //    //DateTime _today = DateTime.ParseExact(DateTime.Now.ToString(), CultureInfo.InvariantCulture);
-
-        //    foreach (var day in CurrentWeekDays)
-        //    {
-        //        if (day.Date == DateTime.Today.Date)
-        //        {
-        //            GetCellColorToday();
-        //        }
-        //    }
-
-        //    gridFillter(dataGridView1, CurrentMonday);
-        //}
 
         private void lblNext_Click_1(object sender, EventArgs e)
         {
@@ -655,43 +626,15 @@ namespace SwimmingPool
 
         public void DateFormat()
         {
-
-
-            
-
        }
 
 
         private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-
-            int Hour = (e.RowIndex + 8);
-            var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
-            DateTime FinalDate = new DateTime();
-            string _FinalDate = "";
-            if (Hour < 10)
-            {
-                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-            }
-            else
-            {
-                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-            }
-
-            //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
-
-            FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-         //   Dates.Add(FinalDate);
-
-
-
-
-            //________________________
-            var id = CheckedDayList.Count;
-            GridFormat f = new GridFormat(id);
+            GridFormat f = new GridFormat();
             f.X = e.RowIndex;
             f.Y = e.ColumnIndex;
-            f.Day = FinalDate;
+            f.Day = CurrentWeekDays[e.ColumnIndex -1];
             f.IsChecked = true;
 
             if (CheckedDayList.Count == 0)
@@ -703,22 +646,12 @@ namespace SwimmingPool
             else
             {
                 Checking(f);
-                DrawGrid(CurrentWeekDays);
+                DrawGrid();
+
             }
-
-
             var lbl = CheckedDayList.Count();
             label2.Text = lbl.ToString();
-
         }
-
-
-
-
-
-
-
-
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -727,26 +660,26 @@ namespace SwimmingPool
 
         public void Checking(GridFormat obj)
         {
-            bool value = CheckedDayList.Any(o => o.Day == obj.Day && o.X == obj.X && o.Y == obj.Y);
+            bool value = CheckedDayList.Any(o => o.Day == obj.Day && o.Y == obj.Y && o.X == obj.X);
             bool value2 = CheckedDayList.Any(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X);
 
             if (value2)
             {
-                var OriginObj = CheckedDayList.Where(x => x.Y == obj.Y).FirstOrDefault();
-                var _id = OriginObj.Id;
-                CheckedDayList[_id] = obj;
-                obj.Id = _id;
+                var OriginObj = CheckedDayList.Where(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X).FirstOrDefault();
+                var _id = CheckedDayList.IndexOf(OriginObj);
 
                 dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.SelectionBackColor = Color.White;
                 dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.BackColor = Color.White;
+
+                CheckedDayList[_id] = obj;
                 return;
             }
 
 
             if (value)
             {
-                var result = CheckedDayList.Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault().Id;
-                CheckedDayList.RemoveAt(result);
+                var result = CheckedDayList.Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault();
+                CheckedDayList.Remove(result);
                 dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
                 dataGridView1.Rows[obj.X].Cells[obj.Y].Style.BackColor = Color.White;
             }
@@ -755,16 +688,14 @@ namespace SwimmingPool
             {
                 CheckedDayList.Add(obj);
             }
-
             var testlit2 = CheckedDayList;
-
         }
 
-        public void DrawGrid(List<DateTime> week)
+        public void DrawGrid()
         {
             if (CheckedDayList.Count > 0)
             {
-                var currentGrid = CheckedDayList.Where(d => d.Day >= week[0] && d.Day <= week[week.Count - 1]).ToList();
+                var currentGrid = CheckedDayList.Where(d => d.Day >= CurrentWeekDays[0] && d.Day <= CurrentWeekDays[CurrentWeekDays.Count - 1]).ToList();
 
                 foreach (var item in currentGrid)
                 {
@@ -895,7 +826,26 @@ namespace SwimmingPool
         //SAVEZE
         public void Datefiller(int DictionaryIndex, Dictionary<int, List<DateTime>> DictDate, bool Saveclick)
         {
+            string _FinalDate = "";
+            var list1 = CheckedDayList;
+            foreach (var item in CheckedDayList)
+            {
+                int Hour = (item.Y + 8);
+                var Date = CurrentWeekDays[item.X - 1];
+                if (Hour < 10)
+                {
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                }
+                else
+                {
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                }
+                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                //Dates.Add(FinalDate);
+                item.Day = FinalDate;
+            }
 
+            var list2 = CheckedDayList;
 
             var DatestringFromGridclass = CheckedDayList.Select(x=>x.Day).ToList();
             Dates = DatestringFromGridclass;
@@ -1266,13 +1216,9 @@ namespace SwimmingPool
             CurrentMonday = CurrentMonday.AddDays(7);
             AssignCurrentWeek(CurrentMonday);
 
-            lblBack.Enabled = true;
-            lblBack.ForeColor = Color.DarkSlateGray;
-            lblBack.Cursor = Cursors.Hand;
-
             gridFillter(dataGridView1, CurrentMonday);
 
-            DrawGrid(CurrentWeekDays);
+            DrawGrid();
         }
 
         private void lblBack_Click_2(object sender, EventArgs e)
@@ -1288,7 +1234,7 @@ namespace SwimmingPool
                 GetCellColorToday();
             }
             gridFillter(dataGridView1, CurrentMonday);
-            DrawGrid(CurrentWeekDays);
+            DrawGrid();
 
             #region OldCode
             //// MessageBox.Show("SHEMOSVLA 1" + Pagenumber.ToString());
