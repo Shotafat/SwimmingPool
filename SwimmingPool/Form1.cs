@@ -29,6 +29,9 @@ namespace SwimmingPool
             dataGridView1.AutoGenerateColumns = true;
             JoinClasses();
             label3.Text = "";
+            if (dataGridView1.SelectedCells.Count <= 0)
+                return;
+            else
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
             InIt(selectedAbonentNumber);
         }
@@ -99,7 +102,7 @@ namespace SwimmingPool
                 int columnindex = (int)item.DayOfWeek;
                 DataGrid.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
                 DataGrid.Rows[rowindex].Cells[columnindex].Selected = true;
-                MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
+  //              MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
                 DataGrid.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
             }
         }
@@ -195,6 +198,9 @@ namespace SwimmingPool
 
         private void რედაქტირებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
+
+            HoursChek A = new HoursChek();
+            A.EdiTAbonent();
             //if (dataGridView1.SelectedRows[0].Selected)
             //{
             //    var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;

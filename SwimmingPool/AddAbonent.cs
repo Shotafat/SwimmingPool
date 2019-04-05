@@ -1300,13 +1300,13 @@ namespace SwimmingPool
                    .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
                    .SubscribtionSchedule_.OrderBy(x=>x.Schedule.Date).ToList();
 
-                subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
+                //subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
 
-                foreach (var item in CheckedDayList)
-                {
-                    SubscriptionScheduleDB Shchedule = new SubscriptionScheduleDB { Schedule = item.Day };
-                    subscriptionByID.SubscribtionSchedule_.Add(Shchedule);
-                }
+                //foreach (var item in CheckedDayList)
+                //{
+                //    SubscriptionScheduleDB Shchedule = new SubscriptionScheduleDB { Schedule = item.Day };
+                //    subscriptionByID.SubscribtionSchedule_.Add(Shchedule);
+                //}
 
 
                 subscriber.Name = saxeli.Text;

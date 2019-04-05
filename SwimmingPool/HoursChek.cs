@@ -166,36 +166,40 @@ namespace SwimmingPool
                .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
             return ScheduleList;
         }
-
-        private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
+        public void EdiTAbonent()
         {
-
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
 
 
             Form1 A = new Form1();
 
-          
+
 
 
 
 
             var IDnumber = subscriptionByID.IDnumber.ToString();
-               var LastName = subscriptionByID.Subscriber_.LastName;
-               var Name = subscriptionByID.Subscriber_.Name;
-              
-               var Adress = subscriptionByID.Subscriber_.Address;
-               var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
-               var Age = subscriptionByID.Subscriber_.DateOfBirth;
+            var LastName = subscriptionByID.Subscriber_.LastName;
+            var Name = subscriptionByID.Subscriber_.Name;
+
+            var Adress = subscriptionByID.Subscriber_.Address;
+            var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
+            var Age = subscriptionByID.Subscriber_.DateOfBirth;
 
 
 
-                AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
             //abonent.Controls.Add(DataGridView datagridview1);
             A.EditFillGrid(abonent.dataGridView1, ScheduleList());
             abonent.Show();
-            
 
+
+        }
+
+        private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            EdiTAbonent();
         }
     }
 }

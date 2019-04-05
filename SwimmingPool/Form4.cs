@@ -71,75 +71,77 @@ namespace SwimmingPool
 
             //var onlyDate = (from g in schedule
             //                select g.Schedule).ToList();
-
-            var lastDate = schedule.Last().Schedule.Date.ToString("yyyy-MM-dd");
+            
+            
+            //    var lastDate = schedule.Last().Schedule.Date.ToString("yyyy-MM-dd");
+            
             var Today = DateTime.Now.ToString("yyyy-MM-dd");
 
-            //var lastDate = onlyDate.Last().Date;
-            //var today = DateTime.Now.AddDays(-6);
-            //if (lastDate == today)
-            //{
-            var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<Subscription>();
+                //var lastDate = onlyDate.Last().Date;
+                //var today = DateTime.Now.AddDays(-6);
+                //if (lastDate == today)
+                //{
+                var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<Subscription>();
 
-            var onlyDates = subscriptions;
-
-
-
-            var Name = subscriptions.Select(x => x.Subscriber_.Subscriptions.SubscribtionSchedule_);
+                var onlyDates = subscriptions;
 
 
 
-
-
-
-            //var r = schedule.Where(
-            //    .Select(g => new
-            //    {
-
-            //        აბონიმენტი = g.Subscription.IDnumber,
-            //        სახელი = g.Subscription.Subscriber_.Name,
-            //        გვარი = g.Subscription.Subscriber_.LastName,
-            //        ასაკი = Math.Round((DateTime.Now - g.Subscription.Subscriber_.DateOfBirth).TotalDays / 365, 0),
-
-            //        ფასი = g.Subscription.SubscriberPrice_.Price,
-            //        საათი = g.Subscription.SubscriberPrice_.NumberOfHours
-
-
-
-            //    }).ToList();
+                var Name = subscriptions.Select(x => x.Subscriber_.Subscriptions.SubscribtionSchedule_);
 
 
 
 
 
-            var r = (from g in subscriptions
-                     where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
 
-                     select new
-                     {
-                         აბონიმენტი = g.IDnumber,
-                         სახელი = g.Subscriber_.Name,
-                         გვარი = g.Subscriber_.LastName,
-                         ასაკი = Math.Round((DateTime.Now - g.Subscriber_.DateOfBirth).TotalDays / 365, 0),
+                //var r = schedule.Where(
+                //    .Select(g => new
+                //    {
 
-                         ფასი = g.SubscriberPrice_.Price,
-                         საათი = g.SubscriberPrice_.NumberOfHours
-                     }).ToList<object>();
+                //        აბონიმენტი = g.Subscription.IDnumber,
+                //        სახელი = g.Subscription.Subscriber_.Name,
+                //        გვარი = g.Subscription.Subscriber_.LastName,
+                //        ასაკი = Math.Round((DateTime.Now - g.Subscription.Subscriber_.DateOfBirth).TotalDays / 365, 0),
 
-            old.DataSource = r;
+                //        ფასი = g.Subscription.SubscriberPrice_.Price,
+                //        საათი = g.Subscription.SubscriberPrice_.NumberOfHours
+
+
+
+                //    }).ToList();
+
+
+
+
+
+                var r = (from g in subscriptions
+                         where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
+
+                         select new
+                         {
+                             აბონიმენტი = g.IDnumber,
+                             სახელი = g.Subscriber_.Name,
+                             გვარი = g.Subscriber_.LastName,
+                             ასაკი = Math.Round((DateTime.Now - g.Subscriber_.DateOfBirth).TotalDays / 365, 0),
+
+                             ფასი = g.SubscriberPrice_.Price,
+                             საათი = g.SubscriberPrice_.NumberOfHours
+                         }).ToList<object>();
+
+                old.DataSource = r;
+
+
+
+                return r;
+
+
+
+
+
+
 
             
-
-            return r;
-
-
-
-
-
-
-
-
-
+            
 
         }
 
