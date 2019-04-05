@@ -1300,6 +1300,48 @@ namespace SwimmingPool
                    .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
                    .SubscribtionSchedule_.OrderBy(x=>x.Schedule.Date).ToList();
 
+                //SHOTA: დინამიურად შენახული გვაქვს CheckedDayList-ში განახლებული განრიგი;
+                //ScheduleList-ში შენახული გვაქვს მოქმედი განრიგი
+                //ფორ ციკლში 3 სცენარს ვიხილავ, როცა Checkedlist<Schedulist,Checkedlist==Schedulist, Checkedlist>Schedulist,
+                for (int i = 0; i < CheckedDayList.Count; i++)
+                {
+                    //როცა ნაკლებია ბაზაში არსებული დინამიურზე, სანამ ბაზის რაოდენობა შეივსება ვუტოლებთ, როცა შეივსება ვამატებთ
+                    if(ScheduleList.Count<CheckedDayList.Count)
+                    {
+                            
+                       while (i != ScheduleList.Count);
+                        ScheduleList[i].Schedule = CheckedDayList[i].Day;
+
+                        SubscriptionScheduleDB _Shchedule = new SubscriptionScheduleDB { Attandance = ScheduleList[i - 1].Attandance, Subscription = ScheduleList[i - 1].Subscription,
+                            SubscriptionID = ScheduleList[i - 1].SubscriptionID, Schedule = CheckedDayList[i].Day;
+
+                        ScheduleList.Add(_Shchedule);
+                        
+
+
+                    }
+                    //როცა რაოდენობრივად ტოლია, პირდაპირ ვუტოლებთ
+                    else if(ScheduleList.Count == CheckedDayList.Count)
+                    ScheduleList[i].Schedule = CheckedDayList[i].Day;
+                    //როცა ბაზის მონაცემები მეტია დინამიურზე, რაც დარჩა ზედმეტი ბაზაში იშლება
+                    //აქ შეცდომის დაშვების ალბათობა მაღალია, მივუბრუნდე, რა ხდება თუ საწყის ელემენტებს შლის და არა საბოლოოს?
+                    else
+                    {
+                        while (i!= ScheduleList.Count) ;
+                        ScheduleList[i].Schedule = CheckedDayList[i].Day;
+                        ScheduleList.RemoveRange(i, ScheduleList.Count - CheckedDayList.Count);
+                       
+                    }
+
+
+
+
+
+                }
+
+                //________________________შოთას კოდის დასასრული დასაწერია ბოლოს UPDATE
+                
+                
                 //subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
 
                 //foreach (var item in CheckedDayList)
