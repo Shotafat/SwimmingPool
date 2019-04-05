@@ -289,3 +289,25 @@ C:\Users\Admin\Desktop\SwimmingPool - 0304\SPSQLite\obj\Debug\netstandard2.0\SPS
 C:\Users\Admin\Desktop\SwimmingPool - 0304\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
 C:\Users\Admin\Desktop\SwimmingPool - 0304\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
 C:\Users\Admin\Desktop\SwimmingPool - 0304\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.deps.json
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Windows.Forms.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Security.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Configuration.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\Accessibility.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Deployment.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Windows.Forms.xml
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Security.xml
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Configuration.xml
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\Accessibility.xml
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Deployment.xml
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\bin\Debug\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
+C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb

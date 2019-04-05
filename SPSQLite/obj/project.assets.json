@@ -2930,11 +2930,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool - 4 aprili\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "projectPath": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool - 4 aprili\\SPSQLite\\SPSQLite.csproj",
       "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
+      "outputPath": "C:\\Users\\User\\Documents\\GitHub\\SwimmingPool - 4 aprili\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
