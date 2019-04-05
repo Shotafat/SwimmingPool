@@ -167,38 +167,6 @@ namespace SwimmingPool
             return ScheduleList;
         }
 
-
-
-        public void FillNickGrid(AddAbonent A)
-        {
-            List<DateTime> DateList = ScheduleList();
-            //A.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Red;
-
-            foreach (var item in DateList)
-            {
-                GridFormat Gridnik = new GridFormat();
-             //   MessageBox.Show(item.ToString());
-                Gridnik.X= item.Hour - 8;
-                Gridnik.Y = (int)item.DayOfWeek;
-                Gridnik.Day = item;
-                Gridnik.IsChecked = true;
-           
-                     //           MessageBox.Show(Gridnik.X.ToString() + " " + Gridnik.Y.ToString());
-          //      A.dataGridView1.Rows[Gridnik.X].Cells[Gridnik.Y].Selected = true;
-
-                A.CheckedDayList.Add(Gridnik);
-            //        MessageBox.Show(A.dataGridView1.Rows[Gridnik.X].Cells[Gridnik.Y].Selected.ToString());
-                  
-
-            }
-
-
-
-        }
-
-
-
-
         private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -224,20 +192,10 @@ namespace SwimmingPool
 
                 AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
             //abonent.Controls.Add(DataGridView datagridview1);
-         //   A.EditFillGrid(abonent.dataGridView1, ScheduleList());
-            FillNickGrid(abonent);
-            abonent.DaxatvaHoursChekdan();
+            A.EditFillGrid(abonent.dataGridView1, ScheduleList());
             abonent.Show();
-            abonent.CheckedDayList = new List<GridFormat>();
+            
 
         }
     }
-
-
-
-
-
-
-
-
 }

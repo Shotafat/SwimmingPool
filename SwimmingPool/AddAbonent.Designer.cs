@@ -28,26 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label5 = new System.Windows.Forms.Label();
-            this.shenaxva = new System.Windows.Forms.Button();
-            this.label6 = new System.Windows.Forms.Label();
-            this.panel9 = new System.Windows.Forms.Panel();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle40 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle36 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle37 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle38 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle39 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.lblBack = new System.Windows.Forms.Label();
-            this.lblNext = new System.Windows.Forms.Label();
+            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.lblFirstName = new System.Windows.Forms.Label();
@@ -64,17 +56,16 @@
             this.telefoni = new System.Windows.Forms.TextBox();
             this.gvari = new System.Windows.Forms.TextBox();
             this.saxeli = new System.Windows.Forms.TextBox();
-            this.cmbxHour = new System.Windows.Forms.ComboBox();
-            this.panel10 = new System.Windows.Forms.Panel();
+            this.panel12 = new System.Windows.Forms.Panel();
+            this.lblHours = new System.Windows.Forms.Label();
+            this.panel14 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.diax = new System.Windows.Forms.CheckBox();
+            this.ara = new System.Windows.Forms.CheckBox();
             this.panel7 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.archeuligrafiki = new System.Windows.Forms.ListBox();
-            this.ara = new System.Windows.Forms.CheckBox();
-            this.diax = new System.Windows.Forms.CheckBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -85,164 +76,68 @@
             this.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kvira = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel9.SuspendLayout();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.shenaxva = new System.Windows.Forms.Button();
+            this.lblNext = new System.Windows.Forms.Label();
+            this.lblBack = new System.Windows.Forms.Label();
+            this.button3 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
-            this.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
+            this.splitContainer1.Panel1.SuspendLayout();
+            this.splitContainer1.Panel2.SuspendLayout();
+            this.splitContainer1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel10.SuspendLayout();
+            this.panel12.SuspendLayout();
+            this.panel14.SuspendLayout();
             this.panel7.SuspendLayout();
-            this.panel5.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label5.Location = new System.Drawing.Point(312, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(92, 31);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "გრაფიკი";
-            // 
-            // shenaxva
-            // 
-            this.shenaxva.BackColor = System.Drawing.Color.White;
-            this.shenaxva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shenaxva.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.shenaxva.Location = new System.Drawing.Point(1053, 523);
-            this.shenaxva.Name = "shenaxva";
-            this.shenaxva.Size = new System.Drawing.Size(145, 44);
-            this.shenaxva.TabIndex = 12;
-            this.shenaxva.Text = "შენახვა";
-            this.shenaxva.UseVisualStyleBackColor = false;
-            this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click_1);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label6.Location = new System.Drawing.Point(179, 15);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(280, 39);
-            this.label6.TabIndex = 2;
-            this.label6.Text = "რ ე გ ი ს ტ რ ა ც ი ა ";
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.Transparent;
-            this.panel9.Controls.Add(this.label5);
-            this.panel9.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel9.Location = new System.Drawing.Point(419, 19);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(779, 44);
-            this.panel9.TabIndex = 38;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.splitContainer1);
+            this.panel2.Controls.Add(this.splitter1);
             this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.panel11);
-            this.panel2.Controls.Add(this.panel3);
-            this.panel2.Controls.Add(this.cmbxHour);
-            this.panel2.Controls.Add(this.panel10);
-            this.panel2.Controls.Add(this.panel7);
-            this.panel2.Controls.Add(this.archeuligrafiki);
-            this.panel2.Controls.Add(this.ara);
-            this.panel2.Controls.Add(this.diax);
-            this.panel2.Controls.Add(this.panel5);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.shenaxva);
-            this.panel2.Controls.Add(this.panel9);
-            this.panel2.Controls.Add(this.panel8);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Location = new System.Drawing.Point(2, 116);
+            this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1226, 621);
+            this.panel2.Size = new System.Drawing.Size(762, 677);
             this.panel2.TabIndex = 5;
             // 
-            // label2
+            // splitContainer1
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Honeydew;
-            this.label2.Location = new System.Drawing.Point(443, 475);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(35, 13);
-            this.label2.TabIndex = 57;
-            this.label2.Text = "label2";
+            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.splitContainer1.Location = new System.Drawing.Point(3, 0);
+            this.splitContainer1.Name = "splitContainer1";
+            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
-            // button2
+            // splitContainer1.Panel1
             // 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Location = new System.Drawing.Point(721, 550);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 44);
-            this.button2.TabIndex = 56;
-            this.button2.Text = "რედაქტირება";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            this.splitContainer1.Panel1.Controls.Add(this.panel3);
+            this.splitContainer1.Panel1.Controls.Add(this.panel12);
             // 
-            // panel11
+            // splitContainer1.Panel2
             // 
-            this.panel11.BackColor = System.Drawing.Color.White;
-            this.panel11.Controls.Add(this.lblBack);
-            this.panel11.Controls.Add(this.lblNext);
-            this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel11.Location = new System.Drawing.Point(704, 466);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(229, 46);
-            this.panel11.TabIndex = 55;
-            // 
-            // lblBack
-            // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.BackColor = System.Drawing.Color.White;
-            this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblBack.Image = global::SwimmingPool.Properties.Resources.left_arrow;
-            this.lblBack.Location = new System.Drawing.Point(10, 6);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(107, 37);
-            this.lblBack.TabIndex = 49;
-            this.lblBack.Text = "          ";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_2);
-            // 
-            // lblNext
-            // 
-            this.lblNext.AutoSize = true;
-            this.lblNext.BackColor = System.Drawing.Color.White;
-            this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNext.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.lblNext.Image = global::SwimmingPool.Properties.Resources.right_arrow__3_;
-            this.lblNext.Location = new System.Drawing.Point(108, 6);
-            this.lblNext.Name = "lblNext";
-            this.lblNext.Size = new System.Drawing.Size(107, 37);
-            this.lblNext.TabIndex = 48;
-            this.lblNext.Text = "          ";
-            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_2);
+            this.splitContainer1.Panel2.Controls.Add(this.panel8);
+            this.splitContainer1.Panel2.Controls.Add(this.panel11);
+            this.splitContainer1.Size = new System.Drawing.Size(759, 677);
+            this.splitContainer1.SplitterDistance = 276;
+            this.splitContainer1.TabIndex = 58;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Controls.Add(this.abonenti);
             this.panel3.Controls.Add(this.asaki);
@@ -251,9 +146,10 @@
             this.panel3.Controls.Add(this.telefoni);
             this.panel3.Controls.Add(this.gvari);
             this.panel3.Controls.Add(this.saxeli);
-            this.panel3.Location = new System.Drawing.Point(19, 19);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(365, 276);
+            this.panel3.Size = new System.Drawing.Size(374, 276);
             this.panel3.TabIndex = 11;
             // 
             // panel4
@@ -367,6 +263,7 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel6.Controls.Add(this.აბონენტი);
             this.panel6.Location = new System.Drawing.Point(15, 10);
             this.panel6.Name = "panel6";
@@ -377,13 +274,14 @@
             // 
             this.აბონენტი.AutoSize = true;
             this.აბონენტი.BackColor = System.Drawing.Color.Transparent;
-            this.აბონენტი.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.აბონენტი.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.აბონენტი.ForeColor = System.Drawing.Color.White;
-            this.აბონენტი.Location = new System.Drawing.Point(100, 3);
+            this.აბონენტი.Location = new System.Drawing.Point(129, -2);
             this.აბონენტი.Name = "აბონენტი";
             this.აბონენტი.Size = new System.Drawing.Size(102, 31);
             this.აბონენტი.TabIndex = 0;
             this.აბონენტი.Text = "აბონენტი";
+            this.აბონენტი.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // misamarti
             // 
@@ -413,53 +311,112 @@
             this.saxeli.Size = new System.Drawing.Size(193, 20);
             this.saxeli.TabIndex = 37;
             // 
-            // cmbxHour
+            // panel12
             // 
-            this.cmbxHour.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.cmbxHour.FormattingEnabled = true;
-            this.cmbxHour.Location = new System.Drawing.Point(226, 373);
-            this.cmbxHour.Name = "cmbxHour";
-            this.cmbxHour.Size = new System.Drawing.Size(121, 21);
-            this.cmbxHour.TabIndex = 54;
+            this.panel12.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel12.Controls.Add(this.lblHours);
+            this.panel12.Controls.Add(this.panel14);
+            this.panel12.Controls.Add(this.diax);
+            this.panel12.Controls.Add(this.ara);
+            this.panel12.Controls.Add(this.panel7);
+            this.panel12.Controls.Add(this.archeuligrafiki);
+            this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel12.Location = new System.Drawing.Point(374, 0);
+            this.panel12.Name = "panel12";
+            this.panel12.Size = new System.Drawing.Size(385, 276);
+            this.panel12.TabIndex = 11;
             // 
-            // panel10
+            // lblHours
             // 
-            this.panel10.BackColor = System.Drawing.Color.Transparent;
-            this.panel10.Controls.Add(this.label8);
-            this.panel10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel10.ForeColor = System.Drawing.Color.White;
-            this.panel10.Location = new System.Drawing.Point(226, 323);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(119, 36);
-            this.panel10.TabIndex = 52;
+            this.lblHours.AutoSize = true;
+            this.lblHours.BackColor = System.Drawing.Color.White;
+            this.lblHours.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lblHours.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.lblHours.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblHours.Location = new System.Drawing.Point(301, 68);
+            this.lblHours.Name = "lblHours";
+            this.lblHours.Size = new System.Drawing.Size(18, 19);
+            this.lblHours.TabIndex = 57;
+            this.lblHours.Text = "0";
+            // 
+            // panel14
+            // 
+            this.panel14.BackColor = System.Drawing.Color.Transparent;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel14.Controls.Add(this.label8);
+            this.panel14.Controls.Add(this.label7);
+            this.panel14.Location = new System.Drawing.Point(28, 10);
+            this.panel14.Name = "panel14";
+            this.panel14.Size = new System.Drawing.Size(320, 36);
+            this.panel14.TabIndex = 48;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(22, 4);
+            this.label8.Location = new System.Drawing.Point(247, -1);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 25);
+            this.label8.Size = new System.Drawing.Size(70, 31);
             this.label8.TabIndex = 1;
             this.label8.Text = "საათი";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(30, -1);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(69, 31);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "ცნობა";
+            // 
+            // diax
+            // 
+            this.diax.AutoSize = true;
+            this.diax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.diax.Location = new System.Drawing.Point(29, 66);
+            this.diax.Name = "diax";
+            this.diax.Size = new System.Drawing.Size(67, 26);
+            this.diax.TabIndex = 43;
+            this.diax.Text = "დიახ";
+            this.diax.UseVisualStyleBackColor = true;
+            this.diax.CheckedChanged += new System.EventHandler(this.diax_CheckedChanged);
+            // 
+            // ara
+            // 
+            this.ara.AutoSize = true;
+            this.ara.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.ara.Location = new System.Drawing.Point(114, 67);
+            this.ara.Name = "ara";
+            this.ara.Size = new System.Drawing.Size(54, 26);
+            this.ara.TabIndex = 44;
+            this.ara.Text = "არა";
+            this.ara.UseVisualStyleBackColor = true;
+            this.ara.CheckedChanged += new System.EventHandler(this.ara_CheckedChanged);
+            // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
+            this.panel7.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel7.Controls.Add(this.label4);
             this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.Location = new System.Drawing.Point(19, 417);
+            this.panel7.ForeColor = System.Drawing.Color.White;
+            this.panel7.Location = new System.Drawing.Point(28, 100);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(341, 43);
+            this.panel7.Size = new System.Drawing.Size(320, 41);
             this.panel7.TabIndex = 51;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.label4.Location = new System.Drawing.Point(55, 9);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(84, 2);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(167, 25);
             this.label4.TabIndex = 1;
@@ -469,76 +426,18 @@
             // 
             this.archeuligrafiki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.archeuligrafiki.FormattingEnabled = true;
-            this.archeuligrafiki.Location = new System.Drawing.Point(19, 475);
+            this.archeuligrafiki.Location = new System.Drawing.Point(28, 143);
             this.archeuligrafiki.Name = "archeuligrafiki";
-            this.archeuligrafiki.Size = new System.Drawing.Size(341, 119);
+            this.archeuligrafiki.Size = new System.Drawing.Size(320, 106);
             this.archeuligrafiki.TabIndex = 50;
-            // 
-            // ara
-            // 
-            this.ara.AutoSize = true;
-            this.ara.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.ara.Location = new System.Drawing.Point(104, 371);
-            this.ara.Name = "ara";
-            this.ara.Size = new System.Drawing.Size(48, 22);
-            this.ara.TabIndex = 44;
-            this.ara.Text = "არა";
-            this.ara.UseVisualStyleBackColor = true;
-            // 
-            // diax
-            // 
-            this.diax.AutoSize = true;
-            this.diax.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.diax.Location = new System.Drawing.Point(19, 371);
-            this.diax.Name = "diax";
-            this.diax.Size = new System.Drawing.Size(58, 22);
-            this.diax.TabIndex = 43;
-            this.diax.Text = "დიახ";
-            this.diax.UseVisualStyleBackColor = true;
-            // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.Transparent;
-            this.panel5.Controls.Add(this.label7);
-            this.panel5.ForeColor = System.Drawing.Color.White;
-            this.panel5.Location = new System.Drawing.Point(19, 323);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(139, 36);
-            this.panel5.TabIndex = 46;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(34, 4);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(62, 25);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "ცნობა";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(419, 523);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 41);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "ტესტი";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // panel8
             // 
             this.panel8.Controls.Add(this.dataGridView1);
-            this.panel8.Location = new System.Drawing.Point(419, 85);
+            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel8.Location = new System.Drawing.Point(0, 0);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(779, 375);
+            this.panel8.Size = new System.Drawing.Size(759, 346);
             this.panel8.TabIndex = 37;
             // 
             // dataGridView1
@@ -549,14 +448,14 @@
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle31.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle31.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle31.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle31.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle31.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle31;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.saati,
@@ -567,14 +466,14 @@
             this.paraskevi,
             this.shabati,
             this.kvira});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle40.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle40.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle40.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle40.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle40.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle40.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle40.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle40;
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.MultiSelect = false;
@@ -582,18 +481,18 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(779, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(759, 346);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShotaCopydataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // saati
             // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DodgerBlue;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DodgerBlue;
-            this.saati.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle32.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle32.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            this.saati.DefaultCellStyle = dataGridViewCellStyle32;
             this.saati.HeaderText = "საათი";
             this.saati.Name = "saati";
             this.saati.ReadOnly = true;
@@ -602,8 +501,8 @@
             // 
             // orshabati
             // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orshabati.DefaultCellStyle = dataGridViewCellStyle33;
             this.orshabati.HeaderText = "ორშაბათი";
             this.orshabati.Name = "orshabati";
             this.orshabati.ReadOnly = true;
@@ -612,8 +511,8 @@
             // 
             // samshabati
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.samshabati.DefaultCellStyle = dataGridViewCellStyle34;
             this.samshabati.HeaderText = "სამშაბათი";
             this.samshabati.Name = "samshabati";
             this.samshabati.ReadOnly = true;
@@ -622,8 +521,8 @@
             // 
             // otxshabati
             // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle35;
             this.otxshabati.HeaderText = "ოთხშაბათი";
             this.otxshabati.Name = "otxshabati";
             this.otxshabati.ReadOnly = true;
@@ -632,8 +531,8 @@
             // 
             // xushabati
             // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle36.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xushabati.DefaultCellStyle = dataGridViewCellStyle36;
             this.xushabati.HeaderText = "ხუთშაბათი";
             this.xushabati.Name = "xushabati";
             this.xushabati.ReadOnly = true;
@@ -642,8 +541,8 @@
             // 
             // paraskevi
             // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle37.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle37;
             this.paraskevi.HeaderText = "პარასკევი";
             this.paraskevi.Name = "paraskevi";
             this.paraskevi.ReadOnly = true;
@@ -652,8 +551,8 @@
             // 
             // shabati
             // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle38.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shabati.DefaultCellStyle = dataGridViewCellStyle38;
             this.shabati.HeaderText = "შაბათი";
             this.shabati.Name = "shabati";
             this.shabati.ReadOnly = true;
@@ -662,106 +561,158 @@
             // 
             // kvira
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
-            this.kvira.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle39.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle39.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle39.SelectionForeColor = System.Drawing.Color.Silver;
+            this.kvira.DefaultCellStyle = dataGridViewCellStyle39;
             this.kvira.HeaderText = "კვირა";
             this.kvira.Name = "kvira";
             this.kvira.ReadOnly = true;
             // 
-            // panel1
+            // panel11
             // 
-            this.panel1.BackColor = System.Drawing.Color.MintCream;
-            this.panel1.Controls.Add(this.pictureBox2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel1.Location = new System.Drawing.Point(299, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(699, 79);
-            this.panel1.TabIndex = 4;
+            this.panel11.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel11.Controls.Add(this.button3);
+            this.panel11.Controls.Add(this.lblBack);
+            this.panel11.Controls.Add(this.lblNext);
+            this.panel11.Controls.Add(this.shenaxva);
+            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel11.Location = new System.Drawing.Point(0, 346);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(759, 51);
+            this.panel11.TabIndex = 55;
             // 
-            // pictureBox2
+            // splitter1
             // 
-            this.pictureBox2.Image = global::SwimmingPool.Properties.Resources.ddddddddooooool;
-            this.pictureBox2.Location = new System.Drawing.Point(555, 6);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(81, 73);
-            this.pictureBox2.TabIndex = 4;
-            this.pictureBox2.TabStop = false;
+            this.splitter1.Location = new System.Drawing.Point(0, 0);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 677);
+            this.splitter1.TabIndex = 57;
+            this.splitter1.TabStop = false;
             // 
-            // pictureBox1
+            // button2
             // 
-            this.pictureBox1.Image = global::SwimmingPool.Properties.Resources.dolphin__1_1;
-            this.pictureBox1.Location = new System.Drawing.Point(66, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(84, 70);
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
+            this.button2.BackColor = System.Drawing.Color.White;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button2.Location = new System.Drawing.Point(1053, 695);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(173, 32);
+            this.button2.TabIndex = 56;
+            this.button2.Text = "რედაქტირება";
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.button1.Location = new System.Drawing.Point(883, 698);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 28);
+            this.button1.TabIndex = 41;
+            this.button1.Text = "ტესტი";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // shenaxva
+            // 
+            this.shenaxva.BackColor = System.Drawing.Color.SaddleBrown;
+            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shenaxva.ForeColor = System.Drawing.Color.White;
+            this.shenaxva.Location = new System.Drawing.Point(557, 2);
+            this.shenaxva.Name = "shenaxva";
+            this.shenaxva.Size = new System.Drawing.Size(165, 42);
+            this.shenaxva.TabIndex = 12;
+            this.shenaxva.Text = "რეგისტრაცია";
+            this.shenaxva.UseVisualStyleBackColor = false;
+            this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click_1);
+            // 
+            // lblNext
+            // 
+            this.lblNext.AutoSize = true;
+            this.lblNext.BackColor = System.Drawing.Color.SaddleBrown;
+            this.lblNext.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNext.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblNext.Location = new System.Drawing.Point(373, 5);
+            this.lblNext.Name = "lblNext";
+            this.lblNext.Size = new System.Drawing.Size(38, 39);
+            this.lblNext.TabIndex = 48;
+            this.lblNext.Text = ">";
+            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_2);
+            // 
+            // lblBack
+            // 
+            this.lblBack.AutoSize = true;
+            this.lblBack.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.lblBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBack.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblBack.Location = new System.Drawing.Point(329, 5);
+            this.lblBack.Name = "lblBack";
+            this.lblBack.Size = new System.Drawing.Size(38, 39);
+            this.lblBack.TabIndex = 49;
+            this.lblBack.Text = "<";
+            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_2);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(65, 2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(151, 42);
+            this.button3.TabIndex = 50;
+            this.button3.Text = "რედაქტირება";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // AddAbonent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1229, 739);
+            this.ClientSize = new System.Drawing.Size(762, 677);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddAbonent";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "აბონენტის რეგისტრაცია";
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
+            this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
+            this.splitContainer1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
+            this.panel12.ResumeLayout(false);
+            this.panel12.PerformLayout();
+            this.panel14.ResumeLayout(false);
+            this.panel14.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
-            this.panel5.ResumeLayout(false);
-            this.panel5.PerformLayout();
             this.panel8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button shenaxva;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel8;
         public System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label lblNext;
-        public System.Windows.Forms.Label lblBack;
-        private System.Windows.Forms.CheckBox ara;
-        private System.Windows.Forms.CheckBox diax;
-        private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Panel panel7;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListBox archeuligrafiki;
-        private System.Windows.Forms.Panel panel10;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cmbxHour;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label label1;
@@ -778,10 +729,20 @@
         private System.Windows.Forms.TextBox telefoni;
         private System.Windows.Forms.TextBox gvari;
         private System.Windows.Forms.TextBox saxeli;
-        private System.Windows.Forms.Panel panel11;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.Panel panel12;
+        private System.Windows.Forms.Label lblHours;
+        private System.Windows.Forms.Panel panel14;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.CheckBox diax;
+        private System.Windows.Forms.CheckBox ara;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.ListBox archeuligrafiki;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.DataGridViewTextBoxColumn saati;
         private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
@@ -790,6 +751,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn kvira;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.Label lblNext;
+        private System.Windows.Forms.Button shenaxva;
     }
 }
