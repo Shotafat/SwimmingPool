@@ -836,18 +836,19 @@ namespace SwimmingPool
             var list1 = CheckedDayList;
             foreach (var item in CheckedDayList)
             {
-                int Hour = (item.Y + 8);
-                var Date = CurrentWeekDays[item.X - 1];
+                int Hour = (item.X + 8);
+                MessageBox.Show("X " + item.X.ToString() + " Y " + item.Y.ToString());
+                var Date = CurrentWeekDays[item.Y - 1];
                 if (Hour < 10)
                 {
-                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
                 }
                 else
                 {
                     _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                 }
                 FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-                //Dates.Add(FinalDate);
+                Dates.Add(FinalDate);
                 item.Day = FinalDate;
             }
 
@@ -1298,8 +1299,15 @@ namespace SwimmingPool
                 var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
                    .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
                    .SubscribtionSchedule_.OrderBy(x=>x.Schedule.Date).ToList();
-                                   
-              
+
+                subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
+
+                foreach (var item in CheckedDayList)
+                {
+                    SubscriptionScheduleDB Shchedule = new SubscriptionScheduleDB { Schedule = item.Day };
+                    subscriptionByID.SubscribtionSchedule_.Add(Shchedule);
+                }
+
 
                 subscriber.Name = saxeli.Text;
                 subscriber.LastName = gvari.Text;

@@ -53,7 +53,7 @@ namespace SPSQLite
         {
             SubscribtionPrice SubPrice = new SubscribtionPrice();
             List<SubscriptionScheduleDB> ScheduleDB_ = new List<SubscriptionScheduleDB>();
-            
+
             foreach (var item in Schedule_)
             {
 
@@ -61,9 +61,9 @@ namespace SPSQLite
                 ScheduleDB_.Add(SubDB);
             }
 
-          //  MessageBox.Show("SHCHEDULIS SIGRDZE" +ScheduleDB_.Count.ToString());
-           HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
-           SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
+            //  MessageBox.Show("SHCHEDULIS SIGRDZE" +ScheduleDB_.Count.ToString());
+            HealthNotice healthnot = new HealthNotice { DateCreated = healthNotice_.DateCreated, YesNO = healthNotice_.YESNO };
+            SubPrice = Conn.Table<SubscribtionPrice>().Where(s => s.NumberOfHours == subscriberprice.NumberOfHours).FirstOrDefault();
             Subscriber subscriber = new Subscriber
             {
                 Name = subscriber_.Name,
@@ -71,20 +71,20 @@ namespace SPSQLite
                 PhoneNumber = subscriber_.PhoneNumber,
                 Address = subscriber_.Adress,
                 DateOfBirth = subscriber_.DateOfBirth,
-                
+
             };
-            Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice , SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
+            Subscription subscription = new Subscription { IDnumber = subscription_.IDnumber, SubscriberPrice_ = SubPrice, SubscribtionPriceID = SubPrice.Id, /*Subscriber_ = subscriberInserted */ };
 
             subscription.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
-           
-         
+
+
             subscriber.Subscriptions = subscription;
             subscriber.SubscribtionID = subscription.Id;
             subscriber.Subscriptions = subscription;
             subscriber.Subscriptions.SubscribtionSchedule_ = ScheduleDB_;
-        
 
-            subscriber.Healthnotice =  new List<HealthNotice> {healthnot };
+
+            subscriber.Healthnotice = new List<HealthNotice> { healthnot };
             healthnot.subscriber = subscriber;
             healthnot.subscriber = subscriber;
             SubPrice.Subscriptions = new List<Subscription> { subscription };
@@ -108,17 +108,17 @@ namespace SPSQLite
 
         //Delete Abonent 
 
-        public static void DeleteAbonent (ISubscriber subscriber)
+        public static void DeleteAbonent(ISubscriber subscriber)
         {
             Conn.Delete(Conn.Table<Subscriber>().FirstOrDefault(a => a.Id == subscriber.ID));
         }
 
         //Edit Abonent 
 
-         public static void EditAbonent ( ISubscriber subscriber)
+        public static void EditAbonent(ISubscriber subscriber)
         {
             var abonent = Conn.Table<Subscriber>().Where(a => a.LastName == subscriber.LastName).SingleOrDefault();
-            if ( abonent!=null)
+            if (abonent != null)
             {
                 abonent.Name = subscriber.Name;
                 abonent.LastName = subscriber.LastName;
@@ -131,8 +131,8 @@ namespace SPSQLite
         }
 
         // get Abonents source
-        
-        public  static List<Subscriber> GetAbonentSource()
+
+        public static List<Subscriber> GetAbonentSource()
         {
             //return Conn.Table<Subscriber>().ToList();
             //Subscriber A = new Subscriber { Id = 5 };
@@ -140,25 +140,25 @@ namespace SPSQLite
 
 
             return Conn.Table<Subscriber>().ToList();
-         
+
 
         }
 
-      
 
-       
+
+
 
         //insert Subscription Price
 
         public static void insertSubscribtionPrice(int saaTebisraodenoa, double fasi)
         {
-            Conn.Insert(new SubscribtionPrice { NumberOfHours=saaTebisraodenoa, Price=fasi  });
-    
+            Conn.Insert(new SubscribtionPrice { NumberOfHours = saaTebisraodenoa, Price = fasi });
+
         }
 
         // Delete subscription Price 
 
-        public static void DeleteSubscriptionPrice ( ISubscriptionPrice sub )
+        public static void DeleteSubscriptionPrice(ISubscriptionPrice sub)
         {
             Conn.Delete(Conn.Table<SubscribtionPrice>().FirstOrDefault(a => a.Id == sub.ID));
 
@@ -166,12 +166,12 @@ namespace SPSQLite
 
         // Edit Subscription Price 
 
-         public static void EditSubscriptionPrice ( ISubscriptionPrice price )
-            {
+        public static void EditSubscriptionPrice(ISubscriptionPrice price)
+        {
 
             var SubPrice = Conn.Table<SubscribtionPrice>().Where(a => a.Id == price.ID).SingleOrDefault();
 
-            if ( SubPrice!=null)
+            if (SubPrice != null)
             {
 
                 SubPrice.NumberOfHours = price.NumberOfHours;
@@ -180,7 +180,7 @@ namespace SPSQLite
                 Conn.Update(SubPrice);
             }
 
-           }
+        }
 
         //Get subscription Price Source
 
@@ -193,22 +193,22 @@ namespace SPSQLite
 
         public static void InsertHealthNotice(IHealthNotice healthNotice)
         {
-            Conn.Insert(new HealthNotice { DateCreated = healthNotice.DateCreated, YesNO=healthNotice.YESNO});
+            Conn.Insert(new HealthNotice { DateCreated = healthNotice.DateCreated, YesNO = healthNotice.YESNO });
         }
 
         //Delete HealthNotice
 
-        public static void DeleteHealthNotice (IHealthNotice healthNotice)
+        public static void DeleteHealthNotice(IHealthNotice healthNotice)
         {
             Conn.Delete(Conn.Table<HealthNotice>().FirstOrDefault(a => a.id == healthNotice.ID));
         }
 
         //Edit Health Notice 
 
-        public static void EditHealthNotice (IHealthNotice health)
+        public static void EditHealthNotice(IHealthNotice health)
         {
             var Health = Conn.Table<HealthNotice>().Where(a => a.id == health.ID).SingleOrDefault();
-            if ( Health!=null)
+            if (Health != null)
             {
                 //Health.AbonentId = health.AbonentId;              
                 Health.DateCreated = health.DateCreated;
@@ -223,35 +223,35 @@ namespace SPSQLite
         {
             return Conn.Table<HealthNotice>().ToList();
         }
-  
+
 
         // Insert Subscription Shedule
         //DefaulAttendance ჩავსვი (შოთა)
-        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID, int DefaultAttendance=0) 
+        public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID, int DefaultAttendance = 0)
         {
 
-            Conn.Insert(new SubscriptionScheduleDB { Schedule = shedule, SubscriptionID = SubscriptionID, Attandance=DefaultAttendance });
+            Conn.Insert(new SubscriptionScheduleDB { Schedule = shedule, SubscriptionID = SubscriptionID, Attandance = DefaultAttendance });
 
         }
 
         // Delete Subscription Shedule
 
-         public static void DeleteSubscriptionShedule(ISubscriptionSchedule sub)
+        public static void DeleteSubscriptionShedule(ISubscriptionSchedule sub)
         {
-                                                                         //აქ SubscribtionID ხომ არ უნდა IDს ნაცვლად?
+            //აქ SubscribtionID ხომ არ უნდა IDს ნაცვლად?
             Conn.Delete(Conn.Table<SubscriptionScheduleDB>().FirstOrDefault(a => a.Id == sub.ID));
 
         }
 
-      
+
 
         // Edit Subscription Schedule 
 
-         public static void EditSubscriptionSchedule (ISubscriptionSchedule Schedule)
+        public static void EditSubscriptionSchedule(ISubscriptionSchedule Schedule)
         {
-                                                                        //ID დაემთხვევა? SubscribtionID ხომ არ ჯობს?
+            //ID დაემთხვევა? SubscribtionID ხომ არ ჯობს?
             var Schedules = Conn.Table<SubscriptionScheduleDB>().Where(a => a.Id == Schedule.ID).SingleOrDefault();
-            if(Schedules !=null)
+            if (Schedules != null)
             {
                 Schedules.Schedule = Schedule.Schedule;
                 Schedules.SubscriptionID = Schedule.SubscribtionID;
@@ -265,7 +265,7 @@ namespace SPSQLite
         }
 
         // Get Subscription Shedule Source 
-        public static  List<SubscriptionScheduleDB> GetSheduleSource() 
+        public static List<SubscriptionScheduleDB> GetSheduleSource()
         {
 
             return Conn.Table<SubscriptionScheduleDB>().ToList();
@@ -274,18 +274,18 @@ namespace SPSQLite
 
         // Insert Subscription 
 
-        public static Subscription InsertSubscription(ISubscription subscription) 
+        public static Subscription InsertSubscription(ISubscription subscription)
         {
 
-            Conn.Insert(new Subscription {IDnumber=subscription.IDnumber });
+            Conn.Insert(new Subscription { IDnumber = subscription.IDnumber });
             Subscription sub = new Subscription { IDnumber = subscription.IDnumber };
             return sub;
         }
 
-        
+
         // Delete Subscription 
 
-        public static void DeleteSubscription(ISubscription sub )
+        public static void DeleteSubscription(ISubscription sub)
         {
 
             Conn.Delete(Conn.Table<Subscription>().FirstOrDefault(a => a.Id == sub.ID));
@@ -293,41 +293,41 @@ namespace SPSQLite
 
         // Edit Subscription 
 
-        public static void EditSubscription( ISubscription subscription)
+        public static void EditSubscription(ISubscription subscription)
         {
             var Subscription = Conn.Table<Subscription>().Where(a => a.Id == subscription.ID).SingleOrDefault();
-            if (Subscription!=null)
+            if (Subscription != null)
             {
-                
-             //   Subscription.SubscriberID = subscription.SubscriberID;
+
+                //   Subscription.SubscriberID = subscription.SubscriberID;
                 Subscription.IDnumber = subscription.IDnumber;
                 Conn.Update(Subscription);
             }
-            
+
         }
 
         // Get Subscription Source
 
-        public static List<Subscription> GetSubscriptions()  
+        public static List<Subscription> GetSubscriptions()
         {
 
 
             return Conn.Table<Subscription>().ToList();
         }
 
-      // 
-      
-  
+        // 
 
-    // Edit capicity
-    public static void EditCapicity(ICapicity capicity)
+
+
+        // Edit capicity
+        public static void EditCapicity(ICapicity capicity)
         {
-            var cap =  Conn.Table<CapacityDB>().Where(a => a.MaximumCapacity == capicity.CapicityValue).FirstOrDefault();
+            var cap = Conn.Table<CapacityDB>().Where(a => a.MaximumCapacity == capicity.CapicityValue).FirstOrDefault();
             if (cap != null)
             {
                 cap.MaximumCapacity = capicity.CapicityValue;
                 Conn.Update(capicity);
-            }      
+            }
 
 
         }
@@ -342,13 +342,13 @@ namespace SPSQLite
 
         public static void MaximumCapicity(ICapicity capicity)
         {
-            Conn.Insert(new CapacityDB { MaximumCapacity= capicity.CapicityValue });
+            Conn.Insert(new CapacityDB { MaximumCapacity = capicity.CapicityValue });
 
 
         }
 
     }
-    
+
     //აბონიმენტი
     public class Subscription
     {
@@ -359,19 +359,19 @@ namespace SPSQLite
 
         [ForeignKey(typeof(SubscribtionPrice))]
         public int SubscribtionPriceID { get; set; }
-     
 
-        [OneToMany(CascadeOperations = CascadeOperation.All )]
+
+        [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<SubscriptionScheduleDB> SubscribtionSchedule_ { get; set; }
 
-        [OneToOne(CascadeOperations = CascadeOperation.All )]
+        [OneToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber Subscriber_ { get; set; }
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
-        
+
     }
-  
+
 
 
     //აბონენტი
@@ -423,13 +423,13 @@ namespace SPSQLite
     //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
     public class CapacityDB
     {
-       [PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public int MaximumCapacity { get; set; }
 
     }
 
-    
+
 
 
 
@@ -439,12 +439,12 @@ namespace SPSQLite
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public DateTime DateCreated { get; set; }
-      
+
         public Availability YesNO { get; set; }
 
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
-        public Subscriber subscriber{ get; set; }
+        public Subscriber subscriber { get; set; }
 
         [ForeignKey(typeof(Subscriber))]
         public int SubscriberID { get; set; }
@@ -464,9 +464,9 @@ namespace SPSQLite
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscription Subscription { get; set; }
         public int Attandance { get; set; }
-       
+
 
     }
-  
+
 
 }
