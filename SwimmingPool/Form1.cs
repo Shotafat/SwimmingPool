@@ -17,6 +17,9 @@ namespace SwimmingPool
         public List<SubscriptionScheduleDB> DBDB { get; set; }
         public static string selectedAbonentNumber { get; set; }
 
+        public List<FillGrid> fillgrid { get; set; }
+
+        public   List<FillGrid>  newfillgrid { get; set; }
         public Form1()
         {
             InitializeComponent();
@@ -56,7 +59,7 @@ namespace SwimmingPool
             //MessageBox.Show("BAZIS METHODIS BOLOS" + scheduledb.Count().ToString());
 
 
-            var fillgrid = (from o in SubscribtionTable
+             fillgrid = (from o in SubscribtionTable
                             join a in HealthTable on o.Subscriber_.Id equals a.SubscriberID
                             select new FillGrid
                             {
@@ -258,40 +261,78 @@ namespace SwimmingPool
         {
 
         }
-
+        //List<FillGrid> TempList;
         #region Search 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-            string textboxText = toolStripTextBox1.Text.ToString();
+           
+            
 
+            string textboxText = toolStripTextBox1.Text;
 
+          
 
-            int RowIndex = 0;
-            foreach (DataGridViewRow row in dataGridView1.Rows)
+            //if (!string.IsNullOrEmpty(textboxText))
+            //{
+            //    TempList = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
+            //}
+
+            bool condition = !textboxText.Contains(" ");
+            string[] f = textboxText.Split(' ');
+
+            if (condition)
             {
+                if (fillgrid.Any(o => o.AbonentId == textboxText))
+                    newfillgrid = fillgrid.Where(i => i.AbonentId.Contains(textboxText)).ToList();
 
-                for (int i = 0; i <= 6; i++)
+                else if (fillgrid.Any(o => o.FirstName == textboxText))
+                    newfillgrid = fillgrid.Where(i => i.FirstName.Contains(textboxText)).ToList();
 
+                else if (fillgrid.Any(o => o.LastName == textboxText))
+                    newfillgrid = fillgrid.FindAll(k => k.LastName == textboxText);
+
+                else if (fillgrid.Any(o => o.PhoneNumber == textboxText))
+                    newfillgrid = fillgrid.FindAll(k => k.PhoneNumber == textboxText);
+
+                else if (fillgrid.Any(o => o.Address == textboxText))
+                    newfillgrid = fillgrid.FindAll(k => k.Address == textboxText);
+            }
+            else if (!condition)
+            {
+                var gela = fillgrid.FindAll(k => k.Address == textboxText);
+                var nnn = (from g in gela select g.Address).ToList();
+
+                foreach (var item in nnn)
                 {
-                    // აი აქ CELL-ის ინდექს რასაც მიანიჭებ იმის მიხედვით მოძებნის 
-
-                    if (row.Cells[0].Value.ToString().Equals(textboxText) || row.Cells[1].Value.ToString().Contains(textboxText) ||
-                        row.Cells[2].Value.ToString().Equals(textboxText) || row.Cells[3].Value.ToString().Contains(textboxText) ||
-                        row.Cells[4].Value.ToString().Equals(textboxText) || row.Cells[5].Value.ToString().Contains(textboxText))
-
+                    if (item.Contains(textboxText))
                     {
-                        RowIndex = row.Index;
 
-
-
-                        break;
+                     newfillgrid.FindAll(p => p.Address.Contains(item));
                     }
+
                 }
 
+                List<string> kk = new List<string>();
+                foreach (var item in f)
+                {
+                    kk.Add(item);
+                }
+
+                if (fillgrid.Any(o => o.FirstName == kk[0] && o.LastName == kk[1]))
+                    newfillgrid = fillgrid.FindAll(k => k.FirstName == kk[0] && k.LastName == kk[1]);
+
+                
             }
+     
+            if (string.IsNullOrEmpty(textboxText))
+                newfillgrid = fillgrid;
 
-            dataGridView1.Rows[RowIndex].Selected = true;
 
+            if (newfillgrid?.Count > 0)
+            {
+                dataGridView1.DataSource = null;
+                dataGridView1.DataSource = newfillgrid;
+            }
         }
 
         #endregion

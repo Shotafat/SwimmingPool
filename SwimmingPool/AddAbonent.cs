@@ -1312,8 +1312,13 @@ namespace SwimmingPool
                        while (i != ScheduleList.Count);
                         ScheduleList[i].Schedule = CheckedDayList[i].Day;
 
-                        SubscriptionScheduleDB _Shchedule = new SubscriptionScheduleDB { Attandance = ScheduleList[i - 1].Attandance, Subscription = ScheduleList[i - 1].Subscription,
-                            SubscriptionID = ScheduleList[i - 1].SubscriptionID, Schedule = CheckedDayList[i].Day;
+                        SubscriptionScheduleDB _Shchedule = new SubscriptionScheduleDB
+                        {
+                            Attandance = ScheduleList[i - 1].Attandance,
+                            Subscription = ScheduleList[i - 1].Subscription,
+                            SubscriptionID = ScheduleList[i - 1].SubscriptionID,
+                            Schedule = CheckedDayList[i].Day
+                        };
 
                         ScheduleList.Add(_Shchedule);
                         

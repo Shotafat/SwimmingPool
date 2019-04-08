@@ -34,18 +34,6 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.abonentIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.phoneNumberDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hasInquryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fillGridBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel2 = new System.Windows.Forms.Panel();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -62,16 +50,25 @@
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.გრაფიკიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ექსპორტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.iSubscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.subscriberBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fillGridBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).BeginInit();
             this.splitContainer2.Panel1.SuspendLayout();
@@ -79,8 +76,7 @@
             this.splitContainer2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -128,17 +124,17 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Sunken;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.abonentIdDataGridViewTextBoxColumn,
-            this.firstNameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn,
-            this.phoneNumberDataGridViewTextBoxColumn,
-            this.dateFromDataGridViewTextBoxColumn,
-            this.dateToDataGridViewTextBoxColumn,
-            this.hasInquryDataGridViewTextBoxColumn,
-            this.priceDataGridViewTextBoxColumn,
-            this.hoursDataGridViewTextBoxColumn});
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12});
             this.dataGridView1.DataSource = this.fillGridBindingSource;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
@@ -160,89 +156,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(985, 431);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
-            // 
-            // abonentIdDataGridViewTextBoxColumn
-            // 
-            this.abonentIdDataGridViewTextBoxColumn.DataPropertyName = "AbonentId";
-            this.abonentIdDataGridViewTextBoxColumn.HeaderText = "აბონენტის N";
-            this.abonentIdDataGridViewTextBoxColumn.Name = "abonentIdDataGridViewTextBoxColumn";
-            this.abonentIdDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // firstNameDataGridViewTextBoxColumn
-            // 
-            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
-            this.firstNameDataGridViewTextBoxColumn.HeaderText = "სახელი";
-            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
-            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "გვარი";
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "ასაკი";
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "მისამართი";
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // phoneNumberDataGridViewTextBoxColumn
-            // 
-            this.phoneNumberDataGridViewTextBoxColumn.DataPropertyName = "PhoneNumber";
-            this.phoneNumberDataGridViewTextBoxColumn.HeaderText = "ტელეფონის ნომერი";
-            this.phoneNumberDataGridViewTextBoxColumn.Name = "phoneNumberDataGridViewTextBoxColumn";
-            this.phoneNumberDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateFromDataGridViewTextBoxColumn
-            // 
-            this.dateFromDataGridViewTextBoxColumn.DataPropertyName = "DateFrom";
-            this.dateFromDataGridViewTextBoxColumn.HeaderText = "საიდან";
-            this.dateFromDataGridViewTextBoxColumn.Name = "dateFromDataGridViewTextBoxColumn";
-            this.dateFromDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // dateToDataGridViewTextBoxColumn
-            // 
-            this.dateToDataGridViewTextBoxColumn.DataPropertyName = "DateTo";
-            this.dateToDataGridViewTextBoxColumn.HeaderText = "სადამდე";
-            this.dateToDataGridViewTextBoxColumn.Name = "dateToDataGridViewTextBoxColumn";
-            this.dateToDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hasInquryDataGridViewTextBoxColumn
-            // 
-            this.hasInquryDataGridViewTextBoxColumn.DataPropertyName = "HasInqury";
-            this.hasInquryDataGridViewTextBoxColumn.HeaderText = "ცნობა";
-            this.hasInquryDataGridViewTextBoxColumn.Name = "hasInquryDataGridViewTextBoxColumn";
-            this.hasInquryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // priceDataGridViewTextBoxColumn
-            // 
-            this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
-            this.priceDataGridViewTextBoxColumn.HeaderText = "Price";
-            this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
-            this.priceDataGridViewTextBoxColumn.ReadOnly = true;
-            this.priceDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // hoursDataGridViewTextBoxColumn
-            // 
-            this.hoursDataGridViewTextBoxColumn.DataPropertyName = "Hours";
-            this.hoursDataGridViewTextBoxColumn.HeaderText = "Hours";
-            this.hoursDataGridViewTextBoxColumn.Name = "hoursDataGridViewTextBoxColumn";
-            this.hoursDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hoursDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // fillGridBindingSource
-            // 
-            this.fillGridBindingSource.DataSource = typeof(SwimmingPool.Form1);
             // 
             // panel2
             // 
@@ -293,7 +206,7 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(23, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(232, 33);
+            this.label3.Size = new System.Drawing.Size(299, 33);
             this.label3.TabIndex = 1;
             this.label3.Text = "A001 გელა ლელაძე";
             // 
@@ -330,48 +243,48 @@
             this.წაშლაToolStripMenuItem,
             this.ლიმიტიToolStripMenuItem});
             this.აბონენტიToolStripMenuItem.Name = "აბონენტიToolStripMenuItem";
-            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(64, 31);
+            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(77, 31);
             this.აბონენტიToolStripMenuItem.Text = "აბონენტი";
             // 
             // დამატებაToolStripMenuItem
             // 
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
             this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
             // 
             // რედაქტირებაToolStripMenuItem
             // 
             this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
             this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
             // 
             // წაშლაToolStripMenuItem
             // 
             this.წაშლაToolStripMenuItem.Name = "წაშლაToolStripMenuItem";
-            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.წაშლაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.წაშლაToolStripMenuItem.Text = "წაშლა";
             this.წაშლაToolStripMenuItem.Click += new System.EventHandler(this.წაშლაToolStripMenuItem_Click);
             // 
             // ლიმიტიToolStripMenuItem
             // 
             this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
-            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
             this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // საათებიდაფასებიToolStripMenuItem
             // 
             this.საათებიდაფასებიToolStripMenuItem.Name = "საათებიდაფასებიToolStripMenuItem";
-            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(106, 31);
+            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(136, 31);
             this.საათებიდაფასებიToolStripMenuItem.Text = "საათები და ფასები";
             this.საათებიდაფასებიToolStripMenuItem.Click += new System.EventHandler(this.საათებიდაფასებიToolStripMenuItem_Click_1);
             // 
             // ვადაგასულიToolStripMenuItem
             // 
             this.ვადაგასულიToolStripMenuItem.Name = "ვადაგასულიToolStripMenuItem";
-            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(77, 31);
+            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(98, 31);
             this.ვადაგასულიToolStripMenuItem.Text = "ვადაგასული";
             this.ვადაგასულიToolStripMenuItem.Click += new System.EventHandler(this.ვადაგასულიToolStripMenuItem_Click);
             // 
@@ -391,14 +304,14 @@
             // გრაფიკიToolStripMenuItem
             // 
             this.გრაფიკიToolStripMenuItem.Name = "გრაფიკიToolStripMenuItem";
-            this.გრაფიკიToolStripMenuItem.Size = new System.Drawing.Size(60, 31);
+            this.გრაფიკიToolStripMenuItem.Size = new System.Drawing.Size(72, 31);
             this.გრაფიკიToolStripMenuItem.Text = "გრაფიკი";
             this.გრაფიკიToolStripMenuItem.Click += new System.EventHandler(this.გრაფიკიToolStripMenuItem_Click);
             // 
             // ექსპორტიToolStripMenuItem
             // 
             this.ექსპორტიToolStripMenuItem.Name = "ექსპორტიToolStripMenuItem";
-            this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(68, 31);
+            this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ექსპორტიToolStripMenuItem.Text = "ექსპორტი";
             // 
             // dataGridViewTextBoxColumn1
@@ -407,6 +320,87 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "HasInqury";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 85;
+            // 
+            // fillGridBindingSource
+            // 
+            this.fillGridBindingSource.DataSource = typeof(SwimmingPool.Form1.FillGrid);
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "AbonentId";
+            this.dataGridViewTextBoxColumn2.HeaderText = "AbonentId";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "FirstName";
+            this.dataGridViewTextBoxColumn3.HeaderText = "FirstName";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "LastName";
+            this.dataGridViewTextBoxColumn4.HeaderText = "LastName";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Age";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Age";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "Address";
+            this.dataGridViewTextBoxColumn6.HeaderText = "Address";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "PhoneNumber";
+            this.dataGridViewTextBoxColumn7.HeaderText = "PhoneNumber";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.DataPropertyName = "HasInqury";
+            this.dataGridViewTextBoxColumn8.HeaderText = "HasInqury";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "DateFrom";
+            this.dataGridViewTextBoxColumn9.HeaderText = "DateFrom";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "DateTo";
+            this.dataGridViewTextBoxColumn10.HeaderText = "DateTo";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "Price";
+            this.dataGridViewTextBoxColumn11.HeaderText = "Price";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Hours";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Hours";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
             // 
             // Form1
             // 
@@ -430,7 +424,6 @@
             this.splitContainer1.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.splitContainer2.Panel1.ResumeLayout(false);
             this.splitContainer2.Panel2.ResumeLayout(false);
@@ -440,16 +433,13 @@
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iSubscriberBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.subscriberBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.BindingSource subscriberBindingSource;
-        private System.Windows.Forms.BindingSource iSubscriberBindingSource;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
@@ -469,7 +459,6 @@
         private System.Windows.Forms.ToolStripMenuItem ლიმიტიToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem გრაფიკიToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ექსპორტიToolStripMenuItem;
-        private System.Windows.Forms.BindingSource fillGridBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn abonentIdDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
@@ -482,6 +471,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn hasInquryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.BindingSource fillGridBindingSource;
     }
 }
 
