@@ -259,6 +259,7 @@ namespace SwimmingPool
             var test = InputMethods.Filldata(Start, End);
             foreach (var item in InputMethods.DATAforInput)
             {
+
                 SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
             }
             //PAST
@@ -617,52 +618,77 @@ namespace SwimmingPool
 
         private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex == 0 || e.ColumnIndex == 7 || e.RowIndex == 0)
+            int Hour = (e.RowIndex + 8);
+            var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
+            DateTime FinalDate = new DateTime();
+            string _FinalDate = "";
+            if (Hour < 10)
             {
-                dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
-                if (e.ColumnIndex == 7)
-                {
-                    dataGridView1.Rows[0].Cells[e.ColumnIndex].Selected = false;
-                    MessageBox.Show("კვირა დასვენების დღეა!");
-                }
-                return;
+                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+            }
+            else
+            {
+                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
             }
 
+            //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
-            GridFormat f = new GridFormat();
+            FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+            //   Dates.Add(FinalDate);
+
+
+
+
+            //________________________
+            var id = CheckedDayList.Count;
+            GridFormat f = new GridFormat(id);
             f.X = e.RowIndex;
             f.Y = e.ColumnIndex;
-            f.Day = CurrentWeekDays[e.ColumnIndex -1];
+            f.Day = FinalDate;
             f.IsChecked = true;
 
             if (CheckedDayList.Count == 0)
             {
                 CheckedDayList.Add(f);
-                dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.Red;
             }
 
             else
             {
                 Checking(f);
-                DrawGrid();
+                DrawGrid(CurrentWeekDays);
             }
+
+
             var lbl = CheckedDayList.Count();
             lblHours.Text = lbl.ToString();
-
-            archeuligrafiki.DataSource = null;
-
-
-            var sortedList = (from item in CheckedDayList
-                             orderby item.Day
-                             select item).ToList();
-
-            archeuligrafiki.DataSource = sortedList.Select(x => x.Day).ToList();
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
         }
+
+
+        public void DrawGrid(List<DateTime> week)
+        {
+            if (CheckedDayList.Count > 0)
+            {
+                var currentGrid = CheckedDayList.Where(d => d.Day >= week[0] && d.Day <= week[week.Count - 1]).ToList();
+
+                foreach (var item in currentGrid)
+                {
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.Red;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.Red;
+                }
+            }
+            else
+                return;
+        }
+
+
+
+
 
         public void Checking(GridFormat obj)
         {
@@ -832,115 +858,11 @@ namespace SwimmingPool
         //SAVEZE
         public void Datefiller(int DictionaryIndex, Dictionary<int, List<DateTime>> DictDate, bool Saveclick)
         {
-            string _FinalDate = "";
-            var list1 = CheckedDayList;
-            foreach (var item in CheckedDayList)
-            {
-                int Hour = (item.X + 8);
-                MessageBox.Show("X " + item.X.ToString() + " Y " + item.Y.ToString());
-                var Date = CurrentWeekDays[item.Y - 1];
-                if (Hour < 10)
-                {
-                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-                }
-                else
-                {
-                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-                }
-                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-                Dates.Add(FinalDate);
-                item.Day = FinalDate;
-            }
 
-            var list2 = CheckedDayList;
-
-            var DatestringFromGridclass = CheckedDayList.Select(x=>x.Day).ToList();
+            var DatestringFromGridclass = CheckedDayList.Select(x => x.Day).ToList();
             Dates = DatestringFromGridclass;
-                //Dates = CheckedDayList.
-                //            List<DateTime> DictionaryValues = new List<DateTime>();
-                //            foreach (var cell in gela)
-                //            {
-
-            //                if (cell.Key == 0)
-            //                {
-            //                    break;
-            //                }
-            //                else
-            //                {
-
-            //                    int Hour = (cell.Value + 8);
-            //                    var Date = CurrentWeekDays[0 + cell.Key - 1];
-            //                    DateTime FinalDate = new DateTime();
-            //                    string _FinalDate = "";
-            //                    if (Hour < 10)
-            //                    {
-            //                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-            //                    }
-            //                    else
-            //                    {
-            //                        _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-            //                    }
-
-            //                    // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
-
-            //                    FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-
-            //                    DictionaryValues.Add(FinalDate);
-            //                    //  Dates.Add(FinalDate);
-            //                }
-            //            }
 
 
-            //            #region shota
-            //            //foreach (DataGridViewCell cell in dataGridView1.SelectedCells)
-            //            //{
-
-            //            //    if (cell.ColumnIndex == 0)
-            //            //    {
-            //            //        break;
-            //            //    }
-            //            //    else
-            //            //    {
-
-            //            //        int Hour = (cell.RowIndex + 8);
-            //            //        var Date = CurrentWeekDays[0 + cell.ColumnIndex - 1];
-            //            //        DateTime FinalDate = new DateTime();
-            //            //        string _FinalDate = "";
-            //            //        if (Hour < 10)
-            //            //        {
-            //            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
-            //            //        }
-            //            //        else
-            //            //        {
-            //            //            _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-            //            //        }
-
-            //            //       // MessageBox.Show(" SAVE ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
-
-            //            //        FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-
-            //            //        DictionaryValues.Add(FinalDate);
-            //            //        //  Dates.Add(FinalDate);
-            //            //    }
-            //            //}
-            //            // DictDate.Add(DictionaryIndex, DictionaryValues);
-            //            #endregion
-            //            if (!DictDate.ContainsKey(Pagenumber))
-            //                DictDate.Add(Pagenumber, DictionaryValues);
-            //            else
-            //                DictDate[Pagenumber] = DictionaryValues;
-
-
-            //            foreach (var item in DictDate)
-            //            {
-            //                foreach (var internaldata in item.Value)
-            //                {
-            //                    Dates.Add(internaldata);
-            //                }
-
-            //            }
-            //            DictionaryIndex=0;
-            ////            Pagenumber = 0;
         }
 
 
