@@ -270,12 +270,7 @@ namespace SwimmingPool
 
             string textboxText = toolStripTextBox1.Text;
 
-          
-
-            //if (!string.IsNullOrEmpty(textboxText))
-            //{
-            //    TempList = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
-            //}
+            newfillgrid = null;
 
             bool condition = !textboxText.Contains(" ");
             string[] f = textboxText.Split(' ');
@@ -289,29 +284,18 @@ namespace SwimmingPool
                     newfillgrid = fillgrid.Where(i => i.FirstName.Contains(textboxText)).ToList();
 
                 else if (fillgrid.Any(o => o.LastName == textboxText))
-                    newfillgrid = fillgrid.FindAll(k => k.LastName == textboxText);
+                    newfillgrid = fillgrid.Where(i => i.LastName.Contains(textboxText)).ToList();
 
-                else if (fillgrid.Any(o => o.PhoneNumber == textboxText))
-                    newfillgrid = fillgrid.FindAll(k => k.PhoneNumber == textboxText);
+                //else if (fillgrid.Any(o => o.PhoneNumber == textboxText))
+                //    newfillgrid = fillgrid.Where(i => i.PhoneNumber.Contains( textboxText)).ToList();
 
                 else if (fillgrid.Any(o => o.Address == textboxText))
-                    newfillgrid = fillgrid.FindAll(k => k.Address == textboxText);
+                    newfillgrid = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
             }
             else if (!condition)
             {
-                var gela = fillgrid.FindAll(k => k.Address == textboxText);
-                var nnn = (from g in gela select g.Address).ToList();
-
-                foreach (var item in nnn)
-                {
-                    if (item.Contains(textboxText))
-                    {
-
-                     newfillgrid.FindAll(p => p.Address.Contains(item));
-                    }
-
-                }
-
+                newfillgrid = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
+                newfillgrid = fillgrid.Where(i => i.PhoneNumber.Contains(textboxText)).ToList();
                 List<string> kk = new List<string>();
                 foreach (var item in f)
                 {
@@ -323,10 +307,11 @@ namespace SwimmingPool
 
                 
             }
-     
-            if (string.IsNullOrEmpty(textboxText))
-                newfillgrid = fillgrid;
 
+            if (string.IsNullOrEmpty(textboxText))
+            {
+                newfillgrid = fillgrid;
+            }
 
             if (newfillgrid?.Count > 0)
             {
