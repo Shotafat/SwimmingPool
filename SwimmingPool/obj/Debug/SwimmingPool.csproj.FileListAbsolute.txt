@@ -2238,3 +2238,7 @@ C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SwimmingPool\obj\Debug\Sw
 C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SwimmingPool\obj\Debug\SwimmingPool.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SwimmingPool\obj\Debug\SwimmingPool.exe
 C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SwimmingPool\obj\Debug\SwimmingPool.pdb
+C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\obj\Debug\Interop.InteropExtensionLib.dll
+C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.csproj.ResolveComReference.cache
+C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Graphics.resources
+C:\Users\Admin\Desktop\githabi\SwimmingPool\SwimmingPool\obj\Debug\SwimmingPool.Limit.resources

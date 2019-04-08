@@ -1300,9 +1300,38 @@ namespace SwimmingPool
                    .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
                    .SubscribtionSchedule_.OrderBy(x=>x.Schedule.Date).ToList();
 
-                //SHOTA: დინამიურად შენახული გვაქვს CheckedDayList-ში განახლებული განრიგი;
-                //ScheduleList-ში შენახული გვაქვს მოქმედი განრიგი
-                //ფორ ციკლში 3 სცენარს ვიხილავ, როცა Checkedlist<Schedulist,Checkedlist==Schedulist, Checkedlist>Schedulist,
+
+
+               var SelectedObject= DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
+
+                var SelectAllSchedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>()
+                    .FindAll(x => x.SubscriptionID == SelectedObject.Id);
+
+
+
+                #region giorgim ikarnaxa
+
+                for (int i = 0; i < SelectAllSchedule.Count; i++)
+                {
+
+                    var g = SelectAllSchedule[i].Schedule;
+                    CheckedDayList[i] = g;
+                }
+
+                #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
                 for (int i = 0; i < CheckedDayList.Count; i++)
                 {
                     //როცა ნაკლებია ბაზაში არსებული დინამიურზე, სანამ ბაზის რაოდენობა შეივსება ვუტოლებთ, როცა შეივსება ვამატებთ
@@ -1368,8 +1397,8 @@ namespace SwimmingPool
                 DatabaseConnection.Conn.Update(subscriber);
                 DatabaseConnection.Conn.UpdateWithChildren(newobj);
 
-                var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
-                var gggg = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().FirstOrDefault(x => x.SubscribtionID == 1);
+                var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x =>         x.IDnumber == "A001");
+                var gggg = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().FirstOrDefault(x =>x.SubscribtionID == 1);
 
 
             }
@@ -1401,32 +1430,32 @@ namespace SwimmingPool
         }
     }
 }
-//public class CurrentGrid : AddAbonent
-//{
-//    public int X { get; set; }
-//    public int Y { get; set; }
-//    public Color CurrentColor { get; set; }
-//    public int SeatNumber { get; set; }
+                        //public class CurrentGrid : AddAbonent
+                        //{
+                        //    public int X { get; set; }
+                        //    public int Y { get; set; }
+                        //    public Color CurrentColor { get; set; }
+                        //    public int SeatNumber { get; set; }
 
-//    public void CalcIncreaseDicrease(int x, int y, DateTime day)
-//    {
-//        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
+                        //    public void CalcIncreaseDicrease(int x, int y, DateTime day)
+                        //    {
+                        //        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
 
-//        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
-//        //{
-//        //    ++_value;
-//        //}
+                        //        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
+                        //        //{
+                        //        //    ++_value;
+                        //        //}
 
-//        //else
-//        //{
-//        //    --_value;
-//        //}
+                        //        //else
+                        //        //{
+                        //        //    --_value;
+                        //        //}
 
 
-//        //dataGridView1[x, y].Value = _value.ToString();
-//        //dataGridView1.Refresh();
-//        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
+                        //        //dataGridView1[x, y].Value = _value.ToString();
+                        //        //dataGridView1.Refresh();
+                        //        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
 
-//    }
-//}
+                        //    }
+                        //}
 

@@ -191,6 +191,7 @@ namespace SwimmingPool
             AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
             //abonent.Controls.Add(DataGridView datagridview1);
             A.EditFillGrid(abonent.dataGridView1, ScheduleList());
+
             abonent.Show();
 
 
