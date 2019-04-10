@@ -54,6 +54,9 @@ namespace SwimmingPool
             grafiki();
             //InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
+            ThisMonday = GetCurrentMonday(CurrentDateValue);
+            AssignCurrentWeek(ThisMonday);
+
             SubscribtionPriceToDropdown();
             SelectedCellCount = 0;
             lblBack.Enabled = true;
@@ -67,11 +70,7 @@ namespace SwimmingPool
 
         protected override void OnLoad(EventArgs e)
         {
-            base.OnLoad(e);
-
-            ThisMonday = GetCurrentMonday(CurrentDateValue);
-            AssignCurrentWeek(ThisMonday);
-            // CellGrayColor(DateTime.Now.Date, dateTimePicker3.Value);
+            //base.OnLoad(e);
 
             dataGridView1.Rows[0].ReadOnly = true;
             dataGridView1.Rows[0].Frozen = true;
@@ -92,8 +91,43 @@ namespace SwimmingPool
         }
        
 
-        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion) :this()
-        {         
+        public void FillCheckdayList(List<DateTime> DatabaseDates)
+        {
+            Dates = DatabaseDates;
+            foreach (var item in DatabaseDates)
+            {
+                int rowindex = item.Hour - 8;
+                int columnindex = (int)item.DayOfWeek;
+
+                GridFormat AA = new GridFormat(1) { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
+                CheckedDayList.Add(AA);
+
+            }
+
+         
+
+
+        }
+
+        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate) //:this()
+        {
+            InitializeComponent();
+            dataGridView1.DataSource = null;
+            ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
+
+
+            //  grafiki(dataGridView1);
+           Grafiki_edit(DatabaseScheduleDate[0]);
+           gridFillter(dataGridView1, ThisMonday);
+
+        //    DrawGrid();
+
+
+
+            AssignCurrentWeek(ThisMonday, dataGridView1);
+          
+            // Grafiki_edit(dataGridView1);
+            FillCheckdayList(DatabaseScheduleDate);
             saxeli.Text = Name;
             gvari.Text = LastName;
             asaki.Text = Age.ToString();
@@ -101,6 +135,8 @@ namespace SwimmingPool
             misamarti.Text = Adress;
             shenaxva.Hide();
             button3.Show();
+       
+
         }  
 
 
@@ -382,6 +418,62 @@ namespace SwimmingPool
             gridview.Rows[0].Cells[0].Value = " ";
             gridview.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
+
+
+        /*----------------------------------*/
+
+
+        public void Grafiki_edit(DateTime EditDate)
+        {
+          //  HoursChek AAA = new HoursChek();
+            
+            //List<DateTime> DDD = AAA.ScheduleList();
+
+            dataGridView1.DataSource = null;
+            dataGridView1.Rows.Add();
+
+            for (int i = 10; i < 22; i++)
+            {
+                dataGridView1.Rows.Add();
+                dataGridView1.Rows[i - 9].Cells[0].Value = Convert.ToString(i - 1 + ":00");
+            }
+
+            for (int i = 0; i < 11; i++)
+            {
+                for (int ii = 0; ii < 7; ii++)
+                {
+                    dataGridView1.Rows[i].Cells[ii].DataGridView.DefaultCellStyle.BackColor = Color.Snow;
+                }
+            }
+
+            //pirveli ujris shevseba DATE-biT
+
+            int CurrentDay = (int)EditDate.DayOfWeek;
+            int ForwardDays = 6 - CurrentDay;
+            int StartDay = CurrentDay - (CurrentDay - 1);
+
+            dataGridView1.Rows[0].Cells[(int)EditDate.DayOfWeek].Value = getFormattedDate(EditDate);
+
+            for (int i = 1; i <= ForwardDays; i++)
+            {
+                dataGridView1.Rows[0].Cells[(int)EditDate.DayOfWeek + i].Value = getFormattedDate(EditDate.AddDays(i));
+            }
+
+            for (int i = 1; i < CurrentDay; i++)
+            {
+                dataGridView1.Rows[0].Cells[(int)EditDate.DayOfWeek - i].Value = getFormattedDate(EditDate.AddDays(-i));
+            }
+
+            dataGridView1.Rows[0].Cells[0].Value = " ";
+            dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
+        }
+
+
+
+
+
+
+
 
         private string getFormattedDate(DateTime dateTime)
         {
@@ -1140,6 +1232,7 @@ namespace SwimmingPool
             gridFillter(dataGridView1, CurrentMonday);
 
             DrawGrid();
+
         }
 
         private void lblBack_Click_2(object sender, EventArgs e)
@@ -1237,7 +1330,7 @@ namespace SwimmingPool
                 {
 
                     var g = SelectAllSchedule[i].Schedule;
-                    CheckedDayList[i] = g;
+                   // CheckedDayList[i] = g;
                 }
 
                 #endregion

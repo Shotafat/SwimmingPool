@@ -187,11 +187,12 @@ namespace SwimmingPool
             var Age = subscriptionByID.Subscriber_.DateOfBirth;
 
 
-
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID);
+            List<DateTime> Dates = ScheduleList();
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates);
             //abonent.Controls.Add(DataGridView datagridview1);
-            A.EditFillGrid(abonent.dataGridView1, ScheduleList());
-
+            A.EditFillGrid(abonent, Dates);
+          
+          
             abonent.Show();
 
 
