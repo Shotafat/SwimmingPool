@@ -311,3 +311,4 @@ C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netsta
 C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csproj.CopyComplete
 C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.dll
 C:\Users\User\Documents\GitHub\SwimmingPool - 4 aprili\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.pdb
+C:\Users\Admin\Desktop\project\SwimmingPool\SPSQLite\obj\Debug\netstandard2.0\SPSQLite.csprojAssemblyReference.cache

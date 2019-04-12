@@ -24,12 +24,15 @@ namespace SwimmingPool
         {
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
-            dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
+           dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoGenerateColumns = true;
+           // dataGridView1.AutoGenerateColumns = true;
+
+
             JoinClasses();
             label3.Text = "";
             if (dataGridView1.SelectedCells.Count <= 0)
@@ -269,10 +272,7 @@ namespace SwimmingPool
         #region Search 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-           
-            
-
-            string textboxText = toolStripTextBox1.Text;
+           string textboxText = toolStripTextBox1.Text;
 
             newfillgrid = null;
 
@@ -298,18 +298,24 @@ namespace SwimmingPool
             }
             else if (!condition)
             {
-                newfillgrid = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
+               // newfillgrid = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
+
+                
+
                 newfillgrid = fillgrid.Where(i => i.PhoneNumber.Contains(textboxText)).ToList();
+
                 List<string> kk = new List<string>();
                 foreach (var item in f)
                 {
                     kk.Add(item);
                 }
 
-                if (fillgrid.Any(o => o.FirstName == kk[0] && o.LastName == kk[1]))
-                    newfillgrid = fillgrid.FindAll(k => k.FirstName == kk[0] && k.LastName == kk[1]);
 
-                
+
+                if (fillgrid.Any(o => o.FirstName == kk[0] && o.LastName == kk[1]) )
+                    newfillgrid = fillgrid.FindAll(k => k.FirstName == kk[0] && k.LastName == kk[1]);
+                else
+                    newfillgrid = fillgrid.FindAll(o => o.Address == textboxText).ToList();
             }
 
             if (string.IsNullOrEmpty(textboxText))
@@ -328,7 +334,7 @@ namespace SwimmingPool
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
-            toolStripTextBox1.Text = string.Empty;
+            toolStripTextBox1.Text = null;
 
         }
 
