@@ -1337,12 +1337,22 @@ namespace SwimmingPool
                         {
                             SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB { Attandance = 0, Schedule=item.Day,
                                 Subscription = ScheduleList[0].Subscription, SubscriptionID= ScheduleList[0].SubscriptionID };
-                    DatabaseConnection.Conn.Insert(NewSchedule);
+                    //DatabaseConnection.Conn.Insert(NewSchedule);
                            NewScheduleList.Add(NewSchedule);
                         }
 
 
 
+
+                }
+
+                foreach (var item in ScheduleList)
+                {
+                    DatabaseConnection.Conn.Delete(item);
+                }
+                foreach (var item in NewScheduleList)
+                {
+                    DatabaseConnection.Conn.Insert(item);
 
                 }
 
