@@ -101,20 +101,31 @@ namespace SwimmingPool
         public static List<DateTime> FullDatetime { get; set; }
 
         public void EditFillGrid (AddAbonent abonent, List<DateTime> DateList)
-            { 
-            foreach (var item in DateList)
             {
+            abonent.DrawGrid(abonent.CurrentWeekDays);
+
+            //foreach (var item in DateList)
+            //{
                
-                int rowindex = item.Hour - 8;
-                int columnindex = (int)item.DayOfWeek;
-             //   GridFormat AA = new GridFormat(1) { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
-               // abonent.CheckedDayList.Add(AA);
-                abonent.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
-                abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
-                ////              MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
-                //abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
-            }
-           
+            //    //int rowindex = item.Hour - 8;
+            //    //int columnindex = (int)item.DayOfWeek;
+            //    ////   GridFormat AA = new GridFormat(1) { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
+            //    //// abonent.CheckedDayList.Add(AA);
+            //    ////abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
+
+            //    ////abonent.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Red;
+            //    //var Date = abonent.CurrentWeekDays[0 + columnindex - 1];
+
+            //    //abonent.Checking(f);
+
+
+
+
+
+            //    ////              MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
+            //    //abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
+            //}
+
         }
 
         public void InIt(string AbonentID)

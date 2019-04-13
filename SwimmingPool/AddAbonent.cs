@@ -707,8 +707,9 @@ namespace SwimmingPool
         {
        }
 
+        
 
-        private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int Hour = (e.RowIndex + 8);
             var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
@@ -823,8 +824,8 @@ namespace SwimmingPool
 
                 foreach (var item in currentGrid)
                 {
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.Red;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.Red;
                 }
             }
             else
