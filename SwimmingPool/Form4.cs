@@ -59,7 +59,7 @@ namespace SwimmingPool
                                 საათი = o.SubscriberPrice_.NumberOfHours
 
                             }).ToList();
-            old.DataSource = fillgrid;
+            datagridview4.DataSource = fillgrid;
 
         }
 
@@ -128,7 +128,7 @@ namespace SwimmingPool
                              საათი = g.SubscriberPrice_.NumberOfHours
                          }).ToList<object>();
 
-                old.DataSource = r;
+                datagridview4.DataSource = r;
 
 
 
@@ -147,12 +147,61 @@ namespace SwimmingPool
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var stringNumber = old.SelectedCells[0].Value.ToString();
+            var stringNumber = datagridview4.SelectedCells[0].Value.ToString();
 
 
             var obj = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.IDnumber == stringNumber);
 
             ServiceInstances.Service().GetSubscriptionServices().Delete(obj);
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            string selectedAbonentNumber = datagridview4.SelectedCells[0].Value.ToString();
+
+
+            var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where
+                (x => x.IDnumber ==selectedAbonentNumber).FirstOrDefault();
+
+
+            Form1 A = new Form1();
+
+            HoursChek Hoursch = new HoursChek();
+
+
+
+
+            var IDnumber = subscriptionByID.IDnumber.ToString();
+            var LastName = subscriptionByID.Subscriber_.LastName;
+            var Name = subscriptionByID.Subscriber_.Name;
+
+            var Adress = subscriptionByID.Subscriber_.Address;
+            var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
+            var Age = subscriptionByID.Subscriber_.DateOfBirth;
+
+
+            List<DateTime> Dates = Hoursch.ScheduleList();
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates);
+            //abonent.Controls.Add(DataGridView datagridview1);
+            A.EditFillGrid(abonent, Dates);
+
+
+            abonent.Show();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         }
     }

@@ -31,12 +31,12 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.old = new System.Windows.Forms.DataGridView();
+            this.datagridview4 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.old)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridview4)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
@@ -46,7 +46,7 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.old);
+            this.panel1.Controls.Add(this.datagridview4);
             this.panel1.Location = new System.Drawing.Point(3, 144);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1365, 369);
@@ -63,6 +63,7 @@
             this.button2.TabIndex = 6;
             this.button2.Text = "ჩასწორება";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -77,20 +78,21 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // old
+            // datagridview4
             // 
-            this.old.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.datagridview4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.old.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.old.BackgroundColor = System.Drawing.Color.White;
-            this.old.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.old.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.old.GridColor = System.Drawing.SystemColors.ControlLight;
-            this.old.Location = new System.Drawing.Point(30, 3);
-            this.old.Name = "old";
-            this.old.Size = new System.Drawing.Size(773, 352);
-            this.old.TabIndex = 4;
+            this.datagridview4.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.datagridview4.BackgroundColor = System.Drawing.Color.White;
+            this.datagridview4.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.datagridview4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.datagridview4.GridColor = System.Drawing.SystemColors.ControlLight;
+            this.datagridview4.Location = new System.Drawing.Point(30, 3);
+            this.datagridview4.Name = "datagridview4";
+            this.datagridview4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.datagridview4.Size = new System.Drawing.Size(773, 352);
+            this.datagridview4.TabIndex = 4;
             // 
             // panel2
             // 
@@ -117,7 +119,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(157, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(485, 42);
+            this.label1.Size = new System.Drawing.Size(330, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "ვადაგასული აბონენტები";
             // 
@@ -132,7 +134,7 @@
             this.Name = "Form4";
             this.Text = "Form4";
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.old)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.datagridview4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -145,7 +147,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView old;
+        private System.Windows.Forms.DataGridView datagridview4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label1;
