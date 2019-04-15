@@ -21,7 +21,7 @@ namespace SwimmingPool
         public List<int> rovsi = new List<int>();
         public List<GridFormat> CheckedDayList = new List<GridFormat>();
         DateTime FinalDate = new DateTime();
-
+        string AbonimentisnomeriVdagasulebidan;
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
         #region shott
         //შოთა - გამოიყენება დეითების შესავსებად
@@ -63,7 +63,8 @@ namespace SwimmingPool
             //dateTimePicker3.Value = dateTimePicker1.Value.AddMonths(1);
 
             /*function for calc current monday*/
-
+            buttonVadagas.Hide();
+            button3.Hide();
             button2.Hide();
             //AssignGridData();
         }
@@ -84,7 +85,7 @@ namespace SwimmingPool
         {
             CurrentDateValue = date;
 
-
+            buttonVadagas.Hide();
             button3.Hide();
             //AssignGridData();
 
@@ -128,16 +129,69 @@ namespace SwimmingPool
           
             // Grafiki_edit(dataGridView1);
             FillCheckdayList(DatabaseScheduleDate);
+            abonenti.Text = IdNumber;
             saxeli.Text = Name;
             gvari.Text = LastName;
             asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
             telefoni.Text = phoneNumber.ToString();
             misamarti.Text = Adress;
             shenaxva.Hide();
+            buttonVadagas.Hide();
             button3.Show();
        
 
-        }  
+        }
+
+
+
+
+
+
+        public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, bool Vadagasulebi) //:this()
+        {
+            InitializeComponent();
+            dataGridView1.DataSource = null;
+            ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
+            AbonimentisnomeriVdagasulebidan = IdNumber;
+
+            //  grafiki(dataGridView1);
+            Grafiki_edit(DatabaseScheduleDate[0]);
+            gridFillter(dataGridView1, ThisMonday);
+
+            //    DrawGrid();
+
+
+
+            AssignCurrentWeek(ThisMonday, dataGridView1);
+
+            // Grafiki_edit(dataGridView1);
+            FillCheckdayList(DatabaseScheduleDate);
+            abonenti.Text = IdNumber;
+            saxeli.Text = Name;
+            gvari.Text = LastName;
+            asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
+            telefoni.Text = phoneNumber.ToString();
+            misamarti.Text = Adress;
+            shenaxva.Hide();
+            buttonVadagas.Show();
+            button3.Hide();
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         public void GetCellColorToday()
@@ -1365,6 +1419,13 @@ private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellE
                 subscriber.LastName = gvari.Text;
                 subscriber.PhoneNumber = telefoni.Text;
                 subscriber.Address = misamarti.Text;
+                //   subscriber.DateOfBirth = asaki.ToString();
+
+                //if (diax.Checked)
+                //    subscriber.Healthnotice[0].YesNO =Availability.Yes;
+                //else
+                //    subscriber.Healthnotice[0].YesNO = Availability.No;
+
 
                 DatabaseConnection.Conn.UpdateWithChildren(subscriber);
                 //DatabaseConnection.Conn.UpdateWithChildren(newobj);
@@ -1487,6 +1548,214 @@ private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellE
 
 
 
+
+        public void SubscribtionEditMethod(string AbonimentNumber)
+        {
+            try
+            {
+                var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == AbonimentNumber).FirstOrDefault();
+                var newobj = subscriptionByID;
+                var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
+
+                var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+                   .Where(x => x.IDnumber == AbonimentNumber).FirstOrDefault()
+                   .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).ToList();
+                List<DateTime> Dateeeslist = new List<DateTime>();
+
+                foreach (var item in ScheduleList)
+                {
+                    Dateeeslist.Add(item.Schedule);
+                }
+
+
+                var cdl = CheckedDayList;
+                List<SubscriptionScheduleDB> NewScheduleList = new List<SubscriptionScheduleDB>();
+
+                foreach (var item in cdl)
+                {
+                    if (Dateeeslist.Contains(item.Day))
+                    {
+                        SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB
+                        {
+                            Id = item.Id,
+                            Attandance = (int)ScheduleList[Dateeeslist.IndexOf(item.Day)].Attandance,
+                            Schedule = ScheduleList[Dateeeslist.IndexOf(item.Day)].Schedule,
+                            Subscription = ScheduleList[Dateeeslist.IndexOf(item.Day)].Subscription,
+                            SubscriptionID = ScheduleList[Dateeeslist.IndexOf(item.Day)].SubscriptionID
+                        };
+                        //      DatabaseConnection.Conn.Update(NewSchedule);        
+                        NewScheduleList.Add(NewSchedule);
+                    }
+                    else
+                    {
+                        SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB
+                        {
+                            Attandance = 0,
+                            Schedule = item.Day,
+                            Subscription = ScheduleList[0].Subscription,
+                            SubscriptionID = ScheduleList[0].SubscriptionID
+                        };
+                        //DatabaseConnection.Conn.Insert(NewSchedule);
+                        NewScheduleList.Add(NewSchedule);
+                    }
+
+
+
+
+                }
+
+                foreach (var item in ScheduleList)
+                {
+                    DatabaseConnection.Conn.Delete(item);
+                }
+                foreach (var item in NewScheduleList)
+                {
+                    DatabaseConnection.Conn.Insert(item);
+
+                }
+
+
+                subscriber.Subscriptions.SubscribtionSchedule_ = NewScheduleList;
+
+
+                subscriber.Name = saxeli.Text;
+                subscriber.LastName = gvari.Text;
+                subscriber.PhoneNumber = telefoni.Text;
+                subscriber.Address = misamarti.Text;
+                //   subscriber.DateOfBirth = asaki.ToString();
+
+                //if (diax.Checked)
+                //    subscriber.Healthnotice[0].YesNO =Availability.Yes;
+                //else
+                //    subscriber.Healthnotice[0].YesNO = Availability.No;
+
+
+                DatabaseConnection.Conn.UpdateWithChildren(subscriber);
+                //DatabaseConnection.Conn.UpdateWithChildren(newobj);
+
+
+                //foreach (var item in NewScheduleList)
+                //{
+                //    DatabaseConnection.Conn.Insert(item);
+                //}
+
+
+
+
+                //var SelectedObject = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
+
+                //var SelectAllSchedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>()
+                //    .FindAll(x => x.SubscriptionID == SelectedObject.Id);
+
+                //#region giorgim ikarnaxa
+
+                //for (int i = 0; i < SelectAllSchedule.Count; i++)
+                //{
+
+                //    var g = SelectAllSchedule[i].Schedule;
+                //    // CheckedDayList[i] = g;
+                //}
+
+                //#endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+                //for (int i = 0; i < CheckedDayList.Count; i++)
+                //{
+                //    //როცა ნაკლებია ბაზაში არსებული დინამიურზე, სანამ ბაზის რაოდენობა შეივსება ვუტოლებთ, როცა შეივსება ვამატებთ
+                //    if(ScheduleList.Count<CheckedDayList.Count)
+                //    {
+
+                //       while (i != ScheduleList.Count);
+                //        ScheduleList[i].Schedule = CheckedDayList[i].Day;
+
+                //        SubscriptionScheduleDB _Shchedule = new SubscriptionScheduleDB
+                //        {
+                //            Attandance = ScheduleList[i - 1].Attandance,
+                //            Subscription = ScheduleList[i - 1].Subscription,
+                //            SubscriptionID = ScheduleList[i - 1].SubscriptionID,
+                //            Schedule = CheckedDayList[i].Day
+                //        };
+
+                //        ScheduleList.Add(_Shchedule);
+
+
+
+                //    }
+                //    //როცა რაოდენობრივად ტოლია, პირდაპირ ვუტოლებთ
+                //    else if(ScheduleList.Count == CheckedDayList.Count)
+                //    ScheduleList[i].Schedule = CheckedDayList[i].Day;
+                //    //როცა ბაზის მონაცემები მეტია დინამიურზე, რაც დარჩა ზედმეტი ბაზაში იშლება
+                //    //აქ შეცდომის დაშვების ალბათობა მაღალია, მივუბრუნდე, რა ხდება თუ საწყის ელემენტებს შლის და არა საბოლოოს?
+                //    else
+                //    {
+                //        while (i!= ScheduleList.Count) ;
+                //        ScheduleList[i].Schedule = CheckedDayList[i].Day;
+                //        ScheduleList.RemoveRange(i, ScheduleList.Count - CheckedDayList.Count);
+
+                //    }
+
+
+
+
+
+                //}
+
+                //________________________შოთას კოდის დასასრული დასაწერია ბოლოს UPDATE
+
+
+                //subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
+
+                //foreach (var item in CheckedDayList)
+                //{
+                //    SubscriptionScheduleDB Shchedule = new SubscriptionScheduleDB { Schedule = item.Day };
+                //    subscriptionByID.SubscribtionSchedule_.Add(Shchedule);
+                //}
+
+
+
+                var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
+                var gggg = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().FirstOrDefault(x => x.SubscribtionID == 1);
+
+
+            }
+
+            catch
+            {
+                MessageBox.Show("დაამატეთ საათების რაოდენობა");
+
+
+            }
+            Form1 form = new Form1();
+            Close();
+            form.Refresh();
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             SubscribtionEditMethod();
@@ -1504,6 +1773,13 @@ private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellE
         {
             if (diax.Checked)
                 ara.Checked = false;
+        }
+
+        private void buttonVadagas_Click(object sender, EventArgs e)
+        {
+            SubscribtionEditMethod(AbonimentisnomeriVdagasulebidan);
+            Form4 F = new Form4();
+            F.Show();
         }
     }
 }

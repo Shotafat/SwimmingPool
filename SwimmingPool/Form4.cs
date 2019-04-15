@@ -59,6 +59,7 @@ namespace SwimmingPool
                                 საათი = o.SubscriberPrice_.NumberOfHours
 
                             }).ToList();
+            datagridview4.DataSource = null;
             datagridview4.DataSource = fillgrid;
 
         }
@@ -156,6 +157,21 @@ namespace SwimmingPool
 
         }
 
+
+
+        public List<DateTime> ScheduleList(string selectedcell)
+        {
+
+            var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+               .Where(x => x.IDnumber == selectedcell).FirstOrDefault()
+               .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
+            return ScheduleList;
+        }
+
+
+
+
+
         private void button2_Click(object sender, EventArgs e)
         {
 
@@ -182,18 +198,17 @@ namespace SwimmingPool
             var Age = subscriptionByID.Subscriber_.DateOfBirth;
 
 
-            List<DateTime> Dates = Hoursch.ScheduleList();
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates);
+            List<DateTime> Dates = ScheduleList(selectedAbonentNumber);
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, true);
             //abonent.Controls.Add(DataGridView datagridview1);
             A.EditFillGrid(abonent, Dates);
-
+            this.Close();
 
             abonent.Show();
 
 
-
-
-
+         
+          
 
 
 
