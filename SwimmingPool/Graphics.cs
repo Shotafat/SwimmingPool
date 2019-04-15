@@ -26,24 +26,7 @@ namespace SwimmingPool
         {
             InitializeComponent();
 
-            /*
-             
-            dataGridView1.Rows.Clear();
-            grafiki();
-            CurrentMonday = CurrentMonday.AddDays(7);
-            AssignCurrentWeek(CurrentMonday);
-
-            gridFillter(dataGridView1, CurrentMonday);
-
-            DrawGrid();
-             
-             
-             
-             */
-
-
-
-
+            ThisMonday = abonent.GetCurrentMonday(DateTime.Now);
             MeoreMonday = ThisMonday.AddDays(7);
             MesameMonday = ThisMonday.AddDays(14);
             MeotxeMonday = ThisMonday.AddDays(21);
@@ -59,9 +42,9 @@ namespace SwimmingPool
             abonent.gridFillter(dataGridViewFirst, ThisMonday);
             abonent.gridFillter(dataGridView2, MeoreMonday);
             abonent.gridFillter(dataGridView3, MesameMonday);
-            abonent.gridFillter(dataGridViewFourth,MeotxeMonday);
+            abonent.gridFillter(dataGridViewFourth, MeotxeMonday);
 
-            
+
             abonent.AssignCurrentWeek(ThisMonday, dataGridViewFirst);
             abonent.AssignCurrentWeek(MeoreMonday, dataGridView2);
             abonent.AssignCurrentWeek(MesameMonday, dataGridView3);
@@ -69,7 +52,7 @@ namespace SwimmingPool
 
             //dataGridViewFirst.Rows[1].ReadOnly = true;
             //dataGridViewFirst.Rows[1].Selected = true;
-            
+
         }
 
         private void Graphics_Load(object sender, EventArgs e)
@@ -147,7 +130,7 @@ namespace SwimmingPool
 
         public void GridCellClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
 
@@ -172,7 +155,7 @@ namespace SwimmingPool
             //if (e.RowIndex == 0)
             //    return;
             ToolStripMenuItem currStrip = sender as ToolStripMenuItem;
-            var ContextMenustrip =currStrip.Owner as ContextMenuStrip;
+            var ContextMenustrip = currStrip.Owner as ContextMenuStrip;
             DataGridView grid = ContextMenustrip.SourceControl as DataGridView;
             DateTime currentMonday;
 
@@ -192,5 +175,5 @@ namespace SwimmingPool
         }
     }
 
-    
+
 }
