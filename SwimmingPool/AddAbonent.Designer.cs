@@ -602,7 +602,7 @@
             this.lblBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.lblBack.ForeColor = System.Drawing.Color.White;
             this.lblBack.Location = new System.Drawing.Point(329, 5);
             this.lblBack.Name = "lblBack";
             this.lblBack.Size = new System.Drawing.Size(38, 39);
@@ -613,11 +613,11 @@
             // lblNext
             // 
             this.lblNext.AutoSize = true;
-            this.lblNext.BackColor = System.Drawing.Color.SaddleBrown;
+            this.lblNext.BackColor = System.Drawing.Color.DarkSlateGray;
             this.lblNext.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNext.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.lblNext.ForeColor = System.Drawing.Color.White;
             this.lblNext.Location = new System.Drawing.Point(373, 5);
             this.lblNext.Name = "lblNext";
             this.lblNext.Size = new System.Drawing.Size(38, 39);
@@ -627,9 +627,10 @@
             // 
             // shenaxva
             // 
-            this.shenaxva.BackColor = System.Drawing.Color.SaddleBrown;
-            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shenaxva.ForeColor = System.Drawing.Color.White;
+            this.shenaxva.BackColor = System.Drawing.Color.White;
+            this.shenaxva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shenaxva.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.shenaxva.Location = new System.Drawing.Point(557, 2);
             this.shenaxva.Name = "shenaxva";
             this.shenaxva.Size = new System.Drawing.Size(165, 42);
