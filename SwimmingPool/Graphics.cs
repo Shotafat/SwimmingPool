@@ -26,12 +26,13 @@ namespace SwimmingPool
         {
             InitializeComponent();
 
+            ThisMonday = abonent.GetCurrentMonday(DateTime.Now);
             MeoreMonday = ThisMonday.AddDays(7);
             MesameMonday = ThisMonday.AddDays(14);
             MeotxeMonday = ThisMonday.AddDays(21);
 
             dataGridViewFirst.DataSource = null;
-            ThisMonday = abonent.GetCurrentMonday(DateTime.Now);
+
 
             abonent.grafiki(dataGridViewFirst);
             abonent.grafiki(dataGridView2);
@@ -71,7 +72,17 @@ namespace SwimmingPool
 
         private void lblNext_Click(object sender, EventArgs e)
         {
-            ThisMonday = ThisMonday.AddMonths(1);
+            dataGridViewFirst.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+            dataGridViewFourth.Rows.Clear();
+
+            ThisMonday = ThisMonday.AddDays(28);
+
+            abonent.grafiki(dataGridViewFirst);
+            abonent.grafiki(dataGridView2);
+            abonent.grafiki(dataGridView3);
+            abonent.grafiki(dataGridViewFourth);
 
             abonent.gridFillter(dataGridViewFirst, ThisMonday);
             abonent.gridFillter(dataGridView2, ThisMonday.AddDays(7));
@@ -86,7 +97,17 @@ namespace SwimmingPool
 
         private void lblBack_Click(object sender, EventArgs e)
         {
-            ThisMonday = ThisMonday.AddMonths(-1);
+            dataGridViewFirst.Rows.Clear();
+            dataGridView2.Rows.Clear();
+            dataGridView3.Rows.Clear();
+            dataGridViewFourth.Rows.Clear();
+
+            ThisMonday = ThisMonday.AddDays(-28);
+
+            abonent.grafiki(dataGridViewFirst);
+            abonent.grafiki(dataGridView2);
+            abonent.grafiki(dataGridView3);
+            abonent.grafiki(dataGridViewFourth);
 
             abonent.gridFillter(dataGridViewFirst, ThisMonday);
             abonent.gridFillter(dataGridView2, ThisMonday.AddDays(7));

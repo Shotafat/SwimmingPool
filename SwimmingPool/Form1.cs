@@ -24,12 +24,13 @@ namespace SwimmingPool
         {
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
-            dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
+           dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
+           
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            dataGridView1.AutoGenerateColumns = true;
+           // dataGridView1.AutoGenerateColumns = true;
             JoinClasses();
             label3.Text = "";
             if (dataGridView1.SelectedCells.Count <= 0)
@@ -76,8 +77,19 @@ namespace SwimmingPool
                                 Hours = o.SubscriberPrice_.NumberOfHours
                             })?.ToList();
 
-            dataGridView1.DataSource = fillgrid;
+            var mm = fillgrid.OrderBy(o => o.DateTo < DateTime.Now).ToList();
+
+            dataGridView1.DataSource = mm;
+
             MyFillGrid = fillgrid;
+
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value) < DateTime.Now)
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;               
+
+            }
 
         }
 
@@ -98,20 +110,31 @@ namespace SwimmingPool
         public static List<DateTime> FullDatetime { get; set; }
 
         public void EditFillGrid (AddAbonent abonent, List<DateTime> DateList)
-            { 
-            foreach (var item in DateList)
             {
+            abonent.DrawGrid(abonent.CurrentWeekDays);
+
+            //foreach (var item in DateList)
+            //{
                
-                int rowindex = item.Hour - 8;
-                int columnindex = (int)item.DayOfWeek;
-             //   GridFormat AA = new GridFormat(1) { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
-               // abonent.CheckedDayList.Add(AA);
-                abonent.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.DarkSlateGray;
-                abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
-                ////              MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
-                //abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
-            }
-           
+            //    //int rowindex = item.Hour - 8;
+            //    //int columnindex = (int)item.DayOfWeek;
+            //    ////   GridFormat AA = new GridFormat(1) { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
+            //    //// abonent.CheckedDayList.Add(AA);
+            //    ////abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
+
+            //    ////abonent.dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Red;
+            //    //var Date = abonent.CurrentWeekDays[0 + columnindex - 1];
+
+            //    //abonent.Checking(f);
+
+
+
+
+
+            //    ////              MessageBox.Show(DataGrid.Rows[rowindex].Cells[columnindex].Selected.ToString());
+            //    //abonent.dataGridView1.Rows[rowindex].Cells[columnindex].Style.BackColor = Color.DarkSlateGray;
+            //}
+
         }
 
         public void InIt(string AbonentID)
@@ -269,10 +292,7 @@ namespace SwimmingPool
         #region Search 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-           
-            
-
-            string textboxText = toolStripTextBox1.Text;
+           string textboxText = toolStripTextBox1.Text;
 
             newfillgrid = null;
 
@@ -298,18 +318,24 @@ namespace SwimmingPool
             }
             else if (!condition)
             {
-                newfillgrid = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
+               // newfillgrid = fillgrid.Where(i => i.Address.Contains(textboxText)).ToList();
+
+                
+
                 newfillgrid = fillgrid.Where(i => i.PhoneNumber.Contains(textboxText)).ToList();
+
                 List<string> kk = new List<string>();
                 foreach (var item in f)
                 {
                     kk.Add(item);
                 }
 
-                if (fillgrid.Any(o => o.FirstName == kk[0] && o.LastName == kk[1]))
-                    newfillgrid = fillgrid.FindAll(k => k.FirstName == kk[0] && k.LastName == kk[1]);
 
-                
+
+                if (fillgrid.Any(o => o.FirstName == kk[0] && o.LastName == kk[1]) )
+                    newfillgrid = fillgrid.FindAll(k => k.FirstName == kk[0] && k.LastName == kk[1]);
+                else
+                    newfillgrid = fillgrid.FindAll(o => o.Address == textboxText).ToList();
             }
 
             if (string.IsNullOrEmpty(textboxText))
@@ -328,7 +354,7 @@ namespace SwimmingPool
 
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
-            toolStripTextBox1.Text = string.Empty;
+            toolStripTextBox1.Text = null;
 
         }
 
@@ -458,6 +484,13 @@ namespace SwimmingPool
             public DateTime? DateTo { get; set; }
             public double Price { get; set; }
             public int Hours { get; set; }
+        }
+
+        private void dataGridView1_MouseHover(object sender, EventArgs e)
+        {            
+            this.dataGridView1.Rows[0].Cells[0].ToolTipText = "Some text";
+           
+            //dataGridView1.Columns[columnIndexOrName].HeaderCell.ToolTipText = "OK";
         }
     }
 }
