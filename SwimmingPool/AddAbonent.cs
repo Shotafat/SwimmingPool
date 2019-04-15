@@ -130,7 +130,7 @@ namespace SwimmingPool
             FillCheckdayList(DatabaseScheduleDate);
             saxeli.Text = Name;
             gvari.Text = LastName;
-            asaki.Text = Age.ToString();
+            asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
             telefoni.Text = phoneNumber.ToString();
             misamarti.Text = Adress;
             shenaxva.Hide();
