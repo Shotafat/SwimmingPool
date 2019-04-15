@@ -26,7 +26,24 @@ namespace SwimmingPool
         {
             InitializeComponent();
 
-            ThisMonday = abonent.GetCurrentMonday(DateTime.Now);
+            /*
+             
+            dataGridView1.Rows.Clear();
+            grafiki();
+            CurrentMonday = CurrentMonday.AddDays(7);
+            AssignCurrentWeek(CurrentMonday);
+
+            gridFillter(dataGridView1, CurrentMonday);
+
+            DrawGrid();
+             
+             
+             
+             */
+
+
+
+
             MeoreMonday = ThisMonday.AddDays(7);
             MesameMonday = ThisMonday.AddDays(14);
             MeotxeMonday = ThisMonday.AddDays(21);
