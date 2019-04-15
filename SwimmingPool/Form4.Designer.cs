@@ -30,7 +30,6 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.datagridview4 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -45,11 +44,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.datagridview4);
-            this.panel1.Location = new System.Drawing.Point(3, 144);
+            this.panel1.Location = new System.Drawing.Point(3, 135);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1365, 369);
+            this.panel1.Size = new System.Drawing.Size(1290, 391);
             this.panel1.TabIndex = 0;
             // 
             // button2
@@ -57,26 +55,13 @@
             this.button2.BackColor = System.Drawing.Color.White;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Location = new System.Drawing.Point(840, 69);
+            this.button2.Location = new System.Drawing.Point(823, 167);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(138, 52);
+            this.button2.Size = new System.Drawing.Size(167, 52);
             this.button2.TabIndex = 6;
-            this.button2.Text = "ჩასწორება";
+            this.button2.Text = "რედაქტირება";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(840, 208);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(138, 52);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "წაშლა";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // datagridview4
             // 
@@ -91,7 +76,7 @@
             this.datagridview4.Location = new System.Drawing.Point(30, 3);
             this.datagridview4.Name = "datagridview4";
             this.datagridview4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.datagridview4.Size = new System.Drawing.Size(773, 352);
+            this.datagridview4.Size = new System.Drawing.Size(698, 374);
             this.datagridview4.TabIndex = 4;
             // 
             // panel2
@@ -119,7 +104,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(157, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 42);
+            this.label1.Size = new System.Drawing.Size(485, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "ვადაგასული აბონენტები";
             // 
@@ -146,7 +131,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView datagridview4;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;

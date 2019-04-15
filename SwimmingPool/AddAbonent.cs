@@ -167,14 +167,14 @@ namespace SwimmingPool
             //dataGridView1.Rows.Add();
             for (int i = 1; i <= 7; i++)
             {
-                //var geoCulture = new CultureInfo("ka-GE");
-                var euCulture = new CultureInfo("en-US");
-                var dateTimeInfo = DateTimeFormatInfo.GetInstance(euCulture);
+                var geoCulture = new CultureInfo("ka-GE");
+              
+                var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
 
                 
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
-                dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", euCulture);
-                var nino = CurrentWeekDays[i - 1].ToString("dd MMMM", euCulture);
+                dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
+                var nino = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
                 dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
 
 
