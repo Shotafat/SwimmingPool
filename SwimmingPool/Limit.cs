@@ -30,7 +30,7 @@ namespace SwimmingPool
               
             catch
             {
-                MessageBox.Show("alskjdalksd");
+                MessageBox.Show("მიუთითეთ აუზზე ერთდროულად მყოფი აბენენტების მაქსიმალური ლიმიტი. ");
             }
            
             

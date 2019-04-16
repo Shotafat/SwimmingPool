@@ -389,88 +389,6 @@ namespace SwimmingPool
             //dataGridView1.DataSource = JoinClasses();
             //dataGridView1.DataSource = 
         }
-        /*
-                private void ექსპორტიToolStripMenuItem_Click(object sender, EventArgs e)
-                {
-                    SaveFileDialog sfd = new SaveFileDialog();
-                    sfd.Filter = "Excel Documents (*.xls)|*.xls";
-                    sfd.FileName = "Abonimentebis sia.xls";
-                    if (sfd.ShowDialog() == DialogResult.OK)
-                    {
-                         Copy DataGridView results to clipboard
-                        copyAlltoClipboard();
-
-                        object misValue = System.Reflection.Missing.Value;
-                        Excel.Application xlexcel = new Excel.Application();
-
-                        xlexcel.DisplayAlerts = false; // Without this you will get two confirm overwrite prompts
-                        Excel.Workbook xlWorkBook = xlexcel.Workbooks.Add(misValue);
-
-                        Excel.Worksheet xlWorkSheet = (Excel.Worksheet)xlWorkBook.Worksheets.get_Item(1);
-
-                         Format column D as text before pasting results, this was required for my data
-                        Excel.Range rng = xlWorkSheet.get_Range("D:D").Cells;
-                        rng.NumberFormat = "@";
-
-                         Paste clipboard results to worksheet range
-                       Excel.Range CR = (Excel.Range)xlWorkSheet.Cells[1, 1];
-                       CR.Select();
-                        xlWorkSheet.PasteSpecial(CR, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, true);
-
-                         For some reason column A is always blank in the worksheet. ¯\_(ツ)_/¯
-                         Delete blank column A and select cell A1
-                       Excel.Range delRng = xlWorkSheet.get_Range("A:A").Cells;
-                      delRng.Delete(Type.Missing);
-                        xlWorkSheet.get_Range("A1").Select();
-
-                         Save the excel file under the captured location from the SaveFileDialog
-                        xlWorkBook.SaveAs(sfd.FileName, Excel.XlFileFormat.xlWorkbookNormal, misValue, misValue, misValue, misValue, Excel.XlSaveAsAccessMode.xlExclusive, misValue, misValue, misValue, misValue, misValue);
-                        xlexcel.DisplayAlerts = true;
-                        xlWorkBook.Close(true, misValue, misValue);
-                        xlexcel.Quit();
-
-                        releaseObject(xlWorkSheet);
-                        releaseObject(xlWorkBook);
-                        releaseObject(xlexcel);
-
-                         Clear Clipboard and DataGridView selection
-                        Clipboard.Clear();
-                        dataGridView1.ClearSelection();
-
-                         Open the newly saved excel file
-                        if (File.Exists(sfd.FileName))
-                            System.Diagnostics.Process.Start(sfd.FileName);
-                    }
-
-                }
-                */
-        private void copyAlltoClipboard()
-        {
-            dataGridView1.SelectAll();
-            DataObject dataObj = dataGridView1.GetClipboardContent();
-            //DataObject dataObj = dataGridView1.DataSource;
-            if (dataObj != null)
-                Clipboard.SetDataObject(dataObj);
-        }
-
-        private void releaseObject(object obj)
-        {
-            try
-            {
-                System.Runtime.InteropServices.Marshal.ReleaseComObject(obj);
-                obj = null;
-            }
-            catch (Exception ex)
-            {
-                obj = null;
-                MessageBox.Show("Exception Occurred while releasing object " + ex.ToString());
-            }
-            finally
-            {
-                GC.Collect();
-            }
-        }
-
         public class FillGrid
         {
             public string AbonentId { get; set; }
@@ -488,11 +406,81 @@ namespace SwimmingPool
 
         private void dataGridView1_MouseHover(object sender, EventArgs e)
         {            
-            this.dataGridView1.Rows[0].Cells[0].ToolTipText = "Some text";
+           // this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
            
             //dataGridView1.Columns[columnIndexOrName].HeaderCell.ToolTipText = "OK";
         }
-    }
+
+        private void ExportToExcel()
+        {
+            // Creating a Excel object.
+            Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
+            Microsoft.Office.Interop.Excel._Workbook workbook = excel.Workbooks.Add(Type.Missing);
+            Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+
+            try
+            {
+
+                worksheet = workbook.ActiveSheet;
+
+                worksheet.Name = "ExportedFromDatGrid";
+
+                int cellRowIndex = 1;
+                int cellColumnIndex = 1;
+
+                //Loop through each row and read value from each column.
+                for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+                {
+                    for (int j = 0; j < dataGridView1.Columns.Count; j++)
+                    {
+                        // Excel index starts from 1,1. As first Row would have the Column headers, adding a condition check.
+                        if (cellRowIndex == 1)
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Columns[j].HeaderText;
+                        }
+                        else
+                        {
+                            worksheet.Cells[cellRowIndex, cellColumnIndex] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        }
+                        cellColumnIndex++;
+                    }
+                    cellColumnIndex = 1;
+                    cellRowIndex++;
+                }
+
+                //Getting the location and file name of the excel to save from user.
+                SaveFileDialog saveDialog = new SaveFileDialog();
+                saveDialog.Filter = "Excel files (*.xlsx)|*.xlsx|All files (*.*)|*.*";
+                saveDialog.FilterIndex = 2;
+
+                if (saveDialog.ShowDialog() == System.Windows.Forms.DialogResult.OK)
+                {
+                    workbook.SaveAs(saveDialog.FileName);
+                    MessageBox.Show("წარმატებით შეინახა");
+                }
+            }
+            catch (System.Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                excel.Quit();
+                workbook = null;
+                excel = null;
+            }
+
+        }
+
+
+
+
+        private void ექსპორტიToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ExportToExcel();
+        }
+
+         }
 }
 
 

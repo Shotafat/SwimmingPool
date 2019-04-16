@@ -246,7 +246,7 @@ namespace SwimmingPool
                 //dataGridView1.Columns[i].HeaderCell.Selected = false;
                 if (i == 7)
                 {
-                    dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DarkRed;
+                    dataGridView1.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
                 }
                 else
                 {
@@ -271,7 +271,7 @@ namespace SwimmingPool
                 //dataGridView1.Rows[0].Cells[i].Selected = false;
                 //dataGridView1.Columns[i].HeaderCell.Selected = false;
                 if (i == 7)
-                    view.Rows[0].Cells[i].Style.ForeColor = Color.Red;
+                    view.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
                 else
                     view.Rows[0].Cells[i].Style.ForeColor = Color.DarkSlateGray;
             }
@@ -808,8 +808,9 @@ namespace SwimmingPool
             if (CheckedDayList.Count == 0&&f.X!=-1)
             {
                 CheckedDayList.Add(f);
-                dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.Red;
-            }
+                dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                    dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor= Color.White;
+                }
 
             else
             {
@@ -841,8 +842,8 @@ namespace SwimmingPool
                 {
                     if(item.X!=-1)
                     { 
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.Red;
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.Red;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
                     }
                 }
             }
@@ -898,8 +899,8 @@ namespace SwimmingPool
 
                 foreach (var item in currentGrid)
                 {
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.Red;
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.Red;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
                 }
             }
             else

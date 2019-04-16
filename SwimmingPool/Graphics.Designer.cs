@@ -143,7 +143,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1465, 90);
+            this.panel1.Size = new System.Drawing.Size(1370, 90);
             this.panel1.TabIndex = 0;
             // 
             // panel3
@@ -153,7 +153,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1465, 83);
+            this.panel3.Size = new System.Drawing.Size(1370, 83);
             this.panel3.TabIndex = 5;
             // 
             // label1
@@ -162,7 +162,7 @@
             this.label1.BackColor = System.Drawing.Color.Teal;
             this.label1.Font = new System.Drawing.Font("Sylfaen", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(630, 23);
+            this.label1.Location = new System.Drawing.Point(583, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(221, 44);
             this.label1.TabIndex = 0;
@@ -182,7 +182,7 @@
             // GraphicContainer.Panel2
             // 
             this.GraphicContainer.Panel2.Controls.Add(this.splitContainer3);
-            this.GraphicContainer.Size = new System.Drawing.Size(1465, 673);
+            this.GraphicContainer.Size = new System.Drawing.Size(1370, 673);
             this.GraphicContainer.SplitterDistance = 335;
             this.GraphicContainer.TabIndex = 1;
             // 
@@ -199,8 +199,8 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.dataGridView2);
-            this.splitContainer2.Size = new System.Drawing.Size(1465, 335);
-            this.splitContainer2.SplitterDistance = 729;
+            this.splitContainer2.Size = new System.Drawing.Size(1370, 335);
+            this.splitContainer2.SplitterDistance = 681;
             this.splitContainer2.TabIndex = 0;
             // 
             // dataGridViewFirst
@@ -235,7 +235,7 @@
             this.dataGridViewFirst.ReadOnly = true;
             this.dataGridViewFirst.RowHeadersVisible = false;
             this.dataGridViewFirst.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewFirst.Size = new System.Drawing.Size(729, 335);
+            this.dataGridViewFirst.Size = new System.Drawing.Size(681, 335);
             this.dataGridViewFirst.TabIndex = 11;
             this.dataGridViewFirst.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.click);
             // 
@@ -330,12 +330,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.აბონენტისრეგისტრაციაToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(223, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(192, 26);
             // 
             // აბონენტისრეგისტრაციაToolStripMenuItem
             // 
             this.აბონენტისრეგისტრაციაToolStripMenuItem.Name = "აბონენტისრეგისტრაციაToolStripMenuItem";
-            this.აბონენტისრეგისტრაციაToolStripMenuItem.Size = new System.Drawing.Size(222, 22);
+            this.აბონენტისრეგისტრაციაToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
             this.აბონენტისრეგისტრაციაToolStripMenuItem.Text = "აბონენტის რეგისტრაცია";
             this.აბონენტისრეგისტრაციაToolStripMenuItem.Click += new System.EventHandler(this.აბონენტისრეგისტრაციაToolStripMenuItem_Click);
             // 
@@ -371,7 +371,7 @@
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(732, 335);
+            this.dataGridView2.Size = new System.Drawing.Size(685, 335);
             this.dataGridView2.TabIndex = 11;
             this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.click);
             // 
@@ -474,8 +474,8 @@
             // splitContainer3.Panel2
             // 
             this.splitContainer3.Panel2.Controls.Add(this.dataGridViewFourth);
-            this.splitContainer3.Size = new System.Drawing.Size(1465, 334);
-            this.splitContainer3.SplitterDistance = 728;
+            this.splitContainer3.Size = new System.Drawing.Size(1370, 334);
+            this.splitContainer3.SplitterDistance = 680;
             this.splitContainer3.TabIndex = 0;
             // 
             // dataGridView3
@@ -510,7 +510,7 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersVisible = false;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(728, 334);
+            this.dataGridView3.Size = new System.Drawing.Size(680, 334);
             this.dataGridView3.TabIndex = 11;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.click);
             // 
@@ -632,7 +632,7 @@
             this.dataGridViewFourth.ReadOnly = true;
             this.dataGridViewFourth.RowHeadersVisible = false;
             this.dataGridViewFourth.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridViewFourth.Size = new System.Drawing.Size(733, 334);
+            this.dataGridViewFourth.Size = new System.Drawing.Size(686, 334);
             this.dataGridViewFourth.TabIndex = 12;
             this.dataGridViewFourth.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.click);
             // 
@@ -750,9 +750,9 @@
             this.panel4.Controls.Add(this.lblBack);
             this.panel4.Controls.Add(this.lblNext);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(0, 769);
+            this.panel4.Location = new System.Drawing.Point(0, 711);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1465, 39);
+            this.panel4.Size = new System.Drawing.Size(1370, 39);
             this.panel4.TabIndex = 52;
             // 
             // lblNext
@@ -774,7 +774,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(1465, 808);
+            this.ClientSize = new System.Drawing.Size(1370, 750);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.GraphicContainer);
             this.Controls.Add(this.panel1);
