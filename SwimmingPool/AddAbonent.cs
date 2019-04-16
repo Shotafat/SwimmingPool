@@ -67,6 +67,16 @@ namespace SwimmingPool
             button3.Hide();
             button2.Hide();
             //AssignGridData();
+            dataGridView1.Rows[0].ReadOnly = true;
+            dataGridView1.Rows[0].Selected = false;
+            dataGridView1.Rows[0].Frozen = true;
+            dataGridView1.Rows[0].Cells[1].ReadOnly = true;
+
+
+
+
+
+
         }
 
         protected override void OnLoad(EventArgs e)
@@ -761,10 +771,11 @@ namespace SwimmingPool
         {
        }
 
-        
 
-private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+
+        private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
+            if (e.ColumnIndex != 0 && e.RowIndex != 0) { 
             int Hour = (e.RowIndex + 8);
             var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
             DateTime FinalDate = new DateTime();
@@ -809,6 +820,9 @@ private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellE
 
             var lbl = CheckedDayList.Count();
             lblHours.Text = lbl.ToString();
+
+
+            }
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
