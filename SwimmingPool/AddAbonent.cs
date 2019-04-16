@@ -805,7 +805,7 @@ namespace SwimmingPool
             f.Day = FinalDate;
             f.IsChecked = true;
 
-            if (CheckedDayList.Count == 0)
+            if (CheckedDayList.Count == 0&&f.X!=-1)
             {
                 CheckedDayList.Add(f);
                 dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.Red;
@@ -839,8 +839,11 @@ namespace SwimmingPool
 
                 foreach (var item in currentGrid)
                 {
+                    if(item.X!=-1)
+                    { 
                     dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.Red;
                     dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.Red;
+                    }
                 }
             }
             else
@@ -873,8 +876,11 @@ namespace SwimmingPool
             {
                 var result = CheckedDayList.Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault();
                 CheckedDayList.Remove(result);
+                if (obj.X!=-1)
+                { 
                 dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
                 dataGridView1.Rows[obj.X].Cells[obj.Y].Style.BackColor = Color.White;
+                }
             }
 
             else

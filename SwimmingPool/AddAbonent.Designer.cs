@@ -68,6 +68,15 @@
             this.archeuligrafiki = new System.Windows.Forms.ListBox();
             this.panel8 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.buttonVadagas = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.lblBack = new System.Windows.Forms.Label();
+            this.lblNext = new System.Windows.Forms.Label();
+            this.shenaxva = new System.Windows.Forms.Button();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.orshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.samshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -76,15 +85,6 @@
             this.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kvira = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblBack = new System.Windows.Forms.Label();
-            this.lblNext = new System.Windows.Forms.Label();
-            this.shenaxva = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.buttonVadagas = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -279,7 +279,7 @@
             this.აბონენტი.ForeColor = System.Drawing.Color.White;
             this.აბონენტი.Location = new System.Drawing.Point(129, -2);
             this.აბონენტი.Name = "აბონენტი";
-            this.აბონენტი.Size = new System.Drawing.Size(145, 31);
+            this.აბონენტი.Size = new System.Drawing.Size(102, 31);
             this.აბონენტი.TabIndex = 0;
             this.აბონენტი.Text = "აბონენტი";
             this.აბონენტი.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -359,7 +359,7 @@
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(247, -1);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 31);
+            this.label8.Size = new System.Drawing.Size(70, 31);
             this.label8.TabIndex = 1;
             this.label8.Text = "საათი";
             // 
@@ -370,7 +370,7 @@
             this.label7.ForeColor = System.Drawing.Color.White;
             this.label7.Location = new System.Drawing.Point(30, -1);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 31);
+            this.label7.Size = new System.Drawing.Size(69, 31);
             this.label7.TabIndex = 2;
             this.label7.Text = "ცნობა";
             // 
@@ -381,7 +381,7 @@
             this.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.diax.Location = new System.Drawing.Point(29, 66);
             this.diax.Name = "diax";
-            this.diax.Size = new System.Drawing.Size(75, 26);
+            this.diax.Size = new System.Drawing.Size(67, 26);
             this.diax.TabIndex = 43;
             this.diax.Text = "დიახ";
             this.diax.UseVisualStyleBackColor = true;
@@ -394,7 +394,7 @@
             this.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
             this.ara.Location = new System.Drawing.Point(114, 67);
             this.ara.Name = "ara";
-            this.ara.Size = new System.Drawing.Size(60, 26);
+            this.ara.Size = new System.Drawing.Size(54, 26);
             this.ara.TabIndex = 44;
             this.ara.Text = "არა";
             this.ara.UseVisualStyleBackColor = true;
@@ -419,7 +419,7 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(84, 2);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(205, 25);
+            this.label4.Size = new System.Drawing.Size(167, 25);
             this.label4.TabIndex = 1;
             this.label4.Text = "არჩეული გრაფიკი";
             // 
@@ -487,89 +487,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShotaCopydataGridView1_CellClick_1);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // saati
-            // 
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Snow;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            this.saati.DefaultCellStyle = dataGridViewCellStyle2;
-            this.saati.HeaderText = "საათი";
-            this.saati.Name = "saati";
-            this.saati.ReadOnly = true;
-            this.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // orshabati
-            // 
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
-            this.orshabati.HeaderText = "ორშაბათი";
-            this.orshabati.Name = "orshabati";
-            this.orshabati.ReadOnly = true;
-            this.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.orshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // samshabati
-            // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
-            this.samshabati.HeaderText = "სამშაბათი";
-            this.samshabati.Name = "samshabati";
-            this.samshabati.ReadOnly = true;
-            this.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.samshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // otxshabati
-            // 
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
-            this.otxshabati.HeaderText = "ოთხშაბათი";
-            this.otxshabati.Name = "otxshabati";
-            this.otxshabati.ReadOnly = true;
-            this.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.otxshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // xushabati
-            // 
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
-            this.xushabati.HeaderText = "ხუთშაბათი";
-            this.xushabati.Name = "xushabati";
-            this.xushabati.ReadOnly = true;
-            this.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.xushabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // paraskevi
-            // 
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
-            this.paraskevi.HeaderText = "პარასკევი";
-            this.paraskevi.Name = "paraskevi";
-            this.paraskevi.ReadOnly = true;
-            this.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.paraskevi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // shabati
-            // 
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
-            this.shabati.HeaderText = "შაბათი";
-            this.shabati.Name = "shabati";
-            this.shabati.ReadOnly = true;
-            this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // kvira
-            // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
-            this.kvira.DefaultCellStyle = dataGridViewCellStyle9;
-            this.kvira.HeaderText = "კვირა";
-            this.kvira.Name = "kvira";
-            this.kvira.ReadOnly = true;
-            // 
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -584,6 +501,16 @@
             this.panel11.Name = "panel11";
             this.panel11.Size = new System.Drawing.Size(759, 51);
             this.panel11.TabIndex = 55;
+            // 
+            // buttonVadagas
+            // 
+            this.buttonVadagas.Location = new System.Drawing.Point(190, 10);
+            this.buttonVadagas.Name = "buttonVadagas";
+            this.buttonVadagas.Size = new System.Drawing.Size(102, 34);
+            this.buttonVadagas.TabIndex = 51;
+            this.buttonVadagas.Text = "Edit";
+            this.buttonVadagas.UseVisualStyleBackColor = true;
+            this.buttonVadagas.Click += new System.EventHandler(this.buttonVadagas_Click);
             // 
             // button3
             // 
@@ -675,15 +602,90 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // buttonVadagas
+            // saati
             // 
-            this.buttonVadagas.Location = new System.Drawing.Point(190, 10);
-            this.buttonVadagas.Name = "buttonVadagas";
-            this.buttonVadagas.Size = new System.Drawing.Size(102, 34);
-            this.buttonVadagas.TabIndex = 51;
-            this.buttonVadagas.Text = "Edit";
-            this.buttonVadagas.UseVisualStyleBackColor = true;
-            this.buttonVadagas.Click += new System.EventHandler(this.buttonVadagas_Click);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Snow;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
+            this.saati.DefaultCellStyle = dataGridViewCellStyle2;
+            this.saati.HeaderText = "საათი";
+            this.saati.Name = "saati";
+            this.saati.ReadOnly = true;
+            this.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // orshabati
+            // 
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
+            this.orshabati.HeaderText = "ორშაბათი";
+            this.orshabati.Name = "orshabati";
+            this.orshabati.ReadOnly = true;
+            this.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.orshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // samshabati
+            // 
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
+            this.samshabati.HeaderText = "სამშაბათი";
+            this.samshabati.Name = "samshabati";
+            this.samshabati.ReadOnly = true;
+            this.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.samshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // otxshabati
+            // 
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
+            this.otxshabati.HeaderText = "ოთხშაბათი";
+            this.otxshabati.Name = "otxshabati";
+            this.otxshabati.ReadOnly = true;
+            this.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.otxshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // xushabati
+            // 
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
+            this.xushabati.HeaderText = "ხუთშაბათი";
+            this.xushabati.Name = "xushabati";
+            this.xushabati.ReadOnly = true;
+            this.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.xushabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // paraskevi
+            // 
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
+            this.paraskevi.HeaderText = "პარასკევი";
+            this.paraskevi.Name = "paraskevi";
+            this.paraskevi.ReadOnly = true;
+            this.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.paraskevi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // shabati
+            // 
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
+            this.shabati.HeaderText = "შაბათი";
+            this.shabati.Name = "shabati";
+            this.shabati.ReadOnly = true;
+            this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // kvira
+            // 
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
+            this.kvira.DefaultCellStyle = dataGridViewCellStyle9;
+            this.kvira.HeaderText = "კვირა";
+            this.kvira.Name = "kvira";
+            this.kvira.ReadOnly = true;
+            this.kvira.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.kvira.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // AddAbonent
             // 
@@ -756,6 +758,11 @@
         private System.Windows.Forms.ListBox archeuligrafiki;
         private System.Windows.Forms.Panel panel11;
         private System.Windows.Forms.Splitter splitter1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Label lblBack;
+        private System.Windows.Forms.Label lblNext;
+        private System.Windows.Forms.Button shenaxva;
+        private System.Windows.Forms.Button buttonVadagas;
         private System.Windows.Forms.DataGridViewTextBoxColumn saati;
         private System.Windows.Forms.DataGridViewTextBoxColumn orshabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn samshabati;
@@ -764,10 +771,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn paraskevi;
         private System.Windows.Forms.DataGridViewTextBoxColumn shabati;
         private System.Windows.Forms.DataGridViewTextBoxColumn kvira;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Label lblBack;
-        private System.Windows.Forms.Label lblNext;
-        private System.Windows.Forms.Button shenaxva;
-        private System.Windows.Forms.Button buttonVadagas;
     }
 }
