@@ -83,14 +83,25 @@ namespace SwimmingPool
 
             MyFillGrid = fillgrid;
 
+            vadagasulidatagridi();
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value) < DateTime.Now)
+            //        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;               
 
+            //}
+
+        }
+
+
+        public void vadagasulidatagridi()
+        {
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value) < DateTime.Now)
-                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;               
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.MistyRose;
 
             }
-
         }
 
         public void SearchGrid(List<object> GridData)
@@ -348,6 +359,7 @@ namespace SwimmingPool
                 dataGridView1.DataSource = null;
                 dataGridView1.DataSource = newfillgrid;
             }
+           
         }
 
         #endregion
