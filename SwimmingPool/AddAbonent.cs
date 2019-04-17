@@ -50,7 +50,10 @@ namespace SwimmingPool
         public AddAbonent()
         {
             InitializeComponent();
-            
+            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
+            subscription = GenerateSubscribtionID(subscription);
+            var LastId = subscription.IDnumber;
+            abonenti.Text = LastId;
             grafiki();
             //InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
