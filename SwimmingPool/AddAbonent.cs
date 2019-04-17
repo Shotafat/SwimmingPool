@@ -79,6 +79,13 @@ namespace SwimmingPool
 
         }
 
+
+
+
+
+
+
+
         protected override void OnLoad(EventArgs e)
         {
             //base.OnLoad(e);
@@ -148,7 +155,13 @@ namespace SwimmingPool
             shenaxva.Hide();
             buttonVadagas.Hide();
             button3.Show();
-       
+            archeuligrafiki.Items.Clear();
+
+            foreach (var item in CheckedDayList)
+            {
+                archeuligrafiki.Items.Add(item.Day.ToString());
+            }
+            archeuligrafiki.Sorted = true;
 
         }
 
@@ -821,6 +834,24 @@ namespace SwimmingPool
 
             var lbl = CheckedDayList.Count();
             lblHours.Text = lbl.ToString();
+
+
+
+                archeuligrafiki.Items.Clear();
+
+                foreach (var item in CheckedDayList)
+                {
+                    archeuligrafiki.Items.Add(item.Day.ToString());
+                }
+
+
+                archeuligrafiki.Sorted = true;
+
+
+
+
+
+
 
 
             }
@@ -1657,93 +1688,6 @@ namespace SwimmingPool
                 //DatabaseConnection.Conn.UpdateWithChildren(newobj);
 
 
-                //foreach (var item in NewScheduleList)
-                //{
-                //    DatabaseConnection.Conn.Insert(item);
-                //}
-
-
-
-
-                //var SelectedObject = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
-
-                //var SelectAllSchedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>()
-                //    .FindAll(x => x.SubscriptionID == SelectedObject.Id);
-
-                //#region giorgim ikarnaxa
-
-                //for (int i = 0; i < SelectAllSchedule.Count; i++)
-                //{
-
-                //    var g = SelectAllSchedule[i].Schedule;
-                //    // CheckedDayList[i] = g;
-                //}
-
-                //#endregion
-
-
-
-
-
-
-
-
-
-
-
-
-
-                //for (int i = 0; i < CheckedDayList.Count; i++)
-                //{
-                //    //როცა ნაკლებია ბაზაში არსებული დინამიურზე, სანამ ბაზის რაოდენობა შეივსება ვუტოლებთ, როცა შეივსება ვამატებთ
-                //    if(ScheduleList.Count<CheckedDayList.Count)
-                //    {
-
-                //       while (i != ScheduleList.Count);
-                //        ScheduleList[i].Schedule = CheckedDayList[i].Day;
-
-                //        SubscriptionScheduleDB _Shchedule = new SubscriptionScheduleDB
-                //        {
-                //            Attandance = ScheduleList[i - 1].Attandance,
-                //            Subscription = ScheduleList[i - 1].Subscription,
-                //            SubscriptionID = ScheduleList[i - 1].SubscriptionID,
-                //            Schedule = CheckedDayList[i].Day
-                //        };
-
-                //        ScheduleList.Add(_Shchedule);
-
-
-
-                //    }
-                //    //როცა რაოდენობრივად ტოლია, პირდაპირ ვუტოლებთ
-                //    else if(ScheduleList.Count == CheckedDayList.Count)
-                //    ScheduleList[i].Schedule = CheckedDayList[i].Day;
-                //    //როცა ბაზის მონაცემები მეტია დინამიურზე, რაც დარჩა ზედმეტი ბაზაში იშლება
-                //    //აქ შეცდომის დაშვების ალბათობა მაღალია, მივუბრუნდე, რა ხდება თუ საწყის ელემენტებს შლის და არა საბოლოოს?
-                //    else
-                //    {
-                //        while (i!= ScheduleList.Count) ;
-                //        ScheduleList[i].Schedule = CheckedDayList[i].Day;
-                //        ScheduleList.RemoveRange(i, ScheduleList.Count - CheckedDayList.Count);
-
-                //    }
-
-
-
-
-
-                //}
-
-                //________________________შოთას კოდის დასასრული დასაწერია ბოლოს UPDATE
-
-
-                //subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
-
-                //foreach (var item in CheckedDayList)
-                //{
-                //    SubscriptionScheduleDB Shchedule = new SubscriptionScheduleDB { Schedule = item.Day };
-                //    subscriptionByID.SubscribtionSchedule_.Add(Shchedule);
-                //}
 
 
 

@@ -747,7 +747,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.Panel panel12;
-        private System.Windows.Forms.Label lblHours;
+        public System.Windows.Forms.Label lblHours;
         private System.Windows.Forms.Panel panel14;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

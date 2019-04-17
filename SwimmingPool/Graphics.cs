@@ -3,6 +3,7 @@ using SPSQLite.CLASSES;
 using SPSQLite.CLASSES.BussinessObjects;
 using SPSQLite.CLASSES.Services;
 using SPSQLite.UIMethods;
+using SQLiteNetExtensions.Extensions;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -18,9 +19,9 @@ namespace SwimmingPool
         public DateTime MeoreMonday { get; set; }
         public DateTime MesameMonday { get; set; }
         public DateTime MeotxeMonday { get; set; }
-
-        AddAbonent abonent = new AddAbonent();
-
+        DateTime DateaA = new DateTime();
+        AddAbonent abonent = new AddAbonent() ;
+        
 
         public Graphics()
         {
@@ -134,6 +135,113 @@ namespace SwimmingPool
         }
 
 
+        public void DrawGrid(DataGridView A)
+        {
+            if (abonent.CheckedDayList.Count > 0)
+            {
+                var currentGrid = abonent.CheckedDayList.Where(d => d.Day >= abonent.CurrentWeekDays[0] && d.Day <= abonent.CurrentWeekDays[abonent.CurrentWeekDays.Count - 1]).ToList();
+
+                foreach (var item in currentGrid)
+                {
+                    A.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                    A.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
+                }
+            }
+            else
+                return;
+        }
+
+
+        List<DateTime> AbonentzeGadasacemad = new List<DateTime>();
+
+
+        private void DatagridClickEvent(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridView DGV = sender as DataGridView;
+            DateTime PIRVELI = Convert.ToDateTime(DGV.Rows[0].Cells[1].Value.ToString());
+           // MessageBox.Show(PIRVELI.Date.ToString() + " "+ThisMonday.Date.ToString());
+            if(PIRVELI.Date== ThisMonday.Date)
+                abonent.AssignCurrentWeek(ThisMonday);
+            else if(PIRVELI.Date == MeoreMonday.Date)
+                abonent.AssignCurrentWeek(MeoreMonday);
+            else if (PIRVELI.Date == MesameMonday.Date)
+                abonent.AssignCurrentWeek(MesameMonday);
+            else
+                abonent.AssignCurrentWeek(MeotxeMonday);
+
+
+            abonent.AssignCurrentWeek(ThisMonday);
+            if (e.ColumnIndex != 0 && e.RowIndex != 0)
+            {
+                int Hour = (e.RowIndex + 8);
+                var Date = abonent.CurrentWeekDays[0 + e.ColumnIndex - 1];
+                DateTime FinalDate = new DateTime();
+                string _FinalDate = "";
+                if (Hour < 10)
+                {
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                }
+                else
+                {
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                }
+
+                //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+
+                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                //   Dates.Add(FinalDate);
+
+
+
+
+                //________________________
+                var id = abonent.CheckedDayList.Count;
+                GridFormat f = new GridFormat(id);
+                f.X = e.RowIndex;
+                f.Y = e.ColumnIndex;
+                f.Day = FinalDate;
+                f.IsChecked = true;
+
+                if (abonent.CheckedDayList.Count == 0 && f.X != -1)
+                {
+                    abonent.CheckedDayList.Add(f);
+                    abonent.dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                    abonent.dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor = Color.White;
+                }
+
+                else
+                {
+                    DrawGrid(DGV);
+                    abonent.Checking(f);
+                    abonent.DrawGrid(abonent.CurrentWeekDays);
+                    
+                }
+
+
+                var lbl = abonent.CheckedDayList.Count();
+                abonent.lblHours.Text = lbl.ToString();
+
+
+
+
+
+
+
+
+            }
+
+
+            AbonentzeGadasacemad = abonent.CheckedDayList.Select(x=>x.Day).ToList();
+
+        }
+
+
+
+
+
+
+
+
         public void click(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView DT = sender as DataGridView;
@@ -172,6 +280,17 @@ namespace SwimmingPool
 
             ab.Show();
             this.Close();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            this.Close();
+            DateTime DD= Convert.ToDateTime("12/12/1980 12:00");
+            var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == "A001").FirstOrDefault();
+
+            AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad);
+            abonent.Show();
+            
         }
     }
 
