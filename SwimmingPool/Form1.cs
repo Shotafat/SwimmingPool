@@ -30,13 +30,18 @@ namespace SwimmingPool
 
         private void Form1_Load(object sender, EventArgs e)
         {
-           // dataGridView1.AutoGenerateColumns = true;
+            // dataGridView1.AutoGenerateColumns = true;
+            initData();
+        }
+
+        private void initData()
+        {
             JoinClasses();
             label3.Text = "";
             if (dataGridView1.SelectedCells.Count <= 0)
                 return;
             else
-            selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
+                selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
             InIt(selectedAbonentNumber);
         }
 
@@ -231,6 +236,7 @@ namespace SwimmingPool
         {
             AddAbonent addAbonent = new AddAbonent();
             addAbonent.ShowDialog();
+
             if (addAbonent.DialogResult == DialogResult.OK)
             {
                 Form1_Load(sender, e);
@@ -240,24 +246,45 @@ namespace SwimmingPool
         private void რედაქტირებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
-            HoursChek A = new HoursChek();
-            A.EdiTAbonent();
-            //if (dataGridView1.SelectedRows[0].Selected)
-            //{
-            //    var subscriptionPrice = dataGridView1.SelectedRows[0].DataBoundItem as ISubscriber;
-            //    AddAbonent add = new AddAbonent(subscriptionPrice);
 
-            //    add.ShowDialog();
-            //    if (add.DialogResult == DialogResult.OK)
-            //    {
-            //        Form1_Load(sender, e);
+            var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
 
-            //    }
-            //}
-            //else
-            //{
-            //    MessageBox.Show("გთხოვთ მონიშნოთ აბონიმენტი!");
-            //}
+
+            Form1 A = new Form1();
+
+
+
+
+
+
+            var IDnumber = subscriptionByID.IDnumber.ToString();
+            var LastName = subscriptionByID.Subscriber_.LastName;
+            var Name = subscriptionByID.Subscriber_.Name;
+
+            var Adress = subscriptionByID.Subscriber_.Address;
+            var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
+            var Age = subscriptionByID.Subscriber_.DateOfBirth;
+
+            var currFillGrid = dataGridView1.SelectedRows[0].DataBoundItem as FillGrid;
+
+            var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
+             .Where(x => x.IDnumber == currFillGrid.AbonentId).FirstOrDefault()
+             .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
+            
+
+            List<DateTime> Dates = ScheduleList;
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates);
+            //abonent.Controls.Add(DataGridView datagridview1);
+            A.EditFillGrid(abonent, Dates);
+
+
+            var result = abonent.ShowDialog();
+
+
+            if (result == DialogResult.OK)
+            {
+                initData();
+            }
         }
 
         private void საათებიდაფასებიToolStripMenuItem_Click_1(object sender, EventArgs e)

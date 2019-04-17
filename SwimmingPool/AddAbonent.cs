@@ -1582,6 +1582,8 @@ namespace SwimmingPool
 
             }
             Form1 form = new Form1();
+
+            this.DialogResult = DialogResult.OK;
             Close();
             form.Refresh();
 
