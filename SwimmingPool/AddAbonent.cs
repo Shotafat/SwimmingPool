@@ -101,7 +101,7 @@ namespace SwimmingPool
         public AddAbonent(DateTime date):this()
         {
             CurrentDateValue = date;
-
+            
             buttonVadagas.Hide();
             button3.Hide();
             //AssignGridData();
@@ -199,7 +199,7 @@ namespace SwimmingPool
             buttonVadagas.Show();
             button3.Hide();
 
-
+           
         }
 
 
@@ -788,53 +788,74 @@ namespace SwimmingPool
 
         private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.ColumnIndex != 0 && e.RowIndex != 0) { 
-            int Hour = (e.RowIndex + 8);
-            var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
-            DateTime FinalDate = new DateTime();
-            string _FinalDate = "";
-            if (Hour < 10)
+           
+            if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "კვირა")
             {
-                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                
+                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
+                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = false;
+                return;
             }
-            else
+            if (e.ColumnIndex != 0 && e.RowIndex != 0)
             {
-                _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
-            }
 
-            //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                if (DatabaseConnection.Conn.Table<SPSQLite.CapacityDB>().Last().MaximumCapacity <= Convert.ToInt16(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
+                {
+                    MessageBox.Show("ლიმიტი ამოწურულია");
+                }
 
-            FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+
+                int Hour = (e.RowIndex + 8);
+                var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
+                DateTime FinalDate = new DateTime();
+                string _FinalDate = "";
+              if (Hour < 10)
+                {
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
+                }
+              else
+                {
+                    _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
+                }
+
+            
+              FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
             //   Dates.Add(FinalDate);
 
 
 
 
             //________________________
-            var id = CheckedDayList.Count;
-            GridFormat f = new GridFormat(id);
-            f.X = e.RowIndex;
-            f.Y = e.ColumnIndex;
-            f.Day = FinalDate;
-            f.IsChecked = true;
+                var id = CheckedDayList.Count;
+                GridFormat f = new GridFormat(id);
+                f.X = e.RowIndex;
+                f.Y = e.ColumnIndex;
+                f.Day = FinalDate;
+                f.IsChecked = true;
 
-            if (CheckedDayList.Count == 0&&f.X!=-1)
-            {
+                if (CheckedDayList.Count == 0&&f.X!=-1)
+                {
                 CheckedDayList.Add(f);
                 dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
                     dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor= Color.White;
                 }
 
             else
-            {
-                Checking(f);
-                DrawGrid(CurrentWeekDays);
+                {
+                    Checking(f);
+                    DrawGrid(CurrentWeekDays);
+                }
+
+
+                var lbl = CheckedDayList.Count();
+                lblHours.Text = lbl.ToString();
+
+                
             }
-
-
-            var lbl = CheckedDayList.Count();
-            lblHours.Text = lbl.ToString();
-
+            else
+            {
+                dataGridView1.Rows[e.RowIndex].Cells[0].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
+                dataGridView1.Rows[e.RowIndex].Cells[0].Selected = false;
 
 
                 archeuligrafiki.Items.Clear();
