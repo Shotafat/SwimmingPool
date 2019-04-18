@@ -133,6 +133,7 @@ namespace SwimmingPool
 
         }
 
+        //Abonimentis redaqtirebis konstruqtori
         public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour) //:this()
         {
             InitializeComponent();
@@ -179,8 +180,59 @@ namespace SwimmingPool
 
 
 
+        //GRAPHICS FORMIDAN GADMOTANIS KONSTRUQTORI
+        public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour, bool A, bool B) //:this()
+        {
+            InitializeComponent();
+            dataGridView1.DataSource = null;
+            ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
+            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+
+            //  grafiki(dataGridView1);
+            Grafiki_edit(DatabaseScheduleDate[0]);
+            gridFillter(dataGridView1, ThisMonday);
+
+            //    DrawGrid();
 
 
+
+            AssignCurrentWeek(ThisMonday, dataGridView1);
+
+            // Grafiki_edit(dataGridView1);
+            FillCheckdayList(DatabaseScheduleDate);
+            abonenti.Text = IdNumber;
+            saxeli.Text = Name;
+            gvari.Text = LastName;
+            asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
+            telefoni.Text = phoneNumber.ToString();
+            misamarti.Text = Adress;
+
+            comboBox1.SelectedItem = numberofHour;
+
+
+            shenaxva.Show();
+            buttonVadagas.Hide();
+            button3.Hide();
+            button4.Hide();
+            archeuligrafiki.Items.Clear();
+
+            foreach (var item in CheckedDayList)
+            {
+                archeuligrafiki.Items.Add(item.Day.ToString());
+            }
+            archeuligrafiki.Sorted = true;
+
+        }
+
+
+
+
+
+
+
+
+
+        //VADAGASULEBIS REDAQTIREBA
         public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, bool Vadagasulebi) //:this()
         {
             InitializeComponent();
