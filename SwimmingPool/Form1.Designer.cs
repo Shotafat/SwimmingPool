@@ -65,13 +65,13 @@
             this.აბონენტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.დამატებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ლიმიტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.საათებიდაფასებიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ვადაგასულიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.გრაფიკიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ექსპორტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ლიმიტიToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -361,16 +361,23 @@
             // დამატებაToolStripMenuItem
             // 
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
             this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
             // 
             // რედაქტირებაToolStripMenuItem
             // 
             this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
             this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
+            // 
+            // ლიმიტიToolStripMenuItem
+            // 
+            this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
+            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
+            this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // საათებიდაფასებიToolStripMenuItem
             // 
@@ -411,7 +418,7 @@
             this.ექსპორტიToolStripMenuItem.Name = "ექსპორტიToolStripMenuItem";
             this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(68, 31);
             this.ექსპორტიToolStripMenuItem.Text = "ექსპორტი";
-        //    this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
+            this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -419,13 +426,6 @@
             this.dataGridViewTextBoxColumn1.HeaderText = "HasInqury";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.Width = 85;
-            // 
-            // ლიმიტიToolStripMenuItem
-            // 
-            this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
-            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
-            this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // Form1
             // 

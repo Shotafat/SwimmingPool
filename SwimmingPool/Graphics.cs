@@ -137,11 +137,13 @@ namespace SwimmingPool
 
         public void DrawGrid(DataGridView A)
         {
-            if (abonent.CheckedDayList.Count > 0)
-            {
-                var currentGrid = abonent.CheckedDayList.Where(d => d.Day >= abonent.CurrentWeekDays[0] && d.Day <= abonent.CurrentWeekDays[abonent.CurrentWeekDays.Count - 1]).ToList();
+            
 
-                foreach (var item in currentGrid)
+            if (GridListPages[A.Name.ToString()].Count > 0)
+            {
+              //  var currentGrid = CheckedList.Where(d => d.Day >= abonent.CurrentWeekDays[0] && d.Day <= abonent.CurrentWeekDays[abonent.CurrentWeekDays.Count - 1]).ToList();
+
+                foreach (var item in GridListPages[A.Name.ToString()])
                 {
                     A.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
                     A.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
@@ -153,11 +155,134 @@ namespace SwimmingPool
 
 
         List<DateTime> AbonentzeGadasacemad = new List<DateTime>();
+        List<GridFormat> AbonentzeGadasacemadGridFormat = new List<GridFormat>();
+        string DatagridviewName;
+        Dictionary<string, List<GridFormat>> GridListPages = new Dictionary<string, List<GridFormat>>()
+        {
+            {"dataGridViewFirst", new List<GridFormat>() },
+{"dataGridView2", new List<GridFormat>() },
+{"dataGridView3", new List<GridFormat>() },
+{"dataGridViewFourth", new List<GridFormat>() }
+
+
+        };
+
+        public void Checking(GridFormat obj, DataGridView dataGridView1)
+        {
+            bool value = GridListPages[dataGridView1.Name.ToString()].Any(o => o.Day == obj.Day && o.Y == obj.Y && o.X == obj.X);
+            bool value2 = GridListPages[dataGridView1.Name.ToString()].Any(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X);
+
+            if (value2)
+            {
+                var OriginObj = GridListPages[dataGridView1.Name.ToString()].Where(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X).FirstOrDefault();
+                var _id = GridListPages[dataGridView1.Name.ToString()].IndexOf(OriginObj);
+
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.SelectionBackColor = Color.White;
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.BackColor = Color.White;
+
+                GridListPages[dataGridView1.Name.ToString()][_id] = obj;
+                return;
+            }
+
+
+            if (value)
+            {
+                var result = GridListPages[dataGridView1.Name.ToString()].Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault();
+                GridListPages[dataGridView1.Name.ToString()].Remove(result);
+                if (obj.X != -1)
+                {
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.BackColor = Color.White;
+                }
+            }
+
+            else
+            {
+                GridListPages[dataGridView1.Name.ToString()].Add(obj);
+            }
+            var testlit2 = GridListPages[dataGridView1.Name.ToString()];
+        }
+
+
+
+
+
+
+
+
+
+
+        public void Checking1(GridFormat obj, DataGridView dataGridView1)
+        {
+          //  var ListGridFormat = GridListPages[dataGridView1.Name.ToString()];
+
+            bool value = GridListPages[dataGridView1.Name.ToString()].Any(o => o.Day == obj.Day && o.Y == obj.Y && o.X == obj.X);
+            bool value2 = GridListPages[dataGridView1.Name.ToString()].Any(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X);
+               var a = dataGridView1.Rows[obj.X].Cells[obj.Y].Value;
+
+            if (value2)
+            {
+                var OriginObj = GridListPages[dataGridView1.Name.ToString()].Where(x => /*x.Day == obj.Day */ /*&&*/ x.Y == obj.Y && x.X != obj.X).FirstOrDefault();
+                var _id = GridListPages[dataGridView1.Name.ToString()].IndexOf(OriginObj);
+
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.SelectionBackColor = Color.White;
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.BackColor = Color.White;
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.ForeColor = Color.Black;
+
+                GridListPages[dataGridView1.Name.ToString()][_id] = obj;
+                return;
+            
+            }
+
+
+            if (value)
+            {
+                var result = GridListPages[dataGridView1.Name.ToString()].Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault();
+                GridListPages[dataGridView1.Name.ToString()].Remove(result);
+                if (obj.X != -1)
+                {
+                     dataGridView1.Rows[obj.X].Cells[obj.Y].Value = a;
+
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.ForeColor = Color.Black;
+                }
+            }
+
+            else
+            {
+                GridListPages[dataGridView1.Name.ToString()].Add(obj);
+            }
+            var testlit2 = GridListPages[dataGridView1.Name.ToString()];
+
+
+
+                       
+
+
+            //else
+            //{
+            //    GridListPages[DatagridviewName].Add(obj);
+            //    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+            //    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.ForeColor = Color.White;
+
+
+
+            //}
+
+        }
+
+
+
+
 
 
         private void DatagridClickEvent(object sender, DataGridViewCellEventArgs e)
         {
+
             DataGridView DGV = sender as DataGridView;
+
+
+            DatagridviewName = DGV.Name.ToString();
             DateTime PIRVELI = Convert.ToDateTime(DGV.Rows[0].Cells[1].Value.ToString());
            // MessageBox.Show(PIRVELI.Date.ToString() + " "+ThisMonday.Date.ToString());
             if(PIRVELI.Date== ThisMonday.Date)
@@ -170,8 +295,30 @@ namespace SwimmingPool
                 abonent.AssignCurrentWeek(MeotxeMonday);
 
 
-            abonent.AssignCurrentWeek(ThisMonday);
+            if (DGV.Columns[e.ColumnIndex].HeaderText == "კვირა")
+            {
+
+                DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
+                DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = false;
+                return;
+            }
             if (e.ColumnIndex != 0 && e.RowIndex != 0)
+            {
+
+                if (DatabaseConnection.Conn.Table<SPSQLite.CapacityDB>().Last().MaximumCapacity <= Convert.ToInt16(DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
+                {
+                    MessageBox.Show("ლიმიტი ამოწურულია");
+                }
+
+            }
+
+
+
+
+
+
+                //   abonent.AssignCurrentWeek(ThisMonday);
+                if (e.ColumnIndex != 0 && e.RowIndex != 0)
             {
                 int Hour = (e.RowIndex + 8);
                 var Date = abonent.CurrentWeekDays[0 + e.ColumnIndex - 1];
@@ -195,26 +342,31 @@ namespace SwimmingPool
 
 
                 //________________________
-                var id = abonent.CheckedDayList.Count;
+                var id =GridListPages[DatagridviewName].Count;
                 GridFormat f = new GridFormat(id);
                 f.X = e.RowIndex;
                 f.Y = e.ColumnIndex;
                 f.Day = FinalDate;
                 f.IsChecked = true;
 
-                if (abonent.CheckedDayList.Count == 0 && f.X != -1)
+                
+
+
+                if (GridListPages[DatagridviewName].Count == 0 && f.X != -1)
                 {
-                    abonent.CheckedDayList.Add(f);
-                    abonent.dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
-                    abonent.dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor = Color.White;
+                    GridListPages[DatagridviewName].Add(f);
+                    DGV.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                   DGV.Rows[f.X].Cells[f.Y].Style.ForeColor = Color.White;
                 }
 
                 else
                 {
+                    Checking(f, DGV);
+
                     DrawGrid(DGV);
-                    abonent.Checking(f);
-                    abonent.DrawGrid(abonent.CurrentWeekDays);
-                    
+                                       // abonent.Checking(f);
+                   // abonent.DrawGrid(abonent.CurrentWeekDays);
+
                 }
 
 
@@ -238,11 +390,12 @@ namespace SwimmingPool
 
 
 
+        
 
 
 
 
-        public void click(object sender, DataGridViewCellEventArgs e)
+            public void click(object sender, DataGridViewCellEventArgs e)
         {
             DataGridView DT = sender as DataGridView;
 
@@ -282,14 +435,31 @@ namespace SwimmingPool
             this.Close();
         }
 
+        
+        public void AbonentisKonstruqtorisDeitebi()
+        {
+            foreach (var item in GridListPages)
+            {
+                if(item.Value.Count!=0)
+                AbonentzeGadasacemadGridFormat.AddRange(item.Value);
+
+            }
+            
+
+        }
+
         private void button1_Click_1(object sender, EventArgs e)
         {
+            AbonentisKonstruqtorisDeitebi();
             this.Close();
-            DateTime DD= Convert.ToDateTime("12/12/1980 12:00");
+            DateTime DD= Convert.ToDateTime("01/01/1980 12:00");
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == "A001").FirstOrDefault();
-
+            AbonentzeGadasacemad = AbonentzeGadasacemadGridFormat.Select(x => x.Day).ToList();
             AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad, 1);
-            abonent.Show();
+            Shota.CheckedDayList = AbonentzeGadasacemadGridFormat;
+            Shota.DrawGrid();
+         //   MessageBox.Show(AbonentzeGadasacemad.Count.ToString());
+            Shota.Show();
             
         }
     }
