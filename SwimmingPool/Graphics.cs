@@ -455,13 +455,24 @@ namespace SwimmingPool
             DateTime DD= Convert.ToDateTime("01/01/1980 12:00");
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == "A001").FirstOrDefault();
             AbonentzeGadasacemad = AbonentzeGadasacemadGridFormat.Select(x => x.Day).ToList();
+            if(AbonentzeGadasacemad.Count>0)
+            { 
             AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad, 1, true, true);
            // AddAbonent Shota = new AddAbonent();
             Shota.CheckedDayList = AbonentzeGadasacemadGridFormat;
             Shota.DrawGrid();
          //   MessageBox.Show(AbonentzeGadasacemad.Count.ToString());
             Shota.ShowDialog();
-            
+            }
+            else
+            {
+
+                AddAbonent Shota = new AddAbonent();
+                Shota.ShowDialog();
+            }
+
+
+
         }
     }
 

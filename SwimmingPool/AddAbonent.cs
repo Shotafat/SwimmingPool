@@ -194,10 +194,12 @@ namespace SwimmingPool
 
 
             //aq IF chavsva
+           // if(DatabaseScheduleDate.Count>0)
             ThisMonday=GetCurrentMonday(DatabaseScheduleDate[0]);
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
             //  grafiki(dataGridView1);
+          //  if(DatabaseScheduleDate.Count>0)
             Grafiki_edit(DatabaseScheduleDate[0]);
             gridFillter(dataGridView1, ThisMonday);
 
