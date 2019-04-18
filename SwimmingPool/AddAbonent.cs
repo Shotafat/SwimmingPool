@@ -1788,11 +1788,7 @@ namespace SwimmingPool
 
       
 
-        private void Button4_Click(object sender, DataGridViewCellEventArgs e)
-        {
-           
-        }
-
+      
         private void Button4_Click(object sender, EventArgs e)
         {
             abonenti.Text = "";
