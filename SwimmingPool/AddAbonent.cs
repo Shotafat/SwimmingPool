@@ -193,8 +193,8 @@ namespace SwimmingPool
 
 
 
-
-            ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
+            //aq IF chavsva
+            ThisMonday=GetCurrentMonday(DatabaseScheduleDate[0]);
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
             //  grafiki(dataGridView1);
@@ -791,10 +791,16 @@ namespace SwimmingPool
                 MessageBox.Show("დაამატეთ საათების რაოდენობა");
 
             }
+            //aq chavs
 
-
-            DialogResult = DialogResult.OK;
+            //Form1 form = new Form1();
+        
+//tu rame qveda ori xazi
+            this.DialogResult = DialogResult.OK;
             Close();
+            
+            //form.Refresh();
+
         }
 
 
@@ -1601,57 +1607,10 @@ namespace SwimmingPool
                 subscriber.LastName = gvari.Text;
                 subscriber.PhoneNumber = telefoni.Text;
                 subscriber.Address = misamarti.Text;
-                //   subscriber.DateOfBirth = asaki.ToString();
-
-                //if (diax.Checked)
-                //    subscriber.Healthnotice[0].YesNO =Availability.Yes;
-                //else
-                //    subscriber.Healthnotice[0].YesNO = Availability.No;
-
-
-                DatabaseConnection.Conn.UpdateWithChildren(subscriber);
-                //DatabaseConnection.Conn.UpdateWithChildren(newobj);
-
-
-                //foreach (var item in NewScheduleList)
-                //{
-                //    DatabaseConnection.Conn.Insert(item);
-                //}
-
-
-                //var SelectedObject = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
-
-                //var SelectAllSchedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>()
-                //    .FindAll(x => x.SubscriptionID == SelectedObject.Id);
-
-                //#region giorgim ikarnaxa
-
-                //for (int i = 0; i < SelectAllSchedule.Count; i++)
-                //{
-
-                //    var g = SelectAllSchedule[i].Schedule;
-                //    // CheckedDayList[i] = g;
-                //}
-
-//#endregion
-
-                //var SelectedObject = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
-
-                //var SelectAllSchedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>()
-                //    .FindAll(x => x.SubscriptionID == SelectedObject.Id);
-
-
-
-
-//#endregion
-
-
-
-
-
-
                 
-
+                DatabaseConnection.Conn.UpdateWithChildren(subscriber);
+                
+                
 
                 var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
                 var gggg = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().FirstOrDefault(x => x.SubscribtionID == 1);
