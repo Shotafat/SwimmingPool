@@ -185,6 +185,15 @@ namespace SwimmingPool
         {
             InitializeComponent();
             dataGridView1.DataSource = null;
+
+            ISubscription subscription = new SPSQLite.CLASSES.Subscription();
+            subscription = GenerateSubscribtionID(subscription);
+            var LastId = subscription.IDnumber;
+            abonenti.Text = LastId;
+
+
+
+
             ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
@@ -200,7 +209,7 @@ namespace SwimmingPool
 
             // Grafiki_edit(dataGridView1);
             FillCheckdayList(DatabaseScheduleDate);
-            abonenti.Text = IdNumber;
+           // abonenti.Text = IdNumber;
             saxeli.Text = Name;
             gvari.Text = LastName;
             asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
@@ -713,6 +722,9 @@ namespace SwimmingPool
            // MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
             Dates.Clear();
+
+
+
         }
 
         public IHealthNotice HealthNoticeSaver()
@@ -1638,59 +1650,7 @@ namespace SwimmingPool
 
 
 
-
-                //for (int i = 0; i < CheckedDayList.Count; i++)
-                //{
-                //    //როცა ნაკლებია ბაზაში არსებული დინამიურზე, სანამ ბაზის რაოდენობა შეივსება ვუტოლებთ, როცა შეივსება ვამატებთ
-                //    if(ScheduleList.Count<CheckedDayList.Count)
-                //    {
-
-                //       while (i != ScheduleList.Count);
-                //        ScheduleList[i].Schedule = CheckedDayList[i].Day;
-
-                //        SubscriptionScheduleDB _Shchedule = new SubscriptionScheduleDB
-                //        {
-                //            Attandance = ScheduleList[i - 1].Attandance,
-                //            Subscription = ScheduleList[i - 1].Subscription,
-                //            SubscriptionID = ScheduleList[i - 1].SubscriptionID,
-                //            Schedule = CheckedDayList[i].Day
-                //        };
-
-                //        ScheduleList.Add(_Shchedule);
-
-
-
-                //    }
-                //    //როცა რაოდენობრივად ტოლია, პირდაპირ ვუტოლებთ
-                //    else if(ScheduleList.Count == CheckedDayList.Count)
-                //    ScheduleList[i].Schedule = CheckedDayList[i].Day;
-                //    //როცა ბაზის მონაცემები მეტია დინამიურზე, რაც დარჩა ზედმეტი ბაზაში იშლება
-                //    //აქ შეცდომის დაშვების ალბათობა მაღალია, მივუბრუნდე, რა ხდება თუ საწყის ელემენტებს შლის და არა საბოლოოს?
-                //    else
-                //    {
-                //        while (i!= ScheduleList.Count) ;
-                //        ScheduleList[i].Schedule = CheckedDayList[i].Day;
-                //        ScheduleList.RemoveRange(i, ScheduleList.Count - CheckedDayList.Count);
-
-                //    }
-
-
-
-
-
-                //}
-
-                //________________________შოთას კოდის დასასრული დასაწერია ბოლოს UPDATE
-
-
-                //subscriptionByID.SubscribtionSchedule_ = new List<SubscriptionScheduleDB>();
-
-                //foreach (var item in CheckedDayList)
-                //{
-                //    SubscriptionScheduleDB Shchedule = new SubscriptionScheduleDB { Schedule = item.Day };
-                //    subscriptionByID.SubscribtionSchedule_.Add(Shchedule);
-                //}
-
+                
 
 
                 var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
