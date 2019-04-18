@@ -219,7 +219,7 @@ namespace SwimmingPool
 
 
                 var lbl = abonent.CheckedDayList.Count();
-                abonent.lblHours.Text = lbl.ToString();
+            //    abonent.lblHours.Text = lbl.ToString();
 
 
 
@@ -288,7 +288,7 @@ namespace SwimmingPool
             DateTime DD= Convert.ToDateTime("12/12/1980 12:00");
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == "A001").FirstOrDefault();
 
-            AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad);
+            AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad, 1);
             abonent.Show();
             
         }

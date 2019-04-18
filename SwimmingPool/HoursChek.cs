@@ -181,32 +181,28 @@ namespace SwimmingPool
             var IDnumber = subscriptionByID.IDnumber.ToString();
             var LastName = subscriptionByID.Subscriber_.LastName;
             var Name = subscriptionByID.Subscriber_.Name;
-
+            var numberofHour = DatabaseConnection.Conn.Table<SubscribtionPrice>().Where(x => x.Id == subscriptionByID.SubscriberPrice_.Id).FirstOrDefault().NumberOfHours;
             var Adress = subscriptionByID.Subscriber_.Address;
             var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
             var Age = subscriptionByID.Subscriber_.DateOfBirth;
 
 
             List<DateTime> Dates = ScheduleList();
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates);
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates,numberofHour);
             //abonent.Controls.Add(DataGridView datagridview1);
             A.EditFillGrid(abonent, Dates);
-          
-          
-            abonent.Show();
 
+             abonent.Show();
+
+          
 
         }
 
         private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+
             EdiTAbonent();
-
-
-
-
-
         }
     }
 }

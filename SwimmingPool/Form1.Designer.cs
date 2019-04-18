@@ -411,7 +411,7 @@
             this.ექსპორტიToolStripMenuItem.Name = "ექსპორტიToolStripMenuItem";
             this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(68, 31);
             this.ექსპორტიToolStripMenuItem.Text = "ექსპორტი";
-            this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
+        //    this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -478,7 +478,7 @@
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripTextBox toolStripTextBox1;
         private System.Windows.Forms.ToolStripMenuItem გრაფიკიToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ექსპორტიToolStripMenuItem;

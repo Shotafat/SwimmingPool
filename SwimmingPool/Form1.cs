@@ -34,7 +34,7 @@ namespace SwimmingPool
             initData();
         }
 
-        private void initData()
+        public void initData()
         {
             JoinClasses();
             label3.Text = "";
@@ -42,7 +42,7 @@ namespace SwimmingPool
                 return;
             else
                 selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
-            InIt(selectedAbonentNumber);
+            InIt(Form1.selectedAbonentNumber);
         }
 
         private void დამატებაToolStripMenuItem_Click_1(object sender, EventArgs e)
@@ -264,6 +264,8 @@ namespace SwimmingPool
             var Adress = subscriptionByID.Subscriber_.Address;
             var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
             var Age = subscriptionByID.Subscriber_.DateOfBirth;
+            var numberofHour = DatabaseConnection.Conn.Table<SubscribtionPrice>().Where(x => x.Id == subscriptionByID.SubscriberPrice_.Id).FirstOrDefault().NumberOfHours;
+
 
             var currFillGrid = dataGridView1.SelectedRows[0].DataBoundItem as FillGrid;
 
@@ -273,7 +275,7 @@ namespace SwimmingPool
             
 
             List<DateTime> Dates = ScheduleList;
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates);
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates,numberofHour);
             //abonent.Controls.Add(DataGridView datagridview1);
             A.EditFillGrid(abonent, Dates);
 
@@ -450,7 +452,7 @@ namespace SwimmingPool
             //dataGridView1.Columns[columnIndexOrName].HeaderCell.ToolTipText = "OK";
         }
 
-        private void ExportToExcel()
+       /* private void ExportToExcel()
         {
             // Creating a Excel object.
             Microsoft.Office.Interop.Excel._Application excel = new Microsoft.Office.Interop.Excel.Application();
@@ -518,6 +520,7 @@ namespace SwimmingPool
         {
             ExportToExcel();
         }
+        */
 
          }
 }

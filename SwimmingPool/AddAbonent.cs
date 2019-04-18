@@ -46,7 +46,7 @@ namespace SwimmingPool
         public DateTime CurrentDateValue { get; private set; } = DateTime.Now.Date;
         #endregion
 
-
+    
         public AddAbonent()
         {
             InitializeComponent();
@@ -67,6 +67,7 @@ namespace SwimmingPool
 
             /*function for calc current monday*/
             buttonVadagas.Hide();
+            button4.Show();
             button3.Hide();
             button2.Hide();
             //AssignGridData();
@@ -75,16 +76,17 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Frozen = true;
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
 
+            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
 
 
-
-
+           
         }
 
 
 
-
+     
+       
 
 
 
@@ -98,7 +100,7 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
             gridFillter(dataGridView1, ThisMonday);
-
+            
         }
 
         public AddAbonent(DateTime date):this()
@@ -108,6 +110,7 @@ namespace SwimmingPool
             buttonVadagas.Hide();
             button3.Hide();
             //AssignGridData();
+            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
         }
        
@@ -130,15 +133,15 @@ namespace SwimmingPool
 
         }
 
-        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate) //:this()
+        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour) //:this()
         {
             InitializeComponent();
             dataGridView1.DataSource = null;
             ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
-
+            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
             //  grafiki(dataGridView1);
-           Grafiki_edit(DatabaseScheduleDate[0]);
+            Grafiki_edit(DatabaseScheduleDate[0]);
            gridFillter(dataGridView1, ThisMonday);
 
         //    DrawGrid();
@@ -155,9 +158,14 @@ namespace SwimmingPool
             asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
             telefoni.Text = phoneNumber.ToString();
             misamarti.Text = Adress;
+
+            comboBox1.SelectedItem = numberofHour;
+
+
             shenaxva.Hide();
             buttonVadagas.Hide();
             button3.Show();
+            button4.Show();
             archeuligrafiki.Items.Clear();
 
             foreach (var item in CheckedDayList)
@@ -165,7 +173,7 @@ namespace SwimmingPool
                 archeuligrafiki.Items.Add(item.Day.ToString());
             }
             archeuligrafiki.Sorted = true;
-
+           
         }
 
 
@@ -695,7 +703,7 @@ namespace SwimmingPool
         //  SubcsriptionPrice : ISubscriptionPrice
         public ISubscriptionPrice SubPriceReturner()
         {
-            int Hour = Convert.ToInt32(lblHours.Text);
+           int Hour = Convert.ToInt32(comboBox1.SelectedValue);
             SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
             return NewSubPR;
         }
@@ -843,7 +851,7 @@ namespace SwimmingPool
                     dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor= Color.White;
                 }
 
-            else
+            else 
                 {
                     Checking(f);
                     DrawGrid(CurrentWeekDays);
@@ -851,7 +859,7 @@ namespace SwimmingPool
 
 
                 var lbl = CheckedDayList.Count();
-                lblHours.Text = lbl.ToString();
+                //lblHours.Text = lbl.ToString();
 
                 
             }
@@ -879,6 +887,40 @@ namespace SwimmingPool
 
 
             }
+
+            // საათების რაოდენობა
+
+            var gela = Convert.ToInt32(comboBox1.SelectedItem);
+           
+            if (DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).Contains(CheckedDayList.Count))
+            {
+                var num = CheckedDayList.Count;
+                var nino = DatabaseConnection.Conn.Table<SubscribtionPrice>().FirstOrDefault(x => x.NumberOfHours == num);
+                comboBox1.SelectedItem = nino.NumberOfHours;
+               
+            }
+           else  if (CheckedDayList.Count > gela)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("ახალი პაკეტის დამატება", "მონიშნული საათბის რაო" +
+                    "დენობამეტია პაკეტზე", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    AddPriceForm price = new AddPriceForm();
+                    price.ShowDialog();
+                    if (price.DialogResult == DialogResult.OK)
+                    {
+                        comboBox1.DataSource = null;
+                        comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+                        comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Last().NumberOfHours;
+                    }
+                }
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                  
+                }
+            }
+           
         }
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -1612,7 +1654,7 @@ namespace SwimmingPool
 
             }
             Form1 form = new Form1();
-
+         
             this.DialogResult = DialogResult.OK;
             Close();
             form.Refresh();
@@ -1730,6 +1772,7 @@ namespace SwimmingPool
 
             }
             Form1 form = new Form1();
+          
             Close();
             form.Refresh();
 
@@ -1769,6 +1812,59 @@ namespace SwimmingPool
             Form4 F = new Form4();
             F.Show();
         }
+
+      
+
+        private void Button4_Click(object sender, DataGridViewCellEventArgs e)
+        {
+           
+        }
+
+        private void Button4_Click(object sender, EventArgs e)
+        {
+            abonenti.Text = "";
+            saxeli.Text = "";
+            gvari.Text = "";
+            asaki.Text = "";
+            telefoni.Text = "";
+            misamarti.Text = "";
+            archeuligrafiki.Items.Clear();
+
+
+
+            //   CheckedDayList.Clear();
+
+
+
+
+            var indexes = (from g in CheckedDayList
+                           select new { g = g.X, z = g.Y }).ToList();
+         
+            foreach (var item in indexes)
+            {
+
+                dataGridView1.Rows[item.g].Cells[item.z].Style.BackColor = Color.White;
+                CheckedDayList.RemoveAll(x => x.X == item.g && x.Y == item.z);
+
+              
+
+            }
+
+          
+
+
+            //dataGridView1.RefreshEdit();
+
+
+        }
+
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+          
+
+        }
+
+       
     }
 }
                         //public class CurrentGrid : AddAbonent

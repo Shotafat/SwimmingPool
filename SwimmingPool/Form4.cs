@@ -94,27 +94,26 @@ namespace SwimmingPool
 
 
 
-                //var r = schedule.Where(
-                //    .Select(g => new
-                //    {
+            //var r = schedule.Where(
+            //    .Select(g => new
+            //    {
 
-                //        აბონიმენტი = g.Subscription.IDnumber,
-                //        სახელი = g.Subscription.Subscriber_.Name,
-                //        გვარი = g.Subscription.Subscriber_.LastName,
-                //        ასაკი = Math.Round((DateTime.Now - g.Subscription.Subscriber_.DateOfBirth).TotalDays / 365, 0),
+            //        აბონიმენტი = g.Subscription.IDnumber,
+            //        სახელი = g.Subscription.Subscriber_.Name,
+            //        გვარი = g.Subscription.Subscriber_.LastName,
+            //        ასაკი = Math.Round((DateTime.Now - g.Subscription.Subscriber_.DateOfBirth).TotalDays / 365, 0),
 
-                //        ფასი = g.Subscription.SubscriberPrice_.Price,
-                //        საათი = g.Subscription.SubscriberPrice_.NumberOfHours
-
-
-
-                //    }).ToList();
+            //        ფასი = g.Subscription.SubscriberPrice_.Price,
+            //        საათი = g.Subscription.SubscriberPrice_.NumberOfHours
 
 
 
+            //    }).ToList();
+
+            List<object> r = new List<object>();
 
 
-                var r = (from g in subscriptions
+                 r = (from g in subscriptions
                          where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
 
                          select new
@@ -129,19 +128,22 @@ namespace SwimmingPool
                          }).ToList<object>();
 
                 datagridview4.DataSource = r;
-
-
-
-                return r;
-
-
+             
+           
 
 
 
 
+            return r;
 
-            
-            
+
+
+
+
+
+
+
+
 
         }
 
