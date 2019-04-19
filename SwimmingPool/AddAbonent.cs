@@ -77,16 +77,21 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
 
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
-
-
-
            
+
+
+
+
         }
 
 
 
-     
-       
+
+        private void AddAbonent_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
 
@@ -100,7 +105,9 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
             gridFillter(dataGridView1, ThisMonday);
-            
+
+         
+          
         }
 
         public AddAbonent(DateTime date):this()
@@ -174,7 +181,13 @@ namespace SwimmingPool
                 archeuligrafiki.Items.Add(item.Day.ToString());
             }
             archeuligrafiki.Sorted = true;
-           
+
+
+
+
+
+
+
         }
 
 
@@ -194,12 +207,12 @@ namespace SwimmingPool
 
 
             //aq IF chavsva
-           // if(DatabaseScheduleDate.Count>0)
-            ThisMonday=GetCurrentMonday(DatabaseScheduleDate[0]);
+            // if(DatabaseScheduleDate.Count>0)
+            ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
             //  grafiki(dataGridView1);
-          //  if(DatabaseScheduleDate.Count>0)
+            //  if(DatabaseScheduleDate.Count>0)
             Grafiki_edit(DatabaseScheduleDate[0]);
             gridFillter(dataGridView1, ThisMonday);
 
@@ -211,15 +224,28 @@ namespace SwimmingPool
 
             // Grafiki_edit(dataGridView1);
             FillCheckdayList(DatabaseScheduleDate);
-           // abonenti.Text = IdNumber;
+            // abonenti.Text = IdNumber;
             saxeli.Text = Name;
             gvari.Text = LastName;
             asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
             telefoni.Text = phoneNumber.ToString();
             misamarti.Text = Adress;
 
-            comboBox1.SelectedItem = numberofHour;
-
+            if (comboBox1.Items.Contains(numberofHour))
+                comboBox1.SelectedItem = numberofHour;
+            if (!(DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList().Contains(numberofHour)))
+            {
+                AddPriceForm price = new AddPriceForm(numberofHour.ToString());
+                price.ShowDialog();
+               
+                if (price.DialogResult == DialogResult.OK)
+                {
+                    this.comboBox1.DataSource = null;
+                    comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+                    comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList().Last();
+                }
+            }
+               
 
             shenaxva.Show();
             buttonVadagas.Hide();
@@ -963,22 +989,29 @@ namespace SwimmingPool
             // საათების რაოდენობა
 
             var gela = Convert.ToInt32(comboBox1.SelectedItem);
-           
+
             if (DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).Contains(CheckedDayList.Count))
             {
                 var num = CheckedDayList.Count;
+
                 var nino = DatabaseConnection.Conn.Table<SubscribtionPrice>().FirstOrDefault(x => x.NumberOfHours == num);
+
+
                 comboBox1.SelectedItem = nino.NumberOfHours;
-               
+
+
+
             }
-           else  if (CheckedDayList.Count > gela)
+
+
+            if (CheckedDayList.Count > gela &&  !comboBox1.Items.Contains( CheckedDayList.Count))
             {
 
                 DialogResult dialogResult = MessageBox.Show("ახალი პაკეტის დამატება", "მონიშნული საათბის რაო" +
                     "დენობამეტია პაკეტზე", MessageBoxButtons.OKCancel);
                 if (dialogResult == DialogResult.OK)
                 {
-                    AddPriceForm price = new AddPriceForm();
+                    AddPriceForm price = new AddPriceForm(CheckedDayList.Count.ToString());
                     price.ShowDialog();
                     if (price.DialogResult == DialogResult.OK)
                     {
@@ -986,6 +1019,11 @@ namespace SwimmingPool
                         comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
                         comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Last().NumberOfHours;
                     }
+
+
+
+
+
                 }
                 else if (dialogResult == DialogResult.Cancel)
                 {

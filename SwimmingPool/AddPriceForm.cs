@@ -18,9 +18,19 @@ namespace SwimmingPool
             InitializeComponent();
         }
 
+        public AddPriceForm(string numberofHour)
+        {
+            InitializeComponent();
+            if (textBox2.Text!=null)
+               textBox2.Text = numberofHour;
+        }
+
+
+        AddAbonent add = new AddAbonent();
         protected override void OnLoad(EventArgs e)
         {
-             
+
+          
 
             base.OnLoad(e); 
         }
@@ -31,7 +41,7 @@ namespace SwimmingPool
            ServiceInstances.Service().GetSubscriptionPriceServices().Add(Object);
 
             DialogResult = DialogResult.OK;
-            
+          
             Close();
 
 

@@ -21,7 +21,7 @@ namespace SwimmingPool
         public DateTime MeotxeMonday { get; set; }
         DateTime DateaA = new DateTime();
         AddAbonent abonent = new AddAbonent() ;
-        
+        public List<DateTime> AbonentzeGadasacemad = new List<DateTime>();
 
         public Graphics()
         {
@@ -154,7 +154,7 @@ namespace SwimmingPool
         }
 
 
-        List<DateTime> AbonentzeGadasacemad = new List<DateTime>();
+    
         List<GridFormat> AbonentzeGadasacemadGridFormat = new List<GridFormat>();
         string DatagridviewName;
         Dictionary<string, List<GridFormat>> GridListPages = new Dictionary<string, List<GridFormat>>()
@@ -456,19 +456,31 @@ namespace SwimmingPool
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == "A001").FirstOrDefault();
             AbonentzeGadasacemad = AbonentzeGadasacemadGridFormat.Select(x => x.Day).ToList();
             if(AbonentzeGadasacemad.Count>0)
-            { 
-            AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad, 1, true, true);
+            {
+                 AddAbonent Shota = new AddAbonent("", "", "", "", DD, "", subscriptionByID, AbonentzeGadasacemad, AbonentzeGadasacemad.Count, true, true);
+              //  AddAbonent Shota = new AddAbonent();
            // AddAbonent Shota = new AddAbonent();
             Shota.CheckedDayList = AbonentzeGadasacemadGridFormat;
             Shota.DrawGrid();
-         //   MessageBox.Show(AbonentzeGadasacemad.Count.ToString());
-            Shota.ShowDialog();
+                //   MessageBox.Show(AbonentzeGadasacemad.Count.ToString());
+
+                Form1 form = new Form1();
+                Shota.ShowDialog();
+                if (Shota.DialogResult == DialogResult.OK)
+                {
+                    form.initData();
+                }
             }
             else
             {
 
                 AddAbonent Shota = new AddAbonent();
+                Form1 form = new Form1();
                 Shota.ShowDialog();
+                if (Shota.DialogResult == DialogResult.OK)
+                {
+                    form.initData();
+                }
             }
 
 
