@@ -47,7 +47,19 @@ namespace SwimmingPool
         public DateTime CurrentDateValue { get; private set; } = DateTime.Now.Date;
         #endregion
 
+
+
+        public void BBB(string A)
+        {
+
+            B.InIt(A);
+
+
+        }
+
         //Add new Abonent
+        Form1 B;
+        string FormIDNumber;
         public AddAbonent()
         {
             InitializeComponent();
@@ -160,9 +172,10 @@ namespace SwimmingPool
 
         //Editing an old Abonent
 
-        public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour, Availability HasInquiry) //:this()
+        public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour, Availability HasInquiry, Form1 A) //:this()
         {
-
+            FormIDNumber = IdNumber;
+            B = A;
             InitializeComponent();
 
             registation = false;
@@ -174,6 +187,8 @@ namespace SwimmingPool
                 button3.Enabled = false;
                 button3.ForeColor = Color.Red;
             }
+
+            Form1.Invoker.REFRESHHandler += BBB;
 
 
             dataGridView1.DataSource = null;
@@ -1716,16 +1731,22 @@ namespace SwimmingPool
                 }
             }
 
+            
             this.DialogResult = DialogResult.OK;
             this.Close();
 
-            Form1 f = new Form1();
-            //f.InIt(_sub.Subscriptions.IDnumber);
             
-            f.InIt(_sub);
+
+            
+            //f.InIt(_sub);
        }
 
-        public void SubscribtionEditMethod(string AbonimentNumber)
+
+
+        
+
+
+    public void SubscribtionEditMethod(string AbonimentNumber)
         {
             try
             {
@@ -1820,9 +1841,14 @@ namespace SwimmingPool
             //Form1 form = new Form1();
         }
 
+        //aq shemodis redaqtirebisas, aq unda davarefresho forma 1
         private void button2_Click_1(object sender, EventArgs e)
         {
             SubscribtionEditMethod();
+            //B.dataGridView1_CellClick(sender, FormIDNumber);
+            BBB(FormIDNumber);
+         //   Form1.Invoker.myMethod
+         // Form1.Invoker.myMethod.Invoke ("AAA", e);
         }
 
         private void ara_CheckedChanged(object sender, EventArgs e)

@@ -19,11 +19,27 @@ namespace SwimmingPool
         public List<FillGrid> fillgrid { get; set; }
 
         public   List<FillGrid>  newfillgrid { get; set; }
+
+
+        public delegate void MyEventHandler(string selectedabonent);
+
         public Form1()
         {
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
             dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
+            Invoker.myMethod += Initmethodcaller;
+            Invoker.REFRESHHandler += AAA;
+        }
+
+        public  void AAA (string A)
+        {
+            InIt(A);
+        }
+        private void Initmethodcaller(object sender, EventArgs e)
+        {
+            string AbonimentN = sender as string;
+            InIt(AbonimentN);
 
         }
 
@@ -53,7 +69,7 @@ namespace SwimmingPool
 
         }
 
-        private List<FillGrid> MyFillGrid;
+        public List<FillGrid> MyFillGrid;
 
         public void JoinClasses()
         {
@@ -200,7 +216,7 @@ namespace SwimmingPool
             //    flowLayoutPanel1.Controls.Add(Hours);
             //    flowLayoutPanel1.AutoScroll = true;
 
-                dataGridView1_CellClick(new object(), sub);
+                //dataGridView1_CellClick(new object(), sub);
                 flowLayoutPanel1.Refresh();
 
             //}
@@ -279,16 +295,17 @@ namespace SwimmingPool
                 Hours.Refresh();
             }
         }
+       
 
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
             InIt(selectedAbonentNumber);
         }
 
-        private void dataGridView1_CellClick(object sender, Subscriber sub)
+        public void dataGridView1_CellClick(object sender, string subscriberID)
         {
-            selectedAbonentNumber = sub.Subscriptions.IDnumber;
+            selectedAbonentNumber = subscriberID;
             InIt(selectedAbonentNumber);
         }
 
@@ -359,7 +376,7 @@ namespace SwimmingPool
             var subscriberByID = DatabaseConnection.Conn.GetAllWithChildren<Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
 
             Form1 A = new Form1();
-
+            A = this;
             var IDnumber = subscriptionByID.IDnumber.ToString();
             var LastName = subscriptionByID.Subscriber_.LastName;
             var Name = subscriptionByID.Subscriber_.Name;
@@ -372,10 +389,11 @@ namespace SwimmingPool
             List<DateTime> Dates = ScheduleList();
 
             var HasInquiry = subscriberByID.Healthnotice[0].YesNO;
-
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry);
+            
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry, this);
             A.EditFillGrid(abonent, Dates);
             abonent.Show();
+        //    this.Close();
         }
 
         public List<DateTime> ScheduleList()
@@ -547,6 +565,16 @@ namespace SwimmingPool
             public int Hours { get; set; }
         }
 
+        public static class Invoker
+        {
+            public static event EventHandler<EventArgs> myMethod;
+            public static event MyEventHandler REFRESHHandler;
+
+            //public static void myMethod(object v1, int v2)
+
+        }
+
+
         private void dataGridView1_MouseHover(object sender, EventArgs e)
         {            
            // this.dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
@@ -585,7 +613,7 @@ namespace SwimmingPool
             }
         }
 
-        private void ContextMenuStrip_MouseClick(object sender, MouseEventArgs e)
+        public void ContextMenuStrip_MouseClick(object sender, MouseEventArgs e)
         {
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
             InIt(selectedAbonentNumber);

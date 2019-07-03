@@ -142,7 +142,7 @@ namespace SwimmingPool
 
             var HasInquiry = subscriberByID.Healthnotice[0].YesNO;      
 
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry);
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry, A);
             A.EditFillGrid(abonent, Dates);
              abonent.Show();      
         }

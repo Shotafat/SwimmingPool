@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            AddAbonent addAbonent = this;
+            addAbonent.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -39,416 +40,416 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.lblFirstName = new System.Windows.Forms.Label();
-            this.lblAnonimentNumber = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblAge = new System.Windows.Forms.Label();
-            this.lblPhoneNumber = new System.Windows.Forms.Label();
-            this.lblLastName = new System.Windows.Forms.Label();
-            this.abonenti = new System.Windows.Forms.Label();
-            this.asaki = new System.Windows.Forms.MaskedTextBox();
-            this.panel6 = new System.Windows.Forms.Panel();
-            this.აბონენტი = new System.Windows.Forms.Label();
-            this.misamarti = new System.Windows.Forms.TextBox();
-            this.telefoni = new System.Windows.Forms.TextBox();
-            this.gvari = new System.Windows.Forms.TextBox();
-            this.saxeli = new System.Windows.Forms.TextBox();
-            this.panel12 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.panel14 = new System.Windows.Forms.Panel();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.diax = new System.Windows.Forms.CheckBox();
-            this.ara = new System.Windows.Forms.CheckBox();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.archeuligrafiki = new System.Windows.Forms.ListBox();
-            this.panel8 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.orshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.samshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otxshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xushabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kvira = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.buttonVadagas = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.lblBack = new System.Windows.Forms.Label();
-            this.lblNext = new System.Windows.Forms.Label();
-            this.shenaxva = new System.Windows.Forms.Button();
-            this.splitter1 = new System.Windows.Forms.Splitter();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.subscribtionPriceBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.panel3.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel6.SuspendLayout();
-            this.panel12.SuspendLayout();
-            this.panel14.SuspendLayout();
-            this.panel7.SuspendLayout();
-            this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subscribtionPriceBindingSource)).BeginInit();
-            this.SuspendLayout();
+            addAbonent.panel2 = new System.Windows.Forms.Panel();
+            addAbonent.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            addAbonent.panel3 = new System.Windows.Forms.Panel();
+            addAbonent.panel4 = new System.Windows.Forms.Panel();
+            addAbonent.lblFirstName = new System.Windows.Forms.Label();
+            addAbonent.lblAnonimentNumber = new System.Windows.Forms.Label();
+            addAbonent.label1 = new System.Windows.Forms.Label();
+            addAbonent.lblAge = new System.Windows.Forms.Label();
+            addAbonent.lblPhoneNumber = new System.Windows.Forms.Label();
+            addAbonent.lblLastName = new System.Windows.Forms.Label();
+            addAbonent.abonenti = new System.Windows.Forms.Label();
+            addAbonent.asaki = new System.Windows.Forms.MaskedTextBox();
+            addAbonent.panel6 = new System.Windows.Forms.Panel();
+            addAbonent.აბონენტი = new System.Windows.Forms.Label();
+            addAbonent.misamarti = new System.Windows.Forms.TextBox();
+            addAbonent.telefoni = new System.Windows.Forms.TextBox();
+            addAbonent.gvari = new System.Windows.Forms.TextBox();
+            addAbonent.saxeli = new System.Windows.Forms.TextBox();
+            addAbonent.panel12 = new System.Windows.Forms.Panel();
+            addAbonent.comboBox1 = new System.Windows.Forms.ComboBox();
+            addAbonent.panel14 = new System.Windows.Forms.Panel();
+            addAbonent.label8 = new System.Windows.Forms.Label();
+            addAbonent.label7 = new System.Windows.Forms.Label();
+            addAbonent.diax = new System.Windows.Forms.CheckBox();
+            addAbonent.ara = new System.Windows.Forms.CheckBox();
+            addAbonent.panel7 = new System.Windows.Forms.Panel();
+            addAbonent.label4 = new System.Windows.Forms.Label();
+            addAbonent.archeuligrafiki = new System.Windows.Forms.ListBox();
+            addAbonent.panel8 = new System.Windows.Forms.Panel();
+            addAbonent.dataGridView1 = new System.Windows.Forms.DataGridView();
+            addAbonent.saati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.orshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.samshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.otxshabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.xushabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.paraskevi = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.shabati = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.kvira = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            addAbonent.panel11 = new System.Windows.Forms.Panel();
+            addAbonent.button4 = new System.Windows.Forms.Button();
+            addAbonent.buttonVadagas = new System.Windows.Forms.Button();
+            addAbonent.button3 = new System.Windows.Forms.Button();
+            addAbonent.lblBack = new System.Windows.Forms.Label();
+            addAbonent.lblNext = new System.Windows.Forms.Label();
+            addAbonent.shenaxva = new System.Windows.Forms.Button();
+            addAbonent.splitter1 = new System.Windows.Forms.Splitter();
+            addAbonent.button2 = new System.Windows.Forms.Button();
+            addAbonent.button1 = new System.Windows.Forms.Button();
+            addAbonent.subscribtionPriceBindingSource = new System.Windows.Forms.BindingSource(addAbonent.components);
+            addAbonent.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addAbonent.splitContainer1).BeginInit();
+            addAbonent.splitContainer1.Panel1.SuspendLayout();
+            addAbonent.splitContainer1.Panel2.SuspendLayout();
+            addAbonent.splitContainer1.SuspendLayout();
+            addAbonent.panel3.SuspendLayout();
+            addAbonent.panel4.SuspendLayout();
+            addAbonent.panel6.SuspendLayout();
+            addAbonent.panel12.SuspendLayout();
+            addAbonent.panel14.SuspendLayout();
+            addAbonent.panel7.SuspendLayout();
+            addAbonent.panel8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addAbonent.dataGridView1).BeginInit();
+            addAbonent.panel11.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)addAbonent.subscribtionPriceBindingSource).BeginInit();
+            addAbonent.SuspendLayout();
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Controls.Add(this.splitContainer1);
-            this.panel2.Controls.Add(this.splitter1);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(762, 677);
-            this.panel2.TabIndex = 5;
+            addAbonent.panel2.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel2.Controls.Add(addAbonent.splitContainer1);
+            addAbonent.panel2.Controls.Add(addAbonent.splitter1);
+            addAbonent.panel2.Controls.Add(addAbonent.button2);
+            addAbonent.panel2.Controls.Add(addAbonent.button1);
+            addAbonent.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            addAbonent.panel2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel2.Location = new System.Drawing.Point(0, 0);
+            addAbonent.panel2.Name = "panel2";
+            addAbonent.panel2.Size = new System.Drawing.Size(762, 677);
+            addAbonent.panel2.TabIndex = 5;
             // 
             // splitContainer1
             // 
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
+            addAbonent.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
+            addAbonent.splitContainer1.Location = new System.Drawing.Point(3, 0);
+            addAbonent.splitContainer1.Name = "splitContainer1";
+            addAbonent.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
             // splitContainer1.Panel1
             // 
-            this.splitContainer1.Panel1.Controls.Add(this.panel3);
-            this.splitContainer1.Panel1.Controls.Add(this.panel12);
+            addAbonent.splitContainer1.Panel1.Controls.Add(addAbonent.panel3);
+            addAbonent.splitContainer1.Panel1.Controls.Add(addAbonent.panel12);
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.panel8);
-            this.splitContainer1.Panel2.Controls.Add(this.panel11);
-            this.splitContainer1.Size = new System.Drawing.Size(759, 677);
-            this.splitContainer1.SplitterDistance = 276;
-            this.splitContainer1.TabIndex = 58;
+            addAbonent.splitContainer1.Panel2.Controls.Add(addAbonent.panel8);
+            addAbonent.splitContainer1.Panel2.Controls.Add(addAbonent.panel11);
+            addAbonent.splitContainer1.Size = new System.Drawing.Size(759, 677);
+            addAbonent.splitContainer1.SplitterDistance = 276;
+            addAbonent.splitContainer1.TabIndex = 58;
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Controls.Add(this.abonenti);
-            this.panel3.Controls.Add(this.asaki);
-            this.panel3.Controls.Add(this.panel6);
-            this.panel3.Controls.Add(this.misamarti);
-            this.panel3.Controls.Add(this.telefoni);
-            this.panel3.Controls.Add(this.gvari);
-            this.panel3.Controls.Add(this.saxeli);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(0, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(374, 276);
-            this.panel3.TabIndex = 11;
+            addAbonent.panel3.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            addAbonent.panel3.Controls.Add(addAbonent.panel4);
+            addAbonent.panel3.Controls.Add(addAbonent.abonenti);
+            addAbonent.panel3.Controls.Add(addAbonent.asaki);
+            addAbonent.panel3.Controls.Add(addAbonent.panel6);
+            addAbonent.panel3.Controls.Add(addAbonent.misamarti);
+            addAbonent.panel3.Controls.Add(addAbonent.telefoni);
+            addAbonent.panel3.Controls.Add(addAbonent.gvari);
+            addAbonent.panel3.Controls.Add(addAbonent.saxeli);
+            addAbonent.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
+            addAbonent.panel3.Location = new System.Drawing.Point(0, 0);
+            addAbonent.panel3.Name = "panel3";
+            addAbonent.panel3.Size = new System.Drawing.Size(374, 276);
+            addAbonent.panel3.TabIndex = 11;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel4.Controls.Add(this.lblFirstName);
-            this.panel4.Controls.Add(this.lblAnonimentNumber);
-            this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.lblAge);
-            this.panel4.Controls.Add(this.lblPhoneNumber);
-            this.panel4.Controls.Add(this.lblLastName);
-            this.panel4.Location = new System.Drawing.Point(12, 66);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(127, 199);
-            this.panel4.TabIndex = 49;
+            addAbonent.panel4.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel4.Controls.Add(addAbonent.lblFirstName);
+            addAbonent.panel4.Controls.Add(addAbonent.lblAnonimentNumber);
+            addAbonent.panel4.Controls.Add(addAbonent.label1);
+            addAbonent.panel4.Controls.Add(addAbonent.lblAge);
+            addAbonent.panel4.Controls.Add(addAbonent.lblPhoneNumber);
+            addAbonent.panel4.Controls.Add(addAbonent.lblLastName);
+            addAbonent.panel4.Location = new System.Drawing.Point(12, 66);
+            addAbonent.panel4.Name = "panel4";
+            addAbonent.panel4.Size = new System.Drawing.Size(127, 199);
+            addAbonent.panel4.TabIndex = 49;
             // 
             // lblFirstName
             // 
-            this.lblFirstName.AutoSize = true;
-            this.lblFirstName.BackColor = System.Drawing.Color.Transparent;
-            this.lblFirstName.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstName.ForeColor = System.Drawing.Color.White;
-            this.lblFirstName.Location = new System.Drawing.Point(54, 34);
-            this.lblFirstName.Name = "lblFirstName";
-            this.lblFirstName.Size = new System.Drawing.Size(60, 19);
-            this.lblFirstName.TabIndex = 49;
-            this.lblFirstName.Text = "სახელი";
+            addAbonent.lblFirstName.AutoSize = true;
+            addAbonent.lblFirstName.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.lblFirstName.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblFirstName.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblFirstName.Location = new System.Drawing.Point(54, 34);
+            addAbonent.lblFirstName.Name = "lblFirstName";
+            addAbonent.lblFirstName.Size = new System.Drawing.Size(60, 19);
+            addAbonent.lblFirstName.TabIndex = 49;
+            addAbonent.lblFirstName.Text = "სახელი";
             // 
             // lblAnonimentNumber
             // 
-            this.lblAnonimentNumber.AutoSize = true;
-            this.lblAnonimentNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblAnonimentNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAnonimentNumber.ForeColor = System.Drawing.Color.White;
-            this.lblAnonimentNumber.Location = new System.Drawing.Point(5, 8);
-            this.lblAnonimentNumber.Name = "lblAnonimentNumber";
-            this.lblAnonimentNumber.Size = new System.Drawing.Size(115, 19);
-            this.lblAnonimentNumber.TabIndex = 48;
-            this.lblAnonimentNumber.Text = "აბონიმენტის N";
+            addAbonent.lblAnonimentNumber.AutoSize = true;
+            addAbonent.lblAnonimentNumber.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.lblAnonimentNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblAnonimentNumber.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblAnonimentNumber.Location = new System.Drawing.Point(5, 8);
+            addAbonent.lblAnonimentNumber.Name = "lblAnonimentNumber";
+            addAbonent.lblAnonimentNumber.Size = new System.Drawing.Size(115, 19);
+            addAbonent.lblAnonimentNumber.TabIndex = 48;
+            addAbonent.lblAnonimentNumber.Text = "აბონიმენტის N";
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(34, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(85, 19);
-            this.label1.TabIndex = 50;
-            this.label1.Text = "მისამართი";
+            addAbonent.label1.AutoSize = true;
+            addAbonent.label1.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.label1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.label1.ForeColor = System.Drawing.Color.White;
+            addAbonent.label1.Location = new System.Drawing.Point(34, 163);
+            addAbonent.label1.Name = "label1";
+            addAbonent.label1.Size = new System.Drawing.Size(85, 19);
+            addAbonent.label1.TabIndex = 50;
+            addAbonent.label1.Text = "მისამართი";
             // 
             // lblAge
             // 
-            this.lblAge.AutoSize = true;
-            this.lblAge.BackColor = System.Drawing.Color.Transparent;
-            this.lblAge.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAge.ForeColor = System.Drawing.Color.White;
-            this.lblAge.Location = new System.Drawing.Point(18, 96);
-            this.lblAge.Name = "lblAge";
-            this.lblAge.Size = new System.Drawing.Size(101, 19);
-            this.lblAge.TabIndex = 53;
-            this.lblAge.Text = "დაბ. თარიღი";
+            addAbonent.lblAge.AutoSize = true;
+            addAbonent.lblAge.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.lblAge.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblAge.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblAge.Location = new System.Drawing.Point(18, 96);
+            addAbonent.lblAge.Name = "lblAge";
+            addAbonent.lblAge.Size = new System.Drawing.Size(101, 19);
+            addAbonent.lblAge.TabIndex = 53;
+            addAbonent.lblAge.Text = "დაბ. თარიღი";
             // 
             // lblPhoneNumber
             // 
-            this.lblPhoneNumber.AutoSize = true;
-            this.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
-            this.lblPhoneNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
-            this.lblPhoneNumber.Location = new System.Drawing.Point(34, 130);
-            this.lblPhoneNumber.Name = "lblPhoneNumber";
-            this.lblPhoneNumber.Size = new System.Drawing.Size(86, 19);
-            this.lblPhoneNumber.TabIndex = 51;
-            this.lblPhoneNumber.Text = "ტელეფონი";
+            addAbonent.lblPhoneNumber.AutoSize = true;
+            addAbonent.lblPhoneNumber.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.lblPhoneNumber.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblPhoneNumber.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblPhoneNumber.Location = new System.Drawing.Point(34, 130);
+            addAbonent.lblPhoneNumber.Name = "lblPhoneNumber";
+            addAbonent.lblPhoneNumber.Size = new System.Drawing.Size(86, 19);
+            addAbonent.lblPhoneNumber.TabIndex = 51;
+            addAbonent.lblPhoneNumber.Text = "ტელეფონი";
             // 
             // lblLastName
             // 
-            this.lblLastName.AutoSize = true;
-            this.lblLastName.BackColor = System.Drawing.Color.Transparent;
-            this.lblLastName.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastName.ForeColor = System.Drawing.Color.White;
-            this.lblLastName.Location = new System.Drawing.Point(71, 65);
-            this.lblLastName.Name = "lblLastName";
-            this.lblLastName.Size = new System.Drawing.Size(49, 19);
-            this.lblLastName.TabIndex = 52;
-            this.lblLastName.Text = "გვარი";
+            addAbonent.lblLastName.AutoSize = true;
+            addAbonent.lblLastName.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.lblLastName.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblLastName.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblLastName.Location = new System.Drawing.Point(71, 65);
+            addAbonent.lblLastName.Name = "lblLastName";
+            addAbonent.lblLastName.Size = new System.Drawing.Size(49, 19);
+            addAbonent.lblLastName.TabIndex = 52;
+            addAbonent.lblLastName.Text = "გვარი";
             // 
             // abonenti
             // 
-            this.abonenti.AutoSize = true;
-            this.abonenti.BackColor = System.Drawing.SystemColors.Window;
-            this.abonenti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.abonenti.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.abonenti.Location = new System.Drawing.Point(148, 74);
-            this.abonenti.MinimumSize = new System.Drawing.Size(193, 17);
-            this.abonenti.Name = "abonenti";
-            this.abonenti.Size = new System.Drawing.Size(193, 17);
-            this.abonenti.TabIndex = 36;
+            addAbonent.abonenti.AutoSize = true;
+            addAbonent.abonenti.BackColor = System.Drawing.SystemColors.Window;
+            addAbonent.abonenti.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            addAbonent.abonenti.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            addAbonent.abonenti.Location = new System.Drawing.Point(148, 74);
+            addAbonent.abonenti.MinimumSize = new System.Drawing.Size(193, 17);
+            addAbonent.abonenti.Name = "abonenti";
+            addAbonent.abonenti.Size = new System.Drawing.Size(193, 17);
+            addAbonent.abonenti.TabIndex = 36;
             // 
             // asaki
             // 
-            this.asaki.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.asaki.Location = new System.Drawing.Point(148, 162);
-            this.asaki.Mask = "00/00/0000";
-            this.asaki.Name = "asaki";
-            this.asaki.Size = new System.Drawing.Size(193, 20);
-            this.asaki.TabIndex = 39;
-            this.asaki.ValidatingType = typeof(System.DateTime);
+            addAbonent.asaki.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.asaki.Location = new System.Drawing.Point(148, 162);
+            addAbonent.asaki.Mask = "00/00/0000";
+            addAbonent.asaki.Name = "asaki";
+            addAbonent.asaki.Size = new System.Drawing.Size(193, 20);
+            addAbonent.asaki.TabIndex = 39;
+            addAbonent.asaki.ValidatingType = typeof(System.DateTime);
             // 
             // panel6
             // 
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel6.Controls.Add(this.აბონენტი);
-            this.panel6.Location = new System.Drawing.Point(15, 10);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(326, 36);
-            this.panel6.TabIndex = 48;
+            addAbonent.panel6.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.panel6.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            addAbonent.panel6.Controls.Add(addAbonent.აბონენტი);
+            addAbonent.panel6.Location = new System.Drawing.Point(15, 10);
+            addAbonent.panel6.Name = "panel6";
+            addAbonent.panel6.Size = new System.Drawing.Size(326, 36);
+            addAbonent.panel6.TabIndex = 48;
             // 
             // აბონენტი
             // 
-            this.აბონენტი.AutoSize = true;
-            this.აბონენტი.BackColor = System.Drawing.Color.Transparent;
-            this.აბონენტი.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.აბონენტი.ForeColor = System.Drawing.Color.White;
-            this.აბონენტი.Location = new System.Drawing.Point(129, -2);
-            this.აბონენტი.Name = "აბონენტი";
-            this.აბონენტი.Size = new System.Drawing.Size(145, 31);
-            this.აბონენტი.TabIndex = 0;
-            this.აბონენტი.Text = "აბონენტი";
-            this.აბონენტი.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            addAbonent.აბონენტი.AutoSize = true;
+            addAbonent.აბონენტი.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.აბონენტი.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.აბონენტი.ForeColor = System.Drawing.Color.White;
+            addAbonent.აბონენტი.Location = new System.Drawing.Point(129, -2);
+            addAbonent.აბონენტი.Name = "აბონენტი";
+            addAbonent.აბონენტი.Size = new System.Drawing.Size(145, 31);
+            addAbonent.აბონენტი.TabIndex = 0;
+            addAbonent.აბონენტი.Text = "აბონენტი";
+            addAbonent.აბონენტი.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // misamarti
             // 
-            this.misamarti.Location = new System.Drawing.Point(148, 229);
-            this.misamarti.Name = "misamarti";
-            this.misamarti.Size = new System.Drawing.Size(193, 20);
-            this.misamarti.TabIndex = 41;
+            addAbonent.misamarti.Location = new System.Drawing.Point(148, 229);
+            addAbonent.misamarti.Name = "misamarti";
+            addAbonent.misamarti.Size = new System.Drawing.Size(193, 20);
+            addAbonent.misamarti.TabIndex = 41;
             // 
             // telefoni
             // 
-            this.telefoni.Location = new System.Drawing.Point(148, 196);
-            this.telefoni.Name = "telefoni";
-            this.telefoni.Size = new System.Drawing.Size(193, 20);
-            this.telefoni.TabIndex = 40;
+            addAbonent.telefoni.Location = new System.Drawing.Point(148, 196);
+            addAbonent.telefoni.Name = "telefoni";
+            addAbonent.telefoni.Size = new System.Drawing.Size(193, 20);
+            addAbonent.telefoni.TabIndex = 40;
             // 
             // gvari
             // 
-            this.gvari.Location = new System.Drawing.Point(148, 133);
-            this.gvari.Name = "gvari";
-            this.gvari.Size = new System.Drawing.Size(193, 20);
-            this.gvari.TabIndex = 38;
+            addAbonent.gvari.Location = new System.Drawing.Point(148, 133);
+            addAbonent.gvari.Name = "gvari";
+            addAbonent.gvari.Size = new System.Drawing.Size(193, 20);
+            addAbonent.gvari.TabIndex = 38;
             // 
             // saxeli
             // 
-            this.saxeli.Location = new System.Drawing.Point(148, 100);
-            this.saxeli.Name = "saxeli";
-            this.saxeli.Size = new System.Drawing.Size(193, 20);
-            this.saxeli.TabIndex = 37;
+            addAbonent.saxeli.Location = new System.Drawing.Point(148, 100);
+            addAbonent.saxeli.Name = "saxeli";
+            addAbonent.saxeli.Size = new System.Drawing.Size(193, 20);
+            addAbonent.saxeli.TabIndex = 37;
             // 
             // panel12
             // 
-            this.panel12.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel12.Controls.Add(this.comboBox1);
-            this.panel12.Controls.Add(this.panel14);
-            this.panel12.Controls.Add(this.diax);
-            this.panel12.Controls.Add(this.ara);
-            this.panel12.Controls.Add(this.panel7);
-            this.panel12.Controls.Add(this.archeuligrafiki);
-            this.panel12.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel12.Location = new System.Drawing.Point(374, 0);
-            this.panel12.Name = "panel12";
-            this.panel12.Size = new System.Drawing.Size(385, 276);
-            this.panel12.TabIndex = 11;
+            addAbonent.panel12.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            addAbonent.panel12.Controls.Add(addAbonent.comboBox1);
+            addAbonent.panel12.Controls.Add(addAbonent.panel14);
+            addAbonent.panel12.Controls.Add(addAbonent.diax);
+            addAbonent.panel12.Controls.Add(addAbonent.ara);
+            addAbonent.panel12.Controls.Add(addAbonent.panel7);
+            addAbonent.panel12.Controls.Add(addAbonent.archeuligrafiki);
+            addAbonent.panel12.Dock = System.Windows.Forms.DockStyle.Right;
+            addAbonent.panel12.Location = new System.Drawing.Point(374, 0);
+            addAbonent.panel12.Name = "panel12";
+            addAbonent.panel12.Size = new System.Drawing.Size(385, 276);
+            addAbonent.panel12.TabIndex = 11;
             // 
             // comboBox1
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(237, 66);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(109, 21);
-            this.comboBox1.TabIndex = 58;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
+            addAbonent.comboBox1.FormattingEnabled = true;
+            addAbonent.comboBox1.Location = new System.Drawing.Point(237, 66);
+            addAbonent.comboBox1.Name = "comboBox1";
+            addAbonent.comboBox1.Size = new System.Drawing.Size(109, 21);
+            addAbonent.comboBox1.TabIndex = 58;
+            addAbonent.comboBox1.SelectedIndexChanged += new System.EventHandler(addAbonent.ComboBox1_SelectedIndexChanged);
             // 
             // panel14
             // 
-            this.panel14.BackColor = System.Drawing.Color.Transparent;
-            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel14.Controls.Add(this.label8);
-            this.panel14.Controls.Add(this.label7);
-            this.panel14.Location = new System.Drawing.Point(28, 10);
-            this.panel14.Name = "panel14";
-            this.panel14.Size = new System.Drawing.Size(320, 36);
-            this.panel14.TabIndex = 48;
+            addAbonent.panel14.BackColor = System.Drawing.Color.Transparent;
+            addAbonent.panel14.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            addAbonent.panel14.Controls.Add(addAbonent.label8);
+            addAbonent.panel14.Controls.Add(addAbonent.label7);
+            addAbonent.panel14.Location = new System.Drawing.Point(28, 10);
+            addAbonent.panel14.Name = "panel14";
+            addAbonent.panel14.Size = new System.Drawing.Size(320, 36);
+            addAbonent.panel14.TabIndex = 48;
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(223, -2);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(96, 31);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "საათი";
+            addAbonent.label8.AutoSize = true;
+            addAbonent.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.label8.ForeColor = System.Drawing.Color.White;
+            addAbonent.label8.Location = new System.Drawing.Point(223, -2);
+            addAbonent.label8.Name = "label8";
+            addAbonent.label8.Size = new System.Drawing.Size(96, 31);
+            addAbonent.label8.TabIndex = 1;
+            addAbonent.label8.Text = "საათი";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(30, -1);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(94, 31);
-            this.label7.TabIndex = 2;
-            this.label7.Text = "ცნობა";
+            addAbonent.label7.AutoSize = true;
+            addAbonent.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.label7.ForeColor = System.Drawing.Color.White;
+            addAbonent.label7.Location = new System.Drawing.Point(30, -1);
+            addAbonent.label7.Name = "label7";
+            addAbonent.label7.Size = new System.Drawing.Size(94, 31);
+            addAbonent.label7.TabIndex = 2;
+            addAbonent.label7.Text = "ცნობა";
             // 
             // diax
             // 
-            this.diax.AutoSize = true;
-            this.diax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.diax.Location = new System.Drawing.Point(29, 66);
-            this.diax.Name = "diax";
-            this.diax.Size = new System.Drawing.Size(75, 26);
-            this.diax.TabIndex = 43;
-            this.diax.Text = "დიახ";
-            this.diax.UseVisualStyleBackColor = true;
-            this.diax.CheckedChanged += new System.EventHandler(this.diax_CheckedChanged);
+            addAbonent.diax.AutoSize = true;
+            addAbonent.diax.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.diax.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            addAbonent.diax.Location = new System.Drawing.Point(29, 66);
+            addAbonent.diax.Name = "diax";
+            addAbonent.diax.Size = new System.Drawing.Size(75, 26);
+            addAbonent.diax.TabIndex = 43;
+            addAbonent.diax.Text = "დიახ";
+            addAbonent.diax.UseVisualStyleBackColor = true;
+            addAbonent.diax.CheckedChanged += new System.EventHandler(addAbonent.diax_CheckedChanged);
             // 
             // ara
             // 
-            this.ara.AutoSize = true;
-            this.ara.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.ara.Location = new System.Drawing.Point(114, 67);
-            this.ara.Name = "ara";
-            this.ara.Size = new System.Drawing.Size(60, 26);
-            this.ara.TabIndex = 44;
-            this.ara.Text = "არა";
-            this.ara.UseVisualStyleBackColor = true;
-            this.ara.CheckedChanged += new System.EventHandler(this.ara_CheckedChanged);
+            addAbonent.ara.AutoSize = true;
+            addAbonent.ara.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.ara.ForeColor = System.Drawing.SystemColors.ControlLight;
+            addAbonent.ara.Location = new System.Drawing.Point(114, 67);
+            addAbonent.ara.Name = "ara";
+            addAbonent.ara.Size = new System.Drawing.Size(60, 26);
+            addAbonent.ara.TabIndex = 44;
+            addAbonent.ara.Text = "არა";
+            addAbonent.ara.UseVisualStyleBackColor = true;
+            addAbonent.ara.CheckedChanged += new System.EventHandler(addAbonent.ara_CheckedChanged);
             // 
             // panel7
             // 
-            this.panel7.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel7.Controls.Add(this.label4);
-            this.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel7.ForeColor = System.Drawing.Color.White;
-            this.panel7.Location = new System.Drawing.Point(28, 100);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(320, 41);
-            this.panel7.TabIndex = 51;
+            addAbonent.panel7.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            addAbonent.panel7.Controls.Add(addAbonent.label4);
+            addAbonent.panel7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.panel7.ForeColor = System.Drawing.Color.White;
+            addAbonent.panel7.Location = new System.Drawing.Point(28, 100);
+            addAbonent.panel7.Name = "panel7";
+            addAbonent.panel7.Size = new System.Drawing.Size(320, 41);
+            addAbonent.panel7.TabIndex = 51;
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(84, 2);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(205, 25);
-            this.label4.TabIndex = 1;
-            this.label4.Text = "არჩეული გრაფიკი";
+            addAbonent.label4.AutoSize = true;
+            addAbonent.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.label4.ForeColor = System.Drawing.Color.White;
+            addAbonent.label4.Location = new System.Drawing.Point(84, 2);
+            addAbonent.label4.Name = "label4";
+            addAbonent.label4.Size = new System.Drawing.Size(205, 25);
+            addAbonent.label4.TabIndex = 1;
+            addAbonent.label4.Text = "არჩეული გრაფიკი";
             // 
             // archeuligrafiki
             // 
-            this.archeuligrafiki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.archeuligrafiki.FormattingEnabled = true;
-            this.archeuligrafiki.Location = new System.Drawing.Point(28, 143);
-            this.archeuligrafiki.Name = "archeuligrafiki";
-            this.archeuligrafiki.Size = new System.Drawing.Size(320, 106);
-            this.archeuligrafiki.TabIndex = 50;
+            addAbonent.archeuligrafiki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            addAbonent.archeuligrafiki.FormattingEnabled = true;
+            addAbonent.archeuligrafiki.Location = new System.Drawing.Point(28, 143);
+            addAbonent.archeuligrafiki.Name = "archeuligrafiki";
+            addAbonent.archeuligrafiki.Size = new System.Drawing.Size(320, 106);
+            addAbonent.archeuligrafiki.TabIndex = 50;
             // 
             // panel8
             // 
-            this.panel8.Controls.Add(this.dataGridView1);
-            this.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel8.Location = new System.Drawing.Point(0, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(759, 346);
-            this.panel8.TabIndex = 37;
+            addAbonent.panel8.Controls.Add(addAbonent.dataGridView1);
+            addAbonent.panel8.Dock = System.Windows.Forms.DockStyle.Fill;
+            addAbonent.panel8.Location = new System.Drawing.Point(0, 0);
+            addAbonent.panel8.Name = "panel8";
+            addAbonent.panel8.Size = new System.Drawing.Size(759, 346);
+            addAbonent.panel8.TabIndex = 37;
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
+            addAbonent.dataGridView1.AllowUserToAddRows = false;
+            addAbonent.dataGridView1.AllowUserToDeleteRows = false;
+            addAbonent.dataGridView1.AllowUserToResizeRows = false;
+            addAbonent.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            addAbonent.dataGridView1.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            addAbonent.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Sylfaen", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -456,17 +457,17 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.saati,
-            this.orshabati,
-            this.samshabati,
-            this.otxshabati,
-            this.xushabati,
-            this.paraskevi,
-            this.shabati,
-            this.kvira});
+            addAbonent.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            addAbonent.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            addAbonent.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            addAbonent.saati,
+            addAbonent.orshabati,
+            addAbonent.samshabati,
+            addAbonent.otxshabati,
+            addAbonent.xushabati,
+            addAbonent.paraskevi,
+            addAbonent.shabati,
+            addAbonent.kvira});
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -474,18 +475,18 @@
             dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(759, 346);
-            this.dataGridView1.TabIndex = 10;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShotaCopydataGridView1_CellClick_1);
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            addAbonent.dataGridView1.DefaultCellStyle = dataGridViewCellStyle10;
+            addAbonent.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
+            addAbonent.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            addAbonent.dataGridView1.MultiSelect = false;
+            addAbonent.dataGridView1.Name = "dataGridView1";
+            addAbonent.dataGridView1.ReadOnly = true;
+            addAbonent.dataGridView1.RowHeadersVisible = false;
+            addAbonent.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            addAbonent.dataGridView1.Size = new System.Drawing.Size(759, 346);
+            addAbonent.dataGridView1.TabIndex = 10;
+            addAbonent.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(addAbonent.ShotaCopydataGridView1_CellClick_1);
+            addAbonent.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(addAbonent.dataGridView1_CellContentClick);
             // 
             // saati
             // 
@@ -493,189 +494,189 @@
             dataGridViewCellStyle2.ForeColor = System.Drawing.Color.DarkSlateGray;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Snow;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.DarkSlateGray;
-            this.saati.DefaultCellStyle = dataGridViewCellStyle2;
-            this.saati.HeaderText = "საათი";
-            this.saati.Name = "saati";
-            this.saati.ReadOnly = true;
-            this.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.saati.DefaultCellStyle = dataGridViewCellStyle2;
+            addAbonent.saati.HeaderText = "საათი";
+            addAbonent.saati.Name = "saati";
+            addAbonent.saati.ReadOnly = true;
+            addAbonent.saati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.saati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // orshabati
             // 
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
-            this.orshabati.HeaderText = "ორშაბათი";
-            this.orshabati.Name = "orshabati";
-            this.orshabati.ReadOnly = true;
-            this.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.orshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.orshabati.DefaultCellStyle = dataGridViewCellStyle3;
+            addAbonent.orshabati.HeaderText = "ორშაბათი";
+            addAbonent.orshabati.Name = "orshabati";
+            addAbonent.orshabati.ReadOnly = true;
+            addAbonent.orshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.orshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // samshabati
             // 
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
-            this.samshabati.HeaderText = "სამშაბათი";
-            this.samshabati.Name = "samshabati";
-            this.samshabati.ReadOnly = true;
-            this.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.samshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.samshabati.DefaultCellStyle = dataGridViewCellStyle4;
+            addAbonent.samshabati.HeaderText = "სამშაბათი";
+            addAbonent.samshabati.Name = "samshabati";
+            addAbonent.samshabati.ReadOnly = true;
+            addAbonent.samshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.samshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // otxshabati
             // 
             dataGridViewCellStyle5.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
-            this.otxshabati.HeaderText = "ოთხშაბათი";
-            this.otxshabati.Name = "otxshabati";
-            this.otxshabati.ReadOnly = true;
-            this.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.otxshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.otxshabati.DefaultCellStyle = dataGridViewCellStyle5;
+            addAbonent.otxshabati.HeaderText = "ოთხშაბათი";
+            addAbonent.otxshabati.Name = "otxshabati";
+            addAbonent.otxshabati.ReadOnly = true;
+            addAbonent.otxshabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.otxshabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // xushabati
             // 
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
-            this.xushabati.HeaderText = "ხუთშაბათი";
-            this.xushabati.Name = "xushabati";
-            this.xushabati.ReadOnly = true;
-            this.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.xushabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.xushabati.DefaultCellStyle = dataGridViewCellStyle6;
+            addAbonent.xushabati.HeaderText = "ხუთშაბათი";
+            addAbonent.xushabati.Name = "xushabati";
+            addAbonent.xushabati.ReadOnly = true;
+            addAbonent.xushabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.xushabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // paraskevi
             // 
             dataGridViewCellStyle7.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
-            this.paraskevi.HeaderText = "პარასკევი";
-            this.paraskevi.Name = "paraskevi";
-            this.paraskevi.ReadOnly = true;
-            this.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.paraskevi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.paraskevi.DefaultCellStyle = dataGridViewCellStyle7;
+            addAbonent.paraskevi.HeaderText = "პარასკევი";
+            addAbonent.paraskevi.Name = "paraskevi";
+            addAbonent.paraskevi.ReadOnly = true;
+            addAbonent.paraskevi.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.paraskevi.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // shabati
             // 
             dataGridViewCellStyle8.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shabati.DefaultCellStyle = dataGridViewCellStyle8;
-            this.shabati.HeaderText = "შაბათი";
-            this.shabati.Name = "shabati";
-            this.shabati.ReadOnly = true;
-            this.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.shabati.DefaultCellStyle = dataGridViewCellStyle8;
+            addAbonent.shabati.HeaderText = "შაბათი";
+            addAbonent.shabati.Name = "shabati";
+            addAbonent.shabati.ReadOnly = true;
+            addAbonent.shabati.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.shabati.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // kvira
             // 
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle9.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Bold);
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Silver;
-            this.kvira.DefaultCellStyle = dataGridViewCellStyle9;
-            this.kvira.HeaderText = "კვირა";
-            this.kvira.Name = "kvira";
-            this.kvira.ReadOnly = true;
-            this.kvira.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.kvira.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            addAbonent.kvira.DefaultCellStyle = dataGridViewCellStyle9;
+            addAbonent.kvira.HeaderText = "კვირა";
+            addAbonent.kvira.Name = "kvira";
+            addAbonent.kvira.ReadOnly = true;
+            addAbonent.kvira.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            addAbonent.kvira.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // panel11
             // 
-            this.panel11.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.panel11.Controls.Add(this.button4);
-            this.panel11.Controls.Add(this.buttonVadagas);
-            this.panel11.Controls.Add(this.button3);
-            this.panel11.Controls.Add(this.lblBack);
-            this.panel11.Controls.Add(this.lblNext);
-            this.panel11.Controls.Add(this.shenaxva);
-            this.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panel11.Location = new System.Drawing.Point(0, 346);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(759, 51);
-            this.panel11.TabIndex = 55;
+            addAbonent.panel11.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.panel11.Controls.Add(addAbonent.button4);
+            addAbonent.panel11.Controls.Add(addAbonent.buttonVadagas);
+            addAbonent.panel11.Controls.Add(addAbonent.button3);
+            addAbonent.panel11.Controls.Add(addAbonent.lblBack);
+            addAbonent.panel11.Controls.Add(addAbonent.lblNext);
+            addAbonent.panel11.Controls.Add(addAbonent.shenaxva);
+            addAbonent.panel11.Dock = System.Windows.Forms.DockStyle.Bottom;
+            addAbonent.panel11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.panel11.Location = new System.Drawing.Point(0, 346);
+            addAbonent.panel11.Name = "panel11";
+            addAbonent.panel11.Size = new System.Drawing.Size(759, 51);
+            addAbonent.panel11.TabIndex = 55;
             // 
             // button4
             // 
-            this.button4.BackColor = System.Drawing.Color.White;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(42, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(114, 34);
-            this.button4.TabIndex = 52;
-            this.button4.Text = "წაშლა";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.Button4_Click);
+            addAbonent.button4.BackColor = System.Drawing.Color.White;
+            addAbonent.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.button4.Location = new System.Drawing.Point(42, 6);
+            addAbonent.button4.Name = "button4";
+            addAbonent.button4.Size = new System.Drawing.Size(114, 34);
+            addAbonent.button4.TabIndex = 52;
+            addAbonent.button4.Text = "წაშლა";
+            addAbonent.button4.UseVisualStyleBackColor = false;
+            addAbonent.button4.Click += new System.EventHandler(addAbonent.Button4_Click);
             // 
             // buttonVadagas
             // 
-            this.buttonVadagas.Location = new System.Drawing.Point(200, 6);
-            this.buttonVadagas.Name = "buttonVadagas";
-            this.buttonVadagas.Size = new System.Drawing.Size(102, 34);
-            this.buttonVadagas.TabIndex = 51;
-            this.buttonVadagas.Text = "Edit";
-            this.buttonVadagas.UseVisualStyleBackColor = true;
-            this.buttonVadagas.Click += new System.EventHandler(this.buttonVadagas_Click);
+            addAbonent.buttonVadagas.Location = new System.Drawing.Point(200, 6);
+            addAbonent.buttonVadagas.Name = "buttonVadagas";
+            addAbonent.buttonVadagas.Size = new System.Drawing.Size(102, 34);
+            addAbonent.buttonVadagas.TabIndex = 51;
+            addAbonent.buttonVadagas.Text = "Edit";
+            addAbonent.buttonVadagas.UseVisualStyleBackColor = true;
+            addAbonent.buttonVadagas.Click += new System.EventHandler(addAbonent.buttonVadagas_Click);
             // 
             // button3
             // 
 
-            this.button3.BackColor = System.Drawing.Color.White;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Location = new System.Drawing.Point(557, 2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(165, 42);
-            this.button3.TabIndex = 50;
-            this.button3.Text = "რედაქტირება";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button2_Click_1);
+            addAbonent.button3.BackColor = System.Drawing.Color.White;
+            addAbonent.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            addAbonent.button3.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.button3.ForeColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.button3.Location = new System.Drawing.Point(557, 2);
+            addAbonent.button3.Name = "button3";
+            addAbonent.button3.Size = new System.Drawing.Size(165, 42);
+            addAbonent.button3.TabIndex = 50;
+            addAbonent.button3.Text = "რედაქტირება";
+            addAbonent.button3.UseVisualStyleBackColor = true;
+            addAbonent.button3.Click += new System.EventHandler(addAbonent.button2_Click_1);
             // 
             // lblBack
             // 
-            this.lblBack.AutoSize = true;
-            this.lblBack.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.lblBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBack.ForeColor = System.Drawing.Color.White;
-            this.lblBack.Location = new System.Drawing.Point(329, 5);
-            this.lblBack.Name = "lblBack";
-            this.lblBack.Size = new System.Drawing.Size(38, 39);
-            this.lblBack.TabIndex = 49;
-            this.lblBack.Text = "<";
-            this.lblBack.Click += new System.EventHandler(this.lblBack_Click_2);
+            addAbonent.lblBack.AutoSize = true;
+            addAbonent.lblBack.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.lblBack.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            addAbonent.lblBack.Cursor = System.Windows.Forms.Cursors.Hand;
+            addAbonent.lblBack.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblBack.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblBack.Location = new System.Drawing.Point(329, 5);
+            addAbonent.lblBack.Name = "lblBack";
+            addAbonent.lblBack.Size = new System.Drawing.Size(38, 39);
+            addAbonent.lblBack.TabIndex = 49;
+            addAbonent.lblBack.Text = "<";
+            addAbonent.lblBack.Click += new System.EventHandler(addAbonent.lblBack_Click_2);
             // 
             // lblNext
             // 
-            this.lblNext.AutoSize = true;
-            this.lblNext.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.lblNext.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNext.ForeColor = System.Drawing.Color.White;
-            this.lblNext.Location = new System.Drawing.Point(373, 5);
-            this.lblNext.Name = "lblNext";
-            this.lblNext.Size = new System.Drawing.Size(38, 39);
-            this.lblNext.TabIndex = 48;
-            this.lblNext.Text = ">";
-            this.lblNext.Click += new System.EventHandler(this.lblNext_Click_2);
+            addAbonent.lblNext.AutoSize = true;
+            addAbonent.lblNext.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.lblNext.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            addAbonent.lblNext.Cursor = System.Windows.Forms.Cursors.Hand;
+            addAbonent.lblNext.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.lblNext.ForeColor = System.Drawing.Color.White;
+            addAbonent.lblNext.Location = new System.Drawing.Point(373, 5);
+            addAbonent.lblNext.Name = "lblNext";
+            addAbonent.lblNext.Size = new System.Drawing.Size(38, 39);
+            addAbonent.lblNext.TabIndex = 48;
+            addAbonent.lblNext.Text = ">";
+            addAbonent.lblNext.Click += new System.EventHandler(addAbonent.lblNext_Click_2);
             // 
             // shenaxva
             // 
-            this.shenaxva.BackColor = System.Drawing.Color.White;
-            this.shenaxva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.shenaxva.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.shenaxva.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.shenaxva.Location = new System.Drawing.Point(557, 2);
-            this.shenaxva.Name = "shenaxva";
-            this.shenaxva.Size = new System.Drawing.Size(165, 42);
-            this.shenaxva.TabIndex = 12;
-            this.shenaxva.Text = "რეგისტრაცია";
-            this.shenaxva.UseVisualStyleBackColor = false;
-            this.shenaxva.Click += new System.EventHandler(this.shenaxva_Click_1);
+            addAbonent.shenaxva.BackColor = System.Drawing.Color.White;
+            addAbonent.shenaxva.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            addAbonent.shenaxva.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.shenaxva.ForeColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.shenaxva.Location = new System.Drawing.Point(557, 2);
+            addAbonent.shenaxva.Name = "shenaxva";
+            addAbonent.shenaxva.Size = new System.Drawing.Size(165, 42);
+            addAbonent.shenaxva.TabIndex = 12;
+            addAbonent.shenaxva.Text = "რეგისტრაცია";
+            addAbonent.shenaxva.UseVisualStyleBackColor = false;
+            addAbonent.shenaxva.Click += new System.EventHandler(addAbonent.shenaxva_Click_1);
             // 
             // splitter1
             // 
-            this.splitter1.Location = new System.Drawing.Point(0, 0);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 677);
-            this.splitter1.TabIndex = 57;
-            this.splitter1.TabStop = false;
+            addAbonent.splitter1.Location = new System.Drawing.Point(0, 0);
+            addAbonent.splitter1.Name = "splitter1";
+            addAbonent.splitter1.Size = new System.Drawing.Size(3, 677);
+            addAbonent.splitter1.TabIndex = 57;
+            addAbonent.splitter1.TabStop = false;
             // 
             // button2
             // 
@@ -690,70 +691,70 @@
 
 
 
-            this.button2.BackColor = System.Drawing.Color.White;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button2.Location = new System.Drawing.Point(1053, 695);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(173, 32);
-            this.button2.TabIndex = 56;
-            this.button2.Text = "რედაქტირება ტესტი";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            addAbonent.button2.BackColor = System.Drawing.Color.White;
+            addAbonent.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            addAbonent.button2.Font = new System.Drawing.Font("Sylfaen", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.button2.ForeColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.button2.Location = new System.Drawing.Point(1053, 695);
+            addAbonent.button2.Name = "button2";
+            addAbonent.button2.Size = new System.Drawing.Size(173, 32);
+            addAbonent.button2.TabIndex = 56;
+            addAbonent.button2.Text = "რედაქტირება ტესტი";
+            addAbonent.button2.UseVisualStyleBackColor = false;
+            addAbonent.button2.Click += new System.EventHandler(addAbonent.button2_Click_1);
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.White;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(883, 698);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(151, 28);
-            this.button1.TabIndex = 41;
-            this.button1.Text = "ტესტი";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            addAbonent.button1.BackColor = System.Drawing.Color.White;
+            addAbonent.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            addAbonent.button1.Font = new System.Drawing.Font("Sylfaen", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            addAbonent.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.button1.Location = new System.Drawing.Point(883, 698);
+            addAbonent.button1.Name = "button1";
+            addAbonent.button1.Size = new System.Drawing.Size(151, 28);
+            addAbonent.button1.TabIndex = 41;
+            addAbonent.button1.Text = "ტესტი";
+            addAbonent.button1.UseVisualStyleBackColor = false;
+            addAbonent.button1.Click += new System.EventHandler(addAbonent.button1_Click);
             // 
             // subscribtionPriceBindingSource
             // 
-            this.subscribtionPriceBindingSource.DataSource = typeof(SPSQLite.SubscribtionPrice);
+//            addAbonent.subscribtionPriceBindingSource.DataSource = typeof(SPSQLite.SubscribtionPrice);
             // 
             // AddAbonent
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(762, 677);
-            this.Controls.Add(this.panel2);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
-            this.Name = "AddAbonent";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "აბონენტის რეგისტრაცია";
-            this.panel2.ResumeLayout(false);
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
-            this.panel12.ResumeLayout(false);
-            this.panel12.PerformLayout();
-            this.panel14.ResumeLayout(false);
-            this.panel14.PerformLayout();
-            this.panel7.ResumeLayout(false);
-            this.panel7.PerformLayout();
-            this.panel8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.subscribtionPriceBindingSource)).EndInit();
-            this.ResumeLayout(false);
+            addAbonent.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            addAbonent.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            addAbonent.BackColor = System.Drawing.Color.DarkSlateGray;
+            addAbonent.ClientSize = new System.Drawing.Size(762, 677);
+            addAbonent.Controls.Add(addAbonent.panel2);
+            addAbonent.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            addAbonent.Name = "AddAbonent";
+            addAbonent.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            addAbonent.Text = "აბონენტის რეგისტრაცია";
+            addAbonent.panel2.ResumeLayout(false);
+            addAbonent.splitContainer1.Panel1.ResumeLayout(false);
+            addAbonent.splitContainer1.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)addAbonent.splitContainer1).EndInit();
+            addAbonent.splitContainer1.ResumeLayout(false);
+            addAbonent.panel3.ResumeLayout(false);
+            addAbonent.panel3.PerformLayout();
+            addAbonent.panel4.ResumeLayout(false);
+            addAbonent.panel4.PerformLayout();
+            addAbonent.panel6.ResumeLayout(false);
+            addAbonent.panel6.PerformLayout();
+            addAbonent.panel12.ResumeLayout(false);
+            addAbonent.panel12.PerformLayout();
+            addAbonent.panel14.ResumeLayout(false);
+            addAbonent.panel14.PerformLayout();
+            addAbonent.panel7.ResumeLayout(false);
+            addAbonent.panel7.PerformLayout();
+            addAbonent.panel8.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)addAbonent.dataGridView1).EndInit();
+            addAbonent.panel11.ResumeLayout(false);
+            addAbonent.panel11.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)addAbonent.subscribtionPriceBindingSource).EndInit();
+            addAbonent.ResumeLayout(false);
 
         }
 
