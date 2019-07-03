@@ -104,7 +104,7 @@
             this.label1.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label1.Location = new System.Drawing.Point(157, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(330, 42);
+            this.label1.Size = new System.Drawing.Size(485, 42);
             this.label1.TabIndex = 0;
             this.label1.Text = "ვადაგასული აბონენტები";
             // 
@@ -117,6 +117,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form4";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form4";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.datagridview4)).EndInit();

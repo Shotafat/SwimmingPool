@@ -25,7 +25,7 @@ namespace SwimmingPool
 
         public void ancient()
         {
-            var m = DBDB_old.FindAll(o => o.Schedule < DateTime.Now);
+            var m = DBDB_old.FindAll(o => o.Schedule.DayOfYear < DateTime.Now.DayOfYear);
 
             var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>();
 
@@ -57,10 +57,9 @@ namespace SwimmingPool
                                 ჯანმრთელობისცნობა = a.YesNO,
                                 ფასი = o.SubscriberPrice_.Price,
                                 საათი = o.SubscriberPrice_.NumberOfHours
-
                             }).ToList();
-            datagridview4.DataSource = fillgrid;
 
+            datagridview4.DataSource = fillgrid;
         }
 
         public List<object>    last()
@@ -81,42 +80,20 @@ namespace SwimmingPool
                 //var today = DateTime.Now.AddDays(-6);
                 //if (lastDate == today)
                 //{
-                var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<Subscription>();
-
-                var onlyDates = subscriptions;
+                var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
+            
+            var onlyDates = subscriptions;
 
 
 
                 var Name = subscriptions.Select(x => x.Subscriber_.Subscriptions.SubscribtionSchedule_);
 
 
-
-
-
-
-            //var r = schedule.Where(
-            //    .Select(g => new
-            //    {
-
-            //        აბონიმენტი = g.Subscription.IDnumber,
-            //        სახელი = g.Subscription.Subscriber_.Name,
-            //        გვარი = g.Subscription.Subscriber_.LastName,
-            //        ასაკი = Math.Round((DateTime.Now - g.Subscription.Subscriber_.DateOfBirth).TotalDays / 365, 0),
-
-            //        ფასი = g.Subscription.SubscriberPrice_.Price,
-            //        საათი = g.Subscription.SubscriberPrice_.NumberOfHours
-
-
-
-            //    }).ToList();
-
             List<object> r = new List<object>();
 
-
                  r = (from g in subscriptions
-                         where Convert.ToDateTime(g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Last().Schedule.Date.ToString("yyyy-MM-dd")) <= Convert.ToDateTime(DateTime.Now.AddDays(1).ToString("yyyy-MM-dd"))
-
-                         select new
+                      where g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date.DayOfYear).Last().Schedule.DayOfYear < DateTime.Now.DayOfYear
+                      select new
                          {
                              აბონიმენტი = g.IDnumber,
                              სახელი = g.Subscriber_.Name,
@@ -127,35 +104,16 @@ namespace SwimmingPool
                              საათი = g.SubscriberPrice_.NumberOfHours
                          }).ToList<object>();
 
-                datagridview4.DataSource = r;
-             
+                datagridview4.DataSource = r;         
            
-
-
-
-
             return r;
-
-
-
-
-
-
-
-
-
-
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             var stringNumber = datagridview4.SelectedCells[0].Value.ToString();
-
-
             var obj = ServiceInstances.Service().GetSubscriptionServices().GetData().FirstOrDefault(x => x.IDnumber == stringNumber);
-
             ServiceInstances.Service().GetSubscriptionServices().Delete(obj);
-
         }
 
 
@@ -169,26 +127,16 @@ namespace SwimmingPool
             return ScheduleList;
         }
 
-
-
-
-
         private void button2_Click(object sender, EventArgs e)
         {
-
             string selectedAbonentNumber = datagridview4.SelectedCells[0].Value.ToString();
-
 
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where
                 (x => x.IDnumber ==selectedAbonentNumber).FirstOrDefault();
 
-
-            Form1 A = new Form1();
+            Form1 A = new Form1();           
 
             HoursChek Hoursch = new HoursChek();
-
-
-
 
             var IDnumber = subscriptionByID.IDnumber.ToString();
             var LastName = subscriptionByID.Subscriber_.LastName;
@@ -201,25 +149,12 @@ namespace SwimmingPool
 
             List<DateTime> Dates = ScheduleList(selectedAbonentNumber);
             AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, true);
+            
             //abonent.Controls.Add(DataGridView datagridview1);
             A.EditFillGrid(abonent, Dates);
             this.Close();
 
             abonent.Show();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         }
     }
 }

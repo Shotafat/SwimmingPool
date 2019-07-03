@@ -1,0 +1,802 @@
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\x86\e_sqlite3.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\x64\e_sqlite3.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SwimmingPool.exe.config
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SwimmingPool.exe
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SwimmingPool.pdb
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\Microsoft.Win32.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\netstandard.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.AppContext.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Collections.Concurrent.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Collections.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Collections.NonGeneric.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Collections.Specialized.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.ComponentModel.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.ComponentModel.EventBasedAsync.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.ComponentModel.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.ComponentModel.TypeConverter.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Console.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Data.Common.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.Contracts.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.Debug.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.Process.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.StackTrace.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.Tools.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.TraceSource.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Diagnostics.Tracing.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Drawing.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Dynamic.Runtime.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Globalization.Calendars.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Globalization.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Globalization.Extensions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.Compression.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.Compression.ZipFile.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.FileSystem.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.FileSystem.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.FileSystem.Watcher.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.IsolatedStorage.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.MemoryMappedFiles.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.Pipes.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.IO.UnmanagedMemoryStream.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Linq.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Linq.Expressions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Linq.Parallel.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Linq.Queryable.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.Http.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.NameResolution.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.NetworkInformation.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.Ping.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.Requests.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.Security.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.Sockets.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.WebHeaderCollection.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.WebSockets.Client.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Net.WebSockets.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.ObjectModel.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Reflection.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Reflection.Extensions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Reflection.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Resources.Reader.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Resources.ResourceManager.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Resources.Writer.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Extensions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Handles.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.InteropServices.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Numerics.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Serialization.Formatters.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Serialization.Json.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Serialization.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Runtime.Serialization.Xml.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Claims.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Cryptography.Algorithms.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Cryptography.Csp.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Cryptography.Encoding.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Cryptography.Primitives.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.Principal.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Security.SecureString.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Text.Encoding.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Text.Encoding.Extensions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Text.RegularExpressions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.Overlapped.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.Tasks.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.Tasks.Parallel.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.Thread.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.ThreadPool.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Threading.Timer.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.ValueTuple.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Xml.ReaderWriter.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Xml.XDocument.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Xml.XmlDocument.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Xml.XmlSerializer.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Xml.XPath.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\System.Xml.XPath.XDocument.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SPSQLite.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLite-net.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLiteNetExtensions.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_green.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLitePCLRaw.core.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SPSQLite.pdb
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\Newtonsoft.Json.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLite-net.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\bin\Release\SQLiteNetExtensions.pdb
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.exe.config
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\Interop.InteropExtensionLib.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.csproj.ResolveComReference.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.AddAbonent.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.AddPriceForm.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.EditForm.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Form1.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Form2.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Form3.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Form4.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Graphics.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.HoursChek.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Limit.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.Properties.Resources.resources
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.csproj.CopyComplete
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.exe
+C:\Users\Admin\Desktop\SwimmingPool 1005\SwimmingPool\obj\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\x86\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\x64\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\Microsoft.Win32.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\netstandard.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.AppContext.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Collections.Concurrent.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Collections.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Collections.NonGeneric.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Collections.Specialized.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.ComponentModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.ComponentModel.EventBasedAsync.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.ComponentModel.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.ComponentModel.TypeConverter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Console.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Data.Common.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.Contracts.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.Debug.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.FileVersionInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.Process.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.StackTrace.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.Tools.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.TraceSource.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Diagnostics.Tracing.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Drawing.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Dynamic.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Globalization.Calendars.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Globalization.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Globalization.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.Compression.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.Compression.ZipFile.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.FileSystem.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.FileSystem.DriveInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.FileSystem.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.FileSystem.Watcher.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.IsolatedStorage.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.MemoryMappedFiles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.Pipes.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.IO.UnmanagedMemoryStream.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Linq.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Linq.Expressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Linq.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Linq.Queryable.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.Http.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.NameResolution.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.NetworkInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.Ping.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.Requests.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.Security.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.Sockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.WebHeaderCollection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.WebSockets.Client.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Net.WebSockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.ObjectModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Reflection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Reflection.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Reflection.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Resources.Reader.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Resources.ResourceManager.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Resources.Writer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Handles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.InteropServices.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Numerics.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Serialization.Formatters.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Serialization.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Runtime.Serialization.Xml.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Claims.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Cryptography.Csp.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.Principal.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Security.SecureString.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Text.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Text.Encoding.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Text.RegularExpressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.Overlapped.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.Tasks.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.Tasks.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.Thread.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.ThreadPool.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Threading.Timer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.ValueTuple.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Xml.ReaderWriter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Xml.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Xml.XmlDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Xml.XmlSerializer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Xml.XPath.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\System.Xml.XPath.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\Microsoft.Office.Interop.Excel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\Newtonsoft.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLite-net.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLiteNetExtensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_green.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_v2.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLitePCLRaw.core.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\stdole.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\Newtonsoft.Json.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLite-net.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\bin\Release\SQLiteNetExtensions.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\Interop.InteropExtensionLib.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.csproj.ResolveComReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.AddAbonent.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.AddPriceForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.EditForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Form1.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Form2.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Form3.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Form4.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Graphics.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.HoursChek.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Limit.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.Properties.Resources.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.csproj.GenerateResource.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.csproj.CopyComplete
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SwimmingPool\obj\Release\SwimmingPool.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.csprojAssemblyReference.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.exe.config
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\Interop.InteropExtensionLib.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.csproj.ResolveComReference.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.AddAbonent.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.AddPriceForm.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.EditForm.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Form1.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Form2.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Form3.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Form4.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Graphics.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.HoursChek.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Limit.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.Properties.Resources.resources
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.csproj.GenerateResource.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.exe
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\x86\e_sqlite3.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\x64\e_sqlite3.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SwimmingPool.exe.config
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SwimmingPool.exe
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SwimmingPool.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\Microsoft.Win32.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\netstandard.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.AppContext.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Collections.Concurrent.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Collections.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Collections.NonGeneric.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Collections.Specialized.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.ComponentModel.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.ComponentModel.EventBasedAsync.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.ComponentModel.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.ComponentModel.TypeConverter.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Console.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Data.Common.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.Contracts.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.Debug.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.FileVersionInfo.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.Process.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.StackTrace.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.Tools.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.TraceSource.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Diagnostics.Tracing.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Drawing.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Dynamic.Runtime.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Globalization.Calendars.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Globalization.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Globalization.Extensions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.Compression.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.Compression.ZipFile.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.FileSystem.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.FileSystem.DriveInfo.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.FileSystem.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.FileSystem.Watcher.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.IsolatedStorage.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.MemoryMappedFiles.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.Pipes.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.IO.UnmanagedMemoryStream.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Linq.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Linq.Expressions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Linq.Parallel.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Linq.Queryable.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.Http.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.NameResolution.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.NetworkInformation.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.Ping.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.Requests.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.Security.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.Sockets.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.WebHeaderCollection.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.WebSockets.Client.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Net.WebSockets.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.ObjectModel.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Reflection.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Reflection.Extensions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Reflection.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Resources.Reader.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Resources.ResourceManager.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Resources.Writer.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Extensions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Handles.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.InteropServices.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Numerics.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Formatters.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Json.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Xml.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Claims.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Cryptography.Algorithms.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Cryptography.Csp.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Cryptography.Encoding.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Cryptography.Primitives.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Cryptography.X509Certificates.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.Principal.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Security.SecureString.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Text.Encoding.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Text.Encoding.Extensions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Text.RegularExpressions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.Overlapped.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.Tasks.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.Tasks.Parallel.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.Thread.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.ThreadPool.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Threading.Timer.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.ValueTuple.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Xml.ReaderWriter.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Xml.XDocument.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Xml.XmlDocument.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Xml.XmlSerializer.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Xml.XPath.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\System.Xml.XPath.XDocument.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\Newtonsoft.Json.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SPSQLite.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLite-net.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLiteNetExtensions.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_green.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_v2.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLitePCLRaw.core.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SPSQLite.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\Newtonsoft.Json.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLite-net.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\bin\Release\SQLiteNetExtensions.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SwimmingPool\obj\Release\SwimmingPool.csproj.CopyComplete
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\x86\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\x64\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\Microsoft.Win32.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\netstandard.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.AppContext.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Collections.Concurrent.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Collections.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Collections.NonGeneric.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Collections.Specialized.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.ComponentModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.ComponentModel.EventBasedAsync.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.ComponentModel.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.ComponentModel.TypeConverter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Console.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Data.Common.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.Contracts.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.Debug.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.FileVersionInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.Process.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.StackTrace.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.Tools.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.TraceSource.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Diagnostics.Tracing.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Drawing.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Dynamic.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Globalization.Calendars.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Globalization.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Globalization.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.Compression.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.Compression.ZipFile.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.FileSystem.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.FileSystem.DriveInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.FileSystem.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.FileSystem.Watcher.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.IsolatedStorage.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.MemoryMappedFiles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.Pipes.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.IO.UnmanagedMemoryStream.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Linq.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Linq.Expressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Linq.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Linq.Queryable.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.Http.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.NameResolution.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.NetworkInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.Ping.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.Requests.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.Security.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.Sockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.WebHeaderCollection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.WebSockets.Client.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Net.WebSockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.ObjectModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Reflection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Reflection.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Reflection.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Resources.Reader.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Resources.ResourceManager.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Resources.Writer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Handles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.InteropServices.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Numerics.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Formatters.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Runtime.Serialization.Xml.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Claims.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Cryptography.Csp.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.Principal.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Security.SecureString.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Text.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Text.Encoding.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Text.RegularExpressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.Overlapped.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.Tasks.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.Tasks.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.Thread.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.ThreadPool.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Threading.Timer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.ValueTuple.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Xml.ReaderWriter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Xml.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Xml.XmlDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Xml.XmlSerializer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Xml.XPath.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\System.Xml.XPath.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\Microsoft.Office.Interop.Excel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\Newtonsoft.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLite-net.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLiteNetExtensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_green.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_v2.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLitePCLRaw.core.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\stdole.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\Newtonsoft.Json.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLite-net.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\bin\Release\SQLiteNetExtensions.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\Interop.InteropExtensionLib.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.csproj.ResolveComReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.AddAbonent.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.AddPriceForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.EditForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Form1.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Form2.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Form3.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Form4.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Graphics.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.HoursChek.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Limit.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.Properties.Resources.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.csproj.GenerateResource.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.csproj.CopyComplete
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SwimmingPool\obj\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\x86\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\x64\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\Microsoft.Win32.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\netstandard.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.AppContext.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Collections.Concurrent.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Collections.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Collections.NonGeneric.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Collections.Specialized.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.ComponentModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.ComponentModel.EventBasedAsync.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.ComponentModel.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.ComponentModel.TypeConverter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Console.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Data.Common.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.Contracts.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.Debug.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.FileVersionInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.Process.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.StackTrace.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.Tools.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.TraceSource.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Diagnostics.Tracing.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Drawing.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Dynamic.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Globalization.Calendars.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Globalization.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Globalization.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.Compression.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.Compression.ZipFile.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.FileSystem.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.FileSystem.DriveInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.FileSystem.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.FileSystem.Watcher.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.IsolatedStorage.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.MemoryMappedFiles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.Pipes.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.IO.UnmanagedMemoryStream.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Linq.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Linq.Expressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Linq.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Linq.Queryable.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.Http.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.NameResolution.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.NetworkInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.Ping.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.Requests.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.Security.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.Sockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.WebHeaderCollection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.WebSockets.Client.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Net.WebSockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.ObjectModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Reflection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Reflection.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Reflection.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Resources.Reader.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Resources.ResourceManager.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Resources.Writer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Handles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.InteropServices.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Numerics.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Serialization.Formatters.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Serialization.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Runtime.Serialization.Xml.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Claims.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Cryptography.Csp.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.Principal.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Security.SecureString.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Text.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Text.Encoding.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Text.RegularExpressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.Overlapped.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.Tasks.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.Tasks.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.Thread.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.ThreadPool.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Threading.Timer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.ValueTuple.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Xml.ReaderWriter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Xml.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Xml.XmlDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Xml.XmlSerializer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Xml.XPath.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\System.Xml.XPath.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\Newtonsoft.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLite-net.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLiteNetExtensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_green.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_v2.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLitePCLRaw.core.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\Newtonsoft.Json.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLite-net.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\bin\Release\SQLiteNetExtensions.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\Interop.InteropExtensionLib.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.csproj.ResolveComReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.AddAbonent.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.AddPriceForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.EditForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Form1.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Form2.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Form3.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Form4.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Graphics.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.HoursChek.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Limit.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.Properties.Resources.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.csproj.GenerateResource.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.csproj.CopyComplete
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SwimmingPool\obj\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\x86\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\x64\e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SwimmingPool.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\Microsoft.Win32.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\netstandard.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.AppContext.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Collections.Concurrent.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Collections.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Collections.NonGeneric.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Collections.Specialized.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.ComponentModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.ComponentModel.EventBasedAsync.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.ComponentModel.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.ComponentModel.TypeConverter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Console.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Data.Common.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.Contracts.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.Debug.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.FileVersionInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.Process.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.StackTrace.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.TextWriterTraceListener.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.Tools.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.TraceSource.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Diagnostics.Tracing.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Drawing.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Dynamic.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Globalization.Calendars.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Globalization.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Globalization.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.Compression.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.Compression.ZipFile.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.FileSystem.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.FileSystem.DriveInfo.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.FileSystem.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.FileSystem.Watcher.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.IsolatedStorage.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.MemoryMappedFiles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.Pipes.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.IO.UnmanagedMemoryStream.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Linq.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Linq.Expressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Linq.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Linq.Queryable.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.Http.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.NameResolution.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.NetworkInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.Ping.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.Requests.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.Security.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.Sockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.WebHeaderCollection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.WebSockets.Client.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Net.WebSockets.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.ObjectModel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Reflection.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Reflection.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Reflection.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Resources.Reader.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Resources.ResourceManager.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Resources.Writer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.CompilerServices.VisualC.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Handles.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.InteropServices.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Numerics.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Serialization.Formatters.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Serialization.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Serialization.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Runtime.Serialization.Xml.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Claims.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Cryptography.Algorithms.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Cryptography.Csp.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Cryptography.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Cryptography.Primitives.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Cryptography.X509Certificates.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.Principal.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Security.SecureString.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Text.Encoding.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Text.Encoding.Extensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Text.RegularExpressions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.Overlapped.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.Tasks.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.Tasks.Parallel.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.Thread.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.ThreadPool.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Threading.Timer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.ValueTuple.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Xml.ReaderWriter.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Xml.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Xml.XmlDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Xml.XmlSerializer.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Xml.XPath.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\System.Xml.XPath.XDocument.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\Newtonsoft.Json.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLite-net.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLiteNetExtensions.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_green.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLitePCLRaw.batteries_v2.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLitePCLRaw.core.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLitePCLRaw.provider.e_sqlite3.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\Newtonsoft.Json.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLite-net.xml
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\bin\Release\SQLiteNetExtensions.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.exe.config
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\Interop.InteropExtensionLib.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.csproj.ResolveComReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.AddAbonent.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.AddPriceForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.EditForm.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Form1.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Form2.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Form3.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Form4.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Graphics.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.HoursChek.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Limit.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.Properties.Resources.resources
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.csproj.GenerateResource.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.csproj.CopyComplete
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.exe
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SwimmingPool\obj\Release\SwimmingPool.pdb

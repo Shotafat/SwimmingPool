@@ -1,0 +1,79 @@
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\SPSQLite.deps.json
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\SPSQLite.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\SPSQLite.pdb
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Windows.Forms.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\Accessibility.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Deployment.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Windows.Forms.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Security.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Configuration.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\Accessibility.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Deployment.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\bin\Release\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfo.cs
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CopyComplete
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.dll
+C:\Users\Admin\Desktop\SwimmingPool 1005\SPSQLite\obj\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\bin\Release\netstandard2.0\SPSQLite.deps.json
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\bin\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\bin\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfo.cs
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\obj\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 1405\SPSQLite\obj\Release\netstandard2.0\SPSQLite.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\SPSQLite.deps.json
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\SPSQLite.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\SPSQLite.pdb
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Windows.Forms.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Security.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Configuration.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\Accessibility.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Deployment.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Windows.Forms.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Security.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Configuration.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\Accessibility.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Deployment.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\bin\Release\netstandard2.0\System.Runtime.Serialization.Formatters.Soap.xml
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfo.cs
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CopyComplete
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.dll
+C:\Users\Nick\Desktop\SwimmingPool 2005 2.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\bin\Release\netstandard2.0\SPSQLite.deps.json
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\bin\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\bin\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfo.cs
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.0\SPSQLite\obj\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\bin\Release\netstandard2.0\SPSQLite.deps.json
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\bin\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\bin\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfo.cs
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\obj\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 2005 3.1\SPSQLite\obj\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\bin\Release\netstandard2.0\SPSQLite.deps.json
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\bin\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\bin\Release\netstandard2.0\SPSQLite.pdb
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csprojAssemblyReference.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\obj\Release\netstandard2.0\SPSQLite.csproj.CoreCompileInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfoInputs.cache
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\obj\Release\netstandard2.0\SPSQLite.AssemblyInfo.cs
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\obj\Release\netstandard2.0\SPSQLite.dll
+D:\Users\varamashvili-n\Desktop\SwimmingPool 0506\SPSQLite\obj\Release\netstandard2.0\SPSQLite.pdb

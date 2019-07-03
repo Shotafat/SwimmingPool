@@ -18,23 +18,38 @@ namespace SwimmingPool
             InitializeComponent();
         }
 
+        public AddPriceForm(string Hours)
+        {
+            InitializeComponent();
+            if (textBox2.Text != null)
+            {
+                textBox2.Text = Hours.ToString();
+            }
+        }
+
+        public AddPriceForm(SPSQLite.ISubscriptionPrice p)
+        {
+            InitializeComponent();
+            if (textBox2.Text != null)
+            {
+                textBox2.Text = p.NumberOfHours.ToString();
+                textBox3.Text = p.Price.ToString();
+            }
+        }
+
+        AddAbonent add = new AddAbonent();
         protected override void OnLoad(EventArgs e)
         {
-             
-
-            base.OnLoad(e); 
+            base.OnLoad(e);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-           var Object =  ServiceInstances.Service().CreateObject(int.Parse(textBox2.Text), double.Parse(textBox3.Text));
-           ServiceInstances.Service().GetSubscriptionPriceServices().Add(Object);
+            var Object = ServiceInstances.Service().CreateObject(int.Parse(textBox2.Text), double.Parse(textBox3.Text));
+            ServiceInstances.Service().GetSubscriptionPriceServices().Add(Object);
 
             DialogResult = DialogResult.OK;
-            
-            Close();
-
-
+            this.Close();
         }
     }
 }

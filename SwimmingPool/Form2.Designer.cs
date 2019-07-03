@@ -38,9 +38,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.subcsriptionPriceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.button3 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.subcsriptionPriceBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numberOfHoursDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.priceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,19 +100,23 @@
             this.dataGridView1.GridColor = System.Drawing.Color.White;
             this.dataGridView1.Location = new System.Drawing.Point(12, 88);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(433, 256);
+            this.dataGridView1.Size = new System.Drawing.Size(433, 215);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // subcsriptionPriceBindingSource1
+            // 
+            this.subcsriptionPriceBindingSource1.DataSource = typeof(SPSQLite.CLASSES.SubcsriptionPrice);
             // 
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.White;
             this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.Location = new System.Drawing.Point(461, 230);
+            this.button3.Location = new System.Drawing.Point(307, 319);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(138, 41);
             this.button3.TabIndex = 2;
-            this.button3.Text = "წაშლა";
+            this.button3.Text = "რედაქტირება";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -121,7 +125,7 @@
             this.button1.BackColor = System.Drawing.Color.White;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.Location = new System.Drawing.Point(461, 136);
+            this.button1.Location = new System.Drawing.Point(12, 319);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(138, 43);
             this.button1.TabIndex = 3;
@@ -129,24 +133,25 @@
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // subcsriptionPriceBindingSource1
-            // 
-            this.subcsriptionPriceBindingSource1.DataSource = typeof(SPSQLite.CLASSES.SubcsriptionPrice);
-            // 
             // iDDataGridViewTextBoxColumn
             // 
             this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.iDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle2;
+            this.iDDataGridViewTextBoxColumn.FillWeight = 77.39362F;
             this.iDDataGridViewTextBoxColumn.HeaderText = "ნომერი";
+            this.iDDataGridViewTextBoxColumn.MinimumWidth = 50;
             this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
             // 
             // numberOfHoursDataGridViewTextBoxColumn
             // 
             this.numberOfHoursDataGridViewTextBoxColumn.DataPropertyName = "NumberOfHours";
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.numberOfHoursDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.numberOfHoursDataGridViewTextBoxColumn.HeaderText = "საათების ტაოდენობა";
+            this.numberOfHoursDataGridViewTextBoxColumn.FillWeight = 196.7181F;
+            this.numberOfHoursDataGridViewTextBoxColumn.HeaderText = "საათების რაოდენობა";
+            this.numberOfHoursDataGridViewTextBoxColumn.MinimumWidth = 130;
             this.numberOfHoursDataGridViewTextBoxColumn.Name = "numberOfHoursDataGridViewTextBoxColumn";
             // 
             // priceDataGridViewTextBoxColumn
@@ -154,7 +159,9 @@
             this.priceDataGridViewTextBoxColumn.DataPropertyName = "Price";
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Sylfaen", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.priceDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.priceDataGridViewTextBoxColumn.FillWeight = 25.88832F;
             this.priceDataGridViewTextBoxColumn.HeaderText = "ფასი";
+            this.priceDataGridViewTextBoxColumn.MinimumWidth = 50;
             this.priceDataGridViewTextBoxColumn.Name = "priceDataGridViewTextBoxColumn";
             // 
             // Form2
@@ -162,14 +169,15 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(611, 374);
+            this.ClientSize = new System.Drawing.Size(457, 374);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form2";
-            this.Text = "Form2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "აბონემენტის პაკეტი";
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -187,9 +195,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.BindingSource subcsriptionPriceBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn numberOfHoursDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource subcsriptionPriceBindingSource1;
     }
 }

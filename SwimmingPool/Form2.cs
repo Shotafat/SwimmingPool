@@ -10,9 +10,11 @@ namespace SwimmingPool
     {
         public string NumberofHour { get; set; }
         public string SelectedRowPrice { get; set; }
+
         public Form2()
         {
             InitializeComponent();
+            button3.Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,6 +42,7 @@ namespace SwimmingPool
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = ServiceInstances.Service().GetSubscriptionPriceServices().GetData();
+            dataGridView1.Columns[0].Visible = false;            
         }
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -58,23 +61,30 @@ namespace SwimmingPool
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
-
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
-
                 string a = Convert.ToString(selectedRow.Cells[0].Value);
 
                 var gela = ServiceInstances.Service().GetSubscriptionPriceServices().GetData()
                     .Where(x => x.ID == int.Parse(a)).FirstOrDefault();
 
-                ServiceInstances.Service().GetSubscriptionPriceServices().Delete(gela);
+                AddPriceForm addform = new AddPriceForm(gela);
+                addform.ShowDialog();
 
-                foreach (var item in ServiceInstances.Service().GetSubscriptionPriceServices().GetData())
+                ServiceInstances.Service().GetSubscriptionPriceServices().Edit(gela);
+
+                if (addform.DialogResult == DialogResult.OK)
                 {
-                    Console.WriteLine(item.ID);
+                    var gelas = ServiceInstances.Service().GetSubscriptionPriceServices().GetData();
+                    Form2_Load(sender, e);
                 }
 
-                var gelas = ServiceInstances.Service().GetSubscriptionPriceServices().GetData();
-                Form2_Load(sender, e);
+                //ServiceInstances.Service().GetSubscriptionPriceServices().Delete(gela);
+
+                //foreach (var item in ServiceInstances.Service().GetSubscriptionPriceServices().GetData())
+                //{
+                //    Console.WriteLine(item.ID);
+                //}
+
             }
         }
     }

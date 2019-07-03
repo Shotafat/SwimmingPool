@@ -9,7 +9,6 @@ using System.Drawing;
 using System.Globalization;
 using System.Linq;
 using System.Windows.Forms;
-using SPSQLite;
 using SQLiteNetExtensions.Extensions;
 
 namespace SwimmingPool
@@ -23,6 +22,8 @@ namespace SwimmingPool
         DateTime FinalDate = new DateTime();
         string AbonimentisnomeriVdagasulebidan;
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
+        bool registation = true;
+        bool editing = false;
         #region shott
         //შოთა - გამოიყენება დეითების შესავსებად
         public Dictionary<int, List<DateTime>> DateDic = new Dictionary<int, List<DateTime>>();
@@ -46,14 +47,25 @@ namespace SwimmingPool
         public DateTime CurrentDateValue { get; private set; } = DateTime.Now.Date;
         #endregion
 
-    
+        //Add new Abonent
         public AddAbonent()
         {
             InitializeComponent();
+
             ISubscription subscription = new SPSQLite.CLASSES.Subscription();
             subscription = GenerateSubscribtionID(subscription);
             var LastId = subscription.IDnumber;
             abonenti.Text = LastId;
+
+            //HasInquiry
+            diax.Checked = false;
+            ara.Checked = true;
+
+            shenaxva.Cursor = Cursors.No;
+            shenaxva.Enabled = false;
+            shenaxva.ForeColor = Color.Red;
+            comboBox1.Enabled = false;
+
             grafiki();
             //InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
 
@@ -70,25 +82,43 @@ namespace SwimmingPool
             button4.Show();
             button3.Hide();
             button2.Hide();
-            //AssignGridData();
-            dataGridView1.Rows[0].ReadOnly = true;
-            dataGridView1.Rows[0].Selected = false;
-            dataGridView1.Rows[0].Frozen = true;
-            dataGridView1.Rows[0].Cells[1].ReadOnly = true;
 
-            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+            comboBox1.SelectedText = CheckedDayList.Count().ToString();
+            //comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
-
-
-           
+            if (CheckedDayList.Count > 0)
+            {
+                ChecHourWithGraphic();
+            }
         }
 
 
+        public void ChecHourWithGraphic()
+        {
+            var hour = DatabaseConnection.Conn.Table<SubscribtionPrice>().FirstOrDefault(x => x.NumberOfHours == CheckedDayList.Count);
 
-     
-       
+            if (hour == null)
+            {
+                DialogResult dialogResult = MessageBox.Show("ახალი პაკეტის დამატება", "მონიშნული საათების რაო" +
+                    "დენობა მეტია პაკეტზე", MessageBoxButtons.OKCancel);
+                if (dialogResult == DialogResult.OK)
+                {
+                    AddPriceForm price = new AddPriceForm();
+                    price.ShowDialog();
+                    if (price.DialogResult == DialogResult.OK)
+                    {
+                        comboBox1.DataSource = null;
+                        comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+                        comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Last().NumberOfHours;
+                    }
+                }
 
+                else if (dialogResult == DialogResult.Cancel)
+                {
 
+                }
+            }
+        }
 
 
         protected override void OnLoad(EventArgs e)
@@ -100,20 +130,20 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[1].ReadOnly = true;
             GetCellColorToday();
             gridFillter(dataGridView1, ThisMonday);
-            
         }
 
-        public AddAbonent(DateTime date):this()
+        public AddAbonent(DateTime date) : this()
         {
             CurrentDateValue = date;
-            
+
             buttonVadagas.Hide();
             button3.Hide();
             //AssignGridData();
-            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+            //comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+            comboBox1.Text = CheckedDayList.Count().ToString();
 
         }
-       
+
 
         public void FillCheckdayList(List<DateTime> DatabaseDates)
         {
@@ -123,34 +153,41 @@ namespace SwimmingPool
                 int rowindex = item.Hour - 8;
                 int columnindex = (int)item.DayOfWeek;
 
-                GridFormat AA = new GridFormat(1) { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
+                GridFormat AA = new GridFormat() { Day = item, X = rowindex, Y = columnindex, IsChecked = true };
                 CheckedDayList.Add(AA);
-
             }
-
-         
-
-
         }
 
-        //Abonimentis redaqtirebis konstruqtori
-        public AddAbonent(string IdNumber, string Name , string LastName, string phoneNumber, DateTime Age , string Adress , SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour) //:this()
+        //Editing an old Abonent
+
+        public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour, Availability HasInquiry) //:this()
         {
+
             InitializeComponent();
+
+            registation = false;
+            editing = true;
+            comboBox1.Enabled = false;
+
+            if (DatabaseScheduleDate.Count == 0)
+            {
+                button3.Enabled = false;
+                button3.ForeColor = Color.Red;
+            }
+
+
             dataGridView1.DataSource = null;
             ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
             //  grafiki(dataGridView1);
             Grafiki_edit(DatabaseScheduleDate[0]);
-           gridFillter(dataGridView1, ThisMonday);
+            gridFillter(dataGridView1, ThisMonday);
 
-        //    DrawGrid();
-
-
+            //    DrawGrid();
 
             AssignCurrentWeek(ThisMonday, dataGridView1);
-          
+
             // Grafiki_edit(dataGridView1);
             FillCheckdayList(DatabaseScheduleDate);
             abonenti.Text = IdNumber;
@@ -173,12 +210,22 @@ namespace SwimmingPool
             {
                 archeuligrafiki.Items.Add(item.Day.ToString());
             }
+
             archeuligrafiki.Sorted = true;
-           
+
+            if (HasInquiry == Availability.Yes)
+            {
+                diax.Checked = true;
+            }
+
+            else if (HasInquiry == Availability.No)
+            {
+                ara.Checked = true;
+            }
+
+            else
+                ara.Checked = false;
         }
-
-
-
 
         //GRAPHICS FORMIDAN GADMOTANIS KONSTRUQTORI
         public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, int numberofHour, bool A, bool B) //:this()
@@ -190,35 +237,43 @@ namespace SwimmingPool
             subscription = GenerateSubscribtionID(subscription);
             var LastId = subscription.IDnumber;
             abonenti.Text = LastId;
-
-
-
             //aq IF chavsva
-           // if(DatabaseScheduleDate.Count>0)
-            ThisMonday=GetCurrentMonday(DatabaseScheduleDate[0]);
+            // if(DatabaseScheduleDate.Count>0)
+            ThisMonday = GetCurrentMonday(DatabaseScheduleDate[0]);
             comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
 
             //  grafiki(dataGridView1);
-          //  if(DatabaseScheduleDate.Count>0)
+            //  if(DatabaseScheduleDate.Count>0)
             Grafiki_edit(DatabaseScheduleDate[0]);
             gridFillter(dataGridView1, ThisMonday);
 
             //    DrawGrid();
 
-
-
             AssignCurrentWeek(ThisMonday, dataGridView1);
 
             // Grafiki_edit(dataGridView1);
             FillCheckdayList(DatabaseScheduleDate);
-           // abonenti.Text = IdNumber;
+            // abonenti.Text = IdNumber;
             saxeli.Text = Name;
             gvari.Text = LastName;
             asaki.Text = string.Format("{0:MM/dd/yyyy}", Age); //Convert.ToDateTime(Age).ToString();
             telefoni.Text = phoneNumber.ToString();
             misamarti.Text = Adress;
 
-            comboBox1.SelectedItem = numberofHour;
+            if (comboBox1.Items.Contains(numberofHour))
+                comboBox1.SelectedItem = numberofHour;
+            if (!(DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList().Contains(numberofHour)))
+            {
+                AddPriceForm price = new AddPriceForm(numberofHour.ToString());
+                price.ShowDialog();
+
+                if (price.DialogResult == DialogResult.OK)
+                {
+                    this.comboBox1.DataSource = null;
+                    comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+                    comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList().Last();
+                }
+            }
 
 
             shenaxva.Show();
@@ -232,16 +287,7 @@ namespace SwimmingPool
                 archeuligrafiki.Items.Add(item.Day.ToString());
             }
             archeuligrafiki.Sorted = true;
-
         }
-
-
-
-
-
-
-
-
 
         //VADAGASULEBIS REDAQTIREBA
         public AddAbonent(string IdNumber, string Name, string LastName, string phoneNumber, DateTime Age, string Adress, SPSQLite.Subscription subscribtion, List<DateTime> DatabaseScheduleDate, bool Vadagasulebi) //:this()
@@ -272,29 +318,15 @@ namespace SwimmingPool
             shenaxva.Hide();
             buttonVadagas.Show();
             button3.Hide();
-
-           
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         public void GetCellColorToday()
         {
-            dataGridView1.Rows[0].Cells[daynumber].Style.BackColor = Color.SaddleBrown;
-            dataGridView1.Rows[0].Cells[daynumber].Style.ForeColor = Color.White;
+            if (CurrentWeekDays.Any(d => d.DayOfYear.Equals(DateTime.Now.DayOfYear)))
+            {
+                dataGridView1.Rows[0].Cells[daynumber].Style.BackColor = Color.SaddleBrown;
+                dataGridView1.Rows[0].Cells[daynumber].Style.ForeColor = Color.White;
+            }
         }
 
 
@@ -319,10 +351,10 @@ namespace SwimmingPool
             for (int i = 1; i <= 7; i++)
             {
                 var geoCulture = new CultureInfo("ka-GE");
-              
+
                 var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
 
-                
+
                 CurrentWeekDays.Add(CurrentMonday.AddDays(i - 1));
                 dataGridView1.Rows[0].Cells[i].Value = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
                 var nino = CurrentWeekDays[i - 1].ToString("dd MMMM", geoCulture);
@@ -446,7 +478,6 @@ namespace SwimmingPool
             var test = InputMethods.Filldata(Start, End);
             foreach (var item in InputMethods.DATAforInput)
             {
-
                 SubscriberSchedul.Rows[item.Date.Hour - 8].Cells[(int)item.Date.Date.DayOfWeek].Value = item.Datelist.ToString();
             }
             //PAST
@@ -576,8 +607,8 @@ namespace SwimmingPool
 
         public void Grafiki_edit(DateTime EditDate)
         {
-          //  HoursChek AAA = new HoursChek();
-            
+            //  HoursChek AAA = new HoursChek();
+
             //List<DateTime> DDD = AAA.ScheduleList();
 
             dataGridView1.DataSource = null;
@@ -618,13 +649,6 @@ namespace SwimmingPool
             dataGridView1.Rows[0].Cells[0].Value = " ";
             dataGridView1.DefaultCellStyle.SelectionBackColor = Color.Green;
         }
-
-
-
-
-
-
-
 
         private string getFormattedDate(DateTime dateTime)
         {
@@ -673,13 +697,6 @@ namespace SwimmingPool
             }
         }
 
-        //private void cmbxHour_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    SelectedHour = AbonentHours[cmbxHour.SelectedIndex];
-        //}
-
-
-
         public ISubscription GenerateSubscribtionID(ISubscription subscribtion)
         {
             //  Subscription : ISubscription
@@ -687,9 +704,28 @@ namespace SwimmingPool
 
             //var gel = ServiceInstances.Service().GetSubscriptionServices().GetData().Where(a => a.ID == gela.ID).FirstOrDefault();
             QuantityCounter.Quantity = QuantityCounter.QuantityIncrementer();
-            string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
-            subscribtion.IDnumber = SubscribtionNumber;
+            if (QuantityCounter.Quantity == 666)
+            {
+                ++QuantityCounter.Quantity;
+            }
 
+            if (QuantityCounter.Quantity < 1000)
+            {
+                string SubscribtionNumber = string.Format("A" + "{0:000}", QuantityCounter.Quantity);
+                subscribtion.IDnumber = SubscribtionNumber;
+            }
+
+            else if (QuantityCounter.Quantity > 1000 && QuantityCounter.Quantity < 2000)
+            {
+                string SubscribtionNumber = string.Format("B" + "{0:000}", QuantityCounter.Quantity);
+                subscribtion.IDnumber = SubscribtionNumber;
+            }
+
+            else
+            {
+                string SubscribtionNumber = string.Format("C" + "{0:000}", QuantityCounter.Quantity);
+                subscribtion.IDnumber = SubscribtionNumber;
+            }
             return subscribtion;
         }
 
@@ -702,11 +738,8 @@ namespace SwimmingPool
             foreach (var item in Hour)
             {
                 HourList.Add(item.Hours);
-
             }
         }
-
-
 
         public void Saver()
         {
@@ -721,12 +754,9 @@ namespace SwimmingPool
             IHealthNotice healthNotice = HealthNoticeSaver();
             List<ISubscriptionSchedule> Schedule = new List<ISubscriptionSchedule>();
             Schedule = Schedulereturner();
-           // MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
+            // MessageBox.Show("METODSHI SHESVLAMDE" + Schedule.Count.ToString());
             DatabaseConnection.insertSubscribtion(subscriber, SubPrice, subscription, healthNotice, Schedule);
             Dates.Clear();
-
-
-
         }
 
         public IHealthNotice HealthNoticeSaver()
@@ -769,46 +799,74 @@ namespace SwimmingPool
         //  SubcsriptionPrice : ISubscriptionPrice
         public ISubscriptionPrice SubPriceReturner()
         {
-           int Hour = Convert.ToInt32(comboBox1.SelectedValue);
-            SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = Hour };
+            int Hour = Convert.ToInt32(comboBox1.SelectedValue);
+            SubcsriptionPrice NewSubPR = new SubcsriptionPrice() { NumberOfHours = CheckedDayList.Count };
             return NewSubPR;
         }
 
 
         private void shenaxva_Click_1(object sender, EventArgs e)
         {
+            registation = true;
+            editing = false;
 
-            //string gela = asaki.Text;
-            //DateTime gela1 = DateTime.ParseExact(gela, "dd-MM-yyyy", CultureInfo.InvariantCulture);
-
-            //var gelag = ServiceInstances.Service().CreateObjectForSub( saxeli.Text, gvari.Text, gela1, telefoni.Text, misamarti.Text);
-
-            //ServiceInstances.Service().GetSubscriberService().Add(gelag);
             try
             {
-                Saver();
+                if (CheckedDayList.Count == 0)
+                {
+                    MessageBox.Show("გთხოვთ აირჩიოთ აბონენტის გრაფიკი!");
+                }
+
+                else if (!asaki.Text.Any(c => Char.IsNumber(c)))
+                {
+                    MessageBox.Show("გთხოვთ შეავსოთ აბონენტის დაბადების თარიღი");
+                }
+
+                bool consist = DatabaseConnection.Conn.Table<SubscribtionPrice>().Any(i => i.NumberOfHours == CheckedDayList.Count);
+
+               if(!consist)
+                {
+                    DialogResult dialogResult = MessageBox.Show("საათების რაოდენობა არ შეესაბამება პაკეტით განსაზღვრულს, დაარეგისტრირეთ ახალი პაკეტი", "Warning",
+                    MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        AddPriceForm price = new AddPriceForm();
+                        price.ShowDialog();
+                        if (price.DialogResult == DialogResult.OK)
+                        {
+                            //comboBox1.DataSource = null;
+                            //comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+                            comboBox1.SelectedItem = CheckedDayList.Count();
+                            Saver();
+                            this.Close();
+                        }
+                    }
+
+                    else if (dialogResult == DialogResult.Cancel)
+                    {
+                        this.Close();
+                    }
+
+                }
+
+                else
+                {
+                    Saver();
+                }                
+
             }
             catch
             {
-                MessageBox.Show("დაამატეთ საათების რაოდენობა");
-
+                MessageBox.Show("გთხოვთ დაამატეთ საათების რაოდენობა");
             }
-            //aq chavs
 
-            //Form1 form = new Form1();
-        
-//tu rame qveda ori xazi
-            this.DialogResult = DialogResult.OK;
+            DialogResult = DialogResult.OK;
             Close();
-            
-            //form.Refresh();
-
         }
 
 
         private void lblNext_Click_1(object sender, EventArgs e)
         {
-
         }
 
         private void lblBack_Click_1(object sender, EventArgs e)
@@ -820,7 +878,6 @@ namespace SwimmingPool
 
         public List<ISubscriptionSchedule> Schedulereturner()
         {
-
             // Dates = null;
             List<ISubscriptionSchedule> Schedule_ = new List<ISubscriptionSchedule>();
 
@@ -865,81 +922,71 @@ namespace SwimmingPool
 
         public void DateFormat()
         {
-       }
 
-
+        }
 
         private void ShotaCopydataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-           
+            if (e.ColumnIndex == 0 || e.RowIndex == -1)
+                return;
+
             if (dataGridView1.Columns[e.ColumnIndex].HeaderText == "კვირა")
             {
-                
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = false;
                 return;
             }
+
             if (e.ColumnIndex != 0 && e.RowIndex != 0)
             {
-
-                if (DatabaseConnection.Conn.Table<SPSQLite.CapacityDB>().Last().MaximumCapacity <= Convert.ToInt16(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
+                if (DatabaseConnection.Conn.Table<SPSQLite.CapacityDB>().Last().MaximumCapacity <= Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
                 {
                     MessageBox.Show("ლიმიტი ამოწურულია");
                 }
-
 
                 int Hour = (e.RowIndex + 8);
                 var Date = CurrentWeekDays[0 + e.ColumnIndex - 1];
                 DateTime FinalDate = new DateTime();
                 string _FinalDate = "";
-              if (Hour < 10)
+                if (Hour < 10)
                 {
                     _FinalDate = $"{Date.ToString("dd/MM/yyyy")} 0{Hour}:00";
                 }
-              else
+                else
                 {
                     _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                 }
 
-            
-              FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
-            //   Dates.Add(FinalDate);
+                //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
+                //   Dates.Add(FinalDate);
+                //________________________
 
-
-
-
-            //________________________
-                var id = CheckedDayList.Count;
-                GridFormat f = new GridFormat(id);
+                GridFormat f = new GridFormat();
                 f.X = e.RowIndex;
                 f.Y = e.ColumnIndex;
                 f.Day = FinalDate;
                 f.IsChecked = true;
 
-                if (CheckedDayList.Count == 0&&f.X!=-1)
+                if (f.X < 1 || f.Y < 1)
+                    return;
+
+                if (CheckedDayList.Count == 0 && f.X != -1)
                 {
-                CheckedDayList.Add(f);
-                dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
-                    dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor= Color.White;
+                    CheckedDayList.Add(f);
+                    dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                    dataGridView1.Rows[f.X].Cells[f.Y].Style.ForeColor = Color.White;
+                    dataGridView1.Rows[f.X].Cells[f.Y].Style.SelectionForeColor = Color.White;
                 }
 
-            else 
+                else
                 {
                     Checking(f);
                     DrawGrid(CurrentWeekDays);
                 }
 
-
                 var lbl = CheckedDayList.Count();
                 //lblHours.Text = lbl.ToString();
-
-                
-            }
-            else
-            {
-                dataGridView1.Rows[e.RowIndex].Cells[0].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
-                dataGridView1.Rows[e.RowIndex].Cells[0].Selected = false;
-
 
                 archeuligrafiki.Items.Clear();
 
@@ -947,53 +994,93 @@ namespace SwimmingPool
                 {
                     archeuligrafiki.Items.Add(item.Day.ToString());
                 }
-
-
                 archeuligrafiki.Sorted = true;
-
-
-
-
-
-
-
-
+            }
+            else
+            {
+                dataGridView1.Rows[e.RowIndex].Cells[0].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
+                dataGridView1.Rows[e.RowIndex].Cells[0].Selected = false;
             }
 
             // საათების რაოდენობა
 
-            var gela = Convert.ToInt32(comboBox1.SelectedItem);
-           
-            if (DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).Contains(CheckedDayList.Count))
-            {
-                var num = CheckedDayList.Count;
-                var nino = DatabaseConnection.Conn.Table<SubscribtionPrice>().FirstOrDefault(x => x.NumberOfHours == num);
-                comboBox1.SelectedItem = nino.NumberOfHours;
-               
-            }
-           else  if (CheckedDayList.Count > gela)
+            comboBox1.Text = String.Empty;
+            comboBox1.SelectedText = CheckedDayList.Count.ToString();
+
+            //var nino = DatabaseConnection.Conn.Table<SubscribtionPrice>().FirstOrDefault(x => x.NumberOfHours == CheckedDayList.Count);
+
+
+            //if (DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).Contains(CheckedDayList.Count))
+            //{
+            //    var num = CheckedDayList.Count;
+            //    var nino = DatabaseConnection.Conn.Table<SubscribtionPrice>().FirstOrDefault(x => x.NumberOfHours == num);
+            //    comboBox1.SelectedItem = nino.NumberOfHours;
+            //}
+
+            //else if (CheckedDayList.Count > gela)
+            //{
+
+            //    DialogResult dialogResult = MessageBox.Show("ახალი პაკეტის დამატება", "მონიშნული საათების რაო" +
+            //        "დენობა მეტია პაკეტზე", MessageBoxButtons.OKCancel);
+            //    if (dialogResult == DialogResult.OK)
+            //    {
+            //        AddPriceForm price = new AddPriceForm();
+            //        price.ShowDialog();
+            //        if (price.DialogResult == DialogResult.OK)
+            //        {
+            //            comboBox1.DataSource = null;
+            //            comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+            //            comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Last().NumberOfHours;
+            //        }
+            //    }
+
+            //    else if (dialogResult == DialogResult.Cancel)
+            //    {
+
+            //    }
+
+
+            //}
+
+            if (CheckedDayList.Count > 0)
             {
 
-                DialogResult dialogResult = MessageBox.Show("ახალი პაკეტის დამატება", "მონიშნული საათბის რაო" +
-                    "დენობამეტია პაკეტზე", MessageBoxButtons.OKCancel);
-                if (dialogResult == DialogResult.OK)
+                if (registation)
                 {
-                    AddPriceForm price = new AddPriceForm();
-                    price.ShowDialog();
-                    if (price.DialogResult == DialogResult.OK)
-                    {
-                        comboBox1.DataSource = null;
-                        comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
-                        comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Last().NumberOfHours;
-                    }
+                    button3.Enabled = false;
+                    button3.ForeColor = Color.Red;
+                    button3.Cursor = Cursors.No;
+
+                    shenaxva.Enabled = true;
+                    shenaxva.ForeColor = Color.DarkSlateGray;
+                    shenaxva.Cursor = Cursors.Hand;
                 }
-                else if (dialogResult == DialogResult.Cancel)
+
+                else if (editing)
                 {
-                  
+                    button3.Enabled = true;
+                    button3.ForeColor = Color.DarkSlateGray;
+                    button3.Cursor = Cursors.Hand;
+
+                    shenaxva.Enabled = false;
+                    shenaxva.ForeColor = Color.Red;
+                    shenaxva.Cursor = Cursors.No;
                 }
             }
-           
+
+            else
+            {
+                button3.Enabled = false;
+                button3.ForeColor = Color.Red;
+                button3.Cursor = Cursors.No;
+
+                shenaxva.Enabled = false;
+                shenaxva.ForeColor = Color.Red;
+                shenaxva.Cursor = Cursors.No;
+            }
+
         }
+
 
         private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -1009,10 +1096,12 @@ namespace SwimmingPool
 
                 foreach (var item in currentGrid)
                 {
-                    if(item.X!=-1)
-                    { 
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
-                    dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
+                    if (item.X != -1)
+                    {
+                        dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
+                        dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
+                        dataGridView1.Rows[item.X].Cells[item.Y].Style.ForeColor = Color.White;
+                        dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionForeColor = Color.White;
                     }
                 }
             }
@@ -1021,21 +1110,21 @@ namespace SwimmingPool
         }
 
 
-
-
-
         public void Checking(GridFormat obj)
         {
-            bool value = CheckedDayList.Any(o => o.Day == obj.Day && o.Y == obj.Y && o.X == obj.X);
-            bool value2 = CheckedDayList.Any(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X);
+            var list = CheckedDayList;
+            bool value = CheckedDayList.Any(o => o.Day.DayOfYear == obj.Day.DayOfYear && o.Y == obj.Y && o.X == obj.X);
+            bool value2 = CheckedDayList.Any(x => x.Day.DayOfYear == obj.Day.DayOfYear && x.Y == obj.Y && x.X != obj.X);
 
             if (value2)
             {
-                var OriginObj = CheckedDayList.Where(x => x.Day == obj.Day && x.Y == obj.Y && x.X != obj.X).FirstOrDefault();
+                var OriginObj = CheckedDayList.Where(x => x.Day.DayOfYear == obj.Day.DayOfYear && x.Y == obj.Y && x.X != obj.X).FirstOrDefault();
                 var _id = CheckedDayList.IndexOf(OriginObj);
 
                 dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.SelectionBackColor = Color.White;
                 dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.BackColor = Color.White;
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.ForeColor = Color.Gray;
+                dataGridView1.Rows[OriginObj.X].Cells[OriginObj.Y].Style.SelectionForeColor = Color.Gray;
 
                 CheckedDayList[_id] = obj;
                 return;
@@ -1044,12 +1133,14 @@ namespace SwimmingPool
 
             if (value)
             {
-                var result = CheckedDayList.Where(x => x.Day == obj.Day && x.X == obj.X && x.Y == obj.Y).FirstOrDefault();
+                var result = CheckedDayList.Where(x => x.Day.DayOfYear == obj.Day.DayOfYear && x.X == obj.X && x.Y == obj.Y).FirstOrDefault();
                 CheckedDayList.Remove(result);
-                if (obj.X!=-1)
-                { 
-                dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
-                dataGridView1.Rows[obj.X].Cells[obj.Y].Style.BackColor = Color.White;
+                if (obj.X != -1)
+                {
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionBackColor = Color.White;
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.BackColor = Color.White;
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.ForeColor = Color.Gray;
+                    dataGridView1.Rows[obj.X].Cells[obj.Y].Style.SelectionForeColor = Color.Gray;
                 }
             }
 
@@ -1058,7 +1149,16 @@ namespace SwimmingPool
                 CheckedDayList.Add(obj);
             }
             var testlit2 = CheckedDayList;
+
+            archeuligrafiki.Items.Clear();
+
+            foreach (var item in CheckedDayList)
+            {
+                archeuligrafiki.Items.Add(item.Day.ToString());
+            }
+            archeuligrafiki.Sorted = true;
         }
+
 
         public void DrawGrid()
         {
@@ -1070,10 +1170,12 @@ namespace SwimmingPool
                 {
                     dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionBackColor = Color.DarkSlateGray;
                     dataGridView1.Rows[item.X].Cells[item.Y].Style.BackColor = Color.DarkSlateGray;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.ForeColor = Color.White;
+                    dataGridView1.Rows[item.X].Cells[item.Y].Style.SelectionForeColor = Color.White;
                 }
             }
             else
-                return;                
+                return;
         }
 
 
@@ -1114,17 +1216,17 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-             //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                    //       MessageBox.Show("წინ ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     DictionaryValues.Add(FinalDate);
-//  Dates.Add(FinalDate);
+                    //  Dates.Add(FinalDate);
                 }
             }
-            if(!DictDate.ContainsKey(Pagenumber))
-            DictDate.Add(Pagenumber, DictionaryValues);
+            if (!DictDate.ContainsKey(Pagenumber))
+                DictDate.Add(Pagenumber, DictionaryValues);
             Pagenumber = Pagenumber + 1;
-           // MessageBox.Show(Pagenumber.ToString());
+            // MessageBox.Show(Pagenumber.ToString());
         }
 
 
@@ -1167,13 +1269,13 @@ namespace SwimmingPool
             else
                 DictDate[Pagenumber] = DictionaryValues;
             //Pagenumber = Pagenumber + 1;
- //           MessageBox.Show(Pagenumber.ToString());
+            //           MessageBox.Show(Pagenumber.ToString());
         }
 
         public void DatefillFront(Dictionary<int, List<DateTime>> DictDate)
         {
             int PageIndex = Pagenumber;
-           // MessageBox.Show("PageIndex " + PageIndex.ToString());
+            // MessageBox.Show("PageIndex " + PageIndex.ToString());
             List<DateTime> DictionaryValuesАFront = new List<DateTime>();
             if (DictDate.ContainsKey(PageIndex))
             {
@@ -1182,7 +1284,7 @@ namespace SwimmingPool
                 {
                     int rowindex = item.Hour - 8;
                     int columnindex = (int)item.DayOfWeek;
-                  //  MessageBox.Show("BACK" + rowindex + "COLUMN " + columnindex);
+                    //  MessageBox.Show("BACK" + rowindex + "COLUMN " + columnindex);
                     dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
 
                 }
@@ -1207,23 +1309,23 @@ namespace SwimmingPool
         //UKAN
         public void Datefiller(Dictionary<int, List<DateTime>> DictDate, double Back)
         {
-           
+
             Pagenumber = Pagenumber - 1;
 
-           // MessageBox.Show("PAGE NUMBER FOR DICT" + Pagenumber.ToString());
+            // MessageBox.Show("PAGE NUMBER FOR DICT" + Pagenumber.ToString());
             if (Pagenumber < 0)
                 return;
             else
-            { 
-            List<DateTime> DictionaryValues = DictDate[Pagenumber];
-            foreach (var item in DictionaryValues)
             {
-                int rowindex = item.Hour - 8;
-                int columnindex = (int)item.DayOfWeek;
-               // MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
-                dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
-         
-            }
+                List<DateTime> DictionaryValues = DictDate[Pagenumber];
+                foreach (var item in DictionaryValues)
+                {
+                    int rowindex = item.Hour - 8;
+                    int columnindex = (int)item.DayOfWeek;
+                    // MessageBox.Show("BACK"+rowindex + "COLUMN " + columnindex);
+                    dataGridView1.Rows[rowindex].Cells[columnindex].Selected = true;
+
+                }
             }
         }
 
@@ -1250,7 +1352,7 @@ namespace SwimmingPool
                         _FinalDate = $"{Date.ToString("dd/MM/yyyy")} {Hour}:00";
                     }
 
-                //    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
+                    //    MessageBox.Show("ROW " + cell.RowIndex + " COLINDEX: " + cell.ColumnIndex + " " + _FinalDate + " SIGRDZE " + dataGridView1.SelectedCells.Count);
 
                     FinalDate = DateTime.ParseExact(_FinalDate, "dd/MM/yyyy HH:mm", CultureInfo.CurrentUICulture);
                     Dates.Add(FinalDate);
@@ -1349,134 +1451,107 @@ namespace SwimmingPool
                 archeuligrafiki.DataSource = null;
                 CheckedDayList.Sort();
                 archeuligrafiki.DataSource = CheckedDayList;
+                archeuligrafiki.Sorted = true;
             }
             else
             {
                 return;
             }
-
-
-
-
         }
 
         #region რანდომი სატესტოდ
         private void button1_Click(object sender, EventArgs e)
         {
+            //string[] names = new string[]
+            //   {
+            //        "გელა",
+            //        "ნელი",
+            //        "გულიკო",
+            //        "მზევინარ",
+            //        "პაჭურტი"
+            //   };
+            //string[] LastNames = new string[]
+            //{
+            //        "გეჯაძე",
+            //        "მინდია",
+            //        "ბუჩუკური",
+            //        "ლელაძე"
+            //};
 
-            string[] names = new string[]
-               {
-                    "გელა",
-                    "ნელი",
-                    "გულიკო",
-                    "მზევინარ",
-                    "პაჭურტი"
-               };
-            string[] LastNames = new string[]
-            {
-                    "გეჯაძე",
-                    "მინდია",
-                    "ბუჩუკური",
-                    "ლელაძე"
-            };
+            //string[] Numbers = new string[]
+            //{
+            //        "555 56 78 23",
+            //        "577 23 87 23",
+            //        "587 89 23 76"
+            //};
 
-            string[] Numbers = new string[]
-            {
-                    "555 56 78 23",
-                    "577 23 87 23",
-                    "587 89 23 76"
-            };
+            //string[] Adress = new string[]
+            //{
+            //        "ვარკეთილი",
+            //        "ფონიჭალა",
+            //        "რუსთაველი",
+            //        "ვაშლიჯვარი"
+            //};
 
-            string[] Adress = new string[]
-            {
-                    "ვარკეთილი",
-                    "ფონიჭალა",
-                    "რუსთაველი",
-                    "ვაშლიჯვარი"
-            };
+            //string[] Date = new string[]
+            //{
+            //    "01042001",
+            //    "01281996",
+            //    "03042000",
+            //    "10031990",
+            //    "03041890"
+            //};
 
-            string[] Date = new string[]
-            {
-                "01042001",
-                "01281996",
-                "03042000",
-                "10031990",
-                "03041890"
+            //// saxeli 
+            //Random rand = new Random();
+            //int index = rand.Next(names.Count());
+            //var name = names[index];
 
+            //saxeli.Text = name;
+            ////gvari
+            //int gvarindex = rand.Next(LastNames.Count());
+            //var LastName = LastNames[gvarindex];
 
+            //gvari.Text = LastName;
 
-            };
+            //// nomrebi 
 
-            // saxeli 
-            Random rand = new Random();
-            int index = rand.Next(names.Count());
-            var name = names[index];
+            //int NumberIndex = rand.Next(Numbers.Count());
+            //var Number = Numbers[NumberIndex];
 
-            saxeli.Text = name;
-            //gvari
-            int gvarindex = rand.Next(LastNames.Count());
-            var LastName = LastNames[gvarindex];
+            //telefoni.Text = Number;
 
-            gvari.Text = LastName;
+            //// misamarti 
 
-            // nomrebi 
+            //int AdressIndex = rand.Next(Adress.Count());
+            //var adress = Adress[AdressIndex];
 
-            int NumberIndex = rand.Next(Numbers.Count());
-            var Number = Numbers[NumberIndex];
-
-            telefoni.Text = Number;
-
-            // misamarti 
-
-            int AdressIndex = rand.Next(Adress.Count());
-            var adress = Adress[AdressIndex];
-
-            misamarti.Text = adress;
+            //misamarti.Text = adress;
 
 
-            // asaki 
+            //// asaki 
 
-            int DateIndex = rand.Next(Date.Count());
-            var birthDate = Date[DateIndex];
+            //int DateIndex = rand.Next(Date.Count());
+            //var birthDate = Date[DateIndex];
 
-            asaki.Text = birthDate;
-
-
-
-
+            //asaki.Text = birthDate;
         }
 
         #endregion
 
         private void lblNext_Click_2(object sender, EventArgs e)
         {
-            #region OldCode
-            //DICTIONARIS SHESAVSEBAD
-            //Datefiller(DateDic);
-
-            //dataGridView1.Rows.Clear();
-            //grafiki();
-            //CurrentMonday = CurrentMonday.AddDays(7);
-            //AssignCurrentWeek(CurrentMonday);
-            //lblBack.Enabled = true;
-            //lblBack.ForeColor = Color.DarkSlateGray;
-            //lblBack.Cursor = Cursors.Hand;
-
-            //gridFillter(dataGridView1, CurrentMonday);
-            ////DICTIONARIS WASAKITXTAD
-            //DatefillFront(DateDic);
-
-            //CellGrayColor(dateTimePicker1.Value, dateTimePicker3.Value); 
-            #endregion
-
             dataGridView1.Rows.Clear();
             grafiki();
             CurrentMonday = CurrentMonday.AddDays(7);
             AssignCurrentWeek(CurrentMonday);
-
             gridFillter(dataGridView1, CurrentMonday);
-
             DrawGrid();
+
+            if (CurrentWeekDays.Any(d => d.DayOfYear.Equals(DateTime.Now.DayOfYear)))
+            {
+                GetCellColorToday();
+            }
 
         }
 
@@ -1542,21 +1617,25 @@ namespace SwimmingPool
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           
+
         }
 
         public void SubscribtionEditMethod()
         {
+            List<SubscriptionScheduleDB> NewScheduleList = new List<SubscriptionScheduleDB>();
+            SPSQLite.Subscriber _sub = new SPSQLite.Subscriber();
+
             try
             {
                 var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
                 var newobj = subscriptionByID;
                 var subscriber = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
+               
 
                 var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
                    .Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault()
                    .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).ToList();
-                List<DateTime> Dateeeslist = new List<DateTime> ();
+                List<DateTime> Dateeeslist = new List<DateTime>();
 
                 foreach (var item in ScheduleList)
                 {
@@ -1565,30 +1644,35 @@ namespace SwimmingPool
 
 
                 var cdl = CheckedDayList;
-                List<SubscriptionScheduleDB> NewScheduleList = new List<SubscriptionScheduleDB>();
+
 
                 foreach (var item in cdl)
                 {
-                           if (Dateeeslist.Contains(item.Day))
+                    if (Dateeeslist.Contains(item.Day))
+                    {
+                        SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB
                         {
-                            SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB { Id=item.Id,  Attandance = (int)ScheduleList[Dateeeslist.IndexOf(item.Day)].Attandance,
-                                Schedule = ScheduleList[Dateeeslist.IndexOf(item.Day)].Schedule,
-                                Subscription = ScheduleList[Dateeeslist.IndexOf(item.Day)].Subscription,
-                                SubscriptionID = ScheduleList[Dateeeslist.IndexOf(item.Day)].SubscriptionID };
-                  //      DatabaseConnection.Conn.Update(NewSchedule);        
-                            NewScheduleList.Add(NewSchedule);
-                        }
-                                               else
+                            Id = item.Id,
+                            Attandance = (int)ScheduleList[Dateeeslist.IndexOf(item.Day)].Attandance,
+                            Schedule = ScheduleList[Dateeeslist.IndexOf(item.Day)].Schedule,
+                            Subscription = ScheduleList[Dateeeslist.IndexOf(item.Day)].Subscription,
+                            SubscriptionID = ScheduleList[Dateeeslist.IndexOf(item.Day)].SubscriptionID
+                        };
+                        //      DatabaseConnection.Conn.Update(NewSchedule);        
+                        NewScheduleList.Add(NewSchedule);
+                    }
+                    else
+                    {
+                        SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB
                         {
-                            SubscriptionScheduleDB NewSchedule = new SubscriptionScheduleDB { Attandance = 0, Schedule=item.Day,
-                                Subscription = ScheduleList[0].Subscription, SubscriptionID= ScheduleList[0].SubscriptionID };
-                    //DatabaseConnection.Conn.Insert(NewSchedule);
-                           NewScheduleList.Add(NewSchedule);
-                        }
-
-
-
-
+                            Attandance = 0,
+                            Schedule = item.Day,
+                            Subscription = ScheduleList[0].Subscription,
+                            SubscriptionID = ScheduleList[0].SubscriptionID
+                        };
+                        //DatabaseConnection.Conn.Insert(NewSchedule);
+                        NewScheduleList.Add(NewSchedule);
+                    }
                 }
 
                 foreach (var item in ScheduleList)
@@ -1598,51 +1682,50 @@ namespace SwimmingPool
                 foreach (var item in NewScheduleList)
                 {
                     DatabaseConnection.Conn.Insert(item);
-
                 }
 
-
                 subscriber.Subscriptions.SubscribtionSchedule_ = NewScheduleList;
-
-
                 subscriber.Name = saxeli.Text;
                 subscriber.LastName = gvari.Text;
                 subscriber.PhoneNumber = telefoni.Text;
                 subscriber.Address = misamarti.Text;
-                
-                DatabaseConnection.Conn.UpdateWithChildren(subscriber);
-                
-                
+                subscriber.DateOfBirth = Convert.ToDateTime(asaki.Text);
 
+                if (diax.Checked)
+                    subscriber.Healthnotice[0].YesNO = Availability.Yes;
+                else
+                    subscriber.Healthnotice[0].YesNO = Availability.No;
+
+                DatabaseConnection.Conn.UpdateWithChildren(subscriber);
+                _sub = subscriber;
                 var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
                 var gggg = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscriber>().FirstOrDefault(x => x.SubscribtionID == 1);
 
-
             }
 
-            catch
+            catch(Exception ex)
             {
-                MessageBox.Show("დაამატეთ საათების რაოდენობა");
+                if (asaki.Text.Length == 1)
+                {
+                    MessageBox.Show("გთხოვთ შეავსოთ აბონენტის დაბადების თარიღი");
+                    return;
+                }
+                else
+                {
+                    MessageBox.Show(ex.ToString());
+                    MessageBox.Show("გთხოვთ დაამატეთ საათების რაოდენობა");
 
-
+                }
             }
-            Form1 form = new Form1();
-         
+
             this.DialogResult = DialogResult.OK;
-            Close();
-            form.Refresh();
+            this.Close();
 
-
-
-
-        }
-
-
-
-
-
-
-
+            Form1 f = new Form1();
+            //f.InIt(_sub.Subscriptions.IDnumber);
+            
+            f.InIt(_sub);
+       }
 
         public void SubscribtionEditMethod(string AbonimentNumber)
         {
@@ -1694,9 +1777,6 @@ namespace SwimmingPool
                         NewScheduleList.Add(NewSchedule);
                     }
 
-
-
-
                 }
 
                 foreach (var item in ScheduleList)
@@ -1709,27 +1789,22 @@ namespace SwimmingPool
 
                 }
 
-
                 subscriber.Subscriptions.SubscribtionSchedule_ = NewScheduleList;
-
 
                 subscriber.Name = saxeli.Text;
                 subscriber.LastName = gvari.Text;
                 subscriber.PhoneNumber = telefoni.Text;
                 subscriber.Address = misamarti.Text;
-                //   subscriber.DateOfBirth = asaki.ToString();
+                subscriber.DateOfBirth = Convert.ToDateTime(asaki.Text);
 
-                //if (diax.Checked)
-                //    subscriber.Healthnotice[0].YesNO =Availability.Yes;
-                //else
-                //    subscriber.Healthnotice[0].YesNO = Availability.No;
+                if (diax.Checked)
+                    subscriber.Healthnotice[0].YesNO = Availability.Yes;
+                else
+                    subscriber.Healthnotice[0].YesNO = Availability.No;
 
 
                 DatabaseConnection.Conn.UpdateWithChildren(subscriber);
                 //DatabaseConnection.Conn.UpdateWithChildren(newobj);
-
-
-
 
 
                 var guliko = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>().SingleOrDefault(x => x.IDnumber == "A001");
@@ -1744,39 +1819,32 @@ namespace SwimmingPool
 
 
             }
-            Form1 form = new Form1();
-          
-            Close();
-            form.Refresh();
-
-
-
-
+            //Form1 form = new Form1();
         }
-
-
-
-
-
-
 
         private void button2_Click_1(object sender, EventArgs e)
         {
             SubscribtionEditMethod();
-
-
         }
 
         private void ara_CheckedChanged(object sender, EventArgs e)
         {
             if (ara.Checked)
+            {
                 diax.Checked = false;
+                diax.Enabled = true;
+                ara.Enabled = false;
+            }
         }
 
         private void diax_CheckedChanged(object sender, EventArgs e)
         {
             if (diax.Checked)
+            {
                 ara.Checked = false;
+                diax.Enabled = false;
+                ara.Enabled = true;
+            }
         }
 
         private void buttonVadagas_Click(object sender, EventArgs e)
@@ -1786,82 +1854,80 @@ namespace SwimmingPool
             F.Show();
         }
 
-      
 
-      
+
+        private void Button4_Click(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         private void Button4_Click(object sender, EventArgs e)
         {
-            abonenti.Text = "";
             saxeli.Text = "";
             gvari.Text = "";
             asaki.Text = "";
             telefoni.Text = "";
             misamarti.Text = "";
             archeuligrafiki.Items.Clear();
-
-
+            diax.Checked = false;
+            ara.Checked = true;
 
             //   CheckedDayList.Clear();
 
-
-
-
             var indexes = (from g in CheckedDayList
                            select new { g = g.X, z = g.Y }).ToList();
-         
+
             foreach (var item in indexes)
             {
-
-                dataGridView1.Rows[item.g].Cells[item.z].Style.BackColor = Color.White;
                 CheckedDayList.RemoveAll(x => x.X == item.g && x.Y == item.z);
-
-              
-
+                dataGridView1.Rows[item.g].Cells[item.z].Style.BackColor = Color.White;
+                dataGridView1.Rows[item.g].Cells[item.z].Style.SelectionBackColor = Color.White;
+                dataGridView1.Rows[item.g].Cells[item.z].Style.ForeColor = Color.Gray;
+                dataGridView1.Rows[item.g].Cells[item.z].Style.SelectionForeColor = Color.Gray;
             }
 
-          
+            button3.Enabled = false;
+            button3.ForeColor = Color.Red;
 
+            shenaxva.Enabled = false;
+            shenaxva.ForeColor = Color.Red;
 
             //dataGridView1.RefreshEdit();
-
-
         }
 
         private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-          
 
         }
 
-       
     }
 }
-                        //public class CurrentGrid : AddAbonent
-                        //{
-                        //    public int X { get; set; }
-                        //    public int Y { get; set; }
-                        //    public Color CurrentColor { get; set; }
-                        //    public int SeatNumber { get; set; }
+//public class CurrentGrid : AddAbonent
+//{
+//    public int X { get; set; }
+//    public int Y { get; set; }
+//    public Color CurrentColor { get; set; }
+//    public int SeatNumber { get; set; }
 
-                        //    public void CalcIncreaseDicrease(int x, int y, DateTime day)
-                        //    {
-                        //        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
+//    public void CalcIncreaseDicrease(int x, int y, DateTime day)
+//    {
+//        //var BgColor = GridDataList.Where(pair => pair.Key == day).Select(pair => pair.Value.Select(c => c.CurrentColor));
 
-                        //        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
-                        //        //{
-                        //        //    ++_value;
-                        //        //}
+//        //if (GridDataList.FirstOrDefault(k=> k.Key == day, ) == Color.White || BgColor.Name == "0")
+//        //{
+//        //    ++_value;
+//        //}
 
-                        //        //else
-                        //        //{
-                        //        //    --_value;
-                        //        //}
+//        //else
+//        //{
+//        //    --_value;
+//        //}
 
 
-                        //        //dataGridView1[x, y].Value = _value.ToString();
-                        //        //dataGridView1.Refresh();
-                        //        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
+//        //dataGridView1[x, y].Value = _value.ToString();
+//        //dataGridView1.Refresh();
+//        //dataGridView1.SelectedRows[x].Cells[y].Value = _value;
 
-                        //    }
-                        //}
+//    }
+//}
 

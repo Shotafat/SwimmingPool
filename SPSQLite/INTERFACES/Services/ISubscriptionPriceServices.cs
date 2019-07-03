@@ -10,6 +10,5 @@ namespace SPSQLite
         void Delete(ISubscriptionPrice a );
         void Edit(ISubscriptionPrice a );
         IList<ISubscriptionPrice> GetData();
-
     }
 }

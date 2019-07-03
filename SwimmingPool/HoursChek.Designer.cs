@@ -34,10 +34,10 @@
             this.დასწრებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.სხვაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.დასვენებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AttendLabel = new System.Windows.Forms.Label();
             this.HoursLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.რედაქტირებაToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,19 +48,19 @@
             this.დასწრებაToolStripMenuItem,
             this.სხვაToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 92);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(119, 70);
             // 
             // გაცდენაToolStripMenuItem
             // 
             this.გაცდენაToolStripMenuItem.Name = "გაცდენაToolStripMenuItem";
-            this.გაცდენაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.გაცდენაToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.გაცდენაToolStripMenuItem.Text = "გაცდენა";
             this.გაცდენაToolStripMenuItem.Click += new System.EventHandler(this.გაცდენაToolStripMenuItem_Click);
             // 
             // დასწრებაToolStripMenuItem
             // 
             this.დასწრებაToolStripMenuItem.Name = "დასწრებაToolStripMenuItem";
-            this.დასწრებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.დასწრებაToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.დასწრებაToolStripMenuItem.Text = "დასწრება";
             this.დასწრებაToolStripMenuItem.Click += new System.EventHandler(this.დასწრებაToolStripMenuItem_Click);
             // 
@@ -70,15 +70,22 @@
             this.დასვენებაToolStripMenuItem,
             this.რედაქტირებაToolStripMenuItem});
             this.სხვაToolStripMenuItem.Name = "სხვაToolStripMenuItem";
-            this.სხვაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.სხვაToolStripMenuItem.Size = new System.Drawing.Size(118, 22);
             this.სხვაToolStripMenuItem.Text = "სხვა";
             // 
             // დასვენებაToolStripMenuItem
             // 
             this.დასვენებაToolStripMenuItem.Name = "დასვენებაToolStripMenuItem";
-            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.დასვენებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
             this.დასვენებაToolStripMenuItem.Text = "დასვენება";
             this.დასვენებაToolStripMenuItem.Click += new System.EventHandler(this.დასვენებაToolStripMenuItem_Click);
+            // 
+            // რედაქტირებაToolStripMenuItem
+            // 
+            this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
+            this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click);
             // 
             // AttendLabel
             // 
@@ -114,13 +121,6 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "asdd";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // რედაქტირებაToolStripMenuItem
-            // 
-            this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
-            this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click);
             // 
             // HoursChek
             // 

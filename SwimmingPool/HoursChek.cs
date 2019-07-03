@@ -63,19 +63,8 @@ namespace SwimmingPool
 
 
             var subscriptionByID = DatabaseConnection.Conn.Table<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault().Id;
-
-            // es shesadareblad 
-            // სამ 15:00 სთ    4 6 
-
-
-
-            //var gela = Convert.ToInt32(GetAttendanceLabel.Substring(4, 2));
-            //var DateNumber = Convert.ToInt32(GetHoursLabel.Substring(0, 2));
-
             var Hours = AttendLabel.Text;
             var Date = HoursLabel.Text;
-
-            //var ScheduleByAbonent = Schedule.Where(x => x.Subscription.Id == subscriptionByID).FirstOrDefault(x=>x.Schedule.Day.ToString().Where(Date.Contains(x.Schedule.Day.ToString())) && x.Schedule.Hour.ToString().Contains(Hours));
 
             var schedule = (from g in Schedule
                             where (g.Subscription.Id == subscriptionByID)
@@ -86,16 +75,11 @@ namespace SwimmingPool
                                      select g);
             mamiko = TakeFinallyObject.FirstOrDefault();
 
-
-
-
-
             mamiko.Attandance = attendanceNumber; //gaacdina
 
 
             DatabaseConnection.Conn.Update(mamiko);
             return mamiko;
-
         }
 
         private void გაცდენაToolStripMenuItem_Click(object sender, EventArgs e)
@@ -105,22 +89,6 @@ namespace SwimmingPool
 
             GetAttendanceGela = "გააცდინა";
             BackColor = Color.Red;
-
-
-
-
-
-            //}
-            //else
-            //{
-            //    MessageBox.Show("aksjdhaksjdh");
-            //}
-
-
-
-
-
-
         }
 
 
@@ -129,32 +97,19 @@ namespace SwimmingPool
             Attendance(0);
             GetAttendanceGela = "მოლოდინი";
             BackColor = Color.Gray;
-
-
-
-
         }
 
         private void დასვენებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
             GetAttendanceGela = "დასვენება";
             BackColor = Color.Teal;
-
             Attendance(3);
-
-
-
         }
-
-
 
         private void დასწრებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
             GetAttendanceGela = "დაესწრო";
             BackColor = Color.DarkSlateGray;
-
-
             Attendance(1);
         }
         
@@ -166,17 +121,13 @@ namespace SwimmingPool
                .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
             return ScheduleList;
         }
+
         public void EdiTAbonent()
         {
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
-
+            var subscriberByID = DatabaseConnection.Conn.GetAllWithChildren<Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
 
             Form1 A = new Form1();
-
-
-
-
-
 
             var IDnumber = subscriptionByID.IDnumber.ToString();
             var LastName = subscriptionByID.Subscriber_.LastName;
@@ -188,20 +139,16 @@ namespace SwimmingPool
 
 
             List<DateTime> Dates = ScheduleList();
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates,numberofHour);
-            //abonent.Controls.Add(DataGridView datagridview1);
+
+            var HasInquiry = subscriberByID.Healthnotice[0].YesNO;      
+
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry);
             A.EditFillGrid(abonent, Dates);
-
-             abonent.Show();
-
-          
-
+             abonent.Show();      
         }
 
         private void რედაქტირებაToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
-
             EdiTAbonent();
         }
     }

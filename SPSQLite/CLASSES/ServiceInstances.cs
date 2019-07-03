@@ -21,32 +21,27 @@ namespace SPSQLite.CLASSES.Services
 
         }
 
-
-
-
-        public ISubscriberServices GetSubscriberService() {
-
+        public ISubscriberServices GetSubscriberService()
+        {
             return new SubscriberServices();
         }
 
 
         public IHealthNoticeServices GetHealthNoticeServices()
         {
-
             return new HealthNoticeServices();
         }
 
         public ISubscriptionPriceServices GetSubscriptionPriceServices()
         {
-
             return new SubscriptionPriceServices();
         }
 
         public ISubscriptionScheduleServices GetSubscriptionScheduleServices()
         {
-
             return new SubscriptionScheduleServices();
         }
+
         public ISubscriptionServices GetSubscriptionServices()
         {
             return new SubscriptionServices();
@@ -54,26 +49,20 @@ namespace SPSQLite.CLASSES.Services
 
         public ICapicityServices GetCapicityServices()
         {
-
-
             return new CapicityServices();
         }
 
         public ISubscriptionPrice CreateObject(int TextboxText1, double TextboxText2)
-
         {
             SubcsriptionPrice gela = new SubcsriptionPrice();
             gela.NumberOfHours = TextboxText1;
             gela.Price = TextboxText2;
 
             return gela;
-
         }
 
         public ISubscriber CreateObjectForSub( string Name, string LastName, DateTime age, string Number, string adress)
         {
-
-
             Subscriber gela = new Subscriber();
 
             gela.Name = Name;
@@ -81,8 +70,8 @@ namespace SPSQLite.CLASSES.Services
             gela.DateOfBirth = age;
             gela.PhoneNumber = Number;
             gela.Adress = adress;
-            return gela;
 
+            return gela;
         }
 
         public object CreateObjectForSub(string text1, string text2, string asaki1, string text3, string text4)

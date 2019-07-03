@@ -1,20 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SQLite;
 using SQLiteNetExtensions.Attributes;
-using SQLiteNetExtensions;
-using System.Reflection;
 using SPSQLite.INTERFACES.Interfaces;
 using SQLiteNetExtensions.Extensions;
-using SPSQLite.CLASSES.Services;
-using SPSQLite.CLASSES.BussinessObjects;
-using System.Windows.Forms;
 
 
 //using System.Windows.Forms;
@@ -161,25 +151,22 @@ namespace SPSQLite
         public static void DeleteSubscriptionPrice(ISubscriptionPrice sub)
         {
             Conn.Delete(Conn.Table<SubscribtionPrice>().FirstOrDefault(a => a.Id == sub.ID));
-
         }
 
         // Edit Subscription Price 
 
         public static void EditSubscriptionPrice(ISubscriptionPrice price)
         {
-
             var SubPrice = Conn.Table<SubscribtionPrice>().Where(a => a.Id == price.ID).SingleOrDefault();
 
             if (SubPrice != null)
             {
-
                 SubPrice.NumberOfHours = price.NumberOfHours;
                 SubPrice.Price = price.Price;
 
                 Conn.Update(SubPrice);
+                Conn.Delete(Conn.Table<SubscribtionPrice>().FirstOrDefault(a => a.Id == price.ID));
             }
-
         }
 
         //Get subscription Price Source
@@ -229,9 +216,7 @@ namespace SPSQLite
         //DefaulAttendance ჩავსვი (შოთა)
         public static void InsertSubscriptionShedule(DateTime shedule, int SubscriptionID, int DefaultAttendance = 0)
         {
-
             Conn.Insert(new SubscriptionScheduleDB { Schedule = shedule, SubscriptionID = SubscriptionID, Attandance = DefaultAttendance });
-
         }
 
         // Delete Subscription Shedule
@@ -240,10 +225,7 @@ namespace SPSQLite
         {
             //აქ SubscribtionID ხომ არ უნდა IDს ნაცვლად?
             Conn.Delete(Conn.Table<SubscriptionScheduleDB>().FirstOrDefault(a => a.Id == sub.ID));
-
         }
-
-
 
         // Edit Subscription Schedule 
 
@@ -267,7 +249,6 @@ namespace SPSQLite
         // Get Subscription Shedule Source 
         public static List<SubscriptionScheduleDB> GetSheduleSource()
         {
-
             return Conn.Table<SubscriptionScheduleDB>().ToList();
         }
 
@@ -276,7 +257,6 @@ namespace SPSQLite
 
         public static Subscription InsertSubscription(ISubscription subscription)
         {
-
             Conn.Insert(new Subscription { IDnumber = subscription.IDnumber });
             Subscription sub = new Subscription { IDnumber = subscription.IDnumber };
             return sub;
@@ -287,7 +267,6 @@ namespace SPSQLite
 
         public static void DeleteSubscription(ISubscription sub)
         {
-
             Conn.Delete(Conn.Table<Subscription>().FirstOrDefault(a => a.Id == sub.ID));
         }
 
@@ -298,26 +277,19 @@ namespace SPSQLite
             var Subscription = Conn.Table<Subscription>().Where(a => a.Id == subscription.ID).SingleOrDefault();
             if (Subscription != null)
             {
-
                 //   Subscription.SubscriberID = subscription.SubscriberID;
                 Subscription.IDnumber = subscription.IDnumber;
                 Conn.Update(Subscription);
             }
-
         }
 
         // Get Subscription Source
 
         public static List<Subscription> GetSubscriptions()
         {
-
-
             return Conn.Table<Subscription>().ToList();
         }
-
-        // 
-
-
+        //
 
         // Edit capicity
         public static void EditCapicity(ICapicity capicity)
@@ -328,8 +300,6 @@ namespace SPSQLite
                 cap.MaximumCapacity = capicity.CapicityValue;
                 Conn.Update(capicity);
             }
-
-
         }
 
         // Get capicity
@@ -343,10 +313,7 @@ namespace SPSQLite
         public static void MaximumCapicity(ICapicity capicity)
         {
             Conn.Insert(new CapacityDB { MaximumCapacity = capicity.CapicityValue });
-
-
         }
-
     }
 
     //აბონიმენტი
@@ -360,7 +327,6 @@ namespace SPSQLite
         [ForeignKey(typeof(SubscribtionPrice))]
         public int SubscribtionPriceID { get; set; }
 
-
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<SubscriptionScheduleDB> SubscribtionSchedule_ { get; set; }
 
@@ -369,10 +335,7 @@ namespace SPSQLite
 
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public SubscribtionPrice SubscriberPrice_ { get; set; }
-
     }
-
-
 
     //აბონენტი
     public class Subscriber
@@ -385,23 +348,15 @@ namespace SPSQLite
         public string Address { get; set; }
         public DateTime DateOfBirth { get; set; }
 
-
         [ForeignKey(typeof(Subscription))]
         public int SubscribtionID { get; set; }
-
 
         [OneToOne(CascadeOperations = CascadeOperation.All)]
         public Subscription Subscriptions { get; set; }
 
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<HealthNotice> Healthnotice { get; set; }
-
-
     }
-
-
-
-
 
     //ფასი და საათი
     public class SubscribtionPrice
@@ -413,11 +368,9 @@ namespace SPSQLite
         [OneToMany(CascadeOperations = CascadeOperation.All)]
         public List<Subscription> Subscriptions { get; set; }
 
-
+        //[ForeignKey(typeof(Subscription))]
+        //public int SubscriberID { get; set; }
     }
-
-
-
 
 
     //აუზზე ადამიანების რაოდენობა. ადმინს რომ მოუნდეს  შეცვალოს ლიმიტი უმჯობესია ბაზაში ინახებოდეს.
@@ -426,7 +379,6 @@ namespace SPSQLite
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public int MaximumCapacity { get; set; }
-
     }
 
 
@@ -439,10 +391,7 @@ namespace SPSQLite
         [PrimaryKey, AutoIncrement]
         public int id { get; set; }
         public DateTime DateCreated { get; set; }
-
         public Availability YesNO { get; set; }
-
-
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscriber subscriber { get; set; }
 
@@ -464,9 +413,5 @@ namespace SPSQLite
         [ManyToOne(CascadeOperations = CascadeOperation.All)]
         public Subscription Subscription { get; set; }
         public int Attandance { get; set; }
-
-
     }
-
-
 }

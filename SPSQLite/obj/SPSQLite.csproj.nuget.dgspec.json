@@ -1,24 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj": {}
+    "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj": {
+    "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+        "projectUniqueName": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
         "projectName": "SPSQLite",
-        "projectPath": "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
-        "packagesPath": "C:\\Users\\Data\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
+        "projectPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
+        "packagesPath": "C:\\Users\\varamashvili-n.MIA\\.nuget\\packages\\",
+        "outputPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\ProgramData\\Xamarin\\NuGet\\",
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\Data\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "D:\\Users\\varamashvili-n\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -43,6 +43,10 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.Office.Interop.Excel": {
+              "target": "Package",
+              "version": "[15.0.4795.1000, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",

@@ -8,12 +8,9 @@ using SPSQLite.CLASSES;
 namespace SPSQLite.CLASSES
 {
     public class SubscriptionPriceServices : ISubscriptionPriceServices
-    {
-       
-
+    {       
         public void Add(ISubscriptionPrice a)
-        {
-            
+        {            
             DatabaseConnection.insertSubscribtionPrice(a.NumberOfHours, a.Price);
         }
 
@@ -29,7 +26,7 @@ namespace SPSQLite.CLASSES
 
         public IList<ISubscriptionPrice> GetData()
         {
-            IList<ISubscriptionPrice> list =  DatabaseConnection.GetSubscribtionPrice().Select(a => new SubcsriptionPrice { ID=a.Id, NumberOfHours = a.NumberOfHours, Price = a.Price }).ToList<ISubscriptionPrice>();
+            IList<ISubscriptionPrice> list =  DatabaseConnection.GetSubscribtionPrice().OrderBy(x=>x.NumberOfHours).Select(a => new SubcsriptionPrice { ID=a.Id, NumberOfHours = a.NumberOfHours, Price = a.Price }).ToList<ISubscriptionPrice>();
             return list;
         }
     }
