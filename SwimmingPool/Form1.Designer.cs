@@ -319,7 +319,7 @@
             this.ექსპორტიToolStripMenuItem.Name = "ექსპორტიToolStripMenuItem";
             this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
             this.ექსპორტიToolStripMenuItem.Text = "ექსპორტი";
-            this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
+      //      this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 

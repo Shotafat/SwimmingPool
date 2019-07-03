@@ -2945,25 +2945,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\varamashvili-n.MIA\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Users\\Data\\.nuget\\packages\\": {},
+    "C:\\ProgramData\\Xamarin\\NuGet\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
+      "projectUniqueName": "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
       "projectName": "SPSQLite",
-      "projectPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
-      "packagesPath": "C:\\Users\\varamashvili-n.MIA\\.nuget\\packages\\",
-      "outputPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\obj\\",
+      "projectPath": "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\SPSQLite.csproj",
+      "packagesPath": "C:\\Users\\Data\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Data\\Documents\\GitHub\\SwimmingPool\\SPSQLite\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\ProgramData\\Xamarin\\NuGet\\",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "D:\\Users\\varamashvili-n\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Data\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

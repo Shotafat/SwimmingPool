@@ -266,7 +266,6 @@ namespace SwimmingPool
             {
                 AddPriceForm price = new AddPriceForm(numberofHour.ToString());
                 price.ShowDialog();
-
                 if (price.DialogResult == DialogResult.OK)
                 {
                     this.comboBox1.DataSource = null;
@@ -274,7 +273,6 @@ namespace SwimmingPool
                     comboBox1.SelectedItem = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList().Last();
                 }
             }
-
 
             shenaxva.Show();
             buttonVadagas.Hide();
