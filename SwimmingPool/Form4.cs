@@ -62,36 +62,17 @@ namespace SwimmingPool
             datagridview4.DataSource = fillgrid;
         }
 
-        public List<object>    last()
+        public List<object> last()
         {
-            var schedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>();
-
-
-
-            //var onlyDate = (from g in schedule
-            //                select g.Schedule).ToList();
-            
-            
-            //    var lastDate = schedule.Last().Schedule.Date.ToString("yyyy-MM-dd");
-            
+            var schedule = DatabaseConnection.Conn.GetAllWithChildren<SubscriptionScheduleDB>();          
             var Today = DateTime.Now.ToString("yyyy-MM-dd");
-
-                //var lastDate = onlyDate.Last().Date;
-                //var today = DateTime.Now.AddDays(-6);
-                //if (lastDate == today)
-                //{
-                var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();
-            
+            var subscriptions = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>();            
             var onlyDates = subscriptions;
-
-
-
-                var Name = subscriptions.Select(x => x.Subscriber_.Subscriptions.SubscribtionSchedule_);
-
+            var Name = subscriptions.Select(x => x.Subscriber_.Subscriptions.SubscribtionSchedule_);
 
             List<object> r = new List<object>();
 
-                 r = (from g in subscriptions
+            r = (from g in subscriptions
                       where g.SubscribtionSchedule_.OrderBy(x => x.Schedule.Date.DayOfYear).Last().Schedule.DayOfYear < DateTime.Now.DayOfYear
                       select new
                          {

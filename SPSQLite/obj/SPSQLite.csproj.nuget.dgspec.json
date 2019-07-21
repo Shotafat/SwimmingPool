@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj": {}
+    "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj": {}
   },
   "projects": {
-    "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj": {
+    "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
+        "projectUniqueName": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
         "projectName": "SPSQLite",
-        "projectPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
+        "projectPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SwimmingPool 0506\\SPSQLite\\SPSQLite.csproj",
         "packagesPath": "C:\\Users\\varamashvili-n.MIA\\.nuget\\packages\\",
-        "outputPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SPSQLite\\obj\\",
+        "outputPath": "D:\\Users\\varamashvili-n\\Desktop\\SwimmingPool 0506\\SwimmingPool 0506\\SPSQLite\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

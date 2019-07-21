@@ -24,6 +24,7 @@ namespace SwimmingPool
             if (textBox2.Text != null)
             {
                 textBox2.Text = Hours.ToString();
+                textBox3.Select();
             }
         }
 
@@ -45,6 +46,22 @@ namespace SwimmingPool
 
         private void button1_Click(object sender, EventArgs e)
         {
+            if(textBox3.Text == string.Empty)
+            {
+                DialogResult dialogResult = MessageBox.Show("გთხოვთ შეავსოთ პაკეტის ღირებულება!", "Warning", MessageBoxButtons.OKCancel);
+                if(dialogResult == DialogResult.OK)
+                {
+                    this.Show();
+                    return;
+                }
+
+                else if (dialogResult == DialogResult.Cancel)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+
             var Object = ServiceInstances.Service().CreateObject(int.Parse(textBox2.Text), double.Parse(textBox3.Text));
             ServiceInstances.Service().GetSubscriptionPriceServices().Add(Object);
 

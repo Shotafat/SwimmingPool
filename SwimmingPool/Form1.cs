@@ -19,27 +19,11 @@ namespace SwimmingPool
         public List<FillGrid> fillgrid { get; set; }
 
         public   List<FillGrid>  newfillgrid { get; set; }
-
-
-        public delegate void MyEventHandler(string selectedabonent);
-
         public Form1()
         {
             InitializeComponent();
             InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
             dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
-            Invoker.myMethod += Initmethodcaller;
-            Invoker.REFRESHHandler += AAA;
-        }
-
-        public  void AAA (string A)
-        {
-            InIt(A);
-        }
-        private void Initmethodcaller(object sender, EventArgs e)
-        {
-            string AbonimentN = sender as string;
-            InIt(AbonimentN);
 
         }
 
@@ -47,11 +31,13 @@ namespace SwimmingPool
         {
             //dataGridView1.AutoGenerateColumns = true;
             initData();
+            vadagasulidatagridi();
         }
 
         public void initData()
         {
             JoinClasses();
+            
             label3.Text = "";
             if (dataGridView1.SelectedCells.Count <= 0)
                 return;
@@ -59,6 +45,32 @@ namespace SwimmingPool
             {
                 dataGridView1.AllowUserToAddRows = false;
                 selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
+            }
+
+            if (AddAbonent.LastId == null)
+            {
+                selectedAbonentNumber = selectedAbonentNumber;
+            }
+
+            else
+            {
+                selectedAbonentNumber = AddAbonent.LastId;
+
+                String searchValue = selectedAbonentNumber;
+                int rowIndex = -1;
+
+                foreach (DataGridViewRow row in dataGridView1.Rows)
+                {
+                    if (row.Cells[0].Value.ToString().Equals(searchValue))
+                    {
+                        rowIndex = row.Index;
+                        dataGridView1.Rows[0].Selected = false;
+                        dataGridView1.Rows[rowIndex].Selected = true;
+                        dataGridView1.CurrentCell = row.Cells[0];
+                        
+                        break;
+                    }
+                }            
             }
 
             InIt(Form1.selectedAbonentNumber);
@@ -69,7 +81,7 @@ namespace SwimmingPool
 
         }
 
-        public List<FillGrid> MyFillGrid;
+        private List<FillGrid> MyFillGrid;
 
         public void JoinClasses()
         {
@@ -109,7 +121,7 @@ namespace SwimmingPool
 
             MyFillGrid = fillgrid;
 
-            vadagasulidatagridi();
+            //vadagasulidatagridi();
         }
 
 
@@ -128,7 +140,6 @@ namespace SwimmingPool
 
         }
 
-
         private string monthName;
         private string WeekDay;
         private int DayNumber;
@@ -143,94 +154,17 @@ namespace SwimmingPool
             abonent.DrawGrid(abonent.CurrentWeekDays);
         }
 
-        public void InIt(Subscriber sub)
-        {
-            while (flowLayoutPanel1.Controls.Count > 0) flowLayoutPanel1.Controls.RemoveAt(0);
-            Refresh();
-            selectedAbonentNumber = sub.Subscriptions.IDnumber;
-
-            JoinClasses();
-
-            //label3.Text = "";
-            //var firstName = sub.Name;
-            //var lastName = sub.LastName;
-
-            //label3.Text = selectedAbonentNumber + " - " + firstName + " " + lastName;
-
-            //var DBDB = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.SubscriptionScheduleDB>();
-            //var SelectedSubscribtion = (from o in DBDB where o.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = o.Schedule, Daswreba = o.Attandance }).ToList();
-            //var SelectDates = (from G in DBDB where G.Subscription.IDnumber == selectedAbonentNumber.ToString() select new { Ganrigi = G.Schedule }).ToList();
-
-            //var onlyDates = (from x in DBDB
-            //                 where x.Subscription.IDnumber == selectedAbonentNumber.ToString()
-            //                 select x.Schedule).ToList();
-            //FullDatetime = onlyDates;
-
-            //HoursChek Hours = new HoursChek();
-            //foreach (var item in SelectedSubscribtion.OrderBy(x => x.Ganrigi.Date))
-            //{
-            //    var gela = item.Ganrigi.Month;
-            //    var geoCulture = new CultureInfo("ka-GE");
-            //    var dateTimeInfo = DateTimeFormatInfo.GetInstance(geoCulture);
-            //    var weekDay = item.Ganrigi.DayOfWeek;
-
-            //    monthName = dateTimeInfo.GetAbbreviatedMonthName(gela);
-            //    WeekDay = dateTimeInfo.GetAbbreviatedDayName(weekDay);
-            //    DayNumber = item.Ganrigi.Day;
-
-            //    //int aa = Convert.ToInt32(item.Daswreba);
-            //    //AttendanceTypes Attend = new AttendanceTypes();
-            //    var Attend = (AttendanceTypes)item.Daswreba;
-
-            //    //DateTime gela = DateTime.Parse(item.Ganrigi, new CultureInfo("ka-Ge"));
-
-            //    ////DateTime DateOfBirth = DateTime.ParseExact(item.Ganrigi, "MM-dd-yyyy", new CultureInfo("ka-GE"));
-            //    SubscriptionScheduleDB g = new SubscriptionScheduleDB();
-
-
-            //    HoursChek Hours = new HoursChek();
-            //    Hours.GetHoursLabel = DayNumber + " " + monthName;
-            //    Hours.GetAttendanceLabel = WeekDay + " " + item.Ganrigi.Hour + ":00 სთ";
-            //    Hours.GetAttendanceGela = Attend.ToString();
-
-            //    #region ფერები
-            //    if (Hours.GetAttendanceGela == "დასვენება")
-            //    {
-            //        Hours.BackColor = Color.Teal;
-            //    }
-            //    else if (Hours.GetAttendanceGela == "გააცდინა")
-            //    {
-            //        Hours.BackColor = Color.Red;
-            //    }
-
-            //    else if (Hours.GetAttendanceGela == "დაესწრო")
-            //    {
-            //        Hours.BackColor = Color.DarkSlateGray;
-            //    }
-            //    if (Hours.GetAttendanceGela == "მოლოდინი")
-            //    {
-            //        Hours.BackColor = Color.Gray;
-            //    }
-            //    #endregion
-
-            //    flowLayoutPanel1.Controls.Add(Hours);
-            //    flowLayoutPanel1.AutoScroll = true;
-
-                //dataGridView1_CellClick(new object(), sub);
-                flowLayoutPanel1.Refresh();
-
-            //}
-        }
 
         public void InIt(string AbonentID)
         {
             flowLayoutPanel1.Controls.Clear();
             Refresh();
+
             selectedAbonentNumber = AbonentID;
 
             label3.Text = "";
-            var firstName = MyFillGrid.Where(i => i.AbonentId == selectedAbonentNumber).FirstOrDefault().FirstName;
-            var lastName = MyFillGrid.Where(i => i.AbonentId == selectedAbonentNumber).FirstOrDefault().LastName;
+            var firstName = MyFillGrid.Where(i => i.AbonentId.Contains(selectedAbonentNumber)).FirstOrDefault().FirstName;
+            var lastName = MyFillGrid.Where(i => i.AbonentId.Contains(selectedAbonentNumber)).FirstOrDefault().LastName;
 
             label3.Text = selectedAbonentNumber + " - " + firstName + " " + lastName;
 
@@ -265,7 +199,7 @@ namespace SwimmingPool
                 SubscriptionScheduleDB g = new SubscriptionScheduleDB();
 
 
-                HoursChek Hours = new HoursChek();
+                HoursChek Hours = new HoursChek(this);
                 Hours.GetHoursLabel = DayNumber + " " + monthName;
                 Hours.GetAttendanceLabel = WeekDay + " " + item.Ganrigi.Hour + ":00 სთ";
                 Hours.GetAttendanceGela = Attend.ToString();
@@ -295,17 +229,16 @@ namespace SwimmingPool
                 Hours.Refresh();
             }
         }
-       
 
-        public void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
             InIt(selectedAbonentNumber);
         }
 
-        public void dataGridView1_CellClick(object sender, string subscriberID)
+        private void dataGridView1_CellClick(object sender, Subscriber sub)
         {
-            selectedAbonentNumber = subscriberID;
+            selectedAbonentNumber = sub.Subscriptions.IDnumber;
             InIt(selectedAbonentNumber);
         }
 
@@ -329,58 +262,16 @@ namespace SwimmingPool
 
         private void რედაქტირებაToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
-            //var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
-            //Form1 A = new Form1();
-
-            //var IDnumber = subscriptionByID.IDnumber.ToString();
-            //var LastName = subscriptionByID.Subscriber_.LastName;
-            //var Name = subscriptionByID.Subscriber_.Name;
-
-            //var Adress = subscriptionByID.Subscriber_.Address;
-            //var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
-            //var Age = subscriptionByID.Subscriber_.DateOfBirth;
-            //var numberofHour = DatabaseConnection.Conn.Table<SubscribtionPrice>().Where(x => x.Id == subscriptionByID.SubscriberPrice_.Id).FirstOrDefault().NumberOfHours;
-
-
-            //var currFillGrid = dataGridView1.SelectedRows[0].DataBoundItem as FillGrid;
-
-            //var ScheduleList = DatabaseConnection.Conn.GetAllWithChildren<SPSQLite.Subscription>()
-            // .Where(x => x.IDnumber == currFillGrid.AbonentId).FirstOrDefault()
-            // .SubscribtionSchedule_.OrderBy(x => x.Schedule.Date).Select(x => x.Schedule).ToList();
-
-
-            //List<DateTime> Dates = ScheduleList;
-
-            //if(Dates.Count == 0)
-            //{
-            //    MessageBox.Show("გთხოვთ დაამატოთ აბონენტის გრაფიკი!");
-            //    return;
-            //}
-
-            //AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, Availability.No);
-            ////abonent.Controls.Add(DataGridView datagridview1);
-
-
-            //A.EditFillGrid(abonent, Dates);
-
-
-            //var result = abonent.ShowDialog();
-
-
-            //if (result == DialogResult.OK)
-            //{
-            //    initData();
-            //}
-
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
             var subscriberByID = DatabaseConnection.Conn.GetAllWithChildren<Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
 
             Form1 A = new Form1();
-            A = this;
+
             var IDnumber = subscriptionByID.IDnumber.ToString();
             var LastName = subscriptionByID.Subscriber_.LastName;
             var Name = subscriptionByID.Subscriber_.Name;
-            var numberofHour = DatabaseConnection.Conn.Table<SubscribtionPrice>().Where(x => x.Id == subscriptionByID.SubscriberPrice_.Id).FirstOrDefault().NumberOfHours;
+            
+            var numberofHour = subscriptionByID.SubscribtionSchedule_.Count();
             var Adress = subscriptionByID.Subscriber_.Address;
             var PhoneNumber = subscriptionByID.Subscriber_.PhoneNumber.ToString();
             var Age = subscriptionByID.Subscriber_.DateOfBirth;
@@ -389,11 +280,10 @@ namespace SwimmingPool
             List<DateTime> Dates = ScheduleList();
 
             var HasInquiry = subscriberByID.Healthnotice[0].YesNO;
-            
+
             AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry, this);
             A.EditFillGrid(abonent, Dates);
             abonent.Show();
-        //    this.Close();
         }
 
         public List<DateTime> ScheduleList()
@@ -447,7 +337,8 @@ namespace SwimmingPool
         #region Search 
         private void toolStripTextBox1_TextChanged(object sender, EventArgs e)
         {
-           string textboxText = toolStripTextBox1.Text;
+            //string textboxText = toolStripTextBox1.Text;
+            string textboxText = textBox1.Text;
 
             newfillgrid = null;
 
@@ -516,7 +407,6 @@ namespace SwimmingPool
         private void toolStripTextBox1_Click(object sender, EventArgs e)
         {
             toolStripTextBox1.Text = null;
-
         }
 
         private void ლიმიტიToolStripMenuItem_Click(object sender, EventArgs e)
@@ -535,7 +425,7 @@ namespace SwimmingPool
         private void გრაფიკიToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Graphics gr = new Graphics();
-            gr.ShowDialog();
+            gr.Show();
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -564,16 +454,6 @@ namespace SwimmingPool
             public double Price { get; set; }
             public int Hours { get; set; }
         }
-
-        public static class Invoker
-        {
-            public static event EventHandler<EventArgs> myMethod;
-            public static event MyEventHandler REFRESHHandler;
-
-            //public static void myMethod(object v1, int v2)
-
-        }
-
 
         private void dataGridView1_MouseHover(object sender, EventArgs e)
         {            
@@ -613,7 +493,7 @@ namespace SwimmingPool
             }
         }
 
-        public void ContextMenuStrip_MouseClick(object sender, MouseEventArgs e)
+        private void ContextMenuStrip_MouseClick(object sender, MouseEventArgs e)
         {
             selectedAbonentNumber = dataGridView1.SelectedCells[0].Value.ToString();
             InIt(selectedAbonentNumber);

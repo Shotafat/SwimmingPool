@@ -10,7 +10,6 @@ namespace SwimmingPool
 {
     public partial class HoursChek : UserControl
     {
-
         public string GetHoursLabel { get { return HoursLabel.Text.ToString(); } set { HoursLabel.Text = value; } }
         public string GetAttendanceLabel { get { return AttendLabel.Text.ToString(); } set { AttendLabel.Text = value; } }
         public string GetAttendanceGela { get { return label1.Text.ToString(); } set { label1.Text = value; } }
@@ -19,6 +18,14 @@ namespace SwimmingPool
         public HoursChek()
         {
             InitializeComponent();
+        }
+
+        Form1 B;
+
+        public HoursChek(Form1 A)
+        {
+            B = A;
+                        InitializeComponent();
         }
 
         private void toolTip1_Popup(object sender, PopupEventArgs e)
@@ -127,8 +134,6 @@ namespace SwimmingPool
             var subscriptionByID = DatabaseConnection.Conn.GetAllWithChildren<Subscription>().Where(x => x.IDnumber == Form1.selectedAbonentNumber).FirstOrDefault();
             var subscriberByID = DatabaseConnection.Conn.GetAllWithChildren<Subscriber>().Where(x => x.SubscribtionID == subscriptionByID.Id).FirstOrDefault();
 
-            Form1 A = new Form1();
-
             var IDnumber = subscriptionByID.IDnumber.ToString();
             var LastName = subscriptionByID.Subscriber_.LastName;
             var Name = subscriptionByID.Subscriber_.Name;
@@ -142,8 +147,8 @@ namespace SwimmingPool
 
             var HasInquiry = subscriberByID.Healthnotice[0].YesNO;      
 
-            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry, A);
-            A.EditFillGrid(abonent, Dates);
+            AddAbonent abonent = new AddAbonent(IDnumber, Name, LastName, PhoneNumber, Age, Adress, subscriptionByID, Dates, numberofHour, HasInquiry, B);
+            B.EditFillGrid(abonent, Dates);
              abonent.Show();      
         }
 

@@ -23,10 +23,8 @@ namespace SwimmingPool
         Dictionary<DataGridView, List<GridFormat>> HelperDict = new Dictionary<DataGridView, List<GridFormat>>();
         Helper h = new Helper();
         List<GridFormat> CheckedDayList = new List<GridFormat>();
-        string DatagridviewName;
 
-        DateTime DateaA = new DateTime();
-
+     
         AddAbonent abonent = new AddAbonent() ;       
         
 

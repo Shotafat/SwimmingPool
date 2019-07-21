@@ -39,6 +39,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.lblSearch = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.fillgridBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -98,6 +100,9 @@
             // 
             // splitContainer1.Panel1
             // 
+            this.splitContainer1.Panel1.Controls.Add(this.menuStrip1);
+            this.splitContainer1.Panel1.Controls.Add(this.lblSearch);
+            this.splitContainer1.Panel1.Controls.Add(this.textBox1);
             this.splitContainer1.Panel1.Controls.Add(this.panel1);
             // 
             // splitContainer1.Panel2
@@ -106,6 +111,26 @@
             this.splitContainer1.Size = new System.Drawing.Size(1060, 749);
             this.splitContainer1.SplitterDistance = 504;
             this.splitContainer1.TabIndex = 0;
+            // 
+            // lblSearch
+            // 
+            this.lblSearch.AutoSize = true;
+            this.lblSearch.Font = new System.Drawing.Font("Sylfaen", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSearch.Location = new System.Drawing.Point(985, 14);
+            this.lblSearch.Name = "lblSearch";
+            this.lblSearch.Size = new System.Drawing.Size(42, 18);
+            this.lblSearch.TabIndex = 2;
+            this.lblSearch.Text = "ძებნა";
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.MintCream;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox1.Location = new System.Drawing.Point(826, 10);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(153, 22);
+            this.textBox1.TabIndex = 1;
+            this.textBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // panel1
             // 
@@ -160,7 +185,7 @@
             this.dataGridView1.RowHeadersWidth = 50;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.Size = new System.Drawing.Size(1006, 427);
+            this.dataGridView1.Size = new System.Drawing.Size(1006, 454);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -220,7 +245,7 @@
             this.label3.ForeColor = System.Drawing.Color.DarkSlateGray;
             this.label3.Location = new System.Drawing.Point(23, 19);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(299, 33);
+            this.label3.Size = new System.Drawing.Size(232, 33);
             this.label3.TabIndex = 1;
             this.label3.Text = "A001 გელა ლელაძე";
             // 
@@ -236,6 +261,8 @@
             // menuStrip1
             // 
             this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.აბონენტიToolStripMenuItem,
             this.საათებიდაფასებიToolStripMenuItem,
@@ -243,9 +270,9 @@
             this.toolStripTextBox1,
             this.გრაფიკიToolStripMenuItem,
             this.ექსპორტიToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Location = new System.Drawing.Point(21, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1060, 35);
+            this.menuStrip1.Size = new System.Drawing.Size(531, 29);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -256,70 +283,72 @@
             this.რედაქტირებაToolStripMenuItem,
             this.ლიმიტიToolStripMenuItem});
             this.აბონენტიToolStripMenuItem.Name = "აბონენტიToolStripMenuItem";
-            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(77, 31);
+            this.აბონენტიToolStripMenuItem.Size = new System.Drawing.Size(89, 25);
             this.აბონენტიToolStripMenuItem.Text = "აბონენტი";
             // 
             // დამატებაToolStripMenuItem
             // 
             this.დამატებაToolStripMenuItem.Name = "დამატებაToolStripMenuItem";
-            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.დამატებაToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.დამატებაToolStripMenuItem.Text = "დამატება";
             this.დამატებაToolStripMenuItem.Click += new System.EventHandler(this.დამატებაToolStripMenuItem_Click);
             // 
             // რედაქტირებაToolStripMenuItem
             // 
             this.რედაქტირებაToolStripMenuItem.Name = "რედაქტირებაToolStripMenuItem";
-            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.რედაქტირებაToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.რედაქტირებაToolStripMenuItem.Text = "რედაქტირება";
             this.რედაქტირებაToolStripMenuItem.Click += new System.EventHandler(this.რედაქტირებაToolStripMenuItem_Click_1);
             // 
             // ლიმიტიToolStripMenuItem
             // 
             this.ლიმიტიToolStripMenuItem.Name = "ლიმიტიToolStripMenuItem";
-            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
+            this.ლიმიტიToolStripMenuItem.Size = new System.Drawing.Size(175, 26);
             this.ლიმიტიToolStripMenuItem.Text = "ლიმიტი";
             this.ლიმიტიToolStripMenuItem.Click += new System.EventHandler(this.ლიმიტიToolStripMenuItem_Click);
             // 
             // საათებიდაფასებიToolStripMenuItem
             // 
             this.საათებიდაფასებიToolStripMenuItem.Name = "საათებიდაფასებიToolStripMenuItem";
-            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(136, 31);
+            this.საათებიდაფასებიToolStripMenuItem.Size = new System.Drawing.Size(153, 25);
             this.საათებიდაფასებიToolStripMenuItem.Text = "საათები და ფასები";
             this.საათებიდაფასებიToolStripMenuItem.Click += new System.EventHandler(this.საათებიდაფასებიToolStripMenuItem_Click_1);
             // 
             // ვადაგასულიToolStripMenuItem
             // 
             this.ვადაგასულიToolStripMenuItem.Name = "ვადაგასულიToolStripMenuItem";
-            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(98, 31);
+            this.ვადაგასულიToolStripMenuItem.Size = new System.Drawing.Size(109, 25);
             this.ვადაგასულიToolStripMenuItem.Text = "ვადაგასული";
             this.ვადაგასულიToolStripMenuItem.Click += new System.EventHandler(this.ვადაგასულიToolStripMenuItem_Click);
             // 
             // toolStripTextBox1
             // 
             this.toolStripTextBox1.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
-            this.toolStripTextBox1.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.toolStripTextBox1.BackColor = System.Drawing.Color.White;
+            this.toolStripTextBox1.Enabled = false;
             this.toolStripTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.toolStripTextBox1.ForeColor = System.Drawing.Color.DarkSlateGray;
+            this.toolStripTextBox1.ForeColor = System.Drawing.Color.Transparent;
             this.toolStripTextBox1.Margin = new System.Windows.Forms.Padding(-2, 5, 40, 0);
             this.toolStripTextBox1.Name = "toolStripTextBox1";
+            this.toolStripTextBox1.ReadOnly = true;
             this.toolStripTextBox1.Size = new System.Drawing.Size(130, 26);
-            this.toolStripTextBox1.Text = "                   ძებნა";
+            this.toolStripTextBox1.Visible = false;
             this.toolStripTextBox1.Click += new System.EventHandler(this.toolStripTextBox1_Click);
             this.toolStripTextBox1.TextChanged += new System.EventHandler(this.toolStripTextBox1_TextChanged);
             // 
             // გრაფიკიToolStripMenuItem
             // 
             this.გრაფიკიToolStripMenuItem.Name = "გრაფიკიToolStripMenuItem";
-            this.გრაფიკიToolStripMenuItem.Size = new System.Drawing.Size(72, 31);
+            this.გრაფიკიToolStripMenuItem.Size = new System.Drawing.Size(80, 25);
             this.გრაფიკიToolStripMenuItem.Text = "გრაფიკი";
             this.გრაფიკიToolStripMenuItem.Click += new System.EventHandler(this.გრაფიკიToolStripMenuItem_Click);
             // 
             // ექსპორტიToolStripMenuItem
             // 
             this.ექსპორტიToolStripMenuItem.Name = "ექსპორტიToolStripMenuItem";
-            this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(78, 31);
+            this.ექსპორტიToolStripMenuItem.Size = new System.Drawing.Size(92, 25);
             this.ექსპორტიToolStripMenuItem.Text = "ექსპორტი";
-      //      this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
+            this.ექსპორტიToolStripMenuItem.Click += new System.EventHandler(this.ექსპორტიToolStripMenuItem_Click);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -465,7 +494,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1060, 749);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.splitContainer1);
             this.Font = new System.Drawing.Font("Sylfaen", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.HelpButton = true;
@@ -476,6 +504,7 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
+            this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
@@ -494,7 +523,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.newfillgridBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fillGridBindingSource)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -517,29 +545,8 @@
         private System.Windows.Forms.ToolStripMenuItem გრაფიკიToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ექსპორტიToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn abonentIdDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateFromDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dateToDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hasInquryDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn priceDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hoursDataGridViewTextBoxColumn;
+       
         private System.Windows.Forms.BindingSource fillGridBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.ToolStripMenuItem ლიმიტიToolStripMenuItem;
         private System.Windows.Forms.BindingSource fillgridBindingSource1;
         private System.Windows.Forms.BindingSource newfillgridBindingSource;
@@ -554,6 +561,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn23;
+        private System.Windows.Forms.Label lblSearch;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 

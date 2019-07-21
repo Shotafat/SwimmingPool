@@ -87,10 +87,7 @@ namespace SPSQLite
                 item.Subscription = SubscribtionInserted;
                 item.SubscriptionID = SubscribtionInserted.Id;
                 Conn.Insert(item);
-
             }
-
-
         }
 
 
