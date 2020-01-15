@@ -23,8 +23,9 @@ namespace SwimmingPool
         Dictionary<DataGridView, List<GridFormat>> HelperDict = new Dictionary<DataGridView, List<GridFormat>>();
         Helper h = new Helper();
         List<GridFormat> CheckedDayList = new List<GridFormat>();
+        CultureInfo MyCultureInfo = new CultureInfo("ka-GE");
+        
 
-     
         AddAbonent abonent = new AddAbonent() ;       
         
 
@@ -53,9 +54,6 @@ namespace SwimmingPool
             abonent.AssignCurrentWeek(MeoreMonday, dataGridView2);
             abonent.AssignCurrentWeek(MesameMonday, dataGridView3);
             abonent.AssignCurrentWeek(MeotxeMonday, dataGridViewFourth);
-
-            //dataGridViewFirst.Rows[1].ReadOnly = true;
-            //dataGridViewFirst.Rows[1].Selected = true;
         }
 
         private void Graphics_Load(object sender, EventArgs e)
@@ -133,6 +131,11 @@ namespace SwimmingPool
             ////grid.DataSource = null;
             //grid.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Snow;
             //grid.Rows[0].DefaultCellStyle.SelectionForeColor = Color.DodgerBlue;
+
+            dataGridViewFirst.ColumnHeadersDefaultCellStyle.ForeColor = Color.White;
+            dataGridViewFirst.ColumnHeadersDefaultCellStyle.BackColor = Color.Black;
+            dataGridViewFirst.RowHeadersDefaultCellStyle.BackColor = Color.Black;
+
         }
 
         public void GridCellClick(object sender, DataGridViewCellEventArgs e)
@@ -148,8 +151,13 @@ namespace SwimmingPool
 
                 foreach (var item in dic)
                 {
-                    var dd_Mon = Convert.ToDateTime(item.Key.Rows[0].Cells[1].Value);
-                    var dd_Sun = Convert.ToDateTime(item.Key.Rows[0].Cells[7].Value);
+                    var dd_Mon = DateTime.Parse(item.Key.Rows[0].Cells[1].Value.ToString(), MyCultureInfo);
+                    var dd_Sun = Convert.ToDateTime(item.Key.Rows[0].Cells[7].Value.ToString(), MyCultureInfo);
+
+
+                    //var dd_Mon1 = Convert.ToDateTime(item.Key.Rows[0].Cells[1].Value);
+                    //var dd_Sun1 = Convert.ToDateTime(item.Key.Rows[0].Cells[7].Value);
+
                     var CheckedDays = item.Value.Where(d => d.Day.DayOfYear >= dd_Mon.DayOfYear && d.Day.DayOfYear < dd_Sun.DayOfYear).ToList();
 
                     foreach (var days in CheckedDays)
@@ -169,13 +177,17 @@ namespace SwimmingPool
         {
             DataGridView DGV = sender as DataGridView;
 
+            if (e.RowIndex == -1)
+                return;
+
             if (DGV.Columns[e.ColumnIndex].HeaderText == "კვირა")
             {
                 DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].DataGridView.DefaultCellStyle.SelectionBackColor = Color.White;
                 DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Selected = false;
                 return;
             }
-            if (e.ColumnIndex != 0 && e.RowIndex != 0)
+
+            if (e.ColumnIndex != 0 && e.RowIndex > 0 )
             {
                 if (DatabaseConnection.Conn.Table<SPSQLite.CapacityDB>().Last().MaximumCapacity <= Convert.ToInt16(DGV.Rows[e.RowIndex].Cells[e.ColumnIndex].Value))
                 {
@@ -184,14 +196,14 @@ namespace SwimmingPool
             }
 
             //   abonent.AssignCurrentWeek(ThisMonday);
-            if (e.ColumnIndex != 0 && e.RowIndex != 0)
+            if (e.ColumnIndex != 0 && e.RowIndex > 0)
             {
                 var r = e.RowIndex;
                 var c = e.ColumnIndex;
 
                 int Hour = (e.RowIndex + 8);
-                var Date = DGV.Rows[0].Cells[e.ColumnIndex];
-                var day = Convert.ToDateTime(Date.FormattedValue.ToString());
+                var Date = DGV.Rows[0].Cells[e.ColumnIndex].Value.ToString();
+                var day = DateTime.Parse(Date.ToString(), MyCultureInfo);
                 DateTime FinalDate = new DateTime();
                 string _FinalDate = "";
                 if (Hour < 10)
@@ -281,7 +293,10 @@ namespace SwimmingPool
 
         public void click(object sender, DataGridViewCellEventArgs e)
         {
-            DataGridView DT = sender as DataGridView;
+            if (e.RowIndex == -1)
+                return;
+
+            DataGridView DT = sender as DataGridView;            
 
             if (DT.Rows[0].Cells[e.ColumnIndex].Selected ||
                   DT.Rows[e.RowIndex].Cells[0].Selected)

@@ -545,7 +545,6 @@
         private System.Windows.Forms.ToolStripMenuItem გრაფიკიToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ექსპორტიToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-       
         private System.Windows.Forms.BindingSource fillGridBindingSource;
         private System.Windows.Forms.ToolStripMenuItem ლიმიტიToolStripMenuItem;
         private System.Windows.Forms.BindingSource fillgridBindingSource1;

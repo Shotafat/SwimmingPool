@@ -22,9 +22,8 @@ namespace SwimmingPool
         public Form1()
         {
             InitializeComponent();
-            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("en-US"));
+            InputLanguage.CurrentInputLanguage = InputLanguage.FromCulture(new CultureInfo("ka-GE"));
             dataGridView1.Font = new Font("Arial", 16F, GraphicsUnit.Pixel);
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,6 +130,12 @@ namespace SwimmingPool
             {
                 if (Convert.ToDateTime(dataGridView1.Rows[i].Cells[8].Value).DayOfYear < DateTime.Now.DayOfYear)
                     dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.YellowGreen;
+            }
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (Convert.ToString(dataGridView1.Rows[i].Cells[6].Value, null) == "No")
+                    dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.Red;
             }
         }
 

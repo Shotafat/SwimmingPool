@@ -485,7 +485,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(759, 346);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ShotaCopydataGridView1_CellClick_1);
-          //  this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // saati
             // 
@@ -714,11 +714,11 @@
             this.button1.TabIndex = 41;
             this.button1.Text = "ტესტი";
             this.button1.UseVisualStyleBackColor = false;
-//            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // subscribtionPriceBindingSource
             // 
-      //      this.subscribtionPriceBindingSource.DataSource = typeof(SPSQLite.SubscribtionPrice);
+            this.subscribtionPriceBindingSource.DataSource = typeof(SPSQLite.SubscribtionPrice);
             // 
             // AddAbonent
             // 

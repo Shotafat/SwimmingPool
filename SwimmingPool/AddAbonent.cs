@@ -21,7 +21,6 @@ namespace SwimmingPool
         public List<int> columni = new List<int>();
         public List<int> rovsi = new List<int>();
         public List<GridFormat> CheckedDayList = new List<GridFormat>();
-
         string AbonimentisnomeriVdagasulebidan;
         private int daynumber = Convert.ToInt16(DateTime.Now.DayOfWeek);
         bool registation = true;
@@ -1076,6 +1075,10 @@ namespace SwimmingPool
         }
 
 
+        private void dataGridView1_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
 
         public void DrawGrid(List<DateTime> week)
@@ -1431,7 +1434,82 @@ namespace SwimmingPool
         }
 
         #region რანდომი სატესტოდ
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //string[] names = new string[]
+            //   {
+            //        "გელა",
+            //        "ნელი",
+            //        "გულიკო",
+            //        "მზევინარ",
+            //        "პაჭურტი"
+            //   };
+            //string[] LastNames = new string[]
+            //{
+            //        "გეჯაძე",
+            //        "მინდია",
+            //        "ბუჩუკური",
+            //        "ლელაძე"
+            //};
 
+            //string[] Numbers = new string[]
+            //{
+            //        "555 56 78 23",
+            //        "577 23 87 23",
+            //        "587 89 23 76"
+            //};
+
+            //string[] Adress = new string[]
+            //{
+            //        "ვარკეთილი",
+            //        "ფონიჭალა",
+            //        "რუსთაველი",
+            //        "ვაშლიჯვარი"
+            //};
+
+            //string[] Date = new string[]
+            //{
+            //    "01042001",
+            //    "01281996",
+            //    "03042000",
+            //    "10031990",
+            //    "03041890"
+            //};
+
+            //// saxeli 
+            //Random rand = new Random();
+            //int index = rand.Next(names.Count());
+            //var name = names[index];
+
+            //saxeli.Text = name;
+            ////gvari
+            //int gvarindex = rand.Next(LastNames.Count());
+            //var LastName = LastNames[gvarindex];
+
+            //gvari.Text = LastName;
+
+            //// nomrebi 
+
+            //int NumberIndex = rand.Next(Numbers.Count());
+            //var Number = Numbers[NumberIndex];
+
+            //telefoni.Text = Number;
+
+            //// misamarti 
+
+            //int AdressIndex = rand.Next(Adress.Count());
+            //var adress = Adress[AdressIndex];
+
+            //misamarti.Text = adress;
+
+
+            //// asaki 
+
+            //int DateIndex = rand.Next(Date.Count());
+            //var birthDate = Date[DateIndex];
+
+            //asaki.Text = birthDate;
+        }
 
         #endregion
 
@@ -1492,6 +1570,10 @@ namespace SwimmingPool
             #endregion
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         public void SubscribtionEditMethod()
         {
@@ -1563,6 +1645,61 @@ namespace SwimmingPool
                 subscriber.PhoneNumber = telefoni.Text;
                 subscriber.Address = misamarti.Text;
                 subscriber.DateOfBirth = Convert.ToDateTime(asaki.Text);
+
+
+                /* Update Hours and Prices*/
+
+                //subscriber.Subscriptions.SubscriberPrice_.Price = (subscriber.Subscriptions.SubscriberPrice_.Price / subscriber.Subscriptions.SubscriberPrice_.NumberOfHours) * CheckedDayList.Count();
+                //= CheckedDayList.Count();
+
+                //EditSubscriptionPrice(ISubscriptionPrice price)
+
+
+                var UpdateHP= DatabaseConnection.GetSubscribtionPrice().Where(g=>g.Id == subscriber.Subscriptions.SubscribtionPriceID).Select(c=>c).FirstOrDefault();
+
+                var NewPacket = DatabaseConnection.GetSubscribtionPrice().Where(p => p.NumberOfHours == CheckedDayList.Count()).Select(c=>c).FirstOrDefault();
+                if(NewPacket == null)
+                {
+                    DialogResult dialogResult = MessageBox.Show("საათების რაოდენობა არ შეესაბამება პაკეტით განსაზღვრულს, დაარეგისტრირეთ ახალი პაკეტი", "Warning",
+                    MessageBoxButtons.OKCancel);
+                    if (dialogResult == DialogResult.OK)
+                    {
+                        AddPriceForm price = new AddPriceForm(CheckedDayList.Count().ToString());
+                        price.ShowDialog();
+
+                        if (price.DialogResult == DialogResult.OK)
+                        {
+                            //comboBox1.DataSource = null;
+                            //comboBox1.DataSource = DatabaseConnection.Conn.Table<SubscribtionPrice>().Select(x => x.NumberOfHours).ToList();
+                            comboBox1.SelectedItem = CheckedDayList.Count();
+                            //Saver();
+                            this.Close();
+                        }
+
+                        else
+                        {
+                            return;
+                        }
+                    }
+
+                    else if (dialogResult == DialogResult.Cancel)
+                    {
+                        this.Show();
+                        return;
+                    }
+                }
+
+
+                //NewPacket.Price = UpdateHP.Price / UpdateHP.NumberOfHours * NewPacket.NumberOfHours;
+                NewPacket = DatabaseConnection.GetSubscribtionPrice().Where(p => p.NumberOfHours == CheckedDayList.Count()).Select(c => c).FirstOrDefault();
+
+                UpdateHP = NewPacket;
+                subscriber.Subscriptions.SubscribtionPriceID = NewPacket.Id;
+
+                DatabaseConnection.Conn.Update(subscriber);
+
+                /*---------------------------------------------------------------------------------*/
+
 
                 var healthNote = DatabaseConnection.GetHealthNotice().Where(h=>h.id == subscriber.Id).Select(x=>x).FirstOrDefault();               
 

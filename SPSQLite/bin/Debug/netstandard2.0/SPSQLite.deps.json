@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "94148fd9faafb2efaedc7a438b339827ef41f2ae"
+    "signature": ""
   },
   "compilationOptions": {},
   "targets": {
@@ -583,14 +583,14 @@
     "Microsoft.CSharp/4.0.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-wOdakWLyi6TEVyyPrE/UyMl9bTUFo3aDZGul9+X2rA2mnVIA0mRgVN6Q6OCPiToQ5RRZG2m4JzZAhCss+Qvd7A==",
+      "sha512": "sha512-17h8b5mXa87XYKrrVqdgZ38JefSUqLChUQpXgSnpzsM0nDOhE40FTeNWOJ/YmySGV6tG6T8+hjz6vxbknHJr6A==",
       "path": "microsoft.csharp/4.0.1",
       "hashPath": "microsoft.csharp.4.0.1.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
+      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -604,7 +604,7 @@
     "Microsoft.Office.Interop.Excel/15.0.4795.1000": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-iNGgO/2HBH9sy5AtVTvNW30NFpPBVngRqd8CN9d/LYk7KnstiOrRLPOOrJesqmdeDAUZwetCYEO8RvUxSd7UBg==",
+      "sha512": "sha512-DfceS96ustwfL8EOJNNRtpk6b0RylhjNpgeeemuvi9X4GYks2UTeAimjSrdFEfuqRo5ibZ4Sd0gJIeDr9gMa6Q==",
       "path": "microsoft.office.interop.excel/15.0.4795.1000",
       "hashPath": "microsoft.office.interop.excel.15.0.4795.1000.nupkg.sha512"
     },
@@ -625,14 +625,14 @@
     "sqlite-net-pcl/1.5.231": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-Sy+K+Wm2RZ+4b1uLHsaXvfR92Or71XxPXa2Id6msSOVkZKh+c+PUk/HQOAgxyhm3lhvysL0mK6Gd6mI69NJ9AA==",
+      "sha512": "sha512-B9jScvqkishSMkpa9Mc4Q85LTHxRTzcUXZx9EQqgrvdz7MFEDHfpiPcKdjy1qXHdmHttEXfY4h6gu4FlgWP2Sw==",
       "path": "sqlite-net-pcl/1.5.231",
       "hashPath": "sqlite-net-pcl.1.5.231.nupkg.sha512"
     },
     "SQLiteNetExtensions/2.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-X1ufKPcyQM7ExzdmdunHHSv+R3Pi7xeT9OG1wrPo6K2IR2Ku+VuEClQ1YlbxwfaKM4+NR4Ut2g0gHbJ5dllleA==",
+      "sha512": "sha512-oiyhVxCi7M2nr3tI6h05jdHGT0HKW6GxMNKUiO04zWAxv42MHtX12c4tW67w6VqGwcnXj1bwyTpq9P0W8QoGYQ==",
       "path": "sqlitenetextensions/2.1.0",
       "hashPath": "sqlitenetextensions.2.1.0.nupkg.sha512"
     },
@@ -674,7 +674,7 @@
     "System.Dynamic.Runtime/4.0.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-CyGJpvUO/6tEqLH4g/Kh+bmzLESBIxkOiUaod8KP9GojWqkK8ImNHM1tovMVWqLPJuV/f2HufjxQ394hkNeBqw==",
+      "sha512": "sha512-db34f6LHYM0U0JpE+sOmjar27BnqTVkbLJhgfwMpTdgTigG/Hna3m2MYVwnFzGGKnEJk2UXFuoVTr8WUbU91/A==",
       "path": "system.dynamic.runtime/4.0.11",
       "hashPath": "system.dynamic.runtime.4.0.11.nupkg.sha512"
     },
